@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Render the 2027 Bier Reisen route & itinerary poster (4800 x 3120 px at 240 dpi).
 
-Reads authoritative data from 2027/data/route-2027.json and basemap from
-assets/ne_50m_countries.geojson. Writes 2027/assets/2027-route-map.png
+Supports --variant v1|v2 (default: v1). Reads authoritative data for the chosen
+variant and basemap from assets/ne_50m_countries.geojson, writing the poster PNG
 deterministically with zero stderr output.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import pathlib
@@ -27,6 +28,120 @@ REPO_ROOT = DIR_2027.parent
 DATA_PATH = DIR_2027 / "data" / "route-2027.json"
 OUT_PNG = DIR_2027 / "assets" / "2027-route-map.png"
 GEO_PATH = REPO_ROOT / "assets" / "ne_50m_countries.geojson"
+
+VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
+    "v1": {
+        "data_path": DATA_PATH,
+        "out_png": OUT_PNG,
+        "eyebrow": "BIERREISEN   ·   2027 ROUTE & ITINERARY POSTER",
+        "title": "BIER REISEN 2027",
+        "version_tag": None,
+        "headline_stats": "15 days  ·  14 nights  ·  10 bases  ·  2,297 km  ·  27 h driving  ·  3 countries",
+        "route_line_1": (
+            "Frankfurt Airport → Bruges (2 nights) → Ghent (1) → Bamberg (2) → "
+            "Pivovar Permon, Sokolov (1) → Plzeň (2)"
+        ),
+        "route_line_2": (
+            "→ Kout na Šumavě (1) → Maxlrain Bierstube, Tuntenhausen (1) → "
+            "Andechs/Herrsching (1) → Munich (2) → Nuremberg (1) → Frankfurt Airport"
+        ),
+        "meta_line": "Authoritative data: 2027/data/route-2027.json  ·  OSRM car routing",
+        "leg_bends": {
+            ("fra", "bruges"): 0.06,
+            ("bruges", "ghent"): 0.10,
+            ("ghent", "bamberg"): 0.15,
+            ("bamberg", "sokolov"): 0.06,
+            ("sokolov", "plzen"): 0.08,
+            ("plzen", "kout"): -0.08,
+            ("kout", "maxlrain"): -0.05,
+            ("maxlrain", "andechs"): -0.10,
+            ("andechs", "munich"): 0.12,
+            ("munich", "nuremberg"): 0.05,
+            ("nuremberg", "fra"): 0.08,
+        },
+        "preferred_angles": {
+            "fra": [-120, -140, -95, 180, -75],
+            "bruges": [110, 90, 135, 160, 70, 180],
+            "ghent": [-130, -110, -150, -90, 180],
+            "bamberg": [70, 50, 90, 35, 115],
+            "sokolov": [85, 105, 65, 125, 45],
+            "plzen": [10, 0, 28, -15, 45],
+            "kout": [-10, 0, -28, 15, -45],
+            "maxlrain": [-25, -45, -10, 0, -70],
+            "andechs": [180, -155, -135, 160, -115],
+            "munich": [62, 55, 68, 48, 74],
+            "nuremberg": [180, 165, -165, 145, -145],
+        },
+        "long_days": (4, 10),
+        "ledger_day_tags": {4: "[LONGEST LEG]", 10: "[LONG DRIVE]"},
+        "must_drink": (
+            "Flemish red (Bruges) · Gruut herb beer (Ghent) · Rauchbier & aU Ungespundetes (Bamberg) · "
+            "Permon IPA 15° (Sokolov) · Tank Pilsner (Plzeň) · Kout 12° (Kout na Šumavě) · "
+            "Maxlrainer Helles (Maxlrain) · Doppelbock Dunkel (Andechs) · Holzfass Edelstoff & Aventinus (Munich) · Rotbier (Nuremberg)"
+        ),
+        "totals_line": (
+            "15 days · 14 nights · 10 bases · 11 driving legs · 2,296.5 km (2,297 km) · "
+            "27 h 01 driving (1,621 min) · Germany, Belgium & Czechia · Best season May–Sep"
+        ),
+    },
+    "v2": {
+        "data_path": DIR_2027 / "v2" / "data" / "route-2027-v2.json",
+        "out_png": DIR_2027 / "v2" / "assets" / "2027-route-map-v2.png",
+        "eyebrow": "BIERREISEN   ·   2027 ROUTE & ITINERARY POSTER   ·   COLOGNE IN, NUREMBERG OUT",
+        "title": "BIER REISEN 2027",
+        "version_tag": "V2",
+        "headline_stats": "15 days  ·  14 nights  ·  10 bases  ·  2,298 km  ·  27 h driving  ·  3 countries",
+        "route_line_1": (
+            "Frankfurt Airport → Bruges (2N) → Ghent (1N) → Cologne (1N, new) → "
+            "Bamberg (2N) → Pivovar Permon, Sokolov (1N)"
+        ),
+        "route_line_2": (
+            "→ Plzeň (2N) → Kout na Šumavě (1N) → Maxlrain Bierstube (1N) → "
+            "Andechs/Herrsching (1N) → Munich (2N) → Frankfurt Airport"
+        ),
+        "meta_line": (
+            "Changed vs v1: Nuremberg night removed, Cologne night added between Ghent & Bamberg  ·  "
+            "2027/v2/data/route-2027-v2.json"
+        ),
+        "leg_bends": {
+            ("fra", "bruges"): 0.08,
+            ("bruges", "ghent"): 0.10,
+            ("ghent", "cologne"): 0.12,
+            ("cologne", "bamberg"): 0.12,
+            ("bamberg", "sokolov"): 0.06,
+            ("sokolov", "plzen"): 0.08,
+            ("plzen", "kout"): -0.08,
+            ("kout", "maxlrain"): -0.05,
+            ("maxlrain", "andechs"): -0.10,
+            ("andechs", "munich"): 0.12,
+            ("munich", "fra"): 0.07,
+        },
+        "preferred_angles": {
+            "fra": [-120, -140, -95, 180, -75],
+            "bruges": [110, 90, 135, 160, 70, 180],
+            "ghent": [-130, -110, -150, -90, 180],
+            "cologne": [95, 115, 75, 135, 55, 180],
+            "bamberg": [70, 50, 90, 35, 115],
+            "sokolov": [85, 105, 65, 125, 45],
+            "plzen": [10, 0, 28, -15, 45],
+            "kout": [-10, 0, -28, 15, -45],
+            "maxlrain": [-25, -45, -10, 0, -70],
+            "andechs": [180, -155, -135, 160, -115],
+            "munich": [25, 42, 10, 55, 0],
+        },
+        "long_days": (5,),
+        "ledger_day_tags": {4: "[NEW IN V2]", 5: "[LONG DAY]"},
+        "must_drink": (
+            "Flemish red (Bruges) · Gruut herb beer (Ghent) · Kölsch in 0.2 L Stangen (Cologne) · "
+            "Rauchbier & aU (Bamberg) · Permon IPA 15° (Sokolov) · Tank Pilsner (Plzeň) · "
+            "Kout 12° (Kout na Šumavě) · Maxlrainer Helles (Maxlrain) · Doppelbock Dunkel (Andechs) · Holzfass Edelstoff (Munich)"
+        ),
+        "totals_line": (
+            "15 days · 14 nights · 10 bases · 11 driving legs · 2,298.3 km (2,298 km) · "
+            "27 h 04 driving (1,624 min) · Germany, Belgium & Czechia · Best season May–Sep"
+        ),
+    },
+}
 
 # Palette matching scripts/make_trip_maps.py
 BG = "#0b0c15"
@@ -333,7 +448,15 @@ def circle_hits_box(cx: float, cy: float, r: float, box: Tuple[float, float, flo
     return (cx - nx) ** 2 + (cy - ny) ** 2 < r * r
 
 
-def fit_text_px(fig, ax, text: str, max_px: float, fontsize: float, fontweight: str = "normal") -> str:
+def fit_text_px(
+    fig,
+    ax,
+    text: str,
+    max_px: float,
+    fontsize: float,
+    fontweight: str = "normal",
+    word_trim: bool = False,
+) -> str:
     renderer = fig.canvas.get_renderer()
     probe = ax.text(0, 0, text, fontsize=fontsize, fontweight=fontweight)
     w = probe.get_window_extent(renderer=renderer).width
@@ -342,7 +465,7 @@ def fit_text_px(fig, ax, text: str, max_px: float, fontsize: float, fontweight: 
         return text
     cand = text
     while len(cand) > 12:
-        if " · " in cand:
+        if not word_trim and " · " in cand:
             cand = cand.rsplit(" · ", 1)[0]
             trial = cand if " · " in cand else cand + "…"
         else:
@@ -356,8 +479,12 @@ def fit_text_px(fig, ax, text: str, max_px: float, fontsize: float, fontweight: 
     return cand
 
 
-def render() -> pathlib.Path:
-    data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathlib.Path:
+    cfg = VARIANT_CONFIGS[variant]
+    data_path: pathlib.Path = DATA_PATH if variant == "v1" else cfg["data_path"]
+    target_png: pathlib.Path = out_png if out_png is not None else (OUT_PNG if variant == "v1" else cfg["out_png"])
+
+    data = json.loads(data_path.read_text(encoding="utf-8"))
     world = json.loads(GEO_PATH.read_text(encoding="utf-8"))
 
     stops: List[Dict[str, Any]] = sorted(data["stops"], key=lambda s: int(s["order"]))
@@ -376,41 +503,33 @@ def render() -> pathlib.Path:
     # ------------------------------------------------------------------ 1. HEADER
     fig.text(
         0.025, 0.969,
-        "BIERREISEN   ·   2027 ROUTE & ITINERARY POSTER",
+        cfg["eyebrow"],
         fontsize=8.6, fontweight="bold", color=DIM, ha="left", va="center",
     )
-    fig.text(
+    title_artist = fig.text(
         0.025, 0.935,
-        "BIER REISEN 2027",
+        cfg["title"],
         fontsize=28.0, fontweight="bold", color=GOLD, ha="left", va="center",
     )
     fig.text(
         0.025, 0.900,
-        "15 days  ·  14 nights  ·  10 bases  ·  2,297 km  ·  27 h driving  ·  3 countries",
+        cfg["headline_stats"],
         fontsize=11.4, fontweight="bold", color=TEXT, ha="left", va="center",
     )
 
-    route_line_1 = (
-        "Frankfurt Airport → Bruges (2 nights) → Ghent (1) → Bamberg (2) → "
-        "Pivovar Permon, Sokolov (1) → Plzeň (2)"
-    )
-    route_line_2 = (
-        "→ Kout na Šumavě (1) → Maxlrain Bierstube, Tuntenhausen (1) → "
-        "Andechs/Herrsching (1) → Munich (2) → Nuremberg (1) → Frankfurt Airport"
-    )
     fig.text(
         0.975, 0.946,
-        route_line_1,
+        cfg["route_line_1"],
         fontsize=8.6, fontweight="bold", color=to_hex(cmap(0.25)), ha="right", va="center",
     )
     fig.text(
         0.975, 0.922,
-        route_line_2,
+        cfg["route_line_2"],
         fontsize=8.6, fontweight="bold", color=to_hex(cmap(0.65)), ha="right", va="center",
     )
     fig.text(
         0.975, 0.898,
-        "Authoritative data: 2027/data/route-2027.json  ·  OSRM car routing",
+        cfg["meta_line"],
         fontsize=8.4, color=MUTED, ha="right", va="center",
     )
     fig.add_artist(plt.Line2D([0.025, 0.975], [0.880, 0.880], color=GOLD, lw=1.1, alpha=0.68))
@@ -472,13 +591,14 @@ def render() -> pathlib.Path:
     draw_land(ax_map, world, proj, lon_win, lat_win)
 
     # Subtle country watermarks in open areas
+    bavaria_pos = (10.95, 48.95) if variant == "v2" else (12.15, 48.72)
     watermarks = [
         ("BELGIUM", 4.65, 50.45),
         ("NETHERLANDS", 5.55, 51.95),
         ("LUXEMBOURG", 6.10, 49.75),
         ("FRANCE", 4.80, 49.05),
         ("GERMANY", 9.15, 51.45),
-        ("BAVARIA", 12.15, 48.72),
+        ("BAVARIA", *bavaria_pos),
         ("CZECHIA", 14.15, 50.10),
         ("AUSTRIA", 13.45, 47.62),
     ]
@@ -496,23 +616,7 @@ def render() -> pathlib.Path:
         stops[i]["id"]: (float(sx_arr[i]), float(sy_arr[i])) for i in range(n_stops)
     }
 
-    # Curved Bezier deflections (left-normal fraction of chord) so West-East corridors separate cleanly:
-    # - fra->bruges (dx<0, left-normal=SW): +0.06 gentle SW dip
-    # - ghent->bamberg (dx>0, left-normal=NE): +0.15 gentle north arc above FRA via Cologne/Fulda
-    # - nuremberg->fra (dx<0, left-normal=SW): +0.08 gentle SW arc via Wuerzburg (zero crossing with ghent->bamberg!)
-    leg_bends: Dict[Tuple[str, str], float] = {
-        ("fra", "bruges"): 0.06,
-        ("bruges", "ghent"): 0.10,
-        ("ghent", "bamberg"): 0.15,
-        ("bamberg", "sokolov"): 0.06,
-        ("sokolov", "plzen"): 0.08,
-        ("plzen", "kout"): -0.08,
-        ("kout", "maxlrain"): -0.05,
-        ("maxlrain", "andechs"): -0.10,
-        ("andechs", "munich"): 0.12,
-        ("munich", "nuremberg"): 0.05,
-        ("nuremberg", "fra"): 0.08,
-    }
+    leg_bends: Dict[Tuple[str, str], float] = cfg["leg_bends"]
 
     leg_curves: List[Tuple[np.ndarray, np.ndarray, str, Dict[str, Any]]] = []
     for idx_l, leg in enumerate(legs):
@@ -568,6 +672,40 @@ def render() -> pathlib.Path:
     # Force initial draw so renderer & pixel transforms are exact
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
+
+    if cfg["version_tag"]:
+        t_ext = title_artist.get_window_extent(renderer=renderer)
+        tag_probe = fig.text(0, 0, cfg["version_tag"], fontsize=11.0, fontweight="bold")
+        tag_w_px = float(tag_probe.get_window_extent(renderer=renderer).width) + 28.0
+        tag_h_px = float(tag_probe.get_window_extent(renderer=renderer).height) + 16.0
+        tag_probe.remove()
+        tx0_px = float(t_ext.x1) + 24.0
+        ty_mid_px = 0.5 * float(t_ext.y0 + t_ext.y1)
+        f_p0 = fig.transFigure.inverted().transform((tx0_px, ty_mid_px - 0.5 * tag_h_px))
+        f_p1 = fig.transFigure.inverted().transform((tx0_px + tag_w_px, ty_mid_px + 0.5 * tag_h_px))
+        fig.add_artist(FancyBboxPatch(
+            (float(f_p0[0]), float(f_p0[1])),
+            float(f_p1[0] - f_p0[0]),
+            float(f_p1[1] - f_p0[1]),
+            boxstyle="round,pad=0,rounding_size=0.004",
+            transform=fig.transFigure,
+            facecolor="#e94560",
+            edgecolor=GOLD,
+            linewidth=1.1,
+            zorder=5,
+        ))
+        fig.text(
+            0.5 * float(f_p0[0] + f_p1[0]),
+            0.5 * float(f_p0[1] + f_p1[1]),
+            cfg["version_tag"],
+            fontsize=11.0,
+            fontweight="bold",
+            color="#ffffff",
+            ha="center",
+            va="center",
+            zorder=6,
+        )
+
     map_win = ax_map.get_window_extent(renderer=renderer)
     px0, py0, px1, py1 = float(map_win.x0), float(map_win.y0), float(map_win.x1), float(map_win.y1)
 
@@ -617,6 +755,7 @@ def render() -> pathlib.Path:
         "fra": ("Frankfurt Airport", "START/END"),
         "bruges": ("Bruges", "2N"),
         "ghent": ("Ghent", "1N"),
+        "cologne": ("Cologne", "1N"),
         "bamberg": ("Bamberg", "2N"),
         "sokolov": ("Permon · Sokolov", "1N"),
         "plzen": ("Plzeň", "2N"),
@@ -627,20 +766,7 @@ def render() -> pathlib.Path:
         "nuremberg": ("Nuremberg", "1N"),
     }
 
-    # Preferred angle priorities (degrees, 0=E, 90=N, 180=W, -90=S) tailored to geography, with full fallback sweep
-    preferred_angles: Dict[str, List[float]] = {
-        "fra": [-120, -140, -95, 180, -75],
-        "bruges": [110, 90, 135, 160, 70, 180],
-        "ghent": [-130, -110, -150, -90, 180],
-        "bamberg": [70, 50, 90, 35, 115],
-        "sokolov": [85, 105, 65, 125, 45],
-        "plzen": [10, 0, 28, -15, 45],
-        "kout": [-10, 0, -28, 15, -45],
-        "maxlrain": [-25, -45, -10, 0, -70],
-        "andechs": [180, -155, -135, 160, -115],
-        "munich": [62, 55, 68, 48, 74],
-        "nuremberg": [180, 165, -165, 145, -145],
-    }
+    preferred_angles: Dict[str, List[float]] = cfg["preferred_angles"]
 
     # Place all 11 stop labels + 2N/1N night chips
     for i, s in enumerate(stops):
@@ -870,6 +996,7 @@ def render() -> pathlib.Path:
         "fra": "FRA",
         "bruges": "Bruges",
         "ghent": "Ghent",
+        "cologne": "Cologne",
         "bamberg": "Bamberg",
         "sokolov": "Sokolov (Permon)",
         "plzen": "Plzeň",
@@ -885,6 +1012,9 @@ def render() -> pathlib.Path:
     led_win = ax_led.get_window_extent(renderer=renderer)
     max_text_px = float(led_win.width) * 0.820
 
+    long_days = cfg["long_days"]
+    ledger_day_tags: Dict[int, str] = cfg["ledger_day_tags"]
+
     for idx_d, d_entry in enumerate(days_list):
         dnum = int(d_entry["day"])
         base_id = d_entry["base"]
@@ -892,7 +1022,7 @@ def render() -> pathlib.Path:
         yc = top_band - (idx_d + 0.5) * row_h
         y_low = yc - 0.45 * row_h
         rcol = day_color(cmap, dnum, n_days)
-        is_long = dnum in (4, 10)
+        is_long = dnum in long_days
 
         if is_long:
             ax_led.add_patch(FancyBboxPatch(
@@ -928,10 +1058,8 @@ def render() -> pathlib.Path:
         if dnum in leg_by_day:
             lg = leg_by_day[dnum]
             drv_prefix = f"{short_stop_lbl[lg['from']]} → {short_stop_lbl[lg['to']]}  ·  {fmt_km_round(float(lg['km']))} km · {fmt_hmm(int(lg['minutes']))}"
-            if dnum == 4:
-                drv_prefix += "  [LONGEST LEG]"
-            elif dnum == 10:
-                drv_prefix += "  [LONG DRIVE]"
+            if dnum in ledger_day_tags:
+                drv_prefix += f"  {ledger_day_tags[dnum]}"
             # Add concise highlight from non-distance items
             extra_items = [it for it in d_entry["items"] if " km / " not in it]
             sub_raw = f"{drv_prefix}  ·  {extra_items[0]}" if extra_items else drv_prefix
@@ -940,7 +1068,9 @@ def render() -> pathlib.Path:
             sub_raw = f"In place  ·  {' · '.join(d_entry['items'][:2])}"
             sub_col = "#7fe0c8"
 
-        sub_fitted = fit_text_px(fig, ax_led, sub_raw, max_text_px, 7.9, fontweight="normal")
+        sub_fitted = fit_text_px(
+            fig, ax_led, sub_raw, max_text_px, 7.9, fontweight="normal", word_trim=(variant != "v1")
+        )
 
         ax_led.text(
             0.126, yc + 0.19 * row_h, top_fitted,
@@ -956,15 +1086,8 @@ def render() -> pathlib.Path:
     # ------------------------------------------------------------------ 4. FOOTER
     fig.add_artist(plt.Line2D([0.025, 0.975], [0.066, 0.066], color=GOLD, lw=0.95, alpha=0.62))
 
-    must_drink = (
-        "Flemish red (Bruges) · Gruut herb beer (Ghent) · Rauchbier & aU Ungespundetes (Bamberg) · "
-        "Permon IPA 15° (Sokolov) · Tank Pilsner (Plzeň) · Kout 12° (Kout na Šumavě) · "
-        "Maxlrainer Helles (Maxlrain) · Doppelbock Dunkel (Andechs) · Holzfass Edelstoff & Aventinus (Munich) · Rotbier (Nuremberg)"
-    )
-    totals_line = (
-        "15 days · 14 nights · 10 bases · 11 driving legs · 2,296.5 km (2,297 km) · "
-        "27 h 01 driving (1,621 min) · Germany, Belgium & Czechia · Best season May–Sep"
-    )
+    must_drink = cfg["must_drink"]
+    totals_line = cfg["totals_line"]
 
     fig.text(0.025, 0.044, "MUST-DRINK BEERS", fontsize=8.3, fontweight="bold", color=GOLD, ha="left", va="center")
     fig.text(0.122, 0.044, must_drink, fontsize=8.1, color=TEXT, ha="left", va="center")
@@ -978,16 +1101,28 @@ def render() -> pathlib.Path:
         fontsize=7.6, color=DIM, ha="right", va="center",
     )
 
-    OUT_PNG.parent.mkdir(parents=True, exist_ok=True)
+    target_png.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(
-        OUT_PNG,
+        target_png,
         dpi=DPI,
         facecolor=BG,
         metadata={"Software": "bierreisen/2027/scripts/make_route_map.py", "Creation Time": None},
     )
     plt.close(fig)
-    return OUT_PNG
+    return target_png
+
+
+def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Render the 2027 Bier Reisen route poster.")
+    parser.add_argument(
+        "--variant",
+        choices=("v1", "v2"),
+        default="v1",
+        help="Planner variant to render (default: v1).",
+    )
+    return parser.parse_args(argv)
 
 
 if __name__ == "__main__":
-    render()
+    args = parse_args()
+    render(variant=args.variant)
