@@ -1,0 +1,989 @@
+{
+ "trip": {
+  "title": "Bier Reisen 2027 — v2",
+  "subtitle": "Bruges, Ghent, Cologne, Bamberg, Bohemia and back through Bavaria",
+  "year": 2027,
+  "days": 15,
+  "nights": 14,
+  "bases": 10,
+  "countries": [
+   "Germany",
+   "Belgium",
+   "Czechia"
+  ],
+  "total_km": 2298.3,
+  "total_drive_minutes": 1624,
+  "start": "Frankfurt am Main Airport (FRA)",
+  "end": "Frankfurt am Main Airport (FRA)",
+  "version": "v2",
+  "changes": "Nuremberg night removed; Cologne night added between Ghent and Bamberg"
+ },
+ "stops": [
+  {
+   "id": "fra",
+   "order": 0,
+   "name": "Frankfurt am Main Airport",
+   "city": "Frankfurt",
+   "country": "Germany",
+   "nights": 0,
+   "lat": 50.0379,
+   "lon": 8.5622,
+   "kind": "airport",
+   "note": "Pick up the rental car on arrival, return it here on day 15."
+  },
+  {
+   "id": "bruges",
+   "order": 1,
+   "name": "Bruges",
+   "city": "Brugge",
+   "country": "Belgium",
+   "nights": 2,
+   "lat": 51.2087,
+   "lon": 3.2244,
+   "kind": "city",
+   "note": "Historic centre, De Halve Maan, brown bars on the canal."
+  },
+  {
+   "id": "ghent",
+   "order": 2,
+   "name": "Ghent",
+   "city": "Gent",
+   "country": "Belgium",
+   "nights": 1,
+   "lat": 51.0543,
+   "lon": 3.7174,
+   "kind": "city",
+   "note": "Gruut, Dok Noord, Dulle Griet and the Waterhuis."
+  },
+  {
+   "id": "cologne",
+   "order": 3,
+   "name": "Cologne",
+   "city": "Köln",
+   "country": "Germany",
+   "nights": 1,
+   "lat": 50.9424,
+   "lon": 6.9555,
+   "kind": "city",
+   "note": "Kölsch country: Früh am Dom, Päffgen, Mühlen, Lommerzheim and the Ehrenfeld craft scene."
+  },
+  {
+   "id": "bamberg",
+   "order": 4,
+   "name": "Bamberg",
+   "city": "Bamberg",
+   "country": "Germany",
+   "nights": 2,
+   "lat": 49.8913,
+   "lon": 10.8825,
+   "kind": "city",
+   "note": "UNESCO old town, nine breweries, rauchbier capital."
+  },
+  {
+   "id": "sokolov",
+   "order": 5,
+   "name": "Pivovar Permon, Sokolov",
+   "city": "Sokolov",
+   "country": "Czechia",
+   "nights": 1,
+   "lat": 50.1788,
+   "lon": 12.6379,
+   "kind": "brewery",
+   "address": "Komenského 77, 356 01 Sokolov, Czechia",
+   "note": "Mining-country craft brewery with its own restaurant and rooms."
+  },
+  {
+   "id": "plzen",
+   "order": 6,
+   "name": "Plzeň",
+   "city": "Plzeň",
+   "country": "Czechia",
+   "nights": 2,
+   "lat": 49.7473,
+   "lon": 13.3776,
+   "kind": "city",
+   "note": "Birthplace of pilsner, tank beer, Pilsner Urquell cellars."
+  },
+  {
+   "id": "kout",
+   "order": 7,
+   "name": "Kout na Šumavě",
+   "city": "Kout na Šumavě",
+   "country": "Czechia",
+   "nights": 1,
+   "lat": 49.4025,
+   "lon": 13.0017,
+   "kind": "brewery",
+   "address": "Kout na Šumavě 2, 345 02 Kout na Šumavě, Czechia",
+   "note": "Cult 12° lager, revived 2006, deep in the Bohemian forest."
+  },
+  {
+   "id": "maxlrain",
+   "order": 8,
+   "name": "Maxlrain Bierstube",
+   "city": "Tuntenhausen-Maxlrain",
+   "country": "Germany",
+   "nights": 1,
+   "lat": 47.8987,
+   "lon": 11.9883,
+   "kind": "brewery",
+   "address": "Aiblinger Str. 1, 83104 Tuntenhausen-Maxlrain, Germany",
+   "note": "Schlossbrauerei Maxlrain, brewery inn south of Munich."
+  },
+  {
+   "id": "andechs",
+   "order": 9,
+   "name": "Andechs / Herrsching",
+   "city": "Andechs",
+   "country": "Germany",
+   "nights": 1,
+   "lat": 47.9747,
+   "lon": 11.1826,
+   "kind": "brewery",
+   "address": "Kloster Andechs, Bergstraße 2, 82346 Andechs, Germany",
+   "note": "Benedictine monastery brewery above the Ammersee; sleep in Herrsching."
+  },
+  {
+   "id": "munich",
+   "order": 10,
+   "name": "Munich",
+   "city": "München",
+   "country": "Germany",
+   "nights": 2,
+   "lat": 48.1371,
+   "lon": 11.5754,
+   "kind": "city",
+   "note": "Augustiner, Schneider, Giesinger, ORCA and the beer halls."
+  }
+ ],
+ "days": [
+  {
+   "day": 1,
+   "base": "bruges",
+   "title": "Arrive FRA, drive to Bruges",
+   "drive": "fra->bruges",
+   "items": [
+    "Pick up the rental car at Frankfurt Airport",
+    "493 km / 5 h 15 west through Belgium",
+    "Check in inside the old town",
+    "Evening first pint at De Garre (house tripel, max three)"
+   ]
+  },
+  {
+   "day": 2,
+   "base": "bruges",
+   "title": "Bruges",
+   "drive": null,
+   "items": [
+    "De Halve Maan XL tour incl. the 3 km beer pipeline",
+    "'t Brugs Beertje for the 300-bottle list",
+    "Café Vlissinghe (1515) for the bocce garden",
+    "Bourgogne des Flandres on the canal"
+   ]
+  },
+  {
+   "day": 3,
+   "base": "ghent",
+   "title": "Drive to Ghent, brewery quarter",
+   "drive": "bruges->ghent",
+   "items": [
+    "49 km / 44 min",
+    "Gruut Stadsbrouwerij tasting (hop-free herb beers)",
+    "Dok Noord: Dok Brewing, Stroom Brouwers, De Hopduvel",
+    "De Dulle Griet (500 beers) and Het Waterhuis aan de Bierkant"
+   ]
+  },
+  {
+   "day": 4,
+   "base": "cologne",
+   "title": "Drive to Cologne",
+   "drive": "ghent->cologne",
+   "items": [
+    "265 km / 3 h 06 through the Rhineland",
+    "Kölsch at Früh am Dom, then Brauerei zur Malzmühle (Mühlen)",
+    "Evening in Ehrenfeld: Braustelle for craft beer",
+    "A Kölsch is 0.2 l — the Köbes keeps refilling until you put the coaster on the glass"
+   ]
+  },
+  {
+   "day": 5,
+   "base": "bamberg",
+   "title": "Cologne to Bamberg",
+   "drive": "cologne->bamberg",
+   "items": [
+    "387 km / 4 h 01 — the long day, split by a stop in Koblenz or Würzburg",
+    "Evening at Schlenkerla: the first rauchbier from the oak barrel",
+    "Nightcap at Klosterbräu (1533)"
+   ]
+  },
+  {
+   "day": 6,
+   "base": "bamberg",
+   "title": "Bamberg brewery crawl",
+   "drive": null,
+   "items": [
+    "Spezial for the locals' rauchbier",
+    "Mahr's Bräu for the aU Ungespundetes",
+    "Fässla Zwergla, then Greifenklau's beer garden",
+    "Keesmann Herren Pils before the nightcap"
+   ]
+  },
+  {
+   "day": 7,
+   "base": "sokolov",
+   "title": "Into Bohemia: Permon",
+   "drive": "bamberg->sokolov",
+   "items": [
+    "160 km / 1 h 59 via Bayreuth and Cheb",
+    "Pivovar Permon brewery tour on Komenského 77",
+    "Dinner in the brewery restaurant; sleep on site"
+   ]
+  },
+  {
+   "day": 8,
+   "base": "plzen",
+   "title": "Sokolov to Plzeň",
+   "drive": "sokolov->plzen",
+   "items": [
+    "87 km / 1 h 28",
+    "Optional stop in Loket (12 min) or Karlovy Vary (17 min)",
+    "Evening tank beer at U Salzmannů (1637)"
+   ]
+  },
+  {
+   "day": 9,
+   "base": "plzen",
+   "title": "Plzeň: birthplace of pilsner",
+   "drive": null,
+   "items": [
+    "Pilsner Urquell cellars tour with unfiltered tasting",
+    "Na Parkánu for the freshest tank Pilsner",
+    "Purkmistr brewery hotel, Pivovar Raven for Czech craft"
+   ]
+  },
+  {
+   "day": 10,
+   "base": "kout",
+   "title": "Plzeň to the Bohemian forest",
+   "drive": "plzen->kout",
+   "items": [
+    "62 km / 1 h 06",
+    "Pivovar Kout na Šumavě: the cult 12° lager",
+    "Afternoon walk in the Šumava foothills"
+   ]
+  },
+  {
+   "day": 11,
+   "base": "maxlrain",
+   "title": "Kout to Upper Bavaria",
+   "drive": "kout->maxlrain",
+   "items": [
+    "260 km / 3 h 11 via Regensburg (optional 1 h 32 detour)",
+    "Schlossbrauerei Maxlrain tour",
+    "Dinner in the Maxlrain Bierstube, sleep at the brewery"
+   ]
+  },
+  {
+   "day": 12,
+   "base": "andechs",
+   "title": "Maxlrain to the Holy Mountain",
+   "drive": "maxlrain->andechs",
+   "items": [
+    "89 km / 1 h 25",
+    "Kloster Andechs: Doppelbock Dunkel above the Ammersee",
+    "Sleep in Herrsching by the lake"
+   ]
+  },
+  {
+   "day": 13,
+   "base": "munich",
+   "title": "Andechs to Munich",
+   "drive": "andechs->munich",
+   "items": [
+    "45 km / 45 min",
+    "Augustiner-Keller: Edelstoff from the wooden barrel",
+    "Schneider Bräuhaus for Aventinus"
+   ]
+  },
+  {
+   "day": 14,
+   "base": "munich",
+   "title": "Munich",
+   "drive": null,
+   "items": [
+    "Giesinger Bräu Erhellung",
+    "ORCA Brau taproom for NEIPAs",
+    "Hofbräuhaus once for the room",
+    "Tilmans Biere or Paulaner Nockherberg to finish"
+   ]
+  },
+  {
+   "day": 15,
+   "base": "fra",
+   "title": "Munich to Frankfurt, fly home",
+   "drive": "munich->fra",
+   "items": [
+    "~4 h straight up the A3 — leave after breakfast",
+    "Return the car at FRA",
+    "Lunch at the airport before security"
+   ]
+  }
+ ],
+ "legs": [
+  {
+   "from": "fra",
+   "to": "bruges",
+   "day": 1,
+   "km": 492.6,
+   "minutes": 315
+  },
+  {
+   "from": "bruges",
+   "to": "ghent",
+   "day": 3,
+   "km": 49.2,
+   "minutes": 44
+  },
+  {
+   "from": "ghent",
+   "to": "cologne",
+   "day": 4,
+   "km": 265.2,
+   "minutes": 186
+  },
+  {
+   "from": "cologne",
+   "to": "bamberg",
+   "day": 5,
+   "km": 387.2,
+   "minutes": 241
+  },
+  {
+   "from": "bamberg",
+   "to": "sokolov",
+   "day": 7,
+   "km": 160.2,
+   "minutes": 119
+  },
+  {
+   "from": "sokolov",
+   "to": "plzen",
+   "day": 8,
+   "km": 86.8,
+   "minutes": 88
+  },
+  {
+   "from": "plzen",
+   "to": "kout",
+   "day": 10,
+   "km": 61.6,
+   "minutes": 66
+  },
+  {
+   "from": "kout",
+   "to": "maxlrain",
+   "day": 11,
+   "km": 259.8,
+   "minutes": 191
+  },
+  {
+   "from": "maxlrain",
+   "to": "andechs",
+   "day": 12,
+   "km": 89.2,
+   "minutes": 85
+  },
+  {
+   "from": "andechs",
+   "to": "munich",
+   "day": 13,
+   "km": 44.5,
+   "minutes": 45
+  },
+  {
+   "from": "munich",
+   "to": "fra",
+   "day": 15,
+   "km": 402.0,
+   "minutes": 244
+  }
+ ],
+ "matrix": {
+  "nodes": [
+   "fra",
+   "bruges",
+   "ghent",
+   "cologne",
+   "bamberg",
+   "sokolov",
+   "plzen",
+   "kout",
+   "maxlrain",
+   "andechs",
+   "munich"
+  ],
+  "pairs": {
+   "fra|bruges": [
+    492.6,
+    315
+   ],
+   "fra|ghent": [
+    453.2,
+    294
+   ],
+   "fra|cologne": [
+    181.1,
+    125
+   ],
+   "fra|bamberg": [
+    212.9,
+    144
+   ],
+   "fra|sokolov": [
+    375.3,
+    247
+   ],
+   "fra|plzen": [
+    425.3,
+    253
+   ],
+   "fra|kout": [
+    394.4,
+    261
+   ],
+   "fra|maxlrain": [
+    441.3,
+    270
+   ],
+   "fra|andechs": [
+    439.3,
+    267
+   ],
+   "fra|munich": [
+    402.0,
+    244
+   ],
+   "bruges|ghent": [
+    49.2,
+    44
+   ],
+   "bruges|cologne": [
+    296.2,
+    211
+   ],
+   "bruges|bamberg": [
+    681.5,
+    437
+   ],
+   "bruges|sokolov": [
+    843.9,
+    541
+   ],
+   "bruges|plzen": [
+    893.9,
+    546
+   ],
+   "bruges|kout": [
+    863.0,
+    554
+   ],
+   "bruges|maxlrain": [
+    909.9,
+    563
+   ],
+   "bruges|andechs": [
+    868.7,
+    550
+   ],
+   "bruges|munich": [
+    870.6,
+    537
+   ],
+   "ghent|cologne": [
+    265.2,
+    186
+   ],
+   "ghent|bamberg": [
+    650.5,
+    411
+   ],
+   "ghent|sokolov": [
+    812.8,
+    515
+   ],
+   "ghent|plzen": [
+    862.8,
+    521
+   ],
+   "ghent|kout": [
+    832.0,
+    528
+   ],
+   "ghent|maxlrain": [
+    878.8,
+    537
+   ],
+   "ghent|andechs": [
+    837.6,
+    525
+   ],
+   "ghent|munich": [
+    839.6,
+    511
+   ],
+   "cologne|bamberg": [
+    387.2,
+    241
+   ],
+   "cologne|sokolov": [
+    549.6,
+    345
+   ],
+   "cologne|plzen": [
+    599.6,
+    350
+   ],
+   "cologne|kout": [
+    568.7,
+    358
+   ],
+   "cologne|maxlrain": [
+    615.6,
+    367
+   ],
+   "cologne|andechs": [
+    613.6,
+    364
+   ],
+   "cologne|munich": [
+    576.3,
+    341
+   ],
+   "bamberg|sokolov": [
+    160.2,
+    119
+   ],
+   "bamberg|plzen": [
+    255.3,
+    161
+   ],
+   "bamberg|kout": [
+    224.4,
+    168
+   ],
+   "bamberg|maxlrain": [
+    271.3,
+    177
+   ],
+   "bamberg|andechs": [
+    269.3,
+    174
+   ],
+   "bamberg|munich": [
+    232.0,
+    151
+   ],
+   "sokolov|plzen": [
+    86.8,
+    88
+   ],
+   "sokolov|kout": [
+    111.7,
+    111
+   ],
+   "sokolov|maxlrain": [
+    322.0,
+    212
+   ],
+   "sokolov|andechs": [
+    320.0,
+    209
+   ],
+   "sokolov|munich": [
+    282.7,
+    186
+   ],
+   "plzen|kout": [
+    61.6,
+    66
+   ],
+   "plzen|maxlrain": [
+    328.4,
+    210
+   ],
+   "plzen|andechs": [
+    326.4,
+    207
+   ],
+   "plzen|munich": [
+    289.1,
+    184
+   ],
+   "kout|maxlrain": [
+    259.8,
+    191
+   ],
+   "kout|andechs": [
+    257.8,
+    187
+   ],
+   "kout|munich": [
+    220.5,
+    165
+   ],
+   "maxlrain|andechs": [
+    89.2,
+    85
+   ],
+   "maxlrain|munich": [
+    49.7,
+    50
+   ],
+   "andechs|munich": [
+    44.5,
+    45
+   ]
+  }
+ },
+ "side_legs": [
+  {
+   "from": "bruges",
+   "to": "Westvleteren (In de Vrede)",
+   "km": 72,
+   "minutes": 66
+  },
+  {
+   "from": "bruges",
+   "to": "Roeselare (Rodenbach)",
+   "km": 38,
+   "minutes": 35
+  },
+  {
+   "from": "ghent",
+   "to": "Antwerp",
+   "km": 61,
+   "minutes": 51
+  },
+  {
+   "from": "bamberg",
+   "to": "Forchheim",
+   "km": 28,
+   "minutes": 28
+  },
+  {
+   "from": "sokolov",
+   "to": "Loket",
+   "km": 12,
+   "minutes": 12
+  },
+  {
+   "from": "sokolov",
+   "to": "Karlovy Vary",
+   "km": 20,
+   "minutes": 17
+  },
+  {
+   "from": "plzen",
+   "to": "Žatec (hop capital)",
+   "km": 86,
+   "minutes": 89
+  },
+  {
+   "from": "plzen",
+   "to": "Chodová Planá (Chodovar beer spa)",
+   "km": 67,
+   "minutes": 52
+  },
+  {
+   "from": "kout",
+   "to": "Regensburg",
+   "km": 102,
+   "minutes": 92
+  },
+  {
+   "from": "maxlrain",
+   "to": "Wendelstein",
+   "km": 24,
+   "minutes": 20
+  },
+  {
+   "from": "andechs",
+   "to": "Herrsching (Ammersee)",
+   "km": 5,
+   "minutes": 8
+  },
+  {
+   "from": "munich",
+   "to": "Freising (Weihenstephan)",
+   "km": 41,
+   "minutes": 39
+  },
+  {
+   "from": "bamberg",
+   "to": "Aufseß (four-brewery loop)",
+   "km": 29,
+   "minutes": 34
+  },
+  {
+   "from": "cologne",
+   "to": "Düsseldorf (Altbier houses)",
+   "km": 39.0,
+   "minutes": 34
+  },
+  {
+   "from": "cologne",
+   "to": "Bonn (Beethoven house, Rhine)",
+   "km": 30.9,
+   "minutes": 31
+  },
+  {
+   "from": "bamberg",
+   "to": "Nuremberg (Rotbier day trip)",
+   "km": 60.7,
+   "minutes": 54
+  }
+ ],
+ "venues": {
+  "Bruges": [
+   {
+    "name": "De Halve Maan",
+    "note": "Only active brewery in the historic centre; Brugse Zot, Straffe Hendrik, 3 km beer pipeline, XL rooftop tour."
+   },
+   {
+    "name": "De Garre",
+    "note": "Hidden alley café, house tripel at 11%, maximum three per person."
+   },
+   {
+    "name": "'t Brugs Beertje",
+    "note": "300+ bottles, the classic brown bar of Bruges."
+   },
+   {
+    "name": "Café Vlissinghe",
+    "note": "Oldest pub in Bruges (1515), bocce court in the garden."
+   },
+   {
+    "name": "Le Trappiste",
+    "note": "Vaulted cellar bar with a full Trappist list."
+   },
+   {
+    "name": "Bourgogne des Flandres",
+    "note": "Brewery-café on the canal, Flemish red house beer."
+   }
+  ],
+  "Ghent": [
+   {
+    "name": "Gruut Stadsbrouwerij",
+    "note": "City brewery using a medieval herb-and-spice mix instead of hops: Blond, Amber, Brown, White, Inferno."
+   },
+   {
+    "name": "Dok Brewing Company",
+    "note": "Dok-Noord 4B, 30 taps in a converted metal workshop; Pils 13 is the flagship."
+   },
+   {
+    "name": "Stroom Brouwers",
+    "note": "Belgian-American duo bridging Belgian tradition and US craft; Forelstraat taproom."
+   },
+   {
+    "name": "De Dulle Griet",
+    "note": "Vrijdagmarkt 50, 500 beers, the shoe-in-the-basket ritual for the house Max."
+   },
+   {
+    "name": "Het Waterhuis aan de Bierkant",
+    "note": "Groentenmarkt 9, around 170 beers, canal terrace; house beers Gandavum and Klokke Roeland."
+   },
+   {
+    "name": "De Hopduvel",
+    "note": "Beer shop in Dok-Noord, the best take-home selection in the city."
+   }
+  ],
+  "Bamberg": [
+   {
+    "name": "Schlenkerla",
+    "note": "Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar."
+   },
+   {
+    "name": "Spezial",
+    "note": "The locals' rauchbier — subtler smoke than Schlenkerla."
+   },
+   {
+    "name": "Mahr's Bräu",
+    "note": "The legendary 'aU' Ungespundetes, naturally carbonated and unfiltered."
+   },
+   {
+    "name": "Fässla",
+    "note": "Dwarf logo, Zwergla dark lager, brewery tap opposite Spezial."
+   },
+   {
+    "name": "Greifenklau",
+    "note": "Beer garden with the best view over the city."
+   },
+   {
+    "name": "Klosterbräu",
+    "note": "Oldest brewery in Bamberg (1533), Schwärzla."
+   },
+   {
+    "name": "Keesmann",
+    "note": "Cult Herren Pils, the counterpoint to all the smoke."
+   }
+  ],
+  "Sokolov": [
+   {
+    "name": "Pivovar Permon",
+    "note": "Komenského 77: mining-country craft brewery, Permon IPA 15°, dark specials, brewery restaurant on site."
+   }
+  ],
+  "Plzeň": [
+   {
+    "name": "Pilsner Urquell",
+    "note": "Where pilsner was born in 1842; cellars tour with unfiltered, unpasteurised tank beer."
+   },
+   {
+    "name": "U Salzmannů",
+    "note": "Pražská 8, a pub since 1637 and the best-poured tank Urquell in town."
+   },
+   {
+    "name": "Na Parkánu",
+    "note": "Attached to the brewery, freshest tank Pilsner you will get."
+   },
+   {
+    "name": "Purkmistr",
+    "note": "Brewery hotel with its own beer spa and a solid dark lager."
+   },
+   {
+    "name": "Pivovar Raven",
+    "note": "Czech craft pioneer: IPAs, stouts and sours outside the pilsner tradition."
+   }
+  ],
+  "Kout na Šumavě": [
+   {
+    "name": "Pivovar Kout na Šumavě",
+    "note": "Revived in 2006 from a defunct 19th-century brewery; the 12° pale lager is a cult beer among Czech beer nerds."
+   }
+  ],
+  "Maxlrain": [
+   {
+    "name": "Schlossbrauerei Maxlrain",
+    "note": "Family-owned castle brewery in Tuntenhausen; Helles, Dunkel and Weißbier served in the Bierstube next door."
+   }
+  ],
+  "Andechs": [
+   {
+    "name": "Kloster Andechs",
+    "note": "Benedictine monastery brewery since 1455; Doppelbock Dunkel at 7.1% with a view over the Ammersee."
+   },
+   {
+    "name": "Andechser Hof, Herrsching",
+    "note": "Inn and restaurant by the lake, pours the full Andechs range; the practical base for the night."
+   }
+  ],
+  "Munich": [
+   {
+    "name": "Augustiner-Keller",
+    "note": "Munich's oldest brewery and the locals' choice; Edelstoff from wooden barrels under the chestnuts."
+   },
+   {
+    "name": "Schneider Bräuhaus",
+    "note": "The original wheat-beer house; Aventinus is the benchmark Weizenbock."
+   },
+   {
+    "name": "Hofbräuhaus",
+    "note": "Brewing since 1589 — go once for the room, not for the quiet."
+   },
+   {
+    "name": "Giesinger Bräu",
+    "note": "Garage-to-glory Munich craft brewery; Erhellung unfiltered Helles."
+   },
+   {
+    "name": "ORCA Brau",
+    "note": "Tiny nano-brewery making juicy NEIPAs that rival New England."
+   },
+   {
+    "name": "Tilmans Biere",
+    "note": "Small, refined Munich brewery for a quieter final round."
+   },
+   {
+    "name": "Paulaner Nockherberg",
+    "note": "Historic brewery site above the Isar, home of the Starkbierfest."
+   }
+  ],
+  "Cologne": [
+   {
+    "name": "Früh am Dom",
+    "note": "The classic Kölsch hall beside the cathedral; brewed on site since 1904 and poured by Köbes in 0.2 l Stangen."
+   },
+   {
+    "name": "Brauerei zur Malzmühle",
+    "note": "Heumarkt 6, Mühlen Kölsch since 1858 — one of the few houses still brewing its own Kölsch in the old town."
+   },
+   {
+    "name": "Brauhaus Päffgen",
+    "note": "Friesenstraße 64-66: the brewery tap, Kölsch straight from the wooden barrel, no music, no excuses."
+   },
+   {
+    "name": "Brauhaus Sion",
+    "note": "Unter Taschenmacher 5-7, a Kölsch house with roots in the 14th century, right behind the Alter Markt."
+   },
+   {
+    "name": "Peters Brauhaus",
+    "note": "Mühlengasse 1, historic panelled rooms near the river, Peters Kölsch on tap."
+   },
+   {
+    "name": "Lommerzheim",
+    "note": "Siegesstraße 18 in Deutz: cult pub, Kölsch, Schweinshaxe and a queue of locals by 18:00."
+   },
+   {
+    "name": "Braustelle",
+    "note": "Venloer Straße 386 in Ehrenfeld — Cologne's craft counterpoint, own beers brewed behind the bar."
+   }
+  ]
+ },
+ "styles": [
+  {
+   "region": "Belgium",
+   "styles": [
+    "Flemish red",
+    "lambic / gueuze",
+    "saison",
+    "tripel",
+    "dubbel",
+    "witbier",
+    "gruut (herb beer)"
+   ]
+  },
+  {
+   "region": "Rhineland",
+   "styles": [
+    "Kölsch",
+    "Altbier (Düsseldorf, 39 km)"
+   ]
+  },
+  {
+   "region": "Franconia",
+   "styles": [
+    "Rauchbier",
+    "Ungespundetes / Kellerbier",
+    "Helles",
+    "Pils",
+    "Bock"
+   ]
+  },
+  {
+   "region": "Bohemia",
+   "styles": [
+    "světlý ležák 12°",
+    "tmavé (dark lager)",
+    "tank beer",
+    "Czech IPA"
+   ]
+  },
+  {
+   "region": "Bavaria",
+   "styles": [
+    "Helles",
+    "Weißbier",
+    "Doppelbock",
+    "Festbier"
+   ]
+  }
+ ]
+}
