@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render the 2027 Bier Reisen route & itinerary poster (4800 x 3120 px at 240 dpi).
 
-Supports --variant v1|v2 (default: v1). Reads authoritative data for the chosen
+Supports --variant v1|v2|v3 (default: v1). Reads authoritative data for the chosen
 variant and basemap from assets/ne_50m_countries.geojson, writing the poster PNG
 deterministically with zero stderr output.
 """
@@ -139,6 +139,76 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
         "totals_line": (
             "15 days · 14 nights · 10 bases · 11 driving legs · 2,298.3 km (2,298 km) · "
             "27 h 04 driving (1,624 min) · Germany, Belgium & Czechia · Best season May–Sep"
+        ),
+    },
+    "v3": {
+        "data_path": DIR_2027 / "v3" / "data" / "route-2027-v3.json",
+        "out_png": DIR_2027 / "v3" / "assets" / "2027-route-map-v3.png",
+        "eyebrow": "BIERREISEN   ·   2027 ROUTE & ITINERARY POSTER   ·   WÜRZBURG BREWERY NIGHT",
+        "title": "BIER REISEN 2027",
+        "version_tag": "V3",
+        "headline_stats": "16 days  ·  15 nights  ·  11 bases  ·  2,307.5 km  ·  27 h 08  ·  3 countries",
+        "route_line_1": (
+            "Frankfurt Airport → Bruges (2N) → Ghent (1N) → Cologne (1N) → "
+            "Würzburg (1N, new) → Bamberg (2N)"
+        ),
+        "route_line_2": (
+            "→ Pivovar Permon, Sokolov (1N) → Plzeň (2N) → Kout na Šumavě (1N) → "
+            "Maxlrain (1N) → Andechs/Herrsching (1N) → Munich (2N) → Frankfurt Airport"
+        ),
+        "meta_line": (
+            "Changed vs v2: Würzburg night added between Cologne & Bamberg — no middle leg exceeds 3 h 15  ·  "
+            "2027/v3/data/route-2027-v3.json"
+        ),
+        "leg_bends": {
+            ("fra", "bruges"): 0.08,
+            ("bruges", "ghent"): 0.10,
+            ("ghent", "cologne"): 0.12,
+            ("cologne", "wurzburg"): 0.16,
+            ("wurzburg", "bamberg"): 0.16,
+            ("bamberg", "sokolov"): 0.06,
+            ("sokolov", "plzen"): 0.08,
+            ("plzen", "kout"): -0.08,
+            ("kout", "maxlrain"): -0.05,
+            ("maxlrain", "andechs"): -0.10,
+            ("andechs", "munich"): 0.12,
+            ("munich", "fra"): 0.07,
+        },
+        "preferred_angles": {
+            "fra": [-155, -140, 180, -125, -170],
+            "bruges": [110, 90, 135, 160, 70, 180],
+            "ghent": [-130, -110, -150, -90, 180],
+            "cologne": [95, 115, 75, 135, 55, 180],
+            "wurzburg": [-95, -115, -75, -130, 105],
+            "bamberg": [65, 45, -60, 85, -80],
+            "sokolov": [85, 105, 65, 125, 45],
+            "plzen": [10, 0, 28, -15, 45],
+            "kout": [-10, 0, -28, 15, -45],
+            "maxlrain": [-25, -45, -10, 0, -70],
+            "andechs": [180, -155, -135, 160, -115],
+            "munich": [25, 42, 10, 55, 0],
+        },
+        "long_days": (),
+        "new_days": (5, 6),
+        "ledger_day_tags": {5: "[NEW IN V3]", 6: "[NEW IN V3]"},
+        "map_callout": {
+            "x0": 0.590,
+            "y0": 0.820,
+            "w": 0.390,
+            "h": 0.156,
+            "heading": "WHY WÜRZBURG (STOP #5 · 1N)  —  GHENT → BAMBERG BREAKER",
+            "line1": "Splits Ghent → Bamberg (old 6h51) into 3 short days: 3:06 · 3:02 · 1:03",
+            "line2": "Wine-capital pivot to Franconian lager: 1643 Hofbräu, Goldene Gans & Ochsenfurt",
+            "line3": "Every middle leg on the 16-day loop stays under 3 h 15 (max 3:11).",
+        },
+        "must_drink": (
+            "Flemish red (Bruges) · Gruut (Ghent) · Kölsch (Cologne) · Hofbräu Pils, Schwarzbier & Goldene Gans (Würzburg) · "
+            "Rauchbier & aU (Bamberg) · Permon IPA 15° (Sokolov) · Tank Pilsner (Plzeň) · "
+            "Kout 12° · Maxlrainer Helles · Doppelbock (Andechs) · Holzfass Edelstoff (Munich)"
+        ),
+        "totals_line": (
+            "16 days · 15 nights · 11 bases · 12 driving legs · 2,307.5 km · "
+            "27 h 08 driving (1,628 min) · Every middle leg under 3 h 15 · Germany, Belgium & Czechia"
         ),
     },
 }
@@ -374,7 +444,7 @@ def draw_scale_bar(ax, proj: Tuple[float, float, float, float]) -> Tuple[float, 
     return (box_x0, box_y0, box_x1, box_y1)
 
 
-def draw_map_legend(ax, cmap: LinearSegmentedColormap) -> Tuple[float, float, float, float]:
+def draw_map_legend(ax, cmap: LinearSegmentedColormap, n_stops: int = 11) -> Tuple[float, float, float, float]:
     w, h = 0.285, 0.165
     x0, y0 = 0.020, 0.022
     ax.add_patch(FancyBboxPatch(
@@ -398,7 +468,7 @@ def draw_map_legend(ax, cmap: LinearSegmentedColormap) -> Tuple[float, float, fl
         ))
     ax.text(x0 + 0.014, bar_y, "S1", transform=ax.transAxes, fontsize=6.5, fontweight="bold",
             color=to_hex(cmap(0.0)), ha="left", va="center", zorder=9.0)
-    ax.text(x0 + w - 0.014, bar_y, "S11", transform=ax.transAxes, fontsize=6.5, fontweight="bold",
+    ax.text(x0 + w - 0.014, bar_y, f"S{n_stops}", transform=ax.transAxes, fontsize=6.5, fontweight="bold",
             color=to_hex(cmap(1.0)), ha="right", va="center", zorder=9.0)
 
     r1_y = bar_y - 0.031
@@ -406,7 +476,7 @@ def draw_map_legend(ax, cmap: LinearSegmentedColormap) -> Tuple[float, float, fl
                edgecolors=BG, linewidths=1.3, zorder=9.1)
     ax.text(x0 + 0.026, r1_y, "4", transform=ax.transAxes, fontsize=6.0, fontweight="bold",
             color=BG, ha="center", va="center", zorder=9.2)
-    ax.text(x0 + 0.046, r1_y, "Visit-order stop badge (1–11)", transform=ax.transAxes,
+    ax.text(x0 + 0.046, r1_y, f"Visit-order stop badge (1–{n_stops})", transform=ax.transAxes,
             fontsize=6.5, color=TEXT, ha="left", va="center", zorder=9.0)
 
     r2_y = r1_y - 0.030
@@ -433,6 +503,26 @@ def draw_map_legend(ax, cmap: LinearSegmentedColormap) -> Tuple[float, float, fl
     ax.text(x0 + 0.116, r3_y, "OSRM leg distance & drive time", transform=ax.transAxes,
             fontsize=6.4, color=MUTED, ha="left", va="center", zorder=9.0)
 
+    return (x0, y0, x0 + w, y0 + h)
+
+
+def draw_map_callout(ax, ccfg: Dict[str, Any]) -> Tuple[float, float, float, float]:
+    x0, y0, w, h = float(ccfg["x0"]), float(ccfg["y0"]), float(ccfg["w"]), float(ccfg["h"])
+    ax.add_patch(FancyBboxPatch(
+        (x0, y0), w, h,
+        boxstyle="round,pad=0,rounding_size=0.012",
+        transform=ax.transAxes,
+        facecolor=BG, edgecolor=GOLD, linewidth=0.95, alpha=0.94, zorder=8.8,
+    ))
+    top_y = y0 + h - 0.026
+    ax.text(x0 + 0.018, top_y, ccfg["heading"], transform=ax.transAxes,
+            fontsize=7.3, fontweight="bold", color=GOLD, ha="left", va="center", zorder=9.0)
+    ax.text(x0 + 0.018, top_y - 0.038, ccfg["line1"], transform=ax.transAxes,
+            fontsize=6.9, fontweight="bold", color=TEXT, ha="left", va="center", zorder=9.0)
+    ax.text(x0 + 0.018, top_y - 0.072, ccfg["line2"], transform=ax.transAxes,
+            fontsize=6.7, color=LEG_TEXT, ha="left", va="center", zorder=9.0)
+    ax.text(x0 + 0.018, top_y - 0.105, ccfg["line3"], transform=ax.transAxes,
+            fontsize=6.7, fontweight="bold", color="#7fe0c8", ha="left", va="center", zorder=9.0)
     return (x0, y0, x0 + w, y0 + h)
 
 
@@ -470,7 +560,7 @@ def fit_text_px(
             trial = cand if " · " in cand else cand + "…"
         else:
             cand = cand.rsplit(" ", 1)[0]
-            trial = cand.rstrip(" ,;·-") + "…"
+            trial = cand.rstrip(" ,;:·-") + "…"
         probe.set_text(trial)
         if probe.get_window_extent(renderer=renderer).width <= max_px:
             probe.remove()
@@ -583,15 +673,17 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
     lon_win = (min(lons) - 6.0, max(lons) + 6.0)
     lat_win = (min(lats) - 4.5, max(lats) + 4.5)
 
-    leg_box = draw_map_legend(ax_map, cmap)
+    leg_box = draw_map_legend(ax_map, cmap, n_stops=n_stops)
     sc_box = draw_scale_bar(ax_map, proj)
     forbidden_axes = [leg_box, sc_box]
+    if cfg.get("map_callout"):
+        forbidden_axes.append(draw_map_callout(ax_map, cfg["map_callout"]))
 
     tick_texts = draw_graticule(ax_map, proj, lon_win, lat_win, xlim, ylim, skip_axes_boxes=forbidden_axes)
     draw_land(ax_map, world, proj, lon_win, lat_win)
 
     # Subtle country watermarks in open areas
-    bavaria_pos = (10.95, 48.95) if variant == "v2" else (12.15, 48.72)
+    bavaria_pos = (10.95, 48.95) if variant in ("v2", "v3") else (12.15, 48.72)
     watermarks = [
         ("BELGIUM", 4.65, 50.45),
         ("NETHERLANDS", 5.55, 51.95),
@@ -756,6 +848,7 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
         "bruges": ("Bruges", "2N"),
         "ghent": ("Ghent", "1N"),
         "cologne": ("Cologne", "1N"),
+        "wurzburg": ("Würzburg", "1N"),
         "bamberg": ("Bamberg", "2N"),
         "sokolov": ("Permon · Sokolov", "1N"),
         "plzen": ("Plzeň", "2N"),
@@ -985,7 +1078,7 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
         boxstyle="round,pad=0,rounding_size=0.016",
         facecolor=PANEL, edgecolor=BORDER, linewidth=1.0, zorder=0,
     ))
-    ax_led.text(0.036, 0.966, "15-DAY ITINERARY LEDGER", fontsize=10.5, fontweight="bold",
+    ax_led.text(0.036, 0.966, f"{n_days}-DAY ITINERARY LEDGER", fontsize=10.5, fontweight="bold",
                 color=GOLD, ha="left", va="center", zorder=2)
     ax_led.text(0.964, 0.966, "DAY · BASE · DRIVE / IN PLACE",
                 fontsize=8.0, fontweight="bold", color=MUTED, ha="right", va="center", zorder=2)
@@ -997,6 +1090,7 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
         "bruges": "Bruges",
         "ghent": "Ghent",
         "cologne": "Cologne",
+        "wurzburg": "Würzburg",
         "bamberg": "Bamberg",
         "sokolov": "Sokolov (Permon)",
         "plzen": "Plzeň",
@@ -1010,10 +1104,14 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
     top_band, bot_band = 0.926, 0.014
     row_h = (top_band - bot_band) / len(days_list)
     led_win = ax_led.get_window_extent(renderer=renderer)
-    max_text_px = float(led_win.width) * 0.820
+    max_text_px = float(led_win.width) * (0.838 if variant == "v3" else 0.820)
 
     long_days = cfg["long_days"]
+    new_days = cfg.get("new_days", ())
     ledger_day_tags: Dict[int, str] = cfg["ledger_day_tags"]
+    top_fs = 8.9 if variant == "v3" else 9.2
+    sub_fs = 7.6 if variant == "v3" else 7.9
+    chip_fs = 8.0 if variant == "v3" else 8.2
 
     for idx_d, d_entry in enumerate(days_list):
         dnum = int(d_entry["day"])
@@ -1023,12 +1121,19 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
         y_low = yc - 0.45 * row_h
         rcol = day_color(cmap, dnum, n_days)
         is_long = dnum in long_days
+        is_new = dnum in new_days
 
         if is_long:
             ax_led.add_patch(FancyBboxPatch(
                 (0.020, y_low), 0.960, 0.90 * row_h,
                 boxstyle="round,pad=0,rounding_size=0.008",
                 facecolor="#2b1c28", edgecolor="#e94560", linewidth=0.65, alpha=0.80, zorder=1,
+            ))
+        elif is_new:
+            ax_led.add_patch(FancyBboxPatch(
+                (0.020, y_low), 0.960, 0.90 * row_h,
+                boxstyle="round,pad=0,rounding_size=0.008",
+                facecolor="#132a33", edgecolor="#38d399", linewidth=0.65, alpha=0.82, zorder=1,
             ))
         elif idx_d % 2 == 0:
             ax_led.add_patch(FancyBboxPatch(
@@ -1045,7 +1150,7 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
         ))
         ax_led.text(
             0.071, yc, f"D{dnum}",
-            fontsize=8.2, fontweight="bold", color=BG,
+            fontsize=chip_fs, fontweight="bold", color=BG,
             ha="center", va="center", zorder=3,
         )
 
@@ -1053,7 +1158,7 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
         base_lbl = short_stop_lbl[base_id]
         nights_tag = f" ({nights_n}N)" if nights_n > 0 else " (fly home)"
         top_str = f"{base_lbl}{nights_tag}  ·  {d_entry['title']}"
-        top_fitted = fit_text_px(fig, ax_led, top_str, max_text_px, 9.2, fontweight="bold")
+        top_fitted = fit_text_px(fig, ax_led, top_str, max_text_px, top_fs, fontweight="bold")
 
         if dnum in leg_by_day:
             lg = leg_by_day[dnum]
@@ -1063,23 +1168,23 @@ def render(variant: str = "v1", out_png: Optional[pathlib.Path] = None) -> pathl
             # Add concise highlight from non-distance items
             extra_items = [it for it in d_entry["items"] if " km / " not in it]
             sub_raw = f"{drv_prefix}  ·  {extra_items[0]}" if extra_items else drv_prefix
-            sub_col = LEG_TEXT if is_long else MUTED
+            sub_col = LEG_TEXT if is_long else ("#8ef0d4" if is_new else MUTED)
         else:
             sub_raw = f"In place  ·  {' · '.join(d_entry['items'][:2])}"
             sub_col = "#7fe0c8"
 
         sub_fitted = fit_text_px(
-            fig, ax_led, sub_raw, max_text_px, 7.9, fontweight="normal", word_trim=(variant != "v1")
+            fig, ax_led, sub_raw, max_text_px, sub_fs, fontweight="normal", word_trim=(variant != "v1")
         )
 
         ax_led.text(
             0.126, yc + 0.19 * row_h, top_fitted,
-            fontsize=9.2, fontweight="bold", color=TEXT,
+            fontsize=top_fs, fontweight="bold", color=TEXT,
             ha="left", va="center", zorder=3,
         )
         ax_led.text(
             0.126, yc - 0.21 * row_h, sub_fitted,
-            fontsize=7.9, color=sub_col,
+            fontsize=sub_fs, color=sub_col,
             ha="left", va="center", zorder=3,
         )
 
@@ -1116,7 +1221,7 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Render the 2027 Bier Reisen route poster.")
     parser.add_argument(
         "--variant",
-        choices=("v1", "v2"),
+        choices=("v1", "v2", "v3"),
         default="v1",
         help="Planner variant to render (default: v1).",
     )

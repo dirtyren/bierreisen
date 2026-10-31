@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build 2027 Bier Reisen HTML planner (--variant v1|v2, default v1)."""
+"""Build 2027 Bier Reisen HTML planner (--variant v1|v2|v3, default v1)."""
 from __future__ import annotations
 
 import argparse
@@ -48,6 +48,7 @@ CITY_FAMOUS_BEER: Dict[str, str] = {
     "Bruges": "Flemish red",
     "Ghent": "gruut",
     "Cologne": "Kölsch",
+    "Würzburg": "Hofbräu Pils & Schwarzbier",
     "Bamberg": "Rauchbier",
     "Sokolov": "Permon IPA 15°",
     "Plzeň": "tank Pilsner",
@@ -79,6 +80,12 @@ VENUE_ORDER_LINE: Dict[Tuple[str, str], str] = {
     ("Cologne", "Peters Brauhaus"): "Fresh Peters Kölsch on tap in the historic panelled rooms",
     ("Cologne", "Lommerzheim"): "Fresh Kölsch and Schweinshaxe at the cult Deutz pub",
     ("Cologne", "Braustelle"): "House Ehrenfeld craft beers brewed behind the bar (city signature: Kölsch)",
+    ("Würzburg", "Würzburger Hofbräukeller"): "Würzburger Hofbräu Pils, Schwarzbier, or Hefeweißbier — freshly tapped at the 1643 Keller",
+    ("Würzburg", "Goldene Gans"): "Unfiltered house-brewed Goldene Gans beer poured exclusively in the garden under the Alte Mainbrücke",
+    ("Würzburg", "Herbipolis (SMaSH Brewing Project)"): "Single-malt, single-hop (SMaSH) craft pour showcasing one malt and hop varietal",
+    ("Würzburg", "Maischerei Mayr & Müller"): "Small-batch Würzburg experimental or classic Franconian tap pour",
+    ("Würzburg", "Kauzen-Bräu, Ochsenfurt"): "Traditional Franconian country lager or Pils at the Ochsenfurt old-town brewery tap (20 km south)",
+    ("Würzburg", "Privatbrauerei Oechsner, Ochsenfurt"): "Family-brewed unfiltered Franconian Kellerbier or lager in Ochsenfurt",
     ("Bamberg", "Schlenkerla"): "Rauchbier — beechwood-smoked malt poured straight from oak barrels",
     ("Bamberg", "Spezial"): "Rauchbier — the locals' subtler beechwood smoke",
     ("Bamberg", "Mahr's Bräu"): "'aU' Ungespundetes unfiltered cellar lager (city signature: Rauchbier)",
@@ -114,6 +121,7 @@ CITY_TO_STOP_ID: Dict[str, str] = {
     "Bruges": "bruges",
     "Ghent": "ghent",
     "Cologne": "cologne",
+    "Würzburg": "wurzburg",
     "Bamberg": "bamberg",
     "Sokolov": "sokolov",
     "Plzeň": "plzen",
@@ -129,6 +137,7 @@ SHORT_STOP_LABEL: Dict[str, str] = {
     "bruges": "Bruges",
     "ghent": "Ghent",
     "cologne": "Cologne",
+    "wurzburg": "Würzburg",
     "bamberg": "Bamberg",
     "sokolov": "Permon (Sokolov)",
     "plzen": "Plzeň",
@@ -220,6 +229,12 @@ STYLE_DETAILS: Dict[Tuple[str, str], Tuple[str, str, str, str]] = {
         "6.5 – 7.5%",
         "0.5 L glass or stoneware mug in late autumn/spring; pace carefully alongside hearty Franconian roast pork.",
     ),
+    ("Franconia", "Schwarzbier (Würzburg)"): (
+        "#1f1410",
+        "Lower Franconian deep-ebony bottom-fermented dark lager (anchored in Würzburg's brewing tradition alongside 1643 Hofbräu); smooth roasted cocoa-coffee malt with a crisp, dry herbal finish.",
+        "4.8 – 5.2%",
+        "0.5 L mug or Pokal in Würzburg's Main-side beer gardens and Keller — the first Franconian lager stop after Rhenish Kölsch.",
+    ),
     ("Bohemia", "světlý ležák 12°"): (
         "#eab308",
         "The classic 12° Plato Czech pale lager: triple-decoction mash, Moravian malt depth, spicy Žatec (Saaz) hop bitterness.",
@@ -288,13 +303,15 @@ STYLE_DETAILS: Dict[Tuple[str, str], Tuple[str, str, str, str]] = {
     ),
 }
 
-# One-line reasons for all side_legs across v1 and v2
+# One-line reasons for all side_legs across v1, v2, and v3
 SIDE_TRIP_NOTES: Dict[Tuple[str, str], str] = {
     ("bruges", "Westvleteren (In de Vrede)"): "Abbey café opposite Sint-Sixtus pouring Trappist Westvleteren 12, 8, and Blond on the terrace without needing a crate reservation.",
     ("bruges", "Roeselare (Rodenbach)"): "Cathedral-like foeder halls where Flemish red-brown ales age for years in towering oak vats.",
     ("ghent", "Antwerp"): "Flemish beer port home to De Koninck city brewery, historic brown bars, and legendary vintage-bottle café Kulminator.",
     ("cologne", "Düsseldorf (Altbier houses)"): "Classic Rhineland beer rival 39 km north: wooden-barrel Altbier halls in the Altstadt as the brisk, bitter foil to Cologne's Kölsch.",
     ("cologne", "Bonn (Beethoven house, Rhine)"): "Easy half-day run up the Rhine to Beethoven-Haus, riverfront promenades, and traditional Rhineland Brauhäuser.",
+    ("wurzburg", "Ochsenfurt (Kauzen-Bräu, Oechsner)"): "Twin Lower Franconian country breweries 20 minutes south on the Main — Kauzen-Bräu and family-run Privatbrauerei Oechsner — ideal as an evening hop or a quick detour en route to Bamberg.",
+    ("wurzburg", "Kloster Kreuzberg (Rhön)"): "Franciscan monastery brewery high in the Bavarian Rhön mountains (brewing since 1731), famed for dark monastic Klosterbier tapped straight from the barrel.",
     ("bamberg", "Aufseß (four-brewery loop)"): "Walkable Franconian Switzerland trail linking four village family breweries (Reichold, Rothenbach, Stadter, Kathi-Bräu).",
     ("bamberg", "Forchheim"): "Forested Kellerwald hillside lined with traditional rock-cut Franconian beer cellars under chestnut trees.",
     ("bamberg", "Nuremberg (Rotbier day trip)"): "Keep Nuremberg's copper-red Rotbier on the itinerary as an easy 54-min day trip from Bamberg (Altstadthof, Schanzenbräu, Tucher Mautkeller).",
@@ -671,6 +688,270 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
         "js_is_long_expr": "leg.day === 5",
         "map_legend_long_label": "Long Day (Day 5: Cologne → Bamberg)",
     },
+    "v3": {
+        "data_path": DIR_2027 / "v3" / "data" / "route-2027-v3.json",
+        "out_html": DIR_2027 / "v3" / "2027-bier-reisen-v3.html",
+        "page_title": "Bier Reisen 2027 — v3",
+        "extra_css": """
+.version-chip {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.44em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--gold);
+  padding: 0.14rem 0.52rem;
+  border-radius: 999px;
+  margin: 0 0.2rem;
+  transform: translateY(-0.12em);
+}
+.what-changed {
+  margin: 0.65rem auto 0;
+  max-width: 980px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.what-changed em {
+  color: var(--text);
+  font-style: normal;
+  font-weight: 600;
+}
+.what-changed a {
+  color: var(--success);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.what-changed a:hover {
+  color: var(--beer-light);
+}
+.new-badge {
+  background: rgba(78, 205, 196, 0.18);
+  border: 1px solid var(--success);
+  color: var(--success);
+  padding: 0.2rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.table-new-pill {
+  display: inline-block;
+  background: var(--success);
+  color: #0e1726;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.1rem 0.48rem;
+  border-radius: 4px;
+  margin-right: 0.3rem;
+}
+.why-callout {
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.12) 0%, rgba(78, 205, 196, 0.09) 100%);
+  border: 1px solid rgba(245, 166, 35, 0.48);
+  border-left: 5px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.2rem 1.45rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 22px rgba(5, 8, 20, 0.32);
+}
+.why-callout-eyebrow {
+  color: var(--gold);
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.42rem;
+}
+.why-callout p {
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  max-width: 98ch;
+}
+.region-subnote {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: -0.25rem 0 0.75rem;
+  max-width: 95ch;
+}
+.region-subnote strong {
+  color: var(--beer-light);
+}""",
+        "header_h1": '🍺 Bier Reisen 2027 <span class="version-chip">v3</span> 🏰',
+        "route_string_html": (
+            "Frankfurt Airport → Bruges (2N) → Ghent (1N) → Cologne (1N) → "
+            "<strong>Würzburg (1N, new)</strong> → Bamberg (2N) → Pivovar Permon, Sokolov (1N) → "
+            "Plzeň (2N) → Kout na Šumavě (1N) → Maxlrain Bierstube (1N) → "
+            "Andechs/Herrsching (1N) → Munich (2N) → Frankfurt Airport "
+            '<span class="muted-inline">(16 days / 15 nights)</span>'
+        ),
+        "headline_stats": "16 days · 15 nights · 11 bases · 2,307.5 km · 27 h 08 · 3 countries",
+        "what_changed_html": (
+            '\n  <p class="what-changed">Changed vs v2: '
+            '<em>Würzburg brewery night added between Cologne and Bamberg — pivoting from Rhenish ale into Franconian lager country and turning Ghent→Bamberg into three short days (3 h 06 · 3 h 02 · 1 h 03)</em> · '
+            '<a href="../v2/2027-bier-reisen-v2.html">← Back to v2 planner</a> · '
+            '<a href="../2027-bier-reisen.html">← Back to v1 planner</a></p>'
+        ),
+        "header_links_html": """    <a href="assets/2027-route-map-v3.png" target="_blank" rel="noopener">🗺️ Open 4800×3120 Route Poster v3 (PNG)</a>
+    <a href="data/route-2027-v3.json" target="_blank" rel="noopener">📄 Authoritative Route Data v3 (JSON)</a>
+    <a href="../v2/2027-bier-reisen-v2.html">↩️ Compare with v2 (15-Day Cologne Route)</a>
+    <a href="../2027-bier-reisen.html">↩️ Compare with v1 (15-Day Nuremberg Route)</a>""",
+        "poster_rel": "assets/2027-route-map-v3.png",
+        "poster_alt": "Bier Reisen 2027 v3 route map poster showing all 12 stops including Würzburg and Cologne, night chips, leg drive times, and 16-day ledger",
+        "data_rel": "data/route-2027-v3.json",
+        "day_region_map": {
+            1: "belgium", 2: "belgium", 3: "belgium",
+            4: "rhineland",
+            5: "franconia", 6: "franconia", 7: "franconia",
+            8: "bohemia", 9: "bohemia", 10: "bohemia", 11: "bohemia",
+            12: "bavaria", 13: "bavaria", 14: "bavaria", 15: "bavaria",
+        },
+        "long_days": (),
+        "day_badges": {
+            5: '<span class="new-badge">✨ NEW IN V3 · Würzburg Brewery Night (3 h 02)</span>',
+            6: '<span class="new-badge">✨ NEW IN V3 · Easy Hop to Bamberg (1 h 03)</span>',
+        },
+        "itinerary_intro": (
+            "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): "
+            "15 nights across 11 overnight bases in Belgium, Germany, and Czechia, with "
+            "12 driving legs (2,307.5 km / 27 h 08) and 4 car-free brewery crawl days. "
+            "Every leg except the opening push to Bruges (5 h 15) and the final Munich→FRA return (4 h 04) is now under 3 h 15."
+        ),
+        "itinerary_callout_html": """
+
+  <aside class="why-callout" aria-label="Why Würzburg">
+    <div class="why-callout-eyebrow">🍺 Why Würzburg — The Surprise Pivot Into Franconia</div>
+    <p>The obvious answer on this corridor is another big-city Kölsch or Altbier stop, yet <strong>Würzburg</strong> is the pivot from Belgian and Rhenish ale into Franconian lager country. Better known as a wine capital, it still runs a brewery founded in 1643 (<strong>Würzburger Hofbräu</strong>) alongside a brewpub pouring its own house beer right under the Alte Mainbrücke (<strong>Goldene Gans</strong>). Add two craft micros in town (<strong>Herbipolis / SMaSH</strong> and <strong>Maischerei Mayr &amp; Müller</strong>) plus two country breweries 20 minutes away in Ochsenfurt (<strong>Kauzen-Bräu</strong> and <strong>Oechsner</strong>), and one stop bridges two brewing worlds. One night there, and the 6 h 51 problem disappears entirely into three short days (3 h 06, 3 h 02, and 1 h 03).</p>
+  </aside>""",
+        "itinerary_filters_html": """    <button type="button" class="filter-btn active" onclick="filterDays('all', this)">All 16 Days</button>
+    <button type="button" class="filter-btn" onclick="filterDays('belgium', this)">🇧🇪 Belgium (Days 1–3)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('rhineland', this)">🇩🇪 Rhineland · Cologne (Day 4)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('franconia', this)">🇩🇪 Franconia · Würzburg &amp; Bamberg (Days 5–7)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('bohemia', this)">🇨🇿 Bohemia (Days 8–11)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('bavaria', this)">🇩🇪 Upper Bavaria &amp; Munich (Days 12–15)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('inplace', this)">🚶 Car-Free Days (4)</button>""",
+        "beer_guide_intro": (
+            "Five distinct European brewing cultures in one loop: Flanders wild &amp; herb ales, "
+            "Rhineland top-fermented Kölsch &amp; Düsseldorf Altbier, Lower &amp; Upper Franconian Schwarzbier, "
+            "smoked Rauchbier &amp; unbunged cellar lagers, Bohemian decoction tank pilsners, and Upper Bavarian wheat &amp; monastery bocks."
+        ),
+        "beer_region_notes": {
+            "Franconia": (
+                "<strong>Würzburg note (Stop #5):</strong> v3 enters Franconia on the Main at <strong>Würzburg</strong> — "
+                "a wine capital that still pours 1643 <strong>Würzburger Hofbräu</strong> Pils &amp; Schwarzbier, "
+                "house-brewed garden lager under the Alte Mainbrücke at <strong>Goldene Gans</strong>, craft pours at "
+                "<strong>Herbipolis (SMaSH)</strong> and <strong>Maischerei Mayr &amp; Müller</strong>, and traditional country lagers "
+                "20 minutes south in Ochsenfurt (<strong>Kauzen-Bräu</strong>, <strong>Oechsner</strong>) before Bamberg's Rauchbier."
+            ),
+        },
+        "what_to_order_intro": "Quick ordering cheat sheet in itinerary order from Night 1 in Bruges through Cologne and Würzburg to Night 15 in Munich.",
+        "what_to_order_bases": [
+            ("bruges", "Flemish red", "Bourgogne des Flandres on the canal; pair with Brugse Zot / Straffe Hendrik at De Halve Maan and the 11% house tripel at De Garre."),
+            ("ghent", "gruut (herb beer)", "Blond, Amber, Brown, White, and Inferno at Gruut Stadsbrouwerij; follow with Pils 13 at Dok Brewing and house Max at De Dulle Griet."),
+            ("cologne", "Kölsch", "Fresh 0.2 L Stangen at Früh am Dom and house-brewed Mühlen Kölsch at Heumarkt, wooden-barrel Päffgen Kölsch, Lommerzheim in Deutz, and Ehrenfeld craft pours at Braustelle."),
+            ("wurzburg", "Hofbräu Pils & Schwarzbier", "House-brewed beer in the garden under the Alte Mainbrücke at Goldene Gans, Pils, Schwarzbier & Fri/Sat keg-tapping tour at 1643 Würzburger Hofbräukeller, craft pours at Herbipolis & Maischerei, plus Ochsenfurt's Kauzen-Bräu & Oechsner (20 min)."),
+            ("bamberg", "Rauchbier", "Oak-barrel Märzen Rauchbier at Schlenkerla, subtler Rauchbier at Spezial, 'aU' Ungespundetes at Mahr's Bräu, Zwergla at Fässla, and Herren Pils at Keesmann (plus optional 54-min Rotbier trip to Nuremberg)."),
+            ("sokolov", "Permon IPA 15°", "Permon IPA 15° and dark specials straight from the taps in Pivovar Permon's Komenského 77 restaurant."),
+            ("plzen", "tank Pilsner", "Unfiltered Urquell in the historic cellars, copper-tank Pilsner at U Salzmannů and Na Parkánu, dark lager at Purkmistr, and craft pours at Raven."),
+            ("kout", "Kout 12°", "Unpasteurised Kout 12° pale lager at the revived 19th-century brewery in the Šumava foothills."),
+            ("maxlrain", "Maxlrainer Helles", "Schlossbrauerei Maxlrain Helles, Dunkel, and Weißbier at the castle Bierstube next door."),
+            ("andechs", "Doppelbock", "Monastery Doppelbock Dunkel (7.1%) overlooking the Ammersee at Kloster Andechs, and the full range down at Andechser Hof in Herrsching."),
+            ("munich", "Helles", "Wooden-barrel Edelstoff at Augustiner-Keller, Erhellung unfiltered Helles at Giesinger Bräu, Aventinus at Schneider Bräuhaus, and NEIPAs at ORCA Brau."),
+        ],
+        "leg_notes": {
+            1: ("hard", "Opening airport motorway push west across Germany & Belgium (E40) — swap drivers if jet-lagged."),
+            3: ("easy", "Short Flemish hop on the E40; arrives in Ghent well before lunch."),
+            4: ("easy", "Short day 1 of 3 on the Ghent→Bamberg corridor: 3 h 06 into Cologne for 0.2 L Kölsch."),
+            5: ("easy", "Short day 2 of 3: 3 h 02 up the Rhine & Main to Würzburg for Goldene Gans & 1643 Hofbräukeller."),
+            6: ("easy", "Short day 3 of 3: 1 h 03 on the A70 into Bamberg (optional 20-min Ochsenfurt detour to Kauzen-Bräu & Oechsner)."),
+            8: ("easy", "Scenic cross-border run via Bayreuth & Cheb; activate Czech e-vignette before crossing."),
+            9: ("easy", "Relaxed Bohemian drive along the Ohře valley; easy detour to Loket (12 min) or Karlovy Vary (17 min)."),
+            11: ("easy", "Short drive south-west into the Šumava (Bohemian Forest) foothills."),
+            12: ("easy", "Crosses back into Upper Bavaria past Regensburg — longest middle leg at 3 h 11 (still under 3 h 15)."),
+            13: ("easy", "Pre-Alpine country roads west across Upper Bavaria to Ammersee."),
+            14: ("easy", "Shortest Bavarian hop (44.5 km / 45 min) straight into Munich."),
+            16: ("hard", "Direct 4 h 04 motorway return from Munich to FRA — leave right after breakfast (or sleep near FRA on Night 15 for early flights)."),
+        },
+        "leg_table_pills": {
+            1: '<span class="table-warn-pill">BOOKEND · 5 h 15</span> ',
+            5: '<span class="table-new-pill">NEW · WÜRZBURG</span> ',
+            6: '<span class="table-new-pill">NEW · 1 h 03 HOP</span> ',
+            16: '<span class="table-warn-pill">BOOKEND · 4 h 04</span> ',
+        },
+        "drive_stats_strip_html": """    <div class="stat-box">
+      <div class="stat-val">2,307.5 km</div>
+      <div class="stat-lbl">Exact Route Total (2,308 km rounded)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">27 h 08</div>
+      <div class="stat-lbl">1,628 Total Driving Minutes</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">12 legs</div>
+      <div class="stat-lbl">12 Drive Days · 4 Car-Free Days</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">≤ 3 h 11</div>
+      <div class="stat-lbl">No Middle Leg Over 3 h 15 (Max: Kout → Maxlrain)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">44 – 45 min</div>
+      <div class="stat-lbl">Shortest Hops (Bruges→Ghent &amp; Andechs→Munich)</div>
+    </div>""",
+        "tfoot_km": "2,307.5 km (2,308 km)",
+        "tfoot_time": "27:08 (1,628 min)",
+        "matrix_note_html": (
+            'Upper triangle directly from <code>matrix.pairs</code> (66 OSRM pairs over all 12 stops including Cologne and Würzburg), '
+            'mirrored symmetrically across the <code>—</code> diagonal. Gold-outlined cells mark consecutive stops driven '
+            'on the v3 itinerary — v1\'s <code>ghent|bamberg</code> marathon (651 km / 6:51) is now three short days: '
+            '<code>ghent|cologne</code> (265 km / 3:06) + <code>cologne|wurzburg</code> (302 km / 3:02) + <code>wurzburg|bamberg</code> (94 km / 1:03), '
+            'so <strong>no middle leg anywhere on the trip exceeds 3 h 15</strong> (longest middle drive is <code>kout|maxlrain</code> at 3:11).'
+        ),
+        "road_notes_html": """    <div class="practical-card">
+      <h4>⏱️ No Middle Leg Exceeds 3 h 15</h4>
+      <p>Adding Würzburg between Cologne and Bamberg turns Ghent→Bamberg into three relaxed legs — 265.2 km / 3 h 06, 302.1 km / 3 h 02, and 94.3 km / 1 h 03 — while adding just 9.2 km and 4 minutes vs v2. Every single middle leg (Days 3–14) now stays at or below 3 h 11; only the FRA arrival (5 h 15) and FRA departure (4 h 04) exceed 3 h 15.</p>
+    </div>
+    <div class="practical-card">
+      <h4>🇨🇿 Czech Motorway Vignette Required</h4>
+      <p>Passenger cars on Czech motorways require an official electronic vignette (<em>edalnice.cz</em>) registered to the rental license plate — purchase it before crossing near Cheb on Day 8 to cover the Bohemian stretch (Days 8–12), and confirm cross-border permission for Belgium and Czechia at the FRA rental desk.</p>
+    </div>
+    <div class="practical-card">
+      <h4>🇧🇪🇩🇪 Ghent LEZ &amp; German Umweltzonen</h4>
+      <p>Belgian and German motorways are toll-free for passenger cars, but watch urban Low Emission Zones: register foreign German rental plates online before entering inner Ghent, and verify the green German <em>Umweltplakette</em> windscreen sticker at FRA pick-up for Cologne and Munich.</p>
+    </div>
+    <div class="practical-card">
+      <h4>✈️ Planning the 4 h 04 Munich → FRA Final Drive</h4>
+      <p>Day 16 runs 402.0 km / 4 h 04 straight up the A9 and A3 from Munich to Frankfurt Airport. Leave Munich right after breakfast for afternoon/evening flights — or drive north on evening 15 and sleep near FRA if catching an early flight.</p>
+    </div>""",
+        "tips_cards_html": """      <div class="practical-card">
+        <h4>1. Book Brewery Tours &amp; Beer Spas Ahead</h4>
+        <p>Reserve Pilsner Urquell's unfiltered cellar tour, Purkmistr beer-spa slots, De Halve Maan's XL pipeline tour in Bruges, and — if hitting Würzburg on a Friday or Saturday — Würzburger Hofbräukeller's brewmaster tour with keg tapping.</p>
+      </div>
+      <div class="practical-card">
+        <h4>2. Watch Monday Closures (<em>Ruhetag</em>)</h4>
+        <p>Small family breweries in Lower &amp; Upper Franconia (Ochsenfurt, Bamberg), rural Bohemia, and Upper Bavaria frequently close on Mondays and/or Tuesdays (as does Lommerzheim in Cologne). Check taproom hours ahead.</p>
+      </div>
+      <div class="practical-card">
+        <h4>3. Cash, Coasters &amp; Bridge-Garden Pours</h4>
+        <p>Carry cash for Cologne Brauhäuser, Würzburg's Goldene Gans garden (house beer poured only outdoors under the Alte Mainbrücke), Bamberg <em>Schwemme</em> windows, and Czech pubs. In Cologne, lay your <em>Bierdeckel</em> on your glass to pause Kölsch refills.</p>
+      </div>
+      <div class="practical-card">
+        <h4>4. Strict Driving &amp; Drinking Rules (0.0% in Czechia)</h4>
+        <p>Czechia enforces <strong>zero tolerance (0.0% BAC)</strong> behind the wheel, and Germany and Belgium enforce strict limits as well. With every middle drive under 3 h 15, finish driving early, park the car, and explore on foot or local transit.</p>
+      </div>
+      <div class="practical-card">
+        <h4>5. Best Season: May – September</h4>
+        <p>Late spring through early autumn opens Goldene Gans under Würzburg's Alte Mainbrücke, Hofbräukeller's garden, Bamberg's Greifenklau terrace, Munich's chestnut-shaded Augustiner-Keller, and Ammersee views at Andechs.</p>
+      </div>
+      <div class="practical-card">
+        <h4>6. Final 4 h Munich → FRA Leg on Day 16</h4>
+        <p>The Day 16 Munich→FRA drive is 402 km / 4 h 04 before roadworks (<em>Baustellen</em>), refuelling, and rental return. Leave Munich right after breakfast — or sleep near FRA on Night 15 for morning flights. Pack bottle sleeves the night before.</p>
+      </div>""",
+        "js_is_long_expr": "leg.day === 5 || leg.day === 6",
+        "map_legend_long_label": "New in v3 (Days 5–6: via Würzburg)",
+    },
 }
 
 
@@ -690,6 +971,15 @@ def build(variant: str = "v1", out_html: Optional[pathlib.Path] = None) -> pathl
     side_legs: List[Dict[str, Any]] = data["side_legs"]
     matrix_nodes: List[str] = data["matrix"]["nodes"]
     matrix_pairs: Dict[str, List[float]] = data["matrix"]["pairs"]
+
+    n_days = int(data["trip"]["days"])
+    n_nights = int(data["trip"]["nights"])
+    n_bases = int(data["trip"]["bases"])
+    n_stops = len(stops)
+    n_legs = len(legs)
+    n_matrix = len(matrix_nodes)
+    n_countries = len(data["trip"]["countries"])
+    n_inplace = sum(1 for d in days_list if d["drive"] is None)
 
     # Track night counter per base across days
     base_visit_counter: Dict[str, int] = {}
@@ -856,8 +1146,14 @@ def build(variant: str = "v1", out_html: Optional[pathlib.Path] = None) -> pathl
               <td class="num"><strong>{esc(abv)}</strong></td>
               <td>{esc(serving)}</td>
             </tr>""")
+        region_note_map: Dict[str, str] = cfg.get("beer_region_notes", {})
+        region_note_html = (
+            f'\n        <p class="region-subnote">{region_note_map[rname]}</p>'
+            if rname in region_note_map
+            else ""
+        )
         region_tables_html.append(f"""      <section class="beer-region-block" data-beer-region="{esc(rslug)}">
-        <h3 class="region-table-heading">{esc(rname)} <span class="count-pill">{len(rstyles)} style{'s' if len(rstyles) != 1 else ''}</span></h3>
+        <h3 class="region-table-heading">{esc(rname)} <span class="count-pill">{len(rstyles)} style{'s' if len(rstyles) != 1 else ''}</span></h3>{region_note_html}
         <div class="beer-table-wrap">
           <table class="beer-table">
             <thead>
@@ -1945,9 +2241,9 @@ button:focus-visible, a:focus-visible, input:focus-visible {{
 <!-- TAB 1: ITINERARY -->
 <div id="itinerary" class="tab-content active" role="tabpanel">
   <div class="section-intro">
-    <h2>📋 15-Day Day-by-Day Itinerary</h2>
+    <h2>📋 {n_days}-Day Day-by-Day Itinerary</h2>
     <p>{cfg['itinerary_intro']}</p>
-  </div>
+  </div>{cfg.get('itinerary_callout_html', '')}
 
   <div class="region-filter" id="itinerary-filters">
 {cfg['itinerary_filters_html']}
@@ -1961,8 +2257,8 @@ button:focus-visible, a:focus-visible, input:focus-visible {{
 <!-- TAB 2: MAP -->
 <div id="map" class="tab-content" role="tabpanel">
   <div class="section-intro">
-    <h2>🗺️ Interactive Route Map — 11 Stops in Visit Order</h2>
-    <p>Click any numbered marker (1–11) or route leg to inspect overnight stays, brewery addresses, notes, and the next OSRM driving leg.</p>
+    <h2>🗺️ Interactive Route Map — {n_stops} Stops in Visit Order</h2>
+    <p>Click any numbered marker (1–{n_stops}) or route leg to inspect overnight stays, brewery addresses, notes, and the next OSRM driving leg.</p>
   </div>
 
   <div class="map-toolbar">
@@ -1985,7 +2281,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {{
 <div id="rankings" class="tab-content" role="tabpanel">
   <div class="section-intro">
     <h2>🏆 Per-City Brewery &amp; Bar Rankings</h2>
-    <p>All {total_venues} vetted breweries, medieval cellars, monastery taps, and brown cafés across the 10 overnight bases, ranked 1..n per city with what to order at each stop.</p>
+    <p>All {total_venues} vetted breweries, medieval cellars, monastery taps, and brown cafés across the {n_bases} overnight bases, ranked 1..n per city with what to order at each stop.</p>
   </div>
 
   <div class="region-filter" id="ranking-filters">
@@ -2014,7 +2310,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {{
   </div>
 
   <div class="section-intro" style="margin-top:2.6rem;">
-    <h2>📍 What to Order Where — Keyed to All 10 Bases</h2>
+    <h2>📍 What to Order Where — Keyed to All {n_bases} Bases</h2>
     <p>{esc(cfg['what_to_order_intro'])}</p>
   </div>
   <div class="base-order-grid">
@@ -2025,7 +2321,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {{
 <!-- TAB 5: DRIVE TIMES -->
 <div id="drives" class="tab-content" role="tabpanel">
   <div class="section-intro">
-    <h2>🚗 Drive Times, Itinerary Legs &amp; 11 × 11 OSRM Car Matrix</h2>
+    <h2>🚗 Drive Times, Itinerary Legs &amp; {n_matrix} × {n_matrix} OSRM Car Matrix</h2>
     <p>Every distance and duration below comes directly from OSRM car routing in <code>{esc(cfg['data_rel'])}</code> — zero estimates.</p>
   </div>
 
@@ -2033,7 +2329,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {{
 {cfg['drive_stats_strip_html']}
   </div>
 
-  <h3 class="region-table-heading" style="margin-bottom:0.75rem;">(a) The 11 Itinerary Driving Legs</h3>
+  <h3 class="region-table-heading" style="margin-bottom:0.75rem;">(a) The {n_legs} Itinerary Driving Legs</h3>
   <div class="beer-table-wrap" style="margin-bottom:2.4rem;">
     <table class="beer-table">
       <thead>
@@ -2050,18 +2346,18 @@ button:focus-visible, a:focus-visible, input:focus-visible {{
       </tbody>
       <tfoot>
         <tr class="tfoot-totals">
-          <td>15 Days</td>
-          <td>Closed Loop: FRA → 10 Bases → FRA (11 legs)</td>
+          <td>{n_days} Days</td>
+          <td>Closed Loop: FRA → {n_bases} Bases → FRA ({n_legs} legs)</td>
           <td class="num">{esc(cfg['tfoot_km'])}</td>
           <td class="num">{esc(cfg['tfoot_time'])}</td>
-          <td>3 countries · 14 nights · 4 in-place crawl days</td>
+          <td>{n_countries} countries · {n_nights} nights · {n_inplace} in-place crawl days</td>
         </tr>
       </tfoot>
     </table>
   </div>
 
   <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.5rem;">
-    <h3 class="region-table-heading" style="margin-bottom:0;">(b) Full 11 × 11 Car Distance &amp; Duration Matrix</h3>
+    <h3 class="region-table-heading" style="margin-bottom:0;">(b) Full {n_matrix} × {n_matrix} Car Distance &amp; Duration Matrix</h3>
     <div class="region-filter" style="margin-bottom:0;" id="matrix-mode-btns">
       <button type="button" class="filter-btn active" onclick="setMatrixMode('both', this)">Both (km + h:mm)</button>
       <button type="button" class="filter-btn" onclick="setMatrixMode('km', this)">Distance (km)</button>
@@ -2303,7 +2599,7 @@ function initMap() {{
 
     const nightsLine = s.nights > 0
       ? (s.nights + (s.nights === 1 ? ' night' : ' nights') + ' · ' + s.city + ', ' + s.country)
-      : ('Start (Day 1) & End (Day 15) · ' + s.city + ', ' + s.country + ' · 0 nights');
+      : ('Start (Day 1) & End (Day {n_days}) · ' + s.city + ', ' + s.country + ' · 0 nights');
 
     const addrLine = s.address
       ? '<div class="popup-addr">📍 ' + s.address + '</div>'
@@ -2341,13 +2637,13 @@ function initMap() {{
     const div = L.DomUtil.create('div', 'legend');
     div.style.cssText = 'background:#151c35;color:#eef1f6;padding:10px 14px;border-radius:8px;border:1px solid #2b3658;box-shadow:0 6px 18px rgba(0,0,0,0.55);font-size:12px;line-height:1.75;';
     div.innerHTML =
-      '<strong style="color:#f5a623;font-size:12.5px;">Route Legend (1–11)</strong><br>' +
+      '<strong style="color:#f5a623;font-size:12.5px;">Route Legend (1–{n_stops})</strong><br>' +
       '<span style="display:inline-block;width:10px;height:10px;background:#4ecdc4;border-radius:50%;margin-right:6px;"></span>Start &amp; End (FRA)<br>' +
       '<span style="display:inline-block;width:10px;height:10px;background:#ff7a59;border-radius:50%;margin-right:6px;"></span>Belgium Base<br>' +
       '<span style="display:inline-block;width:10px;height:10px;background:#f5a623;border-radius:50%;margin-right:6px;"></span>Germany Base<br>' +
       '<span style="display:inline-block;width:10px;height:10px;background:#38bdf8;border-radius:50%;margin-right:6px;"></span>Czechia Base<br>' +
       '<span style="display:inline-block;width:18px;border-top:3px solid #e94560;vertical-align:middle;margin-right:6px;"></span>{cfg['map_legend_long_label']}<br>' +
-      '<span style="display:inline-block;width:18px;border-top:2.5px dashed #b283f8;vertical-align:middle;margin-right:6px;"></span>Day 15 Return to FRA';
+      '<span style="display:inline-block;width:18px;border-top:2.5px dashed #b283f8;vertical-align:middle;margin-right:6px;"></span>Day {n_days} Return to FRA';
     return div;
   }};
   legend.addTo(leafletMap);
@@ -2384,7 +2680,7 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build the 2027 Bier Reisen HTML planner.")
     parser.add_argument(
         "--variant",
-        choices=("v1", "v2"),
+        choices=("v1", "v2", "v3"),
         default="v1",
         help="Planner variant to build (default: v1).",
     )
