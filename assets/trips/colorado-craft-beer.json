@@ -1,0 +1,341 @@
+{
+  "slug": "colorado-craft-beer",
+  "source_file": "colorado_beer_trip.html",
+  "title": "Colorado Craft Beer Odyssey",
+  "days": 12,
+  "countries": "Colorado, United States",
+  "stops": [
+    {
+      "lat": 39.8561,
+      "lon": -104.6737,
+      "name": "Denver International Airport",
+      "day": 1
+    },
+    {
+      "lat": 39.7536,
+      "lon": -104.9998,
+      "name": "Wynkoop Brewing Co",
+      "day": 1
+    },
+    {
+      "lat": 39.7636,
+      "lon": -104.9782,
+      "name": "Great Divide - Barrel Bar",
+      "day": 1
+    },
+    {
+      "lat": 39.7672,
+      "lon": -104.9805,
+      "name": "Ratio Beerworks",
+      "day": 2
+    },
+    {
+      "lat": 39.7654,
+      "lon": -104.9815,
+      "name": "Our Mutual Friend",
+      "day": 2
+    },
+    {
+      "lat": 39.7618,
+      "lon": -104.9778,
+      "name": "Bierstadt Lagerhaus",
+      "day": 2
+    },
+    {
+      "lat": 39.7201,
+      "lon": -104.9876,
+      "name": "TRVE Brewing",
+      "day": 3
+    },
+    {
+      "lat": 39.7195,
+      "lon": -104.987,
+      "name": "Baere Brewing",
+      "day": 3
+    },
+    {
+      "lat": 39.7485,
+      "lon": -104.9536,
+      "name": "Cerebral Brewing",
+      "day": 4
+    },
+    {
+      "lat": 39.73,
+      "lon": -105.03,
+      "name": "Westfax Brewing",
+      "day": 4
+    },
+    {
+      "lat": 39.758,
+      "lon": -104.94,
+      "name": "Cohesion Brewing",
+      "day": 4
+    },
+    {
+      "lat": 39.755,
+      "lon": -105.007,
+      "name": "Denver Beer Co",
+      "day": 2
+    },
+    {
+      "lat": 39.7548,
+      "lon": -104.994,
+      "name": "Falling Rock Tap House",
+      "day": 3
+    },
+    {
+      "lat": 39.7555,
+      "lon": -105.2211,
+      "name": "Coors Brewery",
+      "day": 5
+    },
+    {
+      "lat": 39.7575,
+      "lon": -105.223,
+      "name": "Golden City Brewery",
+      "day": 5
+    },
+    {
+      "lat": 39.7588,
+      "lon": -105.2198,
+      "name": "Cannonball Creek Brewing",
+      "day": 5
+    },
+    {
+      "lat": 39.7545,
+      "lon": -105.225,
+      "name": "Mountain Toad Brewing",
+      "day": 5
+    },
+    {
+      "lat": 39.771,
+      "lon": -105.195,
+      "name": "New Terrain Brewing",
+      "day": 6
+    },
+    {
+      "lat": 40.019,
+      "lon": -105.278,
+      "name": "Mountain Sun Pub",
+      "day": 5
+    },
+    {
+      "lat": 40.065,
+      "lon": -105.209,
+      "name": "Avery Brewing Co",
+      "day": 7
+    },
+    {
+      "lat": 40.026,
+      "lon": -105.248,
+      "name": "Upslope Brewing",
+      "day": 7
+    },
+    {
+      "lat": 40.008,
+      "lon": -105.275,
+      "name": "The Sink",
+      "day": 7
+    },
+    {
+      "lat": 40.052,
+      "lon": -105.212,
+      "name": "Wild Woods Brewery",
+      "day": 8
+    },
+    {
+      "lat": 40.02,
+      "lon": -105.253,
+      "name": "Sanitas Brewing",
+      "day": 8
+    },
+    {
+      "lat": 40.035,
+      "lon": -105.245,
+      "name": "Finkel & Garf",
+      "day": 8
+    },
+    {
+      "lat": 40.104,
+      "lon": -105.172,
+      "name": "Fritz Family Brewers",
+      "day": 9
+    },
+    {
+      "lat": 40.171,
+      "lon": -105.119,
+      "name": "Left Hand Brewing",
+      "day": 9
+    },
+    {
+      "lat": 40.165,
+      "lon": -105.101,
+      "name": "Wibby Brewing",
+      "day": 9
+    },
+    {
+      "lat": 40.163,
+      "lon": -105.108,
+      "name": "300 Suns Brewing",
+      "day": 9
+    },
+    {
+      "lat": 40.593,
+      "lon": -105.069,
+      "name": "New Belgium Brewing",
+      "day": 10
+    },
+    {
+      "lat": 40.588,
+      "lon": -105.063,
+      "name": "Odell Brewing Co",
+      "day": 10
+    },
+    {
+      "lat": 40.587,
+      "lon": -105.075,
+      "name": "Coopersmith's Pub",
+      "day": 10
+    },
+    {
+      "lat": 40.5885,
+      "lon": -105.0755,
+      "name": "The Mayor of Old Town",
+      "day": 10
+    },
+    {
+      "lat": 40.587,
+      "lon": -105.069,
+      "name": "Funkwerks",
+      "day": 11
+    },
+    {
+      "lat": 40.592,
+      "lon": -105.068,
+      "name": "Horse & Dragon",
+      "day": 11
+    },
+    {
+      "lat": 40.553,
+      "lon": -105.075,
+      "name": "Zwei Brewing",
+      "day": 11
+    },
+    {
+      "lat": 40.554,
+      "lon": -105.0755,
+      "name": "Purpose Brewing",
+      "day": 11
+    },
+    {
+      "lat": 40.568,
+      "lon": -105.064,
+      "name": "Snowbank Brewing",
+      "day": 12
+    },
+    {
+      "lat": 40.575,
+      "lon": -105.09,
+      "name": "Road 34 Bike Bar",
+      "day": 11
+    }
+  ],
+  "path": [
+    [
+      39.8561,
+      -104.6737
+    ],
+    [
+      39.7536,
+      -104.9998
+    ],
+    [
+      39.7575,
+      -105.223
+    ],
+    [
+      40.019,
+      -105.278
+    ],
+    [
+      40.104,
+      -105.172
+    ],
+    [
+      40.171,
+      -105.119
+    ],
+    [
+      40.587,
+      -105.075
+    ],
+    [
+      39.8561,
+      -104.6737
+    ]
+  ],
+  "day_ledger": [
+    {
+      "day": 1,
+      "place": "Arrival Day - Denver",
+      "highlights": "DEN → Union Station (LoDo) · Wynkoop Brewing Co · Great Divide Brewing"
+    },
+    {
+      "day": 2,
+      "place": "Denver Deep Dive - RiNo & Five Points",
+      "highlights": "Ratio Beerworks · Our Mutual Friend · Epic Brewing Denver · Bierstadt Lagerhaus"
+    },
+    {
+      "day": 3,
+      "place": "Denver - South Broadway & Baker",
+      "highlights": "TRVE Brewing · Baere Brewing · Former Future Brewing · Falling Rock Tap House"
+    },
+    {
+      "day": 4,
+      "place": "Denver - Hidden Gems Day",
+      "highlights": "Cerebral Brewing · Westfax Brewing · Cohesion Brewing · Euclid Hall · Star Bar"
+    },
+    {
+      "day": 5,
+      "place": "Golden - Brewery Capital per Capita",
+      "highlights": "Coors Brewery Tour · Golden City Brewery · Cannonball Creek Brewing · Mountain Toad Brewing"
+    },
+    {
+      "day": 6,
+      "place": "Golden + Transition to Boulder",
+      "highlights": "New Terrain Brewing · Holidaily Brewing · Barrels & Bottles"
+    },
+    {
+      "day": 7,
+      "place": "Boulder - Pearl Street & Legends",
+      "highlights": "Mountain Sun Pub & Brewery · Avery Brewing Co · Upslope Brewing · The Sink"
+    },
+    {
+      "day": 8,
+      "place": "Boulder - East Side & Hidden Gems",
+      "highlights": "Wild Woods Brewery · Sanitas Brewing · Finkel & Garf Brewing · Bootstrap Brewing"
+    },
+    {
+      "day": 9,
+      "place": "Niwot + Longmont Detour",
+      "highlights": "Fritz Family Brewers · Left Hand Brewing · Wibby Brewing · 300 Suns Brewing"
+    },
+    {
+      "day": 10,
+      "place": "Fort Collins - Old Town Legends",
+      "highlights": "New Belgium Brewing · Odell Brewing Co · Coopersmith's Pub & Brewing · The Mayor of Old Town"
+    },
+    {
+      "day": 11,
+      "place": "Fort Collins - Deep Cuts & Funk",
+      "highlights": "Funkwerks · Horse & Dragon Brewing · Zwei Brewing · Purpose Brewing · Road 34 Bike Bar"
+    },
+    {
+      "day": 12,
+      "place": "Departure Day - Last Stops & Airport",
+      "highlights": "Snowbank Brewing · Denver Beer Co · Argonaut Wine & Liquor · New Belgium or Breckenridge"
+    }
+  ],
+  "signature_beers": "Bierstadt Slow Pour Pils (4.8%) · Funkwerks Saison (6.8%) · Odell IPA (7.0%) · Left Hand Milk Stout Nitro (6.0%) · Great Divide Yeti (9.5%) · Avery Tweak (16.3%)",
+  "season_budget": "Jun–Sep patio season (GABF week in Sep)  ·  A-Line train DEN → Union Station ($10.50), rental car Days 5–12 (Golden → Fort Collins)"
+}

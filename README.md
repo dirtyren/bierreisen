@@ -4,6 +4,16 @@ Six AI-drafted beer pilgrimages — **73 days, 7 countries, 203 mapped stops** �
 
 ![Six beer pilgrimages on a map of North America and Europe](assets/beer-trips-map.png)
 
+## Trip maps
+
+- [UK Beer Pilgrimage — 12 days, 32 stops](assets/trips/uk-beer-pilgrimage.png)
+- [Belgian Beer Pilgrimage — 9 days, 42 stops](assets/trips/belgian-beer-pilgrimage.png)
+- [Bavaria & Bohemia — 14 days, 40 stops](assets/trips/bavaria-bohemia.png)
+- [Colorado Craft Beer Odyssey — 12 days, 39 stops](assets/trips/colorado-craft-beer.png)
+- [Florida Brewery Trail — 12 days, 43 stops](assets/trips/florida-brewery-trail.png)
+- [Italy & Switzerland Grand Tour — 14 days, 7 cities](assets/trips/italy-switzerland-grand-tour.png)
+- [Italy & Switzerland Classic Loop — 14 days, 7 cities](assets/trips/italy-switzerland-classic.png)
+
 Every trip below ships as a single HTML file: an interactive Leaflet map, a day-by-day flowchart, a ranked list of every brewery and pub, a beer table with style/ABV/IBU, and a tips tab. No build step, no server — open the file in a browser and it works offline apart from the map tiles.
 
 ---
