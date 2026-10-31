@@ -22,6 +22,7 @@ from matplotlib import patheffects as pe
 from matplotlib.collections import LineCollection, PatchCollection
 from matplotlib.colors import LinearSegmentedColormap, to_hex
 from matplotlib.patches import FancyBboxPatch, Polygon, Rectangle
+from matplotlib.path import Path as MplPath
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DOSSIERS = ROOT / "AI-suggested-trips"
@@ -190,9 +191,10 @@ def fit_lcc_window(
     lats: Sequence[float],
     rect_w_in: float,
     rect_h_in: float,
-    pad_each_side: float = 0.095,
+    pad_each_side: float = 0.085,
+    is_us: bool = False,
 ) -> Tuple[Tuple[float, float, float, float], Tuple[float, float], Tuple[float, float], Tuple[float, float], Tuple[float, float]]:
-    """Fit a Lambert conformal conic projection + aspect-matched window to points with ~8-10% padding."""
+    """Fit a Lambert conformal conic window, placing extra axis room on projected land rather than open sea."""
     lon_min, lon_max = float(min(lons)), float(max(lons))
     lat_min, lat_max = float(min(lats)), float(max(lats))
     lon0 = 0.5 * (lon_min + lon_max)
@@ -205,20 +207,144 @@ def fit_lcc_window(
     ymin, ymax = float(np.min(ys)), float(np.max(ys))
     span_x = max(xmax - xmin, 1e-4)
     span_y = max(ymax - ymin, 1e-4)
+    stop_pts = np.column_stack([xs, ys])
 
-    cx = 0.5 * (xmin + xmax)
-    cy = 0.5 * (ymin + ymax)
-    dx = span_x * (1.0 + 2.0 * pad_each_side)
-    dy = span_y * (1.0 + 2.0 * pad_each_side)
-
+    dx_tight = span_x * (1.0 + 2.0 * pad_each_side)
+    dy_tight = span_y * (1.0 + 2.0 * pad_each_side)
     target = rect_w_in / rect_h_in
-    if dx / dy < target:
-        dx = dy * target
-    else:
-        dy = dx / target
 
-    xlim = (cx - 0.5 * dx, cx + 0.5 * dx)
-    ylim = (cy - 0.5 * dy, cy + 0.5 * dy)
+    # Project host land polygons (STATES for US trips, WORLD otherwise) to get projected land bbox
+    source_feats = STATES["features"] if is_us else WORLD["features"]
+    host_xs: List[float] = []
+    host_ys: List[float] = []
+    for feat in source_feats:
+        for ring in rings(feat["geometry"]):
+            arr = np.asarray(ring, dtype=float)
+            if len(arr) < 4 or arr[:, 0].max() - arr[:, 0].min() > 200:
+                continue
+            if (arr[:, 1].max() < lat_min - 12 or arr[:, 1].min() > lat_max + 12
+                    or arr[:, 0].max() < lon_min - 15 or arr[:, 0].min() > lon_max + 15):
+                continue
+            rx, ry = lcc(arr[:, 0], arr[:, 1], *proj)
+            rxy = np.column_stack([rx, ry])
+            if MplPath(rxy).contains_points(stop_pts).any():
+                host_xs.extend(rx.tolist())
+                host_ys.extend(ry.tolist())
+
+    land_x0 = min(host_xs) if host_xs else xmin
+    land_x1 = max(host_xs) if host_xs else xmax
+    land_y0 = min(host_ys) if host_ys else ymin
+    land_y1 = max(host_ys) if host_ys else ymax
+
+    if dx_tight / dy_tight < target:
+        dy = dy_tight
+        cy = 0.5 * (ymin + ymax)
+        ylim = (cy - 0.5 * dy, cy + 0.5 * dy)
+        dx = dy * target
+        min_pad_x = max(pad_each_side * span_x, pad_each_side * dx)
+        extra_x = max(0.0, dx - (span_x + 2.0 * min_pad_x))
+
+        # Projected land bbox room on left vs right of stop bbox
+        left_land = max(0.0, xmin - land_x0)
+        right_land = max(0.0, land_x1 - xmax)
+        alpha_bbox = left_land / (left_land + right_land) if (left_land + right_land) > 1e-6 else 0.5
+
+        # Also check projected WORLD land coverage across candidate shifts to avoid open sea
+        sweep_x0 = xmin - min_pad_x - extra_x
+        sweep_x1 = xmax + min_pad_x + extra_x
+        world_rings: List[np.ndarray] = []
+        for feat in WORLD["features"]:
+            for ring in rings(feat["geometry"]):
+                arr = np.asarray(ring, dtype=float)
+                if len(arr) < 4 or arr[:, 0].max() - arr[:, 0].min() > 200:
+                    continue
+                if (arr[:, 1].max() < lat_min - 8 or arr[:, 1].min() > lat_max + 8
+                        or arr[:, 0].max() < lon_min - 12 or arr[:, 0].min() > lon_max + 12):
+                    continue
+                rx, ry = lcc(arr[:, 0], arr[:, 1], *proj)
+                if rx.max() < sweep_x0 or rx.min() > sweep_x1 or ry.max() < ylim[0] or ry.min() > ylim[1]:
+                    continue
+                world_rings.append(np.column_stack([rx, ry]))
+
+        # Keep bottom-right/bottom-left corner UI boxes clear of low-latitude stops
+        has_bottom_stop = any((float(yv) - ylim[0]) / dy < 0.14 for yv in ys)
+        alpha_hi = 0.58 if has_bottom_stop else 0.74
+        alpha_lo = 0.24
+
+        alphas = np.linspace(alpha_lo, alpha_hi, 11)
+        gy = np.linspace(ylim[0], ylim[1], 36)
+        fracs: List[float] = []
+        for a in alphas:
+            cand_x0 = xmin - min_pad_x - float(a) * extra_x
+            cand_x1 = cand_x0 + dx
+            gx = np.linspace(cand_x0, cand_x1, 42)
+            gxx, gyy = np.meshgrid(gx, gy)
+            pts = np.column_stack([gxx.ravel(), gyy.ravel()])
+            inside = np.zeros(len(pts), dtype=bool)
+            for rxy in world_rings:
+                if rxy[:, 0].max() < cand_x0 or rxy[:, 0].min() > cand_x1:
+                    continue
+                inside |= MplPath(rxy).contains_points(pts)
+            fracs.append(float(inside.mean()))
+
+        if fracs and (max(fracs) - min(fracs) > 0.010):
+            alpha = float(alphas[int(np.argmax(fracs))])
+        else:
+            alpha = float(np.clip(alpha_bbox, alpha_lo, alpha_hi))
+
+        x0 = xmin - min_pad_x - alpha * extra_x
+        xlim = (x0, x0 + dx)
+    else:
+        dx = dx_tight
+        cx = 0.5 * (xmin + xmax)
+        xlim = (cx - 0.5 * dx, cx + 0.5 * dx)
+        dy = dx / target
+        min_pad_y = max(pad_each_side * span_y, pad_each_side * dy)
+        extra_y = max(0.0, dy - (span_y + 2.0 * min_pad_y))
+
+        bot_land = max(0.0, ymin - land_y0)
+        top_land = max(0.0, land_y1 - ymax)
+        alpha_bbox = bot_land / (bot_land + top_land) if (bot_land + top_land) > 1e-6 else 0.5
+
+        sweep_y0 = ymin - min_pad_y - extra_y
+        sweep_y1 = ymax + min_pad_y + extra_y
+        world_rings_y: List[np.ndarray] = []
+        for feat in WORLD["features"]:
+            for ring in rings(feat["geometry"]):
+                arr = np.asarray(ring, dtype=float)
+                if len(arr) < 4 or arr[:, 0].max() - arr[:, 0].min() > 200:
+                    continue
+                if (arr[:, 1].max() < lat_min - 8 or arr[:, 1].min() > lat_max + 8
+                        or arr[:, 0].max() < lon_min - 12 or arr[:, 0].min() > lon_max + 12):
+                    continue
+                rx, ry = lcc(arr[:, 0], arr[:, 1], *proj)
+                if ry.max() < sweep_y0 or ry.min() > sweep_y1 or rx.max() < xlim[0] or rx.min() > xlim[1]:
+                    continue
+                world_rings_y.append(np.column_stack([rx, ry]))
+
+        alphas = np.linspace(0.26, 0.72, 11)
+        gx = np.linspace(xlim[0], xlim[1], 42)
+        fracs_y: List[float] = []
+        for a in alphas:
+            cand_y0 = ymin - min_pad_y - float(a) * extra_y
+            cand_y1 = cand_y0 + dy
+            gy = np.linspace(cand_y0, cand_y1, 36)
+            gxx, gyy = np.meshgrid(gx, gy)
+            pts = np.column_stack([gxx.ravel(), gyy.ravel()])
+            inside = np.zeros(len(pts), dtype=bool)
+            for rxy in world_rings_y:
+                if rxy[:, 1].max() < cand_y0 or rxy[:, 1].min() > cand_y1:
+                    continue
+                inside |= MplPath(rxy).contains_points(pts)
+            fracs_y.append(float(inside.mean()))
+
+        if fracs_y and (max(fracs_y) - min(fracs_y) > 0.010):
+            alpha = float(alphas[int(np.argmax(fracs_y))])
+        else:
+            alpha = float(np.clip(alpha_bbox, 0.26, 0.72))
+
+        y0 = ymin - min_pad_y - alpha * extra_y
+        ylim = (y0, y0 + dy)
 
     # Geographic search window generous enough for curved LCC corners
     deg_pad_lat = max((lat_max - lat_min) * 1.4, 4.0)
@@ -301,9 +427,10 @@ def draw_graticule(
     xlim: Tuple[float, float],
     ylim: Tuple[float, float],
     skip_axes_boxes: Sequence[Tuple[float, float, float, float]] = (),
-):
+) -> List[Any]:
     """Draw 5°/10° major graticule plus adaptive minor graticule when zoomed tightly."""
     lon0, lat0, s1, s2 = proj
+    tick_texts: List[Any] = []
     # Estimate visible degree span from panel corners
     km_per_unit = _km_per_unit(proj)
     vis_lat_deg = (ylim[1] - ylim[0]) * km_per_unit / 111.32
@@ -332,12 +459,12 @@ def draw_graticule(
             tx = float(x[idx])
             ty = float(ylim[0] + 0.010 * (ylim[1] - ylim[0]))
             if not _in_axes_boxes(ax, tx, ty, skip_axes_boxes):
-                ax.text(
+                tick_texts.append(ax.text(
                     tx, ty,
                     _fmt_deg(lon, is_lon=True),
                     fontsize=6.2, color=DIM, ha="center", va="bottom", zorder=5.2,
                     path_effects=[pe.withStroke(linewidth=2.4, foreground=OCEAN)],
-                )
+                ))
 
     lat_start = math.floor((lat_win[0] - 4) / lat_step) * lat_step
     lat_vals = np.arange(lat_start, lat_win[1] + 4 + lat_step, lat_step)
@@ -355,12 +482,13 @@ def draw_graticule(
             tx = float(xlim[0] + 0.010 * (xlim[1] - xlim[0]))
             ty = float(y[idx])
             if not _in_axes_boxes(ax, tx, ty, skip_axes_boxes):
-                ax.text(
+                tick_texts.append(ax.text(
                     tx, ty,
                     _fmt_deg(lat, is_lon=False),
                     fontsize=6.2, color=DIM, ha="left", va="center", zorder=5.2,
                     path_effects=[pe.withStroke(linewidth=2.4, foreground=OCEAN)],
-                )
+                ))
+    return tick_texts
 
 
 def _km_per_unit(proj: Tuple[float, float, float, float]) -> float:
@@ -772,6 +900,7 @@ def extract_colorado() -> Dict[str, Any]:
         "season_budget": "Jun–Sep patio season (GABF week in Sep)  ·  A-Line train DEN → Union Station ($10.50), rental car Days 5–12 (Golden → Fort Collins)",
         "ramp": ["#ff6b8b", "#f5a623", "#4ecdc4", "#43d19e"],
         "is_us": True,
+        "pad_each_side": 0.04,
         "state_inset": True,
         "legend_corner": "top-left",
         "scale_corner": "bottom-left",
@@ -935,12 +1064,28 @@ def extract_italy_grand() -> Dict[str, Any]:
         "path": route,
         "return_path": return_route,
         "day_ledger": ledger,
-        "city_badges": True,
+        "day_overrides": {
+            1: (41.9028, 12.4964),
+            2: (41.9028, 12.4964),
+            3: (41.9028, 12.4964),
+            4: (43.7696, 11.2558),
+            5: (43.7696, 11.2558),
+            6: (43.7228, 10.4017),
+            7: (45.4408, 12.3155),
+            8: (45.4408, 12.3155),
+            9: (45.4642, 9.1900),
+            10: (45.4642, 9.1900),
+            11: (46.2167, 10.1667),
+            12: (46.4908, 9.8355),
+            13: (41.9028, 12.4964),
+            14: (41.9028, 12.4964),
+        },
         "key_stops": [s["name"] for s in stops],
         "signature_beers": "Birrificio Italiano Tipopils · Birra del Borgo ReAle · Baladin Xyauyù & Nazionale · Birrificio Lambrate Ghisa & Montestella · Orzo Bruno · Engadiner Bier",
         "season_budget": "May–Jun or Sep–Oct  ·  €2,500–4,000 pp excl. flights (22+ craft beer bars)  ·  Frecciarossa high-speed rail + UNESCO Bernina Railway",
         "ramp": ["#b283f8", "#54a8f5", "#43d19e", "#ff8c42"],
         "is_us": False,
+        "pad_each_side": 0.04,
         "legend_corner": "bottom-left",
         "scale_corner": "bottom-right",
         "watermarks": [
@@ -1031,12 +1176,28 @@ def extract_italy_classic() -> Dict[str, Any]:
         "gems": gems,
         "path": path,
         "day_ledger": ledger,
-        "city_badges": True,
+        "day_overrides": {
+            1: (41.8003, 12.2389),
+            2: (41.9028, 12.4964),
+            3: (41.9028, 12.4964),
+            4: (43.7696, 11.2558),
+            5: (43.7696, 11.2558),
+            6: (43.7228, 10.4017),
+            7: (45.4642, 9.1900),
+            8: (45.4642, 9.1900),
+            9: (45.4642, 9.1900),
+            10: (46.4908, 9.8355),
+            11: (46.4908, 9.8355),
+            12: (45.4408, 12.3155),
+            13: (45.4408, 12.3155),
+            14: (41.8003, 12.2389),
+        },
         "key_stops": [s["name"] for s in stops],
         "signature_beers": "Tipopils (5.2%) · ReAle (6.4%) · Baladin Nazionale (6.5%) · Archea Dubbel (7.5%) · Lambrate Montestella (5.0%) · Orzo Bruno Chiara (4.8%) · Engadiner Bündner Lager (4.8%)",
         "season_budget": "May–Jun or Sep–Oct  ·  €2,600–4,100 pp excl. flights (trains €250–400)  ·  Frecciarossa + Bernina Express + EuroCity via Chur",
         "ramp": ["#fb568a", "#f5a623", "#38bdf8", "#34d399"],
         "is_us": False,
+        "pad_each_side": 0.04,
         "legend_corner": "bottom-left",
         "scale_corner": "bottom-right",
         "watermarks": [
@@ -1125,58 +1286,177 @@ def draw_gradient_route(
         )
 
 
-def _repel_points_px(
+BADGE_R_PX = 30.5  # exact rendered pixel radius of scatter(s=265, lw=1.8) at 240 dpi
+
+
+def _pt_seg_dist(px: float, py: float, ax: float, ay: float, bx: float, by: float) -> float:
+    vx, vy = bx - ax, by - ay
+    denom = vx * vx + vy * vy
+    if denom <= 1e-9:
+        return math.hypot(px - ax, py - ay)
+    t = max(0.0, min(1.0, ((px - ax) * vx + (py - ay) * vy) / denom))
+    return math.hypot(px - (ax + t * vx), py - (ay + t * vy))
+
+
+def _segs_intersect_open(
+    a0: Tuple[float, float],
+    a1: Tuple[float, float],
+    b0: Tuple[float, float],
+    b1: Tuple[float, float],
+) -> bool:
+    if (math.hypot(a0[0] - b0[0], a0[1] - b0[1]) < 3.0
+            or math.hypot(a0[0] - b1[0], a0[1] - b1[1]) < 3.0
+            or math.hypot(a1[0] - b0[0], a1[1] - b0[1]) < 3.0
+            or math.hypot(a1[0] - b1[0], a1[1] - b1[1]) < 3.0):
+        return False
+
+    def _ccw(p: Tuple[float, float], q: Tuple[float, float], r: Tuple[float, float]) -> float:
+        return (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0])
+
+    d1 = _ccw(a0, a1, b0)
+    d2 = _ccw(a0, a1, b1)
+    d3 = _ccw(b0, b1, a0)
+    d4 = _ccw(b0, b1, a1)
+    return ((d1 > 0 and d2 < 0) or (d1 < 0 and d2 > 0)) and ((d3 > 0 and d4 < 0) or (d3 < 0 and d4 > 0))
+
+
+def _circle_intersects_box(cx: float, cy: float, r: float, box: Tuple[float, float, float, float]) -> bool:
+    nx = max(box[0], min(cx, box[2]))
+    ny = max(box[1], min(cy, box[3]))
+    return (cx - nx) ** 2 + (cy - ny) ** 2 < r * r
+
+
+def _place_day_badges_px(
     anchors_px: List[Tuple[float, float]],
-    min_dist_px: float,
+    dot_obstacles_px: List[Tuple[float, float, float]],
     panel_bbox_px: Tuple[float, float, float, float],
     forbidden_px: List[Tuple[float, float, float, float]],
 ) -> List[Tuple[float, float]]:
-    """Deterministic iterative repulsion so day badges never overlap each other or panel edges."""
-    pos = [np.array([x, y], dtype=float) for x, y in anchors_px]
-    orig = [np.array([x, y], dtype=float) for x, y in anchors_px]
-    x0, y0, x1, y1 = panel_bbox_px
-    pad = 28.0
+    """Place day badges in day order along an outward spiral/arc so every badge circle clears
+    every already-placed badge, every stop dot, UI boxes, and panel borders."""
+    px0, py0, px1, py1 = panel_bbox_px
+    edge_margin = BADGE_R_PX + 10.0
+    min_badge_dist_sq = (2.0 * BADGE_R_PX + 6.5) ** 2
 
-    # Break exact initial ties deterministically in a small spiral
-    for i in range(len(pos)):
-        for j in range(i + 1, len(pos)):
-            if np.linalg.norm(pos[i] - pos[j]) < 2.0:
-                ang = 0.9 * j
-                pos[j] = pos[j] + np.array([math.cos(ang), math.sin(ang)]) * 8.0
+    placed: List[Tuple[float, float]] = []
+    leaders: List[Tuple[Tuple[float, float], Tuple[float, float]]] = []
 
-    for _ in range(90):
-        for i in range(len(pos)):
-            for j in range(i + 1, len(pos)):
-                delta = pos[j] - pos[i]
-                dist = float(np.linalg.norm(delta))
-                if dist < min_dist_px:
-                    if dist < 1e-4:
-                        direction = np.array([1.0, 0.0])
-                    else:
-                        direction = delta / dist
-                    push = 0.52 * (min_dist_px - dist) * direction
-                    pos[i] -= push
-                    pos[j] += push
-            # Gentle spring back toward anchor
-            pos[i] += 0.08 * (orig[i] - pos[i])
-            # Keep inside panel
-            pos[i][0] = float(np.clip(pos[i][0], x0 + pad, x1 - pad))
-            pos[i][1] = float(np.clip(pos[i][1], y0 + pad, y1 - pad))
-            # Push out of forbidden UI boxes (legend / scale / inset)
-            for fx0, fy0, fx1, fy1 in forbidden_px:
-                if (fx0 - 20 <= pos[i][0] <= fx1 + 20) and (fy0 - 20 <= pos[i][1] <= fy1 + 20):
-                    cx, cy = 0.5 * (fx0 + fx1), 0.5 * (fy0 + fy1)
-                    if abs(pos[i][0] - cx) > abs(pos[i][1] - cy):
-                        pos[i][0] = fx1 + 22 if pos[i][0] >= cx else fx0 - 22
-                    else:
-                        pos[i][1] = fy1 + 22 if pos[i][1] >= cy else fy0 - 22
-                    pos[i][0] = float(np.clip(pos[i][0], x0 + pad, x1 - pad))
-                    pos[i][1] = float(np.clip(pos[i][1], y0 + pad, y1 - pad))
+    def _is_clear(cx: float, cy: float) -> bool:
+        if cx < px0 + edge_margin or cx > px1 - edge_margin or cy < py0 + edge_margin or cy > py1 - edge_margin:
+            return False
+        for fx in forbidden_px:
+            if _circle_intersects_box(cx, cy, BADGE_R_PX + 7.0, fx):
+                return False
+        for bx, by in placed:
+            if (cx - bx) ** 2 + (cy - by) ** 2 < min_badge_dist_sq:
+                return False
+        for dx_o, dy_o, req_r in dot_obstacles_px:
+            min_d = BADGE_R_PX + req_r
+            if (cx - dx_o) ** 2 + (cy - dy_o) ** 2 < min_d * min_d:
+                return False
+        return True
 
-    return [(float(p[0]), float(p[1])) for p in pos]
+    for idx, (ax0, ay0) in enumerate(anchors_px):
+        if _is_clear(ax0, ay0):
+            placed.append((ax0, ay0))
+            continue
+
+        # Check if an earlier day shared this city/cluster so badges step smoothly along an arc
+        co_prev = None
+        for j in range(idx - 1, -1, -1):
+            if math.hypot(anchors_px[j][0] - ax0, anchors_px[j][1] - ay0) < 36.0:
+                co_prev = placed[j]
+                break
+
+        if co_prev is not None:
+            theta0 = math.atan2(co_prev[1] - ay0, co_prev[0] - ax0) - 0.56
+            unidirectional = True
+        else:
+            # Point outward away from local stop density and nearby panel walls, slightly favoring NW/W
+            # so NE/E stays open next to key stops for labels when possible.
+            vx, vy = -0.35, 0.35
+            for dx_o, dy_o, _ in dot_obstacles_px:
+                ddx, ddy = ax0 - dx_o, ay0 - dy_o
+                dist = math.hypot(ddx, ddy)
+                if 2.0 < dist < 240.0:
+                    w = 180.0 / (dist * math.sqrt(dist))
+                    vx += w * (ddx / dist)
+                    vy += w * (ddy / dist)
+            if ax0 - px0 < 180.0:
+                vx += 1.6
+            if px1 - ax0 < 180.0:
+                vx -= 1.6
+            if ay0 - py0 < 180.0:
+                vy += 1.8
+            if py1 - ay0 < 180.0:
+                vy -= 1.8
+            theta0 = math.atan2(vy, vx)
+            unidirectional = False
+
+        best_pt: Optional[Tuple[float, float]] = None
+        best_cost = float("inf")
+        first_valid_r: Optional[float] = None
+
+        for r in np.arange(46.0, 420.0, 5.5):
+            rf = float(r)
+            if first_valid_r is not None and rf > first_valid_r + 11.0:
+                break
+            n_ang = max(40, int(round(2.0 * math.pi * rf / 7.5)))
+            dtheta = 2.0 * math.pi / n_ang
+            if unidirectional:
+                steps = [-k * dtheta for k in range(n_ang)]
+            else:
+                steps = [0.0]
+                for k in range(1, n_ang // 2 + 1):
+                    steps.append(-k * dtheta)
+                    if k < n_ang - k:
+                        steps.append(k * dtheta)
+
+            for st in steps:
+                ang = theta0 + st
+                cx = ax0 + rf * math.cos(ang)
+                cy = ay0 + rf * math.sin(ang)
+                if not _is_clear(cx, cy):
+                    continue
+                if first_valid_r is None:
+                    first_valid_r = rf
+
+                # Soft geometric tie-breakers: compact radius, smooth arc, clean non-crossing leader lines
+                ang_pen = abs(st) if not unidirectional else (abs(st) % (2.0 * math.pi))
+                crossings = 0
+                if rf > BADGE_R_PX:
+                    for l_a, l_b in leaders:
+                        if _segs_intersect_open((ax0, ay0), (cx, cy), l_a, l_b):
+                            crossings += 1
+                near_badges = 0
+                for bx, by in placed:
+                    if _pt_seg_dist(bx, by, ax0, ay0, cx, cy) < BADGE_R_PX + 4.0:
+                        near_badges += 1
+                near_dots = 0
+                for dx_o, dy_o, req_r in dot_obstacles_px:
+                    if math.hypot(dx_o - ax0, dy_o - ay0) > 8.0:
+                        if _pt_seg_dist(dx_o, dy_o, ax0, ay0, cx, cy) < req_r + 2.0:
+                            near_dots += 1
+
+                cost = rf + 12.0 * ang_pen + 320.0 * crossings + 140.0 * near_badges + 22.0 * near_dots
+                if cost < best_cost:
+                    best_cost = cost
+                    best_pt = (cx, cy)
+
+        if best_pt is None:
+            best_pt = (
+                float(np.clip(ax0, px0 + edge_margin, px1 - edge_margin)),
+                float(np.clip(ay0, py0 + edge_margin, py1 - edge_margin)),
+            )
+
+        placed.append(best_pt)
+        if math.hypot(best_pt[0] - ax0, best_pt[1] - ay0) > BADGE_R_PX:
+            leaders.append(((ax0, ay0), best_pt))
+
+    return placed
 
 
-def _boxes_overlap_area(a: Tuple[float, float, float, float], b: Tuple[float, float, float, float], pad: float = 4.0) -> float:
+def _boxes_overlap_area(a: Tuple[float, float, float, float], b: Tuple[float, float, float, float], pad: float = 0.0) -> float:
     ox = max(0.0, min(a[2] + pad, b[2] + pad) - max(a[0] - pad, b[0] - pad))
     oy = max(0.0, min(a[3] + pad, b[3] + pad) - max(a[1] - pad, b[1] - pad))
     return ox * oy
@@ -1187,89 +1467,95 @@ def place_halo_labels(
     ax,
     label_specs: List[Tuple[str, float, float, str]],
     stop_px_pts: List[Tuple[float, float]],
+    badge_centers_px: List[Tuple[float, float]],
     occupied_boxes_px: List[Tuple[float, float, float, float]],
     panel_bbox_px: Tuple[float, float, float, float],
 ):
-    """Place 6-10 key stop labels with dark halos, guaranteed inside the map panel and collision-free."""
+    """Try 8 compass offsets (NE, E, SE, S, SW, W, NW, N) per key stop; keep the first whose
+    haloed text box intersects no badge, no already-placed label/UI box, and stays inside the
+    map panel. Drop the label rather than overlap it."""
     renderer = fig.canvas.get_renderer()
     px0, py0, px1, py1 = panel_bbox_px
-    edge_pad = 22.0
+    edge_pad = 14.0
+    halo_pad = 6.0  # accounts for 3.8 pt stroke halo around glyphs
 
-    # Candidate (dx_pt, dy_pt, ha, va) around the stop
-    candidates: List[Tuple[float, float, str, str]] = []
-    for r_pt in (11, 17, 25, 34, 45):
-        for deg in (25, -25, 155, -155, 0, 180, 55, -55, 125, -125, 85, -85):
-            rad = math.radians(deg)
-            dx = r_pt * math.cos(rad)
-            dy = r_pt * math.sin(rad)
-            ha = "left" if dx > 4 else ("right" if dx < -4 else "center")
-            va = "bottom" if dy > 6 else ("top" if dy < -6 else "center")
-            candidates.append((dx, dy, ha, va))
+    # Exact 8 compass offsets: NE, E, SE, S, SW, W, NW, N
+    compass_offsets: List[Tuple[str, float, float, str, str]] = [
+        ("NE", 7.4, 7.4, "left", "bottom"),
+        ("E", 10.0, 0.0, "left", "center"),
+        ("SE", 7.4, -7.4, "left", "top"),
+        ("S", 0.0, -10.0, "center", "top"),
+        ("SW", -7.4, -7.4, "right", "top"),
+        ("W", -10.0, 0.0, "right", "center"),
+        ("NW", -7.4, 7.4, "right", "bottom"),
+        ("N", 0.0, 10.0, "center", "bottom"),
+    ]
 
-    for text_str, sx, sy, accent_col in label_specs:
-        anchor_disp = ax.transData.transform((sx, sy))
-        best_cfg = None
-        best_score = float("inf")
-        best_ext = None
+    for text_str, sx, sy, _accent_col in label_specs:
+        self_px = ax.transData.transform((sx, sy))
+        sx_px, sy_px = float(self_px[0]), float(self_px[1])
 
         probe = ax.annotate(
             text_str,
             xy=(sx, sy),
-            xytext=(12, 8),
+            xytext=(10.0, 0.0),
             textcoords="offset points",
             fontsize=8.6,
             fontweight="bold",
             color=TEXT,
             zorder=8.2,
-            path_effects=[pe.withStroke(linewidth=3.6, foreground=BG)],
+            path_effects=[pe.withStroke(linewidth=3.8, foreground=BG)],
         )
 
-        for dx, dy, ha, va in candidates:
+        chosen_cfg: Optional[Tuple[float, float, str, str, Tuple[float, float, float, float]]] = None
+        fallback_dot_cfg: Optional[Tuple[float, float, str, str, Tuple[float, float, float, float]]] = None
+
+        for _dir_name, dx, dy, ha, va in compass_offsets:
             probe.xyann = (dx, dy)
             probe.set_ha(ha)
             probe.set_va(va)
             bb = probe.get_window_extent(renderer=renderer)
-            cand_box = (float(bb.x0), float(bb.y0), float(bb.x1), float(bb.y1))
+            cand_box = (
+                float(bb.x0) - halo_pad,
+                float(bb.y0) - halo_pad,
+                float(bb.x1) + halo_pad,
+                float(bb.y1) + halo_pad,
+            )
 
-            # Hard boundary check: never allow a label near or beyond panel border
+            # 1. Must stay strictly inside map panel
             if (cand_box[0] < px0 + edge_pad or cand_box[2] > px1 - edge_pad
                     or cand_box[1] < py0 + edge_pad or cand_box[3] > py1 - edge_pad):
                 continue
 
-            score = 0.16 * math.hypot(dx, dy)
-            # Penalize overlapping existing boxes (badges, legend, scale bar, prior labels)
-            for ob in occupied_boxes_px:
-                ov = _boxes_overlap_area(cand_box, ob, pad=6.0)
-                if ov > 0:
-                    score += 5000.0 + 3.0 * ov
+            # 2. Must intersect no day badge circle
+            if any(_circle_intersects_box(bx, by, BADGE_R_PX + 2.5, cand_box) for bx, by in badge_centers_px):
+                continue
 
-            # Penalize covering stop dots
-            for pt_x, pt_y in stop_px_pts:
-                if (cand_box[0] - 5 <= pt_x <= cand_box[2] + 5) and (cand_box[1] - 5 <= pt_y <= cand_box[3] + 5):
-                    score += 95.0
+            # 3. Must intersect no already-placed label, UI box, or graticule tick label
+            if any(_boxes_overlap_area(cand_box, ob, pad=0.0) > 0.0 for ob in occupied_boxes_px):
+                continue
 
-            # Slight preference for outward placement away from dense centroid
-            if score < best_score:
-                best_score = score
-                best_cfg = (dx, dy, ha, va)
-                best_ext = cand_box
-                if score < 6.0:
-                    break
+            # Prefer directions that also avoid covering neighboring stop dots
+            hits_other_dot = any(
+                math.hypot(pt_x - sx_px, pt_y - sy_px) > 4.0
+                and _circle_intersects_box(pt_x, pt_y, 13.5, cand_box)
+                for pt_x, pt_y in stop_px_pts
+            )
+            if not hits_other_dot:
+                chosen_cfg = (dx, dy, ha, va, cand_box)
+                break
+            if fallback_dot_cfg is None:
+                fallback_dot_cfg = (dx, dy, ha, va, cand_box)
 
         probe.remove()
 
-        if best_cfg is None:
-            # Fallback clamped toward panel center
-            cx_disp, cy_disp = 0.5 * (px0 + px1), 0.5 * (py0 + py1)
-            dx = 14.0 if anchor_disp[0] < cx_disp else -14.0
-            dy = 10.0 if anchor_disp[1] < cy_disp else -10.0
-            ha = "left" if dx > 0 else "right"
-            va = "bottom" if dy > 0 else "top"
-            best_cfg = (dx, dy, ha, va)
+        final_cfg = chosen_cfg if chosen_cfg is not None else fallback_dot_cfg
+        if final_cfg is None:
+            # Drop the label rather than overlap any badge, placed label, or panel border
+            continue
 
-        dx, dy, ha, va = best_cfg
-        use_leader = math.hypot(dx, dy) >= 15.0
-        ann = ax.annotate(
+        dx, dy, ha, va, placed_box = final_cfg
+        ax.annotate(
             text_str,
             xy=(sx, sy),
             xytext=(dx, dy),
@@ -1280,15 +1566,10 @@ def place_halo_labels(
             fontweight="bold",
             color=TEXT,
             zorder=8.2,
-            arrowprops=(
-                dict(arrowstyle="-", color=MUTED, lw=0.85, alpha=0.80, shrinkA=1, shrinkB=4)
-                if use_leader else None
-            ),
             path_effects=[pe.withStroke(linewidth=3.8, foreground=BG)],
         )
-        bb_final = ann.get_window_extent(renderer=renderer)
-        occupied_boxes_px.append((float(bb_final.x0), float(bb_final.y0), float(bb_final.x1), float(bb_final.y1)))
-        # Highlight key stop ring
+        occupied_boxes_px.append(placed_box)
+        # Highlight key stop ring only when its label is placed
         ax.scatter([sx], [sy], s=110, facecolors="none", edgecolors=TEXT, linewidths=1.1, alpha=0.85, zorder=5.0)
 
 
@@ -1523,7 +1804,12 @@ def render_poster(trip: Dict[str, Any]) -> pathlib.Path:
         all_lons += [p[1] for p in trip["return_path"]]
 
     proj, xlim, ylim, lon_win, lat_win = fit_lcc_window(
-        all_lons, all_lats, map_rect[2] * W, map_rect[3] * H, pad_each_side=0.095
+        all_lons,
+        all_lats,
+        map_rect[2] * W,
+        map_rect[3] * H,
+        pad_each_side=float(trip.get("pad_each_side", 0.085)),
+        is_us=bool(trip.get("is_us")),
     )
     ax_map.set_xlim(*xlim)
     ax_map.set_ylim(*ylim)
@@ -1548,7 +1834,7 @@ def render_poster(trip: Dict[str, Any]) -> pathlib.Path:
         in_box = draw_colorado_locator_inset(fig, map_rect, all_lons, all_lats)
         forbidden_axes_boxes.append(in_box)
 
-    draw_graticule(ax_map, proj, lon_win, lat_win, xlim, ylim, skip_axes_boxes=forbidden_axes_boxes)
+    tick_texts = draw_graticule(ax_map, proj, lon_win, lat_win, xlim, ylim, skip_axes_boxes=forbidden_axes_boxes)
     draw_land(ax_map, proj, lon_win, lat_win)
     if trip.get("is_us"):
         draw_states(ax_map, proj)
@@ -1573,6 +1859,7 @@ def render_poster(trip: Dict[str, Any]) -> pathlib.Path:
     draw_gradient_route(ax_map, pxs, pys, cmap, return_xy=ret_xy)
 
     # Optional secondary hidden-gem markers (Italy Classic)
+    gx, gy = np.array([], dtype=float), np.array([], dtype=float)
     if trip.get("gems"):
         gx, gy = lcc([g["lon"] for g in trip["gems"]], [g["lat"] for g in trip["gems"]], *proj)
         ax_map.scatter(gx, gy, marker="D", s=34, c="#b283f8", alpha=0.85, edgecolors=BG, linewidths=0.8, zorder=3.9)
@@ -1594,70 +1881,75 @@ def render_poster(trip: Dict[str, Any]) -> pathlib.Path:
         p0 = ax_map.transAxes.transform((ax0, ay0))
         p1 = ax_map.transAxes.transform((ax1, ay1))
         forbidden_px.append((float(p0[0]), float(p0[1]), float(p1[0]), float(p1[1])))
+    for tt in tick_texts:
+        tbb = tt.get_window_extent(renderer=renderer)
+        forbidden_px.append((float(tbb.x0) - 2.0, float(tbb.y0) - 2.0, float(tbb.x1) + 2.0, float(tbb.y1) + 2.0))
 
     occupied_px: List[Tuple[float, float, float, float]] = list(forbidden_px)
     stop_px_pts = [tuple(map(float, ax_map.transData.transform((float(sx[i]), float(sy[i]))))) for i in range(len(stops))]
 
-    # Numbered day badges
-    if trip.get("city_badges"):
-        # Pill day-range badges near each city
-        for i, s in enumerate(stops):
-            badge_txt = s.get("badge")
-            if not badge_txt:
-                continue
-            bcol = day_color(cmap, int(s.get("day", 1)), days)
-            # Offset badge slightly above-left/right so city dot stays visible
-            off_x = -24 if s["name"] in ("Pisa", "Milan", "Milano", "Roma (FCO)") else 22
-            off_y = -18 if s["name"] in ("Pisa", "Roma (FCO)", "Rome (FCO)") else 16
-            t_b = ax_map.annotate(
-                badge_txt,
-                xy=(float(sx[i]), float(sy[i])),
-                xytext=(off_x, off_y),
-                textcoords="offset points",
-                fontsize=7.2, fontweight="bold", color=BG,
-                ha="center", va="center", zorder=6.5,
-                bbox=dict(boxstyle="round,pad=0.28,rounding_size=0.45", facecolor=bcol, edgecolor=BG, linewidth=1.2),
-                arrowprops=dict(arrowstyle="-", color=bcol, lw=1.0, alpha=0.85, shrinkA=0, shrinkB=4),
+    key_name_set = set(trip["key_stops"])
+    dot_obstacles_px: List[Tuple[float, float, float]] = []
+    for i, (pt_x, pt_y) in enumerate(stop_px_pts):
+        req_r = 24.5 if stops[i]["name"] in key_name_set else 18.0
+        dot_obstacles_px.append((pt_x, pt_y, req_r))
+    for i in range(len(gx)):
+        gpt = ax_map.transData.transform((float(gx[i]), float(gy[i])))
+        gp = (float(gpt[0]), float(gpt[1]))
+        stop_px_pts.append(gp)
+        dot_obstacles_px.append((gp[0], gp[1], 15.5))
+    for _ename, ela, elo in trip.get("extra_labels", []):
+        ex, ey = lcc([elo], [ela], *proj)
+        ept = ax_map.transData.transform((float(ex[0]), float(ey[0])))
+        ep = (float(ept[0]), float(ept[1]))
+        stop_px_pts.append(ep)
+        dot_obstacles_px.append((ep[0], ep[1], 24.5))
+
+    # Compute per-day anchor coordinates sorted by day (1..days)
+    day_anchors_data: List[Tuple[int, float, float]] = []
+    overrides = trip.get("day_overrides", {})
+    for d in range(1, days + 1):
+        if d in overrides:
+            ola, olo = overrides[d]
+            ox, oy = lcc([olo], [ola], *proj)
+            day_anchors_data.append((d, float(ox[0]), float(oy[0])))
+            continue
+        d_stops = [i for i, s in enumerate(stops) if int(s.get("day", 0)) == d]
+        if d_stops:
+            mx = float(np.mean([sx[i] for i in d_stops]))
+            my = float(np.mean([sy[i] for i in d_stops]))
+            day_anchors_data.append((d, mx, my))
+        elif len(pxs) >= 2:
+            idx = min(len(pxs) - 1, round((d - 1) / max(days - 1, 1) * (len(pxs) - 1)))
+            day_anchors_data.append((d, float(pxs[idx]), float(pys[idx])))
+
+    day_anchors_data.sort(key=lambda item: item[0])
+    raw_px = [tuple(map(float, ax_map.transData.transform((mx, my)))) for _, mx, my in day_anchors_data]
+    badge_centers_px = _place_day_badges_px(
+        raw_px,
+        dot_obstacles_px=dot_obstacles_px,
+        panel_bbox_px=panel_bbox_px,
+        forbidden_px=forbidden_px,
+    )
+
+    for idx_b, (d, orig_x, orig_y) in enumerate(day_anchors_data):
+        rx_px, ry_px = badge_centers_px[idx_b]
+        bx_d, by_d = ax_map.transData.inverted().transform((rx_px, ry_px))
+        bcol = day_color(cmap, d, days)
+        if math.hypot(rx_px - raw_px[idx_b][0], ry_px - raw_px[idx_b][1]) > BADGE_R_PX:
+            ax_map.plot(
+                [orig_x, bx_d], [orig_y, by_d],
+                color=bcol, lw=1.05, alpha=0.88, zorder=4.2,
+                path_effects=[pe.withStroke(linewidth=2.4, foreground=BG)],
             )
-            bb = t_b.get_window_extent(renderer=renderer)
-            occupied_px.append((float(bb.x0) - 4, float(bb.y0) - 4, float(bb.x1) + 4, float(bb.y1) + 4))
-    else:
-        # Compute per-day anchor coordinates (1..days)
-        day_anchors_data: List[Tuple[int, float, float]] = []
-        overrides = trip.get("day_overrides", {})
-        for d in range(1, days + 1):
-            if d in overrides:
-                ola, olo = overrides[d]
-                ox, oy = lcc([olo], [ola], *proj)
-                day_anchors_data.append((d, float(ox[0]), float(oy[0])))
-                continue
-            d_stops = [i for i, s in enumerate(stops) if int(s.get("day", 0)) == d]
-            if d_stops:
-                mx = float(np.mean([sx[i] for i in d_stops]))
-                my = float(np.mean([sy[i] for i in d_stops]))
-                day_anchors_data.append((d, mx, my))
-            elif len(pxs) >= 2:
-                idx = min(len(pxs) - 1, round((d - 1) / max(days - 1, 1) * (len(pxs) - 1)))
-                day_anchors_data.append((d, float(pxs[idx]), float(pys[idx])))
+        ax_map.scatter([bx_d], [by_d], s=265, c=[bcol], edgecolors=BG, linewidths=1.8, zorder=6.4)
+        ax_map.text(
+            bx_d, by_d, str(d),
+            fontsize=7.6, fontweight="bold", color=BG,
+            ha="center", va="center", zorder=6.6,
+        )
 
-        raw_px = [tuple(map(float, ax_map.transData.transform((mx, my)))) for _, mx, my in day_anchors_data]
-        repelled_px = _repel_points_px(raw_px, min_dist_px=64.0, panel_bbox_px=panel_bbox_px, forbidden_px=forbidden_px)
-
-        for idx_b, (d, orig_x, orig_y) in enumerate(day_anchors_data):
-            rx_px, ry_px = repelled_px[idx_b]
-            bx_d, by_d = ax_map.transData.inverted().transform((rx_px, ry_px))
-            bcol = day_color(cmap, d, days)
-            if math.hypot(rx_px - raw_px[idx_b][0], ry_px - raw_px[idx_b][1]) > 22.0:
-                ax_map.plot([orig_x, bx_d], [orig_y, by_d], color=bcol, lw=1.0, alpha=0.75, zorder=5.8)
-            ax_map.scatter([bx_d], [by_d], s=265, c=[bcol], edgecolors=BG, linewidths=1.8, zorder=6.4)
-            ax_map.text(
-                bx_d, by_d, str(d),
-                fontsize=7.6, fontweight="bold", color=BG,
-                ha="center", va="center", zorder=6.6,
-            )
-            occupied_px.append((rx_px - 28.0, ry_px - 28.0, rx_px + 28.0, ry_px + 28.0))
-
-    # Place 6-10 haloed key stop labels
+    # Place haloed key stop labels using 8 compass offsets (drop rather than overlap)
     by_name = {s["name"]: (float(sx[i]), float(sy[i]), day_color(cmap, int(s.get("day", 1)), days)) for i, s in enumerate(stops)}
     label_specs: List[Tuple[str, float, float, str]] = []
     for kname in trip["key_stops"]:
@@ -1668,7 +1960,7 @@ def render_poster(trip: Dict[str, Any]) -> pathlib.Path:
         ex, ey = lcc([elo], [ela], *proj)
         label_specs.append((ename, float(ex[0]), float(ey[0]), to_hex(cmap(0.0))))
 
-    place_halo_labels(fig, ax_map, label_specs, stop_px_pts, occupied_px, panel_bbox_px)
+    place_halo_labels(fig, ax_map, label_specs, stop_px_pts, badge_centers_px, occupied_px, panel_bbox_px)
 
     # ------------------------------------------------------------------ 3. DAY LEDGER (right ~34%)
     ledger_rect = [0.638, 0.082, 0.337, 0.784]
