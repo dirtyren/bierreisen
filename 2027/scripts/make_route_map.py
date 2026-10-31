@@ -144,27 +144,26 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
     "v3": {
         "data_path": DIR_2027 / "v3" / "data" / "route-2027-v3.json",
         "out_png": DIR_2027 / "v3" / "assets" / "2027-route-map-v3.png",
-        "eyebrow": "BIERREISEN   ·   2027 ROUTE & ITINERARY POSTER   ·   WÜRZBURG BREWERY NIGHT",
+        "eyebrow": "BIERREISEN   ·   2027 ROUTE & ITINERARY POSTER   ·   WÜRZBURG IN, COLOGNE LUNCH STOP",
         "title": "BIER REISEN 2027",
         "version_tag": "V3",
-        "headline_stats": "16 days  ·  15 nights  ·  11 bases  ·  2,307.5 km  ·  27 h 08  ·  3 countries",
+        "headline_stats": "15 days  ·  14 nights  ·  10 bases  ·  2,305.6 km  ·  26 h 53  ·  3 countries",
         "route_line_1": (
-            "Frankfurt Airport → Bruges (2N) → Ghent (1N) → Cologne (1N) → "
-            "Würzburg (1N, new) → Bamberg (2N)"
+            "Frankfurt Airport → Bruges (2N) → Ghent (1N) → Würzburg (1N, Cologne lunch) → "
+            "Bamberg (2N) → Pivovar Permon, Sokolov (1N)"
         ),
         "route_line_2": (
-            "→ Pivovar Permon, Sokolov (1N) → Plzeň (2N) → Kout na Šumavě (1N) → "
-            "Maxlrain (1N) → Andechs/Herrsching (1N) → Munich (2N) → Frankfurt Airport"
+            "→ Plzeň (2N) → Kout na Šumavě (1N) → Maxlrain Bierstube (1N) → "
+            "Andechs/Herrsching (1N) → Munich (2N) → Frankfurt Airport"
         ),
         "meta_line": (
-            "Changed vs v2: Würzburg night added between Cologne & Bamberg — no middle leg exceeds 3 h 15  ·  "
+            "Changed vs v2: Cologne night out (Day 4 lunch stop), Würzburg night in, Munich untouched (2N)  ·  "
             "2027/v3/data/route-2027-v3.json"
         ),
         "leg_bends": {
             ("fra", "bruges"): 0.08,
             ("bruges", "ghent"): 0.10,
-            ("ghent", "cologne"): 0.12,
-            ("cologne", "wurzburg"): 0.16,
+            ("ghent", "wurzburg"): 0.15,
             ("wurzburg", "bamberg"): 0.16,
             ("bamberg", "sokolov"): 0.06,
             ("sokolov", "plzen"): 0.08,
@@ -178,7 +177,6 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
             "fra": [-155, -140, 180, -125, -170],
             "bruges": [110, 90, 135, 160, 70, 180],
             "ghent": [-130, -110, -150, -90, 180],
-            "cologne": [95, 115, 75, 135, 55, 180],
             "wurzburg": [-95, -115, -75, -130, 105],
             "bamberg": [65, 45, -60, 85, -80],
             "sokolov": [85, 105, 65, 125, 45],
@@ -188,27 +186,27 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
             "andechs": [180, -155, -135, 160, -115],
             "munich": [25, 42, 10, 55, 0],
         },
-        "long_days": (),
-        "new_days": (5, 6),
-        "ledger_day_tags": {5: "[NEW IN V3]", 6: "[NEW IN V3]"},
+        "long_days": (4,),
+        "new_days": (5,),
+        "ledger_day_tags": {4: "[LONG DAY]", 5: "[NEW IN V3]"},
         "map_callout": {
-            "x0": 0.590,
+            "x0": 0.560,
             "y0": 0.820,
-            "w": 0.390,
+            "w": 0.420,
             "h": 0.156,
-            "heading": "WHY WÜRZBURG (STOP #5 · 1N)  —  GHENT → BAMBERG BREAKER",
-            "line1": "Splits Ghent → Bamberg (old 6h51) into 3 short days: 3:06 · 3:02 · 1:03",
-            "line2": "Wine-capital pivot to Franconian lager: 1643 Hofbräu, Goldene Gans & Ochsenfurt",
-            "line3": "Every middle leg on the 16-day loop stays under 3 h 15 (max 3:11).",
+            "heading": "DAY 4 COLOGNE LUNCH STOP  ·  WÜRZBURG NIGHT (STOP #4 · 1N)",
+            "line1": "Ghent → Würzburg (565 km · 5:53, long day): Cologne sits right on the route",
+            "line2": "Lunch ~3 h in (10 min off motorway): Kölsch at Früh am Dom or Malzmühle",
+            "line3": "One night in Würzburg (1643 Hofbräu, Goldene Gans) → 1:03 hop to Bamberg",
         },
         "must_drink": (
-            "Flemish red (Bruges) · Gruut (Ghent) · Kölsch (Cologne) · Hofbräu Pils, Schwarzbier & Goldene Gans (Würzburg) · "
+            "Flemish red (Bruges) · Gruut (Ghent) · Kölsch (Day 4 Cologne lunch) · Hofbräu Pils, Schwarzbier & Goldene Gans (Würzburg) · "
             "Rauchbier & aU (Bamberg) · Permon IPA 15° (Sokolov) · Tank Pilsner (Plzeň) · "
             "Kout 12° · Maxlrainer Helles · Doppelbock (Andechs) · Holzfass Edelstoff (Munich)"
         ),
         "totals_line": (
-            "16 days · 15 nights · 11 bases · 12 driving legs · 2,307.5 km · "
-            "27 h 08 driving (1,628 min) · Every middle leg under 3 h 15 · Germany, Belgium & Czechia"
+            "15 days · 14 nights · 10 bases · 11 driving legs · 2,305.6 km (2,306 km) · "
+            "26 h 53 driving (1,613 min) · Day 4 broken by Cologne lunch · Germany, Belgium & Czechia"
         ),
     },
 }

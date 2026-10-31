@@ -3,20 +3,20 @@
   "title": "Bier Reisen 2027 — v3",
   "subtitle": "Bruges, Ghent, Cologne, Würzburg, Bamberg, Bohemia, Bavaria",
   "year": 2027,
-  "days": 16,
-  "nights": 15,
-  "bases": 11,
+  "days": 15,
+  "nights": 14,
+  "bases": 10,
   "countries": [
    "Germany",
    "Belgium",
    "Czechia"
   ],
-  "total_km": 2307.5,
-  "total_drive_minutes": 1628,
+  "total_km": 2305.6,
+  "total_drive_minutes": 1613,
   "start": "Frankfurt am Main Airport (FRA)",
   "end": "Frankfurt am Main Airport (FRA)",
   "version": "v3",
-  "changes": "Würzburg night added between Cologne and Bamberg — the Ghent→Bamberg run is now three short days"
+  "changes": "Cologne night removed (it is now a lunch stop on the way), Würzburg night added; Munich untouched"
  },
  "stops": [
   {
@@ -56,20 +56,8 @@
    "note": "Gruut, Dok Noord, Dulle Griet and the Waterhuis."
   },
   {
-   "id": "cologne",
-   "order": 3,
-   "name": "Cologne",
-   "city": "Köln",
-   "country": "Germany",
-   "nights": 1,
-   "lat": 50.9424,
-   "lon": 6.9555,
-   "kind": "city",
-   "note": "Kölsch country: Früh am Dom, Päffgen, Mühlen, Lommerzheim and the Ehrenfeld craft scene."
-  },
-  {
    "id": "wurzburg",
-   "order": 4,
+   "order": 3,
    "name": "Würzburg",
    "city": "Würzburg",
    "country": "Germany",
@@ -81,7 +69,7 @@
   },
   {
    "id": "bamberg",
-   "order": 5,
+   "order": 4,
    "name": "Bamberg",
    "city": "Bamberg",
    "country": "Germany",
@@ -93,7 +81,7 @@
   },
   {
    "id": "sokolov",
-   "order": 6,
+   "order": 5,
    "name": "Pivovar Permon, Sokolov",
    "city": "Sokolov",
    "country": "Czechia",
@@ -106,7 +94,7 @@
   },
   {
    "id": "plzen",
-   "order": 7,
+   "order": 6,
    "name": "Plzeň",
    "city": "Plzeň",
    "country": "Czechia",
@@ -118,7 +106,7 @@
   },
   {
    "id": "kout",
-   "order": 8,
+   "order": 7,
    "name": "Kout na Šumavě",
    "city": "Kout na Šumavě",
    "country": "Czechia",
@@ -131,7 +119,7 @@
   },
   {
    "id": "maxlrain",
-   "order": 9,
+   "order": 8,
    "name": "Maxlrain Bierstube",
    "city": "Tuntenhausen-Maxlrain",
    "country": "Germany",
@@ -144,7 +132,7 @@
   },
   {
    "id": "andechs",
-   "order": 10,
+   "order": 9,
    "name": "Andechs / Herrsching",
    "city": "Andechs",
    "country": "Germany",
@@ -157,7 +145,7 @@
   },
   {
    "id": "munich",
-   "order": 11,
+   "order": 10,
    "name": "Munich",
    "city": "München",
    "country": "Germany",
@@ -207,30 +195,18 @@
   },
   {
    "day": 4,
-   "base": "cologne",
-   "title": "Drive to Cologne",
-   "drive": "ghent->cologne",
+   "base": "wurzburg",
+   "title": "Ghent to Würzburg, lunch in Cologne",
+   "drive": "ghent->wurzburg",
    "items": [
-    "265 km / 3 h 06 through the Rhineland",
-    "Kölsch at Früh am Dom, then Brauerei zur Malzmühle (Mühlen)",
-    "Evening in Ehrenfeld: Braustelle for craft beer",
-    "A Kölsch is 0.2 l — the Köbes keeps refilling until the coaster goes on the glass"
+    "565 km / 5 h 53 — the long day, and Cologne sits right on the route",
+    "Lunch stop in Cologne: Früh am Dom or Brauerei zur Malzmühle for a Kölsch (≈3 h in, 10 min off the motorway)",
+    "Afternoon through the Rhine-Main valley to Würzburg",
+    "Evening: Goldene Gans under the Alte Mainbrücke, house-brewed beer"
    ]
   },
   {
    "day": 5,
-   "base": "wurzburg",
-   "title": "Cologne to Würzburg",
-   "drive": "cologne->wurzburg",
-   "items": [
-    "302 km / 3 h 02 up the Rhine and Main",
-    "Goldene Gans: house-brewed beer under the Alte Mainbrücke",
-    "Würzburger Hofbräukeller: Pils, Hefeweißbier, brewery tour Fri/Sat with keg tapping",
-    "Nightcap with a Herbipolis or Maischerei Mayr & Müller craft pour"
-   ]
-  },
-  {
-   "day": 6,
    "base": "bamberg",
    "title": "Würzburg to Bamberg",
    "drive": "wurzburg->bamberg",
@@ -241,7 +217,7 @@
    ]
   },
   {
-   "day": 7,
+   "day": 6,
    "base": "bamberg",
    "title": "Bamberg brewery crawl",
    "drive": null,
@@ -253,7 +229,7 @@
    ]
   },
   {
-   "day": 8,
+   "day": 7,
    "base": "sokolov",
    "title": "Into Bohemia: Permon",
    "drive": "bamberg->sokolov",
@@ -264,7 +240,7 @@
    ]
   },
   {
-   "day": 9,
+   "day": 8,
    "base": "plzen",
    "title": "Sokolov to Plzeň",
    "drive": "sokolov->plzen",
@@ -275,7 +251,7 @@
    ]
   },
   {
-   "day": 10,
+   "day": 9,
    "base": "plzen",
    "title": "Plzeň: birthplace of pilsner",
    "drive": null,
@@ -286,7 +262,7 @@
    ]
   },
   {
-   "day": 11,
+   "day": 10,
    "base": "kout",
    "title": "Plzeň to the Bohemian forest",
    "drive": "plzen->kout",
@@ -297,7 +273,7 @@
    ]
   },
   {
-   "day": 12,
+   "day": 11,
    "base": "maxlrain",
    "title": "Kout to Upper Bavaria",
    "drive": "kout->maxlrain",
@@ -308,7 +284,7 @@
    ]
   },
   {
-   "day": 13,
+   "day": 12,
    "base": "andechs",
    "title": "Maxlrain to the Holy Mountain",
    "drive": "maxlrain->andechs",
@@ -319,7 +295,7 @@
    ]
   },
   {
-   "day": 14,
+   "day": 13,
    "base": "munich",
    "title": "Andechs to Munich",
    "drive": "andechs->munich",
@@ -330,7 +306,7 @@
    ]
   },
   {
-   "day": 15,
+   "day": 14,
    "base": "munich",
    "title": "Munich",
    "drive": null,
@@ -342,7 +318,7 @@
    ]
   },
   {
-   "day": 16,
+   "day": 15,
    "base": "fra",
    "title": "Munich to Frankfurt, fly home",
    "drive": "munich->fra",
@@ -370,71 +346,64 @@
   },
   {
    "from": "ghent",
-   "to": "cologne",
-   "day": 4,
-   "km": 265.2,
-   "minutes": 186
-  },
-  {
-   "from": "cologne",
    "to": "wurzburg",
-   "day": 5,
-   "km": 302.1,
-   "minutes": 182
+   "day": 4,
+   "km": 565.4,
+   "minutes": 353
   },
   {
    "from": "wurzburg",
    "to": "bamberg",
-   "day": 6,
+   "day": 5,
    "km": 94.3,
    "minutes": 63
   },
   {
    "from": "bamberg",
    "to": "sokolov",
-   "day": 8,
+   "day": 7,
    "km": 160.2,
    "minutes": 119
   },
   {
    "from": "sokolov",
    "to": "plzen",
-   "day": 9,
+   "day": 8,
    "km": 86.8,
    "minutes": 88
   },
   {
    "from": "plzen",
    "to": "kout",
-   "day": 11,
+   "day": 10,
    "km": 61.6,
    "minutes": 66
   },
   {
    "from": "kout",
    "to": "maxlrain",
-   "day": 12,
+   "day": 11,
    "km": 259.8,
    "minutes": 191
   },
   {
    "from": "maxlrain",
    "to": "andechs",
-   "day": 13,
+   "day": 12,
    "km": 89.2,
    "minutes": 85
   },
   {
    "from": "andechs",
    "to": "munich",
-   "day": 14,
+   "day": 13,
    "km": 44.5,
    "minutes": 45
   },
   {
    "from": "munich",
    "to": "fra",
-   "day": 16,
+   "day": 15,
    "km": 402.0,
    "minutes": 244
   }
@@ -444,7 +413,6 @@
    "fra",
    "bruges",
    "ghent",
-   "cologne",
    "wurzburg",
    "bamberg",
    "sokolov",
@@ -462,10 +430,6 @@
    "fra|ghent": [
     453.2,
     294
-   ],
-   "fra|cologne": [
-    181.1,
-    125
    ],
    "fra|wurzburg": [
     127.9,
@@ -503,10 +467,6 @@
     49.2,
     44
    ],
-   "bruges|cologne": [
-    296.2,
-    211
-   ],
    "bruges|wurzburg": [
     596.5,
     378
@@ -539,10 +499,6 @@
     870.6,
     537
    ],
-   "ghent|cologne": [
-    265.2,
-    186
-   ],
    "ghent|wurzburg": [
     565.4,
     353
@@ -574,38 +530,6 @@
    "ghent|munich": [
     839.6,
     511
-   ],
-   "cologne|wurzburg": [
-    302.1,
-    182
-   ],
-   "cologne|bamberg": [
-    387.2,
-    241
-   ],
-   "cologne|sokolov": [
-    549.6,
-    345
-   ],
-   "cologne|plzen": [
-    599.6,
-    350
-   ],
-   "cologne|kout": [
-    568.7,
-    358
-   ],
-   "cologne|maxlrain": [
-    615.6,
-    367
-   ],
-   "cologne|andechs": [
-    613.6,
-    364
-   ],
-   "cologne|munich": [
-    576.3,
-    341
    ],
    "wurzburg|bamberg": [
     94.3,
@@ -801,18 +725,6 @@
    "minutes": 34
   },
   {
-   "from": "cologne",
-   "to": "Düsseldorf (Altbier houses)",
-   "km": 39.0,
-   "minutes": 34
-  },
-  {
-   "from": "cologne",
-   "to": "Bonn (Beethoven house, Rhine)",
-   "km": 30.9,
-   "minutes": 31
-  },
-  {
    "from": "bamberg",
    "to": "Nuremberg (Rotbier day trip)",
    "km": 60.7,
@@ -994,36 +906,6 @@
     "note": "Historic brewery site above the Isar, home of the Starkbierfest."
    }
   ],
-  "Cologne": [
-   {
-    "name": "Früh am Dom",
-    "note": "The classic Kölsch hall beside the cathedral; brewed on site since 1904 and poured by Köbes in 0.2 l Stangen."
-   },
-   {
-    "name": "Brauerei zur Malzmühle",
-    "note": "Heumarkt 6, Mühlen Kölsch since 1858 — one of the few houses still brewing its own Kölsch in the old town."
-   },
-   {
-    "name": "Brauhaus Päffgen",
-    "note": "Friesenstraße 64-66: the brewery tap, Kölsch straight from the wooden barrel, no music, no excuses."
-   },
-   {
-    "name": "Brauhaus Sion",
-    "note": "Unter Taschenmacher 5-7, a Kölsch house with roots in the 14th century, right behind the Alter Markt."
-   },
-   {
-    "name": "Peters Brauhaus",
-    "note": "Mühlengasse 1, historic panelled rooms near the river, Peters Kölsch on tap."
-   },
-   {
-    "name": "Lommerzheim",
-    "note": "Siegesstraße 18 in Deutz: cult pub, Kölsch, Schweinshaxe and a queue of locals by 18:00."
-   },
-   {
-    "name": "Braustelle",
-    "note": "Venloer Straße 386 in Ehrenfeld — Cologne's craft counterpoint, own beers brewed behind the bar."
-   }
-  ],
   "Würzburg": [
    {
     "name": "Würzburger Hofbräukeller",
@@ -1067,8 +949,8 @@
   {
    "region": "Rhineland",
    "styles": [
-    "Kölsch",
-    "Altbier (Düsseldorf, 39 km)"
+    "Kölsch (lunch stop in Cologne, not an overnight)",
+    "Altbier"
    ]
   },
   {

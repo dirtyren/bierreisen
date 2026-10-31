@@ -301,6 +301,18 @@ STYLE_DETAILS: Dict[Tuple[str, str], Tuple[str, str, str, str]] = {
         "4.7 – 5.2%",
         "0.2 L or 0.25 L straight Altbierbecher tapped from wooden barrels at Düsseldorf's Altstadt Hausbrauereien (Uerige, Schlüssel, Füchschen, Schumacher).",
     ),
+    ("Rhineland", "Kölsch (lunch stop in Cologne, not an overnight)"): (
+        "#f6de7a",
+        "Protected-origin (Kölsch-Konvention) top-fermented, cold-conditioned pale ale; delicate pilsner malt, subtle pear-apple ester, crisp noble hop finish.",
+        "4.8%",
+        "0.2 L cylindrical Stange poured on Day 4's midday lunch break in Cologne — Früh am Dom or Brauerei zur Malzmühle, roughly 3 h into Ghent→Würzburg and 10 min off the motorway (0.0% / water for the driver).",
+    ),
+    ("Rhineland", "Altbier"): (
+        "#8c3b1e",
+        "The Rhineland's copper-bronze counterpart downriver in Düsseldorf: top-fermented, cold-lagered ale with nutty Munich malt snap and firm noble hop bitterness.",
+        "4.7 – 5.2%",
+        "0.2 L or 0.25 L straight Altbierbecher; classic Rhenish top-fermented counterpoint alongside pale Kölsch.",
+    ),
 }
 
 # One-line reasons for all side_legs across v1, v2, and v3
@@ -781,76 +793,78 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
 }""",
         "header_h1": '🍺 Bier Reisen 2027 <span class="version-chip">v3</span> 🏰',
         "route_string_html": (
-            "Frankfurt Airport → Bruges (2N) → Ghent (1N) → Cologne (1N) → "
-            "<strong>Würzburg (1N, new)</strong> → Bamberg (2N) → Pivovar Permon, Sokolov (1N) → "
-            "Plzeň (2N) → Kout na Šumavě (1N) → Maxlrain Bierstube (1N) → "
-            "Andechs/Herrsching (1N) → Munich (2N) → Frankfurt Airport "
-            '<span class="muted-inline">(16 days / 15 nights)</span>'
+            "Frankfurt Airport → Bruges (2N) → Ghent (1N) → "
+            "<strong>Würzburg (1N, new · Day 4 lunch in Cologne)</strong> → Bamberg (2N) → "
+            "Pivovar Permon, Sokolov (1N) → Plzeň (2N) → Kout na Šumavě (1N) → "
+            "Maxlrain Bierstube (1N) → Andechs/Herrsching (1N) → Munich (2N) → Frankfurt Airport"
         ),
-        "headline_stats": "16 days · 15 nights · 11 bases · 2,307.5 km · 27 h 08 · 3 countries",
+        "headline_stats": "15 days · 14 nights · 10 bases · 2,305.6 km · 26 h 53 · 3 countries",
         "what_changed_html": (
             '\n  <p class="what-changed">Changed vs v2: '
-            '<em>Würzburg brewery night added between Cologne and Bamberg — pivoting from Rhenish ale into Franconian lager country and turning Ghent→Bamberg into three short days (3 h 06 · 3 h 02 · 1 h 03)</em> · '
+            '<em>Cologne night removed (now a Day 4 Kölsch lunch stop right on the motorway route), Würzburg night kept between Ghent and Bamberg, Munich untouched (2 nights)</em> · '
             '<a href="../v2/2027-bier-reisen-v2.html">← Back to v2 planner</a> · '
             '<a href="../2027-bier-reisen.html">← Back to v1 planner</a></p>'
         ),
         "header_links_html": """    <a href="assets/2027-route-map-v3.png" target="_blank" rel="noopener">🗺️ Open 4800×3120 Route Poster v3 (PNG)</a>
     <a href="data/route-2027-v3.json" target="_blank" rel="noopener">📄 Authoritative Route Data v3 (JSON)</a>
-    <a href="../v2/2027-bier-reisen-v2.html">↩️ Compare with v2 (15-Day Cologne Route)</a>
-    <a href="../2027-bier-reisen.html">↩️ Compare with v1 (15-Day Nuremberg Route)</a>""",
+    <a href="../v2/2027-bier-reisen-v2.html">↩️ Compare with v2 (Cologne Night Route)</a>
+    <a href="../2027-bier-reisen.html">↩️ Compare with v1 (Nuremberg Night Route)</a>""",
         "poster_rel": "assets/2027-route-map-v3.png",
-        "poster_alt": "Bier Reisen 2027 v3 route map poster showing all 12 stops including Würzburg and Cologne, night chips, leg drive times, and 16-day ledger",
+        "poster_alt": "Bier Reisen 2027 v3 route map poster showing all 11 stops including Würzburg, night chips, leg drive times including 565 km / 5:53, Cologne lunch callout, and 15-day ledger",
         "data_rel": "data/route-2027-v3.json",
         "day_region_map": {
             1: "belgium", 2: "belgium", 3: "belgium",
-            4: "rhineland",
-            5: "franconia", 6: "franconia", 7: "franconia",
-            8: "bohemia", 9: "bohemia", 10: "bohemia", 11: "bohemia",
-            12: "bavaria", 13: "bavaria", 14: "bavaria", 15: "bavaria",
+            4: "franconia", 5: "franconia", 6: "franconia",
+            7: "bohemia", 8: "bohemia", 9: "bohemia", 10: "bohemia",
+            11: "bavaria", 12: "bavaria", 13: "bavaria", 14: "bavaria",
         },
-        "long_days": (),
+        "long_days": (4,),
         "day_badges": {
-            5: '<span class="new-badge">✨ NEW IN V3 · Würzburg Brewery Night (3 h 02)</span>',
-            6: '<span class="new-badge">✨ NEW IN V3 · Easy Hop to Bamberg (1 h 03)</span>',
+            4: '<span class="long-badge">⚠️ LONG DAY · 5 h 53 (Cologne Lunch Break)</span> <span class="new-badge">✨ NEW IN V3 · Würzburg Night</span>',
+            5: '<span class="new-badge">✨ NEW IN V3 · Easy Hop to Bamberg (1 h 03)</span>',
         },
         "itinerary_intro": (
             "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): "
-            "15 nights across 11 overnight bases in Belgium, Germany, and Czechia, with "
-            "12 driving legs (2,307.5 km / 27 h 08) and 4 car-free brewery crawl days. "
-            "Every leg except the opening push to Bruges (5 h 15) and the final Munich→FRA return (4 h 04) is now under 3 h 15."
+            "14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with "
+            "11 driving legs (2,305.6 km / 26 h 53) and 4 car-free brewery crawl days. "
+            "Day 4 (Ghent → Würzburg, 565.4 km / 5 h 53) is the single long middle push — with Cologne sitting directly on the motorway route (≈3 h in, 10 min off) as the built-in Kölsch lunch break — leaving an easy 1 h 03 hop into Bamberg on Day 5 and every other middle leg at ≤ 3 h 11."
         ),
         "itinerary_callout_html": """
 
   <aside class="why-callout" aria-label="Why Würzburg">
-    <div class="why-callout-eyebrow">🍺 Why Würzburg — The Surprise Pivot Into Franconia</div>
-    <p>The obvious answer on this corridor is another big-city Kölsch or Altbier stop, yet <strong>Würzburg</strong> is the pivot from Belgian and Rhenish ale into Franconian lager country. Better known as a wine capital, it still runs a brewery founded in 1643 (<strong>Würzburger Hofbräu</strong>) alongside a brewpub pouring its own house beer right under the Alte Mainbrücke (<strong>Goldene Gans</strong>). Add two craft micros in town (<strong>Herbipolis / SMaSH</strong> and <strong>Maischerei Mayr &amp; Müller</strong>) plus two country breweries 20 minutes away in Ochsenfurt (<strong>Kauzen-Bräu</strong> and <strong>Oechsner</strong>), and one stop bridges two brewing worlds. One night there, and the 6 h 51 problem disappears entirely into three short days (3 h 06, 3 h 02, and 1 h 03).</p>
+    <div class="why-callout-eyebrow">🍺 Why Würzburg — One Well-Chosen Night on the Ghent → Bamberg Corridor</div>
+    <p>Two nights between Ghent and Bamberg aren't needed once you notice Cologne sits directly on the Ghent → Würzburg motorway line (565.4 km direct vs 567.3 km via Cologne — roughly three hours in and ten minutes off the Autobahn for a midday Kölsch lunch at <strong>Früh am Dom</strong> or <strong>Brauerei zur Malzmühle</strong>). Saving the single overnight for <strong>Würzburg</strong> puts you in the Franconian wine capital that still brews: <strong>Würzburger Hofbräu</strong> (founded 1643, with its own Keller and weekend keg-tapping tours), <strong>Goldene Gans</strong> pouring house-brewed beer in the garden under the Alte Mainbrücke, craft micros <strong>Herbipolis (SMaSH)</strong> and <strong>Maischerei Mayr &amp; Müller</strong>, plus <strong>Ochsenfurt's two country breweries</strong> 20 minutes south (<strong>Kauzen-Bräu</strong> and <strong>Privatbrauerei Oechsner</strong>) — leaving a 94 km / 1 h 03 morning hop into Bamberg.</p>
   </aside>""",
-        "itinerary_filters_html": """    <button type="button" class="filter-btn active" onclick="filterDays('all', this)">All 16 Days</button>
+        "itinerary_filters_html": """    <button type="button" class="filter-btn active" onclick="filterDays('all', this)">All 15 Days</button>
     <button type="button" class="filter-btn" onclick="filterDays('belgium', this)">🇧🇪 Belgium (Days 1–3)</button>
-    <button type="button" class="filter-btn" onclick="filterDays('rhineland', this)">🇩🇪 Rhineland · Cologne (Day 4)</button>
-    <button type="button" class="filter-btn" onclick="filterDays('franconia', this)">🇩🇪 Franconia · Würzburg &amp; Bamberg (Days 5–7)</button>
-    <button type="button" class="filter-btn" onclick="filterDays('bohemia', this)">🇨🇿 Bohemia (Days 8–11)</button>
-    <button type="button" class="filter-btn" onclick="filterDays('bavaria', this)">🇩🇪 Upper Bavaria &amp; Munich (Days 12–15)</button>
-    <button type="button" class="filter-btn" onclick="filterDays('inplace', this)">🚶 Car-Free Days (4)</button>""",
+    <button type="button" class="filter-btn" onclick="filterDays('franconia', this)">🇩🇪 Franconia · Würzburg &amp; Bamberg (Days 4–6)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('bohemia', this)">🇨🇿 Bohemia (Days 7–10)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('bavaria', this)">🇩🇪 Upper Bavaria &amp; Munich (Days 11–14)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('inplace', this)">🚶 Car-Free Days (4)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('long', this)">⚠️ Long Day (Day 4 · 5 h 53)</button>""",
         "beer_guide_intro": (
-            "Five distinct European brewing cultures in one loop: Flanders wild &amp; herb ales, "
-            "Rhineland top-fermented Kölsch &amp; Düsseldorf Altbier, Lower &amp; Upper Franconian Schwarzbier, "
+            "Five European brewing traditions across one 15-day loop: Flanders wild &amp; herb ales, "
+            "a Rhenish Kölsch lunch stop in Cologne en route to Franconia, Lower &amp; Upper Franconian Schwarzbier, "
             "smoked Rauchbier &amp; unbunged cellar lagers, Bohemian decoction tank pilsners, and Upper Bavarian wheat &amp; monastery bocks."
         ),
         "beer_region_notes": {
+            "Rhineland": (
+                "<strong>Day 4 lunch stop (not an overnight base):</strong> Cologne sits right on the Ghent → Würzburg route "
+                "(≈3 h from Ghent, 10 min off the motorway) — pull off for lunch and a fresh 0.2 L Stange at "
+                "<strong>Früh am Dom</strong> or <strong>Brauerei zur Malzmühle</strong> before continuing to Würzburg."
+            ),
             "Franconia": (
-                "<strong>Würzburg note (Stop #5):</strong> v3 enters Franconia on the Main at <strong>Würzburg</strong> — "
-                "a wine capital that still pours 1643 <strong>Würzburger Hofbräu</strong> Pils &amp; Schwarzbier, "
-                "house-brewed garden lager under the Alte Mainbrücke at <strong>Goldene Gans</strong>, craft pours at "
+                "<strong>Würzburg note (Stop #4 · 1 night):</strong> v3 enters Franconia on the Main at <strong>Würzburg</strong> — "
+                "the wine capital that still pours 1643 <strong>Würzburger Hofbräu</strong> Pils &amp; Schwarzbier, "
+                "house-brewed garden beer under the Alte Mainbrücke at <strong>Goldene Gans</strong>, craft pours at "
                 "<strong>Herbipolis (SMaSH)</strong> and <strong>Maischerei Mayr &amp; Müller</strong>, and traditional country lagers "
                 "20 minutes south in Ochsenfurt (<strong>Kauzen-Bräu</strong>, <strong>Oechsner</strong>) before Bamberg's Rauchbier."
             ),
         },
-        "what_to_order_intro": "Quick ordering cheat sheet in itinerary order from Night 1 in Bruges through Cologne and Würzburg to Night 15 in Munich.",
+        "what_to_order_intro": "Quick ordering cheat sheet in itinerary order across all 10 overnight bases, from Night 1 in Bruges through Würzburg to Night 14 in Munich.",
         "what_to_order_bases": [
             ("bruges", "Flemish red", "Bourgogne des Flandres on the canal; pair with Brugse Zot / Straffe Hendrik at De Halve Maan and the 11% house tripel at De Garre."),
             ("ghent", "gruut (herb beer)", "Blond, Amber, Brown, White, and Inferno at Gruut Stadsbrouwerij; follow with Pils 13 at Dok Brewing and house Max at De Dulle Griet."),
-            ("cologne", "Kölsch", "Fresh 0.2 L Stangen at Früh am Dom and house-brewed Mühlen Kölsch at Heumarkt, wooden-barrel Päffgen Kölsch, Lommerzheim in Deutz, and Ehrenfeld craft pours at Braustelle."),
             ("wurzburg", "Hofbräu Pils & Schwarzbier", "House-brewed beer in the garden under the Alte Mainbrücke at Goldene Gans, Pils, Schwarzbier & Fri/Sat keg-tapping tour at 1643 Würzburger Hofbräukeller, craft pours at Herbipolis & Maischerei, plus Ochsenfurt's Kauzen-Bräu & Oechsner (20 min)."),
             ("bamberg", "Rauchbier", "Oak-barrel Märzen Rauchbier at Schlenkerla, subtler Rauchbier at Spezial, 'aU' Ungespundetes at Mahr's Bräu, Zwergla at Fässla, and Herren Pils at Keesmann (plus optional 54-min Rotbier trip to Nuremberg)."),
             ("sokolov", "Permon IPA 15°", "Permon IPA 15° and dark specials straight from the taps in Pivovar Permon's Komenského 77 restaurant."),
@@ -863,67 +877,66 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
         "leg_notes": {
             1: ("hard", "Opening airport motorway push west across Germany & Belgium (E40) — swap drivers if jet-lagged."),
             3: ("easy", "Short Flemish hop on the E40; arrives in Ghent well before lunch."),
-            4: ("easy", "Short day 1 of 3 on the Ghent→Bamberg corridor: 3 h 06 into Cologne for 0.2 L Kölsch."),
-            5: ("easy", "Short day 2 of 3: 3 h 02 up the Rhine & Main to Würzburg for Goldene Gans & 1643 Hofbräukeller."),
-            6: ("easy", "Short day 3 of 3: 1 h 03 on the A70 into Bamberg (optional 20-min Ochsenfurt detour to Kauzen-Bräu & Oechsner)."),
-            8: ("easy", "Scenic cross-border run via Bayreuth & Cheb; activate Czech e-vignette before crossing."),
-            9: ("easy", "Relaxed Bohemian drive along the Ohře valley; easy detour to Loket (12 min) or Karlovy Vary (17 min)."),
-            11: ("easy", "Short drive south-west into the Šumava (Bohemian Forest) foothills."),
-            12: ("easy", "Crosses back into Upper Bavaria past Regensburg — longest middle leg at 3 h 11 (still under 3 h 15)."),
-            13: ("easy", "Pre-Alpine country roads west across Upper Bavaria to Ammersee."),
-            14: ("easy", "Shortest Bavarian hop (44.5 km / 45 min) straight into Munich."),
-            16: ("hard", "Direct 4 h 04 motorway return from Munich to FRA — leave right after breakfast (or sleep near FRA on Night 15 for early flights)."),
+            4: ("long", "The long day (5 h 53) — Cologne sits right on the route (≈3 h in, 10 min off the motorway) for a Kölsch lunch break at Früh am Dom or Brauerei zur Malzmühle before evening beer in Würzburg."),
+            5: ("easy", "Easy 1 h 03 morning hop on the A70 into Bamberg (optional 20-min Ochsenfurt detour to Kauzen-Bräu & Oechsner)."),
+            7: ("easy", "Scenic cross-border run via Bayreuth & Cheb; activate Czech e-vignette before crossing."),
+            8: ("easy", "Relaxed Bohemian drive along the Ohře valley; easy detour to Loket (12 min) or Karlovy Vary (17 min)."),
+            10: ("easy", "Short drive south-west into the Šumava (Bohemian Forest) foothills."),
+            11: ("hard", "Crosses back into Upper Bavaria past Regensburg (optional 1 h 32 lunch detour) — second-longest middle leg at 3 h 11."),
+            12: ("easy", "Pre-Alpine country roads west across Upper Bavaria to Ammersee."),
+            13: ("easy", "Shortest Bavarian hop (44.5 km / 45 min) straight into Munich."),
+            15: ("hard", "Direct 4 h 04 motorway return from Munich to FRA — leave right after breakfast (or sleep near FRA on Night 14 for early flights)."),
         },
         "leg_table_pills": {
-            1: '<span class="table-warn-pill">BOOKEND · 5 h 15</span> ',
-            5: '<span class="table-new-pill">NEW · WÜRZBURG</span> ',
-            6: '<span class="table-new-pill">NEW · 1 h 03 HOP</span> ',
-            16: '<span class="table-warn-pill">BOOKEND · 4 h 04</span> ',
+            1: '<span class="table-warn-pill">OPENING · 5 h 15</span> ',
+            4: '<span class="table-alert-pill">LONG DAY · 5 h 53</span> <span class="table-new-pill">COLOGNE LUNCH → WÜRZBURG</span> ',
+            5: '<span class="table-new-pill">NEW · 1 h 03 HOP</span> ',
+            15: '<span class="table-warn-pill">FINAL · 4 h 04</span> ',
         },
         "drive_stats_strip_html": """    <div class="stat-box">
-      <div class="stat-val">2,307.5 km</div>
-      <div class="stat-lbl">Exact Route Total (2,308 km rounded)</div>
+      <div class="stat-val">2,305.6 km</div>
+      <div class="stat-lbl">Exact Route Total (2,306 km rounded)</div>
     </div>
     <div class="stat-box">
-      <div class="stat-val">27 h 08</div>
-      <div class="stat-lbl">1,628 Total Driving Minutes</div>
+      <div class="stat-val">26 h 53</div>
+      <div class="stat-lbl">1,613 Total Driving Minutes</div>
     </div>
     <div class="stat-box">
-      <div class="stat-val">12 legs</div>
-      <div class="stat-lbl">12 Drive Days · 4 Car-Free Days</div>
+      <div class="stat-val">11 legs</div>
+      <div class="stat-lbl">11 Drive Days · 4 Car-Free Days</div>
     </div>
     <div class="stat-box">
-      <div class="stat-val">≤ 3 h 11</div>
-      <div class="stat-lbl">No Middle Leg Over 3 h 15 (Max: Kout → Maxlrain)</div>
+      <div class="stat-val">5 h 53</div>
+      <div class="stat-lbl">Long Day (Day 4: Ghent → Würzburg, 565.4 km · Cologne lunch)</div>
     </div>
     <div class="stat-box">
       <div class="stat-val">44 – 45 min</div>
       <div class="stat-lbl">Shortest Hops (Bruges→Ghent &amp; Andechs→Munich)</div>
     </div>""",
-        "tfoot_km": "2,307.5 km (2,308 km)",
-        "tfoot_time": "27:08 (1,628 min)",
+        "tfoot_km": "2,305.6 km (2,306 km)",
+        "tfoot_time": "26:53 (1,613 min)",
         "matrix_note_html": (
-            'Upper triangle directly from <code>matrix.pairs</code> (66 OSRM pairs over all 12 stops including Cologne and Würzburg), '
+            'Upper triangle directly from <code>matrix.pairs</code> (55 OSRM pairs over all 11 stops including Würzburg), '
             'mirrored symmetrically across the <code>—</code> diagonal. Gold-outlined cells mark consecutive stops driven '
-            'on the v3 itinerary — v1\'s <code>ghent|bamberg</code> marathon (651 km / 6:51) is now three short days: '
-            '<code>ghent|cologne</code> (265 km / 3:06) + <code>cologne|wurzburg</code> (302 km / 3:02) + <code>wurzburg|bamberg</code> (94 km / 1:03), '
-            'so <strong>no middle leg anywhere on the trip exceeds 3 h 15</strong> (longest middle drive is <code>kout|maxlrain</code> at 3:11).'
+            'on the v3 itinerary — v1\'s <code>ghent|bamberg</code> marathon (650.5 km / 6:51) becomes '
+            '<code>ghent|wurzburg</code> (565.4 km / 5:53, with Cologne right on the line for lunch) + <code>wurzburg|bamberg</code> (94.3 km / 1:03), '
+            'while every other middle leg stays ≤ 3 h 11 (<code>kout|maxlrain</code>).'
         ),
         "road_notes_html": """    <div class="practical-card">
-      <h4>⏱️ No Middle Leg Exceeds 3 h 15</h4>
-      <p>Adding Würzburg between Cologne and Bamberg turns Ghent→Bamberg into three relaxed legs — 265.2 km / 3 h 06, 302.1 km / 3 h 02, and 94.3 km / 1 h 03 — while adding just 9.2 km and 4 minutes vs v2. Every single middle leg (Days 3–14) now stays at or below 3 h 11; only the FRA arrival (5 h 15) and FRA departure (4 h 04) exceed 3 h 15.</p>
+      <h4>⏱️ Tackling Day 4 (Ghent → Würzburg, 5 h 53) via Cologne</h4>
+      <p>Day 4 (565.4 km / 5 h 53) is the single long middle drive, and Cologne sits virtually dead-on the motorway route (565.4 km direct vs 567.3 km via Cologne). Pull off roughly three hours in — ten minutes from the Autobahn — for lunch at <em>Früh am Dom</em> or <em>Brauerei zur Malzmühle</em>, then finish down the Rhine-Main corridor to Würzburg, leaving a 94.3 km / 1 h 03 hop to Bamberg on Day 5 and every other middle leg at ≤ 3 h 11.</p>
     </div>
     <div class="practical-card">
       <h4>🇨🇿 Czech Motorway Vignette Required</h4>
-      <p>Passenger cars on Czech motorways require an official electronic vignette (<em>edalnice.cz</em>) registered to the rental license plate — purchase it before crossing near Cheb on Day 8 to cover the Bohemian stretch (Days 8–12), and confirm cross-border permission for Belgium and Czechia at the FRA rental desk.</p>
+      <p>Passenger cars on Czech motorways require an official electronic vignette (<em>edalnice.cz</em>) registered to the rental license plate — purchase it before crossing near Cheb on Day 7 to cover the Bohemian stretch (Days 7–11), and confirm cross-border permission for Belgium and Czechia at the FRA rental desk.</p>
     </div>
     <div class="practical-card">
       <h4>🇧🇪🇩🇪 Ghent LEZ &amp; German Umweltzonen</h4>
-      <p>Belgian and German motorways are toll-free for passenger cars, but watch urban Low Emission Zones: register foreign German rental plates online before entering inner Ghent, and verify the green German <em>Umweltplakette</em> windscreen sticker at FRA pick-up for Cologne and Munich.</p>
+      <p>Belgian and German motorways are toll-free for passenger cars, but watch urban Low Emission Zones: register foreign German rental plates online before entering inner Ghent, and verify the green German <em>Umweltplakette</em> windscreen sticker at FRA pick-up for central Cologne (Day 4 lunch stop) and Munich.</p>
     </div>
     <div class="practical-card">
       <h4>✈️ Planning the 4 h 04 Munich → FRA Final Drive</h4>
-      <p>Day 16 runs 402.0 km / 4 h 04 straight up the A9 and A3 from Munich to Frankfurt Airport. Leave Munich right after breakfast for afternoon/evening flights — or drive north on evening 15 and sleep near FRA if catching an early flight.</p>
+      <p>Day 15 runs 402.0 km / 4 h 04 straight up the A9 and A3 from Munich to Frankfurt Airport. Leave Munich right after breakfast for afternoon/evening flights — or drive north on evening 14 and sleep near FRA if catching an early flight.</p>
     </div>""",
         "tips_cards_html": """      <div class="practical-card">
         <h4>1. Book Brewery Tours &amp; Beer Spas Ahead</h4>
@@ -931,26 +944,26 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
       </div>
       <div class="practical-card">
         <h4>2. Watch Monday Closures (<em>Ruhetag</em>)</h4>
-        <p>Small family breweries in Lower &amp; Upper Franconia (Ochsenfurt, Bamberg), rural Bohemia, and Upper Bavaria frequently close on Mondays and/or Tuesdays (as does Lommerzheim in Cologne). Check taproom hours ahead.</p>
+        <p>Small family breweries in Lower &amp; Upper Franconia (Ochsenfurt, Bamberg), rural Bohemia, and Upper Bavaria frequently close on Mondays and/or Tuesdays. Check taproom hours ahead before locking in dates.</p>
       </div>
       <div class="practical-card">
-        <h4>3. Cash, Coasters &amp; Bridge-Garden Pours</h4>
-        <p>Carry cash for Cologne Brauhäuser, Würzburg's Goldene Gans garden (house beer poured only outdoors under the Alte Mainbrücke), Bamberg <em>Schwemme</em> windows, and Czech pubs. In Cologne, lay your <em>Bierdeckel</em> on your glass to pause Kölsch refills.</p>
+        <h4>3. Cash, Bridge-Garden Pours &amp; Day 4 Coasters</h4>
+        <p>Carry cash for Würzburg's Goldene Gans garden (house beer poured only outdoors under the Alte Mainbrücke), Bamberg <em>Schwemme</em> windows, Czech country pubs, and Day 4's Cologne lunch stop (lay your <em>Bierdeckel</em> on your Stange to pause refills).</p>
       </div>
       <div class="practical-card">
         <h4>4. Strict Driving &amp; Drinking Rules (0.0% in Czechia)</h4>
-        <p>Czechia enforces <strong>zero tolerance (0.0% BAC)</strong> behind the wheel, and Germany and Belgium enforce strict limits as well. With every middle drive under 3 h 15, finish driving early, park the car, and explore on foot or local transit.</p>
+        <p>Czechia enforces <strong>zero tolerance (0.0% BAC)</strong> behind the wheel, and Germany and Belgium enforce strict limits as well. On Day 4's Cologne lunch break, keep the designated driver on 0.0% / water and save their pours for Goldene Gans in Würzburg once parked for the night.</p>
       </div>
       <div class="practical-card">
         <h4>5. Best Season: May – September</h4>
         <p>Late spring through early autumn opens Goldene Gans under Würzburg's Alte Mainbrücke, Hofbräukeller's garden, Bamberg's Greifenklau terrace, Munich's chestnut-shaded Augustiner-Keller, and Ammersee views at Andechs.</p>
       </div>
       <div class="practical-card">
-        <h4>6. Final 4 h Munich → FRA Leg on Day 16</h4>
-        <p>The Day 16 Munich→FRA drive is 402 km / 4 h 04 before roadworks (<em>Baustellen</em>), refuelling, and rental return. Leave Munich right after breakfast — or sleep near FRA on Night 15 for morning flights. Pack bottle sleeves the night before.</p>
+        <h4>6. Final 4 h Munich → FRA Leg on Day 15</h4>
+        <p>The Day 15 Munich→FRA drive is 402 km / 4 h 04 before roadworks (<em>Baustellen</em>), refuelling, and rental return. Leave Munich right after breakfast — or sleep near FRA on Night 14 for morning flights. Pack bottle sleeves the night before.</p>
       </div>""",
-        "js_is_long_expr": "leg.day === 5 || leg.day === 6",
-        "map_legend_long_label": "New in v3 (Days 5–6: via Würzburg)",
+        "js_is_long_expr": "leg.day === 4",
+        "map_legend_long_label": "Long Day (Day 4: Ghent → Würzburg, Cologne lunch)",
     },
 }
 
