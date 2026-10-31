@@ -1,0 +1,159 @@
+{
+  "slug": "italy-switzerland-grand-tour",
+  "source_file": "Italy_Switzerland_14Day_Trip.html",
+  "title": "14-Day Italy & Switzerland Grand Tour",
+  "days": 14,
+  "countries": "Italy & Switzerland",
+  "stops": [
+    {
+      "lat": 41.9028,
+      "lon": 12.4964,
+      "name": "Rome (FCO)",
+      "day": 1
+    },
+    {
+      "lat": 43.7696,
+      "lon": 11.2558,
+      "name": "Florence",
+      "day": 4
+    },
+    {
+      "lat": 43.7228,
+      "lon": 10.4017,
+      "name": "Pisa",
+      "day": 6
+    },
+    {
+      "lat": 45.4408,
+      "lon": 12.3155,
+      "name": "Venice",
+      "day": 7
+    },
+    {
+      "lat": 45.4642,
+      "lon": 9.19,
+      "name": "Milan",
+      "day": 9
+    },
+    {
+      "lat": 46.4908,
+      "lon": 9.8355,
+      "name": "St. Moritz",
+      "day": 12
+    },
+    {
+      "lat": 46.2167,
+      "lon": 10.1667,
+      "name": "Tirano (Bernina start)",
+      "day": 11
+    }
+  ],
+  "path": [
+    [
+      41.9028,
+      12.4964
+    ],
+    [
+      43.7696,
+      11.2558
+    ],
+    [
+      43.7228,
+      10.4017
+    ],
+    [
+      43.7696,
+      11.2558
+    ],
+    [
+      45.4408,
+      12.3155
+    ],
+    [
+      45.4642,
+      9.19
+    ],
+    [
+      46.2167,
+      10.1667
+    ],
+    [
+      46.4908,
+      9.8355
+    ]
+  ],
+  "day_ledger": [
+    {
+      "day": 1,
+      "place": "Rome — Arrival & Trastevere",
+      "highlights": "Arrive Rome · Settle in Trastevere/Monti · Evening passeggiata, dinner at Da Enzo al 29"
+    },
+    {
+      "day": 2,
+      "place": "Rome — Ancient Imperial Core",
+      "highlights": "Ancient Rome: Colosseum + Forum + Palatine · San Clemente · Monti lunch · Capitoline Museums"
+    },
+    {
+      "day": 3,
+      "place": "Rome — Vatican & Historic Center",
+      "highlights": "Vatican early (7:30) · St. Peter's · Castel Sant'Angelo · Pizzarium"
+    },
+    {
+      "day": 4,
+      "place": "Rome → Florence",
+      "highlights": "Train to Florence · Duomo + dome climb · Afternoon: Uffizi · Evening: aperitivo Negroni (invented here!)"
+    },
+    {
+      "day": 5,
+      "place": "Florence — Renaissance Icons",
+      "highlights": "Accademia (David) · San Marco frescoes · Medici Chapels · Mercato Centrale lunch"
+    },
+    {
+      "day": 6,
+      "place": "Florence & Pisa Day Trip",
+      "highlights": "AM: Brancacci Chapel + Oltrarno · Afternoon: Day trip to Pisa (Camposanto, Cathedral, Cecina) · Return Florence"
+    },
+    {
+      "day": 7,
+      "place": "Florence → Venice",
+      "highlights": "Train to Venice · Afternoon: San Marco + Doge's Palace (Secret Itineraries) · Sunset Zattere · Cicchetti dinner"
+    },
+    {
+      "day": 8,
+      "place": "Venice — Lagoon Islands & Ghetto",
+      "highlights": "Morning: Torcello + Burano · PM: Jewish Ghetto, Scala del Bovolo, Frari · Evening: Bacaro crawl Cannaregio"
+    },
+    {
+      "day": 9,
+      "place": "Venice → Milan",
+      "highlights": "Train to Milan · Duomo + rooftop · Galleria · Last Supper (pre-booked!)"
+    },
+    {
+      "day": 10,
+      "place": "Milan — Castles, Brera & Lambrate",
+      "highlights": "Sforza Castle (Rondanini Pietà) · San Maurizio frescoes · Brera · Luini Panzerotti"
+    },
+    {
+      "day": 11,
+      "place": "Milan → St. Moritz (Bernina Railway)",
+      "highlights": "Bernina Railway to St. Moritz (scenic UNESCO ride!) · Arrive PM · Lake walk · Segantini Museum"
+    },
+    {
+      "day": 12,
+      "place": "St. Moritz & Upper Engadin",
+      "highlights": "Muottas Muragl sunrise · Sils Maria + Nietzsche House · Val Fex walk · Zuoz sgraffito"
+    },
+    {
+      "day": 13,
+      "place": "St. Moritz → Rome (Appian Way)",
+      "highlights": "Return to Rome (via Milan) · Afternoon: Appian Way bike ride · Testaccio Market · Protestant Cemetery sunset"
+    },
+    {
+      "day": 14,
+      "place": "Rome — Borghese, Coppedè & FCO",
+      "highlights": "Borghese Gallery (morning slot) · Quartiere Coppedè · Final Aventine keyhole · Departure from FCO"
+    }
+  ],
+  "signature_beers": "Birrificio Italiano Tipopils · Birra del Borgo ReAle · Baladin Xyauyù & Nazionale · Birrificio Lambrate Ghisa & Montestella · Orzo Bruno · Engadiner Bier",
+  "season_budget": "May–Jun or Sep–Oct  ·  €2,500–4,000 pp excl. flights (22+ craft beer bars)  ·  Frecciarossa high-speed rail + UNESCO Bernina Railway"
+}

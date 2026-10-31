@@ -1,0 +1,393 @@
+{
+  "slug": "bavaria-bohemia",
+  "source_file": "germany_czech_beer_trip.html",
+  "title": "14-Day Bavaria & Bohemia Beer Pilgrimage",
+  "days": 14,
+  "countries": "Germany & Czechia",
+  "stops": [
+    {
+      "lat": 50.0379,
+      "lon": 8.5622,
+      "name": "Frankfurt Airport",
+      "day": 1
+    },
+    {
+      "lat": 49.8917,
+      "lon": 10.8868,
+      "name": "Schlenkerla",
+      "day": 1
+    },
+    {
+      "lat": 49.8937,
+      "lon": 10.8828,
+      "name": "Spezial",
+      "day": 2
+    },
+    {
+      "lat": 49.8855,
+      "lon": 10.905,
+      "name": "Mahr's Bräu",
+      "day": 2
+    },
+    {
+      "lat": 49.893,
+      "lon": 10.8845,
+      "name": "Fässla",
+      "day": 2
+    },
+    {
+      "lat": 49.8905,
+      "lon": 10.878,
+      "name": "Greifenklau",
+      "day": 2
+    },
+    {
+      "lat": 49.892,
+      "lon": 10.884,
+      "name": "Klosterbräu",
+      "day": 2
+    },
+    {
+      "lat": 49.886,
+      "lon": 10.904,
+      "name": "Keesmann",
+      "day": 2
+    },
+    {
+      "lat": 49.9275,
+      "lon": 10.9408,
+      "name": "Drei Kronen Memmelsdorf",
+      "day": 3
+    },
+    {
+      "lat": 49.91,
+      "lon": 10.92,
+      "name": "Wagner Merkendorf",
+      "day": 3
+    },
+    {
+      "lat": 49.905,
+      "lon": 10.915,
+      "name": "Hummel Merkendorf",
+      "day": 3
+    },
+    {
+      "lat": 49.9,
+      "lon": 10.93,
+      "name": "Knoblach Schammelsdorf",
+      "day": 3
+    },
+    {
+      "lat": 49.7698,
+      "lon": 11.0058,
+      "name": "Rittmayer Hallerndorf",
+      "day": 4
+    },
+    {
+      "lat": 49.83,
+      "lon": 10.85,
+      "name": "Griess Geisfeld",
+      "day": 4
+    },
+    {
+      "lat": 49.8175,
+      "lon": 11.0308,
+      "name": "St. Georgen Buttenheim",
+      "day": 4
+    },
+    {
+      "lat": 49.883,
+      "lon": 11.225,
+      "name": "Aufseß (4 breweries)",
+      "day": 5
+    },
+    {
+      "lat": 50.09,
+      "lon": 10.89,
+      "name": "Trunk Vierzehnheiligen",
+      "day": 5
+    },
+    {
+      "lat": 50.0095,
+      "lon": 10.5945,
+      "name": "Göller Zeil am Main",
+      "day": 5
+    },
+    {
+      "lat": 49.7358,
+      "lon": 12.1612,
+      "name": "Zoigl Windischeschenbach",
+      "day": 6
+    },
+    {
+      "lat": 49.725,
+      "lon": 12.18,
+      "name": "Zoigl Neuhaus",
+      "day": 6
+    },
+    {
+      "lat": 49.7912,
+      "lon": 12.6408,
+      "name": "Chodovar Chodová Planá",
+      "day": 7
+    },
+    {
+      "lat": 49.7474,
+      "lon": 13.3776,
+      "name": "Pilsner Urquell",
+      "day": 8
+    },
+    {
+      "lat": 49.745,
+      "lon": 13.38,
+      "name": "U Salzmannů",
+      "day": 8
+    },
+    {
+      "lat": 49.715,
+      "lon": 13.34,
+      "name": "Purkmistr",
+      "day": 8
+    },
+    {
+      "lat": 49.75,
+      "lon": 13.39,
+      "name": "Pivovar Raven",
+      "day": 8
+    },
+    {
+      "lat": 50.3267,
+      "lon": 13.5458,
+      "name": "Falkon Žatec",
+      "day": 9
+    },
+    {
+      "lat": 49.265,
+      "lon": 13.355,
+      "name": "Kout na Šumavě",
+      "day": 9
+    },
+    {
+      "lat": 49.1,
+      "lon": 13.45,
+      "name": "Zhůřák (Šumava)",
+      "day": 10
+    },
+    {
+      "lat": 49.15,
+      "lon": 13.5,
+      "name": "Svatý Florian",
+      "day": 10
+    },
+    {
+      "lat": 50.1814,
+      "lon": 12.6378,
+      "name": "Permon Sokolov",
+      "day": 10
+    },
+    {
+      "lat": 49.0195,
+      "lon": 12.0975,
+      "name": "Kneitinger Regensburg",
+      "day": 11
+    },
+    {
+      "lat": 49.022,
+      "lon": 12.0965,
+      "name": "Spitalbrauerei Regensburg",
+      "day": 11
+    },
+    {
+      "lat": 48.8175,
+      "lon": 11.83,
+      "name": "Kuchlbauer Abensberg",
+      "day": 11
+    },
+    {
+      "lat": 48.145,
+      "lon": 11.5447,
+      "name": "Augustiner-Keller",
+      "day": 12
+    },
+    {
+      "lat": 48.1363,
+      "lon": 11.5802,
+      "name": "Schneider Bräuhaus",
+      "day": 12
+    },
+    {
+      "lat": 48.115,
+      "lon": 11.58,
+      "name": "Giesinger Bräu",
+      "day": 12
+    },
+    {
+      "lat": 48.145,
+      "lon": 11.555,
+      "name": "ORCA Brau",
+      "day": 12
+    },
+    {
+      "lat": 48.1375,
+      "lon": 11.5797,
+      "name": "Hofbräuhaus",
+      "day": 12
+    },
+    {
+      "lat": 47.9739,
+      "lon": 11.183,
+      "name": "Kloster Andechs",
+      "day": 13
+    },
+    {
+      "lat": 48.0465,
+      "lon": 11.9691,
+      "name": "Wildbrau Grafing",
+      "day": 13
+    }
+  ],
+  "path": [
+    [
+      50.0379,
+      8.5622
+    ],
+    [
+      49.8917,
+      10.8868
+    ],
+    [
+      49.7698,
+      11.0058
+    ],
+    [
+      49.883,
+      11.225
+    ],
+    [
+      49.7358,
+      12.1612
+    ],
+    [
+      49.7912,
+      12.6408
+    ],
+    [
+      49.7474,
+      13.3776
+    ],
+    [
+      50.3267,
+      13.5458
+    ],
+    [
+      49.265,
+      13.355
+    ],
+    [
+      49.1,
+      13.45
+    ],
+    [
+      49.0195,
+      12.0975
+    ],
+    [
+      48.8175,
+      11.83
+    ],
+    [
+      48.145,
+      11.5447
+    ],
+    [
+      47.9739,
+      11.183
+    ],
+    [
+      48.0465,
+      11.9691
+    ],
+    [
+      48.145,
+      11.5447
+    ],
+    [
+      50.0379,
+      8.5622
+    ]
+  ],
+  "day_ledger": [
+    {
+      "day": 1,
+      "place": "Frankfurt Arrival → Bamberg",
+      "highlights": "Schlenkerla (Dominikanerstr. 6) (The world-famous Rauchbier tavern)"
+    },
+    {
+      "day": 2,
+      "place": "Bamberg City Brewery Crawl",
+      "highlights": "Spezial (Obere Königstr. 10) · Mahr's Bräu (Wunderburg 10) · Fässla (Obere Königstr. 19-21) · Greifenklau (Laurenziplatz 20) · Klosterbräu (Obere Mühlbrücke 3)"
+    },
+    {
+      "day": 3,
+      "place": "Franconian Village Breweries - North",
+      "highlights": "Drei Kronen Memmelsdorf · Brauerei Wagner, Merkendorf · Brauerei Hummel, Merkendorf · Brauerei Knoblach, Schammelsdorf"
+    },
+    {
+      "day": 4,
+      "place": "Hallerndorf & Southern Franconia",
+      "highlights": "Brauerei Rittmayer, Hallerndorf · Lieberth Keller, Hallerndorf · Brauerei Griess, Geisfeld · St. Georgen Bräu, Buttenheim"
+    },
+    {
+      "day": 5,
+      "place": "Aufseß & Upper Franconia Deep Cut",
+      "highlights": "Aufseß 4-Brewery Loop · Brauerei Trunk, Vierzehnheiligen · Brauerei Göller, Zeil am Main"
+    },
+    {
+      "day": 6,
+      "place": "Zoigl Country & Border Region",
+      "highlights": "ZOIGL brewhouses in Windischeschenbach/Neuhaus/Eslarn · Beim Gloser & Beim Bannes"
+    },
+    {
+      "day": 7,
+      "place": "Cross into Bohemia → Chodovar",
+      "highlights": "Cross border at Waidhaus/Rozvadov · Pivovar Chodovar, Chodová Planá · Arrive Pilsen. Na Parkánu pub (attached to Urquell)"
+    },
+    {
+      "day": 8,
+      "place": "Pilsen - Birthplace of Pilsner",
+      "highlights": "Pilsner Urquell Brewery Tour · U Salzmannů (Pražská 8) · Pivovar Purkmistr · Pivovar Raven"
+    },
+    {
+      "day": 9,
+      "place": "Žatec Hop Capital & Hidden Gems",
+      "highlights": "Drive to Žatec (Saaz) · Pivovar Falkon, Žatec · Pivovar Kout na Šumavě · Local hospoda (pub) in Kout"
+    },
+    {
+      "day": 10,
+      "place": "Šumava Forest & South Bohemia",
+      "highlights": "Pivovar Zhůřák · Pivovar Svatý Florian · Pivovar Permon, Sokolov · Local hospoda with Kout or Svijany on tap"
+    },
+    {
+      "day": 11,
+      "place": "Back to Bavaria via Regensburg",
+      "highlights": "Cross back into Germany at Furth im Wald · Kneitinger, Regensburg (Arnulfsplatz 3) · Spitalbrauerei, Regensburg · Kuchlbauer, Abensberg"
+    },
+    {
+      "day": 12,
+      "place": "Munich Beer Halls & Craft",
+      "highlights": "Augustiner-Keller (Arnulfstr. 52) · Schneider Bräuhaus (Tal 7) · Giesinger Bräu (Martin-Luther-Str. 2) · ORCA Brau taproom · Hofbräuhaus OR Tilmans Biere for refined classics"
+    },
+    {
+      "day": 13,
+      "place": "Andechs Monastery & Wildbrau Grafing",
+      "highlights": "S-Bahn to Herrsching, then bus/walk up the Holy Mountain · Kloster Andechs · Return via S-Bahn, transfer to S4 to Grafing · Wildbrau, Grafing (Marktplatz 2)"
+    },
+    {
+      "day": 14,
+      "place": "Munich → Frankfurt → Home",
+      "highlights": "Weißwurst breakfast: Schneider Bräuhaus with a TAP7 · Paulaner Nockherberg · ICE train to Frankfurt Airport or quick flight"
+    }
+  ],
+  "signature_beers": "Schlenkerla Märzen Rauchbier (5.1%) · Mahr's \"aU\" Kellerbier (5.2%) · Koutská 12° Ležák (5.0%) · Plzeňský Prazdroj 12° (4.4%) · Augustiner Edelstoff (5.6%) · Andechs Doppelbock (7.1%)",
+  "season_budget": "May–Sep beer-garden season (Annafest late July)  ·  Czech pints €1.50–2.50, Bavaria Ticket €29/day  ·  Trains, Brauereienweg trails & car"
+}

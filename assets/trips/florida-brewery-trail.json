@@ -1,0 +1,365 @@
+{
+  "slug": "florida-brewery-trail",
+  "source_file": "florida_brewery_trip.html",
+  "title": "Florida Brewery Trail",
+  "days": 12,
+  "countries": "Florida, United States",
+  "stops": [
+    {
+      "lat": 25.7986,
+      "lon": -80.1987,
+      "name": "J Wakefield Brewing",
+      "day": 1
+    },
+    {
+      "lat": 25.8105,
+      "lon": -80.3567,
+      "name": "Tripping Animals",
+      "day": 2
+    },
+    {
+      "lat": 25.7993,
+      "lon": -80.1972,
+      "name": "Wynwood Brewing",
+      "day": 1
+    },
+    {
+      "lat": 25.8217,
+      "lon": -80.3197,
+      "name": "The Tank Brewing",
+      "day": 1
+    },
+    {
+      "lat": 25.7993,
+      "lon": -80.1976,
+      "name": "Veza Sur Brewing",
+      "day": 1
+    },
+    {
+      "lat": 25.7287,
+      "lon": -80.3082,
+      "name": "Unseen Creatures",
+      "day": 2
+    },
+    {
+      "lat": 25.7358,
+      "lon": -80.3157,
+      "name": "Lincoln's Beard",
+      "day": 2
+    },
+    {
+      "lat": 25.8012,
+      "lon": -80.3645,
+      "name": "MIA Beer Company",
+      "day": 2
+    },
+    {
+      "lat": 25.8011,
+      "lon": -80.2003,
+      "name": "Boxelder",
+      "day": 3
+    },
+    {
+      "lat": 25.7985,
+      "lon": -80.362,
+      "name": "Spanish Marie",
+      "day": 2
+    },
+    {
+      "lat": 25.7118,
+      "lon": -80.2783,
+      "name": "Titanic Brewery",
+      "day": 3
+    },
+    {
+      "lat": 25.786,
+      "lon": -80.138,
+      "name": "Abbey Brewing",
+      "day": 3
+    },
+    {
+      "lat": 26.1694,
+      "lon": -80.1269,
+      "name": "Funky Buddha",
+      "day": 4
+    },
+    {
+      "lat": 26.1044,
+      "lon": -80.1498,
+      "name": "Riverside Market",
+      "day": 3
+    },
+    {
+      "lat": 26.092,
+      "lon": -80.12,
+      "name": "LauderAle Brewery",
+      "day": 4
+    },
+    {
+      "lat": 28.5555,
+      "lon": -81.354,
+      "name": "Sideward Brewing",
+      "day": 5
+    },
+    {
+      "lat": 28.563,
+      "lon": -81.362,
+      "name": "Ten10 Brewing",
+      "day": 5
+    },
+    {
+      "lat": 28.557,
+      "lon": -81.378,
+      "name": "Ivanhoe Park Brewing",
+      "day": 6
+    },
+    {
+      "lat": 28.565,
+      "lon": -81.586,
+      "name": "Crooked Can",
+      "day": 8
+    },
+    {
+      "lat": 28.596,
+      "lon": -81.361,
+      "name": "The Ravenous Pig",
+      "day": 8
+    },
+    {
+      "lat": 28.564,
+      "lon": -81.343,
+      "name": "Redlight Redlight",
+      "day": 5
+    },
+    {
+      "lat": 28.555,
+      "lon": -81.327,
+      "name": "Tactical Brewing",
+      "day": 6
+    },
+    {
+      "lat": 28.523,
+      "lon": -81.379,
+      "name": "Rockpit Brewing",
+      "day": 7
+    },
+    {
+      "lat": 28.519,
+      "lon": -81.421,
+      "name": "Dead Lizard Brewing",
+      "day": 7
+    },
+    {
+      "lat": 28.5405,
+      "lon": -81.381,
+      "name": "Orange County Brewers",
+      "day": 7
+    },
+    {
+      "lat": 28.5545,
+      "lon": -81.372,
+      "name": "Bowigens Beer Co",
+      "day": 6
+    },
+    {
+      "lat": 28.565,
+      "lon": -81.394,
+      "name": "Braveheart Pub",
+      "day": 6
+    },
+    {
+      "lat": 28.759,
+      "lon": -81.34,
+      "name": "Toll Road Brewing",
+      "day": 8
+    },
+    {
+      "lat": 27.9534,
+      "lon": -82.5068,
+      "name": "Cigar City Brewing",
+      "day": 9
+    },
+    {
+      "lat": 27.9847,
+      "lon": -82.459,
+      "name": "Angry Chair Brewing",
+      "day": 9
+    },
+    {
+      "lat": 27.7706,
+      "lon": -82.6412,
+      "name": "Cycle Brewing",
+      "day": 11
+    },
+    {
+      "lat": 27.778,
+      "lon": -82.6488,
+      "name": "Green Bench Brewing",
+      "day": 11
+    },
+    {
+      "lat": 27.7625,
+      "lon": -82.661,
+      "name": "3 Daughters Brewing",
+      "day": 11
+    },
+    {
+      "lat": 27.9589,
+      "lon": -82.4586,
+      "name": "Hidden Springs",
+      "day": 9
+    },
+    {
+      "lat": 27.9604,
+      "lon": -82.4376,
+      "name": "Coppertail Brewing",
+      "day": 10
+    },
+    {
+      "lat": 27.9927,
+      "lon": -82.4514,
+      "name": "Magnanimous Brewing",
+      "day": 10
+    },
+    {
+      "lat": 27.9476,
+      "lon": -82.4522,
+      "name": "Motorworks Brewing",
+      "day": 12
+    },
+    {
+      "lat": 28.018,
+      "lon": -82.558,
+      "name": "Arkane Aleworks",
+      "day": 12
+    },
+    {
+      "lat": 27.9608,
+      "lon": -82.4363,
+      "name": "Tampa Bay Brewing",
+      "day": 10
+    },
+    {
+      "lat": 27.9762,
+      "lon": -82.459,
+      "name": "The Independent",
+      "day": 10
+    },
+    {
+      "lat": 27.9852,
+      "lon": -82.459,
+      "name": "Penelope",
+      "day": 9
+    },
+    {
+      "lat": 28.0002,
+      "lon": -82.7722,
+      "name": "Dunedin Brewery",
+      "day": 12
+    },
+    {
+      "lat": 27.9692,
+      "lon": -82.4594,
+      "name": "Florida Ave Brewing",
+      "day": 10
+    }
+  ],
+  "path": [
+    [
+      25.7959,
+      -80.287
+    ],
+    [
+      25.7993,
+      -80.1972
+    ],
+    [
+      26.1694,
+      -80.1269
+    ],
+    [
+      28.5555,
+      -81.354
+    ],
+    [
+      27.9534,
+      -82.5068
+    ],
+    [
+      27.778,
+      -82.6488
+    ],
+    [
+      28.0002,
+      -82.7722
+    ],
+    [
+      27.9755,
+      -82.5332
+    ]
+  ],
+  "day_ledger": [
+    {
+      "day": 1,
+      "place": "Miami: Arrival & Wynwood Warm-Up",
+      "highlights": "The Tank Brewing Co. · J Wakefield Brewing · Veza Sur Brewing Co. · Wynwood Art Walk"
+    },
+    {
+      "day": 2,
+      "place": "Miami: Doral Deep Cuts & Hidden Gems",
+      "highlights": "Tripping Animals Brewing · MIA Beer Company · Spanish Marie Brewery · Unseen Creatures Brewing · Lincoln's Beard Brewing"
+    },
+    {
+      "day": 3,
+      "place": "Coral Gables History & Miami Beach",
+      "highlights": "Titanic Brewery & Restaurant · Abbey Brewing Company · South Beach Break · Boxelder Craft Beer Market"
+    },
+    {
+      "day": 4,
+      "place": "Fort Lauderdale & Drive North",
+      "highlights": "Funky Buddha Brewery · LauderAle Brewery · The Riverside Market"
+    },
+    {
+      "day": 5,
+      "place": "Orlando: Mills 50 & Virginia Drive Corridor",
+      "highlights": "Ten10 Brewing Company · Sideward Brewing · Ocean Sun Brewing · Redlight Redlight Beer Parlour"
+    },
+    {
+      "day": 6,
+      "place": "Orlando: Ivanhoe Village & College Park",
+      "highlights": "Ivanhoe Park Brewing · Bowigens Beer Company · Tactical Brewing · Braveheart Pub"
+    },
+    {
+      "day": 7,
+      "place": "Orlando: SODO, Downtown & Hidden Spots",
+      "highlights": "Rockpit Brewing & Distilling · Dead Lizard Brewing · Orange County Brewers · Wops Hops Brewing"
+    },
+    {
+      "day": 8,
+      "place": "Orlando: Winter Park Gastro & Winter Garden",
+      "highlights": "The Ravenous Pig · Toll Road Brewing · Crooked Can Brewing · Winter Garden Downtown"
+    },
+    {
+      "day": 9,
+      "place": "Tampa: Cigar City & Seminole Heights",
+      "highlights": "Cigar City Brewing · Angry Chair Brewing · Hidden Springs Ale Works · Penelope (craft beer bar)"
+    },
+    {
+      "day": 10,
+      "place": "Ybor City & Tampa Heights",
+      "highlights": "Coppertail Brewing Co. · Tampa Bay Brewing (Ybor City) · Magnanimous Brewing (Tampa Heights) · The Independent · Ybor City Nightlife"
+    },
+    {
+      "day": 11,
+      "place": "St. Petersburg Beer Paradise",
+      "highlights": "Cycle Brewing · Green Bench Brewing · 3 Daughters Brewing · St. Pete Beach Sunset"
+    },
+    {
+      "day": 12,
+      "place": "Dunedin / Tampa: Dunedin, Motorworks & Departure",
+      "highlights": "Dunedin Brewery · Arkane Aleworks · Motorworks Brewing (Tampa)"
+    }
+  ],
+  "signature_beers": "Cigar City Jai Alai IPA (7.5%) · Hunahpu's Imperial Stout (11.8%) · Angry Chair German Choc Cupcake (11%) · Funky Buddha Maple Bacon Coffee Porter (6.4%) · Cycle Crank BA Stout (12%)",
+  "season_budget": "Nov–Apr (avoid summer heat & humidity)  ·  $3,500–5,500 / 12 days excl. flights ($7–9 pints)  ·  One-way rental MIA → TPA + rideshare"
+}

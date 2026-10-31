@@ -1,0 +1,395 @@
+{
+  "slug": "uk-beer-pilgrimage",
+  "source_file": "uk_beer_trip.html",
+  "title": "12-Day UK Beer Pilgrimage",
+  "days": 12,
+  "countries": "England, Wales & Scotland",
+  "stops": [
+    {
+      "lat": 51.5138,
+      "lon": -0.1073,
+      "name": "Ye Olde Cheshire Cheese",
+      "day": 1
+    },
+    {
+      "lat": 51.5057,
+      "lon": -0.0622,
+      "name": "The Prospect of Whitby",
+      "day": 1
+    },
+    {
+      "lat": 51.4986,
+      "lon": -0.0794,
+      "name": "The Kernel Brewery",
+      "day": 2
+    },
+    {
+      "lat": 51.4928,
+      "lon": -0.2583,
+      "name": "Fuller's Griffin Brewery",
+      "day": 2
+    },
+    {
+      "lat": 51.7535,
+      "lon": -1.2608,
+      "name": "The Eagle and Child",
+      "day": 3
+    },
+    {
+      "lat": 51.9778,
+      "lon": -1.4881,
+      "name": "Hook Norton Brewery",
+      "day": 3
+    },
+    {
+      "lat": 51.8969,
+      "lon": -2.0738,
+      "name": "DEYA Brewing",
+      "day": 3
+    },
+    {
+      "lat": 52.8064,
+      "lon": -1.6321,
+      "name": "Burton Bridge Brewery",
+      "day": 4
+    },
+    {
+      "lat": 52.4884,
+      "lon": -2.0878,
+      "name": "The Olde Swan (Ma Pardoe's)",
+      "day": 4
+    },
+    {
+      "lat": 53.2126,
+      "lon": -1.682,
+      "name": "Thornbridge Brewery",
+      "day": 4
+    },
+    {
+      "lat": 53.4852,
+      "lon": -2.2345,
+      "name": "Marble Arch Inn",
+      "day": 5
+    },
+    {
+      "lat": 53.4736,
+      "lon": -2.2273,
+      "name": "Cloudwater Brew Co",
+      "day": 5
+    },
+    {
+      "lat": 53.8676,
+      "lon": -1.9077,
+      "name": "Timothy Taylor's",
+      "day": 5
+    },
+    {
+      "lat": 53.7965,
+      "lon": -1.5512,
+      "name": "Northern Monk",
+      "day": 5
+    },
+    {
+      "lat": 52.9493,
+      "lon": -1.15,
+      "name": "Ye Olde Trip to Jerusalem",
+      "day": 6
+    },
+    {
+      "lat": 53.2583,
+      "lon": -1.9109,
+      "name": "Buxton Brewery",
+      "day": 6
+    },
+    {
+      "lat": 51.8273,
+      "lon": -3.0262,
+      "name": "Skirrid Mountain Inn",
+      "day": 7
+    },
+    {
+      "lat": 51.588,
+      "lon": -2.9942,
+      "name": "Tiny Rebel Brewery",
+      "day": 7
+    },
+    {
+      "lat": 51.4816,
+      "lon": -3.1791,
+      "name": "The City Arms",
+      "day": 7
+    },
+    {
+      "lat": 51.835,
+      "lon": -4.82,
+      "name": "Bluestone Brewing",
+      "day": 8
+    },
+    {
+      "lat": 51.673,
+      "lon": -4.7035,
+      "name": "Tenby Brewing Co",
+      "day": 8
+    },
+    {
+      "lat": 52.927,
+      "lon": -4.131,
+      "name": "Purple Moose Brewery",
+      "day": 9
+    },
+    {
+      "lat": 53.2637,
+      "lon": -4.0914,
+      "name": "Ye Olde Bull's Head Inn",
+      "day": 9
+    },
+    {
+      "lat": 55.9422,
+      "lon": -3.1505,
+      "name": "The Sheep Heid Inn",
+      "day": 10
+    },
+    {
+      "lat": 55.9479,
+      "lon": -3.1967,
+      "name": "The Bow Bar",
+      "day": 10
+    },
+    {
+      "lat": 55.9394,
+      "lon": -3.1833,
+      "name": "Barney's Beer",
+      "day": 10
+    },
+    {
+      "lat": 55.945,
+      "lon": -3.2106,
+      "name": "The Cloisters Bar",
+      "day": 10
+    },
+    {
+      "lat": 55.8637,
+      "lon": -4.2593,
+      "name": "The Pot Still",
+      "day": 11
+    },
+    {
+      "lat": 55.8484,
+      "lon": -4.2383,
+      "name": "WEST Brewery",
+      "day": 11
+    },
+    {
+      "lat": 56.1612,
+      "lon": -5.2271,
+      "name": "Fyne Ales",
+      "day": 11
+    },
+    {
+      "lat": 55.6164,
+      "lon": -3.0636,
+      "name": "Traquair House Brewery",
+      "day": 12
+    },
+    {
+      "lat": 57.6815,
+      "lon": -4.0359,
+      "name": "Cromarty Brewing Co",
+      "day": 12
+    }
+  ],
+  "path": [
+    [
+      51.5138,
+      -0.1073
+    ],
+    [
+      51.5057,
+      -0.0622
+    ],
+    [
+      51.4986,
+      -0.0794
+    ],
+    [
+      51.4928,
+      -0.2583
+    ],
+    [
+      51.7535,
+      -1.2608
+    ],
+    [
+      51.9778,
+      -1.4881
+    ],
+    [
+      51.8969,
+      -2.0738
+    ],
+    [
+      52.8064,
+      -1.6321
+    ],
+    [
+      52.4884,
+      -2.0878
+    ],
+    [
+      53.2126,
+      -1.682
+    ],
+    [
+      53.4852,
+      -2.2345
+    ],
+    [
+      53.4736,
+      -2.2273
+    ],
+    [
+      53.8676,
+      -1.9077
+    ],
+    [
+      53.7965,
+      -1.5512
+    ],
+    [
+      52.9493,
+      -1.15
+    ],
+    [
+      53.2583,
+      -1.9109
+    ],
+    [
+      51.8273,
+      -3.0262
+    ],
+    [
+      51.588,
+      -2.9942
+    ],
+    [
+      51.4816,
+      -3.1791
+    ],
+    [
+      51.835,
+      -4.82
+    ],
+    [
+      51.673,
+      -4.7035
+    ],
+    [
+      52.927,
+      -4.131
+    ],
+    [
+      53.2637,
+      -4.0914
+    ],
+    [
+      55.9422,
+      -3.1505
+    ],
+    [
+      55.9479,
+      -3.1967
+    ],
+    [
+      55.9394,
+      -3.1833
+    ],
+    [
+      55.945,
+      -3.2106
+    ],
+    [
+      55.8637,
+      -4.2593
+    ],
+    [
+      55.8484,
+      -4.2383
+    ],
+    [
+      56.1612,
+      -5.2271
+    ],
+    [
+      55.6164,
+      -3.0636
+    ],
+    [
+      57.6815,
+      -4.0359
+    ]
+  ],
+  "day_ledger": [
+    {
+      "day": 1,
+      "place": "Denver → London (Arrival)  ·  England",
+      "highlights": "Ye Olde Cheshire Cheese (Fleet St, est. 1667) · The Prospect of Whitby (Wapping, est. 1520)"
+    },
+    {
+      "day": 2,
+      "place": "London Craft & Heritage (England)",
+      "highlights": "The Kernel Brewery · Fuller's Griffin Brewery · The Lamb"
+    },
+    {
+      "day": 3,
+      "place": "Oxford & Cotswolds (England)",
+      "highlights": "The Eagle and Child · Hook Norton Brewery · DEYA Brewing"
+    },
+    {
+      "day": 4,
+      "place": "Burton-on-Trent & Black Country (England)",
+      "highlights": "Burton Bridge Brewery · The Olde Swan \"Ma Pardoe's\" · Thornbridge Brewery"
+    },
+    {
+      "day": 5,
+      "place": "Manchester & Yorkshire (England)",
+      "highlights": "Marble Arch Inn · Cloudwater Brew Co · Timothy Taylor's · Northern Monk"
+    },
+    {
+      "day": 6,
+      "place": "Nottingham & East Midlands → Wales (England)",
+      "highlights": "Ye Olde Trip to Jerusalem (Nottingham, est. 1189) · Buxton Brewery (est. 2009)"
+    },
+    {
+      "day": 7,
+      "place": "Abergavenny & South Wales (Wales)",
+      "highlights": "Skirrid Mountain Inn · Tiny Rebel Brewery · The City Arms"
+    },
+    {
+      "day": 8,
+      "place": "Pembrokeshire & West Wales (Wales)",
+      "highlights": "Bluestone Brewing (Preseli Hills, est. 2013) · Tenby Brewing Co (Tenby, est. 2015) · Coastal scenery along Pembrokeshire Coast Path"
+    },
+    {
+      "day": 9,
+      "place": "Snowdonia & North Wales (Wales)",
+      "highlights": "Purple Moose Brewery (Porthmadog, est. 2005) · Ye Olde Bull's Head Inn (Beaumaris, est. 1472) · local pubs in Conwy or Llandudno"
+    },
+    {
+      "day": 10,
+      "place": "Edinburgh (Scotland)",
+      "highlights": "The Sheep Heid Inn · The Bow Bar · Barney's Beer · The Cloisters Bar"
+    },
+    {
+      "day": 11,
+      "place": "Glasgow & Loch Fyne (Scotland)",
+      "highlights": "The Pot Still · WEST Brewery · Fyne Ales"
+    },
+    {
+      "day": 12,
+      "place": "Highlands & Departure (Scotland)",
+      "highlights": "Traquair House Brewery (Borders, est. 1566/1965) · Cromarty Brewing Co (Black Isle, est. 2011)"
+    }
+  ],
+  "signature_beers": "Timothy Taylor Landlord (4.3%) · Thornbridge Jaipur IPA (5.9%) · Fyne Ales Jarl (3.8%) · Tiny Rebel CWTCH (4.6%) · Fuller's London Pride (4.1%) · Traquair Bear Ale (5.0%)",
+  "season_budget": "May–Jun or Sep–Oct  ·  £150–250 / day (~$190–315)  ·  Tube in London (Days 1–2), rental car Days 3–12"
+}

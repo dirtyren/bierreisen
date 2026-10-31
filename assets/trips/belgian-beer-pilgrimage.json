@@ -1,0 +1,360 @@
+{
+  "slug": "belgian-beer-pilgrimage",
+  "source_file": "belgian.html",
+  "title": "Belgian Beer Pilgrimage",
+  "days": 9,
+  "countries": "Belgium, Germany & Czechia",
+  "stops": [
+    {
+      "lat": 50.8425,
+      "lon": 4.3347,
+      "name": "Cantillon Brewery",
+      "day": 1
+    },
+    {
+      "lat": 50.7676,
+      "lon": 4.2912,
+      "name": "Drie Fonteinen",
+      "day": 2
+    },
+    {
+      "lat": 50.5519,
+      "lon": 3.6453,
+      "name": "Brasserie Dupont",
+      "day": 3
+    },
+    {
+      "lat": 50.944,
+      "lon": 3.1291,
+      "name": "Rodenbach Brewery",
+      "day": 4
+    },
+    {
+      "lat": 50.8194,
+      "lon": 3.2239,
+      "name": "De Halve Maan",
+      "day": 4
+    },
+    {
+      "lat": 50.8895,
+      "lon": 2.7218,
+      "name": "Westvleteren / In de Vrede",
+      "day": 6
+    },
+    {
+      "lat": 51.0276,
+      "lon": 4.4776,
+      "name": "Het Anker",
+      "day": 6
+    },
+    {
+      "lat": 49.6345,
+      "lon": 5.3468,
+      "name": "Orval Abbey",
+      "day": 7
+    },
+    {
+      "lat": 50.0434,
+      "lon": 4.3181,
+      "name": "Chimay (Scourmont Abbey)",
+      "day": 8
+    },
+    {
+      "lat": 50.7838,
+      "lon": 4.2063,
+      "name": "Lindemans Brewery",
+      "day": 2
+    },
+    {
+      "lat": 49.749,
+      "lon": 13.3876,
+      "name": "Pilsner Urquell",
+      "day": 9
+    },
+    {
+      "lat": 50.5784,
+      "lon": 3.5891,
+      "name": "Brasserie à Vapeur",
+      "day": 3
+    },
+    {
+      "lat": 50.3505,
+      "lon": 5.5912,
+      "name": "Brasserie Fantôme",
+      "day": 7
+    },
+    {
+      "lat": 51.0166,
+      "lon": 2.8573,
+      "name": "De Dolle Brouwers",
+      "day": 4
+    },
+    {
+      "lat": 50.8588,
+      "lon": 4.3276,
+      "name": "Brasserie de la Senne",
+      "day": 2
+    },
+    {
+      "lat": 50.2355,
+      "lon": 4.891,
+      "name": "Brasserie Caracole",
+      "day": 7
+    },
+    {
+      "lat": 50.3934,
+      "lon": 3.8273,
+      "name": "Brasserie de Blaugies",
+      "day": 3
+    },
+    {
+      "lat": 50.376,
+      "lon": 3.763,
+      "name": "Brasserie des Rocs",
+      "day": 3
+    },
+    {
+      "lat": 50.7458,
+      "lon": 3.2773,
+      "name": "Brasserie de Ranke",
+      "day": 4
+    },
+    {
+      "lat": 50.8518,
+      "lon": 3.4756,
+      "name": "'t Verzet",
+      "day": 4
+    },
+    {
+      "lat": 50.8497,
+      "lon": 4.348,
+      "name": "Brussels Beer Project",
+      "day": 2
+    },
+    {
+      "lat": 50.7345,
+      "lon": 3.6712,
+      "name": "Brasserie Ellezelloise",
+      "day": 8
+    },
+    {
+      "lat": 50.7455,
+      "lon": 4.8898,
+      "name": "Brasserie de Jandrain-Jandrenouille",
+      "day": 8
+    },
+    {
+      "lat": 50.5654,
+      "lon": 3.3234,
+      "name": "Brasserie Cazeau",
+      "day": 3
+    },
+    {
+      "lat": 49.7112,
+      "lon": 5.5534,
+      "name": "Brasserie de Rulles",
+      "day": 7
+    },
+    {
+      "lat": 49.7234,
+      "lon": 13.3654,
+      "name": "Purkmistr Brewery",
+      "day": 9
+    },
+    {
+      "lat": 49.7477,
+      "lon": 13.3798,
+      "name": "Pivovar Raven",
+      "day": 9
+    },
+    {
+      "lat": 50.8387,
+      "lon": 4.344,
+      "name": "Moeder Lambic Original",
+      "day": 1
+    },
+    {
+      "lat": 50.8506,
+      "lon": 4.3559,
+      "name": "A la Mort Subite",
+      "day": 1
+    },
+    {
+      "lat": 50.8449,
+      "lon": 4.3498,
+      "name": "Poechenellekelder",
+      "day": 1
+    },
+    {
+      "lat": 50.8485,
+      "lon": 4.3525,
+      "name": "Au Bon Vieux Temps",
+      "day": 2
+    },
+    {
+      "lat": 50.8444,
+      "lon": 3.227,
+      "name": "De Garre",
+      "day": 5
+    },
+    {
+      "lat": 50.843,
+      "lon": 3.2221,
+      "name": "'t Brugs Beertje",
+      "day": 5
+    },
+    {
+      "lat": 50.8498,
+      "lon": 3.2312,
+      "name": "Café Vlissinghe",
+      "day": 5
+    },
+    {
+      "lat": 51.2165,
+      "lon": 4.4128,
+      "name": "Kulminator",
+      "day": 6
+    },
+    {
+      "lat": 51.2195,
+      "lon": 4.3998,
+      "name": "Billie's Bier Kafétaria",
+      "day": 6
+    },
+    {
+      "lat": 50.8895,
+      "lon": 2.7215,
+      "name": "In de Vrede",
+      "day": 6
+    },
+    {
+      "lat": 50.8462,
+      "lon": 3.228,
+      "name": "Café Rose Red",
+      "day": 5
+    },
+    {
+      "lat": 50.8438,
+      "lon": 3.225,
+      "name": "Le Trappiste",
+      "day": 5
+    },
+    {
+      "lat": 49.7495,
+      "lon": 13.387,
+      "name": "Na Parkánu",
+      "day": 9
+    },
+    {
+      "lat": 49.7477,
+      "lon": 13.3765,
+      "name": "U Salzmannů",
+      "day": 9
+    },
+    {
+      "lat": 50.942,
+      "lon": 6.9535,
+      "name": "Päffgen Brauhaus",
+      "day": 8
+    }
+  ],
+  "path": [
+    [
+      50.1109,
+      8.6821
+    ],
+    [
+      50.8467,
+      4.3525
+    ],
+    [
+      50.7676,
+      4.2912
+    ],
+    [
+      50.5519,
+      3.6453
+    ],
+    [
+      50.944,
+      3.1291
+    ],
+    [
+      50.8444,
+      3.227
+    ],
+    [
+      50.8895,
+      2.7218
+    ],
+    [
+      51.2165,
+      4.4128
+    ],
+    [
+      49.6345,
+      5.3468
+    ],
+    [
+      50.0434,
+      4.3181
+    ],
+    [
+      50.942,
+      6.9535
+    ],
+    [
+      49.749,
+      13.3876
+    ]
+  ],
+  "day_ledger": [
+    {
+      "day": 1,
+      "place": "Frankfurt → Brussels · Arrival & Lambic Country",
+      "highlights": "Cantillon Brewery · Moeder Lambic Original · A la Mort Subite · Poechenellekelder"
+    },
+    {
+      "day": 2,
+      "place": "Pajottenland Lambic Trail · Beersel / Lembeek / Vlezenbeek",
+      "highlights": "Drie Fonteinen · Lindemans Brewery · Brasserie de la Senne · Au Bon Vieux Temps · Brussels Beer Project"
+    },
+    {
+      "day": 3,
+      "place": "Hainaut Province Deep Dive · Wallonia's Hidden Heartland",
+      "highlights": "Brasserie Dupont · Brasserie à Vapeur · Brasserie des Rocs · Brasserie de Blaugies · Brasserie Cazeau"
+    },
+    {
+      "day": 4,
+      "place": "West Flanders - Sour Country · Roeselare / Esen / Bruges",
+      "highlights": "Rodenbach Brewery · De Dolle Brouwers · Brasserie de Ranke · 't Verzet · De Halve Maan"
+    },
+    {
+      "day": 5,
+      "place": "Bruges - Beer Paradise · Bruges Historic Center",
+      "highlights": "De Garre · 't Brugs Beertje · Café Vlissinghe · Café Rose Red · Le Trappiste"
+    },
+    {
+      "day": 6,
+      "place": "Trappist Trail & Antwerp · Westvleteren / Antwerp",
+      "highlights": "In de Vrede (Westvleteren) · Sint-Sixtus Abbey · Het Anker (Mechelen) · Kulminator · Billie's Bier Kafétaria"
+    },
+    {
+      "day": 7,
+      "place": "Ardennes & Abbey Country · Deep Wallonia",
+      "highlights": "Orval Abbey · Brasserie Fantôme · Brasserie Caracole · Brasserie de Rulles · Rochefort Brewery (view)"
+    },
+    {
+      "day": 8,
+      "place": "Chimay & Into Germany · Chimay / Aachen / Cologne",
+      "highlights": "Chimay Abbey (Scourmont) · Brasserie Ellezelloise · Brasserie de Jandrain-Jandrenouille · Päffgen Brauhaus (Cologne) · Früh am Dom (Cologne)"
+    },
+    {
+      "day": 9,
+      "place": "Cologne → Pilsen · The Grand Finale",
+      "highlights": "Pilsner Urquell Brewery · Purkmistr Brewery & Hotel · Na Parkánu · Pivovar Raven · U Salzmannů"
+    }
+  ],
+  "signature_beers": "Westvleteren 12 (10.2%) · Cantillon Gueuze Bio (5.0%) · Drie Fonteinen Oude Geuze (6.0%) · Saison Dupont (6.5%) · Orval (6.2%) · Rodenbach Grand Cru (6.0%)",
+  "season_budget": "Apr–May or Sep–Oct  ·  Tours €5–20 (book Cantillon, Dupont & Westvleteren ahead)  ·  Train Frankfurt → Brussels, car Days 2–9"
+}

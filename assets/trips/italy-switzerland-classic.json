@@ -1,0 +1,163 @@
+{
+  "slug": "italy-switzerland-classic",
+  "source_file": "italy_switzerland_trip.html",
+  "title": "14-Day Italy & Switzerland — Classic Loop",
+  "days": 14,
+  "countries": "Italy & Switzerland",
+  "stops": [
+    {
+      "lat": 41.8003,
+      "lon": 12.2389,
+      "name": "Roma (FCO)",
+      "day": 14
+    },
+    {
+      "lat": 41.9028,
+      "lon": 12.4964,
+      "name": "Roma",
+      "day": 2
+    },
+    {
+      "lat": 43.7696,
+      "lon": 11.2558,
+      "name": "Firenze",
+      "day": 4
+    },
+    {
+      "lat": 43.7228,
+      "lon": 10.4017,
+      "name": "Pisa",
+      "day": 6
+    },
+    {
+      "lat": 45.4642,
+      "lon": 9.19,
+      "name": "Milano",
+      "day": 8
+    },
+    {
+      "lat": 46.4908,
+      "lon": 9.8355,
+      "name": "St. Moritz",
+      "day": 10
+    },
+    {
+      "lat": 45.4408,
+      "lon": 12.3155,
+      "name": "Venezia",
+      "day": 12
+    }
+  ],
+  "path": [
+    [
+      41.8003,
+      12.2389
+    ],
+    [
+      41.9028,
+      12.4964
+    ],
+    [
+      43.7696,
+      11.2558
+    ],
+    [
+      43.7228,
+      10.4017
+    ],
+    [
+      45.4642,
+      9.19
+    ],
+    [
+      46.4908,
+      9.8355
+    ],
+    [
+      45.4408,
+      12.3155
+    ],
+    [
+      41.9028,
+      12.4964
+    ],
+    [
+      41.8003,
+      12.2389
+    ]
+  ],
+  "day_ledger": [
+    {
+      "day": 1,
+      "place": "Roma (FCO) — Arrival & Trastevere",
+      "highlights": "Arrive FCO · Transfer to Trastevere hotel · Evening passeggiata + aperitivo"
+    },
+    {
+      "day": 2,
+      "place": "Roma — Colosseum & San Clemente",
+      "highlights": "Colosseum/Forum/Palatine (AM) · San Clemente + Coppedè (PM) · Carbonara dinner"
+    },
+    {
+      "day": 3,
+      "place": "Roma — Vatican, Aventine & Craft Beer",
+      "highlights": "Vatican (AM — 7:30am entry) · Castel Sant'Angelo · Aventine Keyhole (sunset) · Ma Che beer"
+    },
+    {
+      "day": 4,
+      "place": "Roma → Firenze",
+      "highlights": "Train to Florence · Duomo climb + Uffizi (PM) · Bistecca dinner · Archea beer"
+    },
+    {
+      "day": 5,
+      "place": "Firenze — Accademia & Oltrarno",
+      "highlights": "Accademia (AM) · Oltrarno walk: Brancacci, San Miniato sunset · Lampredotto"
+    },
+    {
+      "day": 6,
+      "place": "Firenze → Pisa (Overnight)",
+      "highlights": "Train to Pisa · Tower + Miracoli · Keith Haring mural · Cecina"
+    },
+    {
+      "day": 7,
+      "place": "Pisa → Milano",
+      "highlights": "Train to Milano · Duomo rooftop · Galleria · Navigli evening"
+    },
+    {
+      "day": 8,
+      "place": "Milano — Last Supper & Lambiczoon",
+      "highlights": "Last Supper (8:15am slot) · San Maurizio · Brera · Risotto lunch"
+    },
+    {
+      "day": 9,
+      "place": "Milano — Sforza & Monumentale",
+      "highlights": "Castello Sforzesco + Cimitero Monumentale · Shopping · Cotoletta dinner · Bernina prep"
+    },
+    {
+      "day": 10,
+      "place": "Milano → St. Moritz (Bernina Express)",
+      "highlights": "Bernina Express to St. Moritz · Afternoon: town walk + Leaning Tower · Fondue · Engadiner beer"
+    },
+    {
+      "day": 11,
+      "place": "St. Moritz — Muottas Muragl & Val Roseg",
+      "highlights": "Muottas Muragl sunrise · Val Roseg hike or Diavolezza · Nusstorte · Capuns dinner"
+    },
+    {
+      "day": 12,
+      "place": "St. Moritz → Venezia",
+      "highlights": "Train to Venice · Arrive noon · Rialto Market · Cicchetti crawl"
+    },
+    {
+      "day": 13,
+      "place": "Venezia — San Marco, Ghetto & Bacari",
+      "highlights": "San Marco + Doge's Palace (AM) · San Giorgio campanile · Ghetto · Libreria Acqua Alta"
+    },
+    {
+      "day": 14,
+      "place": "Venezia → Roma (FCO Departure)",
+      "highlights": "Morning train to Roma · Quick Trastevere walk · Final espresso · FCO departure"
+    }
+  ],
+  "signature_beers": "Tipopils (5.2%) · ReAle (6.4%) · Baladin Nazionale (6.5%) · Archea Dubbel (7.5%) · Lambrate Montestella (5.0%) · Orzo Bruno Chiara (4.8%) · Engadiner Bündner Lager (4.8%)",
+  "season_budget": "May–Jun or Sep–Oct  ·  €2,600–4,100 pp excl. flights (trains €250–400)  ·  Frecciarossa + Bernina Express + EuroCity via Chur"
+}
