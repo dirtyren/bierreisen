@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14-Day Bavaria & Bohemia Beer Pilgrimage</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --card: #0f3460;
+  --accent: #e94560;
+  --gold: #f5a623;
+  --beer-light: #f5d76e;
+  --beer-dark: #6b3a2a;
+  --beer-amber: #c87533;
+  --text: #eaeaea;
+  --text-muted: #a0a0b0;
+  --success: #4ecdc4;
+  --germany: #ffcc00;
+  --czech: #11457e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+.header {
+  background: linear-gradient(135deg, var(--surface) 0%, #1a1a3e 100%);
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 3px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '🍺';
+  position: absolute;
+  font-size: 8rem;
+  opacity: 0.05;
+  top: -1rem;
+  left: 2rem;
+}
+.header::after {
+  content: '🏰';
+  position: absolute;
+  font-size: 8rem;
+  opacity: 0.05;
+  top: -1rem;
+  right: 2rem;
+}
+.header h1 {
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, var(--gold), var(--beer-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+.header p { color: var(--text-muted); font-size: 1.1rem; }
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: var(--surface);
+  border-bottom: 2px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.tab-btn {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+  font-weight: 500;
+}
+.tab-btn:hover { color: var(--text); background: rgba(233,69,96,0.1); }
+.tab-btn.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  background: rgba(245,166,35,0.08);
+}
+.tab-content { display: none; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+.tab-content.active { display: block; }
+#map-container { height: 700px; width: 100%; border-radius: 12px; overflow: hidden; }
+
+/* Flowchart styles */
+.flowchart { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.day-node {
+  background: var(--card);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.day-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245,166,35,0.2);
+}
+.day-node.germany { border-left: 5px solid var(--germany); }
+.day-node.czech { border-left: 5px solid var(--czech); }
+.day-number {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.day-node h3 { color: var(--gold); margin-bottom: 0.5rem; font-size: 1.1rem; }
+.day-node .location { color: var(--success); font-size: 0.9rem; margin-bottom: 0.5rem; }
+.day-node .breweries { color: var(--text-muted); font-size: 0.9rem; }
+.day-node .breweries strong { color: var(--beer-light); }
+.connector {
+  width: 3px;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--gold), var(--accent));
+  position: relative;
+}
+.connector::after {
+  content: '▼';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+/* Brewery list styles */
+.brewery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
+.brewery-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+  transition: all 0.3s;
+  position: relative;
+}
+.brewery-card:hover { border-color: var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+.brewery-card .rank {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: var(--accent);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.brewery-card h4 { color: var(--gold); margin-bottom: 0.3rem; }
+.brewery-card .type { color: var(--success); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+.brewery-card .desc { color: var(--text-muted); font-size: 0.9rem; margin: 0.8rem 0; }
+.brewery-card .stars { color: var(--gold); }
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin: 2px;
+}
+.tag-hidden { background: rgba(78,205,196,0.2); color: var(--success); }
+.tag-classic { background: rgba(245,166,35,0.2); color: var(--gold); }
+.tag-monastery { background: rgba(155,89,182,0.2); color: #bb8fce; }
+.tag-craft { background: rgba(233,69,96,0.2); color: var(--accent); }
+
+/* Beer table styles */
+.beer-table-wrap { overflow-x: auto; }
+.beer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.beer-table th {
+  background: var(--card);
+  color: var(--gold);
+  padding: 0.8rem;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid var(--gold);
+}
+.beer-table td {
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid #333;
+}
+.beer-table tr:hover { background: rgba(245,166,35,0.05); }
+.color-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 5px;
+  border: 1px solid #555;
+}
+.region-filter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #555;
+  background: transparent;
+  color: var(--text);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
+}
+.suggestion-box {
+  background: linear-gradient(135deg, rgba(78,205,196,0.1), rgba(245,166,35,0.1));
+  border: 1px solid var(--success);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.suggestion-box h4 { color: var(--success); margin-bottom: 0.5rem; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🍺 14-Day Bavaria & Bohemia Beer Pilgrimage 🏰</h1>
+  <p>Frankfurt → Bamberg → Franconian Villages → Czech Bohemia → Munich → Home</p>
+  <p style="margin-top:0.5rem;font-size:0.9rem;color:var(--gold)">45+ Breweries • 2 Countries • Infinite Prost!</p>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('itinerary')">📋 Itinerary</button>
+  <button class="tab-btn" onclick="switchTab('map')">🗺️ Map</button>
+  <button class="tab-btn" onclick="switchTab('breweries')">🏆 Brewery Rankings</button>
+  <button class="tab-btn" onclick="switchTab('beers')">🍻 Beer Guide</button>
+</div>
+
+<!-- TAB CONTENT WILL BE INJECTED BY SUBSEQUENT PATCHES -->
+<div id="itinerary" class="tab-content active">
+
+<div class="suggestion-box">
+  <h4>💡 Trip Tips & Suggestions</h4>
+  <p>• <strong>Best season:</strong> May-September (beer gardens open). Annafest in Hallerndorf (late July) is unmissable.<br>
+  • <strong>Transport:</strong> Rent a car from Frankfurt OR use excellent German/Czech trains. Bavaria Ticket = unlimited regional trains for €29/day.<br>
+  • <strong>Franconian brewery walks:</strong> Don't drive! Use the Brauereienweg hiking trails between village breweries.<br>
+  • <strong>Czech Republic:</strong> Beer is cheaper than water. Average pint: €1.50-2.50. Always order "čepované" (draft).<br>
+  • <strong>Zoigl tradition:</strong> Check the Zoigl calendar online - these communal brewhouses only open on specific days (star symbol on house = open).<br>
+  • <strong>Packing:</strong> Bring a 1L Maßkrug carrier bag. Comfortable walking shoes are essential for brewery trails.</p>
+</div>
+
+<div class="flowchart">
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 1</span>
+    <h3>✈️ Frankfurt Arrival → Bamberg</h3>
+    <div class="location">📍 Frankfurt Airport → Bamberg (2h train or 2.5h drive)</div>
+    <div class="breweries">
+      <strong>Evening:</strong> Schlenkerla (Dominikanerstr. 6) - The world-famous Rauchbier tavern. Order the Märzen Rauchbier straight from the oak barrel. Medieval vaulted cellar. <em>Must-do first night ritual.</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 2</span>
+    <h3>🏰 Bamberg City Brewery Crawl</h3>
+    <div class="location">📍 Bamberg Old Town (UNESCO World Heritage)</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Spezial (Obere Königstr. 10) - The local's Rauchbier, subtler smoke than Schlenkerla<br>
+      <strong>Lunch:</strong> Mahr's Bräu (Wunderburg 10) - The legendary "aU" Ungespundetes Kellerbier, arguably Germany's best lager<br>
+      <strong>Afternoon:</strong> Fässla (Obere Königstr. 19-21) - Iconic dwarf logo, try Zwergla dark lager<br>
+      <strong>Evening:</strong> Greifenklau (Laurenziplatz 20) - Best beer garden view in Bamberg, overlooking the city<br>
+      <strong>Nightcap:</strong> Klosterbräu (Obere Mühlbrücke 3) - Oldest brewery in Bamberg (1533), try the Schwärzla
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 3</span>
+    <h3>🌾 Franconian Village Breweries - North</h3>
+    <div class="location">📍 Memmelsdorf → Merkendorf → Schammelsdorf</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Drei Kronen Memmelsdorf - Historic brewery with Stöffla Kellerbier<br>
+      <strong>Lunch:</strong> Brauerei Wagner, Merkendorf - Tiny village gem, incredible Ungespundetes<br>
+      <strong>Afternoon:</strong> Brauerei Hummel, Merkendorf - Another village treasure, rustic Landbier<br>
+      <strong>Evening:</strong> Brauerei Knoblach, Schammelsdorf - Authentic farm brewery, traditional Franconian Vollbier<br>
+      <em>🥾 This is part of the Brauereienweg (brewery trail) - walk between them!</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 4</span>
+    <h3>🍻 Hallerndorf & Southern Franconia</h3>
+    <div class="location">📍 Hallerndorf → Geisfeld → Buttenheim</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Brauerei Rittmayer, Hallerndorf - Multiple beer cellars in the hillside, outstanding Kellerbier<br>
+      <strong>Lunch:</strong> Lieberth Keller, Hallerndorf - Classic Franconian beer cellar under chestnut trees<br>
+      <strong>Afternoon:</strong> Brauerei Griess, Geisfeld - Off-the-radar village brewery, genuine hidden gem<br>
+      <strong>Evening:</strong> St. Georgen Bräu, Buttenheim - The birthplace of Levi Strauss! Historic Kellerbier<br>
+      <em>🎪 If visiting late July: Annafest in Hallerndorf - 23 beer cellars open simultaneously!</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 5</span>
+    <h3>🏔️ Aufseß & Upper Franconia Deep Cut</h3>
+    <div class="location">📍 Aufseß → Vierzehnheiligen → Zeil am Main</div>
+    <div class="breweries">
+      <strong>Morning-Lunch:</strong> Aufseß 4-Brewery Loop - Guinness World Record: most breweries per capita (4 for 1,500 people!). Visit Reichold, Rothenbach, Stadter, Kathi-Bräu<br>
+      <strong>Afternoon:</strong> Brauerei Trunk, Vierzehnheiligen - Next to the stunning Basilica, spiritual + beer combo<br>
+      <strong>Evening:</strong> Brauerei Göller, Zeil am Main - Excellent Rauchbier and Kellerbier, beautiful Franconian town<br>
+      <em>🏆 Keesmann Herren Pils back in Bamberg for a nightcap - cult-classic German Pilsner</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 6</span>
+    <h3>⭐ Zoigl Country & Border Region</h3>
+    <div class="location">📍 Bamberg → Bayreuth → Windischeschenbach/Neuhaus</div>
+    <div class="breweries">
+      <strong>Drive east:</strong> Through beautiful Franconian Switzerland landscape<br>
+      <strong>Afternoon:</strong> ZOIGL brewhouses in Windischeschenbach/Neuhaus/Eslarn - Ancient communal brewing tradition! Look for the six-pointed star on houses (= beer available today). Unfiltered, bottom-fermented, brewed by citizens in the community Zoiglhaus<br>
+      <strong>Evening:</strong> Beim Gloser or Beim Bannes (Windischeschenbach) - Authentic Zoigl stube<br>
+      <em>🌟 ZOIGL is UNESCO intangible cultural heritage. Each brewer has their scheduled days. Check zoigl.de for the calendar!</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node czech">
+    <span class="day-number">DAY 7</span>
+    <h3>🇨🇿 Cross into Bohemia → Chodovar</h3>
+    <div class="location">📍 German border → Chodová Planá → overnight Pilsen</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Cross border at Waidhaus/Rozvadov<br>
+      <strong>Lunch:</strong> Pivovar Chodovar, Chodová Planá - Medieval beer cellars (500 years old!), BEER SPA (bathe in beer!), excellent unpasteurized lager. The cave restaurant is magical.<br>
+      <strong>Afternoon drive:</strong> Through western Bohemian countryside to Pilsen<br>
+      <strong>Evening:</strong> Arrive Pilsen. Na Parkánu pub (attached to Urquell) - Fresh tank Pilsner, unfiltered
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node czech">
+    <span class="day-number">DAY 8</span>
+    <h3>🏭 Pilsen - Birthplace of Pilsner</h3>
+    <div class="location">📍 Plzeň city center</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Pilsner Urquell Brewery Tour - Walk the historic cellars where Pilsner was born in 1842. Taste unfiltered/unpasteurized straight from oak lagering barrels<br>
+      <strong>Lunch:</strong> U Salzmannů (Pražská 8) - THE best tank beer pub in Pilsen. Perfectly served Urquell from copper tanks.<br>
+      <strong>Afternoon:</strong> Pivovar Purkmistr - Brewery hotel with its own beer spa, great dark lager and wheat beer<br>
+      <strong>Evening:</strong> Pivovar Raven - Craft brewery with bold American-inspired ales, Czech craft scene pioneer<br>
+      <em>💡 "Tankové pivo" (tank beer) = unpasteurized Pilsner delivered fresh in tanks to pubs. Life-changing vs bottled!</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node czech">
+    <span class="day-number">DAY 9</span>
+    <h3>🌿 Žatec Hop Capital & Hidden Gems</h3>
+    <div class="location">📍 Pilsen → Žatec → Kout na Šumavě</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Drive to Žatec (Saaz) - THE hop capital of the world. Visit the Hop Museum and Temple of Hops<br>
+      <strong>Lunch:</strong> Pivovar Falkon, Žatec - Brewing with the freshest Saaz hops possible, meters from the hop fields<br>
+      <strong>Afternoon:</strong> Pivovar Kout na Šumavě - LEGENDARY cult brewery. Their 12° pale lager is considered one of the best Czech beers ever made. Revived in 2006 from a defunct 19th-century brewery. Worth the detour!<br>
+      <strong>Evening:</strong> Local hospoda (pub) in Kout - Drink Koutský straight from the source<br>
+      <em>🏆 Kout na Šumavě 12° is a holy grail for Czech beer nerds. Perfectly balanced, impossibly drinkable.</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node czech">
+    <span class="day-number">DAY 10</span>
+    <h3>🌲 Šumava Forest & South Bohemia</h3>
+    <div class="location">📍 Kout na Šumavě → Šumava National Park → Český Krumlov area</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Pivovar Zhůřák - Deep in the Šumava forest. Tiny brewery in a remote village. Raw unfiltered lagers, wood-fired, almost impossible to find. ULTIMATE hidden gem.<br>
+      <strong>Lunch:</strong> Pivovar Svatý Florian - Small south Bohemian brewery with excellent unpasteurized beers and hearty Czech food<br>
+      <strong>Afternoon:</strong> Pivovar Permon, Sokolov - Mining-country craft brewery, bold flavors, excellent IPA and dark specials<br>
+      <strong>Evening:</strong> Local hospoda with Kout or Svijany on tap<br>
+      <em>🌲 The Šumava (Bohemian Forest) is one of Europe's last wild areas. Stunning driving through misty valleys.</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node czech">
+    <span class="day-number">DAY 11</span>
+    <h3>🏰 Back to Bavaria via Regensburg</h3>
+    <div class="location">📍 Czech border → Regensburg → Abensberg</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Cross back into Germany at Furth im Wald<br>
+      <strong>Lunch:</strong> Kneitinger, Regensburg (Arnulfsplatz 3) - Time-capsule beer hall since 1530. The Kneitinger Bock is legendary. Unchanged for generations.<br>
+      <strong>Afternoon:</strong> Spitalbrauerei, Regensburg - Brewery literally ON the medieval Stone Bridge (Steinerne Brücke). Historic sausage kitchen next door.<br>
+      <strong>Evening:</strong> Kuchlbauer, Abensberg - The HUNDERTWASSER TOWER! Art meets beer. Colorful Friedensreich Hundertwasser-designed tower inside a brewery. Excellent Weißbier.<br>
+      <em>🎨 The Kuchlbauer tower is one of the most unique brewery experiences in the world.</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 12</span>
+    <h3>🦁 Munich Beer Halls & Craft</h3>
+    <div class="location">📍 Munich city center</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Augustiner-Keller (Arnulfstr. 52) - Munich's BEST beer. Holzfass (wooden barrel) fresh Augustiner Edelstoff in the beer garden. The locals' choice.<br>
+      <strong>Lunch:</strong> Schneider Bräuhaus (Tal 7) - Original home of wheat beer. TAP7 Mein Original is perfect. Try TAP6 Aventinus (world's greatest Weizenbock)<br>
+      <strong>Afternoon:</strong> Giesinger Bräu (Martin-Luther-Str. 2) - Garage-to-glory Munich craft darling. Erhellung unfiltered Helles is cult.<br>
+      <strong>Evening:</strong> ORCA Brau taproom - Tiny nano-brewery, juicy NEIPAs that rival New England's best. Then Crew Republic tap bar for West Coast IPAs<br>
+      <strong>Nightcap:</strong> Hofbräuhaus (for the experience) OR Tilmans Biere for refined classics
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 13</span>
+    <h3>⛪ Andechs Monastery & Wildbrau Grafing</h3>
+    <div class="location">📍 Munich → Andechs → Grafing bei München</div>
+    <div class="breweries">
+      <strong>Morning:</strong> S-Bahn to Herrsching, then bus/walk up the Holy Mountain<br>
+      <strong>Late Morning:</strong> Kloster Andechs - Benedictine monastery since 1455. The Doppelbock Dunkel (7.1%) with panoramic views over Ammersee is transcendent. Self-service beer garden with roast pork.<br>
+      <strong>Afternoon:</strong> Return via S-Bahn, transfer to S4 to Grafing<br>
+      <strong>Evening:</strong> Wildbrau, Grafing (Marktplatz 2) - Charming market-square brewery in a small Bavarian town. Traditional Hell, Dunkel, and seasonal specials. Authentic small-town brewing at its finest.<br>
+      <em>⛪ Andechs tip: Go early (10am) to beat crowds. The monks' cheese from the monastery shop is incredible.</em>
+    </div>
+  </div>
+  <div class="connector"></div>
+
+  <div class="day-node germany">
+    <span class="day-number">DAY 14</span>
+    <h3>✈️ Munich → Frankfurt → Home</h3>
+    <div class="location">📍 Munich → Frankfurt Airport (3h train or 1h flight)</div>
+    <div class="breweries">
+      <strong>Morning:</strong> Final Weißwurst breakfast at Schneider Bräuhaus with a TAP7 (tradition: eat before noon!)<br>
+      <strong>Optional:</strong> Paulaner Nockherberg (if Starkbierfest season) or Weltenburg Abbey via Danube boat (if time allows - world's oldest monastery brewery, founded 1050)<br>
+      <strong>Travel:</strong> ICE train to Frankfurt Airport or quick flight<br>
+      <strong>Airport:</strong> Even Frankfurt Airport has decent beer at Paulaner Wirtshaus terminal area<br>
+      <em>🍻 Prost! You've completed the ultimate beer pilgrimage. ~45+ breweries, 2 countries, endless memories.</em>
+    </div>
+  </div>
+
+</div>
+</div>
+<div id="map" class="tab-content"><div id="map-container"></div></div>
+<div id="breweries" class="tab-content">
+
+<h2 style="color:var(--gold);margin-bottom:0.5rem;">🏆 Brewery & Pub Rankings</h2>
+<p style="color:var(--text-muted);margin-bottom:1.5rem;">Ranked by uniqueness, beer quality, atmosphere, and "you MUST go here" factor. Mix of world-famous and hidden gems.</p>
+
+<div class="region-filter">
+  <button class="filter-btn active" onclick="filterBreweries('all')">All (45+)</button>
+  <button class="filter-btn" onclick="filterBreweries('bamberg')">Bamberg</button>
+  <button class="filter-btn" onclick="filterBreweries('franconia')">Franconia Villages</button>
+  <button class="filter-btn" onclick="filterBreweries('bohemia')">Bohemia</button>
+  <button class="filter-btn" onclick="filterBreweries('munich')">Munich</button>
+  <button class="filter-btn" onclick="filterBreweries('other')">Other Bavaria</button>
+</div>
+
+<div class="brewery-grid">
+
+  <div class="brewery-card" data-region="bamberg">
+    <span class="rank">1</span>
+    <h4>Schlenkerla</h4>
+    <div class="type">Rauchbier Institution • Est. 1405</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-hidden">BUCKET LIST</span>
+    <div class="desc">The world's most famous smoked beer tavern. Beechwood-smoked malt Märzen served from oak barrels in a medieval vaulted cellar. The aroma hits you at the door.</div>
+    <div class="stars">★★★★★</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Dominikanerstr. 6, Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="bamberg">
+    <span class="rank">2</span>
+    <h4>Mahr's Bräu</h4>
+    <div class="type">Kellerbier Legend • Est. 1670</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-hidden">LOCAL FAVORITE</span>
+    <div class="desc">The "aU" (Ungespundetes) is considered one of the world's best lagers by Ratebeer. Naturally carbonated, unfiltered amber perfection. The brewers' brewery.</div>
+    <div class="stars">★★★★★</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Wunderburg 10, Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">3</span>
+    <h4>Pivovar Kout na Šumavě</h4>
+    <div class="type">Cult Lager Legend • Revived 2006</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-classic">CULT</span>
+    <div class="desc">The 12° pale lager is a holy grail for Czech beer nerds. Revived from a defunct 19th-century brewery, it's impossibly balanced and drinkable. Pilgrimage-worthy.</div>
+    <div class="stars">★★★★★</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Kout na Šumavě 15, Czech Republic</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">4</span>
+    <h4>Pilsner Urquell</h4>
+    <div class="type">Birthplace of Pilsner • Est. 1842</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-hidden">BUCKET LIST</span>
+    <div class="desc">Where Pilsner was literally invented. The cellars tour with unfiltered/unpasteurized tasting from oak barrels is transformative. The original golden lager.</div>
+    <div class="stars">★★★★★</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 U Prazdroje 64/7, Plzeň</p>
+  </div>
+
+  <div class="brewery-card" data-region="munich">
+    <span class="rank">5</span>
+    <h4>Augustiner-Keller</h4>
+    <div class="type">Munich's Finest • Est. 1328</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-hidden">LOCAL FAVORITE</span>
+    <div class="desc">Munich's oldest brewery and the locals' unanimous choice. Holzfass (wooden barrel) fresh Edelstoff in the chestnut tree beer garden. Never advertises - doesn't need to.</div>
+    <div class="stars">★★★★★</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Arnulfstr. 52, Munich</p>
+  </div>
+
+  <div class="brewery-card" data-region="other">
+    <span class="rank">6</span>
+    <h4>Kloster Andechs</h4>
+    <div class="type">Benedictine Monastery • Est. 1455</div>
+    <span class="tag tag-monastery">MONASTERY</span><span class="tag tag-classic">CLASSIC</span>
+    <div class="desc">Holy Mountain overlooking Ammersee. Monks brew transcendent Doppelbock Dunkel (7.1%). Beer garden with roast pork, panoramic Bavarian Alps views. Spiritual experience.</div>
+    <div class="stars">★★★★★</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Bergstraße 2, Andechs</p>
+  </div>
+
+  <div class="brewery-card" data-region="bamberg">
+    <span class="rank">7</span>
+    <h4>Spezial</h4>
+    <div class="type">The Local's Rauchbier • Est. 1536</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-hidden">INSIDER</span>
+    <div class="desc">Bambergers prefer Spezial over Schlenkerla - subtler smoke, more balanced. They smoke their own malt in-house. The Ungespundetes Rauchbier is sublime.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Obere Königstr. 10, Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">8</span>
+    <h4>Pivovar Chodovar</h4>
+    <div class="type">Medieval Beer Caves • Est. 1573</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-classic">HISTORIC</span>
+    <div class="desc">500-year-old rock cellars, a BEER SPA where you bathe in beer, and exceptional unpasteurized lager. The cave restaurant atmosphere is unlike anything else.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Pivovarská 107, Chodová Planá</p>
+  </div>
+
+  <div class="brewery-card" data-region="other">
+    <span class="rank">9</span>
+    <h4>Kuchlbauer + Hundertwasser Tower</h4>
+    <div class="type">Art Meets Beer • Tower opened 2010</div>
+    <span class="tag tag-classic">UNIQUE</span><span class="tag tag-hidden">SURPRISE</span>
+    <div class="desc">A Friedensreich Hundertwasser-designed colorful tower INSIDE a brewery in Abensberg. Surreal architectural experience + excellent Weißbier. Nothing else like it.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Römerstraße 5, Abensberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">10</span>
+    <h4>Brauerei Rittmayer, Hallerndorf</h4>
+    <div class="type">Kellerbier Paradise • Est. 1422</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-classic">HISTORIC</span>
+    <div class="desc">Multiple beer cellars carved into hillside, open in summer. Outstanding Kellerbier under chestnut trees. Site of the legendary Annafest (23 cellars, late July).</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Hallerndorf, Upper Franconia</p>
+  </div>
+
+  <div class="brewery-card" data-region="other">
+    <span class="rank">11</span>
+    <h4>Zoigl Brewhouses</h4>
+    <div class="type">UNESCO Communal Tradition • Medieval</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-classic">UNIQUE</span>
+    <div class="desc">Ancient communal brewing in 5 Oberpfalz towns. Citizens brew in a shared Zoiglhaus, serve at home. Look for the six-pointed star = open today. UNESCO heritage.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Windischeschenbach, Neuhaus, Eslarn, Falkenberg, Mitterteich</p>
+  </div>
+
+  <div class="brewery-card" data-region="munich">
+    <span class="rank">12</span>
+    <h4>Schneider Bräuhaus</h4>
+    <div class="type">Wheat Beer Masters • Est. 1872</div>
+    <span class="tag tag-classic">CLASSIC</span>
+    <div class="desc">Germany's wheat beer royalty. TAP7 Original is perfection, TAP6 Aventinus is the world's greatest Weizenbock. Beautiful historic hall on Tal street.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Tal 7, Munich</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">13</span>
+    <h4>Aufseß 4-Brewery Loop</h4>
+    <div class="type">Guinness World Record • Village</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-classic">UNIQUE</span>
+    <div class="desc">Guinness World Record: most breweries per capita - 4 for 1,500 people! Walkable loop: Reichold, Rothenbach, Stadter, Kathi-Bräu. Pure Franconian magic.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Aufseß, Upper Franconia</p>
+  </div>
+
+  <div class="brewery-card" data-region="bamberg">
+    <span class="rank">14</span>
+    <h4>Greifenklau</h4>
+    <div class="type">Best Beer Garden View • Est. 1719</div>
+    <span class="tag tag-classic">CLASSIC</span>
+    <div class="desc">Perched on a hill overlooking Bamberg. The beer garden view at sunset with a fresh Lagerbier is pure Franconian bliss. Locals gather here on warm evenings.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Laurenziplatz 20, Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="other">
+    <span class="rank">15</span>
+    <h4>Kneitinger, Regensburg</h4>
+    <div class="type">Time-Capsule Beer Hall • Est. 1530</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-hidden">INSIDER</span>
+    <div class="desc">Unchanged for generations. Dark wood, regulars' tables (Stammtisch), the Bock is legendary. One of Germany's most authentic old beer halls. Zero tourist pretense.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Arnulfsplatz 3, Regensburg</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">16</span>
+    <h4>U Salzmannů, Pilsen</h4>
+    <div class="type">Tank Beer Temple • Traditional Pub</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-hidden">LOCAL FAVORITE</span>
+    <div class="desc">THE best place to drink Pilsner Urquell. Tankové pivo from copper tanks - unpasteurized, served at perfect temperature. Better than the brewery itself.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Pražská 8, Plzeň</p>
+  </div>
+
+  <div class="brewery-card" data-region="bamberg">
+    <span class="rank">17</span>
+    <h4>Fässla</h4>
+    <div class="type">The Dwarf Brewery • Est. 1649</div>
+    <span class="tag tag-classic">CLASSIC</span>
+    <div class="desc">Iconic dwarf (Zwerg) logo everywhere. The Zwergla dark lager is smooth and sessionable. Also has rooms above the brewery - sleep where they brew!</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Obere Königstr. 19-21, Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="bamberg">
+    <span class="rank">18</span>
+    <h4>Klosterbräu</h4>
+    <div class="type">Oldest in Bamberg • Est. 1533</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-monastery">HISTORIC</span>
+    <div class="desc">Bamberg's oldest brewery. The Schwärzla black lager is silky smooth. Beautiful historic building on the Mühlbrücke. Less touristy than Schlenkerla.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Obere Mühlbrücke 3, Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="munich">
+    <span class="rank">19</span>
+    <h4>Giesinger Bräu</h4>
+    <div class="type">Craft Revolution • Est. 2010</div>
+    <span class="tag tag-craft">CRAFT</span><span class="tag tag-hidden">LOCAL FAVORITE</span>
+    <div class="desc">Started in a garage, now Munich's craft darling. Erhellung unfiltered Helles is a cult beer. Beautiful new brewery/taproom. The Munich craft success story.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Martin-Luther-Str. 2, Munich</p>
+  </div>
+
+  <div class="brewery-card" data-region="other">
+    <span class="rank">20</span>
+    <h4>Wildbrau, Grafing</h4>
+    <div class="type">Small-Town Gem • Traditional</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-classic">LOCAL</span>
+    <div class="desc">Charming market-square brewery in Grafing bei München. Traditional Bavarian range brewed with care: Hell, Dunkel, seasonal Festbier. Authentic small-town brewing.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Marktplatz 2, Grafing bei München</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">21</span>
+    <h4>Brauerei Wagner, Merkendorf</h4>
+    <div class="type">Village Treasure • Family Brewery</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span>
+    <div class="desc">Tiny village brewery with an incredible Ungespundetes. Most tourists will never find this. Authentic Franconian gasthaus atmosphere. The real deal.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Merkendorf bei Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">22</span>
+    <h4>St. Georgen Bräu, Buttenheim</h4>
+    <div class="type">Levi Strauss Birthplace • Est. 1624</div>
+    <span class="tag tag-classic">HISTORIC</span><span class="tag tag-hidden">HIDDEN GEM</span>
+    <div class="desc">Buttenheim is where Levi Strauss was born! The brewery's Kellerbier is excellent. Charming village with a Levi Strauss museum next door.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Marktstraße 12, Buttenheim</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">23</span>
+    <h4>Pivovar Zhůřák</h4>
+    <div class="type">Forest Micro • Ultra-Hidden</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-craft">MICRO</span>
+    <div class="desc">Deep in Šumava forest. Tiny wood-fired brewery in a remote village. Raw unfiltered lagers. Almost impossible to find - that's the point. Ultimate hidden gem.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Šumava region, South Bohemia</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">24</span>
+    <h4>Pivovar Falkon, Žatec</h4>
+    <div class="type">Hop Capital Brewer • Craft</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-craft">CRAFT</span>
+    <div class="desc">Brewing in the hop capital of the world (Žatec/Saaz). Freshest Saaz hops possible, meters from the fields. Also visit the Temple of Hops museum.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Žatec, Czech Republic</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">25</span>
+    <h4>Pivovar Purkmistr</h4>
+    <div class="type">Brewery Hotel & Spa • Modern</div>
+    <span class="tag tag-craft">CRAFT</span><span class="tag tag-hidden">EXPERIENCE</span>
+    <div class="desc">Hotel with its own brewery AND beer spa. Excellent dark lager and wheat beer. Stay overnight and drink fresh beer from your room's minibar. Full experience.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Selská náves 21, Plzeň-Černice</p>
+  </div>
+
+  <div class="brewery-card" data-region="other">
+    <span class="rank">26</span>
+    <h4>Spitalbrauerei, Regensburg</h4>
+    <div class="type">On The Stone Bridge • Est. 1226</div>
+    <span class="tag tag-classic">HISTORIC</span><span class="tag tag-hidden">UNIQUE</span>
+    <div class="desc">Brewery literally ON the medieval Stone Bridge. Oldest operating brewery in Regensburg. The historic Wurstkuchl (sausage kitchen) is right next door.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Steinerne Brücke, Regensburg</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">27</span>
+    <h4>Brauerei Knoblach, Schammelsdorf</h4>
+    <div class="type">Farm Brewery • Authentic</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span>
+    <div class="desc">Authentic farm brewery where the farmer brews. Traditional Franconian Vollbier in a village of a few hundred people. Doesn't get more real than this.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Schammelsdorf bei Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">28</span>
+    <h4>Brauerei Griess, Geisfeld</h4>
+    <div class="type">Off-the-Radar • Village</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span>
+    <div class="desc">Completely off the tourist radar. Genuine Franconian village brewery with limited hours. If you find it open, you've earned your Landbier.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Geisfeld bei Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">29</span>
+    <h4>Drei Kronen, Memmelsdorf</h4>
+    <div class="type">Historic Crown • Est. 1457</div>
+    <span class="tag tag-classic">HISTORIC</span>
+    <div class="desc">One of the oldest breweries in Franconia. The Stöffla Kellerbier is excellent. Beautiful half-timbered building with a cozy Gaststube.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Hauptstraße 19, Memmelsdorf</p>
+  </div>
+
+  <div class="brewery-card" data-region="munich">
+    <span class="rank">30</span>
+    <h4>ORCA Brau</h4>
+    <div class="type">Nano NEIPA Wizard • Est. 2016</div>
+    <span class="tag tag-craft">CRAFT</span><span class="tag tag-hidden">INSIDER</span>
+    <div class="desc">Tiny nano-brewery taproom in Munich. Juicy NEIPAs that rival New England's best. Rotating taps, creative flavors. Munich's craft underground.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Stiglmaierplatz area, Munich</p>
+  </div>
+
+  <div class="brewery-card" data-region="munich">
+    <span class="rank">31</span>
+    <h4>Crew Republic</h4>
+    <div class="type">Bavaria's Craft King • Est. 2011</div>
+    <span class="tag tag-craft">CRAFT</span>
+    <div class="desc">Bavaria's most awarded craft brewery. West Coast IPAs brewed in the heart of Reinheitsgebot country. Drunken Sailor IPA is their flagship. Bold rebel energy.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Tap bar in Munich center</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">32</span>
+    <h4>Pivovar Raven, Pilsen</h4>
+    <div class="type">Czech Craft Pioneer • Modern</div>
+    <span class="tag tag-craft">CRAFT</span>
+    <div class="desc">American-inspired ales in the birthplace of lager. Bold IPAs, stouts, and sours. Czech craft scene pioneer. Excellent taproom atmosphere.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Plzeň, Czech Republic</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">33</span>
+    <h4>Pivovar Permon, Sokolov</h4>
+    <div class="type">Mining Country Craft • Micro</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-craft">CRAFT</span>
+    <div class="desc">Bold craft beer from Czech mining country. Excellent IPA and dark specials. Off the beaten path in Sokolov - genuine local craft.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Sokolov, Czech Republic</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">34</span>
+    <h4>Brauerei Trunk, Vierzehnheiligen</h4>
+    <div class="type">Basilica Brewery • Spiritual</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span><span class="tag tag-monastery">SPIRITUAL</span>
+    <div class="desc">Next to the stunning Basilika Vierzehnheiligen. Beer + Baroque architecture = spiritual experience. Excellent Nothelfer Trunk dark lager.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Vierzehnheiligen, Upper Franconia</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">35</span>
+    <h4>Brauerei Göller, Zeil am Main</h4>
+    <div class="type">Rauchbier & Kellerbier • Family</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span>
+    <div class="desc">Excellent Rauchbier (lighter smoke than Bamberg) and outstanding Kellerbier. Beautiful half-timbered town on the Main river. Family-run for generations.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Scheßlitzer Str. 6, Zeil am Main</p>
+  </div>
+
+  <div class="brewery-card" data-region="bamberg">
+    <span class="rank">36</span>
+    <h4>Keesmann</h4>
+    <div class="type">Cult Pilsner • Est. 1867</div>
+    <span class="tag tag-classic">CLASSIC</span><span class="tag tag-hidden">INSIDER</span>
+    <div class="desc">Herren Pils is a cult-classic German Pilsner - dry, bitter, perfect. Known among beer nerds but missed by most tourists in Bamberg. The connoisseur's choice.</div>
+    <div class="stars">★★★★☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Wunderburg 5, Bamberg</p>
+  </div>
+
+  <div class="brewery-card" data-region="bohemia">
+    <span class="rank">37</span>
+    <h4>Pivovar Svatý Florian</h4>
+    <div class="type">South Bohemia Micro • Traditional</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span>
+    <div class="desc">Small south Bohemian brewery with excellent unpasteurized beers and hearty Czech food. The kind of place where time stopped. Very few tourists.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 South Bohemia, Czech Republic</p>
+  </div>
+
+  <div class="brewery-card" data-region="munich">
+    <span class="rank">38</span>
+    <h4>Hofbräuhaus</h4>
+    <div class="type">World Famous • Est. 1589</div>
+    <span class="tag tag-classic">CLASSIC</span>
+    <div class="desc">Yes, it's touristy. But it's also historic, enormous, and the oompah band is fun. Go once for the experience. State-owned since founding. The beer is solid HB Original.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Platzl 9, Munich</p>
+  </div>
+
+  <div class="brewery-card" data-region="munich">
+    <span class="rank">39</span>
+    <h4>Tilmans Biere</h4>
+    <div class="type">Refined Classics • Modern</div>
+    <span class="tag tag-craft">CRAFT</span>
+    <div class="desc">Elevated Bavarian classics - refined Helles and Pils that show what modern German brewing can achieve. Clean, precise, beautiful. The thinking man's lager.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Munich</p>
+  </div>
+
+  <div class="brewery-card" data-region="franconia">
+    <span class="rank">40</span>
+    <h4>Brauerei Hummel, Merkendorf</h4>
+    <div class="type">Rustic Landbier • Village</div>
+    <span class="tag tag-hidden">HIDDEN GEM</span>
+    <div class="desc">Another Merkendorf village treasure. Rustic Landbier in an authentic Franconian setting. Walk here from Wagner brewery on the Brauereienweg.</div>
+    <div class="stars">★★★☆☆</div>
+    <p style="font-size:0.8rem;color:var(--text-muted)">📍 Merkendorf bei Bamberg</p>
+  </div>
+
+</div>
+
+<script>
+function filterBreweries(region) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.brewery-card').forEach(card => {
+    if (region === 'all' || card.dataset.region === region) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</div>
+<div id="beers" class="tab-content">
+
+<h2 style="color:var(--gold);margin-bottom:0.5rem;">🍻 Beer Guide - Styles, Colors & Tasting Notes</h2>
+<p style="color:var(--text-muted);margin-bottom:1.5rem;">Comprehensive beer list for each brewery. IBU = International Bitterness Units. SRM/EBC approximated by color swatch.</p>
+
+<div class="region-filter">
+  <button class="filter-btn active" onclick="filterBeers('all')">All Beers</button>
+  <button class="filter-btn" onclick="filterBeers('bamberg')">Bamberg</button>
+  <button class="filter-btn" onclick="filterBeers('franconia')">Franconia</button>
+  <button class="filter-btn" onclick="filterBeers('bohemia')">Bohemia</button>
+  <button class="filter-btn" onclick="filterBeers('munich')">Munich</button>
+  <button class="filter-btn" onclick="filterBeers('other')">Other Bavaria</button>
+</div>
+
+<div class="beer-table-wrap">
+<table class="beer-table">
+<thead>
+<tr><th>Brewery</th><th>Beer Name</th><th>Style</th><th>ABV</th><th>IBU</th><th>Color</th><th>Availability</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<!-- BAMBERG -->
+<tr data-beer-region="bamberg"><td><strong>Schlenkerla</strong></td><td>Märzen Rauchbier</td><td>Rauchbier (Smoked Märzen)</td><td>5.1%</td><td>~30</td><td><span class="color-swatch" style="background:#8B4513"></span>Deep amber-brown</td><td>Year-round (flagship)</td><td>Beechwood-smoked malt, bacon-like aroma, clean finish. THE Rauchbier.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Schlenkerla</strong></td><td>Urbock Rauchbier</td><td>Rauchbier (Smoked Bock)</td><td>6.5%</td><td>~28</td><td><span class="color-swatch" style="background:#5C3317"></span>Dark brown</td><td>Seasonal (Oct-Jan)</td><td>Stronger smoked bock. Rich, warming, intense smoke + caramel.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Schlenkerla</strong></td><td>Weizen Rauchbier</td><td>Rauchbier (Smoked Wheat)</td><td>5.2%</td><td>~15</td><td><span class="color-swatch" style="background:#DAA520"></span>Hazy gold</td><td>Year-round</td><td>Wheat beer with subtle smoke. Great gateway Rauchbier for newcomers.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Spezial</strong></td><td>Rauchbier Märzen</td><td>Rauchbier</td><td>4.9%</td><td>~25</td><td><span class="color-swatch" style="background:#B8860B"></span>Amber</td><td>Year-round</td><td>Subtler smoke than Schlenkerla. In-house smoked malt. Locals' choice.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Spezial</strong></td><td>Ungespundetes Rauchbier</td><td>Kellerbier/Rauchbier</td><td>4.6%</td><td>~22</td><td><span class="color-swatch" style="background:#CD853F"></span>Golden amber</td><td>Year-round</td><td>Naturally carbonated, gently smoked. Incredibly sessionable.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Mahr's Bräu</strong></td><td>"aU" Ungespundetes</td><td>Kellerbier / Ungespundetes</td><td>5.2%</td><td>~28</td><td><span class="color-swatch" style="background:#D2691E"></span>Amber-gold, hazy</td><td>Year-round (flagship)</td><td>World-class. Natural carbonation, bready malt, herbal hops. Ratebeer legend.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Mahr's Bräu</strong></td><td>Pilsner</td><td>German Pilsner</td><td>4.9%</td><td>~35</td><td><span class="color-swatch" style="background:#F5DEB3"></span>Pale gold</td><td>Year-round</td><td>Crisp, dry, excellent hop bitterness. Overlooked due to the aU's fame.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Fässla</strong></td><td>Zwergla</td><td>Schwarzbier / Dark Lager</td><td>4.9%</td><td>~22</td><td><span class="color-swatch" style="background:#3B2F2F"></span>Near-black</td><td>Year-round (flagship)</td><td>Smooth, roasty, slightly sweet. Named after the brewery's dwarf mascot.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Fässla</strong></td><td>Lagerbier</td><td>Franconian Lager</td><td>5.5%</td><td>~25</td><td><span class="color-swatch" style="background:#DAA520"></span>Gold</td><td>Year-round</td><td>Classic full-bodied Franconian lager. Malty backbone, clean finish.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Greifenklau</strong></td><td>Lagerbier</td><td>Franconian Kellerbier</td><td>4.8%</td><td>~24</td><td><span class="color-swatch" style="background:#DAA520"></span>Golden</td><td>Year-round</td><td>Best enjoyed in the hillside beer garden with sunset views over Bamberg.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Klosterbräu</strong></td><td>Schwärzla</td><td>Schwarzbier</td><td>4.9%</td><td>~20</td><td><span class="color-swatch" style="background:#1C1C1C"></span>Black</td><td>Year-round</td><td>Silky smooth black lager. Roasted malt, coffee notes, gentle bitterness.</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Klosterbräu</strong></td><td>Gold</td><td>Helles</td><td>4.8%</td><td>~20</td><td><span class="color-swatch" style="background:#FFD700"></span>Bright gold</td><td>Year-round</td><td>Clean, malty Helles from Bamberg's oldest brewery (1533).</td></tr>
+<tr data-beer-region="bamberg"><td><strong>Keesmann</strong></td><td>Herren Pils</td><td>German Pilsner</td><td>4.8%</td><td>~38</td><td><span class="color-swatch" style="background:#FFFACD"></span>Pale straw</td><td>Year-round</td><td>Cult-classic Pils. Bone-dry, assertive bitterness, floral Hallertau. Beer nerd essential.</td></tr>
+<!-- FRANCONIA -->
+<tr data-beer-region="franconia"><td><strong>Rittmayer</strong></td><td>Kellerbier</td><td>Franconian Kellerbier</td><td>5.0%</td><td>~26</td><td><span class="color-swatch" style="background:#DAA520"></span>Amber-gold</td><td>Year-round</td><td>Outstanding unfiltered cellar beer. Hallerndorf's pride, served in hillside cellars.</td></tr>
+<tr data-beer-region="franconia"><td><strong>Wagner Merkendorf</strong></td><td>Ungespundetes</td><td>Kellerbier</td><td>5.1%</td><td>~24</td><td><span class="color-swatch" style="background:#CD853F"></span>Hazy amber</td><td>Weekends mainly</td><td>Village gem. Naturally carbonated, bready, herbal. Hard to find, worth the effort.</td></tr>
+<tr data-beer-region="franconia"><td><strong>Hummel Merkendorf</strong></td><td>Landbier</td><td>Franconian Landbier</td><td>5.0%</td><td>~22</td><td><span class="color-swatch" style="background:#B8860B"></span>Amber</td><td>Limited hours</td><td>Rustic country beer. Malty, slightly sweet, low carbonation. Authentic farm style.</td></tr>
+<tr data-beer-region="franconia"><td><strong>Knoblach</strong></td><td>Vollbier</td><td>Franconian Vollbier</td><td>5.0%</td><td>~20</td><td><span class="color-swatch" style="background:#DAA520"></span>Gold</td><td>Very limited hours</td><td>Farm brewery original. Simple, honest, perfectly brewed. Nothing fancy needed.</td></tr>
+<tr data-beer-region="franconia"><td><strong>St. Georgen Bräu</strong></td><td>Kellerbier</td><td>Franconian Kellerbier</td><td>5.0%</td><td>~24</td><td><span class="color-swatch" style="background:#D2691E"></span>Amber</td><td>Year-round</td><td>From Levi Strauss's birthplace. Excellent traditional unfiltered lager.</td></tr>
+<tr data-beer-region="franconia"><td><strong>Drei Kronen</strong></td><td>Stöffla</td><td>Kellerbier</td><td>5.2%</td><td>~26</td><td><span class="color-swatch" style="background:#DAA520"></span>Gold, hazy</td><td>Year-round</td><td>Memmelsdorf's historic crown brewery. Rich malt, floral hops.</td></tr>
+<tr data-beer-region="franconia"><td><strong>Göller</strong></td><td>Rauchbier</td><td>Rauchbier</td><td>5.2%</td><td>~25</td><td><span class="color-swatch" style="background:#8B4513"></span>Deep amber</td><td>Year-round</td><td>Lighter smoke than Bamberg. Approachable for Rauchbier newcomers.</td></tr>
+<tr data-beer-region="franconia"><td><strong>Trunk</strong></td><td>Nothelfer Trunk</td><td>Dunkel</td><td>5.1%</td><td>~22</td><td><span class="color-swatch" style="background:#5C3317"></span>Dark brown</td><td>Year-round</td><td>Named after the 14 Holy Helpers. Rich, malty, served next to the Basilica.</td></tr>
+<tr data-beer-region="franconia"><td><strong>Aufseß (various)</strong></td><td>Assorted Landbier</td><td>Franconian Landbier</td><td>4.8-5.2%</td><td>~20-26</td><td><span class="color-swatch" style="background:#CD853F"></span>Varies</td><td>Check brewery hours</td><td>4 breweries for 1,500 people! Each unique. Walk the Guinness Record loop.</td></tr>
+<!-- BOHEMIA -->
+<tr data-beer-region="bohemia"><td><strong>Pilsner Urquell</strong></td><td>Plzeňský Prazdroj 12°</td><td>Czech Pale Lager (the original Pilsner)</td><td>4.4%</td><td>~40</td><td><span class="color-swatch" style="background:#FFD700"></span>Brilliant gold</td><td>Year-round</td><td>THE original Pilsner (1842). Saaz hops, triple-decocted. Get it UNFILTERED on tour.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Kout na Šumavě</strong></td><td>Koutská 12° Světlý Ležák</td><td>Czech Pale Lager</td><td>5.0%</td><td>~35</td><td><span class="color-swatch" style="background:#F5DEB3"></span>Pale gold, hazy</td><td>Year-round at brewery</td><td>HOLY GRAIL. Perfectly balanced, triple-decocted, Saaz hops. Cult status.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Kout na Šumavě</strong></td><td>Koutská 18° Tmavý Speciál</td><td>Czech Dark Lager</td><td>7.5%</td><td>~30</td><td><span class="color-swatch" style="background:#2F1B14"></span>Very dark brown</td><td>Limited/seasonal</td><td>Rich dark special. Caramel, dried fruit, warming alcohol. Special occasions.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Chodovar</strong></td><td>Zlatá Jedenáctka 11°</td><td>Czech Pale Lager</td><td>4.6%</td><td>~28</td><td><span class="color-swatch" style="background:#FFD700"></span>Gold</td><td>Year-round</td><td>Unpasteurized gold. Brewed in 500-year-old cellars. Fresh, crisp, mineral.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Chodovar</strong></td><td>Tmavé Speciální 13°</td><td>Czech Dark Lager</td><td>5.4%</td><td>~25</td><td><span class="color-swatch" style="background:#3B2F2F"></span>Dark brown</td><td>Year-round</td><td>Rich dark lager from medieval caves. Chocolate, toffee, smooth.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Falkon Žatec</strong></td><td>12° Pale Lager</td><td>Czech Pale Lager</td><td>5.0%</td><td>~35</td><td><span class="color-swatch" style="background:#F5DEB3"></span>Pale gold</td><td>Year-round</td><td>Brewed with freshest possible Saaz hops from surrounding fields. Aromatic.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Falkon Žatec</strong></td><td>IPA</td><td>American IPA</td><td>6.3%</td><td>~60</td><td><span class="color-swatch" style="background:#FFA500"></span>Deep amber</td><td>Rotating</td><td>Bold hop-forward IPA from the hop capital. Local + American hop blend.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Purkmistr</strong></td><td>Tmavý Ležák 12°</td><td>Czech Dark Lager</td><td>4.8%</td><td>~22</td><td><span class="color-swatch" style="background:#5C3317"></span>Brown</td><td>Year-round</td><td>Smooth dark lager. Chocolate and caramel. Excellent with roast duck.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Purkmistr</strong></td><td>Pšeničné (Wheat)</td><td>Czech Wheat Beer</td><td>5.0%</td><td>~15</td><td><span class="color-swatch" style="background:#F0E68C"></span>Pale, hazy</td><td>Seasonal (summer)</td><td>Czech take on wheat beer. Less banana/clove than Bavarian, more crisp.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Raven Pilsen</strong></td><td>Mad Cat IPA</td><td>American IPA</td><td>6.5%</td><td>~65</td><td><span class="color-swatch" style="background:#FFA500"></span>Orange-amber</td><td>Year-round</td><td>Czech craft pioneer. Citrus, tropical, resinous. Bold for Pilsen!</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Permon</strong></td><td>Permon IPA 15°</td><td>American IPA</td><td>6.0%</td><td>~55</td><td><span class="color-swatch" style="background:#FF8C00"></span>Orange</td><td>Year-round</td><td>Mining-country craft IPA. Grapefruit, pine, assertive bitterness.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Zhůřák</strong></td><td>Světlý Ležák</td><td>Czech Pale Lager</td><td>4.8%</td><td>~30</td><td><span class="color-swatch" style="background:#F5DEB3"></span>Hazy gold</td><td>At brewery only</td><td>Forest micro-brewery. Raw, unfiltered, wood-fired. If you find it, you've won.</td></tr>
+<tr data-beer-region="bohemia"><td><strong>Zoigl (communal)</strong></td><td>Zoiglbier</td><td>Zoigl (communal lager)</td><td>4.5-5.0%</td><td>~20-25</td><td><span class="color-swatch" style="background:#DAA520"></span>Gold to amber</td><td>Check zoigl.de calendar</td><td>UNESCO heritage communal brew. Each Zoigler's version is different. Unfiltered, natural.</td></tr>
+<!-- MUNICH & OTHER BAVARIA -->
+<tr data-beer-region="munich"><td><strong>Augustiner</strong></td><td>Edelstoff</td><td>Munich Helles Export</td><td>5.6%</td><td>~23</td><td><span class="color-swatch" style="background:#FFD700"></span>Golden</td><td>Year-round (Holzfass)</td><td>Munich's best. From wooden barrels at the Keller. Never advertises. Perfection.</td></tr>
+<tr data-beer-region="munich"><td><strong>Augustiner</strong></td><td>Helles Lagerbier</td><td>Munich Helles</td><td>5.2%</td><td>~18</td><td><span class="color-swatch" style="background:#F5DEB3"></span>Pale gold</td><td>Year-round</td><td>The everyday Munich Helles. Soft, malty, clean. What locals drink daily.</td></tr>
+<tr data-beer-region="munich"><td><strong>Schneider Weisse</strong></td><td>TAP7 Mein Original</td><td>Hefeweizen</td><td>5.4%</td><td>~14</td><td><span class="color-swatch" style="background:#FF8C00"></span>Amber-orange, hazy</td><td>Year-round (flagship)</td><td>The original wheat beer recipe. Banana, clove, full-bodied. Perfect with Weißwurst.</td></tr>
+<tr data-beer-region="munich"><td><strong>Schneider Weisse</strong></td><td>TAP6 Aventinus</td><td>Weizenbock / Wheat Doppelbock</td><td>8.2%</td><td>~16</td><td><span class="color-swatch" style="background:#5C3317"></span>Deep mahogany</td><td>Year-round</td><td>World's greatest Weizenbock. Dried fruit, clove, chocolate, warming. Masterpiece.</td></tr>
+<tr data-beer-region="munich"><td><strong>Giesinger Bräu</strong></td><td>Erhellung</td><td>Unfiltered Helles</td><td>4.8%</td><td>~20</td><td><span class="color-swatch" style="background:#F5DEB3"></span>Hazy pale gold</td><td>Year-round (cult)</td><td>Munich's craft Helles. Unfiltered, fresh, slightly more hop-forward than traditional.</td></tr>
+<tr data-beer-region="munich"><td><strong>ORCA Brau</strong></td><td>Rotating NEIPA</td><td>New England IPA</td><td>6.0-7.0%</td><td>~40-50</td><td><span class="color-swatch" style="background:#FFA500"></span>Hazy orange</td><td>Rotating taps</td><td>Juicy, tropical, creamy. Rivals best NEIPAs globally. Small batches, always new.</td></tr>
+<tr data-beer-region="munich"><td><strong>Crew Republic</strong></td><td>Drunken Sailor IPA</td><td>West Coast IPA</td><td>6.4%</td><td>~60</td><td><span class="color-swatch" style="background:#DAA520"></span>Golden amber</td><td>Year-round</td><td>Bavaria's craft flagship IPA. Pine, grapefruit, dry bitter finish. Rebel brewing.</td></tr>
+<tr data-beer-region="munich"><td><strong>Hofbräuhaus</strong></td><td>HB Original</td><td>Munich Helles</td><td>5.1%</td><td>~20</td><td><span class="color-swatch" style="background:#FFD700"></span>Gold</td><td>Year-round</td><td>State brewery since 1589. Solid, malty Helles. Best in the Maßkrug with oompah.</td></tr>
+<tr data-beer-region="other"><td><strong>Andechs</strong></td><td>Doppelbock Dunkel</td><td>Doppelbock</td><td>7.1%</td><td>~25</td><td><span class="color-swatch" style="background:#3B2F2F"></span>Very dark brown</td><td>Year-round (flagship)</td><td>Monks' masterpiece. Rich malt, dried fruit, warming. Drink on Holy Mountain with views.</td></tr>
+<tr data-beer-region="other"><td><strong>Andechs</strong></td><td>Spezial Hell</td><td>Helles</td><td>5.9%</td><td>~22</td><td><span class="color-swatch" style="background:#FFD700"></span>Bright gold</td><td>Year-round</td><td>Stronger Helles from the monks. Malty, clean, great with the monastery roast pork.</td></tr>
+<tr data-beer-region="other"><td><strong>Wildbrau Grafing</strong></td><td>Hell</td><td>Munich Helles</td><td>5.0%</td><td>~20</td><td><span class="color-swatch" style="background:#F5DEB3"></span>Pale gold</td><td>Year-round</td><td>Small-town Bavarian Helles. Clean, malty, exactly what it should be. Market square charm.</td></tr>
+<tr data-beer-region="other"><td><strong>Wildbrau Grafing</strong></td><td>Dunkel</td><td>Munich Dunkel</td><td>5.2%</td><td>~22</td><td><span class="color-swatch" style="background:#5C3317"></span>Dark brown</td><td>Year-round</td><td>Traditional dark lager. Bread crust, toffee, gentle roast. Bavarian comfort.</td></tr>
+<tr data-beer-region="other"><td><strong>Wildbrau Grafing</strong></td><td>Festbier</td><td>Märzen / Festbier</td><td>5.8%</td><td>~24</td><td><span class="color-swatch" style="background:#DAA520"></span>Rich gold</td><td>Seasonal (autumn)</td><td>Autumn festival beer. Fuller body, slight sweetness, celebration in a glass.</td></tr>
+<tr data-beer-region="other"><td><strong>Kneitinger</strong></td><td>Bock</td><td>Bock</td><td>6.8%</td><td>~26</td><td><span class="color-swatch" style="background:#8B4513"></span>Dark amber</td><td>Seasonal (winter)</td><td>Legendary Regensburg Bock. Rich, warming, malty. Time-capsule beer hall essential.</td></tr>
+<tr data-beer-region="other"><td><strong>Kuchlbauer</strong></td><td>Turmweisse</td><td>Hefeweizen</td><td>5.2%</td><td>~13</td><td><span class="color-swatch" style="background:#FFA500"></span>Orange, hazy</td><td>Year-round</td><td>Named after the Hundertwasser tower. Classic Bavarian wheat. Banana, clove, yeast.</td></tr>
+<tr data-beer-region="other"><td><strong>Spitalbrauerei</strong></td><td>Spital Pils</td><td>German Pilsner</td><td>4.8%</td><td>~32</td><td><span class="color-swatch" style="background:#FFFACD"></span>Pale straw</td><td>Year-round</td><td>Crisp Pils from the Stone Bridge brewery. Pair with Wurstkuchl sausages next door.</td></tr>
+</tbody>
+</table>
+</div>
+
+<script>
+function filterBeers(region) {
+  document.querySelectorAll('#beers .filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.beer-table tbody tr').forEach(row => {
+    if (region === 'all' || row.dataset.beerRegion === region) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+}
+</script>
+</div>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  if (id === 'map' && !window.mapInitialized) initMap();
+}
+
+function initMap() {
+  window.mapInitialized = true;
+  const map = L.map('map-container').setView([49.5, 12.5], 7);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  // Custom icons
+  const goldIcon = L.divIcon({className:'', html:'<div style="background:#f5a623;width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.5)"></div>', iconSize:[16,16], iconAnchor:[8,8]});
+  const redIcon = L.divIcon({className:'', html:'<div style="background:#e94560;width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.5)"></div>', iconSize:[16,16], iconAnchor:[8,8]});
+  const greenIcon = L.divIcon({className:'', html:'<div style="background:#4ecdc4;width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.5)"></div>', iconSize:[16,16], iconAnchor:[8,8]});
+  const blueIcon = L.divIcon({className:'', html:'<div style="background:#3498db;width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.5)"></div>', iconSize:[16,16], iconAnchor:[8,8]});
+  const purpleIcon = L.divIcon({className:'', html:'<div style="background:#9b59b6;width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.5)"></div>', iconSize:[18,18], iconAnchor:[9,9]});
+  const startIcon = L.divIcon({className:'', html:'<div style="background:#2ecc71;width:16px;height:16px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.6)">✈</div>', iconSize:[22,22], iconAnchor:[11,11]});
+
+  const places = [
+    // Frankfurt
+    {lat:50.0379, lng:8.5622, name:"✈️ Frankfurt Airport", desc:"Day 1: Arrival", icon:startIcon},
+    // Bamberg
+    {lat:49.8917, lng:10.8868, name:"🍺 Schlenkerla", desc:"Day 1-2: World-famous Rauchbier", icon:goldIcon},
+    {lat:49.8937, lng:10.8828, name:"🍺 Spezial", desc:"Day 2: Local's Rauchbier choice", icon:goldIcon},
+    {lat:49.8855, lng:10.9050, name:"🍺 Mahr's Bräu", desc:"Day 2: Legendary 'aU' Kellerbier", icon:goldIcon},
+    {lat:49.8930, lng:10.8845, name:"🍺 Fässla", desc:"Day 2: Zwergla dark lager", icon:goldIcon},
+    {lat:49.8905, lng:10.8780, name:"🍺 Greifenklau", desc:"Day 2: Best beer garden view", icon:goldIcon},
+    {lat:49.8920, lng:10.8840, name:"🍺 Klosterbräu", desc:"Day 2: Oldest brewery 1533", icon:goldIcon},
+    {lat:49.8860, lng:10.9040, name:"🍺 Keesmann", desc:"Day 2: Cult Herren Pils", icon:goldIcon},
+    // Franconia Villages
+    {lat:49.9275, lng:10.9408, name:"🏡 Drei Kronen Memmelsdorf", desc:"Day 3: Historic 1457", icon:greenIcon},
+    {lat:49.9100, lng:10.9200, name:"🏡 Wagner Merkendorf", desc:"Day 3: Village treasure", icon:greenIcon},
+    {lat:49.9050, lng:10.9150, name:"🏡 Hummel Merkendorf", desc:"Day 3: Rustic Landbier", icon:greenIcon},
+    {lat:49.9000, lng:10.9300, name:"🏡 Knoblach Schammelsdorf", desc:"Day 3: Farm brewery", icon:greenIcon},
+    {lat:49.7698, lng:11.0058, name:"🏡 Rittmayer Hallerndorf", desc:"Day 4: Kellerbier paradise", icon:greenIcon},
+    {lat:49.8300, lng:10.8500, name:"🏡 Griess Geisfeld", desc:"Day 4: Off-radar gem", icon:greenIcon},
+    {lat:49.8175, lng:11.0308, name:"🏡 St. Georgen Buttenheim", desc:"Day 4: Levi Strauss birthplace", icon:greenIcon},
+    {lat:49.8830, lng:11.2250, name:"🏡 Aufseß (4 breweries)", desc:"Day 5: Guinness World Record", icon:greenIcon},
+    {lat:50.0900, lng:10.8900, name:"🏡 Trunk Vierzehnheiligen", desc:"Day 5: Basilica brewery", icon:greenIcon},
+    {lat:50.0095, lng:10.5945, name:"🏡 Göller Zeil am Main", desc:"Day 5: Family Rauchbier", icon:greenIcon},
+    // Zoigl Country
+    {lat:49.7358, lng:12.1612, name:"⭐ Zoigl Windischeschenbach", desc:"Day 6: UNESCO communal brewing", icon:purpleIcon},
+    {lat:49.7250, lng:12.1800, name:"⭐ Zoigl Neuhaus", desc:"Day 6: Communal tradition", icon:purpleIcon},
+    // Czech Republic
+    {lat:49.7912, lng:12.6408, name:"🇨🇿 Chodovar Chodová Planá", desc:"Day 7: Medieval beer caves + spa", icon:blueIcon},
+    {lat:49.7474, lng:13.3776, name:"🇨🇿 Pilsner Urquell", desc:"Day 8: Birthplace of Pilsner 1842", icon:redIcon},
+    {lat:49.7450, lng:13.3800, name:"🇨🇿 U Salzmannů", desc:"Day 8: Best tank beer pub", icon:blueIcon},
+    {lat:49.7150, lng:13.3400, name:"🇨🇿 Purkmistr", desc:"Day 8: Brewery hotel + beer spa", icon:blueIcon},
+    {lat:49.7500, lng:13.3900, name:"🇨🇿 Pivovar Raven", desc:"Day 8: Czech craft pioneer", icon:blueIcon},
+    {lat:50.3267, lng:13.5458, name:"🇨🇿 Falkon Žatec", desc:"Day 9: Hop capital brewery", icon:blueIcon},
+    {lat:49.2650, lng:13.3550, name:"🇨🇿 Kout na Šumavě", desc:"Day 9: LEGENDARY cult 12° lager", icon:redIcon},
+    {lat:49.1000, lng:13.4500, name:"🇨🇿 Zhůřák (Šumava)", desc:"Day 10: Forest micro, ultra-hidden", icon:blueIcon},
+    {lat:49.1500, lng:13.5000, name:"🇨🇿 Svatý Florian", desc:"Day 10: South Bohemia micro", icon:blueIcon},
+    {lat:50.1814, lng:12.6378, name:"🇨🇿 Permon Sokolov", desc:"Day 10: Mining country craft", icon:blueIcon},
+    // Return to Bavaria
+    {lat:49.0195, lng:12.0975, name:"🍺 Kneitinger Regensburg", desc:"Day 11: Time-capsule beer hall", icon:goldIcon},
+    {lat:49.0220, lng:12.0965, name:"🍺 Spitalbrauerei Regensburg", desc:"Day 11: On the Stone Bridge", icon:goldIcon},
+    {lat:48.8175, lng:11.8300, name:"🍺 Kuchlbauer Abensberg", desc:"Day 11: Hundertwasser tower!", icon:goldIcon},
+    // Munich
+    {lat:48.1450, lng:11.5447, name:"🦁 Augustiner-Keller", desc:"Day 12: Munich's BEST, wooden barrels", icon:redIcon},
+    {lat:48.1363, lng:11.5802, name:"🦁 Schneider Bräuhaus", desc:"Day 12: Wheat beer masters, Aventinus", icon:goldIcon},
+    {lat:48.1150, lng:11.5800, name:"🦁 Giesinger Bräu", desc:"Day 12: Garage-to-glory craft", icon:goldIcon},
+    {lat:48.1450, lng:11.5550, name:"🦁 ORCA Brau", desc:"Day 12: Nano NEIPA wizard", icon:greenIcon},
+    {lat:48.1375, lng:11.5797, name:"🦁 Hofbräuhaus", desc:"Day 12: World famous since 1589", icon:goldIcon},
+    // Andechs & Grafing
+    {lat:47.9739, lng:11.1830, name:"⛪ Kloster Andechs", desc:"Day 13: Benedictine monastery, Doppelbock", icon:purpleIcon},
+    {lat:48.0465, lng:11.9691, name:"🍺 Wildbrau Grafing", desc:"Day 13: Small-town market square gem", icon:redIcon}
+  ];
+
+  // Draw route line
+  const routeCoords = [
+    [50.0379, 8.5622], // Frankfurt
+    [49.8917, 10.8868], // Bamberg
+    [49.7698, 11.0058], // Hallerndorf
+    [49.8830, 11.2250], // Aufseß
+    [49.7358, 12.1612], // Zoigl
+    [49.7912, 12.6408], // Chodovar
+    [49.7474, 13.3776], // Pilsen
+    [50.3267, 13.5458], // Žatec
+    [49.2650, 13.3550], // Kout
+    [49.1000, 13.4500], // Šumava
+    [49.0195, 12.0975], // Regensburg
+    [48.8175, 11.8300], // Abensberg
+    [48.1450, 11.5447], // Munich
+    [47.9739, 11.1830], // Andechs
+    [48.0465, 11.9691], // Grafing
+    [48.1450, 11.5447], // Munich (return)
+    [50.0379, 8.5622]  // Frankfurt (departure)
+  ];
+
+  L.polyline(routeCoords, {color: '#f5a623', weight: 3, opacity: 0.7, dashArray: '10,10'}).addTo(map);
+
+  // Add markers
+  places.forEach(p => {
+    L.marker([p.lat, p.lng], {icon: p.icon})
+      .bindPopup(`<strong style="font-size:1.1em">${p.name}</strong><br><span style="color:#666">${p.desc}</span>`)
+      .addTo(map);
+  });
+
+  // Legend
+  const legend = L.control({position: 'bottomright'});
+  legend.onAdd = function() {
+    const div = L.DomUtil.create('div', 'legend');
+    div.style.cssText = 'background:white;padding:10px 14px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.2);font-size:12px;line-height:1.8';
+    div.innerHTML = `
+      <strong style="font-size:13px">Legend</strong><br>
+      <span style="display:inline-block;width:10px;height:10px;background:#f5a623;border-radius:50%;margin-right:5px"></span> Classic Brewery<br>
+      <span style="display:inline-block;width:10px;height:10px;background:#e94560;border-radius:50%;margin-right:5px"></span> Must-Visit (Top Ranked)<br>
+      <span style="display:inline-block;width:10px;height:10px;background:#4ecdc4;border-radius:50%;margin-right:5px"></span> Hidden Gem<br>
+      <span style="display:inline-block;width:10px;height:10px;background:#3498db;border-radius:50%;margin-right:5px"></span> Czech Brewery<br>
+      <span style="display:inline-block;width:10px;height:10px;background:#9b59b6;border-radius:50%;margin-right:5px"></span> Monastery/Zoigl<br>
+      <span style="display:inline-block;width:10px;height:10px;background:#2ecc71;border-radius:50%;margin-right:5px"></span> Start/End<br>
+      <span style="border-top:2px dashed #f5a623;width:20px;display:inline-block;margin-right:5px"></span> Route
+    `;
+    return div;
+  };
+  legend.addTo(map);
+
+  setTimeout(() => map.invalidateSize(), 100);
+}
+</script>
+</body>
+</html>

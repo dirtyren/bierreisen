@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍺 Belgian Beer Trip - 9 Days of Glory</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root {
+  --gold: #D4A017;
+  --dark: #1a1a2e;
+  --darker: #0f0f1a;
+  --card: #16213e;
+  --card-hover: #1a2a4a;
+  --amber: #f0a500;
+  --copper: #c87533;
+  --cream: #f5e6ca;
+  --text: #e8e8e8;
+  --muted: #a0a0b0;
+  --accent: #e94560;
+  --green: #4ecca3;
+  --blue: #3498db;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--darker);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(135deg, var(--dark) 0%, #2d1810 100%);
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, var(--gold), var(--amber), var(--copper));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle { color: var(--muted); font-size: 1.1rem; }
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--dark);
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.tab:hover, .tab.active {
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: bold;
+}
+
+main { padding: 1.5rem; max-width: 1400px; margin: 0 auto; }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Flowchart */
+.flowchart { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+.day-node {
+  background: var(--card);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.day-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 160, 23, 0.2);
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.day-badge {
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.day-title { font-size: 1.3rem; color: var(--amber); }
+.day-region { color: var(--muted); font-size: 0.9rem; margin-left: auto; }
+
+.stops {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.stop {
+  background: var(--darker);
+  border-radius: 8px;
+  padding: 0.75rem;
+  border-left: 3px solid var(--copper);
+}
+
+.stop.hidden-gem { border-left-color: var(--green); }
+.stop.classic { border-left-color: var(--gold); }
+.stop.pub { border-left-color: var(--accent); }
+
+.stop-name { font-weight: bold; color: var(--cream); font-size: 0.95rem; }
+.stop-type { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.stop-note { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+
+.connector {
+  width: 3px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), var(--copper));
+  position: relative;
+}
+
+.connector::after {
+  content: '▼';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--copper);
+  font-size: 0.8rem;
+}
+
+/* Brewery/Pub Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.brewery-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #2a2a4a;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.brewery-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.15);
+}
+
+.brewery-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--amber));
+}
+
+.brewery-card.hidden-gem::before {
+  background: linear-gradient(90deg, var(--green), #2ecc71);
+}
+
+.brewery-card.pub::before {
+  background: linear-gradient(90deg, var(--accent), #ff6b6b);
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+.card-name { font-size: 1.2rem; color: var(--cream); font-weight: bold; }
+.card-badge { font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.badge-classic { background: rgba(212, 160, 23, 0.2); color: var(--gold); border: 1px solid var(--gold); }
+.badge-hidden { background: rgba(78, 204, 163, 0.2); color: var(--green); border: 1px solid var(--green); }
+.badge-pub { background: rgba(233, 69, 96, 0.2); color: var(--accent); border: 1px solid var(--accent); }
+
+.card-location { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.card-desc { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.75rem; }
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating-stars { color: var(--gold); font-size: 1.1rem; }
+.rating-num { color: var(--amber); font-weight: bold; }
+
+.card-beers { margin-top: 0.75rem; }
+.card-beers h4 { color: var(--amber); font-size: 0.85rem; margin-bottom: 0.4rem; }
+.beer-tag {
+  display: inline-block;
+  background: rgba(240, 165, 0, 0.1);
+  border: 1px solid rgba(240, 165, 0, 0.3);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  margin: 0.2rem;
+  color: var(--cream);
+}
+
+/* Beer List Table */
+.beer-table-wrapper { overflow-x: auto; }
+
+.beer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.beer-table th {
+  background: var(--card);
+  color: var(--gold);
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid var(--gold);
+  position: sticky;
+  top: 0;
+}
+
+.beer-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.beer-table tr:hover { background: var(--card); }
+
+.color-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-bar input, .filter-bar select {
+  background: var(--card);
+  border: 1px solid #2a2a4a;
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.filter-bar input:focus, .filter-bar select:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+/* Map */
+#mapContainer { height: 700px; border-radius: 12px; overflow: hidden; }
+
+.map-popup h3 { color: #333; margin-bottom: 0.3rem; }
+.map-popup p { color: #555; font-size: 0.85rem; }
+.map-popup .popup-rating { color: #D4A017; font-weight: bold; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 { font-size: 1.8rem; }
+  .tabs { gap: 0.3rem; }
+  .tab { padding: 0.5rem 0.8rem; font-size: 0.85rem; }
+  .stops { grid-template-columns: 1fr; }
+  .cards-grid { grid-template-columns: 1fr; }
+  #mapContainer { height: 450px; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>🍺 Belgian Beer Pilgrimage</h1>
+<p class="subtitle">Frankfurt → Belgium → Pilsen | 9 Days | 30+ Breweries & Pubs</p>
+</header>
+<nav class="tabs">
+<button class="tab active" data-tab="flowchart">📍 Route Flowchart</button>
+<button class="tab" data-tab="map">🗺️ Interactive Map</button>
+<button class="tab" data-tab="breweries">🏭 Breweries & Pubs</button>
+<button class="tab" data-tab="beers">🍻 Beer List</button>
+</nav>
+<main>
+<section id="flowchart" class="tab-content active"></section>
+<section id="map" class="tab-content"><div id="mapContainer"></div></section>
+<section id="breweries" class="tab-content"></section>
+<section id="beers" class="tab-content"></section>
+</main>
+<script>
+// === TRIP DATA ===
+const TRIP_DAYS = [
+  {
+    day: 1,
+    title: "Frankfurt → Brussels",
+    region: "Arrival & Lambic Country",
+    transport: "Train Frankfurt Hbf → Brussels Midi (3h)",
+    overnight: "Brussels",
+    stops: [
+      { name: "Cantillon Brewery", type: "classic", note: "World's last traditional lambic brewery in a city. Museum tour + tasting. Book ahead!" },
+      { name: "Moeder Lambic Original", type: "pub", note: "Fontainas - 40 taps of rare Belgian craft. Start your education here." },
+      { name: "A la Mort Subite", type: "pub", note: "1928 Art Deco café. Order the house Mort Subite Gueuze at the bar." },
+      { name: "Poechenellekelder", type: "pub", note: "Puppet-themed pub opposite Manneken Pis. 100+ Belgian beers." }
+    ]
+  },
+  {
+    day: 2,
+    title: "Pajottenland Lambic Trail",
+    region: "Beersel / Lembeek / Vlezenbeek",
+    transport: "Rental car or guided tour",
+    overnight: "Brussels",
+    stops: [
+      { name: "Drie Fonteinen", type: "classic", note: "Legendary blender. Visit Lambik-O-Droom experience center in Lot." },
+      { name: "Lindemans Brewery", type: "classic", note: "Family brewery since 1822. Tour the coolship room. Try Cuvée René." },
+      { name: "Brasserie de la Senne", type: "hidden-gem", note: "Brussels' own craft pioneer. Zinnebir & Taras Boulba are legendary session beers." },
+      { name: "Au Bon Vieux Temps", type: "pub", note: "Hidden 17th-century pub off Grand Place. Timber beams, stained glass, fireplace." },
+      { name: "Brussels Beer Project", type: "hidden-gem", note: "Modern collaborative brewery. Wild experiments. Delta IPA is superb." }
+    ]
+  },
+  {
+    day: 3,
+    title: "Hainaut Province Deep Dive",
+    region: "Wallonia's Hidden Heartland",
+    transport: "Car",
+    overnight: "Tournai area",
+    stops: [
+      { name: "Brasserie Dupont", type: "classic", note: "Farmhouse brewery. Saison Dupont = world's best saison. Tours by appointment only." },
+      { name: "Brasserie à Vapeur", type: "hidden-gem", note: "STEAM-POWERED brewery! Brews only on last Sat of month. Utterly unique." },
+      { name: "Brasserie des Rocs", type: "hidden-gem", note: "Medieval-inspired ales in Montignies-sur-Roc. Try Grand Cru & Abbaye des Rocs." },
+      { name: "Brasserie de Blaugies", type: "hidden-gem", note: "Husband-wife farmhouse brewery. Saison d'Epeautre (spelt) is incredible." },
+      { name: "Brasserie Cazeau", type: "hidden-gem", note: "Family château brewery since 1753. Beautiful grounds. Tournay Blonde is elegant." }
+    ]
+  },
+  {
+    day: 4,
+    title: "West Flanders - Sour Country",
+    region: "Roeselare / Esen / Bruges",
+    transport: "Car",
+    overnight: "Bruges",
+    stops: [
+      { name: "Rodenbach Brewery", type: "classic", note: "Cathedral of Flemish Red. 200+ oak foeders. Grand Cru is life-changing." },
+      { name: "De Dolle Brouwers", type: "hidden-gem", note: "The Mad Brewers of Esen. Chaotic genius. Oerbier & Stille Nacht are legends." },
+      { name: "Brasserie de Ranke", type: "hidden-gem", note: "XX Bitter = Belgium's best bitter. Guldenberg tripel is perfect. Tiny operation." },
+      { name: "'t Verzet", type: "hidden-gem", note: "Young rebels in Anzegem. Oud Bruin & barrel-aged series are phenomenal." },
+      { name: "De Halve Maan", type: "classic", note: "Only active brewery in Bruges center. Underground beer pipeline! XL tour." }
+    ]
+  },
+  {
+    day: 5,
+    title: "Bruges - Beer Paradise",
+    region: "Bruges Historic Center",
+    transport: "Walking",
+    overnight: "Bruges",
+    stops: [
+      { name: "De Garre", type: "pub", note: "Hidden alley pub. House tripel (11%) served in its own glass. Max 3 per person!" },
+      { name: "'t Brugs Beertje", type: "pub", note: "300+ beers. The owner is a legend. Ask for rare Westvleteren on bottle list." },
+      { name: "Café Vlissinghe", type: "pub", note: "OLDEST pub in Bruges (1515!). Bocce court in garden. Time capsule." },
+      { name: "Café Rose Red", type: "pub", note: "Boutique beer café in a hotel. Intimate, candlelit. Excellent Brugse Zot on tap." },
+      { name: "Le Trappiste", type: "pub", note: "Underground vaulted cellar bar. All Belgian Trappists available. Moody atmosphere." }
+    ]
+  },
+  {
+    day: 6,
+    title: "Trappist Trail & Antwerp",
+    region: "Westvleteren / Antwerp",
+    transport: "Car",
+    overnight: "Antwerp",
+    stops: [
+      { name: "In de Vrede (Westvleteren)", type: "classic", note: "The ONLY place to drink Westvleteren 12 on tap. Café opposite the abbey. Pilgrimage!" },
+      { name: "Sint-Sixtus Abbey", type: "classic", note: "View the abbey from outside. Buy 12 at In de Vrede if available (lottery system)." },
+      { name: "Het Anker (Mechelen)", type: "classic", note: "Gouden Carolus brewery. Whisky-barrel aged beers. Beautiful courtyard tour." },
+      { name: "Kulminator", type: "pub", note: "Antwerp's temple. 700+ bottles, many vintage (10-20 years aged). Incredible cellar." },
+      { name: "Billie's Bier Kafétaria", type: "pub", note: "Over 300 beers in a cozy Antwerp local. Extremely knowledgeable staff." }
+    ]
+  },
+  {
+    day: 7,
+    title: "Ardennes & Abbey Country",
+    region: "Deep Wallonia",
+    transport: "Car",
+    overnight: "Dinant/Rochefort area",
+    stops: [
+      { name: "Orval Abbey", type: "classic", note: "Most beautiful Trappist abbey. Only brews ONE beer (plus a secret Petit Orval at café)." },
+      { name: "Brasserie Fantôme", type: "hidden-gem", note: "LEGENDARY ghost brewery in Soy. Dany Prignon is a mad genius. Open Sat only when he feels like it." },
+      { name: "Brasserie Caracole", type: "hidden-gem", note: "Wood-fired copper kettles in Falmignoul. Nostradamus & Troublette. Artisanal heaven." },
+      { name: "Brasserie de Rulles", type: "hidden-gem", note: "Tiny Ardennes gem. Rulles Blonde/Brune/Triple are textbook Belgian ales." },
+      { name: "Rochefort Brewery (view)", type: "classic", note: "Abbey of Notre-Dame. Can't enter brewery but taste all 3 at local cafés." }
+    ]
+  },
+  {
+    day: 8,
+    title: "Chimay & Into Germany",
+    region: "Chimay / Aachen / Cologne",
+    transport: "Car → Autobahn",
+    overnight: "Cologne or Aachen",
+    stops: [
+      { name: "Chimay Abbey (Scourmont)", type: "classic", note: "Largest Trappist brewery. Visit L'Auberge de Poteaupré for fresh Chimay + cheese." },
+      { name: "Brasserie Ellezelloise", type: "hidden-gem", note: "Quirky brewery with witch-themed beers. Hercule Stout is world-class." },
+      { name: "Brasserie de Jandrain-Jandrenouille", type: "hidden-gem", note: "IV Saison is a cult classic. Two guys, one passion, perfect beer." },
+      { name: "Päffgen Brauhaus (Cologne)", type: "pub", note: "Traditional Kölsch house. Waiters slam small glasses on your table until you cover yours." },
+      { name: "Früh am Dom (Cologne)", type: "pub", note: "Iconic Kölsch hall next to the cathedral. Perfect transition to German beer." }
+    ]
+  },
+  {
+    day: 9,
+    title: "Cologne → Pilsen",
+    region: "The Grand Finale",
+    transport: "Drive or train via Nuremberg (5-6h)",
+    overnight: "Pilsen",
+    stops: [
+      { name: "Pilsner Urquell Brewery", type: "classic", note: "WHERE PILSNER WAS BORN (1842). Underground cellars, unfiltered tank beer. THE pilgrimage." },
+      { name: "Purkmistr Brewery & Hotel", type: "hidden-gem", note: "Microbrewery + beer spa! Bathe in beer. Excellent lagers & dark beers." },
+      { name: "Na Parkánu", type: "pub", note: "Pub attached to Pilsner Urquell. Freshest Urquell you'll ever taste. Tank beer." },
+      { name: "Pivovar Raven", type: "hidden-gem", note: "Pilsen's craft revolution. IPAs, stouts, sours - modern Czech brewing." },
+      { name: "U Salzmannů", type: "pub", note: "Historic pub since 1637. House lager, Czech cuisine. Grand finale dinner spot." }
+    ]
+  }
+];
+
+// === BREWERIES & PUBS FULL DATA ===
+const PLACES = [
+  // --- CLASSIC BREWERIES ---
+  {
+    name: "Cantillon Brewery", city: "Brussels", country: "Belgium", type: "classic",
+    rating: 10, lat: 50.8425, lng: 4.3347,
+    desc: "Last traditional lambic brewery in Brussels. Family-run since 1900. Spontaneous fermentation in open coolship. UNESCO-worthy craft.",
+    tours: "Self-guided museum €10, Mon-Sat. Book online.", day: 1,
+    beers: ["Gueuze 100% Lambic", "Rosé de Gambrinus", "Kriek 100% Lambic", "Iris", "Lou Pepe Framboise"]
+  },
+  {
+    name: "Drie Fonteinen", city: "Beersel", country: "Belgium", type: "classic",
+    rating: 10, lat: 50.7676, lng: 4.2912,
+    desc: "World's finest lambic blender. Armand Debelder is a living legend. Lambik-O-Droom center in Lot is unmissable.",
+    tours: "Lambik-O-Droom experience center, Tue-Sun.", day: 2,
+    beers: ["Oude Geuze", "Oude Kriek", "Hommage", "Zenne y Frontera", "Doesjel"]
+  },
+  {
+    name: "Brasserie Dupont", city: "Tourpes", country: "Belgium", type: "classic",
+    rating: 9.5, lat: 50.5519, lng: 3.6453,
+    desc: "Farmhouse perfection since 1844. Saison Dupont is THE benchmark saison worldwide. Still uses original wells.",
+    tours: "By appointment only, weekdays. Email ahead.", day: 3,
+    beers: ["Saison Dupont", "Moinette Blonde", "Avec Les Bons Voeux", "Biolégère", "Moinette Brune"]
+  },
+  {
+    name: "Rodenbach Brewery", city: "Roeselare", country: "Belgium", type: "classic",
+    rating: 9.5, lat: 50.9440, lng: 3.1291,
+    desc: "Cathedral of Flemish Red Ale. 200+ enormous oak foeders, some 150 years old. The aroma inside is intoxicating.",
+    tours: "Daily tours with tasting, €12. Book online.", day: 4,
+    beers: ["Rodenbach Grand Cru", "Vintage", "Caractère Rouge", "Alexander", "Classic"]
+  },
+  {
+    name: "De Halve Maan", city: "Bruges", country: "Belgium", type: "classic",
+    rating: 8.5, lat: 50.8194, lng: 3.2239,
+    desc: "Only active brewery in Bruges historic center. Built underground beer pipeline (3km!) to bottling plant. XL tour includes rooftop views.",
+    tours: "Daily tours every 30min, €16 with 2 beers.", day: 4,
+    beers: ["Brugse Zot Blonde", "Brugse Zot Dubbel", "Straffe Hendrik Tripel", "Straffe Hendrik Quadrupel", "Heritage"]
+  },
+  {
+    name: "Westvleteren / In de Vrede", city: "Westvleteren", country: "Belgium", type: "classic",
+    rating: 10, lat: 50.8895, lng: 2.7218,
+    desc: "The holy grail. Sint-Sixtus Abbey monks brew the world's most sought-after beer. In de Vrede café is the ONLY reliable source.",
+    tours: "No brewery tours. Café open Wed-Mon.", day: 6,
+    beers: ["Westvleteren 12 (Quadrupel)", "Westvleteren 8 (Dubbel)", "Westvleteren Blonde"]
+  },
+  {
+    name: "Het Anker", city: "Mechelen", country: "Belgium", type: "classic",
+    rating: 8, lat: 51.0276, lng: 4.4776,
+    desc: "Home of Gouden Carolus. Also makes whisky from their beer! Beautiful medieval courtyard. Hotel on-site.",
+    tours: "Daily tours, various packages €12-25.", day: 6,
+    beers: ["Gouden Carolus Classic", "Gouden Carolus Tripel", "Gouden Carolus Cuvée van de Keizer", "Maneblusser", "Whisky Infused"]
+  },
+  {
+    name: "Orval Abbey", city: "Villers-devant-Orval", country: "Belgium", type: "classic",
+    rating: 9, lat: 49.6345, lng: 5.3468,
+    desc: "Most beautiful Trappist abbey set in stunning ruins. Brews only ONE beer - complex, dry-hopped, brett-aged. Secret Petit Orval at café.",
+    tours: "Abbey grounds open daily. No brewery access. Café A l'Ange Gardien nearby.", day: 7,
+    beers: ["Orval", "Petit Orval (draft only at abbey café)"]
+  },
+  {
+    name: "Chimay (Scourmont Abbey)", city: "Chimay", country: "Belgium", type: "classic",
+    rating: 8.5, lat: 50.0434, lng: 4.3181,
+    desc: "Largest Trappist brewery. Pioneered commercial Trappist brewing. L'Auberge restaurant serves fresh Chimay with abbey cheese.",
+    tours: "Chimay Experience museum, daily. €14 with tastings.", day: 8,
+    beers: ["Chimay Blue (Grande Réserve)", "Chimay Red (Première)", "Chimay White (Cinq Cents)", "Chimay Gold (Dorée)", "Chimay Barrel-Aged"]
+  },
+  {
+    name: "Lindemans Brewery", city: "Vlezenbeek", country: "Belgium", type: "classic",
+    rating: 7.5, lat: 50.7838, lng: 4.2063,
+    desc: "Family lambic brewery since 1822. Massive operation but still uses traditional coolship. Cuvée René is the real deal (ignore sweetened versions).",
+    tours: "Mon-Fri by appointment, Sat open.", day: 2,
+    beers: ["Cuvée René Gueuze", "Oude Kriek Cuvée René", "Faro Lambic", "GingerGueuze", "Lindemans Cassis"]
+  },
+  {
+    name: "Pilsner Urquell", city: "Pilsen", country: "Czech Republic", type: "classic",
+    rating: 9.5, lat: 49.7490, lng: 13.3876,
+    desc: "WHERE PILSNER WAS BORN in 1842. Josef Groll created the first golden lager here. Underground sandstone cellars, unfiltered tank beer.",
+    tours: "Daily tours in multiple languages. €20 with tasting.", day: 9,
+    beers: ["Pilsner Urquell (unfiltered/tank)", "Pilsner Urquell (bottled)", "Master 13°"]
+  },
+  // --- HIDDEN GEM BREWERIES ---
+  {
+    name: "Brasserie à Vapeur", city: "Pipaix", country: "Belgium", type: "hidden-gem",
+    rating: 9.5, lat: 50.5784, lng: 3.5891,
+    desc: "STEAM-POWERED brewery from 1785! Brews only on the last Saturday of each month. Jean-Louis Dits is a character. Completely unique worldwide.",
+    tours: "Open last Sat of month only. Show up early!", day: 3,
+    beers: ["Saison de Pipaix", "Cochonne", "Vapeur en Folie", "Légère"]
+  },
+  {
+    name: "Brasserie Fantôme", city: "Soy", country: "Belgium", type: "hidden-gem",
+    rating: 9.5, lat: 50.3505, lng: 5.5912,
+    desc: "The Ghost Brewery! Dany Prignon brews when inspiration strikes. No two batches identical. Opens Saturdays... sometimes. Call ahead!",
+    tours: "Saturdays when open. Very informal, ring the bell.", day: 7,
+    beers: ["Fantôme Saison", "Fantôme Chocolat", "Fantôme Pissenlit (Dandelion)", "Dark White", "Magic Ghost"]
+  },
+  {
+    name: "De Dolle Brouwers", city: "Esen", country: "Belgium", type: "hidden-gem",
+    rating: 9, lat: 51.0166, lng: 2.8573,
+    desc: "The Mad Brewers! Brothers brew wild, funky, unpredictable ales in a converted old brewery. Oerbier is a cult classic. Stille Nacht is Christmas heaven.",
+    tours: "Sundays 2-6pm. Sometimes random weekdays. Very casual.", day: 4,
+    beers: ["Oerbier", "Stille Nacht", "Arabier", "Boskeun", "Dulle Teve"]
+  },
+  {
+    name: "Brasserie de la Senne", city: "Brussels", country: "Belgium", type: "hidden-gem",
+    rating: 9, lat: 50.8588, lng: 4.3276,
+    desc: "Brussels' own craft heroes. Taras Boulba (4.5%) proves low-ABV can be explosive with flavor. Zinnebir is a city icon.",
+    tours: "Tastings at taproom Thu-Sat.", day: 2,
+    beers: ["Taras Boulba", "Zinnebir", "Stouterik", "Jambe de Bois", "Brussels Calling"]
+  },
+  {
+    name: "Brasserie Caracole", city: "Falmignoul", country: "Belgium", type: "hidden-gem",
+    rating: 8.5, lat: 50.2355, lng: 4.8910,
+    desc: "Wood-fired copper kettles! One of the last breweries to brew over direct flame. Rustic hamlet near Dinant. Pure artisan magic.",
+    tours: "Sat afternoons. Group tours by appointment.", day: 7,
+    beers: ["Troublette", "Nostradamus", "Caracole Amber", "Saxo"]
+  },
+  {
+    name: "Brasserie de Blaugies", city: "Blaugies", country: "Belgium", type: "hidden-gem",
+    rating: 9, lat: 50.3934, lng: 3.8273,
+    desc: "Husband-wife farmhouse brewery in tiny Hainaut village. Marie-Noëlle & Pierre brew with buckwheat, spelt, figs. Utterly authentic.",
+    tours: "By appointment. Very small, very personal.", day: 3,
+    beers: ["Saison d'Epeautre", "La Moneuse", "Darbyste", "La Vermontoise"]
+  },
+  {
+    name: "Brasserie des Rocs", city: "Montignies-sur-Roc", country: "Belgium", type: "hidden-gem",
+    rating: 8, lat: 50.3760, lng: 3.7630,
+    desc: "Medieval-inspired strong ales in a tiny village. Brewery in a former farm. Robust, spiced Belgian ales with character.",
+    tours: "Weekend afternoons. Call to confirm.", day: 3,
+    beers: ["Abbaye des Rocs", "Grand Cru", "Triple Impériale", "Blanche des Honnelles"]
+  },
+  {
+    name: "Brasserie de Ranke", city: "Dottignies", country: "Belgium", type: "hidden-gem",
+    rating: 9, lat: 50.7458, lng: 3.2773,
+    desc: "Nino Bacelle brews Belgium's best bitter (XX Bitter) and a perfect tripel (Guldenberg). Tiny operation, huge reputation among beer geeks.",
+    tours: "By appointment only. Worth emailing.", day: 4,
+    beers: ["XX Bitter", "Guldenberg", "Noir de Dottignies", "Kriek de Ranke", "Cuvée de Ranke"]
+  },
+  {
+    name: "'t Verzet", city: "Anzegem", country: "Belgium", type: "hidden-gem",
+    rating: 8.5, lat: 50.8518, lng: 3.4756,
+    desc: "Young rebels making complex barrel-aged sours, oud bruins, and wild ales. The new generation of Flemish sour masters.",
+    tours: "Taproom open weekends.", day: 4,
+    beers: ["Oud Bruin", "Funky Falcon", "Oaked & Smoked", "Disappear Here"]
+  },
+  {
+    name: "Brussels Beer Project", city: "Brussels", country: "Belgium", type: "hidden-gem",
+    rating: 7.5, lat: 50.8497, lng: 4.3480,
+    desc: "Crowdsourced recipes, wild collabs, modern Belgian craft. Delta IPA put them on the map. Taproom in Dansaert district is lively.",
+    tours: "Taproom open daily. Brewery visits occasionally.", day: 2,
+    beers: ["Delta IPA", "Grosse Bertha", "Dark Sister", "Juice Junkie", "Wunder Lager"]
+  },
+  {
+    name: "Brasserie Ellezelloise", city: "Ellezelles", country: "Belgium", type: "hidden-gem",
+    rating: 8, lat: 50.7345, lng: 3.6712,
+    desc: "Witch-themed brewery in the Walloon hills. Hercule Stout is a world-class imperial stout. Quintine ales are underrated gems.",
+    tours: "Brewery shop open weekdays. Tours by appointment.", day: 8,
+    beers: ["Hercule Stout", "Quintine Blonde", "Quintine Amber", "Blanche de Saisis", "Hercule Extra Stout"]
+  },
+  {
+    name: "Brasserie de Jandrain-Jandrenouille", city: "Jandrain", country: "Belgium", type: "hidden-gem",
+    rating: 8.5, lat: 50.7455, lng: 4.8898,
+    desc: "Two friends, one barn, perfect beer. IV Saison is a cult farmhouse ale. Minimal intervention, maximum terroir. Extreme small-batch.",
+    tours: "By appointment. Very small.", day: 8,
+    beers: ["IV Saison", "V Cense", "VI Wheat"]
+  },
+  {
+    name: "Brasserie Cazeau", city: "Templeuve", country: "Belgium", type: "hidden-gem",
+    rating: 7.5, lat: 50.5654, lng: 3.3234,
+    desc: "Family château brewery since 1753! Beautiful estate. Elegant, refined ales. Tournay series is classy. Garden tastings in summer.",
+    tours: "Open weekends. Beautiful grounds.", day: 3,
+    beers: ["Tournay Blonde", "Tournay Triple", "Tournay Noire", "Saison Cazeau", "Cuvée de Château"]
+  },
+  {
+    name: "Brasserie de Rulles", city: "Rulles", country: "Belgium", type: "hidden-gem",
+    rating: 8, lat: 49.7112, lng: 5.5534,
+    desc: "Deep Ardennes gem. Gregory Goncette crafts textbook Belgian ales in a tiny village. No-nonsense, pure quality. La Rulles Blonde is perfection.",
+    tours: "Occasional open days. Check website.", day: 7,
+    beers: ["La Rulles Blonde", "La Rulles Brune", "La Rulles Triple", "La Rulles Estivale", "La Meuse"]
+  },
+  {
+    name: "Purkmistr Brewery", city: "Pilsen", country: "Czech Republic", type: "hidden-gem",
+    rating: 8, lat: 49.7234, lng: 13.3654,
+    desc: "Microbrewery + hotel + BEER SPA! Bathe in warm beer, beer massages. Also excellent traditional Czech lagers and dark beers.",
+    tours: "Daily. Hotel guests get brewery tour + spa.", day: 9,
+    beers: ["Purkmistr Světlý Ležák", "Purkmistr Tmavý", "Purkmistr Pšeničný", "Purkmistr 18°"]
+  },
+  {
+    name: "Pivovar Raven", city: "Pilsen", country: "Czech Republic", type: "hidden-gem",
+    rating: 7.5, lat: 49.7477, lng: 13.3798,
+    desc: "Pilsen's craft revolution. Modern styles - IPAs, stouts, sours - in the birthplace of lager. Bold contrast to tradition.",
+    tours: "Taproom open Thu-Sat.", day: 9,
+    beers: ["Raven Black IPA", "Raven NEIPA", "Raven Stout", "Raven Sour Series"]
+  },
+  // --- PUBS & CAFES ---
+  {
+    name: "Moeder Lambic Original", city: "Brussels", country: "Belgium", type: "pub",
+    rating: 9.5, lat: 50.8387, lng: 4.3440,
+    desc: "40 rotating taps of Belgium's finest. The original on Place Fontainas is a beer geek paradise. Staff knowledge is encyclopedic.",
+    tours: null, day: 1,
+    beers: ["Rotating taps - always rare lambics, saisons, and local craft"]
+  },
+  {
+    name: "A la Mort Subite", city: "Brussels", country: "Belgium", type: "pub",
+    rating: 9, lat: 50.8506, lng: 4.3559,
+    desc: "1928 Art Deco grand café. Unchanged interior, surly waiters (part of charm). Named after a dice game. House lambics are excellent.",
+    tours: null, day: 1,
+    beers: ["Mort Subite Gueuze", "Mort Subite Kriek", "Mort Subite Faro"]
+  },
+  {
+    name: "Poechenellekelder", city: "Brussels", country: "Belgium", type: "pub",
+    rating: 7.5, lat: 50.8449, lng: 4.3498,
+    desc: "Puppet-themed cellar bar directly facing Manneken Pis. Walls covered in marionettes. Fun atmosphere, solid beer list (100+).",
+    tours: null, day: 1,
+    beers: ["Delirium Tremens", "Kwak", "Various Trappists"]
+  },
+  {
+    name: "Au Bon Vieux Temps", city: "Brussels", country: "Belgium", type: "pub",
+    rating: 9, lat: 50.8485, lng: 4.3525,
+    desc: "Hidden 17th-century gem in an alley off Rue du Marché aux Herbes. Stained glass, wood beams, fireplace. Time stands still here.",
+    tours: null, day: 2,
+    beers: ["St. Bernardus Abt 12", "Orval", "Various abbey ales"]
+  },
+  {
+    name: "De Garre", city: "Bruges", country: "Belgium", type: "pub",
+    rating: 10, lat: 50.8444, lng: 3.2270,
+    desc: "Down a tiny hidden alley. House Tripel de Garre (11.5%) is served in its own glass. Maximum 3 per person. Absolutely unmissable.",
+    tours: null, day: 5,
+    beers: ["Tripel de Garre (house exclusive)", "Various rotating Belgians"]
+  },
+  {
+    name: "'t Brugs Beertje", city: "Bruges", country: "Belgium", type: "pub",
+    rating: 9.5, lat: 50.8430, lng: 3.2221,
+    desc: "Legendary 300+ beer list. Daisy the owner is a national treasure. Tiny, cramped, perfect. May have Westvleteren on the bottle list.",
+    tours: null, day: 5,
+    beers: ["Ask Daisy for recommendations", "Westvleteren 12 (if available)", "Rare lambics"]
+  },
+  {
+    name: "Café Vlissinghe", city: "Bruges", country: "Belgium", type: "pub",
+    rating: 9, lat: 50.8498, lng: 3.2312,
+    desc: "OLDEST pub in Bruges, established 1515. Rubens allegedly drank here. Bocce court in the garden. Authentic living history.",
+    tours: null, day: 5,
+    beers: ["Brugse Zot", "Straffe Hendrik", "Various Belgians"]
+  },
+  {
+    name: "Kulminator", city: "Antwerp", country: "Belgium", type: "pub",
+    rating: 10, lat: 51.2165, lng: 4.4128,
+    desc: "The world's greatest beer bar? 700+ bottles, many aged 10-20 years. Dirk & Leen run this temple of vintage beer. Life-changing verticals.",
+    tours: null, day: 6,
+    beers: ["Vintage Chimay Blue (10+ years)", "Aged Orval", "Vintage Thomas Hardy's", "Ask for aged recommendations"]
+  },
+  {
+    name: "Billie's Bier Kafétaria", city: "Antwerp", country: "Belgium", type: "pub",
+    rating: 8.5, lat: 51.2195, lng: 4.3998,
+    desc: "300+ beers in a relaxed Antwerp neighborhood bar. Incredibly knowledgeable staff. Good food too. Local favorite.",
+    tours: null, day: 6,
+    beers: ["Rotating rare Belgians", "Full Trappist selection", "Local Antwerp craft"]
+  },
+  {
+    name: "In de Vrede", city: "Westvleteren", country: "Belgium", type: "pub",
+    rating: 10, lat: 50.8895, lng: 2.7215,
+    desc: "The café opposite Sint-Sixtus Abbey. THE place to drink Westvleteren on draft. Also sells abbey cheese. Beer pilgrimage endpoint.",
+    tours: null, day: 6,
+    beers: ["Westvleteren 12 (draft)", "Westvleteren 8 (draft)", "Westvleteren Blonde (draft)"]
+  },
+  {
+    name: "Café Rose Red", city: "Bruges", country: "Belgium", type: "pub",
+    rating: 8, lat: 50.8462, lng: 3.2280,
+    desc: "Intimate boutique beer café inside a hotel. Candlelit, romantic, excellent Brugse Zot on tap. Quieter alternative to busy tourist pubs.",
+    tours: null, day: 5,
+    beers: ["Brugse Zot (fresh)", "Selection of 30+ Belgians"]
+  },
+  {
+    name: "Le Trappiste", city: "Bruges", country: "Belgium", type: "pub",
+    rating: 8.5, lat: 50.8438, lng: 3.2250,
+    desc: "Underground vaulted cellar bar. All Belgian Trappist beers available. Moody, atmospheric, perfect for a rainy evening in Bruges.",
+    tours: null, day: 5,
+    beers: ["All 6 Belgian Trappists on tap/bottle", "Westvleteren when available"]
+  },
+  {
+    name: "Na Parkánu", city: "Pilsen", country: "Czech Republic", type: "pub",
+    rating: 9, lat: 49.7495, lng: 13.3870,
+    desc: "Attached to Pilsner Urquell brewery. Serves the freshest Urquell you'll ever taste - unfiltered, unpasteurized tank beer. Czech cuisine.",
+    tours: null, day: 9,
+    beers: ["Pilsner Urquell Nefiltrovaný (unfiltered)", "Pilsner Urquell Tankové"]
+  },
+  {
+    name: "U Salzmannů", city: "Pilsen", country: "Czech Republic", type: "pub",
+    rating: 8, lat: 49.7477, lng: 13.3765,
+    desc: "Historic pub since 1637. Beautiful tiled interior. House-brewed lager, hearty Czech food. Perfect grand finale dinner.",
+    tours: null, day: 9,
+    beers: ["Salzmann Světlý Ležák", "Salzmann Tmavý Ležák", "Pilsner Urquell"]
+  },
+  {
+    name: "Päffgen Brauhaus", city: "Cologne", country: "Germany", type: "pub",
+    rating: 8, lat: 50.9420, lng: 6.9535,
+    desc: "Traditional Kölsch house. Köbes (waiters) bring tiny 200ml Stangen until you put your coaster on top. Boisterous, authentic.",
+    tours: null, day: 8,
+    beers: ["Päffgen Kölsch (house-brewed)"]
+  }
+];
+
+// === DETAILED BEER LIST ===
+const BEERS = [
+  // Cantillon
+  { brewery: "Cantillon", name: "Gueuze 100% Lambic Bio", style: "Gueuze", abv: 5.0, ibu: 0, color: "#F5D060", colorName: "Hazy Gold", availability: "Year-round (limited)", notes: "Blend of 1, 2, 3-year lambics. Bone dry, funky, complex citrus." },
+  { brewery: "Cantillon", name: "Rosé de Gambrinus", style: "Fruit Lambic", abv: 5.0, ibu: 0, color: "#E8788A", colorName: "Rose Pink", availability: "Seasonal (limited)", notes: "Raspberries macerated in lambic. Tart, elegant, not sweet." },
+  { brewery: "Cantillon", name: "Kriek 100% Lambic", style: "Kriek Lambic", abv: 5.0, ibu: 0, color: "#C0392B", colorName: "Cherry Red", availability: "Year-round (limited)", notes: "Whole Schaarbeek cherries. Dry, sour cherry, almond, funk." },
+  { brewery: "Cantillon", name: "Iris", style: "Lambic (hopped)", abv: 5.0, ibu: 15, color: "#DAA520", colorName: "Deep Gold", availability: "Rare seasonal", notes: "Fresh-hopped lambic. Unique - floral hops + wild yeast." },
+  { brewery: "Cantillon", name: "Lou Pepe Framboise", style: "Fruit Lambic", abv: 5.0, ibu: 0, color: "#FF6B81", colorName: "Raspberry", availability: "Very rare (annual)", notes: "Single-vintage raspberry lambic. Intensely fruity, bone dry." },
+
+  // Drie Fonteinen
+  { brewery: "Drie Fonteinen", name: "Oude Geuze", style: "Oude Gueuze", abv: 6.0, ibu: 0, color: "#E8C840", colorName: "Bright Gold", availability: "Year-round", notes: "Benchmark gueuze. Explosive carbonation, lemon, green apple, hay." },
+  { brewery: "Drie Fonteinen", name: "Oude Kriek", style: "Kriek Lambic", abv: 6.0, ibu: 0, color: "#B22222", colorName: "Deep Ruby", availability: "Seasonal", notes: "Whole cherries in lambic. Intensely tart, cherry pit, almond." },
+  { brewery: "Drie Fonteinen", name: "Hommage", style: "Fruit Lambic", abv: 6.0, ibu: 0, color: "#8B0000", colorName: "Dark Cherry", availability: "Very rare (annual)", notes: "Cherries + raspberries. Their masterpiece. Whale beer." },
+  { brewery: "Drie Fonteinen", name: "Zenne y Frontera", style: "Blended Lambic", abv: 6.5, ibu: 0, color: "#CD853F", colorName: "Amber Gold", availability: "Rare", notes: "Lambic aged in sherry casks. Complex, oxidative, unique." },
+
+  // Dupont
+  { brewery: "Brasserie Dupont", name: "Saison Dupont", style: "Saison", abv: 6.5, ibu: 30, color: "#F0C050", colorName: "Golden Orange", availability: "Year-round", notes: "THE world benchmark saison. Spicy, dry, effervescent, peppery." },
+  { brewery: "Brasserie Dupont", name: "Avec Les Bons Voeux", style: "Strong Saison", abv: 9.5, ibu: 35, color: "#DAA520", colorName: "Deep Gold", availability: "Winter seasonal", notes: "Christmas saison. Honey, spice, dry finish despite strength." },
+  { brewery: "Brasserie Dupont", name: "Moinette Blonde", style: "Belgian Strong Pale", abv: 8.5, ibu: 30, color: "#F5D060", colorName: "Pale Gold", availability: "Year-round", notes: "Powerful but elegant. Fruity, spicy, long bitter finish." },
+  { brewery: "Brasserie Dupont", name: "Biolégère", style: "Table Saison", abv: 3.5, ibu: 20, color: "#F8E880", colorName: "Light Gold", availability: "Year-round", notes: "Organic session saison. Proof less is more. Refreshing perfection." },
+
+  // Rodenbach
+  { brewery: "Rodenbach", name: "Grand Cru", style: "Flemish Red Ale", abv: 6.0, ibu: 14, color: "#8B0000", colorName: "Deep Mahogany", availability: "Year-round", notes: "2/3 aged in oak foeders 2 years. Vinous, cherry, balsamic, tart." },
+  { brewery: "Rodenbach", name: "Vintage", style: "Flemish Red (single foeder)", abv: 7.0, ibu: 14, color: "#800020", colorName: "Burgundy", availability: "Annual vintage", notes: "Single foeder, unblended. Intense sour cherry, wood, vanilla." },
+  { brewery: "Rodenbach", name: "Caractère Rouge", style: "Fruit Flemish Red", abv: 7.0, ibu: 14, color: "#C41E3A", colorName: "Ruby Red", availability: "Limited", notes: "Aged on Cabernet & Merlot grapes. Wine-beer hybrid. Stunning." },
+  { brewery: "Rodenbach", name: "Alexander", style: "Fruit Flemish Red", abv: 5.6, ibu: 14, color: "#A52A2A", colorName: "Brown Red", availability: "Rotating", notes: "Aged on sour cherries. Lighter, fruity, approachable sour." },
+
+  // De Halve Maan
+  { brewery: "De Halve Maan", name: "Brugse Zot Blonde", style: "Belgian Blonde", abv: 6.0, ibu: 23, color: "#F0C050", colorName: "Golden Blonde", availability: "Year-round", notes: "Bruges' city beer. Light, fruity, spicy. Perfect with mussels." },
+  { brewery: "De Halve Maan", name: "Straffe Hendrik Tripel", style: "Tripel", abv: 9.0, ibu: 30, color: "#DAA520", colorName: "Rich Gold", availability: "Year-round", notes: "Powerful tripel. Banana, clove, warming alcohol, long finish." },
+  { brewery: "De Halve Maan", name: "Straffe Hendrik Quadrupel", style: "Quadrupel", abv: 11.0, ibu: 22, color: "#5C3317", colorName: "Dark Brown", availability: "Year-round", notes: "Rich, dark fruits, caramel, chocolate. Ages beautifully." },
+
+  // Westvleteren
+  { brewery: "Westvleteren", name: "Westvleteren 12", style: "Quadrupel", abv: 10.2, ibu: 35, color: "#3D1C02", colorName: "Near Black", availability: "Extremely limited", notes: "The holy grail. Plum, caramel, dark fruit, impossibly complex. Ages 25+ years." },
+  { brewery: "Westvleteren", name: "Westvleteren 8", style: "Dubbel", abv: 8.0, ibu: 30, color: "#5C2E0A", colorName: "Dark Chestnut", availability: "Extremely limited", notes: "Rich dubbel. Dark fruit, toffee, herbs. Underrated vs the 12." },
+  { brewery: "Westvleteren", name: "Westvleteren Blonde", style: "Belgian Pale Ale", abv: 5.8, ibu: 25, color: "#F0C050", colorName: "Pale Gold", availability: "Extremely limited", notes: "Light, herbal, refreshing. The monks' daily drinker. Rare outside abbey." },
+
+  // Orval
+  { brewery: "Orval Abbey", name: "Orval", style: "Belgian Pale Ale (Brett)", abv: 6.2, ibu: 36, color: "#D4770B", colorName: "Amber Orange", availability: "Year-round", notes: "Dry-hopped + Brettanomyces. Evolves dramatically with age. Citrus → leather → earth." },
+  { brewery: "Orval Abbey", name: "Petit Orval", style: "Belgian Pale (session)", abv: 3.5, ibu: 20, color: "#E8B040", colorName: "Light Amber", availability: "Draft only at abbey café", notes: "The monks' table beer. Light, herbal, slightly bitter. Worth the drive alone." },
+
+  // Chimay
+  { brewery: "Chimay", name: "Chimay Blue (Grande Réserve)", style: "Belgian Dark Strong", abv: 9.0, ibu: 30, color: "#2C1503", colorName: "Deep Brown-Black", availability: "Year-round", notes: "Rich, figgy, caramel, spice. Improves with 5-10 years aging." },
+  { brewery: "Chimay", name: "Chimay Red (Première)", style: "Dubbel", abv: 7.0, ibu: 20, color: "#6B2D0A", colorName: "Copper Brown", availability: "Year-round", notes: "Classic dubbel. Apricot, fig, soft caramel. Their original brew (1862)." },
+  { brewery: "Chimay", name: "Chimay White (Cinq Cents)", style: "Tripel", abv: 8.0, ibu: 30, color: "#F0D050", colorName: "Hazy Gold", availability: "Year-round", notes: "Dry, bitter tripel. Muscat grape, rose, honey. Very refreshing for strength." },
+  { brewery: "Chimay", name: "Chimay Gold (Dorée)", style: "Belgian Pale", abv: 4.8, ibu: 18, color: "#F8E070", colorName: "Straw Gold", availability: "Only at Chimay (Poteaupré)", notes: "Monks' table beer. Light, hoppy, spicy. Only fresh at the abbey inn!" },
+
+  // Hidden Gems
+  { brewery: "Brasserie à Vapeur", name: "Saison de Pipaix", style: "Saison (spiced)", abv: 6.0, ibu: 25, color: "#D4A050", colorName: "Amber Gold", availability: "Limited (last Sat brew)", notes: "6 spices inc. black pepper, lichen. Steam-brewed! Funky, complex, rustic." },
+  { brewery: "Brasserie à Vapeur", name: "Cochonne", style: "Strong Saison", abv: 9.0, ibu: 28, color: "#C08030", colorName: "Deep Amber", availability: "Rare", notes: "Strong, wild, unpredictable. Each batch different. Adventure in a glass." },
+
+  { brewery: "Brasserie Fantôme", name: "Fantôme Saison", style: "Saison", abv: 8.0, ibu: 20, color: "#F0D060", colorName: "Hazy Straw", availability: "When Dany brews", notes: "NEVER the same twice. Wild yeast, herbs, flowers. Liquid art." },
+  { brewery: "Brasserie Fantôme", name: "Fantôme Chocolat", style: "Dark Saison", abv: 8.0, ibu: 20, color: "#3D1F05", colorName: "Dark Chocolate", availability: "Rare", notes: "Cocoa + wild farmhouse funk. Not sweet - dry, roasty, weird, wonderful." },
+  { brewery: "Brasserie Fantôme", name: "Pissenlit", style: "Herbal Saison", abv: 8.0, ibu: 15, color: "#E8D050", colorName: "Dandelion Yellow", availability: "Seasonal", notes: "Dandelion beer! Bitter, floral, grassy, utterly unique." },
+
+  { brewery: "De Dolle Brouwers", name: "Oerbier", style: "Belgian Dark Strong", abv: 9.0, ibu: 30, color: "#2C0A06", colorName: "Very Dark Brown", availability: "Year-round", notes: "The original Mad Beer. Dark fruit, roast, caramel, wild edge. Cult classic." },
+  { brewery: "De Dolle Brouwers", name: "Stille Nacht", style: "Belgian Strong Pale", abv: 12.0, ibu: 30, color: "#DAA520", colorName: "Deep Gold", availability: "Christmas only", notes: "THE Christmas beer. Honey, alcohol warmth, ages magnificently. Stock up." },
+  { brewery: "De Dolle Brouwers", name: "Arabier", style: "Belgian Pale Ale", abv: 8.0, ibu: 28, color: "#E8B040", colorName: "Golden Amber", availability: "Year-round", notes: "Hoppy, dry, bitter. Like a Belgian IPA before IPAs existed." },
+
+  { brewery: "Brasserie de la Senne", name: "Taras Boulba", style: "Session Pale Ale", abv: 4.5, ibu: 40, color: "#F0D060", colorName: "Pale Gold", availability: "Year-round", notes: "Only 4.5% but packed with hop flavor! Proves session ≠ boring. Legendary." },
+  { brewery: "Brasserie de la Senne", name: "Zinnebir", style: "Belgian Blonde", abv: 5.8, ibu: 35, color: "#F0C840", colorName: "Golden", availability: "Year-round", notes: "Brussels' own beer. Bitter, dry, refreshing. Named for the Senne river." },
+  { brewery: "Brasserie de la Senne", name: "Stouterik", style: "Dry Stout", abv: 4.5, ibu: 35, color: "#1A0A00", colorName: "Black", availability: "Year-round", notes: "Belgian dry stout. Roasty, coffee, surprisingly light body. Session dark." },
+  { brewery: "Brasserie de la Senne", name: "Jambe de Bois", style: "Tripel", abv: 8.0, ibu: 40, color: "#E8C030", colorName: "Deep Gold", availability: "Year-round", notes: "Bitter, hoppy tripel. More hops than tradition demands. Delicious rebel." },
+
+  { brewery: "Brasserie de Blaugies", name: "Saison d'Epeautre", style: "Spelt Saison", abv: 6.0, ibu: 22, color: "#F0D870", colorName: "Hazy Gold", availability: "Year-round", notes: "Brewed with spelt. Creamy, wheaty, peppery, utterly farmhouse. Masterpiece." },
+  { brewery: "Brasserie de Blaugies", name: "La Moneuse", style: "Saison", abv: 8.0, ibu: 30, color: "#D4A030", colorName: "Amber Gold", availability: "Year-round", notes: "Strong saison. Funky, spicy, dry, warming. Named for a rebel." },
+
+  { brewery: "Brasserie de Ranke", name: "XX Bitter", style: "Belgian Bitter Ale", abv: 6.2, ibu: 60, color: "#E8B840", colorName: "Golden Amber", availability: "Year-round", notes: "Belgium's hoppiest classic. Brutally bitter, dry, floral. Beer geek essential." },
+  { brewery: "Brasserie de Ranke", name: "Guldenberg", style: "Tripel", abv: 8.5, ibu: 35, color: "#F0D040", colorName: "Rich Gold", availability: "Year-round", notes: "Hoppy tripel. Perfect balance of malt sweetness and hop bitterness." },
+  { brewery: "Brasserie de Ranke", name: "Cuvée de Ranke", style: "Sour Flemish Ale", abv: 7.0, ibu: 20, color: "#8B4513", colorName: "Dark Amber", availability: "Limited", notes: "Blend of lambic + their own ales. Sour, funky, complex. Brilliant collab." },
+
+  { brewery: "Brasserie Caracole", name: "Nostradamus", style: "Belgian Dark Strong", abv: 9.5, ibu: 25, color: "#2C1005", colorName: "Very Dark Brown", availability: "Year-round", notes: "Wood-fire brewed! Roasty, chocolate, spice. Smoky undertones from the flame." },
+  { brewery: "Brasserie Caracole", name: "Troublette", style: "Witbier", abv: 5.0, ibu: 12, color: "#F8F0C0", colorName: "Cloudy Pale Yellow", availability: "Year-round", notes: "Spelt wheat beer. Refreshing, citrus, coriander. Light and lovely." },
+
+  { brewery: "'t Verzet", name: "Oud Bruin", style: "Oud Bruin", abv: 5.5, ibu: 18, color: "#6B2C0A", colorName: "Red-Brown", availability: "Year-round", notes: "Classic Flemish sour brown. Plum, raisin, gentle acidity. Very well-made." },
+  { brewery: "'t Verzet", name: "Funky Falcon", style: "Wild Ale (barrel)", abv: 6.5, ibu: 10, color: "#C87820", colorName: "Deep Amber", availability: "Limited batches", notes: "Barrel-fermented wild ale. Funky, fruity, complex. New-wave sour." },
+
+  { brewery: "Brasserie Ellezelloise", name: "Hercule Stout", style: "Imperial Stout", abv: 9.0, ibu: 50, color: "#0A0500", colorName: "Jet Black", availability: "Year-round", notes: "Named for Poirot. Massive chocolate, coffee, roast. World-class stout from Belgium!" },
+  { brewery: "Brasserie Ellezelloise", name: "Quintine Blonde", style: "Belgian Blonde", abv: 8.0, ibu: 25, color: "#F0D050", colorName: "Golden", availability: "Year-round", notes: "Witch-themed blonde. Fruity, spicy, deceptively easy-drinking." },
+
+  { brewery: "Brasserie de Jandrain", name: "IV Saison", style: "Saison", abv: 6.5, ibu: 28, color: "#E8C840", colorName: "Hazy Gold", availability: "Limited", notes: "Cult farmhouse ale. Raw, unfiltered, alive. Minimal processing, max flavor." },
+
+  { brewery: "Brasserie Cazeau", name: "Tournay Blonde", style: "Belgian Blonde", abv: 6.7, ibu: 20, color: "#F5D860", colorName: "Light Gold", availability: "Year-round", notes: "Château-brewed elegance. Floral, honey, delicate bitterness. Refined." },
+  { brewery: "Brasserie Cazeau", name: "Saison Cazeau", style: "Fruit Saison", abv: 5.0, ibu: 18, color: "#F0C8D0", colorName: "Blush Pink", availability: "Summer", notes: "Elderflower saison. Floral, refreshing, garden party in a glass." },
+
+  { brewery: "Brasserie de Rulles", name: "La Rulles Blonde", style: "Belgian Blonde", abv: 7.0, ibu: 26, color: "#F0D050", colorName: "Golden Blonde", availability: "Year-round", notes: "Textbook blonde ale. Clean, balanced, slightly hoppy. Ardennes quality." },
+  { brewery: "Brasserie de Rulles", name: "La Rulles Triple", style: "Tripel", abv: 8.4, ibu: 30, color: "#E8C030", colorName: "Rich Gold", availability: "Year-round", notes: "Powerful but balanced. Fruity, spicy, long dry finish. Impressive." },
+
+  { brewery: "Brasserie des Rocs", name: "Abbaye des Rocs", style: "Belgian Dark Strong", abv: 9.0, ibu: 22, color: "#3D1A05", colorName: "Dark Mahogany", availability: "Year-round", notes: "Medieval-spiced dark ale. Fig, licorice, coriander. Unique character." },
+
+  { brewery: "Brussels Beer Project", name: "Delta IPA", style: "IPA", abv: 6.5, ibu: 55, color: "#E8B030", colorName: "Amber Gold", availability: "Year-round", notes: "Citrus-forward modern IPA. Grapefruit, pine, modern Belgian craft flagship." },
+  { brewery: "Brussels Beer Project", name: "Dark Sister", style: "Black IPA", abv: 6.66, ibu: 60, color: "#1A0800", colorName: "Black", availability: "Year-round", notes: "Roast meets hops. Coffee, citrus, resinous. Dark and dangerous." },
+
+  // Het Anker
+  { brewery: "Het Anker", name: "Gouden Carolus Classic", style: "Belgian Dark Strong", abv: 8.5, ibu: 22, color: "#3D1C05", colorName: "Dark Brown", availability: "Year-round", notes: "Emperor Charles V's favorite beer (allegedly). Raisin, caramel, spice. Historic." },
+  { brewery: "Het Anker", name: "Gouden Carolus Cuvée van de Keizer", style: "Belgian Dark Strong", abv: 11.0, ibu: 25, color: "#2C0A02", colorName: "Near Black", availability: "Annual (brewed on Emperor's Day)", notes: "Their magnum opus. Complex dark fruit, chocolate, port-like. Ages 20+ years." },
+
+  // Lindemans
+  { brewery: "Lindemans", name: "Cuvée René Gueuze", style: "Gueuze", abv: 5.0, ibu: 0, color: "#E8C840", colorName: "Golden", availability: "Year-round", notes: "Their serious gueuze (not the sweet stuff). Tart, complex, funky. Good value." },
+
+  // Pilsner Urquell
+  { brewery: "Pilsner Urquell", name: "Pilsner Urquell (Nefiltrovaný)", style: "Czech Pilsner (unfiltered)", abv: 4.4, ibu: 40, color: "#F0D050", colorName: "Hazy Gold", availability: "Brewery/select pubs only", notes: "THE original pilsner, unfiltered. Creamy, biscuity, noble Saaz hops. Transcendent." },
+  { brewery: "Pilsner Urquell", name: "Pilsner Urquell (Tankové)", style: "Czech Pilsner (tank)", abv: 4.4, ibu: 40, color: "#F8E060", colorName: "Bright Gold", availability: "Tank pubs only", notes: "Unpasteurized from tank. Freshest version. Softer, more delicate than bottled." },
+
+  // Purkmistr
+  { brewery: "Purkmistr", name: "Purkmistr Světlý Ležák", style: "Czech Lager", abv: 5.0, ibu: 30, color: "#F8E070", colorName: "Pale Gold", availability: "On-site", notes: "Clean, crisp, traditional Czech lager. Perfect after a beer bath!" },
+
+  // De Garre (pub)
+  { brewery: "De Garre", name: "Tripel de Garre", style: "Tripel (house)", abv: 11.5, ibu: 22, color: "#DAA520", colorName: "Deep Gold", availability: "Only at De Garre pub", notes: "House exclusive! Max 3 per person. Dangerously smooth for 11.5%. Legendary." },
+
+  // Mort Subite
+  { brewery: "A la Mort Subite", name: "Mort Subite Gueuze", style: "Gueuze (sweetened)", abv: 4.5, ibu: 0, color: "#E8C840", colorName: "Light Gold", availability: "At the café", notes: "House gueuze. Slightly sweetened but historic. The café itself is the experience." }
+];
+
+// === TAB NAVIGATION ===
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+    if (tab.dataset.tab === 'map' && !window.mapInitialized) initMap();
+  });
+});
+
+// === FLOWCHART RENDERING ===
+function renderFlowchart() {
+  const container = document.getElementById('flowchart');
+  let html = '<div class="flowchart">';
+
+  TRIP_DAYS.forEach((day, i) => {
+    html += `
+      <div class="day-node">
+        <div class="day-header">
+          <span class="day-badge">Day ${day.day}</span>
+          <span class="day-title">${day.title}</span>
+          <span class="day-region">📍 ${day.region}</span>
+        </div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">
+          🚗 ${day.transport} | 🏨 ${day.overnight}
+        </div>
+        <div class="stops">
+          ${day.stops.map(s => `
+            <div class="stop ${s.type}">
+              <div class="stop-type">${s.type === 'classic' ? '⭐ Classic' : s.type === 'hidden-gem' ? '💎 Hidden Gem' : '🍺 Pub'}</div>
+              <div class="stop-name">${s.name}</div>
+              <div class="stop-note">${s.note}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    if (i < TRIP_DAYS.length - 1) {
+      html += '<div class="connector"></div>';
+    }
+  });
+
+  html += '</div>';
+
+  // Add trip tips
+  html += `
+    <div style="margin-top:2rem;padding:1.5rem;background:var(--card);border-radius:12px;border:1px solid var(--gold);">
+      <h3 style="color:var(--gold);margin-bottom:1rem;">🧭 Pro Tips for This Trip</h3>
+      <ul style="color:var(--text);line-height:2;padding-left:1.2rem;">
+        <li><strong>Car rental:</strong> Pick up in Brussels Day 2, drop off in Pilsen Day 9. Essential for Hainaut & Ardennes.</li>
+        <li><strong>Best day for Vapeur:</strong> Plan Day 3 around the last Saturday of the month for the steam brewery.</li>
+        <li><strong>Westvleteren tip:</strong> Arrive early at In de Vrede. The 12 sometimes sells out by afternoon.</li>
+        <li><strong>Fantôme warning:</strong> Call +32 86 47 70 44 before driving to Soy. Dany opens when he feels like it.</li>
+        <li><strong>Bruges strategy:</strong> Do breweries Day 4 afternoon, pubs Day 5 (walking day). De Garre fills up - go at opening.</li>
+        <li><strong>Designated driver:</strong> Belgian beers are STRONG. Many stops offer small pours. Pace yourself (or hire a guide).</li>
+        <li><strong>Cantillon:</strong> Closed Sundays and most of August. Book online to guarantee entry.</li>
+        <li><strong>Kulminator:</strong> Ask Dirk for a vertical tasting of aged Chimay Blue. Mind-blowing comparison.</li>
+        <li><strong>Budget tip:</strong> Many Belgian breweries charge €5-15 for tours with tastings. Pubs are where you'll spend more.</li>
+        <li><strong>Season:</strong> Spring (Apr-May) or Autumn (Sep-Oct) ideal. Summer is tourist-heavy in Bruges.</li>
+      </ul>
+    </div>
+  `;
+
+  container.innerHTML = html;
+}
+
+// === MAP ===
+function initMap() {
+  window.mapInitialized = true;
+  const map = L.map('mapContainer').setView([50.5, 4.5], 7);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO',
+    maxZoom: 18
+  }).addTo(map);
+
+  // Route line
+  const routePoints = [
+    [50.1109, 8.6821],  // Frankfurt
+    [50.8467, 4.3525],  // Brussels
+    [50.7676, 4.2912],  // Beersel/Pajottenland
+    [50.5519, 3.6453],  // Hainaut
+    [50.9440, 3.1291],  // Roeselare
+    [50.8444, 3.2270],  // Bruges
+    [50.8895, 2.7218],  // Westvleteren
+    [51.2165, 4.4128],  // Antwerp
+    [49.6345, 5.3468],  // Orval
+    [50.0434, 4.3181],  // Chimay
+    [50.9420, 6.9535],  // Cologne
+    [49.7490, 13.3876]  // Pilsen
+  ];
+
+  L.polyline(routePoints, {
+    color: '#D4A017',
+    weight: 3,
+    opacity: 0.7,
+    dashArray: '10, 8'
+  }).addTo(map);
+
+  // Day markers on route
+  const dayLabels = ['Frankfurt (Start)', 'Day 1-2: Brussels', '', 'Day 3: Hainaut', 'Day 4: West Flanders', 'Day 5: Bruges', 'Day 6: Westvleteren', 'Day 6: Antwerp', 'Day 7: Ardennes', 'Day 8: Chimay', 'Day 8: Cologne', 'Day 9: Pilsen (End)'];
+
+  routePoints.forEach((point, i) => {
+    if (dayLabels[i]) {
+      L.circleMarker(point, {
+        radius: 8,
+        color: '#D4A017',
+        fillColor: '#1a1a2e',
+        fillOpacity: 1,
+        weight: 2
+      }).addTo(map).bindPopup(`<strong>${dayLabels[i]}</strong>`);
+    }
+  });
+
+  // Markers for all places
+  const icons = {
+    'classic': { color: '#D4A017', emoji: '⭐' },
+    'hidden-gem': { color: '#4ecca3', emoji: '💎' },
+    'pub': { color: '#e94560', emoji: '🍺' }
+  };
+
+  PLACES.forEach(place => {
+    const iconConfig = icons[place.type];
+    const marker = L.circleMarker([place.lat, place.lng], {
+      radius: 7,
+      color: iconConfig.color,
+      fillColor: iconConfig.color,
+      fillOpacity: 0.8,
+      weight: 1
+    }).addTo(map);
+
+    marker.bindPopup(`
+      <div class="map-popup">
+        <h3>${iconConfig.emoji} ${place.name}</h3>
+        <p><strong>${place.city}, ${place.country}</strong></p>
+        <p>${place.desc}</p>
+        <p class="popup-rating">★ ${place.rating}/10 | Day ${place.day}</p>
+        ${place.tours ? `<p><em>🎫 ${place.tours}</em></p>` : ''}
+      </div>
+    `, { maxWidth: 300 });
+  });
+
+  // Legend
+  const legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function() {
+    const div = L.DomUtil.create('div', 'legend');
+    div.style.cssText = 'background:rgba(26,26,46,0.9);padding:10px 14px;border-radius:8px;border:1px solid #D4A017;color:#e8e8e8;font-size:13px;';
+    div.innerHTML = `
+      <strong style="color:#D4A017">Legend</strong><br>
+      <span style="color:#D4A017">●</span> Classic Brewery<br>
+      <span style="color:#4ecca3">●</span> Hidden Gem<br>
+      <span style="color:#e94560">●</span> Pub / Café<br>
+      <span style="color:#D4A017">---</span> Route
+    `;
+    return div;
+  };
+  legend.addTo(map);
+}
+
+// === BREWERIES & PUBS LIST ===
+function renderBreweries() {
+  const container = document.getElementById('breweries');
+
+  // Sort by rating descending
+  const sorted = [...PLACES].sort((a, b) => b.rating - a.rating);
+
+  let html = `
+    <div class="filter-bar">
+      <input type="text" id="placeSearch" placeholder="🔍 Search breweries & pubs..." oninput="filterPlaces()">
+      <select id="typeFilter" onchange="filterPlaces()">
+        <option value="all">All Types</option>
+        <option value="classic">⭐ Classic Breweries</option>
+        <option value="hidden-gem">💎 Hidden Gems</option>
+        <option value="pub">🍺 Pubs & Cafés</option>
+      </select>
+      <select id="dayFilter" onchange="filterPlaces()">
+        <option value="all">All Days</option>
+        ${[1,2,3,4,5,6,7,8,9].map(d => `<option value="${d}">Day ${d}</option>`).join('')}
+      </select>
+      <span style="color:var(--muted);font-size:0.85rem;" id="placeCount">${sorted.length} places</span>
+    </div>
+    <div class="cards-grid" id="cardsGrid">
+  `;
+
+  sorted.forEach((place, idx) => {
+    const badge = place.type === 'classic' ? 'badge-classic' : place.type === 'hidden-gem' ? 'badge-hidden' : 'badge-pub';
+    const badgeLabel = place.type === 'classic' ? 'CLASSIC' : place.type === 'hidden-gem' ? 'HIDDEN GEM' : 'PUB';
+    const stars = '★'.repeat(Math.round(place.rating / 2)) + '☆'.repeat(5 - Math.round(place.rating / 2));
+
+    html += `
+      <div class="brewery-card ${place.type}" data-type="${place.type}" data-day="${place.day}" data-name="${place.name.toLowerCase()}">
+        <div class="card-header">
+          <span class="card-name">#${idx + 1} ${place.name}</span>
+          <span class="card-badge ${badge}">${badgeLabel}</span>
+        </div>
+        <div class="card-location">📍 ${place.city}, ${place.country} | 📅 Day ${place.day}</div>
+        <div class="rating">
+          <span class="rating-stars">${stars}</span>
+          <span class="rating-num">${place.rating}/10</span>
+        </div>
+        <div class="card-desc">${place.desc}</div>
+        ${place.tours ? `<div style="font-size:0.8rem;color:var(--green);margin-top:0.5rem;">🎫 ${place.tours}</div>` : ''}
+        <div class="card-beers">
+          <h4>Must-Try:</h4>
+          ${place.beers.map(b => `<span class="beer-tag">${b}</span>`).join('')}
+        </div>
+      </div>
+    `;
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+function filterPlaces() {
+  const search = document.getElementById('placeSearch').value.toLowerCase();
+  const type = document.getElementById('typeFilter').value;
+  const day = document.getElementById('dayFilter').value;
+  const cards = document.querySelectorAll('.brewery-card');
+  let count = 0;
+
+  cards.forEach(card => {
+    const matchSearch = card.dataset.name.includes(search) || card.textContent.toLowerCase().includes(search);
+    const matchType = type === 'all' || card.dataset.type === type;
+    const matchDay = day === 'all' || card.dataset.day === day;
+    const show = matchSearch && matchType && matchDay;
+    card.style.display = show ? '' : 'none';
+    if (show) count++;
+  });
+
+  document.getElementById('placeCount').textContent = `${count} places`;
+}
+
+// === BEER LIST TABLE ===
+function renderBeers() {
+  const container = document.getElementById('beers');
+
+  let html = `
+    <div class="filter-bar">
+      <input type="text" id="beerSearch" placeholder="🔍 Search beers, styles, breweries..." oninput="filterBeers()">
+      <select id="styleFilter" onchange="filterBeers()">
+        <option value="all">All Styles</option>
+        ${[...new Set(BEERS.map(b => b.style))].sort().map(s => `<option value="${s}">${s}</option>`).join('')}
+      </select>
+      <select id="abvFilter" onchange="filterBeers()">
+        <option value="all">All ABV</option>
+        <option value="session">Session (< 5%)</option>
+        <option value="standard">Standard (5-7%)</option>
+        <option value="strong">Strong (7-9%)</option>
+        <option value="very-strong">Very Strong (9%+)</option>
+      </select>
+      <span style="color:var(--muted);font-size:0.85rem;" id="beerCount">${BEERS.length} beers</span>
+    </div>
+    <div class="beer-table-wrapper">
+      <table class="beer-table" id="beerTable">
+        <thead>
+          <tr>
+            <th>Color</th>
+            <th>Beer Name</th>
+            <th>Brewery</th>
+            <th>Style</th>
+            <th>ABV</th>
+            <th>IBU</th>
+            <th>Availability</th>
+            <th>Tasting Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+  `;
+
+  BEERS.forEach(beer => {
+    html += `
+      <tr data-style="${beer.style}" data-abv="${beer.abv}" data-search="${(beer.name + ' ' + beer.brewery + ' ' + beer.style + ' ' + beer.notes).toLowerCase()}">
+        <td><span class="color-swatch" style="background:${beer.color}" title="${beer.colorName}"></span>${beer.colorName}</td>
+        <td><strong>${beer.name}</strong></td>
+        <td>${beer.brewery}</td>
+        <td>${beer.style}</td>
+        <td><strong>${beer.abv}%</strong></td>
+        <td>${beer.ibu || '—'}</td>
+        <td><em>${beer.availability}</em></td>
+        <td>${beer.notes}</td>
+      </tr>
+    `;
+  });
+
+  html += '</tbody></table></div>';
+  container.innerHTML = html;
+}
+
+function filterBeers() {
+  const search = document.getElementById('beerSearch').value.toLowerCase();
+  const style = document.getElementById('styleFilter').value;
+  const abvRange = document.getElementById('abvFilter').value;
+  const rows = document.querySelectorAll('#beerTable tbody tr');
+  let count = 0;
+
+  rows.forEach(row => {
+    const matchSearch = row.dataset.search.includes(search);
+    const matchStyle = style === 'all' || row.dataset.style === style;
+    const abv = parseFloat(row.dataset.abv);
+    let matchAbv = true;
+    if (abvRange === 'session') matchAbv = abv < 5;
+    else if (abvRange === 'standard') matchAbv = abv >= 5 && abv < 7;
+    else if (abvRange === 'strong') matchAbv = abv >= 7 && abv < 9;
+    else if (abvRange === 'very-strong') matchAbv = abv >= 9;
+
+    const show = matchSearch && matchStyle && matchAbv;
+    row.style.display = show ? '' : 'none';
+    if (show) count++;
+  });
+
+  document.getElementById('beerCount').textContent = `${count} beers`;
+}
+
+// === INIT ===
+renderFlowchart();
+renderBreweries();
+renderBeers();
+</script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12-Day UK Beer Pilgrimage | Denver to England, Wales, Scotland</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{--bg-dark:#1a1a2e;--bg-card:#16213e;--bg-hover:#0f3460;--accent-gold:#e6a817;--accent-amber:#d4780a;--text-primary:#ecf0f1;--text-secondary:#bdc3c7;--england:#e74c3c;--wales:#27ae60;--scotland:#2980b9;--border:#2c3e50;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg-dark);color:var(--text-primary);min-height:100vh;}
+.header{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);padding:2rem;text-align:center;border-bottom:3px solid var(--accent-gold);}
+.header h1{font-size:2.2rem;color:var(--accent-gold);text-shadow:0 2px 10px rgba(230,168,23,0.3);margin-bottom:0.5rem;}
+.header p{color:var(--text-secondary);font-size:1.1rem;}
+.header .route{color:var(--accent-amber);font-weight:600;margin-top:0.5rem;}
+.tabs{display:flex;justify-content:center;gap:0;background:#0f0c29;border-bottom:2px solid var(--border);flex-wrap:wrap;}
+.tab-btn{padding:1rem 2rem;cursor:pointer;border:none;background:transparent;color:var(--text-secondary);font-size:1rem;font-weight:600;transition:all 0.3s;border-bottom:3px solid transparent;}
+.tab-btn:hover{color:var(--accent-gold);background:rgba(230,168,23,0.05);}
+.tab-btn.active{color:var(--accent-gold);border-bottom-color:var(--accent-gold);background:rgba(230,168,23,0.1);}
+.tab-content{display:none;padding:2rem;max-width:1400px;margin:0 auto;}
+.tab-content.active{display:block;}
+#map-container{height:700px;width:100%;border-radius:12px;border:2px solid var(--border);}
+.flowchart{display:flex;flex-direction:column;align-items:center;gap:0;}
+.day-node{background:var(--bg-card);border:2px solid var(--border);border-radius:12px;padding:1.2rem 2rem;width:90%;max-width:800px;transition:all 0.3s;position:relative;margin-bottom:0;}
+.day-node:hover{border-color:var(--accent-gold);transform:translateY(-2px);box-shadow:0 8px 25px rgba(230,168,23,0.15);}
+.day-node.england{border-left:5px solid var(--england);}
+.day-node.wales{border-left:5px solid var(--wales);}
+.day-node.scotland{border-left:5px solid var(--scotland);}
+.day-node .day-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;}
+.day-node .day-num{font-size:1.3rem;font-weight:700;color:var(--accent-gold);}
+.day-node .region-badge{font-size:0.75rem;padding:0.2rem 0.7rem;border-radius:20px;font-weight:600;text-transform:uppercase;}
+.day-node.england .region-badge{background:rgba(231,76,60,0.2);color:var(--england);}
+.day-node.wales .region-badge{background:rgba(39,174,96,0.2);color:var(--wales);}
+.day-node.scotland .region-badge{background:rgba(41,128,185,0.2);color:var(--scotland);}
+.day-node .location{font-size:1.1rem;font-weight:600;color:var(--text-primary);}
+.day-node .stops{color:var(--text-secondary);font-size:0.9rem;margin-top:0.4rem;line-height:1.6;}
+.day-node .stops strong{color:var(--accent-amber);}
+.connector{width:3px;height:35px;background:linear-gradient(to bottom,var(--accent-gold),var(--accent-amber));margin:0 auto;}
+.brewery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:1.5rem;}
+.brewery-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:all 0.3s;}
+.brewery-card:hover{border-color:var(--accent-gold);box-shadow:0 5px 20px rgba(0,0,0,0.3);}
+.brewery-card .rank{font-size:2rem;font-weight:800;color:var(--accent-gold);float:right;opacity:0.7;}
+.brewery-card h3{color:var(--accent-gold);font-size:1.1rem;margin-bottom:0.3rem;}
+.brewery-card .meta{color:var(--text-secondary);font-size:0.85rem;margin-bottom:0.5rem;}
+.brewery-card .desc{color:var(--text-primary);font-size:0.9rem;line-height:1.5;}
+.brewery-card .type-badge{display:inline-block;font-size:0.7rem;padding:0.15rem 0.5rem;border-radius:10px;margin-right:0.3rem;font-weight:600;}
+.type-pub{background:rgba(230,168,23,0.2);color:var(--accent-gold);}
+.type-brewery{background:rgba(41,128,185,0.2);color:#5dade2;}
+.type-both{background:rgba(142,68,173,0.2);color:#af7ac5;}
+.stars{color:var(--accent-gold);letter-spacing:2px;}
+.beer-table{width:100%;border-collapse:collapse;font-size:0.9rem;}
+.beer-table th{background:var(--bg-hover);color:var(--accent-gold);padding:0.8rem;text-align:left;border-bottom:2px solid var(--accent-gold);position:sticky;top:0;}
+.beer-table td{padding:0.7rem 0.8rem;border-bottom:1px solid var(--border);}
+.beer-table tr:hover td{background:rgba(230,168,23,0.05);}
+.beer-table .color-swatch{display:inline-block;width:18px;height:18px;border-radius:50%;vertical-align:middle;margin-right:6px;border:1px solid rgba(255,255,255,0.2);}
+.section-title{font-size:1.5rem;color:var(--accent-gold);margin:2rem 0 1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
+.tip-box{background:rgba(230,168,23,0.08);border:1px solid rgba(230,168,23,0.3);border-radius:8px;padding:1rem 1.5rem;margin:1.5rem 0;}
+.tip-box h4{color:var(--accent-gold);margin-bottom:0.4rem;}
+.tip-box p{color:var(--text-secondary);font-size:0.9rem;line-height:1.6;}
+@media(max-width:768px){.brewery-grid{grid-template-columns:1fr;}.tab-btn{padding:0.7rem 1rem;font-size:0.85rem;}.day-node{width:95%;padding:1rem;}}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>&#127866; 12-Day UK Beer Pilgrimage</h1>
+<p>The Ultimate Brewery &amp; Classic Pub Tour</p>
+<div class="route">&#9992;&#65039; Denver International &#8594; London Heathrow &#8594; England &#8594; Wales &#8594; Scotland &#8594; Home</div>
+</div>
+<div class="tabs">
+<button class="tab-btn active" onclick="showTab('flowchart')">&#128203; Trip Flowchart</button>
+<button class="tab-btn" onclick="showTab('map')">&#128506;&#65039; Interactive Map</button>
+<button class="tab-btn" onclick="showTab('rankings')">&#127942; Rankings &amp; List</button>
+<button class="tab-btn" onclick="showTab('beers')">&#127867; Beer Guide</button>
+<button class="tab-btn" onclick="showTab('tips')">&#128161; Trip Tips</button>
+</div>
+<div id="flowchart" class="tab-content active">
+<h2 class="section-title">12-Day Itinerary Flow</h2>
+<div class="flowchart">
+<div class="day-node england"><div class="day-header"><span class="day-num">Day 1</span><span class="region-badge">England</span></div><div class="location">Denver &rarr; London (Arrival)</div><div class="stops">&#9992; Fly Denver (DEN) &rarr; London Heathrow (LHR) ~9hrs | Evening: <strong>Ye Olde Cheshire Cheese</strong> (Fleet St, est. 1667) &mdash; Dickens' local, candlelit cellars | <strong>The Prospect of Whitby</strong> (Wapping, est. 1520) &mdash; London's oldest riverside pub</div></div>
+<div class="connector"></div>
+<div class="day-node england"><div class="day-header"><span class="day-num">Day 2</span><span class="region-badge">England</span></div><div class="location">London Craft &amp; Heritage</div><div class="stops"><strong>The Kernel Brewery</strong> (Bermondsey, est. 2010) &mdash; world-class pale ales, Bermondsey Beer Mile | <strong>Fuller's Griffin Brewery</strong> (Chiswick, est. 1845) &mdash; London Pride, historic tour | Evening: <strong>The Lamb</strong> (Bloomsbury) &mdash; original Victorian snob screens</div></div>
+<div class="connector"></div>
+<div class="day-node england"><div class="day-header"><span class="day-num">Day 3</span><span class="region-badge">England</span></div><div class="location">Oxford &amp; Cotswolds</div><div class="stops">&#128663; Drive to Oxford | <strong>The Eagle and Child</strong> (est. 1650) &mdash; Tolkien &amp; C.S. Lewis's "Bird and Baby" | Drive to Hook Norton | <strong>Hook Norton Brewery</strong> (est. 1849) &mdash; Victorian tower brewery, steam-powered! | <strong>DEYA Brewing</strong> (Cheltenham, est. 2015) &mdash; hazy IPAs, hidden gem</div></div>
+<div class="connector"></div>
+<div class="day-node england"><div class="day-header"><span class="day-num">Day 4</span><span class="region-badge">England</span></div><div class="location">Burton-on-Trent &amp; Black Country</div><div class="stops"><strong>Burton Bridge Brewery</strong> (est. 1982) &mdash; Burton's water = birthplace of pale ale | <strong>The Olde Swan "Ma Pardoe's"</strong> (Netherton, est. 1835) &mdash; homebrew pub, unchanged since Victorian era | <strong>Thornbridge Brewery</strong> (Bakewell, est. 2005) &mdash; Jaipur IPA, stunning estate</div></div>
+<div class="connector"></div>
+<div class="day-node england"><div class="day-header"><span class="day-num">Day 5</span><span class="region-badge">England</span></div><div class="location">Manchester &amp; Yorkshire</div><div class="stops"><strong>Marble Arch Inn</strong> (Manchester, est. 1888) &mdash; Grade II pub + on-site brewery, mosaic floors | <strong>Cloudwater Brew Co</strong> (Manchester, est. 2015) &mdash; world's #5 brewery, DIPA masters | Drive to Keighley | <strong>Timothy Taylor's</strong> (est. 1858) &mdash; Landlord: "Queen of ales" | <strong>Northern Monk</strong> (Leeds, est. 2014) &mdash; Faith Pale, refectory taproom</div></div>
+<div class="connector"></div>
+<div class="day-node england"><div class="day-header"><span class="day-num">Day 6</span><span class="region-badge">England</span></div><div class="location">Nottingham &amp; East Midlands &rarr; Wales</div><div class="stops"><strong>Ye Olde Trip to Jerusalem</strong> (Nottingham, est. 1189) &mdash; England's oldest pub, carved into castle rock | <strong>Buxton Brewery</strong> (est. 2009) &mdash; barrel-aged stouts, Peak District | &#128663; Afternoon drive toward Wales via Abergavenny</div></div>
+<div class="connector"></div>
+<div class="day-node wales"><div class="day-header"><span class="day-num">Day 7</span><span class="region-badge">Wales</span></div><div class="location">Abergavenny &amp; South Wales</div><div class="stops"><strong>Skirrid Mountain Inn</strong> (est. ~1110) &mdash; 900yr old, most haunted pub in Wales, hanging beam | <strong>Tiny Rebel Brewery</strong> (Newport, est. 2012) &mdash; CWTCH Champion Beer of Britain, 30+ taps | Evening in Cardiff: <strong>The City Arms</strong> (1880s) &mdash; CAMRA Pub of the Year, 12 cask ales</div></div>
+<div class="connector"></div>
+<div class="day-node wales"><div class="day-header"><span class="day-num">Day 8</span><span class="region-badge">Wales</span></div><div class="location">Pembrokeshire &amp; West Wales</div><div class="stops">&#128663; Drive west | <strong>Bluestone Brewing</strong> (Preseli Hills, est. 2013) &mdash; farm brewery, Stonehenge spring water! | <strong>Tenby Brewing Co</strong> (Tenby, est. 2015) &mdash; harbour taproom in walled medieval town | Coastal scenery along Pembrokeshire Coast Path</div></div>
+<div class="connector"></div>
+<div class="day-node wales"><div class="day-header"><span class="day-num">Day 9</span><span class="region-badge">Wales</span></div><div class="location">Snowdonia &amp; North Wales</div><div class="stops">&#128663; Drive north through Snowdonia | <strong>Purple Moose Brewery</strong> (Porthmadog, est. 2005) &mdash; Snowdonia mountain water ales | <strong>Ye Olde Bull's Head Inn</strong> (Beaumaris, Anglesey, est. 1472) &mdash; Dickens stayed here | Evening: local pubs in Conwy or Llandudno</div></div>
+<div class="connector"></div>
+<div class="day-node scotland"><div class="day-header"><span class="day-num">Day 10</span><span class="region-badge">Scotland</span></div><div class="location">Edinburgh</div><div class="stops">&#128663; Drive to Edinburgh (or train from Chester) | <strong>The Sheep Heid Inn</strong> (est. 1360) &mdash; Scotland's oldest pub, royal skittles alley | <strong>The Bow Bar</strong> (est. 1979) &mdash; Edinburgh's finest cask ale bar, 8 handpumps | <strong>Barney's Beer</strong> (Summerhall, est. 2012) &mdash; tiny hidden microbrewery in arts complex | <strong>The Cloisters Bar</strong> &mdash; converted parsonage, 50+ whiskies + real ales</div></div>
+<div class="connector"></div>
+<div class="day-node scotland"><div class="day-header"><span class="day-num">Day 11</span><span class="region-badge">Scotland</span></div><div class="location">Glasgow &amp; Loch Fyne</div><div class="stops">&#128663; Drive to Glasgow | <strong>The Pot Still</strong> (est. 1857) &mdash; legendary whisky pub, incredible beer selection too | <strong>WEST Brewery</strong> (est. 2006) &mdash; German-style lagers in stunning Venetian Gothic Templeton building | Drive to Argyll | <strong>Fyne Ales</strong> (Loch Fyne, est. 2001) &mdash; award-winning farm brewery, stunning Highland location</div></div>
+<div class="connector"></div>
+<div class="day-node scotland"><div class="day-header"><span class="day-num">Day 12</span><span class="region-badge">Scotland</span></div><div class="location">Highlands &amp; Departure</div><div class="stops"><strong>Traquair House Brewery</strong> (Borders, est. 1566/1965) &mdash; oldest inhabited house in Scotland, Bear Ale since 1566 | <strong>Cromarty Brewing Co</strong> (Black Isle, est. 2011) &mdash; NC500 route, hidden Highland gem | Return to Edinburgh for flight home &#9992; Edinburgh &rarr; Denver via connection</div></div>
+</div>
+</div>
+<div id="map" class="tab-content">
+<h2 class="section-title">Interactive Trip Map</h2>
+<p style="color:var(--text-secondary);margin-bottom:1rem;">Click markers for details. Route: <span style="color:var(--england);">&#9679;</span> England &rarr; <span style="color:var(--wales);">&#9679;</span> Wales &rarr; <span style="color:var(--scotland);">&#9679;</span> Scotland</p>
+<div id="map-container"></div>
+</div>
+<div id="rankings" class="tab-content">
+<h2 class="section-title">&#127942; Complete Rankings &mdash; All Breweries &amp; Pubs</h2>
+<p style="color:var(--text-secondary);margin-bottom:1.5rem;">Ranked by historical significance, beer quality, atmosphere, and "wow factor". Scale: &#9733;&#9733;&#9733;&#9733;&#9733; = unmissable</p>
+<div class="brewery-grid">
+<div class="brewery-card"><span class="rank">#1</span><h3>Ye Olde Trip to Jerusalem</h3><span class="type-badge type-pub">Historic Pub</span><div class="meta">Nottingham, England | Est. 1189 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="desc">England's oldest pub, carved into the sandstone caves beneath Nottingham Castle. Crusaders stopped here en route to the Holy Land. Unique cave rooms, cursed galleon model. Castle Rock ales.</div></div>
+<div class="brewery-card"><span class="rank">#2</span><h3>The Sheep Heid Inn</h3><span class="type-badge type-pub">Historic Pub</span><div class="meta">Edinburgh, Scotland | Est. 1360 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="desc">Scotland's oldest surviving pub. A royal skittles alley gifted by James VI. Mary Queen of Scots drank here. Nestled at the foot of Arthur's Seat in Duddingston village.</div></div>
+<div class="brewery-card"><span class="rank">#3</span><h3>Ye Olde Cheshire Cheese</h3><span class="type-badge type-pub">Historic Pub</span><div class="meta">Fleet Street, London | Est. 1667 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="desc">Rebuilt after the Great Fire. Dickens, Twain, Conan Doyle, Dr. Johnson all regulars. Labyrinthine cellars from a 13th-century monastery. Dark, candlelit, timeless. Sam Smith's ales.</div></div>
+<div class="brewery-card"><span class="rank">#4</span><h3>Skirrid Mountain Inn</h3><span class="type-badge type-pub">Historic Pub</span><div class="meta">Abergavenny, Wales | Est. ~1110 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="desc">900+ years old. Wales' oldest pub and most haunted. Used as a courthouse &mdash; 180+ hangings from the staircase beam (rope marks still visible). Incredible atmosphere. Local Welsh ales.</div></div>
+<div class="brewery-card"><span class="rank">#5</span><h3>Cloudwater Brew Co</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Manchester, England | Est. 2015 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="desc">Ranked world's #5 brewery (RateBeer). Masters of DIPA and modern craft. Seasonal approach, no core range &mdash; every beer is special. Piccadilly taproom is a pilgrimage site.</div></div>
+<div class="brewery-card"><span class="rank">#6</span><h3>Hook Norton Brewery</h3><span class="type-badge type-brewery">Heritage Brewery</span><div class="meta">Oxfordshire, England | Est. 1849 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="desc">Last Victorian tower brewery still using a steam engine. Family-owned 6 generations. Horse-drawn drays still deliver locally. Stunning Cotswolds village. Museum + tours.</div></div>
+<div class="brewery-card"><span class="rank">#7</span><h3>The Eagle and Child</h3><span class="type-badge type-pub">Historic Pub</span><div class="meta">Oxford, England | Est. 1650 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="desc">Where Tolkien and C.S. Lewis met weekly with 'The Inklings'. The back room where LOTR chapters were first read aloud. Living literary history over excellent ale.</div></div>
+<div class="brewery-card"><span class="rank">#8</span><h3>Tiny Rebel Brewery</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Newport, Wales | Est. 2012 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="desc">Wales' largest craft brewery. CWTCH won CAMRA Champion Beer of Britain 2015. Garage-to-glory story. 30+ taps at their Newport HQ. Bold, fun, irreverent &mdash; Welsh craft revolution leaders.</div></div>
+<div class="brewery-card"><span class="rank">#9</span><h3>Thornbridge Brewery</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Bakewell, Derbyshire | Est. 2005 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Brews in a stunning 12th-century hall estate. Jaipur IPA is a modern British classic &mdash; 350+ international awards. Beautiful Peak District setting. Tap house in Bakewell town.</div></div>
+<div class="brewery-card"><span class="rank">#10</span><h3>The Kernel Brewery</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Bermondsey, London | Est. 2010 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Pioneer of London's craft beer revolution. Bermondsey Beer Mile anchor. Single-hop pale ales and Export Stouts are world-class. Saturday-only taproom &mdash; queue is part of the ritual.</div></div>
+<div class="brewery-card"><span class="rank">#11</span><h3>Fyne Ales</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Loch Fyne, Argyll, Scotland | Est. 2001 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Multi-award winning farm brewery on a working Highland estate. CAMRA Champion Beer of Britain (Jarl). Stunning location at head of Loch Fyne. Worth the detour for scenery alone.</div></div>
+<div class="brewery-card"><span class="rank">#12</span><h3>Fuller's Griffin Brewery</h3><span class="type-badge type-brewery">Heritage Brewery</span><div class="meta">Chiswick, London | Est. 1845 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">London Pride, ESB, 1845 &mdash; the cornerstone of British brewing heritage. Over 175 years on the same Thames-side site. Excellent guided tours. Britain's most awarded brewery.</div></div>
+<div class="brewery-card"><span class="rank">#13</span><h3>Timothy Taylor's Brewery</h3><span class="type-badge type-brewery">Heritage Brewery</span><div class="meta">Keighley, Yorkshire | Est. 1858 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Landlord &mdash; 'the queen of pale ales.' Knowle Spring Pennine water. Madonna's alleged favourite pint. Won more CAMRA awards than any other single beer. Traditional Yorkshire pride.</div></div>
+<div class="brewery-card"><span class="rank">#14</span><h3>The Bow Bar</h3><span class="type-badge type-pub">Classic Pub</span><div class="meta">Edinburgh, Scotland | Est. 1979 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Edinburgh's finest real ale pub. 8 handpumps of perfectly kept cask + extensive whisky collection. No TV, no music, no food &mdash; just brilliant conversation and brilliant beer.</div></div>
+<div class="brewery-card"><span class="rank">#15</span><h3>Purple Moose Brewery</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Porthmadog, Snowdonia, Wales | Est. 2005 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Brews with pure Snowdonia mountain water. Multiple Champion Beer of Wales winner. Bilingual beer names. Glaslyn Ale and Dark Side of the Moose are standouts.</div></div>
+<div class="brewery-card"><span class="rank">#16</span><h3>Marble Arch Inn</h3><span class="type-badge type-both">Brewpub</span><div class="meta">Manchester, England | Est. 1888 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Grade II listed Victorian pub with jaw-dropping mosaic tiled interior + own brewery. Sloping mosaic floor, barrel-vaulted ceiling. Manchester's finest brewpub.</div></div>
+<div class="brewery-card"><span class="rank">#17</span><h3>The Prospect of Whitby</h3><span class="type-badge type-pub">Historic Pub</span><div class="meta">Wapping, London | Est. 1520 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">London's oldest riverside pub. Originally 'The Devil's Tavern' &mdash; pirates, smugglers, executions. Dickens, Pepys, Turner all drank here. Thames views from the terrace.</div></div>
+<div class="brewery-card"><span class="rank">#18</span><h3>Northern Monk Brewery</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Leeds, England | Est. 2014 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Refectory taproom in a stunning old mill. Faith Pale Ale is a modern classic. Patrons Project collaborations with artists/chefs/creators worldwide.</div></div>
+<div class="brewery-card"><span class="rank">#19</span><h3>WEST Brewery</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Glasgow, Scotland | Est. 2006 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">German-style lagers brewed to Reinheitsgebot purity law &mdash; in a jaw-dropping Venetian Gothic building (former Templeton carpet factory). St Mungo lager is exceptional.</div></div>
+<div class="brewery-card"><span class="rank">#20</span><h3>Traquair House Brewery</h3><span class="type-badge type-brewery">Heritage Brewery</span><div class="meta">Borders, Scotland | Est. 1566 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Oldest inhabited house in Scotland. Bear Ale brewed since 1566 (revived 1965). Dark, rich, historic recipes. Bear Gates sealed until a Stuart returns to the throne.</div></div>
+<div class="brewery-card"><span class="rank">#21</span><h3>The Olde Swan (Ma Pardoe's)</h3><span class="type-badge type-both">Brewpub</span><div class="meta">Netherton, Black Country | Est. 1835 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">One of only four original homebrew pubs left in England. Unchanged since Victorian era &mdash; original bar fittings, etched glass. Brews on-site: Original, Dark Swan, Bumble Hole Bitter.</div></div>
+<div class="brewery-card"><span class="rank">#22</span><h3>The Pot Still</h3><span class="type-badge type-pub">Classic Pub</span><div class="meta">Glasgow, Scotland | Est. 1857 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">700+ whiskies AND excellent craft beer selection. Iconic Glasgow institution on Hope Street. Unpretentious, authentic &mdash; the real Glasgow experience.</div></div>
+<div class="brewery-card"><span class="rank">#23</span><h3>The City Arms</h3><span class="type-badge type-pub">Classic Pub</span><div class="meta">Cardiff, Wales | Est. 1880s | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Grade II Victorian beauty. CAMRA Cardiff Pub of the Year multiple times. Up to 12 rotating cask ales. Ornate original tiling and glasswork. Heart of Cardiff.</div></div>
+<div class="brewery-card"><span class="rank">#24</span><h3>Buxton Brewery</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Buxton, Derbyshire | Est. 2009 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">Peak District craft excellence. Yellow Belly (collab with Omnipollo) is world-famous. Axe Edge is a stunning IPA. Spa town setting.</div></div>
+<div class="brewery-card"><span class="rank">#25</span><h3>Ye Olde Bull's Head Inn</h3><span class="type-badge type-pub">Historic Pub</span><div class="meta">Beaumaris, Anglesey, Wales | Est. 1472 | <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="desc">550-year-old coaching inn. Dickens and Dr. Johnson both guests. Original ducking stool, water clock, exposed beams. Serves Purple Moose and local ales.</div></div>
+<div class="brewery-card"><span class="rank">#26</span><h3>Bluestone Brewing Co</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Preseli Hills, Pembrokeshire, Wales | Est. 2013 | <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span></div><div class="desc">Farm brewery using spring water from the Preseli Hills &mdash; source of Stonehenge's bluestones. Beautiful rural Pembrokeshire location. Tours available.</div></div>
+<div class="brewery-card"><span class="rank">#27</span><h3>DEYA Brewing</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Cheltenham, England | Est. 2015 | <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span></div><div class="desc">Hidden gem of Cotswolds craft scene. Hazy, juicy pales rival the best New England IPAs. Steady Rolling Man is a session masterpiece. Big reputation among beer nerds.</div></div>
+<div class="brewery-card"><span class="rank">#28</span><h3>Barney's Beer</h3><span class="type-badge type-brewery">Microbrewery</span><div class="meta">Summerhall, Edinburgh | Est. 2012 | <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span></div><div class="desc">Tiny microbrewery hidden inside Summerhall arts complex. Volcano IPA is delightful. Beer garden overlooks the Meadows. True insider's Edinburgh.</div></div>
+<div class="brewery-card"><span class="rank">#29</span><h3>Tenby Brewing Co</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Tenby, Pembrokeshire, Wales | Est. 2015 | <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span></div><div class="desc">Taproom overlooking Tenby harbour in a converted Georgian warehouse. In one of Wales' prettiest medieval walled towns. Caldey Lollipop and Black Flag are standouts.</div></div>
+<div class="brewery-card"><span class="rank">#30</span><h3>Cromarty Brewing Co</h3><span class="type-badge type-brewery">Craft Brewery</span><div class="meta">Black Isle, Highlands, Scotland | Est. 2011 | <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span></div><div class="desc">On the NC500 route. Converted dairy on the Black Isle peninsula. Happy Chappy session pale is brilliant. Highland craft at its most remote and rewarding.</div></div>
+<div class="brewery-card"><span class="rank">#31</span><h3>Burton Bridge Brewery</h3><span class="type-badge type-both">Brewpub</span><div class="meta">Burton-on-Trent, England | Est. 1982 | <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span></div><div class="desc">In the birthplace of British pale ale. Uses Burton's famous gypsum-rich water. XL Bitter is proper traditional ale. The attached Bridge Inn is small, friendly, authentic.</div></div>
+<div class="brewery-card"><span class="rank">#32</span><h3>The Cloisters Bar</h3><span class="type-badge type-pub">Hidden Gem</span><div class="meta">Tollcross, Edinburgh | Est. 1996 | <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span></div><div class="desc">Converted church parsonage. 50+ whiskies, rotating cask ales, no frills. Quiet, thoughtful, atmospheric &mdash; the kind of pub where you lose an afternoon happily.</div></div>
+</div>
+</div>
+<div id="beers" class="tab-content">
+<h2 class="section-title">&#127867; Complete Beer Guide</h2>
+<p style="color:var(--text-secondary);margin-bottom:1.5rem;">Signature beers from each stop &mdash; style, color, IBU, ABV, and availability. Color swatches are approximate.</p>
+<h3 style="color:var(--england);margin:1.5rem 0 0.8rem;">England</h3>
+<div style="overflow-x:auto;">
+<table class="beer-table">
+<thead><tr><th>Brewery/Pub</th><th>Beer</th><th>Style</th><th>ABV</th><th>IBU</th><th>Color</th><th>Notes</th><th>Availability</th></tr></thead>
+<tbody>
+<tr><td>Fuller's</td><td>London Pride</td><td>Best Bitter</td><td>4.1%</td><td>30</td><td><span class="color-swatch" style="background:#b5651d;"></span>Amber</td><td>Biscuity malt, floral hops, dry finish. THE London pint.</td><td>Year-round, nationwide</td></tr>
+<tr><td>Fuller's</td><td>ESB</td><td>Extra Special Bitter</td><td>5.5%</td><td>35</td><td><span class="color-swatch" style="background:#8b4513;"></span>Deep Copper</td><td>Rich marmalade, toffee, complex hop. Category-defining.</td><td>Year-round</td></tr>
+<tr><td>Fuller's</td><td>1845</td><td>Strong Ale</td><td>6.3%</td><td>32</td><td><span class="color-swatch" style="background:#654321;"></span>Dark Amber</td><td>Anniversary ale. Fruitcake, oak, warming. Bottle-conditioned.</td><td>Year-round (bottles)</td></tr>
+<tr><td>The Kernel</td><td>Table Beer</td><td>Table Saison</td><td>2.9%</td><td>20</td><td><span class="color-swatch" style="background:#f0d58c;"></span>Pale Gold</td><td>Light, dry, complex for its strength. Sessionable art.</td><td>Saturdays only</td></tr>
+<tr><td>The Kernel</td><td>Pale Ale (Citra)</td><td>American Pale Ale</td><td>5.3%</td><td>40</td><td><span class="color-swatch" style="background:#e8a317;"></span>Gold</td><td>Single-hop showcase. Grapefruit, mango explosion. Bone dry.</td><td>Rotating (Sat taproom)</td></tr>
+<tr><td>The Kernel</td><td>Export Stout</td><td>Foreign Export Stout</td><td>7.2%</td><td>45</td><td><span class="color-swatch" style="background:#1a1a1a;"></span>Jet Black</td><td>Roast coffee, dark chocolate, port-like warmth. Massive.</td><td>Periodic releases</td></tr>
+<tr><td>Hook Norton</td><td>Old Hooky</td><td>Strong Bitter</td><td>4.6%</td><td>32</td><td><span class="color-swatch" style="background:#a0522d;"></span>Tawny</td><td>Fruity, malty, honey sweetness. Cotswolds classic for 175yrs.</td><td>Year-round</td></tr>
+<tr><td>Hook Norton</td><td>Hooky Gold</td><td>Golden Ale</td><td>4.1%</td><td>28</td><td><span class="color-swatch" style="background:#daa520;"></span>Golden</td><td>Crisp, refreshing, subtle Styrian Golding hops.</td><td>Year-round</td></tr>
+<tr><td>DEYA</td><td>Steady Rolling Man</td><td>Pale Ale</td><td>5.2%</td><td>35</td><td><span class="color-swatch" style="background:#f5deb3;"></span>Hazy Gold</td><td>Juicy, tropical, pillowy soft mouthfeel. NE-style perfection.</td><td>Core range</td></tr>
+<tr><td>DEYA</td><td>Into The Haze</td><td>DIPA</td><td>8.0%</td><td>50</td><td><span class="color-swatch" style="background:#ffe4b5;"></span>Hazy Pale</td><td>Peach, mango, absurdly smooth for 8%.</td><td>Regular release</td></tr>
+<tr><td>Thornbridge</td><td>Jaipur</td><td>IPA</td><td>5.9%</td><td>55</td><td><span class="color-swatch" style="background:#daa520;"></span>Deep Gold</td><td>Grapefruit, lychee, perfectly balanced. 350+ awards.</td><td>Year-round, wide</td></tr>
+<tr><td>Thornbridge</td><td>Lord Marples</td><td>Classic Bitter</td><td>4.0%</td><td>28</td><td><span class="color-swatch" style="background:#cd853f;"></span>Amber</td><td>Traditional bitter done right. Nutty, caramel, dry hop finish.</td><td>Year-round</td></tr>
+<tr><td>Cloudwater</td><td>DIPA (rotating)</td><td>Double IPA</td><td>8-9%</td><td>60+</td><td><span class="color-swatch" style="background:#fff8dc;"></span>Hazy Pale</td><td>Seasonal DIPAs, all world-class. Tropical bombs.</td><td>Limited (taproom/online)</td></tr>
+<tr><td>Cloudwater</td><td>Pale Ale (rotating)</td><td>Pale Ale</td><td>5%</td><td>35</td><td><span class="color-swatch" style="background:#fafad2;"></span>Hazy Gold</td><td>Seasonal single-hop or blend pales. Always exceptional.</td><td>Rotating releases</td></tr>
+<tr><td>Timothy Taylor</td><td>Landlord</td><td>Pale Ale</td><td>4.3%</td><td>37</td><td><span class="color-swatch" style="background:#daa520;"></span>Golden Amber</td><td>"Queen of pale ales." Styrian Goldings, Knowle Spring water.</td><td>Year-round, cask</td></tr>
+<tr><td>Timothy Taylor</td><td>Boltmaker</td><td>Bitter</td><td>4.0%</td><td>30</td><td><span class="color-swatch" style="background:#b8860b;"></span>Amber Gold</td><td>CAMRA Champion Beer of Britain 2014. Malty, hoppy finish.</td><td>Year-round</td></tr>
+<tr><td>Northern Monk</td><td>Faith</td><td>Pale Ale</td><td>5.4%</td><td>38</td><td><span class="color-swatch" style="background:#f0e68c;"></span>Hazy Gold</td><td>Tropical hops, oat body. Consistently brilliant flagship.</td><td>Year-round</td></tr>
+<tr><td>Northern Monk</td><td>Eternal</td><td>Session IPA</td><td>4.1%</td><td>30</td><td><span class="color-swatch" style="background:#eee8aa;"></span>Light Gold</td><td>All-day IPA. Citrus and pine. Clean, sessionable.</td><td>Year-round</td></tr>
+<tr><td>Buxton</td><td>Axe Edge</td><td>IPA</td><td>6.8%</td><td>65</td><td><span class="color-swatch" style="background:#daa520;"></span>Gold</td><td>Big American-style. Pine, grapefruit, resinous.</td><td>Year-round</td></tr>
+<tr><td>Buxton</td><td>Yellow Belly</td><td>Imperial Stout (BA)</td><td>11.5%</td><td>50</td><td><span class="color-swatch" style="background:#0a0a0a;"></span>Black</td><td>Peanut butter biscuit stout. Collab Omnipollo. World-famous.</td><td>Annual limited</td></tr>
+<tr><td>Burton Bridge</td><td>XL Bitter</td><td>Bitter</td><td>4.0%</td><td>32</td><td><span class="color-swatch" style="background:#cd853f;"></span>Amber</td><td>Classic Burton bitter. Gypsum water minerality, dry, clean.</td><td>Year-round (pub only)</td></tr>
+<tr><td>Marble Arch</td><td>Manchester Bitter</td><td>Organic Bitter</td><td>4.2%</td><td>35</td><td><span class="color-swatch" style="background:#daa520;"></span>Golden</td><td>All-organic. Hoppy, dry, refreshing. Brewed on premises.</td><td>On-site year-round</td></tr>
+<tr><td>Olde Swan</td><td>Original</td><td>Mild</td><td>3.5%</td><td>18</td><td><span class="color-swatch" style="background:#8b4513;"></span>Dark Brown</td><td>Traditional Black Country mild. Sweet, nutty, smooth.</td><td>On-site only</td></tr>
+</tbody></table></div>
+
+<h3 style="color:var(--wales);margin:2rem 0 0.8rem;">Wales</h3>
+<div style="overflow-x:auto;">
+<table class="beer-table">
+<thead><tr><th>Brewery/Pub</th><th>Beer</th><th>Style</th><th>ABV</th><th>IBU</th><th>Color</th><th>Notes</th><th>Availability</th></tr></thead>
+<tbody>
+<tr><td>Tiny Rebel</td><td>CWTCH</td><td>Welsh Red Ale</td><td>4.6%</td><td>28</td><td><span class="color-swatch" style="background:#8b2500;"></span>Amber Red</td><td>6 caramalts + Citra/Centennial/Cascade. Champion Beer of Britain 2015.</td><td>Year-round, wide</td></tr>
+<tr><td>Tiny Rebel</td><td>Clwb Tropica</td><td>Tropical IPA</td><td>5.5%</td><td>35</td><td><span class="color-swatch" style="background:#f0c040;"></span>Hazy Gold</td><td>Mango, pineapple, passionfruit explosion.</td><td>Year-round</td></tr>
+<tr><td>Tiny Rebel</td><td>Stay Puft</td><td>Marshmallow Porter</td><td>5.2%</td><td>30</td><td><span class="color-swatch" style="background:#1a1a1a;"></span>Black</td><td>Chocolate, vanilla, marshmallow. Cult following. Many variants.</td><td>Year-round (+ variants)</td></tr>
+<tr><td>Tiny Rebel</td><td>Dutty</td><td>Vermont Pale Ale</td><td>4.2%</td><td>25</td><td><span class="color-swatch" style="background:#f5deb3;"></span>Hazy Pale</td><td>Hazy, juicy, refreshing session haze. Oat-forward.</td><td>Year-round</td></tr>
+<tr><td>Purple Moose</td><td>Glaslyn Ale</td><td>Best Bitter</td><td>4.2%</td><td>30</td><td><span class="color-swatch" style="background:#cd853f;"></span>Pale Amber</td><td>Snowdonia mountain water. Balanced, hoppy, biscuity.</td><td>Year-round (Wales)</td></tr>
+<tr><td>Purple Moose</td><td>Snowdonia Ale</td><td>Session Bitter</td><td>3.6%</td><td>25</td><td><span class="color-swatch" style="background:#daa520;"></span>Golden</td><td>Light, crisp, perfect session ale. Subtle floral hops.</td><td>Year-round</td></tr>
+<tr><td>Purple Moose</td><td>Dark Side of the Moose</td><td>Porter</td><td>4.6%</td><td>32</td><td><span class="color-swatch" style="background:#2d1600;"></span>Very Dark</td><td>Chocolate, coffee, smooth roast. Velvet texture.</td><td>Year-round</td></tr>
+<tr><td>Brains</td><td>SA ("Skull Attack")</td><td>Bitter</td><td>4.2%</td><td>28</td><td><span class="color-swatch" style="background:#b5651d;"></span>Amber</td><td>Full-bodied Cardiff icon. 140+ year recipe.</td><td>Year-round (South Wales)</td></tr>
+<tr><td>Brains</td><td>Rev James</td><td>Premium Bitter</td><td>4.5%</td><td>32</td><td><span class="color-swatch" style="background:#8b4513;"></span>Dark Amber</td><td>Rich, complex, slightly sweet. A proper pint.</td><td>Year-round</td></tr>
+<tr><td>Bluestone</td><td>Preseli Tipple</td><td>Best Bitter</td><td>4.0%</td><td>28</td><td><span class="color-swatch" style="background:#b8860b;"></span>Amber</td><td>Earthy hops, biscuit malt, spring water minerality.</td><td>Local (Pembrokeshire)</td></tr>
+<tr><td>Bluestone</td><td>Rocketeer IPA</td><td>American IPA</td><td>5.6%</td><td>50</td><td><span class="color-swatch" style="background:#daa520;"></span>Gold</td><td>Citrus and pine hops, balanced bitterness.</td><td>Year-round</td></tr>
+<tr><td>Tenby Brewing</td><td>Caldey Lollipop</td><td>Tropical Pale</td><td>4.2%</td><td>25</td><td><span class="color-swatch" style="background:#f0d58c;"></span>Hazy Gold</td><td>Mango, passionfruit. Named for nearby Caldey Island.</td><td>Year-round (local)</td></tr>
+<tr><td>Tenby Brewing</td><td>Black Flag</td><td>Porter</td><td>4.5%</td><td>30</td><td><span class="color-swatch" style="background:#0f0f0f;"></span>Black</td><td>Chocolate, liquorice. Named for Tenby's pirate history.</td><td>Year-round</td></tr>
+</tbody></table></div>
+
+<h3 style="color:var(--scotland);margin:2rem 0 0.8rem;">Scotland</h3>
+<div style="overflow-x:auto;">
+<table class="beer-table">
+<thead><tr><th>Brewery/Pub</th><th>Beer</th><th>Style</th><th>ABV</th><th>IBU</th><th>Color</th><th>Notes</th><th>Availability</th></tr></thead>
+<tbody>
+<tr><td>Fyne Ales</td><td>Jarl</td><td>Session Blonde</td><td>3.8%</td><td>30</td><td><span class="color-swatch" style="background:#f5deb3;"></span>Pale Gold</td><td>Citra-hopped, citrusy. CAMRA Champion Beer of Britain 2013.</td><td>Year-round, wide UK</td></tr>
+<tr><td>Fyne Ales</td><td>Avalanche</td><td>Golden Ale</td><td>4.5%</td><td>35</td><td><span class="color-swatch" style="background:#daa520;"></span>Golden</td><td>Fresh harvest ale. Floral, grassy, refreshing.</td><td>Year-round</td></tr>
+<tr><td>Fyne Ales</td><td>Sublime Stout</td><td>Stout</td><td>6.8%</td><td>40</td><td><span class="color-swatch" style="background:#0a0a0a;"></span>Black</td><td>Rich, velvety, coffee and dark chocolate.</td><td>Seasonal (winter)</td></tr>
+<tr><td>WEST</td><td>St Mungo</td><td>Helles Lager</td><td>4.9%</td><td>22</td><td><span class="color-swatch" style="background:#f0d58c;"></span>Pale Straw</td><td>Reinheitsgebot. Clean, crisp, malty. Glasgow's patron saint.</td><td>Year-round</td></tr>
+<tr><td>WEST</td><td>GPA</td><td>Glasgow Pale Ale</td><td>4.3%</td><td>35</td><td><span class="color-swatch" style="background:#daa520;"></span>Gold</td><td>German malt + American hops. Citrusy, clean hybrid.</td><td>Year-round</td></tr>
+<tr><td>Traquair House</td><td>Bear Ale</td><td>Scottish Ale</td><td>5.0%</td><td>25</td><td><span class="color-swatch" style="background:#8b4513;"></span>Dark Amber</td><td>Historic recipe since 1566. Rich, malty, slightly sweet.</td><td>Year-round (limited)</td></tr>
+<tr><td>Traquair House</td><td>Jacobite Ale</td><td>Spiced Ale</td><td>8.0%</td><td>20</td><td><span class="color-swatch" style="background:#654321;"></span>Dark Brown</td><td>Spiced with coriander. Rich, warming, complex.</td><td>Year-round (bottles)</td></tr>
+<tr><td>Barney's Beer</td><td>Volcano IPA</td><td>IPA</td><td>5.0%</td><td>45</td><td><span class="color-swatch" style="background:#daa520;"></span>Gold</td><td>Piney, citrusy. Named for Arthur's Seat volcano.</td><td>Taproom + local pubs</td></tr>
+<tr><td>Barney's Beer</td><td>Good Ordinary Pale</td><td>Pale Ale</td><td>3.8%</td><td>30</td><td><span class="color-swatch" style="background:#f0d58c;"></span>Pale Gold</td><td>Session strength, big flavour. Floral English hops.</td><td>Taproom + local</td></tr>
+<tr><td>Cromarty</td><td>Happy Chappy</td><td>Pale Ale</td><td>4.1%</td><td>35</td><td><span class="color-swatch" style="background:#f5deb3;"></span>Pale Gold</td><td>Tropical and citrus, light body. Highland session.</td><td>Year-round (Scotland)</td></tr>
+<tr><td>Cromarty</td><td>AKA IPA</td><td>IPA</td><td>5.7%</td><td>55</td><td><span class="color-swatch" style="background:#daa520;"></span>Deep Gold</td><td>Bold. Grapefruit, pine, balanced malt backbone.</td><td>Year-round</td></tr>
+<tr><td>Cromarty</td><td>Ghost Town</td><td>Oatmeal Pale</td><td>5.4%</td><td>38</td><td><span class="color-swatch" style="background:#ffe4b5;"></span>Hazy Pale</td><td>Oat-forward, smooth, tropical. Named for abandoned village.</td><td>Core range</td></tr>
+</tbody></table></div>
+</div>
+<div id="tips" class="tab-content">
+<h2 class="section-title">&#128161; Trip Tips &amp; Suggestions</h2>
+<div class="tip-box"><h4>&#9992;&#65039; Getting There</h4><p>Denver (DEN) &rarr; London Heathrow (LHR): Direct flights available on United/British Airways (~9hrs). Book 3+ months ahead for best fares. Arrive Day 1 morning, hit the ground running by evening.</p></div>
+<div class="tip-box"><h4>&#128663; Transport Strategy</h4><p><strong>Days 1-2 (London):</strong> Use the Tube &mdash; no car needed. <strong>Days 3-9:</strong> Rent a car from Day 3 for Cotswolds&rarr;Burton&rarr;Manchester&rarr;Wales. Left-hand driving! <strong>Days 10-12 (Scotland):</strong> Consider train Edinburgh&rarr;Glasgow, car for Highlands. <strong>Important:</strong> Designate a driver or use taxis for brewery days. Many pubs are in walkable town centres.</p></div>
+<div class="tip-box"><h4>&#127866; Beer Ordering Tips</h4><p>&bull; Ask for a "half" if you want to try many &mdash; no shame in it<br>&bull; "Cask" = served by handpump (cellar temp, lower carbonation) &mdash; the UK way<br>&bull; "Keg" = cold, carbonated, familiar to Americans<br>&bull; Try BOTH versions if available &mdash; same beer tastes completely different<br>&bull; CAMRA pubs guarantee well-kept cask ale<br>&bull; Tipping: not expected at bars (maybe round up), but appreciated</p></div>
+<div class="tip-box"><h4>&#127976; Where to Stay</h4><p>&bull; <strong>London (2 nights):</strong> Bermondsey/Southwark &mdash; walking distance to Beer Mile<br>&bull; <strong>Cotswolds (1 night):</strong> Hook Norton village or Chipping Norton &mdash; true countryside<br>&bull; <strong>Manchester (1 night):</strong> Northern Quarter &mdash; pub crawl territory<br>&bull; <strong>Abergavenny (1 night):</strong> Stay AT the Skirrid Inn if you dare (it's haunted)<br>&bull; <strong>Tenby (1 night):</strong> Harbour-view B&amp;B &mdash; stunning walled town<br>&bull; <strong>Snowdonia (1 night):</strong> Betws-y-Coed or Porthmadog<br>&bull; <strong>Edinburgh (2 nights):</strong> Old Town or Tollcross (near Cloisters)<br>&bull; <strong>Glasgow (1 night):</strong> Merchant City district</p></div>
+<div class="tip-box"><h4>&#128197; Best Time to Visit</h4><p>&bull; <strong>May-June:</strong> Best weather, long daylight (sunset 9-10pm), beer gardens open<br>&bull; <strong>August:</strong> Edinburgh Fringe + beer festivals, but very busy<br>&bull; <strong>September-October:</strong> Autumn ales, harvest beers, "fresh hop" season, fewer tourists<br>&bull; <strong>Avoid:</strong> January-February (cold, dark, some rural pubs reduced hours)</p></div>
+<div class="tip-box"><h4>&#127919; Don't-Miss Experiences</h4><p>&bull; <strong>Hook Norton steam engine:</strong> See a Victorian brewery STILL running on steam power<br>&bull; <strong>Bermondsey Beer Mile (Saturday):</strong> 15+ taprooms in railway arches, walk between them<br>&bull; <strong>Skirrid Inn at night:</strong> Stay overnight in the haunted rooms. Seriously.<br>&bull; <strong>Ye Olde Trip cave rooms:</strong> Drink in caves carved into castle rock since 1189<br>&bull; <strong>Fyne Ales farm:</strong> Highland scenery + world-class beer = perfection<br>&bull; <strong>Traquair Bear Gates:</strong> Sealed until a Stuart king returns to the throne<br>&bull; <strong>Cloudwater DIPA release day:</strong> Check social media for drops</p></div>
+<div class="tip-box"><h4>&#128176; Budget Estimate (Per Day)</h4><p>&bull; Pints: &pound;5-7 average (London &pound;6-8, Scotland &pound;5-6, Wales &pound;4-6)<br>&bull; Accommodation: &pound;80-150/night (mix of B&amp;Bs, boutique hotels, historic inns)<br>&bull; Car rental: ~&pound;40-60/day (Days 3-12)<br>&bull; Brewery tours: &pound;10-20 each (some free, book ahead for Hook Norton &amp; Fuller's)<br>&bull; Food: &pound;30-50/day (pub lunches are excellent value, &pound;12-18 for mains)<br>&bull; <strong>Rough total: &pound;150-250/day = ~$190-315 USD/day</strong></p></div>
+<div class="tip-box"><h4>&#127867; Surprise Recommendations</h4><p>&bull; <strong>The Olde Swan (Ma Pardoe's):</strong> Most people have never heard of it. A time capsule. One of only 4 original homebrew pubs left. Dark Swan mild is heavenly.<br>&bull; <strong>Barney's Beer at Summerhall:</strong> A 5-barrel nano hidden in an arts complex. Only locals know. Beer garden is Edinburgh's best secret.<br>&bull; <strong>DEYA Brewing:</strong> Cheltenham doesn't scream "craft beer mecca" but DEYA's hazies rival anything from Vermont.<br>&bull; <strong>Cromarty on the NC500:</strong> Scotland's famous coastal route &mdash; this converted dairy is the best pit stop imaginable.<br>&bull; <strong>Buxton Yellow Belly:</strong> If you can find it on tap, drop everything. One of the world's most coveted stouts.</p></div>
+</div>
+
+<script>
+function showTab(tabId){
+document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active');});
+document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+document.getElementById(tabId).classList.add('active');
+event.target.classList.add('active');
+if(tabId==='map'){setTimeout(function(){if(window.tripMap)tripMap.invalidateSize();},100);}
+}
+var tripMap;
+document.addEventListener('DOMContentLoaded',function(){
+tripMap=L.map('map-container').setView([53.5,-2.5],6);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(tripMap);
+function makeIcon(color){return L.divIcon({className:'x',html:'<div style="background:'+color+';width:14px;height:14px;border-radius:50%;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.5);"></div>',iconSize:[14,14],iconAnchor:[7,7]});}
+var ei=makeIcon('#e74c3c'),wi=makeIcon('#27ae60'),si=makeIcon('#2980b9');
+var stops=[
+[51.5138,-0.1073,"Ye Olde Cheshire Cheese","Fleet St, London | Est. 1667",ei,1],
+[51.5057,-0.0622,"The Prospect of Whitby","Wapping, London | Est. 1520",ei,1],
+[51.4986,-0.0794,"The Kernel Brewery","Bermondsey, London | Est. 2010",ei,2],
+[51.4928,-0.2583,"Fuller's Griffin Brewery","Chiswick, London | Est. 1845",ei,2],
+[51.7535,-1.2608,"The Eagle and Child","Oxford | Est. 1650",ei,3],
+[51.9778,-1.4881,"Hook Norton Brewery","Oxfordshire | Est. 1849 | Steam-powered!",ei,3],
+[51.8969,-2.0738,"DEYA Brewing","Cheltenham | Est. 2015",ei,3],
+[52.8064,-1.6321,"Burton Bridge Brewery","Burton-on-Trent | Est. 1982",ei,4],
+[52.4884,-2.0878,"The Olde Swan (Ma Pardoe's)","Netherton | Est. 1835",ei,4],
+[53.2126,-1.6820,"Thornbridge Brewery","Bakewell | Est. 2005 | Jaipur IPA",ei,4],
+[53.4852,-2.2345,"Marble Arch Inn","Manchester | Est. 1888",ei,5],
+[53.4736,-2.2273,"Cloudwater Brew Co","Manchester | Est. 2015 | World #5",ei,5],
+[53.8676,-1.9077,"Timothy Taylor's","Keighley, Yorkshire | Est. 1858",ei,5],
+[53.7965,-1.5512,"Northern Monk","Leeds | Est. 2014",ei,5],
+[52.9493,-1.1500,"Ye Olde Trip to Jerusalem","Nottingham | Est. 1189 | OLDEST PUB",ei,6],
+[53.2583,-1.9109,"Buxton Brewery","Buxton | Est. 2009",ei,6],
+[51.8273,-3.0262,"Skirrid Mountain Inn","Abergavenny | Est. ~1110 | Haunted!",wi,7],
+[51.5880,-2.9942,"Tiny Rebel Brewery","Newport | Est. 2012 | Champion Beer",wi,7],
+[51.4816,-3.1791,"The City Arms","Cardiff | Est. 1880s | CAMRA Winner",wi,7],
+[51.8350,-4.8200,"Bluestone Brewing","Preseli Hills | Est. 2013",wi,8],
+[51.6730,-4.7035,"Tenby Brewing Co","Tenby | Est. 2015 | Harbour taproom",wi,8],
+[52.9270,-4.1310,"Purple Moose Brewery","Porthmadog | Est. 2005 | Mountain water",wi,9],
+[53.2637,-4.0914,"Ye Olde Bull's Head Inn","Beaumaris | Est. 1472",wi,9],
+[55.9422,-3.1505,"The Sheep Heid Inn","Edinburgh | Est. 1360 | Oldest in Scotland",si,10],
+[55.9479,-3.1967,"The Bow Bar","Edinburgh | Est. 1979 | Purist paradise",si,10],
+[55.9394,-3.1833,"Barney's Beer","Summerhall, Edinburgh | Est. 2012",si,10],
+[55.9450,-3.2106,"The Cloisters Bar","Tollcross, Edinburgh",si,10],
+[55.8637,-4.2593,"The Pot Still","Glasgow | Est. 1857 | 700+ whiskies",si,11],
+[55.8484,-4.2383,"WEST Brewery","Glasgow | Est. 2006 | Venetian Gothic",si,11],
+[56.1612,-5.2271,"Fyne Ales","Loch Fyne | Est. 2001 | Farm brewery",si,11],
+[55.6164,-3.0636,"Traquair House Brewery","Borders | Est. 1566",si,12],
+[57.6815,-4.0359,"Cromarty Brewing Co","Black Isle | Est. 2011 | NC500",si,12]
+];
+stops.forEach(function(s){
+L.marker([s[0],s[1]],{icon:s[4]}).addTo(tripMap).bindPopup('<strong style="color:#e6a817;">Day '+s[5]+': '+s[2]+'</strong><br><span style="font-size:0.85em;">'+s[3]+'</span>');
+});
+var coords=stops.map(function(s){return[s[0],s[1]];});
+L.polyline(coords,{color:'#e6a817',weight:2,opacity:0.4,dashArray:'5,10'}).addTo(tripMap);
+var legend=L.control({position:'bottomright'});
+legend.onAdd=function(){var d=L.DomUtil.create('div','');d.style.cssText='background:rgba(26,26,46,0.9);padding:10px 14px;border-radius:8px;border:1px solid #2c3e50;color:#ecf0f1;font-size:0.85rem;';d.innerHTML='<strong style="color:#e6a817;">Legend</strong><br><span style="color:#e74c3c;">&#9679;</span> England (Days 1-6)<br><span style="color:#27ae60;">&#9679;</span> Wales (Days 7-9)<br><span style="color:#2980b9;">&#9679;</span> Scotland (Days 10-12)<br><span style="color:#e6a817;">---</span> Route';return d;};
+legend.addTo(tripMap);
+});
+</script>
+</body>
+</html>

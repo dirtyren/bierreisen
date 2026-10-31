@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14-Day Italy & Switzerland Grand Tour</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0a1a; color: #e0e0e0; min-height: 100vh; }
+.header { background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%); padding: 40px 20px; text-align: center; border-bottom: 3px solid #e94560; position: relative; overflow: hidden; }
+.header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.header h1 { font-size: 2.8em; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 10px; position: relative; }
+.header h1 span.italy { color: #e94560; }
+.header h1 span.swiss { color: #ff6b35; }
+.header p { font-size: 1.2em; color: #a0a0c0; position: relative; }
+.subtitle { display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap; position: relative; }
+.subtitle span { background: rgba(255,255,255,0.08); padding: 6px 16px; border-radius: 20px; font-size: 0.9em; border: 1px solid rgba(255,255,255,0.1); }
+.tabs { display: flex; justify-content: center; background: #111128; padding: 15px 10px 0; gap: 5px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid #1a1a3a; }
+.tab { padding: 12px 24px; cursor: pointer; border-radius: 8px 8px 0 0; background: #1a1a3a; color: #888; font-weight: 600; transition: all 0.3s; border: 1px solid #2a2a4a; border-bottom: none; font-size: 0.95em; }
+.tab:hover { background: #252545; color: #ccc; }
+.tab.active { background: #0a0a1a; color: #e94560; border-color: #e94560; border-bottom: 2px solid #0a0a1a; margin-bottom: -2px; }
+.tab-content { display: none; padding: 30px 20px; max-width: 1400px; margin: 0 auto; animation: fadeIn 0.4s; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Flowchart Styles */
+.flowchart { display: flex; flex-direction: column; align-items: center; gap: 0; padding: 20px; }
+.flow-node { background: linear-gradient(135deg, #1e1e3f, #2a2a5a); border: 2px solid #4a4a8a; border-radius: 12px; padding: 20px 30px; min-width: 320px; max-width: 500px; text-align: center; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+.flow-node:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(233,69,96,0.2); }
+.flow-node.start, .flow-node.end { background: linear-gradient(135deg, #2d1b4e, #4a1942); border-color: #e94560; border-radius: 50px; }
+.flow-node .city { font-size: 1.3em; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.flow-node .days { font-size: 0.85em; color: #e94560; font-weight: 600; }
+.flow-node .highlights { font-size: 0.8em; color: #a0a0c0; margin-top: 8px; line-height: 1.4; }
+.flow-arrow { width: 3px; height: 40px; background: linear-gradient(to bottom, #e94560, #ff6b35); position: relative; }
+.flow-arrow::after { content: '▼'; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); color: #ff6b35; font-size: 14px; }
+.flow-transport { background: rgba(255,107,53,0.1); border: 1px dashed #ff6b35; border-radius: 20px; padding: 6px 16px; font-size: 0.75em; color: #ff6b35; margin: 5px 0; }
+.day-badge { position: absolute; top: -10px; right: -10px; background: #e94560; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: 700; }
+
+/* Places List Styles */
+.city-section { margin-bottom: 50px; background: #111128; border-radius: 16px; padding: 30px; border: 1px solid #2a2a4a; }
+.city-section h2 { color: #e94560; font-size: 1.8em; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
+.city-section h2 .emoji { font-size: 1.2em; }
+.city-section .city-subtitle { color: #888; margin-bottom: 20px; font-style: italic; }
+.category { margin-bottom: 25px; }
+.category h3 { color: #ff6b35; font-size: 1.2em; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 1px solid #2a2a4a; }
+.place-card { background: #1a1a3a; border-radius: 10px; padding: 15px 20px; margin-bottom: 10px; border-left: 4px solid #4a4a8a; transition: border-color 0.3s, transform 0.2s; }
+.place-card:hover { border-left-color: #e94560; transform: translateX(5px); }
+.place-card .rank { display: inline-block; background: #e94560; color: white; width: 26px; height: 26px; border-radius: 50%; text-align: center; line-height: 26px; font-size: 0.8em; font-weight: 700; margin-right: 10px; }
+.place-card .name { font-weight: 700; color: #fff; font-size: 1.05em; }
+.place-card .desc { color: #a0a0c0; font-size: 0.88em; margin-top: 6px; line-height: 1.5; }
+.place-card .tag { display: inline-block; background: rgba(233,69,96,0.15); color: #e94560; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; margin-top: 6px; margin-right: 5px; }
+.place-card .tag.gem { background: rgba(255,107,53,0.15); color: #ff6b35; }
+.place-card .tag.food { background: rgba(76,175,80,0.15); color: #66bb6a; }
+
+/* Beer Tab Styles */
+.beer-city { margin-bottom: 40px; }
+.beer-city h2 { color: #ff6b35; font-size: 1.6em; margin-bottom: 15px; }
+.beer-card { background: linear-gradient(135deg, #1a1a2e, #1e1e3f); border-radius: 12px; padding: 20px; margin-bottom: 15px; border: 1px solid #2a2a4a; display: grid; grid-template-columns: auto 1fr; gap: 15px; align-items: start; }
+.beer-card .beer-rank { background: linear-gradient(135deg, #ff6b35, #e94560); color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9em; }
+.beer-card .beer-info h4 { color: #fff; font-size: 1.1em; margin-bottom: 4px; }
+.beer-card .beer-info .location { color: #888; font-size: 0.85em; margin-bottom: 8px; }
+.beer-card .beer-info .specialty { color: #a0a0c0; font-size: 0.9em; line-height: 1.5; }
+.beer-card .beer-info .try { color: #ff6b35; font-size: 0.85em; margin-top: 8px; font-style: italic; }
+.beer-icon { font-size: 1.4em; margin-right: 8px; }
+
+/* Map Styles */
+.map-container { width: 100%; height: 700px; border-radius: 12px; overflow: hidden; border: 2px solid #2a2a4a; }
+.map-legend { display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+.map-legend span { display: flex; align-items: center; gap: 6px; font-size: 0.9em; color: #a0a0c0; }
+.map-legend .dot { width: 12px; height: 12px; border-radius: 50%; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header h1 { font-size: 1.8em; }
+  .tabs { gap: 3px; }
+  .tab { padding: 8px 14px; font-size: 0.8em; }
+  .flow-node { min-width: 250px; padding: 15px 20px; }
+  .city-section { padding: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🇮🇹 <span class="italy">Italy</span> & <span class="swiss">Switzerland</span> 🇨🇭</h1>
+  <p>14-Day Grand Tour — History, Art, Cuisine & Hidden Gems</p>
+  <div class="subtitle">
+    <span>✈️ Rome → Florence → Pisa → Venice → Milan → St. Moritz → Rome ✈️</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('flowchart')">📍 Itinerary Flow</div>
+  <div class="tab" onclick="switchTab('map')">🗺️ Map</div>
+  <div class="tab" onclick="switchTab('places')">📋 All Places</div>
+  <div class="tab" onclick="switchTab('beer')">🍺 Beer Guide</div>
+  <div class="tab" onclick="switchTab('tips')">💡 Pro Tips</div>
+</div>
+
+<!-- FLOWCHART TAB -->
+<div id="flowchart" class="tab-content active">
+  <h2 style="text-align:center; color:#fff; margin-bottom:30px; font-size:1.5em;">🗓️ 14-Day Route Overview</h2>
+  <div class="flowchart">
+    
+    <!-- Start -->
+    <div class="flow-node start">
+      <div class="city">✈️ Arrive Rome Fiumicino (FCO)</div>
+      <div class="days">Day 1 — Landing</div>
+      <div class="highlights">Leonardo Express to city center (32 min)</div>
+    </div>
+    <div class="flow-arrow"></div>
+    
+    <!-- Rome -->
+    <div class="flow-node">
+      <div class="day-badge">D1-D3</div>
+      <div class="city">🏛️ ROME</div>
+      <div class="days">3 Days — The Eternal City</div>
+      <div class="highlights">Colosseum • Vatican • Pantheon • Trastevere<br>San Clemente • Quartiere Coppedè • Borghese Gallery<br>Carbonara • Cacio e Pepe • Supplì • Craft Beer</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-transport">🚄 High-speed train Roma Termini → Firenze SMN (1h30)</div>
+    <div class="flow-arrow"></div>
+
+    <!-- Florence -->
+    <div class="flow-node">
+      <div class="day-badge">D4-D6</div>
+      <div class="city">🎨 FLORENCE</div>
+      <div class="days">3 Days — Renaissance Capital</div>
+      <div class="highlights">Uffizi • Duomo Climb • Accademia (David)<br>Brancacci Chapel • San Marco • Oltrarno Artisans<br>Bistecca Fiorentina • Lampredotto • Negroni</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-transport">🚆 Regional train Firenze → Pisa Centrale (1h)</div>
+    <div class="flow-arrow"></div>
+
+    <!-- Pisa -->
+    <div class="flow-node">
+      <div class="day-badge">D6</div>
+      <div class="city">🏗️ PISA</div>
+      <div class="days">Day Trip from Florence (afternoon Day 6)</div>
+      <div class="highlights">Camposanto • Cathedral • Baptistery Acoustics<br>Keith Haring Mural • Lungarni Sunset<br>Cecina e Focaccia • Orzo Bruno Brewery</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-transport">🚄 High-speed Firenze → Venezia Santa Lucia (2h15)</div>
+    <div class="flow-arrow"></div>
+
+    <!-- Venice -->
+    <div class="flow-node">
+      <div class="day-badge">D7-D8</div>
+      <div class="city">🛶 VENICE</div>
+      <div class="days">2 Days — La Serenissima</div>
+      <div class="highlights">San Marco • Doge's Palace • Rialto Market<br>Jewish Ghetto • Scala del Bovolo • Torcello<br>Cicchetti Crawl • Caffè Florian • Bacaro Tour</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-transport">🚄 High-speed Venezia → Milano Centrale (2h30)</div>
+    <div class="flow-arrow"></div>
+
+    <!-- Milan -->
+    <div class="flow-node">
+      <div class="day-badge">D9-D10</div>
+      <div class="city">👔 MILAN</div>
+      <div class="days">2 Days — Fashion & Innovation</div>
+      <div class="highlights">Last Supper • Duomo Rooftop • Sforza Castle<br>San Maurizio Frescoes • Navigli Canals • Brera<br>Risotto alla Milanese • Aperitivo Culture • Lambrate</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-transport">🚂 Bernina Railway: Milano→Tirano→St. Moritz (4.5h UNESCO scenic)</div>
+    <div class="flow-arrow"></div>
+
+    <!-- St. Moritz -->
+    <div class="flow-node">
+      <div class="day-badge">D11-D12</div>
+      <div class="city">🏔️ ST. MORITZ</div>
+      <div class="days">2 Days — Alpine Paradise</div>
+      <div class="highlights">Muottas Muragl Panorama • Diavolezza Glacier<br>Nietzsche House • Val Roseg • Sgraffito Villages<br>Capuns • Bündnerfleisch • Engadiner Nusstorte</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-transport">🚂 Bernina back to Milan + ✈️ Milano Malpensa → Roma Fiumicino (1h flight) or 🚄 train (3h)</div>
+    <div class="flow-arrow"></div>
+
+    <!-- Return Rome -->
+    <div class="flow-node">
+      <div class="day-badge">D13-D14</div>
+      <div class="city">🏛️ ROME (Return)</div>
+      <div class="days">2 Days — Deeper Exploration + Departure</div>
+      <div class="highlights">Appian Way bike ride • Centrale Montemartini<br>Testaccio food district • Protestant Cemetery<br>Final shopping & gelato • Departure from FCO</div>
+    </div>
+    <div class="flow-arrow"></div>
+
+    <!-- End -->
+    <div class="flow-node end">
+      <div class="city">✈️ Depart Rome Fiumicino (FCO)</div>
+      <div class="days">Day 14 — Arrivederci!</div>
+      <div class="highlights">End of an unforgettable journey</div>
+    </div>
+  </div>
+
+  <!-- Day by day summary -->
+  <div style="margin-top:50px; background:#111128; border-radius:16px; padding:30px; border:1px solid #2a2a4a;">
+    <h3 style="color:#e94560; margin-bottom:20px; text-align:center;">📅 Day-by-Day Summary</h3>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:15px;">
+      <div class="place-card"><span class="rank">1</span><span class="name">Day 1</span><div class="desc">Arrive Rome. Settle in Trastevere/Monti. Evening passeggiata, dinner at Da Enzo al 29.</div></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Day 2</span><div class="desc">Ancient Rome: Colosseum + Forum + Palatine. San Clemente. Monti lunch. Capitoline Museums.</div></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Day 3</span><div class="desc">Vatican early (7:30). St. Peter's. Castel Sant'Angelo. Pizzarium. Pantheon. Sant'Ignazio. Trastevere evening.</div></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Day 4</span><div class="desc">Train to Florence. Duomo + dome climb. Afternoon: Uffizi. Evening: aperitivo Negroni (invented here!).</div></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Day 5</span><div class="desc">Accademia (David). San Marco frescoes. Medici Chapels. Mercato Centrale lunch. Palazzo Vecchio.</div></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">Day 6</span><div class="desc">AM: Brancacci Chapel + Oltrarno. Afternoon: Day trip to Pisa (Camposanto, Cathedral, Cecina). Return Florence.</div></div>
+      <div class="place-card"><span class="rank">7</span><span class="name">Day 7</span><div class="desc">Train to Venice. Afternoon: San Marco + Doge's Palace (Secret Itineraries). Sunset Zattere. Cicchetti dinner.</div></div>
+      <div class="place-card"><span class="rank">8</span><span class="name">Day 8</span><div class="desc">Morning: Torcello + Burano. PM: Jewish Ghetto, Scala del Bovolo, Frari. Evening: Bacaro crawl Cannaregio.</div></div>
+      <div class="place-card"><span class="rank">9</span><span class="name">Day 9</span><div class="desc">Train to Milan. Duomo + rooftop. Galleria. Last Supper (pre-booked!). Evening aperitivo at Navigli.</div></div>
+      <div class="place-card"><span class="rank">10</span><span class="name">Day 10</span><div class="desc">Sforza Castle (Rondanini Pietà). San Maurizio frescoes. Brera. Luini Panzerotti. Birrificio Lambrate evening.</div></div>
+      <div class="place-card"><span class="rank">11</span><span class="name">Day 11</span><div class="desc">Bernina Railway to St. Moritz (scenic UNESCO ride!). Arrive PM. Lake walk. Segantini Museum. Local dinner.</div></div>
+      <div class="place-card"><span class="rank">12</span><span class="name">Day 12</span><div class="desc">Muottas Muragl sunrise. Sils Maria + Nietzsche House. Val Fex walk. Zuoz sgraffito. Stüva Colani dinner.</div></div>
+      <div class="place-card"><span class="rank">13</span><span class="name">Day 13</span><div class="desc">Return to Rome (via Milan). Afternoon: Appian Way bike ride. Testaccio Market. Protestant Cemetery sunset.</div></div>
+      <div class="place-card"><span class="rank">14</span><span class="name">Day 14</span><div class="desc">Borghese Gallery (morning slot). Quartiere Coppedè. Final Aventine keyhole. Departure from FCO. Ciao!</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAP TAB -->
+<div id="map" class="tab-content">
+  <h2 style="text-align:center; color:#fff; margin-bottom:20px;">🗺️ Interactive Trip Map</h2>
+  <div class="map-container" id="mapDiv"></div>
+  <div class="map-legend">
+    <span><span class="dot" style="background:#e94560;"></span> Major City (Multi-day)</span>
+    <span><span class="dot" style="background:#ff6b35;"></span> Day Trip</span>
+    <span><span class="dot" style="background:#4fc3f7;"></span> Travel Route</span>
+  </div>
+  <div style="margin-top:20px; text-align:center; color:#888; font-size:0.9em;">
+    Click markers for details. Route shows the recommended travel order.<br>
+    Blue line = train routes | Dashed = Bernina scenic railway
+  </div>
+</div>
+
+<!-- PLACES TAB -->
+<div id="places" class="tab-content">
+  <h2 style="text-align:center; color:#fff; margin-bottom:30px; font-size:1.5em;">📋 Complete Places Guide — Ranked & Curated</h2>
+
+  <!-- ROME -->
+  <div class="city-section">
+    <h2><span class="emoji">🏛️</span> Rome — The Eternal City</h2>
+    <p class="city-subtitle">Days 1-3 & 13-14 · 5 total days · Arrive & depart here</p>
+    
+    <div class="category">
+      <h3>⭐ Classic Historic Sites</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Colosseum + Roman Forum + Palatine Hill</span><div class="desc">The iconic symbol of Imperial Rome (70-80 AD). Combined ticket covers all three. Book the "Underground & Arena Floor" upgrade for restricted areas. Nothing captures the scale of Roman civilization like walking through these together.</div><span class="tag">Must-See</span><span class="tag">Book Ahead</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">The Pantheon</span><div class="desc">Best-preserved ancient Roman building (126 AD). The unreinforced concrete dome remains the world's largest after 2000 years. Stand under the oculus when it rains. Free entry (reservation required since 2023).</div><span class="tag">Free</span><span class="tag">Engineering Marvel</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Vatican Museums & Sistine Chapel</span><div class="desc">One of the world's greatest art collections. Michelangelo's ceiling, Raphael Rooms, Gallery of Maps. Book first-entry tickets (7:30 AM) or Friday night openings.</div><span class="tag">Book Ahead</span><span class="tag">Half Day</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">St. Peter's Basilica & Dome Climb</span><div class="desc">The largest church in the world. Michelangelo's Pietà, Bernini's baldachin. The dome climb offers Rome's best view. Free entry to basilica; dome ~10 EUR.</div><span class="tag">Free Entry</span><span class="tag">Views</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Galleria Borghese</span><div class="desc">Bernini's Apollo & Daphne, Rape of Proserpina. Caravaggio, Titian, Raphael. Limited to 360 visitors per 2-hour slot. The most intimate world-class museum experience. MUST book weeks ahead.</div><span class="tag">Book Weeks Ahead</span><span class="tag">Masterpieces</span></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">Castel Sant'Angelo</span><div class="desc">Hadrian's Mausoleum (139 AD) turned papal fortress turned museum. Connected to Vatican by secret passetto passage. 2000 years of layered history in one building.</div><span class="tag">Multi-era</span></div>
+      <div class="place-card"><span class="rank">7</span><span class="name">Piazza Navona</span><div class="desc">Built on Domitian's stadium (1st century AD). Bernini's Fountain of the Four Rivers. Rome's finest outdoor baroque ensemble. Best at dusk.</div><span class="tag">Free</span><span class="tag">Evening</span></div>
+      <div class="place-card"><span class="rank">8</span><span class="name">Trevi Fountain</span><div class="desc">Masterpiece of Roman baroque (1762). Visit at 6-7 AM for photos without crowds. Toss a coin to ensure your return to Rome.</div><span class="tag">Early Morning</span></div>
+      <div class="place-card"><span class="rank">9</span><span class="name">Via Appia Antica (Appian Way)</span><div class="desc">The "Queen of Roads" (312 BC). Walk or bike among ancient tombs, catacombs, and original paving stones. Rent bikes at the visitor center.</div><span class="tag">Half Day</span><span class="tag">Bike</span></div>
+      <div class="place-card"><span class="rank">10</span><span class="name">Trastevere</span><div class="desc">Medieval streets, Santa Maria in Trastevere (4th century). The most authentic "old Rome" atmosphere. Best explored on foot without a plan.</div><span class="tag">Neighborhood</span><span class="tag">Evening</span></div>
+    </div>
+    
+    <div class="category">
+      <h3>💎 Hidden Gems</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Basilica di San Clemente</span><div class="desc">Three layers stacked: 12th-century basilica on a 4th-century church, on a 1st-century Mithraic temple. You literally descend through 2000 years. An underground river still flows at the lowest level.</div><span class="tag gem">Hidden Gem</span><span class="tag">Mind-Blowing</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Quartiere Coppedè</span><div class="desc">A fairy-tale Art Nouveau neighborhood (1913-1926). Bizarre architecture mixing Gothic, Baroque, Greek, and medieval. Feels like a fantasy film set. Completely free, almost no tourists.</div><span class="tag gem">Hidden Gem</span><span class="tag">Free</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Aventine Keyhole + Orange Garden</span><div class="desc">Look through the Knights of Malta keyhole for a perfectly framed St. Peter's dome view. Nearby Orange Garden (Giardino degli Aranci) has the best free sunset viewpoint.</div><span class="tag gem">Hidden Gem</span><span class="tag">Sunset</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Centrale Montemartini</span><div class="desc">Ancient Roman sculptures inside a decommissioned 1912 power plant. White marble against industrial machinery. Almost empty compared to Vatican Museums.</div><span class="tag gem">Hidden Gem</span><span class="tag">Unique</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Domus Romane di Palazzo Valentini</span><div class="desc">Underground excavations of Imperial-era Roman houses with multimedia projections. Walk on glass floors above original mosaics. Reservation required, ~12 EUR.</div><span class="tag gem">Hidden Gem</span><span class="tag">Immersive</span></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">Protestant Cemetery</span><div class="desc">Final resting place of Keats, Shelley, Gramsci. One of Rome's most peaceful spots. Ancient Pyramid of Cestius (12 BC) rises beside it. Donation-based entry.</div><span class="tag gem">Hidden Gem</span><span class="tag">Peaceful</span></div>
+      <div class="place-card"><span class="rank">7</span><span class="name">Santo Stefano Rotondo</span><div class="desc">Rare circular church (5th century) with the most disturbing frescoes in Rome: 34 graphic martyrdom scenes. Hauntingly beautiful architecture. Almost no visitors.</div><span class="tag gem">Hidden Gem</span><span class="tag">Unusual</span></div>
+      <div class="place-card"><span class="rank">8</span><span class="name">Chiesa di Sant'Ignazio (Ceiling Illusion)</span><div class="desc">Andrea Pozzo's 1685 ceiling creates a perfect trompe-l'oeil dome — entirely painted flat. Stand on the marble disk in the nave. Free, almost never crowded.</div><span class="tag gem">Hidden Gem</span><span class="tag">Free</span></div>
+    </div>
+
+    <div class="category">
+      <h3>🍝 Food & Restaurants</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Roscioli (Salumeria con Cucina)</span><div class="desc">Via dei Giubbonari 21. Deli/restaurant hybrid. Famous for cacio e pepe, carbonara, incredible wine cellar. A food-lover's paradise. €€€ (40-70 EUR pp). Book ahead.</div><span class="tag food">Fine Dining</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Da Enzo al 29</span><div class="desc">Trastevere. The definitive Roman classics — cacio e pepe, amatriciana, carciofi alla giudia. No reservations; arrive 30 min before opening. €€ (25-40 EUR pp).</div><span class="tag food">Traditional</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Trapizzino (Testaccio)</span><div class="desc">Triangular pizza pocket stuffed with Roman fillings (chicken cacciatore, tripe, tongue). Invented here by Stefano Callegari. € (3-5 EUR each).</div><span class="tag food">Street Food</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Pizzarium (Gabriele Bonci)</span><div class="desc">Near Vatican. Rome's best pizza al taglio. Legendary dough fermentation and creative toppings. Point at what looks good. € (5-12 EUR).</div><span class="tag food">Pizza</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Armando al Pantheon</span><div class="desc">Family trattoria since 1961. Roman-Jewish cuisine: pasta e ceci, abbacchio, seasonal vegetables. Three generations. Book ahead. €€ (30-50 EUR pp).</div><span class="tag food">Traditional</span></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">Testaccio Market</span><div class="desc">The locals' market. Multiple stalls: Morini (stall 15) for supplì, Sergio (Box 16) for pasta. Go for lunch. Near Monte Testaccio (ancient pottery hill). € (8-15 EUR).</div><span class="tag food">Market</span></div>
+    </div>
+  </div>
+
+  <!-- FLORENCE -->
+  <div class="city-section">
+    <h2><span class="emoji">🎨</span> Florence — Renaissance Capital</h2>
+    <p class="city-subtitle">Days 4-6 · 3 days · The cradle of the Renaissance</p>
+    
+    <div class="category">
+      <h3>⭐ Classic Historic Sites</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Galleria degli Uffizi</span><div class="desc">World's greatest Renaissance collection. Botticelli's "Birth of Venus" and "Primavera," Leonardo, Caravaggio, Raphael, Michelangelo. Allow 3-4 hours. Book months ahead.</div><span class="tag">Must-See</span><span class="tag">Book Ahead</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Duomo + Brunelleschi's Dome Climb</span><div class="desc">Largest masonry dome ever built (1436), engineered without scaffolding. 463 steps for panoramic views. Interior frescoes by Vasari. Requires timed reservation.</div><span class="tag">Must-See</span><span class="tag">463 Steps</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Galleria dell'Accademia (Michelangelo's David)</span><div class="desc">Home to the David (1501-1504). Also houses unfinished "Prisoners/Slaves" — arguably more moving, showing figures being freed from stone.</div><span class="tag">Must-See</span><span class="tag">Book Ahead</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Palazzo Vecchio</span><div class="desc">Town hall since 1299. Vasari's massive frescoes in Salone dei Cinquecento. Secret passages tour reveals hidden Medici routes. Where Savonarola was held.</div><span class="tag">Secret Tour</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Basilica di Santa Croce</span><div class="desc">Final resting place of Michelangelo, Galileo, Machiavelli, Rossini. Giotto frescoes. The "Pantheon of Italian Glories."</div><span class="tag">Iconic</span></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">Ponte Vecchio</span><div class="desc">Medieval bridge (1345) lined with goldsmiths. Vasari Corridor above. Only Florence bridge spared by Nazis in WWII. Best at golden hour.</div><span class="tag">Free</span><span class="tag">Sunset</span></div>
+      <div class="place-card"><span class="rank">7</span><span class="name">Palazzo Pitti + Boboli Gardens</span><div class="desc">Medici residence. Palatine Gallery (Raphael, Titian, Rubens). Boboli is Florence's best escape from crowds — a Renaissance sculpture garden.</div><span class="tag">Half Day</span></div>
+      <div class="place-card"><span class="rank">8</span><span class="name">San Lorenzo + Medici Chapels</span><div class="desc">Medici family church by Brunelleschi. New Sacristy has Michelangelo's Dawn, Dusk, Night, Day sculptures. Profoundly moving.</div><span class="tag">Michelangelo</span></div>
+    </div>
+
+    <div class="category">
+      <h3>💎 Hidden Gems</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Museo di San Marco (Fra Angelico)</span><div class="desc">Former convent where Fra Angelico painted intimate frescoes in each monk's cell. The Annunciation at the top of the stairs is breathtaking. Rarely crowded. Savonarola's cell here too.</div><span class="tag gem">Hidden Gem</span><span class="tag">Spiritual</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Brancacci Chapel</span><div class="desc">Masaccio's frescoes (1425-1427) revolutionized Western painting. Michelangelo studied here. Limited to 30 visitors at a time. Reservations required.</div><span class="tag gem">Hidden Gem</span><span class="tag">Revolutionary Art</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Museo dell'Opera del Duomo</span><div class="desc">Ghiberti's original "Gates of Paradise," Donatello's Mary Magdalene, Michelangelo's Bandini Pietà. Dramatically undercrowded compared to Uffizi.</div><span class="tag gem">Hidden Gem</span><span class="tag">Uncrowded</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Officina Santa Maria Novella</span><div class="desc">World's oldest pharmacy (1612, founded 1221 by Dominican friars). Still sells perfumes and liqueurs from original recipes. Museum-quality frescoed interior.</div><span class="tag gem">Hidden Gem</span><span class="tag">Unique</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Oltrarno Artisan Workshops</span><div class="desc">Traditional bookbinders, goldsmiths, leather workers, furniture restorers across the Arno. Via Maggio and Borgo San Frediano. Visit weekday mornings.</div><span class="tag gem">Hidden Gem</span><span class="tag">Living Craft</span></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">San Miniato al Monte</span><div class="desc">Stunning 1018 Romanesque church above Piazzale Michelangelo. Geometric marble facade. Gregorian chant at vespers (5:30 PM). Better views than the piazzale.</div><span class="tag gem">Hidden Gem</span><span class="tag">Sunset</span></div>
+    </div>
+
+    <div class="category">
+      <h3>🍝 Food & Restaurants</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Trattoria Mario</span><div class="desc">Legendary since 1953 near San Lorenzo. Communal tables, cash only. Bistecca alla fiorentina, ribollita, peposo. Arrive 11:45 AM. Closes when food runs out.</div><span class="tag food">Institution</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">All'Antico Vinaio</span><div class="desc">Via dei Neri 74. Most famous schiacciata sandwiches in Florence. Porchetta, truffle cream, artichoke. 5-6 EUR for massive sandwiches. Line moves fast.</div><span class="tag food">Street Food</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Trattoria Sostanza ("Il Troia")</span><div class="desc">Since 1869. Famous butter-poached chicken breast and artichoke omelet. Minimal decor, maximum flavor. Reservations essential. Cash only.</div><span class="tag food">Historic</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Mercato Centrale (Ground Floor)</span><div class="desc">Skip the touristy upstairs. Ground floor = real market. Fresh produce, lampredotto carts. Da Nerbone for boiled beef sandwiches since 1872.</div><span class="tag food">Market</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Lampredotto Cart (Street Food)</span><div class="desc">THE true Florentine street food — tripe sandwich from mobile carts. L'Antico Trippaio (Piazza dei Cimatori) or Il Trippaio di San Frediano. ~4 EUR.</div><span class="tag food">Street Food</span><span class="tag">Authentic</span></div>
+    </div>
+  </div>
+
+  <!-- PISA -->
+  <div class="city-section">
+    <h2><span class="emoji">🏗️</span> Pisa — Beyond the Tower</h2>
+    <p class="city-subtitle">Day 6 (afternoon) · Day trip from Florence · 1 hour by train</p>
+    
+    <div class="category">
+      <h3>⭐ Historic Sites</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Camposanto Monumentale</span><div class="desc">13th-century cloister cemetery with soil from Golgotha. Stunning medieval frescoes ("Triumph of Death"), Roman sarcophagi. Far fewer tourists than the Tower.</div><span class="tag">Must-See</span><span class="tag">Underrated</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Pisa Cathedral (Duomo)</span><div class="desc">Romanesque masterpiece (1063). Giovanni Pisano's extraordinary carved pulpit. Galileo's lamp. Free with any Piazza dei Miracoli ticket.</div><span class="tag">Architecture</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Piazza dei Cavalieri</span><div class="desc">Medieval political heart redesigned by Vasari. Palazzo della Carovana (now Scuola Normale Superiore). Torre della Fame — where Count Ugolino starved (Dante's Inferno).</div><span class="tag">History</span><span class="tag">Dante</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Baptistery of St. John</span><div class="desc">Italy's largest baptistery. Extraordinary acoustics — guards demonstrate the 7-second echo every 30 min. Nicola Pisano's carved pulpit (1260), precursor to the Renaissance.</div><span class="tag">Acoustics</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Santa Maria della Spina</span><div class="desc">Tiny jewel-box Gothic church on the Arno (1230). Named for a thorn from Christ's crown. Dismantled and moved stone-by-stone in 1871. Exquisite carvings.</div><span class="tag">Jewel Box</span></div>
+    </div>
+
+    <div class="category">
+      <h3>💎 Hidden Gems</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Keith Haring "Tuttomondo" Mural</span><div class="desc">One of Haring's final works (June 1989). 180 sq meters, 30 figures representing world peace. On the wall of Church of Sant'Antonio near the station. Free.</div><span class="tag gem">Hidden Gem</span><span class="tag">Street Art</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Orto Botanico di Pisa</span><div class="desc">Founded 1544 — the OLDEST university botanical garden in the world. Quiet, shaded oasis away from tourists. Historic greenhouses. ~4 EUR.</div><span class="tag gem">Hidden Gem</span><span class="tag">Oldest in World</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Lungarni at Sunset</span><div class="desc">Walk the Arno riverbanks from Ponte di Mezzo westward. Colorful palazzi reflected in water, golden light. Where locals do their passeggiata.</div><span class="tag gem">Hidden Gem</span><span class="tag">Sunset</span></div>
+    </div>
+
+    <div class="category">
+      <h3>🍝 Food</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Il Montino — Cecina</span><div class="desc">Since 1927. Pisa's signature street food: cecina (chickpea flatbread). Order "cinque e cinque" — cecina stuffed inside focaccia. Cash only, locals queue daily.</div><span class="tag food">Must-Try</span><span class="tag">Signature Dish</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Osteria Bernardo</span><div class="desc">Authentic Tuscan trattoria. Mucco pisano (local braised beef), ribollita, pappardelle al cinghiale. ~25-35 EUR pp with wine.</div><span class="tag food">Traditional</span></div>
+    </div>
+  </div>
+
+  <!-- VENICE -->
+  <div class="city-section">
+    <h2><span class="emoji">🛶</span> Venice — La Serenissima</h2>
+    <p class="city-subtitle">Days 7-8 · 2 days · Floating city of 1000 years</p>
+    
+    <div class="category">
+      <h3>⭐ Classic Historic Sites</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Basilica di San Marco</span><div class="desc">11th-century Byzantine masterpiece with 8,000+ sq meters of gold mosaics. Represents 1,000 years of Venetian power. Book skip-the-line (€3). See the Pala d'Oro and Loggia dei Cavalli.</div><span class="tag">Must-See</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Palazzo Ducale (Doge's Palace)</span><div class="desc">Gothic seat of Venetian government for 700+ years. Tintoretto's "Paradise" (largest oil painting in world). Book the "Secret Itineraries" tour — prison cells, Casanova's escape route.</div><span class="tag">Must-See</span><span class="tag">Secret Tour</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Rialto Bridge & Market</span><div class="desc">Iconic 1591 stone bridge. The fish market (Pescheria) has operated since 1097, still active Tue-Sat mornings. Living Venetian food culture since a millennium.</div><span class="tag">Market</span><span class="tag">Morning</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Scuola Grande di San Rocco</span><div class="desc">"The Sistine Chapel of Venice." 60+ Tintoretto paintings (1564-1588). He spent 23 years here. Bring binoculars for ceilings. Less crowded than San Marco.</div><span class="tag">Art</span><span class="tag">Uncrowded</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Basilica dei Frari</span><div class="desc">Massive Gothic church (1338). Titian's "Assumption of the Virgin" (1518), his tomb, Bellini's triptych, Canova's pyramid tomb. Multiple masterpieces.</div><span class="tag">Masterpieces</span></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">Torcello Island</span><div class="desc">The "mother island" of Venice, settled 5th-7th centuries. Cathedral (639 AD) has stunning Byzantine mosaics including Last Judgment. Where Venetian civilization began. Vaporetto 12, combine with Burano.</div><span class="tag">Half Day</span><span class="tag">Origins</span></div>
+    </div>
+
+    <div class="category">
+      <h3>💎 Hidden Gems</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Scala Contarini del Bovolo</span><div class="desc">Hidden Renaissance spiral staircase (1499) tucked in a tiny courtyard. Most tourists walk right past. Architecturally unique, stunning 360° panorama from rooftop.</div><span class="tag gem">Hidden Gem</span><span class="tag">Architecture</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">San Giorgio Maggiore (Campanile)</span><div class="desc">Palladio's church on the island facing San Marco. THE best view of Venice — better than San Marco's tower — with almost no queue. 5-min vaporetto. Also has a Borges-inspired labyrinth.</div><span class="tag gem">Hidden Gem</span><span class="tag">Best View</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Jewish Ghetto (Ghetto Novo)</span><div class="desc">The FIRST ghetto in the world (1516 — the word originates here). 5 synagogues hidden in plain sight. Tallest buildings in Venice (built upward due to space constraints). Guided tours reveal stunning interiors.</div><span class="tag gem">Hidden Gem</span><span class="tag">Historic</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Libreria Acqua Alta</span><div class="desc">Bookshop where books are stored in gondolas and bathtubs to protect from flooding. Back exit opens onto a canal. Staircase made of encyclopedias. Utterly unique.</div><span class="tag gem">Hidden Gem</span><span class="tag">Unique</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Squero di San Trovaso</span><div class="desc">One of the last gondola boatyards, operating since 17th century. Watch gondolas being hand-built. Looks like an alpine chalet (builders came from the Dolomites). View from across the canal.</div><span class="tag gem">Hidden Gem</span><span class="tag">Living Craft</span></div>
+    </div>
+
+    <div class="category">
+      <h3>🍝 Food</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">All'Arco (Cicchetti Bar)</span><div class="desc">San Polo, near Rialto. Best cicchetti in Venice — crostini with baccalà mantecato, sarde in saor. Father-and-son team using market ingredients. Go ~11am.</div><span class="tag food">Must-Try</span><span class="tag">Authentic</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Bacaro Crawl (Self-Guided)</span><div class="desc">THE Venice food experience: 4-5 bars, 2-3 cicchetti + ombra at each. Route: All'Arco → Cantina Do Mori (since 1462) → Do Spade → Cantina Gia Schiavi → Al Timon. Budget €25-35.</div><span class="tag food">Experience</span><span class="tag">Authentic</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Caffè Florian</span><div class="desc">Oldest café in continuous operation in the world (1720). Casanova, Dickens, Goethe all sat here. Expensive (€15+ coffee) but once-in-a-lifetime atmosphere. Go inside the ornate rooms.</div><span class="tag food">Historic</span><span class="tag">Splurge</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Osteria alle Testiere</span><div class="desc">Tiny (9 tables) seafood restaurant, one of Venice's best. Raw scallops, spaghetti with clams. No pizza, no meat — pure Venetian seafood. MUST book weeks ahead.</div><span class="tag food">Fine Dining</span><span class="tag">Book Ahead</span></div>
+    </div>
+  </div>
+
+  <!-- MILAN -->
+  <div class="city-section">
+    <h2><span class="emoji">👔</span> Milan — Design & Innovation</h2>
+    <p class="city-subtitle">Days 9-10 · 2 days · Italy's modern powerhouse</p>
+    
+    <div class="category">
+      <h3>⭐ Classic Historic Sites</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Duomo di Milano + Rooftop</span><div class="desc">Gothic masterpiece, 600 years in the making (1386-1965). Climb to rooftop terraces for stunning views and close-up spire details. Allow 2-3 hours with rooftop.</div><span class="tag">Must-See</span><span class="tag">Rooftop</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">The Last Supper (Santa Maria delle Grazie)</span><div class="desc">Leonardo da Vinci's masterpiece (1495-1498). UNESCO site. Only 25 people per 15-min slot. Book weeks/months ahead on official site. Life-changing experience.</div><span class="tag">Must-See</span><span class="tag">Book Months Ahead</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Castello Sforzesco</span><div class="desc">15th-century fortress. Houses Michelangelo's final sculpture (Rondanini Pietà), Bellini, Mantegna, Canaletto. Free courtyard; museum ticket covers all.</div><span class="tag">Michelangelo</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Galleria Vittorio Emanuele II</span><div class="desc">Italy's oldest shopping gallery (1877). Stunning iron-and-glass architecture. Spin on the bull mosaic for luck. Camparino bar (where Campari was first served).</div><span class="tag">Free</span><span class="tag">Architecture</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Pinacoteca di Brera</span><div class="desc">Italy's finest art: Raphael's "Marriage of the Virgin," Mantegna's "Dead Christ," Caravaggio. In the charming Brera district.</div><span class="tag">Art</span></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">Teatro alla Scala</span><div class="desc">World's most famous opera house (1778). Visit the museum even without a show. Check for last-minute performance tickets.</div><span class="tag">Culture</span></div>
+    </div>
+
+    <div class="category">
+      <h3>💎 Hidden Gems</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">San Maurizio al Monastero Maggiore</span><div class="desc">"Milan's Sistine Chapel" — breathtaking 16th-century frescoes covering every surface. FREE entry, relatively uncrowded. Mind-blowing quality.</div><span class="tag gem">Hidden Gem</span><span class="tag">Free</span><span class="tag">Must-See</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Navigli District Canals</span><div class="desc">Remnants of Milan's canal system (designed partly by da Vinci). Naviglio Grande still flows. Best at sunset. Antique market last Sunday of month.</div><span class="tag gem">Hidden Gem</span><span class="tag">Evening</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Highline Galleria (Rooftop Walk)</span><div class="desc">Walk on the glass rooftop of the Galleria Vittorio Emanuele II. Stunning unusual Duomo views. Book at highlinegalleria.com.</div><span class="tag gem">Hidden Gem</span><span class="tag">Views</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Chiesa di San Bernardino alle Ossa</span><div class="desc">Chapel walls decorated with human bones and skulls (dating to 1210). Near the Duomo but overlooked by most. Free entry. Hauntingly beautiful.</div><span class="tag gem">Hidden Gem</span><span class="tag">Macabre</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Fondazione Prada</span><div class="desc">Rem Koolhaas-designed art space in converted distillery. Bar Luce designed by Wes Anderson. Haunted House tower in 24-karat gold leaf.</div><span class="tag gem">Hidden Gem</span><span class="tag">Contemporary</span></div>
+    </div>
+
+    <div class="category">
+      <h3>🍝 Food</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Trattoria Milanese</span><div class="desc">Since 1933. Definitive Milanese food: Risotto alla Milanese (saffron), Cotoletta alla Milanese (veal cutlet). White tablecloths, local clientele.</div><span class="tag food">Traditional</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Luini Panzerotti</span><div class="desc">Legendary since 1888, near the Duomo. Panzerotto: fried dough pocket with mozzarella + tomato. Cheap, iconic street food. Line moves quickly.</div><span class="tag food">Street Food</span><span class="tag">Institution</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Navigli Aperitivo Experience</span><div class="desc">Milan's sacred aperitivo hour (6-9 PM): buy a drink, get free buffet food. Terrazza Aperol (Duomo view), Ceresio 7 (rooftop), canal bars.</div><span class="tag food">Experience</span><span class="tag">Free Food</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Pasticceria Marchesi (est. 1824)</span><div class="desc">Milan's oldest pastry shop (now Prada-owned). Panettone year-round, exquisite pastries, Art Nouveau interiors. Perfect for breakfast or merenda.</div><span class="tag food">Historic</span></div>
+    </div>
+  </div>
+
+  <!-- ST. MORITZ -->
+  <div class="city-section">
+    <h2><span class="emoji">🏔️</span> St. Moritz & Engadin Valley — Alpine Paradise</h2>
+    <p class="city-subtitle">Days 11-12 · 2 days · Swiss mountains, Romansh culture, and glacier views</p>
+    
+    <div class="category">
+      <h3>⭐ Top Experiences</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Muottas Muragl (2,456m)</span><div class="desc">The most iconic viewpoint in Upper Engadin. Funicular up. Overlooks ALL FIVE Engadin lakes. Panoramic restaurant and romantic mountain hotel. Sunset here is transcendent.</div><span class="tag">Must-See</span><span class="tag">Views</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Diavolezza Glacier Panorama (2,978m)</span><div class="desc">Cable car brings you face-to-face with Piz Palü, Piz Bernina (4049m, highest in Eastern Alps), and Morteratsch Glacier. One of the most dramatic high-alpine vistas accessible without climbing.</div><span class="tag">Breathtaking</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Sils Maria & Nietzsche House</span><div class="desc">Where Nietzsche spent 7 summers (1881-1888) and wrote "Thus Spoke Zarathustra." Village between Lake Sils and Lake Silvaplana. Beautiful sgraffito houses.</div><span class="tag">Philosophy</span><span class="tag">Culture</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Segantini Museum</span><div class="desc">Largest collection of Alpine painter Giovanni Segantini (1858-1899). His monumental "Alpine Triptych" (Life, Nature, Death) is the centerpiece. Purpose-built memorial dome.</div><span class="tag">Art</span></div>
+      <div class="place-card"><span class="rank">5</span><span class="name">Zuoz — Medieval Engadin Town</span><div class="desc">Best-preserved medieval town in the valley. Main square with sgraffito houses, Planta palace. Strong Romansh cultural identity. Less touristy, more authentic.</div><span class="tag">Architecture</span><span class="tag">Culture</span></div>
+      <div class="place-card"><span class="rank">6</span><span class="name">Bernina Railway (UNESCO) — The Journey</span><div class="desc">Milan→Tirano→St. Moritz. 196 bridges, 55 tunnels, crosses 2,253m. Brusio circular viaduct, Alp Grüm, Lago Bianco. The journey IS a top experience. Sit LEFT side.</div><span class="tag">UNESCO</span><span class="tag">Scenic</span></div>
+    </div>
+
+    <div class="category">
+      <h3>💎 Hidden Gems</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Val Roseg</span><div class="desc">Pristine glacial valley from Pontresina. Walk (1.5h) or horse-drawn carriage through larch forests to glacier. Surrounded by 4000m peaks. Car-free, completely unspoiled.</div><span class="tag gem">Hidden Gem</span><span class="tag">Nature</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Val Fex</span><div class="desc">Secret car-free walking valley from Sils Maria. Gentle 1-hour stroll through traditional farmhouses. Preserved in original state for centuries. Feels like stepping back 200 years.</div><span class="tag gem">Hidden Gem</span><span class="tag">Timeless</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Lake Staz (Lej da Staz)</span><div class="desc">Hidden forest lake between St. Moritz and Celerina. 20-min walk through woods. Perfectly calm, surrounded by larch and pine. Swimming in summer. Minutes from town, world away.</div><span class="tag gem">Hidden Gem</span><span class="tag">Secret</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Guarda Village (Lower Engadin)</span><div class="desc">Best-preserved Engadin village with extraordinary sgraffito wall decorations. Inspired "A Bell for Ursli." Tiny, quiet, photogenic beyond belief. ~45 min drive.</div><span class="tag gem">Hidden Gem</span><span class="tag">Photogenic</span></div>
+    </div>
+
+    <div class="category">
+      <h3>🍝 Food</h3>
+      <div class="place-card"><span class="rank">1</span><span class="name">Stüva Colani (Madulain)</span><div class="desc">Acclaimed restaurant in 500-year-old Engadin house. Refined Capuns (chard-wrapped dumplings), wild game, homemade pasta. Intimate pine-paneled stüva rooms. Reserve ahead.</div><span class="tag food">Fine Dining</span></div>
+      <div class="place-card"><span class="rank">2</span><span class="name">Muottas Muragl Panoramic Restaurant</span><div class="desc">Eat Bündnerfleisch, Engadiner Nusstorte, Pizokel, and fondue while gazing at five lakes. The view elevates everything. Take the funicular up.</div><span class="tag food">Views</span></div>
+      <div class="place-card"><span class="rank">3</span><span class="name">Restaurant Roseg Gletscher</span><div class="desc">Reached only on foot or horse carriage in Val Roseg. Simple Alpine food in glacial valley setting. Rösti, soups, local meats. The journey IS the experience.</div><span class="tag food">Adventure</span></div>
+      <div class="place-card"><span class="rank">4</span><span class="name">Confiserie Hanselmann (since 1894)</span><div class="desc">St. Moritz's oldest pastry shop. Buy Engadiner Nusstorte (caramelized walnut tart) — the signature Engadin dessert. Perfect souvenir.</div><span class="tag food">Pastry</span><span class="tag">Souvenir</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- BEER TAB -->
+<div id="beer" class="tab-content">
+  <h2 style="text-align:center; color:#fff; margin-bottom:10px; font-size:1.5em;">🍺 Craft Beer Guide — Italy & Switzerland</h2>
+  <p style="text-align:center; color:#888; margin-bottom:30px;">Italy has one of Europe's most exciting emerging craft beer scenes. Here's your city-by-city guide.</p>
+
+  <!-- Rome Beer -->
+  <div class="beer-city">
+    <h2>🏛️ Rome</h2>
+    <div class="beer-card">
+      <div class="beer-rank">1</div>
+      <div class="beer-info">
+        <h4>🍺 Open Baladin</h4>
+        <div class="location">📍 Via degli Specchi 6 (near Campo de' Fiori)</div>
+        <div class="specialty">The pioneer of Italian craft beer culture in Rome. 40+ taps plus 100+ bottles. Baladin is one of Italy's most important craft breweries (Piedmont-based). Excellent food menu too. Lively, central, beer-nerd heaven.</div>
+        <div class="try">🎯 Try: "Nazionale" (Italian-ingredient lager), "Isaac" (Belgian wit with spices), "Xyauyù" (barrel-aged barley wine — extraordinary)</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">2</div>
+      <div class="beer-info">
+        <h4>🍺 Ma Che Siete Venuti A Fa' ("The Football Pub")</h4>
+        <div class="location">📍 Via Benedetta 25, Trastevere</div>
+        <div class="specialty">Tiny, legendary — one of Europe's best beer destinations. ~15 rotating taps featuring Italy's & world's best craft breweries. Extremely knowledgeable staff. Standing room mostly; spills onto the street.</div>
+        <div class="try">🎯 Try: Whatever's freshest from Brewfist, Extraomnes, CR/AK, or Birrificio Italiano</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">3</div>
+      <div class="beer-info">
+        <h4>🍺 Birra Più</h4>
+        <div class="location">📍 Via del Pigneto 105 (Pigneto neighborhood)</div>
+        <div class="specialty">Bottle shop + taps in Rome's hipster/alternative neighborhood. Focus on cutting-edge Italian microbreweries. Pigneto has great street art and restaurants too. Relaxed, local, discovery-oriented.</div>
+        <div class="try">🎯 Try: Ask for small Italian producers you won't find elsewhere</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">4</div>
+      <div class="beer-info">
+        <h4>🍺 Brasserie 4:20</h4>
+        <div class="location">📍 Via Portuense 82 (near Trastevere)</div>
+        <div class="specialty">Brewpub with house-brewed beers plus guest taps. Known for hop-forward styles (IPAs, APAs) and experimental brews. Good kitchen with burgers. Industrial-chic, younger crowd.</div>
+        <div class="try">🎯 Try: Their seasonal IPAs and house pale ales</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">5</div>
+      <div class="beer-info">
+        <h4>🍺 Birra del Borgo (Lazio brewery, Rome presence)</h4>
+        <div class="location">📍 Various locations — check for current taproom</div>
+        <div class="specialty">From Borgorose in Lazio. World-class beers, one of Italy's most celebrated craft breweries. Their "ReAle" was a milestone in Italian craft brewing. Look for them on tap across Rome.</div>
+        <div class="try">🎯 Try: "ReAle" (APA), "Duchessa" (saison with grape must), "Lisa" (session lager)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Florence Beer -->
+  <div class="beer-city">
+    <h2>🎨 Florence</h2>
+    <div class="beer-card">
+      <div class="beer-rank">1</div>
+      <div class="beer-info">
+        <h4>🍺 Birrificio Archea Brewery</h4>
+        <div class="location">📍 Via de' Serragli 44r, Oltrarno</div>
+        <div class="specialty">House-brewed beers on-site. Florence's pioneering craft brewery. Hoppy APA and seasonal Belgian-style ales. Relaxed Oltrarno vibe with outdoor seating.</div>
+        <div class="try">🎯 Try: Their hoppy APA and seasonal specials — ask what's new</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">2</div>
+      <div class="beer-info">
+        <h4>🍺 Mostodolce</h4>
+        <div class="location">📍 Via Nazionale 114r (original location)</div>
+        <div class="specialty">Brews on premises. Known for their IPA and Weizen. Good pizza too. Nice beer garden atmosphere. Multiple locations but original is best.</div>
+        <div class="try">🎯 Try: "Cruda" (unfiltered lager), their house IPA</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">3</div>
+      <div class="beer-info">
+        <h4>🍺 Beer House Club</h4>
+        <div class="location">📍 Corso dei Tintori 34r</div>
+        <div class="specialty">Massive rotating tap list (20+ taps). Italian craft breweries plus international selections. Knowledgeable staff. Great for sampling the breadth of Italy's craft scene.</div>
+        <div class="try">🎯 Try: Beers from Baladin, Birra del Borgo, Brewfist, Lambrate</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">4</div>
+      <div class="beer-info">
+        <h4>🍺 Birrificio Bruton (Tuscan brewery)</h4>
+        <div class="location">📍 Based in Tuscany — available at quality bars citywide</div>
+        <div class="specialty">Excellent Tuscan farmhouse ales and IPAs that pair beautifully with Tuscan food. Look for them on tap at good craft beer bars.</div>
+        <div class="try">🎯 Try: Their farmhouse ales — perfect pairing with bistecca or pecorino</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pisa Beer -->
+  <div class="beer-city">
+    <h2>🏗️ Pisa</h2>
+    <div class="beer-card">
+      <div class="beer-rank">1</div>
+      <div class="beer-info">
+        <h4>🍺 Orzo Bruno</h4>
+        <div class="location">📍 Via Case Dipinte 6 (historic center)</div>
+        <div class="specialty">THE craft beer destination in Pisa. Brewpub with own beers + rotating Italian craft taps. Cozy rustic interior, excellent pub food. Frequently called the best in the city.</div>
+        <div class="try">🎯 Try: Their house brews and whatever Italian guest taps look interesting</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">2</div>
+      <div class="beer-info">
+        <h4>🍺 Bazeel</h4>
+        <div class="location">📍 Lungarno Pacinotti 1 (riverside)</div>
+        <div class="specialty">Upscale cocktail bar with curated craft beer selection. Stunning riverside location on the Lungarno. Best for a refined evening drink watching sunset over the Arno. Rated #1 bar in Pisa.</div>
+        <div class="try">🎯 Try: Local craft selections while watching the Arno at sunset</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Venice Beer -->
+  <div class="beer-city">
+    <h2>🛶 Venice</h2>
+    <p style="color:#888; font-size:0.9em; margin-bottom:15px; font-style:italic;">Note: Venice's craft beer scene is smaller. The bacaro/wine culture IS the local drinking tradition — embrace ombre (wine) and Spritz here, save serious craft beer for other cities.</p>
+    <div class="beer-card">
+      <div class="beer-rank">1</div>
+      <div class="beer-info">
+        <h4>🍺 Il Santo Bevitore</h4>
+        <div class="location">📍 Campo Santa Margherita, Dorsoduro</div>
+        <div class="specialty">15+ rotating taps focused on Italian craft. Strong on northern Italian brewers (Lambrate, Cr/ak, Extraomnes). Venice's best nightlife square, lively student atmosphere, outdoor seating.</div>
+        <div class="try">🎯 Try: Northern Italian craft on tap — ask for Belgian-style options</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">2</div>
+      <div class="beer-info">
+        <h4>🍺 Birreria Zanon</h4>
+        <div class="location">📍 Fondamenta degli Ormesini, Cannaregio</div>
+        <div class="specialty">Neighborhood beer bar on one of Venice's most authentic local canal-side strips. Rotating Italian craft taps, good IPAs and saisons. Very un-touristy area — pair with nearby cheap cicchetti.</div>
+        <div class="try">🎯 Try: Italian IPAs and saisons while people-watching on the canal</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">3</div>
+      <div class="beer-info">
+        <h4>🍺 Birra Più (Campo Santa Margherita area)</h4>
+        <div class="location">📍 Near Campo Santa Margherita, Dorsoduro</div>
+        <div class="specialty">Bottle shop + tap bar with curated Italian and Belgian craft. Hard-to-find microbrewery bottles, barrel-aged specialties, sour beers. Great for discoveries to bring home.</div>
+        <div class="try">🎯 Try: Sour beers and barrel-aged Italian specialties</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Milan Beer -->
+  <div class="beer-city">
+    <h2>👔 Milan</h2>
+    <p style="color:#888; font-size:0.9em; margin-bottom:15px; font-style:italic;">Milan is the craft beer capital of Italy. The scene here is world-class.</p>
+    <div class="beer-card">
+      <div class="beer-rank">1</div>
+      <div class="beer-info">
+        <h4>🍺 Birrificio Lambrate</h4>
+        <div class="location">📍 Via Adelchi 5, Lambrate neighborhood</div>
+        <div class="specialty">Milan's PIONEERING craft brewery, founded 1996. Original brewpub with their own beers. Lively local atmosphere, good pub food. Multiple locations but original Lambrate spot is the pilgrimage.</div>
+        <div class="try">🎯 Try: "Ghisa" (robust porter), "Montestella" (hoppy pale ale), "Ortiga" (wheat beer with nettles — unique!)</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">2</div>
+      <div class="beer-info">
+        <h4>🍺 Baladin Milano</h4>
+        <div class="location">📍 Via Solferino 56, Brera district</div>
+        <div class="specialty">Teo Musso's legendary Piedmontese brewery's Milan outpost. Excellent food designed to pair with beers. Great Brera location for combining with gallery visits.</div>
+        <div class="try">🎯 Try: "Nora" (myrrh/ginger/orange), "Isaac" (Belgian wit), "Xyauyù" (barrel-aged barleywine — life-changing)</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">3</div>
+      <div class="beer-info">
+        <h4>🍺 LambicZoon</h4>
+        <div class="location">📍 Via Friuli 46</div>
+        <div class="specialty">SPECIALIZED in Belgian lambics and sour beers. Extensive bottle list of gueuze, kriek, and rare lambics. Also Italian wild ales. Intimate, knowledgeable setting. A sour beer lover's paradise.</div>
+        <div class="try">🎯 Try: Ask for their rarest gueuze or Italian wild ale — pair with local cheeses</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">4</div>
+      <div class="beer-info">
+        <h4>🍺 Hop Stuff</h4>
+        <div class="location">📍 Via Vigevano 35, Navigli district</div>
+        <div class="specialty">20+ rotating taps in the lively Navigli canal area. Features rare Italian microbrewery offerings. Casual vibe, knowledgeable staff. Good for discovering smaller producers.</div>
+        <div class="try">🎯 Try: Whatever's rarest on the Italian craft taps — ask staff for recommendations</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">5</div>
+      <div class="beer-info">
+        <h4>🍺 Birrificio Italiano (on tap citywide)</h4>
+        <div class="location">📍 Brewery in Lurago Marinone; widely distributed in Milan bars</div>
+        <div class="specialty">Their "Tipopils" is considered one of Italy's BEST craft pilsners. Look for it on tap at quality bars across the city. World-class lager brewing.</div>
+        <div class="try">🎯 Try: "Tipopils" (pilsner perfection), "Cassissona" (blackcurrant sour), "Bibock" (doppelbock)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- St. Moritz Beer -->
+  <div class="beer-city">
+    <h2>🏔️ St. Moritz & Engadin</h2>
+    <p style="color:#888; font-size:0.9em; margin-bottom:15px; font-style:italic;">The Engadin beer scene is small but authentic — mountain breweries using glacial water create unique Alpine beers.</p>
+    <div class="beer-card">
+      <div class="beer-rank">1</div>
+      <div class="beer-info">
+        <h4>🍺 Engadiner Brauerei</h4>
+        <div class="location">📍 Celerina (3 minutes from St. Moritz)</div>
+        <div class="specialty">The local craft brewery, literally next door to St. Moritz. Brews with mountain spring water at 1,800m altitude. Range of craft beers including flagship lager and seasonal specials. Available at most local restaurants.</div>
+        <div class="try">🎯 Try: Their flagship lager and seasonal Alpine beers — ask for "Engadiner Bier" at any restaurant</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">2</div>
+      <div class="beer-info">
+        <h4>🍺 Bieraria Tschlin</h4>
+        <div class="location">📍 Tschlin village, Lower Engadin (~1 hour from St. Moritz)</div>
+        <div class="specialty">Claims to be the HIGHEST brewery in Europe (1,500m). Organic craft beers brewed with pure mountain spring water in a tiny Romansh village. Unique Swiss-Romansh brewing culture. Worth a detour if visiting Guarda/Lower Engadin.</div>
+        <div class="try">🎯 Try: Their organic mountain lager — tastes like glacial purity</div>
+      </div>
+    </div>
+    <div class="beer-card">
+      <div class="beer-rank">3</div>
+      <div class="beer-info">
+        <h4>🍺 Bobby's Pub & Roo Bar</h4>
+        <div class="location">📍 St. Moritz center / Hotel Steffani</div>
+        <div class="specialty">Bobby's: Classic pub with good beer selection, casual, popular with locals. Roo Bar (Hotel Steffani): Laid-back with solid craft selection and cocktails. Both are your best in-town evening options.</div>
+        <div class="try">🎯 Try: Engadiner Bier on tap + any Swiss craft guest selections</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Beer Pro Tips -->
+  <div style="background:#1a1a2e; border-radius:16px; padding:30px; margin-top:30px; border:1px solid #ff6b35;">
+    <h3 style="color:#ff6b35; margin-bottom:15px;">🍺 Italian Craft Beer Pro Tips</h3>
+    <ul style="color:#a0a0c0; line-height:2; list-style:none;">
+      <li>🇮🇹 Italy has ~1,800 craft breweries — it's one of Europe's fastest-growing beer countries</li>
+      <li>🍇 <strong>Italian Grape Ale (IGA)</strong> — a uniquely Italian style using wine grapes in beer. Try it!</li>
+      <li>🌰 <strong>Chestnut ales</strong> — another Italian specialty using local chestnuts. Autumn seasonal.</li>
+      <li>🍺 <strong>Italian Pils</strong> — Italian brewers make exceptional pilsners (Tipopils, Birra del Borgo's Lisa)</li>
+      <li>💰 Craft beer in Italy: expect €5-8 per pint at dedicated bars</li>
+      <li>🍷 In Venice: embrace Spritz and ombra (small wines) — that IS the local culture</li>
+      <li>🏔️ Swiss craft beer: generally more expensive (CHF 7-12) but brewed with incredible water</li>
+      <li>🏆 Italy's "Big 5" breweries to seek everywhere: Baladin, Birra del Borgo, Birrificio Italiano, Lambrate, Brewfist</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TIPS TAB -->
+<div id="tips" class="tab-content">
+  <h2 style="text-align:center; color:#fff; margin-bottom:30px; font-size:1.5em;">💡 Pro Tips & Travel Wisdom</h2>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap:20px;">
+    
+    <div class="city-section" style="margin-bottom:0;">
+      <h3 style="color:#e94560; margin-bottom:15px;">🚄 Transport Between Cities</h3>
+      <div class="place-card"><span class="name">Rome → Florence</span><div class="desc">High-speed Frecciarossa/Italo. 1h30, ~€25-50. Book on Trenitalia or Italo. Cheaper if booked early.</div></div>
+      <div class="place-card"><span class="name">Florence → Pisa</span><div class="desc">Regional train, 1 hour, ~€9. Runs every 30 min. No booking needed.</div></div>
+      <div class="place-card"><span class="name">Florence → Venice</span><div class="desc">High-speed, 2h15, ~€30-60. Direct Frecciarossa to Venezia Santa Lucia (island station, not Mestre!).</div></div>
+      <div class="place-card"><span class="name">Venice → Milan</span><div class="desc">High-speed, 2h30, ~€30-55. Frecciarossa direct to Milano Centrale.</div></div>
+      <div class="place-card"><span class="name">Milan → St. Moritz</span><div class="desc">Train to Tirano (2h20, €13-15) + Bernina railway (2h, CHF 35-40). UNESCO scenic route — THIS IS A HIGHLIGHT!</div></div>
+      <div class="place-card"><span class="name">St. Moritz → Rome</span><div class="desc">Option A: Reverse Bernina to Milan + 1h flight MXP→FCO (~€50-100). Option B: Train Milan→Rome (3h, €30-60).</div></div>
+    </div>
+
+    <div class="city-section" style="margin-bottom:0;">
+      <h3 style="color:#e94560; margin-bottom:15px;">💰 Budget Estimates</h3>
+      <div class="place-card"><div class="desc"><strong>Accommodation:</strong> €80-150/night (mid-range). Total ~€1,200-2,100</div></div>
+      <div class="place-card"><div class="desc"><strong>Transport:</strong> All intercity trains + Bernina ~€200-300 total</div></div>
+      <div class="place-card"><div class="desc"><strong>Food:</strong> €50-80/day (mix of restaurants, street food, markets). Total ~€700-1,100</div></div>
+      <div class="place-card"><div class="desc"><strong>Museums/Sites:</strong> €150-250 total (Colosseum combo €22, Uffizi €25, etc.)</div></div>
+      <div class="place-card"><div class="desc"><strong>Beer budget:</strong> €15-25/day in cities with craft bars. ~€100-200 total</div></div>
+      <div class="place-card"><div class="desc"><strong style="color:#ff6b35;">TOTAL ESTIMATE:</strong> €2,500-4,000 per person (excl. flights)</div></div>
+    </div>
+
+    <div class="city-section" style="margin-bottom:0;">
+      <h3 style="color:#e94560; margin-bottom:15px;">📱 Essential Apps & Booking</h3>
+      <div class="place-card"><div class="desc">📱 <strong>Trenitalia / Italo</strong> — Book Italian trains (book 2-4 weeks ahead for best prices)</div></div>
+      <div class="place-card"><div class="desc">📱 <strong>SBB Mobile</strong> — Swiss trains (Bernina railway booking)</div></div>
+      <div class="place-card"><div class="desc">📱 <strong>Google Maps offline</strong> — Download Italy + Engadin maps (essential in Venice alleys)</div></div>
+      <div class="place-card"><div class="desc">📱 <strong>Hi!Tide Venice</strong> — Acqua alta flood prediction (48h ahead)</div></div>
+      <div class="place-card"><div class="desc">📱 <strong>TheFork</strong> — Restaurant reservations across Italy (free, reliable)</div></div>
+      <div class="place-card"><div class="desc">🎫 <strong>BOOK NOW:</strong> Borghese Gallery (weeks ahead), Last Supper (months!), Uffizi, Vatican early entry</div></div>
+    </div>
+
+    <div class="city-section" style="margin-bottom:0;">
+      <h3 style="color:#e94560; margin-bottom:15px;">🍝 Universal Food Rules</h3>
+      <div class="place-card"><div class="desc">❌ NEVER eat at restaurants with picture menus, tourist menus, or touts outside</div></div>
+      <div class="place-card"><div class="desc">☕ Espresso at the BAR (standing) = €1-1.50. At a TABLE = €5-12. Stand like a local.</div></div>
+      <div class="place-card"><div class="desc">🍦 Gelato: look for "produzione propria" and natural colors. Avoid mountain-piled neon gelato.</div></div>
+      <div class="place-card"><div class="desc">🍷 Aperitivo hour (6-9 PM) = buy a drink, often get free buffet food (especially Milan)</div></div>
+      <div class="place-card"><div class="desc">💧 Tap water is drinkable in Italy. Public fountains everywhere (Rome has ~2,500 nasoni)</div></div>
+      <div class="place-card"><div class="desc">🧾 "Coperto" (cover charge, €1-3) is normal and legal in Italy. Not a scam.</div></div>
+    </div>
+
+    <div class="city-section" style="margin-bottom:0;">
+      <h3 style="color:#e94560; margin-bottom:15px;">🎒 Packing & Preparation</h3>
+      <div class="place-card"><div class="desc">👟 Comfortable walking shoes (you'll walk 15-25k steps/day on cobblestones)</div></div>
+      <div class="place-card"><div class="desc">🧥 Layers for St. Moritz (1,800m altitude, cool even in summer)</div></div>
+      <div class="place-card"><div class="desc">⛪ Shoulders & knees covered for churches (carry a scarf/shawl)</div></div>
+      <div class="place-card"><div class="desc">🔌 EU Type C/L plugs (Italy uses both, Type L has 3 inline pins)</div></div>
+      <div class="place-card"><div class="desc">💳 Cards accepted almost everywhere in Italy now. Switzerland: cards universal.</div></div>
+      <div class="place-card"><div class="desc">💶 Carry some cash for: Roman bakeries, lampredotto carts, small trattorias, Venice traghetto</div></div>
+    </div>
+
+    <div class="city-section" style="margin-bottom:0;">
+      <h3 style="color:#e94560; margin-bottom:15px;">⚡ Power Moves & Time Savers</h3>
+      <div class="place-card"><div class="desc">🌅 <strong>Golden hours:</strong> Major sites empty at 7-8 AM and after 6 PM. Midday = worst crowds.</div></div>
+      <div class="place-card"><div class="desc">🎫 <strong>Skip-the-line:</strong> Always pre-book Vatican, Uffizi, Accademia, Borghese, Last Supper, Colosseum underground</div></div>
+      <div class="place-card"><div class="desc">🆓 <strong>Free church art:</strong> Caravaggio in San Luigi dei Francesi (Rome), Santa Maria del Popolo (Rome) — world-class, free</div></div>
+      <div class="place-card"><div class="desc">🚶 <strong>Venice hack:</strong> Walk 10 min from San Marco in any direction and crowds drop 80%</div></div>
+      <div class="place-card"><div class="desc">💡 <strong>Vatican hack:</strong> Go Wednesday morning — Pope's audience draws crowds AWAY from the museums</div></div>
+      <div class="place-card"><div class="desc">🚃 <strong>Bernina hack:</strong> Take the regular train (same route, same views, no supplement, no booking needed)</div></div>
+    </div>
+  </div>
+
+  <!-- Surprise Section -->
+  <div style="background: linear-gradient(135deg, #1a0a2e, #2d1b4e); border-radius:16px; padding:30px; margin-top:30px; border:2px solid #e94560;">
+    <h3 style="color:#e94560; margin-bottom:20px; text-align:center;">🎁 Surprise Recommendations — My Personal Picks</h3>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap:15px;">
+      <div class="place-card" style="border-left-color:#e94560;"><span class="name">1. San Clemente, Rome</span><div class="desc">The 3-layer church is genuinely one of the most mind-blowing things in Italy. 12th century → 4th century → 1st century Mithraic temple with running underground river. Better than most "famous" sites.</div></div>
+      <div class="place-card" style="border-left-color:#e94560;"><span class="name">2. Bernina Railway (the journey itself)</span><div class="desc">Don't treat it as mere transport. This UNESCO heritage train ride through glaciers, Alpine lakes, and circular viaducts is a TOP-5 experience of the entire trip.</div></div>
+      <div class="place-card" style="border-left-color:#e94560;"><span class="name">3. Bacaro Crawl in Venice</span><div class="desc">Skip expensive sit-down restaurants. Hop 4-5 bacari eating cicchetti and drinking ombre. €25-35 for the most authentic, memorable Venetian food experience possible.</div></div>
+      <div class="place-card" style="border-left-color:#e94560;"><span class="name">4. San Maurizio al Monastero Maggiore, Milan</span><div class="desc">FREE entry to what locals call "Milan's Sistine Chapel." Jaw-dropping frescoes on every surface. Almost no tourists. Better than many paid museums.</div></div>
+      <div class="place-card" style="border-left-color:#e94560;"><span class="name">5. Val Fex horse carriage, St. Moritz</span><div class="desc">A car-free valley accessible only on foot or by horse-drawn carriage. Feels like stepping 200 years into the past. Pure Alpine magic.</div></div>
+      <div class="place-card" style="border-left-color:#e94560;"><span class="name">6. Trapizzino in Testaccio, Rome</span><div class="desc">A genius invention: triangular pizza pockets stuffed with classic Roman fillings. €3-5 each. The best cheap food innovation in modern Roman cuisine.</div></div>
+      <div class="place-card" style="border-left-color:#e94560;"><span class="name">7. Brancacci Chapel, Florence</span><div class="desc">Where painting was reinvented. Masaccio's 1425 frescoes changed everything — Michelangelo came here to study. Only 30 people at a time. Intimate, revolutionary.</div></div>
+      <div class="place-card" style="border-left-color:#e94560;"><span class="name">8. Muottas Muragl at sunset</span><div class="desc">Watch the sun set over five Alpine lakes from 2,456m. Stay for dinner at the panoramic restaurant. If clear, this is the single most beautiful view of the trip.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Leaflet CSS & JS for Map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+// Tab switching
+function switchTab(tabName) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById(tabName).classList.add('active');
+  event.target.classList.add('active');
+  
+  // Initialize map when map tab is first shown
+  if (tabName === 'map' && !window.mapInitialized) {
+    initMap();
+    window.mapInitialized = true;
+  }
+}
+
+// Map initialization
+function initMap() {
+  const map = L.map('mapDiv').setView([44.5, 11.5], 6);
+  
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  // City markers with custom icons
+  const cities = [
+    { name: "Rome (FCO)", lat: 41.9028, lng: 12.4964, days: "Days 1-3 & 13-14", color: "#e94560", 
+      desc: "Arrival & Departure. Colosseum, Vatican, Pantheon, Borghese Gallery, San Clemente, Trastevere" },
+    { name: "Florence", lat: 43.7696, lng: 11.2558, days: "Days 4-6", color: "#e94560",
+      desc: "Uffizi, Duomo, David, Brancacci Chapel, Oltrarno artisans, Bistecca Fiorentina" },
+    { name: "Pisa", lat: 43.7228, lng: 10.4017, days: "Day 6 (afternoon)", color: "#ff6b35",
+      desc: "Camposanto, Cathedral, Baptistery acoustics, Keith Haring mural, Cecina" },
+    { name: "Venice", lat: 45.4408, lng: 12.3155, days: "Days 7-8", color: "#e94560",
+      desc: "San Marco, Doge's Palace, Rialto, Torcello, Jewish Ghetto, Cicchetti crawl" },
+    { name: "Milan", lat: 45.4642, lng: 9.1900, days: "Days 9-10", color: "#e94560",
+      desc: "Last Supper, Duomo rooftop, Sforza Castle, San Maurizio, Navigli, Lambrate brewery" },
+    { name: "St. Moritz", lat: 46.4908, lng: 9.8355, days: "Days 11-12", color: "#e94560",
+      desc: "Muottas Muragl, Diavolezza, Nietzsche House, Val Roseg, Engadiner cuisine" },
+    { name: "Tirano (Bernina start)", lat: 46.2167, lng: 10.1667, days: "Transit", color: "#4fc3f7",
+      desc: "Transfer point: Italian train to Bernina railway. The scenic journey begins here." }
+  ];
+
+  cities.forEach(city => {
+    const icon = L.divIcon({
+      className: 'custom-marker',
+      html: `<div style="background:${city.color}; width:16px; height:16px; border-radius:50%; border:3px solid white; box-shadow:0 2px 8px rgba(0,0,0,0.5);"></div>`,
+      iconSize: [16, 16],
+      iconAnchor: [8, 8]
+    });
+    
+    L.marker([city.lat, city.lng], { icon: icon })
+      .addTo(map)
+      .bindPopup(`<div style="font-family:sans-serif;"><strong style="color:#e94560;">${city.name}</strong><br><em style="color:#ff6b35;">${city.days}</em><br><span style="font-size:0.9em;">${city.desc}</span></div>`, 
+        { maxWidth: 250 });
+  });
+
+  // Route polylines
+  const route = [
+    [41.9028, 12.4964],  // Rome
+    [43.7696, 11.2558],  // Florence
+    [43.7228, 10.4017],  // Pisa
+    [43.7696, 11.2558],  // Back to Florence
+    [45.4408, 12.3155],  // Venice
+    [45.4642, 9.1900],   // Milan
+    [46.2167, 10.1667],  // Tirano
+    [46.4908, 9.8355],   // St. Moritz
+  ];
+
+  const returnRoute = [
+    [46.4908, 9.8355],   // St. Moritz
+    [46.2167, 10.1667],  // Tirano
+    [45.4642, 9.1900],   // Milan
+    [41.9028, 12.4964],  // Rome (return)
+  ];
+
+  // Main route (solid blue)
+  L.polyline(route, { 
+    color: '#4fc3f7', 
+    weight: 3, 
+    opacity: 0.8,
+    dashArray: null 
+  }).addTo(map);
+
+  // Return route (dashed)
+  L.polyline(returnRoute, { 
+    color: '#ff6b35', 
+    weight: 2, 
+    opacity: 0.6,
+    dashArray: '10, 8' 
+  }).addTo(map);
+
+  // Bernina railway highlight
+  const berninaRoute = [
+    [45.4642, 9.1900],   // Milan
+    [46.0, 9.8],         // Lake Como area
+    [46.2167, 10.1667],  // Tirano
+    [46.35, 10.05],      // Bernina Pass area
+    [46.4908, 9.8355],   // St. Moritz
+  ];
+
+  L.polyline(berninaRoute, { 
+    color: '#ff6b35', 
+    weight: 4, 
+    opacity: 0.9,
+    dashArray: '5, 5'
+  }).addTo(map).bindPopup('<strong style="color:#ff6b35;">🚂 Bernina Railway (UNESCO)</strong><br>Milan → Tirano → St. Moritz<br>196 bridges, 55 tunnels, 2,253m summit');
+
+  // Add numbered sequence markers
+  const sequence = [
+    { lat: 41.9028, lng: 12.4964, num: "1" },
+    { lat: 43.7696, lng: 11.2558, num: "2" },
+    { lat: 43.7228, lng: 10.4017, num: "3" },
+    { lat: 45.4408, lng: 12.3155, num: "4" },
+    { lat: 45.4642, lng: 9.1900, num: "5" },
+    { lat: 46.4908, lng: 9.8355, num: "6" },
+  ];
+
+  sequence.forEach(s => {
+    const numIcon = L.divIcon({
+      className: 'num-marker',
+      html: `<div style="background:#1a1a3a; color:#fff; width:24px; height:24px; border-radius:50%; border:2px solid #e94560; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; margin-top:-30px; margin-left:-4px;">${s.num}</div>`,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+    L.marker([s.lat, s.lng], { icon: numIcon, interactive: false }).addTo(map);
+  });
+
+  // Legend control
+  const legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function(map) {
+    const div = L.DomUtil.create('div', 'legend');
+    div.style.cssText = 'background:rgba(10,10,26,0.9); padding:12px 16px; border-radius:8px; border:1px solid #2a2a4a; color:#e0e0e0; font-size:12px; line-height:1.8;';
+    div.innerHTML = `
+      <strong style="color:#fff;">Route Order</strong><br>
+      <span style="color:#e94560;">●</span> Multi-day stop<br>
+      <span style="color:#ff6b35;">●</span> Day trip / Transit<br>
+      <span style="color:#4fc3f7;">—</span> Train route<br>
+      <span style="color:#ff6b35;">- -</span> Bernina scenic / Return
+    `;
+    return div;
+  };
+  legend.addTo(map);
+}
+</script>
+
+</body>
+</html>

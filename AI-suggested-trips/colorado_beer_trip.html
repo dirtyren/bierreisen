@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍺 Colorado Craft Beer Trip - 12 Days</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',system-ui,-apple-system,sans-serif; background:#1a1a2e; color:#e0e0e0; min-height:100vh; }
+.header { background:linear-gradient(135deg,#16213e 0%,#0f3460 50%,#533483 100%); padding:30px 40px; text-align:center; border-bottom:3px solid #e94560; }
+.header h1 { font-size:2.4em; color:#fff; text-shadow:2px 2px 4px rgba(0,0,0,0.5); margin-bottom:8px; }
+.header p { color:#b8b8d4; font-size:1.1em; }
+.tabs { display:flex; background:#16213e; border-bottom:2px solid #0f3460; overflow-x:auto; }
+.tab { padding:14px 28px; cursor:pointer; color:#8888aa; font-weight:600; font-size:0.95em; border-bottom:3px solid transparent; transition:all 0.3s; white-space:nowrap; }
+.tab:hover { color:#e94560; background:#1a1a3e; }
+.tab.active { color:#e94560; border-bottom-color:#e94560; background:#1a1a2e; }
+.tab-content { display:none; padding:30px; max-width:1400px; margin:0 auto; }
+.tab-content.active { display:block; }
+/* Flowchart */
+.flowchart { position:relative; padding:20px 0; }
+.day-card { background:linear-gradient(135deg,#1e2a4a,#16213e); border:1px solid #2a3a6a; border-radius:12px; padding:20px 24px; margin:16px 0; position:relative; transition:transform 0.2s,box-shadow 0.2s; }
+.day-card:hover { transform:translateX(8px); box-shadow:0 4px 20px rgba(233,69,96,0.2); }
+.day-num { position:absolute; left:-18px; top:50%; transform:translateY(-50%); background:#e94560; color:#fff; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.85em; }
+.day-card h3 { color:#f0a500; margin-bottom:8px; font-size:1.15em; }
+.day-card .location { color:#e94560; font-size:0.9em; margin-bottom:6px; }
+.day-card .stops { color:#b8d4e3; font-size:0.92em; line-height:1.6; }
+.day-card .tip { color:#7ec8e3; font-style:italic; font-size:0.85em; margin-top:8px; padding-top:8px; border-top:1px solid #2a3a5a; }
+.connector { width:3px; height:20px; background:linear-gradient(to bottom,#e94560,#533483); margin:0 auto; border-radius:2px; }
+/* Map */
+#map { width:100%; height:600px; border-radius:12px; border:2px solid #2a3a6a; }
+.map-legend { background:#16213e; border:1px solid #2a3a6a; border-radius:8px; padding:16px; margin-top:16px; display:flex; flex-wrap:wrap; gap:12px; }
+.legend-item { display:flex; align-items:center; gap:6px; font-size:0.85em; }
+.legend-dot { width:12px; height:12px; border-radius:50%; }
+/* Brewery List */
+.brewery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(380px,1fr)); gap:20px; }
+.brewery-card { background:linear-gradient(135deg,#1e2a4a,#16213e); border:1px solid #2a3a6a; border-radius:12px; padding:20px; transition:transform 0.2s,box-shadow 0.2s; }
+.brewery-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(233,69,96,0.15); }
+.brewery-card .rank { background:#e94560; color:#fff; width:28px; height:28px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.8em; margin-right:8px; }
+.brewery-card h3 { display:inline; color:#f0a500; font-size:1.05em; }
+.brewery-card .city-tag { display:inline-block; background:#533483; color:#fff; padding:2px 10px; border-radius:12px; font-size:0.75em; margin-left:8px; }
+.brewery-card .address { color:#7ec8e3; font-size:0.82em; margin:8px 0; }
+.brewery-card .desc { color:#b8b8d4; font-size:0.88em; line-height:1.5; margin:8px 0; }
+.brewery-card .hours { color:#888; font-size:0.8em; }
+.brewery-card .rating { float:right; color:#f0a500; font-size:1.1em; }
+.hidden-gem { border-color:#f0a500 !important; }
+.hidden-gem::before { content:"💎 Hidden Gem"; position:absolute; top:-10px; right:16px; background:#f0a500; color:#1a1a2e; padding:2px 10px; border-radius:8px; font-size:0.7em; font-weight:bold; }
+.brewery-card { position:relative; }
+/* Beer List */
+.beer-table-wrap { overflow-x:auto; }
+table.beer-table { width:100%; border-collapse:collapse; font-size:0.88em; }
+table.beer-table th { background:#0f3460; color:#e94560; padding:12px 14px; text-align:left; position:sticky; top:0; }
+table.beer-table td { padding:10px 14px; border-bottom:1px solid #2a3a5a; }
+table.beer-table tr:hover { background:#1e2a4a; }
+.style-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.78em; font-weight:600; }
+.style-ipa { background:#4a7c2e; color:#d4f5b0; }
+.style-stout { background:#2c1810; color:#d4a574; border:1px solid #5a3020; }
+.style-lager { background:#c49a00; color:#1a1a2e; }
+.style-pale { background:#b8650a; color:#fff; }
+.style-sour { background:#8b2252; color:#f5b8d4; }
+.style-wheat { background:#d4a017; color:#1a1a2e; }
+.style-porter { background:#3d2010; color:#d4a574; border:1px solid #5a3020; }
+.style-amber { background:#a04000; color:#ffe0c0; }
+.style-belgian { background:#6b2fa0; color:#e8d0ff; }
+.style-other { background:#2a4a6a; color:#b8d4e3; }
+.ibu-bar { display:inline-block; height:8px; border-radius:4px; background:linear-gradient(90deg,#4a7c2e,#e94560); min-width:4px; }
+.srm-swatch { display:inline-block; width:20px; height:20px; border-radius:4px; vertical-align:middle; border:1px solid #555; }
+.filter-bar { display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap; align-items:center; }
+.filter-bar select, .filter-bar input { background:#16213e; color:#e0e0e0; border:1px solid #2a3a6a; padding:8px 12px; border-radius:6px; font-size:0.9em; }
+@media(max-width:768px) { .brewery-grid{grid-template-columns:1fr;} .header h1{font-size:1.6em;} .tab{padding:10px 16px;font-size:0.85em;} }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>🍺 Colorado Craft Beer Odyssey</h1>
+<p>12 Days · Denver → Golden → Boulder → Niwot → Fort Collins · 30+ Breweries & Pubs</p>
+</div>
+<div class="tabs">
+<div class="tab active" onclick="switchTab('flowchart')">📋 Trip Flowchart</div>
+<div class="tab" onclick="switchTab('map')">🗺️ Map</div>
+<div class="tab" onclick="switchTab('breweries')">🏆 Brewery Rankings</div>
+<div class="tab" onclick="switchTab('beers')">🍻 Beer List</div>
+</div>
+
+<!-- PLACEHOLDER FOR TAB CONTENTS - will be added in subsequent chunks -->
+<div id="flowchart" class="tab-content active">
+<h2 style="color:#f0a500;margin-bottom:20px;">🗓️ 12-Day Itinerary Flowchart</h2>
+<div class="flowchart">
+
+<div class="day-card">
+<div class="day-num">1</div>
+<h3>Arrival Day - Denver</h3>
+<div class="location">📍 Denver International Airport → RiNo District</div>
+<div class="stops">✈️ Land at DEN → Check in hotel (RiNo/LoDo area)<br>
+🍺 <b>Wynkoop Brewing Co</b> - Colorado's first brewpub (est. 1988)<br>
+🍺 <b>Great Divide Brewing</b> - Barrel Bar for rare pours</div>
+<div class="tip">💡 Tip: Take the A-Line train from DEN to Union Station ($10.50). RiNo is walkable from there. Wynkoop is right at Union Station - perfect jet lag cure.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">2</div>
+<h3>Denver Deep Dive - RiNo & Five Points</h3>
+<div class="location">📍 River North Art District & Five Points</div>
+<div class="stops">🍺 <b>Ratio Beerworks</b> - Industrial chic, killer IPAs<br>
+🍺 <b>Our Mutual Friend</b> - Farmhouse ales & wild fermentation<br>
+🍺 <b>Epic Brewing Denver</b> - Big beers, barrel-aged stunners<br>
+🍺 <b>Bierstadt Lagerhaus</b> - German precision lagers, slow-pour pils</div>
+<div class="tip">💡 Tip: Bierstadt's slow-pour Pilsner takes 5 minutes to pour and is life-changing. Their Lichtenhainer (smoked sour wheat) is incredibly rare to find on tap.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">3</div>
+<h3>Denver - South Broadway & Baker</h3>
+<div class="location">📍 SoBo / Baker Neighborhood</div>
+<div class="stops">🍺 <b>TRVE Brewing</b> - Heavy metal + sours/wild ales<br>
+🍺 <b>Baere Brewing</b> - Tiny gem, mixed fermentation<br>
+🍺 <b>Former Future Brewing</b> - Neighborhood hangout, solid IPAs<br>
+🍻 <b>Falling Rock Tap House</b> - 75+ taps, legendary beer bar</div>
+<div class="tip">💡 Tip: Falling Rock is a MUST - it's been the unofficial HQ of GABF week since 1997. If you only visit one beer bar in Colorado, this is it. Walk S. Broadway for vinyl shops between stops.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">4</div>
+<h3>Denver - Hidden Gems Day</h3>
+<div class="location">📍 Various Denver neighborhoods</div>
+<div class="stops">🍺 <b>Cerebral Brewing</b> - Hazy IPAs & pastry stouts, top-tier<br>
+🍺 <b>Westfax Brewing</b> - West side sleeper, incredible lagers<br>
+🍺 <b>Cohesion Brewing</b> - Czech/European styles done perfectly<br>
+🍻 <b>Euclid Hall</b> (or <b>Star Bar</b>) - Historic Denver watering holes</div>
+<div class="tip">💡 Tip: Cerebral is consistently rated top-5 in Denver. Their "Rare Trait" DIPA series is sought after. Cohesion is the real hidden gem - a tiny spot doing world-class Czech lagers.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">5</div>
+<h3>Golden - Brewery Capital per Capita</h3>
+<div class="location">📍 Golden, CO (25 min from Denver)</div>
+<div class="stops">🍺 <b>Coors Brewery Tour</b> - Free tour of the world's largest single-site brewery<br>
+🍺 <b>Golden City Brewery</b> - Backyard patio, cash only, local legend<br>
+🍺 <b>Cannonball Creek Brewing</b> - Award-winning, best in Golden<br>
+🍺 <b>Mountain Toad Brewing</b> - Funky community spot</div>
+<div class="tip">💡 Tip: Golden City Brewery's backyard is magical - feels like drinking at a friend's house. Cannonball Creek won GABF gold multiple times. Hike Lookout Mountain in the morning for views.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">6</div>
+<h3>Golden + Transition to Boulder</h3>
+<div class="location">📍 Golden → Boulder via Highway 93</div>
+<div class="stops">🍺 <b>New Terrain Brewing</b> - Modern taproom, great views<br>
+🍺 <b>Holidaily Brewing</b> - 100% gluten-free, surprisingly excellent<br>
+🍺 <b>Barrels & Bottles</b> - Golden staple since 2014<br>
+🚗 Drive scenic Hwy 93 to Boulder (30 min)</div>
+<div class="tip">💡 Tip: Hwy 93 between Golden and Boulder is one of Colorado's most scenic drives with Flatirons views. Stop at the overlook. Holidaily proves gluten-free beer can be world-class.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">7</div>
+<h3>Boulder - Pearl Street & Legends</h3>
+<div class="location">📍 Boulder, CO - Pearl Street Mall area</div>
+<div class="stops">🍺 <b>Mountain Sun Pub & Brewery</b> - Cash only, no TVs, pure pub vibes since 1993<br>
+🍺 <b>Avery Brewing Co</b> - Massive taproom, barrel-aged beasts<br>
+🍺 <b>Upslope Brewing</b> - Canned adventure beers, chill patio<br>
+🍻 <b>The Sink</b> - Historic bar since 1923, Robert Redford worked here</div>
+<div class="tip">💡 Tip: Mountain Sun is a Boulder INSTITUTION. No reservations, no credit cards, no pretense - just incredible house beers and a community vibe. Try the FYIPA. The Sink has the best burger in Boulder.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">8</div>
+<h3>Boulder - East Side & Hidden Gems</h3>
+<div class="location">📍 Boulder East / Gunbarrel / Flatiron Park</div>
+<div class="stops">🍺 <b>Wild Woods Brewery</b> - Nature-inspired ales, all beers named after trees<br>
+🍺 <b>Sanitas Brewing</b> - Named after Mt Sanitas, great IPAs<br>
+🍺 <b>Finkel & Garf Brewing</b> - Science-forward, fun taproom<br>
+🍺 <b>Bootstrap Brewing</b> - Longmont local favorite, Insane Rush IPA</div>
+<div class="tip">💡 Tip: Wild Woods is truly unique - their Treeline IPA and Ponderosa Porter use actual spruce tips. Hike Mt Sanitas in the morning (1.5hr) then reward yourself at Sanitas Brewing below.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">9</div>
+<h3>Niwot + Longmont Detour</h3>
+<div class="location">📍 Niwot & Longmont, CO (15-20 min from Boulder)</div>
+<div class="stops">🍺 <b>Fritz Family Brewers</b> - Family-friendly, excellent lagers & ales (YOUR REQUEST!)<br>
+🍺 <b>Left Hand Brewing</b> - Longmont legend, Nitro Milk Stout pioneers<br>
+🍺 <b>Wibby Brewing</b> - All-lager brewery, outstanding<br>
+🍺 <b>300 Suns Brewing</b> - Longmont community gem</div>
+<div class="tip">💡 Tip: Fritz Family in Niwot is a charming small-town brewery - great for a relaxed afternoon. Left Hand's Nitro Milk Stout on draft is incomparably smooth. Wibby does ONLY lagers and does them brilliantly.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">10</div>
+<h3>Fort Collins - Old Town Legends</h3>
+<div class="location">📍 Fort Collins, CO - Old Town (1hr from Boulder)</div>
+<div class="stops">🍺 <b>New Belgium Brewing</b> - Iconic tour, Fat Tire birthplace<br>
+🍺 <b>Odell Brewing Co</b> - Employee-owned, phenomenal IPAs<br>
+🍺 <b>Coopersmith's Pub & Brewing</b> - FoCo's first brewpub (1989)<br>
+🍻 <b>The Mayor of Old Town</b> - 100+ taps, insane beer bar</div>
+<div class="tip">💡 Tip: Book New Belgium tour in advance (free but fills up). Odell's taproom patio is one of the best in Colorado. The Mayor of Old Town has 100 taps of Colorado-only craft beer.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">11</div>
+<h3>Fort Collins - Deep Cuts & Funk</h3>
+<div class="location">📍 Fort Collins - Midtown & South</div>
+<div class="stops">🍺 <b>Funkwerks</b> - Belgian-style saisons, GABF darling<br>
+🍺 <b>Horse & Dragon Brewing</b> - Neighborhood gem, Sad Panda stout<br>
+🍺 <b>Zwei Brewing</b> - German styles, excellent hefeweizen<br>
+🍺 <b>Purpose Brewing</b> - Peter Bouckaert's (ex-New Belgium) passion project<br>
+🍻 <b>Road 34 Bike Bar</b> - Bike culture + craft beer</div>
+<div class="tip">💡 Tip: Purpose Brewing is run by the legendary Peter Bouckaert who created New Belgium's sour program. This tiny spot makes some of the most complex beers in Colorado. Funkwerks' Saison is a perfect 100 on many sites.</div>
+</div>
+<div class="connector"></div>
+
+<div class="day-card">
+<div class="day-num">12</div>
+<h3>Departure Day - Last Stops & Airport</h3>
+<div class="location">📍 Fort Collins → Denver (DEN Airport)</div>
+<div class="stops">🍺 <b>Snowbank Brewing</b> - Morning coffee stout in FoCo<br>
+🚗 Drive back to Denver (1hr)<br>
+🍺 <b>Denver Beer Co</b> - Quick stop, Platte Street taproom<br>
+🛒 Grab cans at <b>Argonaut Wine & Liquor</b> (Denver's best bottle shop)<br>
+✈️ Head to DEN - grab a <b>New Belgium or Breckenridge</b> at terminal bars</div>
+<div class="tip">💡 Tip: Argonaut on Colfax has the best Colorado craft selection to bring home. DEN has Great Divide and New Belgium taps in Concourse B. Allow 2hrs for security.</div>
+</div>
+
+</div>
+</div>
+<div id="map" class="tab-content">
+<h2 style="color:#f0a500;margin-bottom:20px;">🗺️ Interactive Trip Map</h2>
+<div id="mapview" style="width:100%;height:600px;border-radius:12px;border:2px solid #2a3a6a;"></div>
+<div class="map-legend">
+<div class="legend-item"><div class="legend-dot" style="background:#e94560;"></div> Denver</div>
+<div class="legend-item"><div class="legend-dot" style="background:#f0a500;"></div> Golden</div>
+<div class="legend-item"><div class="legend-dot" style="background:#4ecdc4;"></div> Boulder</div>
+<div class="legend-item"><div class="legend-dot" style="background:#a855f7;"></div> Niwot/Longmont</div>
+<div class="legend-item"><div class="legend-dot" style="background:#22c55e;"></div> Fort Collins</div>
+<div class="legend-item"><div class="legend-dot" style="background:#fff;border:2px solid #e94560;"></div> Airport (DEN)</div>
+</div>
+</div>
+<div id="breweries" class="tab-content">
+<h2 style="color:#f0a500;margin-bottom:20px;">🏆 Complete Brewery & Pub Rankings</h2>
+<p style="color:#8888aa;margin-bottom:20px;">Ranked by overall experience: beer quality, atmosphere, history, and uniqueness. 💎 = Hidden Gem</p>
+<div class="brewery-grid">
+
+<div class="brewery-card">
+<span class="rank">1</span><h3>Funkwerks</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 9.6/10</span>
+<div class="address">459 N College Ave, Fort Collins, CO 80524</div>
+<div class="desc">GABF Small Brewery of the Year. Their Saison is world-class - perfectly balanced Belgian farmhouse ales. The taproom is intimate and the staff incredibly knowledgeable.</div>
+<div class="hours">Mon-Thu 12-9pm, Fri-Sat 12-10pm, Sun 12-8pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">2</span><h3>Avery Brewing Co</h3><span class="city-tag">Boulder</span>
+<span class="rating">⭐ 9.5/10</span>
+<div class="address">4910 Nautilus Ct N, Boulder, CO 80301</div>
+<div class="desc">Massive 67-tap taproom with barrel-aged monsters. Their Barrel Series (Tweak, Rumpkin, Uncle Jacob's) is legendary. Restaurant on-site with food pairings.</div>
+<div class="hours">Sun-Thu 11am-10pm, Fri-Sat 11am-11pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">3</span><h3>Odell Brewing Co</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 9.5/10</span>
+<div class="address">800 E Lincoln Ave, Fort Collins, CO 80524</div>
+<div class="desc">Employee-owned since 2015. Their IPA is the benchmark Colorado IPA. Massive patio, pilot system beers, and incredible consistency across their range.</div>
+<div class="hours">Sun-Thu 11am-9pm, Fri-Sat 11am-10pm</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">4</span><h3>Purpose Brewing</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 9.4/10</span>
+<div class="address">4025 S Mason St, Fort Collins, CO 80525</div>
+<div class="desc">Peter Bouckaert's passion project after 20 years at New Belgium running their sour program. Tiny, intimate, wildly creative. Each visit has completely different beers.</div>
+<div class="hours">Thu-Fri 4-8pm, Sat-Sun 2-8pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">5</span><h3>Great Divide Brewing</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 9.3/10</span>
+<div class="address">2201 Arapahoe St, Denver, CO 80205 (Barrel Bar)</div>
+<div class="desc">Denver institution since 1994. The Barrel Bar in RiNo has rare barrel-aged pours. Yeti Imperial Stout and Titan IPA are Colorado classics. 24 GABF medals.</div>
+<div class="hours">Sun-Thu 2-10pm, Fri-Sat 12-11pm</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">6</span><h3>Bierstadt Lagerhaus</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 9.3/10</span>
+<div class="address">2875 Blake St, Denver, CO 80205</div>
+<div class="desc">Only makes 4 German lagers - and they're PERFECT. The slow-pour Pils takes 5 min and is transcendent. Decoction mashing, German-imported equipment. Purist heaven.</div>
+<div class="hours">Mon-Thu 3-10pm, Fri-Sat 12-11pm, Sun 12-9pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">7</span><h3>New Belgium Brewing</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 9.2/10</span>
+<div class="address">500 Linden St, Fort Collins, CO 80524</div>
+<div class="desc">Home of Fat Tire. One of the first certified B-Corps in brewing. The tour is fantastic (includes river views and a slide!). La Folie sour and Voodoo Ranger series.</div>
+<div class="hours">Sun-Thu 11am-9pm, Fri-Sat 11am-10pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">8</span><h3>Mountain Sun Pub & Brewery</h3><span class="city-tag">Boulder</span>
+<span class="rating">⭐ 9.2/10</span>
+<div class="address">1535 Pearl St, Boulder, CO 80302</div>
+<div class="desc">Cash only, no TVs, no Wi-Fi. Pure pub experience since 1993. FYIPA, Colorado Kind Ale, and rotating stouts are legendary. Tie-dye staff, Grateful Dead vibes.</div>
+<div class="hours">Daily 11am-1am</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">9</span><h3>Cerebral Brewing</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 9.2/10</span>
+<div class="address">1477 Monroe St, Denver, CO 80206</div>
+<div class="desc">Science-themed brewery with PhD-level brewing. Rare Trait DIPA series is cult-status. Pastry stouts and hazy IPAs are consistently top-rated on Untappd.</div>
+<div class="hours">Mon-Thu 3-9pm, Fri 2-10pm, Sat 12-10pm, Sun 12-8pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">10</span><h3>Cannonball Creek Brewing</h3><span class="city-tag">Golden</span>
+<span class="rating">⭐ 9.1/10</span>
+<div class="address">393 N Washington Ave, Golden, CO 80403</div>
+<div class="desc">Multiple GABF gold medals. Small taproom, big flavors. Trump Hands (session IPA) and Solid Gold (golden ale) are crowd favorites. Best brewery in Golden.</div>
+<div class="hours">Mon-Thu 2-9pm, Fri-Sat 12-10pm, Sun 12-8pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">11</span><h3>Left Hand Brewing</h3><span class="city-tag">Longmont</span>
+<span class="rating">⭐ 9.1/10</span>
+<div class="address">1265 Boston Ave, Longmont, CO 80501</div>
+<div class="desc">Pioneers of nitro bottle conditioning (Milk Stout Nitro). Large taproom with 24 taps. Fade to Black stout series is excellent. Employee-owned.</div>
+<div class="hours">Daily 11am-9pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">12</span><h3>Wynkoop Brewing Co</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 9.0/10</span>
+<div class="address">1634 18th St, Denver, CO 80202</div>
+<div class="desc">Colorado's FIRST brewpub (1988), founded by Governor John Hickenlooper. Historic LoDo building, pool hall upstairs. Rail Yard Ale is the classic.</div>
+<div class="hours">Daily 11am-12am</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">13</span><h3>Cohesion Brewing</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 9.0/10</span>
+<div class="address">3851 Steele St, Denver, CO 80205</div>
+<div class="desc">Tiny taproom doing Czech and European lagers with obsessive attention to detail. Unfiltered tank lagers, proper Czech Pils. If you love lagers, this is nirvana.</div>
+<div class="hours">Wed-Fri 3-9pm, Sat 12-9pm, Sun 12-7pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">14</span><h3>TRVE Brewing</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 9.0/10</span>
+<div class="address">227 Broadway #101, Denver, CO 80203</div>
+<div class="desc">Heavy metal-themed brewery doing exceptional sours and wild ales. Dark aesthetic, incredible mixed-fermentation program. Curse series is outstanding.</div>
+<div class="hours">Mon-Thu 3-11pm, Fri-Sat 12-12am, Sun 12-10pm</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">15</span><h3>Wibby Brewing</h3><span class="city-tag">Longmont</span>
+<span class="rating">⭐ 9.0/10</span>
+<div class="address">209 Emery St, Longmont, CO 80501</div>
+<div class="desc">ALL-LAGER brewery - bold move that pays off brilliantly. Lightshine Helles, Moondoor Dunkel, and rotating IPLs. Huge outdoor area with games and food trucks.</div>
+<div class="hours">Mon-Thu 11am-9pm, Fri-Sat 11am-10pm, Sun 11am-8pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">16</span><h3>Ratio Beerworks</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 8.9/10</span>
+<div class="address">2920 Larimer St, Denver, CO 80205</div>
+<div class="desc">Industrial-chic RiNo staple. Hold Steady copper ale and Domestica kolsch are flagships. Huge patio, great music events. Approachable and consistent.</div>
+<div class="hours">Mon-Thu 12-10pm, Fri-Sat 12-11pm, Sun 12-9pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">17</span><h3>Horse & Dragon Brewing</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 8.9/10</span>
+<div class="address">124 Racquette Dr, Fort Collins, CO 80524</div>
+<div class="desc">Neighborhood brewery with Sad Panda Coffee Stout as the standout. Small, friendly, and consistently excellent. Their Peach Sour in summer is divine.</div>
+<div class="hours">Mon-Thu 2-8pm, Fri 2-9pm, Sat 12-9pm, Sun 12-7pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">18</span><h3>Fritz Family Brewers</h3><span class="city-tag">Niwot</span>
+<span class="rating">⭐ 8.8/10</span>
+<div class="address">6778 N 79th St, Niwot, CO 80503</div>
+<div class="desc">Family-friendly gem in charming Niwot. Extensive collection of lagers and ales. Relaxed atmosphere, perfect for an afternoon session. True family operation.</div>
+<div class="hours">Mon-Thu 3-9pm, Fri 3-10pm, Sat 12-10pm, Sun 12-9pm</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">19</span><h3>Our Mutual Friend</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 8.8/10</span>
+<div class="address">2810 Larimer St, Denver, CO 80205</div>
+<div class="desc">Farmhouse and wild ale focused. Saisons, Brett beers, and mixed-culture fermentation. Named after a Dickens novel. Intimate, creative, boundary-pushing.</div>
+<div class="hours">Tue-Thu 4-10pm, Fri-Sat 12-11pm, Sun 12-9pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">20</span><h3>Upslope Brewing</h3><span class="city-tag">Boulder</span>
+<span class="rating">⭐ 8.8/10</span>
+<div class="address">1898 S Flatiron Ct, Boulder, CO 80301</div>
+<div class="desc">Adventure-brand brewery. Known for canned craft beers perfect for hiking/camping. Craft Lager and Brown Ale are staples. Lee Hill Series for limited releases.</div>
+<div class="hours">Mon-Thu 11am-9pm, Fri-Sat 11am-10pm, Sun 11am-8pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">21</span><h3>Golden City Brewery</h3><span class="city-tag">Golden</span>
+<span class="rating">⭐ 8.7/10</span>
+<div class="address">920 12th St, Golden, CO 80401</div>
+<div class="desc">Cash only, backyard patio feels like a house party. One of Golden's oldest. Clear Creek IPA and Lookout Stout are standards. Dog-friendly, super chill.</div>
+<div class="hours">Daily 11am-8pm</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">22</span><h3>Baere Brewing</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 8.7/10</span>
+<div class="address">320 Broadway, Denver, CO 80203</div>
+<div class="desc">Tiny South Broadway spot with a coolship for spontaneous fermentation. Big Hoppy Brown and saisons are standouts. One of Denver's best-kept secrets.</div>
+<div class="hours">Tue-Thu 3-9pm, Fri 2-10pm, Sat 12-10pm, Sun 12-7pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">23</span><h3>Coopersmith's Pub & Brewing</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 8.7/10</span>
+<div class="address">5 Old Town Square, Fort Collins, CO 80524</div>
+<div class="desc">Fort Collins' FIRST brewpub (1989). Two locations on Old Town Square - Pubside and Poolside. Classic pub fare, Punjabi Pale Ale is the signature.</div>
+<div class="hours">Daily 11am-11pm</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">24</span><h3>Wild Woods Brewery</h3><span class="city-tag">Boulder</span>
+<span class="rating">⭐ 8.7/10</span>
+<div class="address">5460 Conestoga Ct, Boulder, CO 80301</div>
+<div class="desc">Every beer named after a tree/nature element. Use actual botanical ingredients (spruce tips, juniper). Treeline IPA and Ponderosa Porter are unique experiences.</div>
+<div class="hours">Mon-Thu 3-9pm, Fri 2-9pm, Sat 12-9pm, Sun 12-7pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">25</span><h3>Zwei Brewing</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 8.6/10</span>
+<div class="address">4612 S Mason St, Fort Collins, CO 80525</div>
+<div class="desc">German-focused brewery. Outstanding Hefeweizen and Schwarzbier. Clean, bright taproom. Pretzel game is strong. If you miss Munich, come here.</div>
+<div class="hours">Tue-Thu 3-9pm, Fri 2-10pm, Sat 12-10pm, Sun 12-8pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">26</span><h3>Sanitas Brewing</h3><span class="city-tag">Boulder</span>
+<span class="rating">⭐ 8.6/10</span>
+<div class="address">3550 Frontier Ave, Boulder, CO 80301</div>
+<div class="desc">Named after the popular Mt Sanitas hike. Solid IPAs, lagers, and seasonals. Great patio with mountain views. Black IPA is a standout.</div>
+<div class="hours">Daily 11am-9pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">27</span><h3>New Terrain Brewing</h3><span class="city-tag">Golden</span>
+<span class="rating">⭐ 8.5/10</span>
+<div class="address">16401 Table Mountain Pkwy, Golden, CO 80403</div>
+<div class="desc">Modern craft brewery with great Flatiron views. Hoppy Amber and seasonal releases shine. Spacious indoor/outdoor seating. Dog and family friendly.</div>
+<div class="hours">Mon-Thu 12-9pm, Fri-Sat 11am-10pm, Sun 11am-8pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">28</span><h3>Denver Beer Co</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 8.5/10</span>
+<div class="address">1695 Platte St, Denver, CO 80202</div>
+<div class="desc">Platte Street location is gorgeous. Graham Cracker Porter is iconic - tastes like s'mores. Great patio overlooking the Platte River. Tourist-friendly but legit.</div>
+<div class="hours">Daily 11am-11pm</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">29</span><h3>Mountain Toad Brewing</h3><span class="city-tag">Golden</span>
+<span class="rating">⭐ 8.4/10</span>
+<div class="address">900 Washington Ave, Golden, CO 80401</div>
+<div class="desc">Community-focused with eclectic vibes. Solid range from IPAs to stouts. Outdoor area with games. Wednesday trivia nights are packed.</div>
+<div class="hours">Mon-Thu 2-9pm, Fri 12-10pm, Sat 11am-10pm, Sun 11am-8pm</div>
+</div>
+
+<div class="brewery-card hidden-gem">
+<span class="rank">30</span><h3>Snowbank Brewing</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 8.4/10</span>
+<div class="address">225 N Lemay Ave #1, Fort Collins, CO 80524</div>
+<div class="desc">Tiny brewery with rotating experimental taps. Coffee stout is excellent. Science-geek owners who constantly experiment. Never the same menu twice.</div>
+<div class="hours">Thu-Fri 4-8pm, Sat 2-8pm, Sun 1-5pm</div>
+</div>
+
+</div>
+
+<h3 style="color:#f0a500;margin:30px 0 16px;">🍻 Classic Pubs & Beer Bars</h3>
+<div class="brewery-grid">
+
+<div class="brewery-card">
+<span class="rank">P1</span><h3>Falling Rock Tap House</h3><span class="city-tag">Denver</span>
+<span class="rating">⭐ 9.5/10</span>
+<div class="address">1919 Blake St, Denver, CO 80202</div>
+<div class="desc">THE craft beer bar of Colorado since 1997. 75+ rotating taps, massive bottle list. GABF unofficial headquarters. Owner Chris Black is a beer legend. If you only visit one bar, this is it.</div>
+<div class="hours">Daily 11am-2am</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">P2</span><h3>The Mayor of Old Town</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 9.3/10</span>
+<div class="address">632 S Mason St, Fort Collins, CO 80524</div>
+<div class="desc">100 taps of Colorado-only craft beer. Industrial-chic space with great food. Self-pour wall and knowledgeable staff. Best tap list in Northern Colorado.</div>
+<div class="hours">Daily 11am-12am</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">P3</span><h3>The Sink</h3><span class="city-tag">Boulder</span>
+<span class="rating">⭐ 9.0/10</span>
+<div class="address">1165 13th St, Boulder, CO 80302</div>
+<div class="desc">Open since 1923! Robert Redford was a janitor here in the '50s. Covered in murals, serves great burgers and craft beer. A Boulder institution near CU campus.</div>
+<div class="hours">Daily 11am-2am</div>
+</div>
+
+<div class="brewery-card">
+<span class="rank">P4</span><h3>Road 34 Bike Bar</h3><span class="city-tag">Fort Collins</span>
+<span class="rating">⭐ 8.5/10</span>
+<div class="address">1036 W Elizabeth St, Fort Collins, CO 80521</div>
+<div class="desc">Bike culture meets craft beer. 30+ taps of Colorado craft, bike repair station, laid-back CSU-area vibes. Great pizza too.</div>
+<div class="hours">Daily 11am-12am</div>
+</div>
+
+</div>
+</div>
+<div id="beers" class="tab-content">
+<h2 style="color:#f0a500;margin-bottom:20px;">🍻 Beer List by Brewery</h2>
+<div class="filter-bar">
+<select id="cityFilter" onchange="filterBeers()">
+<option value="all">All Cities</option>
+<option value="denver">Denver</option>
+<option value="golden">Golden</option>
+<option value="boulder">Boulder</option>
+<option value="niwot">Niwot/Longmont</option>
+<option value="fortcollins">Fort Collins</option>
+</select>
+<select id="styleFilter" onchange="filterBeers()">
+<option value="all">All Styles</option>
+<option value="ipa">IPA / DIPA</option>
+<option value="lager">Lager / Pilsner</option>
+<option value="stout">Stout / Porter</option>
+<option value="sour">Sour / Wild</option>
+<option value="belgian">Belgian / Saison</option>
+<option value="wheat">Wheat / Hefeweizen</option>
+<option value="amber">Amber / Red</option>
+</select>
+<input type="text" id="searchBeer" placeholder="🔍 Search beers..." oninput="filterBeers()">
+</div>
+<div class="beer-table-wrap">
+<table class="beer-table" id="beerTable">
+<thead>
+<tr><th>Brewery</th><th>Beer</th><th>Style</th><th>ABV</th><th>IBU</th><th>Color (SRM)</th><th>Notes</th><th>Availability</th></tr>
+</thead>
+<tbody>
+<!-- FUNKWERKS -->
+<tr data-city="fortcollins" data-style="belgian"><td>Funkwerks</td><td><b>Saison</b></td><td><span class="style-badge style-belgian">Saison</span></td><td>6.8%</td><td>24</td><td><span class="srm-swatch" style="background:#f5c400;"></span> 4</td><td>GABF Gold. Perfectly dry, peppery, citrus. The benchmark Colorado saison.</td><td>Year-round</td></tr>
+<tr data-city="fortcollins" data-style="belgian"><td>Funkwerks</td><td><b>Tropic King</b></td><td><span class="style-badge style-belgian">Imperial Saison</span></td><td>8.0%</td><td>28</td><td><span class="srm-swatch" style="background:#e8b200;"></span> 5</td><td>Tropical fruit, mango, guava. Dangerously drinkable for 8%.</td><td>Year-round</td></tr>
+<tr data-city="fortcollins" data-style="sour"><td>Funkwerks</td><td><b>Raspberry Provincial</b></td><td><span class="style-badge style-sour">Fruited Sour</span></td><td>4.2%</td><td>8</td><td><span class="srm-swatch" style="background:#d43d6a;"></span> 8</td><td>Tart raspberry, refreshing, low ABV crusher.</td><td>Seasonal (Summer)</td></tr>
+<!-- AVERY -->
+<tr data-city="boulder" data-style="ipa"><td>Avery Brewing</td><td><b>White Rascal</b></td><td><span class="style-badge style-wheat">Belgian Wit</span></td><td>5.6%</td><td>14</td><td><span class="srm-swatch" style="background:#f5e680;"></span> 3</td><td>Coriander, orange peel, creamy. Colorado's best wit.</td><td>Year-round</td></tr>
+<tr data-city="boulder" data-style="stout"><td>Avery Brewing</td><td><b>Tweak</b></td><td><span class="style-badge style-stout">BA Imperial Stout</span></td><td>16.3%</td><td>45</td><td><span class="srm-swatch" style="background:#1a0a00;"></span> 40+</td><td>Bourbon barrel-aged with espresso. Viscous, decadent. Limited.</td><td>Limited Release</td></tr>
+<tr data-city="boulder" data-style="ipa"><td>Avery Brewing</td><td><b>Ellie's Brown Ale</b></td><td><span class="style-badge style-amber">American Brown</span></td><td>5.5%</td><td>17</td><td><span class="srm-swatch" style="background:#6b3200;"></span> 22</td><td>Named after the brewer's dog. Chocolate, nuts, smooth finish.</td><td>Year-round</td></tr>
+<!-- ODELL -->
+<tr data-city="fortcollins" data-style="ipa"><td>Odell Brewing</td><td><b>IPA</b></td><td><span class="style-badge style-ipa">American IPA</span></td><td>7.0%</td><td>60</td><td><span class="srm-swatch" style="background:#d4880a;"></span> 10</td><td>THE Colorado IPA benchmark. Grapefruit, pine, perfectly balanced bitterness.</td><td>Year-round</td></tr>
+<tr data-city="fortcollins" data-style="ipa"><td>Odell Brewing</td><td><b>Myrcenary</b></td><td><span class="style-badge style-ipa">Double IPA</span></td><td>9.3%</td><td>80</td><td><span class="srm-swatch" style="background:#c87800;"></span> 8</td><td>Dank, resinous, tropical. Myrcene hop oil-forward. A cult classic.</td><td>Year-round</td></tr>
+<tr data-city="fortcollins" data-style="amber"><td>Odell Brewing</td><td><b>90 Shilling</b></td><td><span class="style-badge style-amber">Scottish Ale</span></td><td>5.3%</td><td>27</td><td><span class="srm-swatch" style="background:#8b3a00;"></span> 17</td><td>Malty, caramel, biscuit. Their original flagship since 1989.</td><td>Year-round</td></tr>
+<!-- GREAT DIVIDE -->
+<tr data-city="denver" data-style="stout"><td>Great Divide</td><td><b>Yeti Imperial Stout</b></td><td><span class="style-badge style-stout">Imperial Stout</span></td><td>9.5%</td><td>75</td><td><span class="srm-swatch" style="background:#0a0000;"></span> 40+</td><td>Massive roast, chocolate, coffee. Multiple GABF medals. A Colorado legend.</td><td>Year-round</td></tr>
+<tr data-city="denver" data-style="ipa"><td>Great Divide</td><td><b>Titan IPA</b></td><td><span class="style-badge style-ipa">American IPA</span></td><td>7.1%</td><td>65</td><td><span class="srm-swatch" style="background:#d4880a;"></span> 11</td><td>Pine, citrus, solid malt backbone. One of CO's original IPAs.</td><td>Year-round</td></tr>
+<tr data-city="denver" data-style="lager"><td>Great Divide</td><td><b>Denver Pale Ale</b></td><td><span class="style-badge style-pale">Pale Ale</span></td><td>5.4%</td><td>35</td><td><span class="srm-swatch" style="background:#d49a00;"></span> 8</td><td>Balanced, floral hops, clean finish. Approachable gateway beer.</td><td>Year-round</td></tr>
+<!-- BIERSTADT -->
+<tr data-city="denver" data-style="lager"><td>Bierstadt Lagerhaus</td><td><b>Slow Pour Pils</b></td><td><span class="style-badge style-lager">German Pilsner</span></td><td>4.8%</td><td>38</td><td><span class="srm-swatch" style="background:#f5d420;"></span> 3</td><td>5-minute slow pour creates creamy head. Spicy noble hops, crisp. Transcendent.</td><td>Year-round (draft only)</td></tr>
+<tr data-city="denver" data-style="lager"><td>Bierstadt Lagerhaus</td><td><b>Helles</b></td><td><span class="style-badge style-lager">Munich Helles</span></td><td>5.0%</td><td>20</td><td><span class="srm-swatch" style="background:#f0d000;"></span> 4</td><td>Bready, honey, floral. Decoction mashed. Munich water profile.</td><td>Year-round</td></tr>
+<!-- NEW BELGIUM -->
+<tr data-city="fortcollins" data-style="amber"><td>New Belgium</td><td><b>Fat Tire</b></td><td><span class="style-badge style-amber">Amber Ale</span></td><td>5.2%</td><td>22</td><td><span class="srm-swatch" style="background:#a04a00;"></span> 16</td><td>The one that started it all. Biscuit, caramel, balanced. Colorado icon since 1991.</td><td>Year-round (nationwide)</td></tr>
+<tr data-city="fortcollins" data-style="sour"><td>New Belgium</td><td><b>La Folie</b></td><td><span class="style-badge style-sour">Flanders Red</span></td><td>7.0%</td><td>18</td><td><span class="srm-swatch" style="background:#8b2000;"></span> 20</td><td>Sour cherry, oak, vinous. 1-3 years in oak foeders. World-class sour.</td><td>Limited (Spring)</td></tr>
+<tr data-city="fortcollins" data-style="ipa"><td>New Belgium</td><td><b>Voodoo Ranger IPA</b></td><td><span class="style-badge style-ipa">American IPA</span></td><td>7.0%</td><td>50</td><td><span class="srm-swatch" style="background:#d48c00;"></span> 9</td><td>Tropical, citrus, resinous. Their top seller. Multiple variants available.</td><td>Year-round</td></tr>
+<!-- MOUNTAIN SUN -->
+<tr data-city="boulder" data-style="ipa"><td>Mountain Sun</td><td><b>FYIPA</b></td><td><span class="style-badge style-ipa">American IPA</span></td><td>7.2%</td><td>70</td><td><span class="srm-swatch" style="background:#c88000;"></span> 9</td><td>"F*** Yeah IPA" - West Coast classic. Piney, dank, bitter. Boulder legend.</td><td>Year-round (draft only)</td></tr>
+<tr data-city="boulder" data-style="stout"><td>Mountain Sun</td><td><b>Java Porter</b></td><td><span class="style-badge style-porter">Coffee Porter</span></td><td>5.8%</td><td>30</td><td><span class="srm-swatch" style="background:#2a0a00;"></span> 35</td><td>Local Ozo coffee beans. Chocolatey, smooth, perfect morning beer.</td><td>Year-round</td></tr>
+<!-- LEFT HAND -->
+<tr data-city="niwot" data-style="stout"><td>Left Hand</td><td><b>Milk Stout Nitro</b></td><td><span class="style-badge style-stout">Sweet Stout (Nitro)</span></td><td>6.0%</td><td>25</td><td><span class="srm-swatch" style="background:#0a0000;"></span> 40</td><td>Pioneered nitro bottle conditioning. Silky, chocolate, vanilla. Iconic.</td><td>Year-round</td></tr>
+<tr data-city="niwot" data-style="stout"><td>Left Hand</td><td><b>Wake Up Dead</b></td><td><span class="style-badge style-stout">Imperial Stout</span></td><td>10.2%</td><td>55</td><td><span class="srm-swatch" style="background:#050000;"></span> 40+</td><td>Massive, chewy, dark fruit, roast. BA versions are incredible.</td><td>Year-round</td></tr>
+<!-- CEREBRAL -->
+<tr data-city="denver" data-style="ipa"><td>Cerebral Brewing</td><td><b>Rare Trait</b></td><td><span class="style-badge style-ipa">Hazy DIPA</span></td><td>8.2%</td><td>40</td><td><span class="srm-swatch" style="background:#e8c840;"></span> 5</td><td>Rotating hop combos. Always hazy, juicy, tropical. Cult following.</td><td>Rotating</td></tr>
+<tr data-city="denver" data-style="stout"><td>Cerebral Brewing</td><td><b>Here Be Monsters</b></td><td><span class="style-badge style-stout">Pastry Stout</span></td><td>11.5%</td><td>35</td><td><span class="srm-swatch" style="background:#0a0000;"></span> 40+</td><td>Adjunct-loaded pastry stout series. Maple, vanilla, coconut variants.</td><td>Limited</td></tr>
+<!-- CANNONBALL CREEK -->
+<tr data-city="golden" data-style="ipa"><td>Cannonball Creek</td><td><b>Solid Gold</b></td><td><span class="style-badge style-lager">Golden Ale</span></td><td>4.9%</td><td>18</td><td><span class="srm-swatch" style="background:#f5d420;"></span> 4</td><td>GABF Gold. Clean, crisp, malt-forward session beer.</td><td>Year-round</td></tr>
+<tr data-city="golden" data-style="ipa"><td>Cannonball Creek</td><td><b>Mindbender IPA</b></td><td><span class="style-badge style-ipa">American IPA</span></td><td>7.0%</td><td>70</td><td><span class="srm-swatch" style="background:#d48c00;"></span> 9</td><td>Classic West Coast. Citrus, pine, clean bitter finish. Award winner.</td><td>Year-round</td></tr>
+<!-- WIBBY -->
+<tr data-city="niwot" data-style="lager"><td>Wibby Brewing</td><td><b>Lightshine Helles</b></td><td><span class="style-badge style-lager">Munich Helles</span></td><td>4.9%</td><td>20</td><td><span class="srm-swatch" style="background:#f0d000;"></span> 3</td><td>Clean, bready, honey. Perfect lawnmower beer. GABF medalist.</td><td>Year-round</td></tr>
+<tr data-city="niwot" data-style="lager"><td>Wibby Brewing</td><td><b>Moondoor Dunkel</b></td><td><span class="style-badge style-lager">Munich Dunkel</span></td><td>5.1%</td><td>22</td><td><span class="srm-swatch" style="background:#6b2800;"></span> 20</td><td>Chocolate, bread crust, smooth. Proper Bavarian dunkel.</td><td>Year-round</td></tr>
+<!-- RATIO -->
+<tr data-city="denver" data-style="amber"><td>Ratio Beerworks</td><td><b>Hold Steady</b></td><td><span class="style-badge style-amber">Copper Ale</span></td><td>5.5%</td><td>28</td><td><span class="srm-swatch" style="background:#a05a00;"></span> 14</td><td>Their flagship. Toasty, caramel, clean. A perfect session beer.</td><td>Year-round</td></tr>
+<tr data-city="denver" data-style="lager"><td>Ratio Beerworks</td><td><b>Domestica</b></td><td><span class="style-badge style-lager">Kölsch</span></td><td>5.0%</td><td>22</td><td><span class="srm-swatch" style="background:#f5d420;"></span> 3</td><td>Crisp, clean, German-style. Their everyday drinker.</td><td>Year-round</td></tr>
+<!-- TRVE -->
+<tr data-city="denver" data-style="sour"><td>TRVE Brewing</td><td><b>Cursed</b></td><td><span class="style-badge style-sour">Wild Ale</span></td><td>6.5%</td><td>12</td><td><span class="srm-swatch" style="background:#d4a000;"></span> 6</td><td>Mixed-culture fermentation. Funky, tart, complex. Different every batch.</td><td>Rotating</td></tr>
+<tr data-city="denver" data-style="stout"><td>TRVE Brewing</td><td><b>Nazareth</b></td><td><span class="style-badge style-stout">Imperial Stout</span></td><td>10.0%</td><td>50</td><td><span class="srm-swatch" style="background:#0a0000;"></span> 40+</td><td>Roasty, dark fruit, molasses. Metal AF.</td><td>Seasonal (Winter)</td></tr>
+<!-- HORSE & DRAGON -->
+<tr data-city="fortcollins" data-style="stout"><td>Horse & Dragon</td><td><b>Sad Panda Coffee Stout</b></td><td><span class="style-badge style-stout">Coffee Stout</span></td><td>5.9%</td><td>34</td><td><span class="srm-swatch" style="background:#1a0500;"></span> 38</td><td>Local Harbinger coffee. Smooth, chocolatey, not too roasty. Crowd favorite.</td><td>Year-round</td></tr>
+<!-- WYNKOOP -->
+<tr data-city="denver" data-style="amber"><td>Wynkoop</td><td><b>Rail Yard Ale</b></td><td><span class="style-badge style-amber">Amber Ale</span></td><td>5.2%</td><td>24</td><td><span class="srm-swatch" style="background:#993c00;"></span> 15</td><td>Colorado's original craft amber. Caramel, balanced, sessionable. Historic.</td><td>Year-round</td></tr>
+<!-- DENVER BEER CO -->
+<tr data-city="denver" data-style="stout"><td>Denver Beer Co</td><td><b>Graham Cracker Porter</b></td><td><span class="style-badge style-porter">Porter</span></td><td>5.6%</td><td>28</td><td><span class="srm-swatch" style="background:#2a0a00;"></span> 33</td><td>Literally tastes like s'mores. Graham cracker, chocolate, marshmallow. Iconic.</td><td>Year-round</td></tr>
+<!-- COOPERSMITHS -->
+<tr data-city="fortcollins" data-style="ipa"><td>Coopersmith's</td><td><b>Punjabi Pale Ale</b></td><td><span class="style-badge style-pale">Pale Ale</span></td><td>5.5%</td><td>45</td><td><span class="srm-swatch" style="background:#d49000;"></span> 8</td><td>Fort Collins' OG craft beer. Floral, citrus, clean finish. Since 1989.</td><td>Year-round</td></tr>
+<!-- ZWEI -->
+<tr data-city="fortcollins" data-style="wheat"><td>Zwei Brewing</td><td><b>Hefeweizen</b></td><td><span class="style-badge style-wheat">Hefeweizen</span></td><td>5.3%</td><td>14</td><td><span class="srm-swatch" style="background:#e8c000;"></span> 4</td><td>Banana, clove, properly hazy. Authentic Bavarian style.</td><td>Year-round</td></tr>
+<tr data-city="fortcollins" data-style="lager"><td>Zwei Brewing</td><td><b>Schwarzbier</b></td><td><span class="style-badge style-lager">Black Lager</span></td><td>4.8%</td><td>24</td><td><span class="srm-swatch" style="background:#2a0a00;"></span> 30</td><td>Dark but light-bodied. Chocolate, coffee, clean lager finish.</td><td>Year-round</td></tr>
+<!-- WILD WOODS -->
+<tr data-city="boulder" data-style="ipa"><td>Wild Woods</td><td><b>Treeline IPA</b></td><td><span class="style-badge style-ipa">American IPA</span></td><td>7.0%</td><td>65</td><td><span class="srm-swatch" style="background:#c88000;"></span> 8</td><td>Spruce tips add piney, forest-floor character. Unique and delicious.</td><td>Year-round</td></tr>
+<tr data-city="boulder" data-style="stout"><td>Wild Woods</td><td><b>Ponderosa Porter</b></td><td><span class="style-badge style-porter">Porter</span></td><td>5.5%</td><td>30</td><td><span class="srm-swatch" style="background:#2a0800;"></span> 32</td><td>Vanilla, pine nuts, chocolate. Like camping in a glass.</td><td>Year-round</td></tr>
+<!-- UPSLOPE -->
+<tr data-city="boulder" data-style="lager"><td>Upslope</td><td><b>Craft Lager</b></td><td><span class="style-badge style-lager">American Lager</span></td><td>4.8%</td><td>18</td><td><span class="srm-swatch" style="background:#f5d420;"></span> 3</td><td>Clean, crisp, perfect for post-hike. In cans for trail/river.</td><td>Year-round</td></tr>
+<tr data-city="boulder" data-style="amber"><td>Upslope</td><td><b>Brown Ale</b></td><td><span class="style-badge style-amber">English Brown</span></td><td>6.7%</td><td>20</td><td><span class="srm-swatch" style="background:#5a2000;"></span> 25</td><td>Nutty, toffee, smooth. GABF medalist. A comforting classic.</td><td>Year-round</td></tr>
+<!-- PURPOSE -->
+<tr data-city="fortcollins" data-style="sour"><td>Purpose Brewing</td><td><b>Rotating Wild Ales</b></td><td><span class="style-badge style-sour">Mixed Ferm</span></td><td>5-9%</td><td>5-15</td><td><span class="srm-swatch" style="background:#d4a000;"></span> varies</td><td>Peter Bouckaert's ever-changing creations. Never the same twice. Always exceptional.</td><td>Taproom only</td></tr>
+<!-- FRITZ FAMILY -->
+<tr data-city="niwot" data-style="lager"><td>Fritz Family</td><td><b>House Lager</b></td><td><span class="style-badge style-lager">American Lager</span></td><td>5.0%</td><td>18</td><td><span class="srm-swatch" style="background:#f5d420;"></span> 3</td><td>Clean, crisp, family recipe. Perfect session beer in cozy Niwot.</td><td>Year-round</td></tr>
+<tr data-city="niwot" data-style="ipa"><td>Fritz Family</td><td><b>Hoppy Ale</b></td><td><span class="style-badge style-ipa">Pale Ale</span></td><td>5.8%</td><td>45</td><td><span class="srm-swatch" style="background:#d4960a;"></span> 8</td><td>Balanced hop-forward ale, citrus and floral notes.</td><td>Year-round</td></tr>
+<!-- COHESION -->
+<tr data-city="denver" data-style="lager"><td>Cohesion</td><td><b>Czech Pils</b></td><td><span class="style-badge style-lager">Czech Pilsner</span></td><td>4.8%</td><td>40</td><td><span class="srm-swatch" style="background:#f5d420;"></span> 4</td><td>Proper Czech Saaz hops, decoction mashed. Served unfiltered from tank.</td><td>Year-round</td></tr>
+<tr data-city="denver" data-style="lager"><td>Cohesion</td><td><b>Tmavé (Dark Lager)</b></td><td><span class="style-badge style-lager">Czech Dark Lager</span></td><td>5.2%</td><td>25</td><td><span class="srm-swatch" style="background:#3a1000;"></span> 28</td><td>Caramel, bread, touch of roast. Sessionable and complex.</td><td>Year-round</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<script>
+// Tab switching
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+  if (tabId === 'map') setTimeout(initMap, 100);
+}
+
+// Beer filtering
+function filterBeers() {
+  const city = document.getElementById('cityFilter').value;
+  const style = document.getElementById('styleFilter').value;
+  const search = document.getElementById('searchBeer').value.toLowerCase();
+  document.querySelectorAll('#beerTable tbody tr').forEach(row => {
+    const matchCity = city === 'all' || row.dataset.city === city;
+    const matchStyle = style === 'all' || row.dataset.style === style;
+    const matchSearch = !search || row.textContent.toLowerCase().includes(search);
+    row.style.display = (matchCity && matchStyle && matchSearch) ? '' : 'none';
+  });
+}
+
+// Map initialization
+let mapInitialized = false;
+function initMap() {
+  if (mapInitialized) return;
+  mapInitialized = true;
+  const map = L.map('mapview').setView([39.95, -105.15], 9);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 19
+  }).addTo(map);
+
+  const markers = [
+    // Airport
+    {lat:39.8561,lng:-104.6737,name:"✈️ Denver International Airport",color:"#ffffff",city:"DEN"},
+    // Denver
+    {lat:39.7536,lng:-104.9998,name:"Wynkoop Brewing Co",color:"#e94560",city:"Denver"},
+    {lat:39.7636,lng:-104.9782,name:"Great Divide - Barrel Bar",color:"#e94560",city:"Denver"},
+    {lat:39.7672,lng:-104.9805,name:"Ratio Beerworks",color:"#e94560",city:"Denver"},
+    {lat:39.7654,lng:-104.9815,name:"Our Mutual Friend",color:"#e94560",city:"Denver"},
+    {lat:39.7618,lng:-104.9778,name:"Bierstadt Lagerhaus",color:"#e94560",city:"Denver"},
+    {lat:39.7201,lng:-104.9876,name:"TRVE Brewing",color:"#e94560",city:"Denver"},
+    {lat:39.7195,lng:-104.9870,name:"Baere Brewing",color:"#e94560",city:"Denver"},
+    {lat:39.7485,lng:-104.9536,name:"Cerebral Brewing",color:"#e94560",city:"Denver"},
+    {lat:39.7300,lng:-105.0300,name:"Westfax Brewing",color:"#e94560",city:"Denver"},
+    {lat:39.7580,lng:-104.9400,name:"Cohesion Brewing",color:"#e94560",city:"Denver"},
+    {lat:39.7550,lng:-105.0070,name:"Denver Beer Co",color:"#e94560",city:"Denver"},
+    {lat:39.7548,lng:-104.9940,name:"Falling Rock Tap House",color:"#e94560",city:"Denver"},
+    // Golden
+    {lat:39.7555,lng:-105.2211,name:"Coors Brewery",color:"#f0a500",city:"Golden"},
+    {lat:39.7575,lng:-105.2230,name:"Golden City Brewery",color:"#f0a500",city:"Golden"},
+    {lat:39.7588,lng:-105.2198,name:"Cannonball Creek Brewing",color:"#f0a500",city:"Golden"},
+    {lat:39.7545,lng:-105.2250,name:"Mountain Toad Brewing",color:"#f0a500",city:"Golden"},
+    {lat:39.7710,lng:-105.1950,name:"New Terrain Brewing",color:"#f0a500",city:"Golden"},
+    // Boulder
+    {lat:40.0190,lng:-105.2780,name:"Mountain Sun Pub",color:"#4ecdc4",city:"Boulder"},
+    {lat:40.0650,lng:-105.2090,name:"Avery Brewing Co",color:"#4ecdc4",city:"Boulder"},
+    {lat:40.0260,lng:-105.2480,name:"Upslope Brewing",color:"#4ecdc4",city:"Boulder"},
+    {lat:40.0080,lng:-105.2750,name:"The Sink",color:"#4ecdc4",city:"Boulder"},
+    {lat:40.0520,lng:-105.2120,name:"Wild Woods Brewery",color:"#4ecdc4",city:"Boulder"},
+    {lat:40.0200,lng:-105.2530,name:"Sanitas Brewing",color:"#4ecdc4",city:"Boulder"},
+    {lat:40.0350,lng:-105.2450,name:"Finkel & Garf",color:"#4ecdc4",city:"Boulder"},
+    // Niwot / Longmont
+    {lat:40.1040,lng:-105.1720,name:"Fritz Family Brewers ⭐",color:"#a855f7",city:"Niwot"},
+    {lat:40.1710,lng:-105.1190,name:"Left Hand Brewing",color:"#a855f7",city:"Longmont"},
+    {lat:40.1650,lng:-105.1010,name:"Wibby Brewing",color:"#a855f7",city:"Longmont"},
+    {lat:40.1630,lng:-105.1080,name:"300 Suns Brewing",color:"#a855f7",city:"Longmont"},
+    // Fort Collins
+    {lat:40.5930,lng:-105.0690,name:"New Belgium Brewing",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5880,lng:-105.0630,name:"Odell Brewing Co",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5870,lng:-105.0750,name:"Coopersmith's Pub",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5885,lng:-105.0755,name:"The Mayor of Old Town",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5870,lng:-105.0690,name:"Funkwerks",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5920,lng:-105.0680,name:"Horse & Dragon",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5530,lng:-105.0750,name:"Zwei Brewing",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5540,lng:-105.0755,name:"Purpose Brewing",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5680,lng:-105.0640,name:"Snowbank Brewing",color:"#22c55e",city:"Fort Collins"},
+    {lat:40.5750,lng:-105.0900,name:"Road 34 Bike Bar",color:"#22c55e",city:"Fort Collins"}
+  ];
+
+  markers.forEach(m => {
+    const icon = L.divIcon({
+      className:'',
+      html:`<div style="width:14px;height:14px;border-radius:50%;background:${m.color};border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.5);"></div>`,
+      iconSize:[14,14],iconAnchor:[7,7]
+    });
+    L.marker([m.lat,m.lng],{icon}).addTo(map).bindPopup(`<b style="color:#1a1a2e;">${m.name}</b><br><span style="color:#666;">${m.city}</span>`);
+  });
+
+  // Route line
+  const route = [
+    [39.8561,-104.6737],[39.7536,-104.9998],[39.7575,-105.2230],
+    [40.0190,-105.2780],[40.1040,-105.1720],[40.1710,-105.1190],
+    [40.5870,-105.0750],[39.8561,-104.6737]
+  ];
+  L.polyline(route,{color:'#e94560',weight:2,opacity:0.6,dashArray:'8,8'}).addTo(map);
+}
+</script>
+
+</body>
+</html>
