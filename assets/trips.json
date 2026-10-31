@@ -1,0 +1,1598 @@
+[
+ {
+  "id": "uk",
+  "file": "uk_beer_trip.html",
+  "title": "UK Beer Pilgrimage",
+  "subtitle": "England, Wales & Scotland by rail and road",
+  "days": 12,
+  "countries": "England · Wales · Scotland",
+  "route": "London → Oxford → Burton → Manchester → Nottingham → Wales → Edinburgh",
+  "anchor": [
+   54.0,
+   -2.6
+  ],
+  "stops": [
+   {
+    "lat": 51.5138,
+    "lon": -0.1073,
+    "name": "Ye Olde Cheshire Cheese"
+   },
+   {
+    "lat": 51.5057,
+    "lon": -0.0622,
+    "name": "The Prospect of Whitby"
+   },
+   {
+    "lat": 51.4986,
+    "lon": -0.0794,
+    "name": "The Kernel Brewery"
+   },
+   {
+    "lat": 51.4928,
+    "lon": -0.2583,
+    "name": "Fuller's Griffin Brewery"
+   },
+   {
+    "lat": 51.7535,
+    "lon": -1.2608,
+    "name": "The Eagle and Child"
+   },
+   {
+    "lat": 51.9778,
+    "lon": -1.4881,
+    "name": "Hook Norton Brewery"
+   },
+   {
+    "lat": 51.8969,
+    "lon": -2.0738,
+    "name": "DEYA Brewing"
+   },
+   {
+    "lat": 52.8064,
+    "lon": -1.6321,
+    "name": "Burton Bridge Brewery"
+   },
+   {
+    "lat": 52.4884,
+    "lon": -2.0878,
+    "name": "The Olde Swan (Ma Pardoe's)"
+   },
+   {
+    "lat": 53.2126,
+    "lon": -1.682,
+    "name": "Thornbridge Brewery"
+   },
+   {
+    "lat": 53.4852,
+    "lon": -2.2345,
+    "name": "Marble Arch Inn"
+   },
+   {
+    "lat": 53.4736,
+    "lon": -2.2273,
+    "name": "Cloudwater Brew Co"
+   },
+   {
+    "lat": 53.8676,
+    "lon": -1.9077,
+    "name": "Timothy Taylor's"
+   },
+   {
+    "lat": 53.7965,
+    "lon": -1.5512,
+    "name": "Northern Monk"
+   },
+   {
+    "lat": 52.9493,
+    "lon": -1.15,
+    "name": "Ye Olde Trip to Jerusalem"
+   },
+   {
+    "lat": 53.2583,
+    "lon": -1.9109,
+    "name": "Buxton Brewery"
+   },
+   {
+    "lat": 51.8273,
+    "lon": -3.0262,
+    "name": "Skirrid Mountain Inn"
+   },
+   {
+    "lat": 51.588,
+    "lon": -2.9942,
+    "name": "Tiny Rebel Brewery"
+   },
+   {
+    "lat": 51.4816,
+    "lon": -3.1791,
+    "name": "The City Arms"
+   },
+   {
+    "lat": 51.835,
+    "lon": -4.82,
+    "name": "Bluestone Brewing"
+   },
+   {
+    "lat": 51.673,
+    "lon": -4.7035,
+    "name": "Tenby Brewing Co"
+   },
+   {
+    "lat": 52.927,
+    "lon": -4.131,
+    "name": "Purple Moose Brewery"
+   },
+   {
+    "lat": 53.2637,
+    "lon": -4.0914,
+    "name": "Ye Olde Bull's Head Inn"
+   },
+   {
+    "lat": 55.9422,
+    "lon": -3.1505,
+    "name": "The Sheep Heid Inn"
+   },
+   {
+    "lat": 55.9479,
+    "lon": -3.1967,
+    "name": "The Bow Bar"
+   },
+   {
+    "lat": 55.9394,
+    "lon": -3.1833,
+    "name": "Barney's Beer"
+   },
+   {
+    "lat": 55.945,
+    "lon": -3.2106,
+    "name": "The Cloisters Bar"
+   },
+   {
+    "lat": 55.8637,
+    "lon": -4.2593,
+    "name": "The Pot Still"
+   },
+   {
+    "lat": 55.8484,
+    "lon": -4.2383,
+    "name": "WEST Brewery"
+   },
+   {
+    "lat": 56.1612,
+    "lon": -5.2271,
+    "name": "Fyne Ales"
+   },
+   {
+    "lat": 55.6164,
+    "lon": -3.0636,
+    "name": "Traquair House Brewery"
+   },
+   {
+    "lat": 57.6815,
+    "lon": -4.0359,
+    "name": "Cromarty Brewing Co"
+   }
+  ],
+  "path": [
+   [
+    51.5138,
+    -0.1073
+   ],
+   [
+    51.5057,
+    -0.0622
+   ],
+   [
+    51.4986,
+    -0.0794
+   ],
+   [
+    51.4928,
+    -0.2583
+   ],
+   [
+    51.7535,
+    -1.2608
+   ],
+   [
+    51.9778,
+    -1.4881
+   ],
+   [
+    51.8969,
+    -2.0738
+   ],
+   [
+    52.8064,
+    -1.6321
+   ],
+   [
+    52.4884,
+    -2.0878
+   ],
+   [
+    53.2126,
+    -1.682
+   ],
+   [
+    53.4852,
+    -2.2345
+   ],
+   [
+    53.4736,
+    -2.2273
+   ],
+   [
+    53.8676,
+    -1.9077
+   ],
+   [
+    53.7965,
+    -1.5512
+   ],
+   [
+    52.9493,
+    -1.15
+   ],
+   [
+    53.2583,
+    -1.9109
+   ],
+   [
+    51.8273,
+    -3.0262
+   ],
+   [
+    51.588,
+    -2.9942
+   ],
+   [
+    51.4816,
+    -3.1791
+   ],
+   [
+    51.835,
+    -4.82
+   ],
+   [
+    51.673,
+    -4.7035
+   ],
+   [
+    52.927,
+    -4.131
+   ],
+   [
+    53.2637,
+    -4.0914
+   ],
+   [
+    55.9422,
+    -3.1505
+   ],
+   [
+    55.9479,
+    -3.1967
+   ],
+   [
+    55.9394,
+    -3.1833
+   ],
+   [
+    55.945,
+    -3.2106
+   ],
+   [
+    55.8637,
+    -4.2593
+   ],
+   [
+    55.8484,
+    -4.2383
+   ],
+   [
+    56.1612,
+    -5.2271
+   ],
+   [
+    55.6164,
+    -3.0636
+   ],
+   [
+    57.6815,
+    -4.0359
+   ]
+  ]
+ },
+ {
+  "id": "belgium",
+  "file": "belgian.html",
+  "title": "Belgian Beer Pilgrimage",
+  "subtitle": "Lambic, Trappist & Flemish red — ending in Pilsen",
+  "days": 9,
+  "countries": "Belgium · Germany · Czechia",
+  "route": "Brussels → Pajottenland → Hainaut → West Flanders → Antwerp → Ardennes → Chimay → Pilsen",
+  "anchor": [
+   50.75,
+   4.6
+  ],
+  "stops": [
+   {
+    "lat": 50.8425,
+    "lon": 4.3347,
+    "name": "Cantillon Brewery",
+    "city": "Brussels",
+    "rating": 10.0
+   },
+   {
+    "lat": 50.7676,
+    "lon": 4.2912,
+    "name": "Drie Fonteinen",
+    "city": "Beersel",
+    "rating": 10.0
+   },
+   {
+    "lat": 50.5519,
+    "lon": 3.6453,
+    "name": "Brasserie Dupont",
+    "city": "Tourpes",
+    "rating": 9.5
+   },
+   {
+    "lat": 50.944,
+    "lon": 3.1291,
+    "name": "Rodenbach Brewery",
+    "city": "Roeselare",
+    "rating": 9.5
+   },
+   {
+    "lat": 50.8194,
+    "lon": 3.2239,
+    "name": "De Halve Maan",
+    "city": "Bruges",
+    "rating": 8.5
+   },
+   {
+    "lat": 50.8895,
+    "lon": 2.7218,
+    "name": "Westvleteren / In de Vrede",
+    "city": "Westvleteren",
+    "rating": 10.0
+   },
+   {
+    "lat": 51.0276,
+    "lon": 4.4776,
+    "name": "Het Anker",
+    "city": "Mechelen",
+    "rating": 8.0
+   },
+   {
+    "lat": 49.6345,
+    "lon": 5.3468,
+    "name": "Orval Abbey",
+    "city": "Villers-devant-Orval",
+    "rating": 9.0
+   },
+   {
+    "lat": 50.0434,
+    "lon": 4.3181,
+    "name": "Chimay (Scourmont Abbey)",
+    "city": "Chimay",
+    "rating": 8.5
+   },
+   {
+    "lat": 50.7838,
+    "lon": 4.2063,
+    "name": "Lindemans Brewery",
+    "city": "Vlezenbeek",
+    "rating": 7.5
+   },
+   {
+    "lat": 49.749,
+    "lon": 13.3876,
+    "name": "Pilsner Urquell",
+    "city": "Pilsen",
+    "rating": 9.5
+   },
+   {
+    "lat": 50.5784,
+    "lon": 3.5891,
+    "name": "Brasserie à Vapeur",
+    "city": "Pipaix",
+    "rating": 9.5
+   },
+   {
+    "lat": 50.3505,
+    "lon": 5.5912,
+    "name": "Brasserie Fantôme",
+    "city": "Soy",
+    "rating": 9.5
+   },
+   {
+    "lat": 51.0166,
+    "lon": 2.8573,
+    "name": "De Dolle Brouwers",
+    "city": "Esen",
+    "rating": 9.0
+   },
+   {
+    "lat": 50.8588,
+    "lon": 4.3276,
+    "name": "Brasserie de la Senne",
+    "city": "Brussels",
+    "rating": 9.0
+   },
+   {
+    "lat": 50.2355,
+    "lon": 4.891,
+    "name": "Brasserie Caracole",
+    "city": "Falmignoul",
+    "rating": 8.5
+   },
+   {
+    "lat": 50.3934,
+    "lon": 3.8273,
+    "name": "Brasserie de Blaugies",
+    "city": "Blaugies",
+    "rating": 9.0
+   },
+   {
+    "lat": 50.376,
+    "lon": 3.763,
+    "name": "Brasserie des Rocs",
+    "city": "Montignies-sur-Roc",
+    "rating": 8.0
+   },
+   {
+    "lat": 50.7458,
+    "lon": 3.2773,
+    "name": "Brasserie de Ranke",
+    "city": "Dottignies",
+    "rating": 9.0
+   },
+   {
+    "lat": 50.8518,
+    "lon": 3.4756,
+    "name": "'t Verzet",
+    "city": "Anzegem",
+    "rating": 8.5
+   },
+   {
+    "lat": 50.8497,
+    "lon": 4.348,
+    "name": "Brussels Beer Project",
+    "city": "Brussels",
+    "rating": 7.5
+   },
+   {
+    "lat": 50.7345,
+    "lon": 3.6712,
+    "name": "Brasserie Ellezelloise",
+    "city": "Ellezelles",
+    "rating": 8.0
+   },
+   {
+    "lat": 50.7455,
+    "lon": 4.8898,
+    "name": "Brasserie de Jandrain-Jandrenouille",
+    "city": "Jandrain",
+    "rating": 8.5
+   },
+   {
+    "lat": 50.5654,
+    "lon": 3.3234,
+    "name": "Brasserie Cazeau",
+    "city": "Templeuve",
+    "rating": 7.5
+   },
+   {
+    "lat": 49.7112,
+    "lon": 5.5534,
+    "name": "Brasserie de Rulles",
+    "city": "Rulles",
+    "rating": 8.0
+   },
+   {
+    "lat": 49.7234,
+    "lon": 13.3654,
+    "name": "Purkmistr Brewery",
+    "city": "Pilsen",
+    "rating": 8.0
+   },
+   {
+    "lat": 49.7477,
+    "lon": 13.3798,
+    "name": "Pivovar Raven",
+    "city": "Pilsen",
+    "rating": 7.5
+   },
+   {
+    "lat": 50.8387,
+    "lon": 4.344,
+    "name": "Moeder Lambic Original",
+    "city": "Brussels",
+    "rating": 9.5
+   },
+   {
+    "lat": 50.8506,
+    "lon": 4.3559,
+    "name": "A la Mort Subite",
+    "city": "Brussels",
+    "rating": 9.0
+   },
+   {
+    "lat": 50.8449,
+    "lon": 4.3498,
+    "name": "Poechenellekelder",
+    "city": "Brussels",
+    "rating": 7.5
+   },
+   {
+    "lat": 50.8485,
+    "lon": 4.3525,
+    "name": "Au Bon Vieux Temps",
+    "city": "Brussels",
+    "rating": 9.0
+   },
+   {
+    "lat": 50.8444,
+    "lon": 3.227,
+    "name": "De Garre",
+    "city": "Bruges",
+    "rating": 10.0
+   },
+   {
+    "lat": 50.843,
+    "lon": 3.2221,
+    "name": "'t Brugs Beertje",
+    "city": "Bruges",
+    "rating": 9.5
+   },
+   {
+    "lat": 50.8498,
+    "lon": 3.2312,
+    "name": "Café Vlissinghe",
+    "city": "Bruges",
+    "rating": 9.0
+   },
+   {
+    "lat": 51.2165,
+    "lon": 4.4128,
+    "name": "Kulminator",
+    "city": "Antwerp",
+    "rating": 10.0
+   },
+   {
+    "lat": 51.2195,
+    "lon": 4.3998,
+    "name": "Billie's Bier Kafétaria",
+    "city": "Antwerp",
+    "rating": 8.5
+   },
+   {
+    "lat": 50.8895,
+    "lon": 2.7215,
+    "name": "In de Vrede",
+    "city": "Westvleteren",
+    "rating": 10.0
+   },
+   {
+    "lat": 50.8462,
+    "lon": 3.228,
+    "name": "Café Rose Red",
+    "city": "Bruges",
+    "rating": 8.0
+   },
+   {
+    "lat": 50.8438,
+    "lon": 3.225,
+    "name": "Le Trappiste",
+    "city": "Bruges",
+    "rating": 8.5
+   },
+   {
+    "lat": 49.7495,
+    "lon": 13.387,
+    "name": "Na Parkánu",
+    "city": "Pilsen",
+    "rating": 9.0
+   },
+   {
+    "lat": 49.7477,
+    "lon": 13.3765,
+    "name": "U Salzmannů",
+    "city": "Pilsen",
+    "rating": 8.0
+   },
+   {
+    "lat": 50.942,
+    "lon": 6.9535,
+    "name": "Päffgen Brauhaus",
+    "city": "Cologne",
+    "rating": 8.0
+   }
+  ],
+  "path": [
+   [
+    50.1109,
+    8.6821
+   ],
+   [
+    50.8467,
+    4.3525
+   ],
+   [
+    50.7676,
+    4.2912
+   ],
+   [
+    50.5519,
+    3.6453
+   ],
+   [
+    50.944,
+    3.1291
+   ],
+   [
+    50.8444,
+    3.227
+   ],
+   [
+    50.8895,
+    2.7218
+   ],
+   [
+    51.2165,
+    4.4128
+   ],
+   [
+    49.6345,
+    5.3468
+   ],
+   [
+    50.0434,
+    4.3181
+   ],
+   [
+    50.942,
+    6.9535
+   ],
+   [
+    49.749,
+    13.3876
+   ]
+  ]
+ },
+ {
+  "id": "germany_czech",
+  "file": "germany_czech_beer_trip.html",
+  "title": "Bavaria & Bohemia",
+  "subtitle": "Franconian village breweries, Zoigl & the birth of Pilsner",
+  "days": 14,
+  "countries": "Germany · Czechia",
+  "route": "Frankfurt → Bamberg → Franconia → Zoigl country → Pilsen → Munich → Andechs",
+  "anchor": [
+   49.9,
+   11.6
+  ],
+  "stops": [
+   {
+    "lat": 50.0379,
+    "lon": 8.5622,
+    "name": "Frankfurt Airport"
+   },
+   {
+    "lat": 49.8917,
+    "lon": 10.8868,
+    "name": "Schlenkerla"
+   },
+   {
+    "lat": 49.8937,
+    "lon": 10.8828,
+    "name": "Spezial"
+   },
+   {
+    "lat": 49.8855,
+    "lon": 10.905,
+    "name": "Mahr's Bräu"
+   },
+   {
+    "lat": 49.893,
+    "lon": 10.8845,
+    "name": "Fässla"
+   },
+   {
+    "lat": 49.8905,
+    "lon": 10.878,
+    "name": "Greifenklau"
+   },
+   {
+    "lat": 49.892,
+    "lon": 10.884,
+    "name": "Klosterbräu"
+   },
+   {
+    "lat": 49.886,
+    "lon": 10.904,
+    "name": "Keesmann"
+   },
+   {
+    "lat": 49.9275,
+    "lon": 10.9408,
+    "name": "Drei Kronen Memmelsdorf"
+   },
+   {
+    "lat": 49.91,
+    "lon": 10.92,
+    "name": "Wagner Merkendorf"
+   },
+   {
+    "lat": 49.905,
+    "lon": 10.915,
+    "name": "Hummel Merkendorf"
+   },
+   {
+    "lat": 49.9,
+    "lon": 10.93,
+    "name": "Knoblach Schammelsdorf"
+   },
+   {
+    "lat": 49.7698,
+    "lon": 11.0058,
+    "name": "Rittmayer Hallerndorf"
+   },
+   {
+    "lat": 49.83,
+    "lon": 10.85,
+    "name": "Griess Geisfeld"
+   },
+   {
+    "lat": 49.8175,
+    "lon": 11.0308,
+    "name": "St. Georgen Buttenheim"
+   },
+   {
+    "lat": 49.883,
+    "lon": 11.225,
+    "name": "Aufseß (4 breweries)"
+   },
+   {
+    "lat": 50.09,
+    "lon": 10.89,
+    "name": "Trunk Vierzehnheiligen"
+   },
+   {
+    "lat": 50.0095,
+    "lon": 10.5945,
+    "name": "Göller Zeil am Main"
+   },
+   {
+    "lat": 49.7358,
+    "lon": 12.1612,
+    "name": "Zoigl Windischeschenbach"
+   },
+   {
+    "lat": 49.725,
+    "lon": 12.18,
+    "name": "Zoigl Neuhaus"
+   },
+   {
+    "lat": 49.7912,
+    "lon": 12.6408,
+    "name": "Chodovar Chodová Planá"
+   },
+   {
+    "lat": 49.7474,
+    "lon": 13.3776,
+    "name": "Pilsner Urquell"
+   },
+   {
+    "lat": 49.745,
+    "lon": 13.38,
+    "name": "U Salzmannů"
+   },
+   {
+    "lat": 49.715,
+    "lon": 13.34,
+    "name": "Purkmistr"
+   },
+   {
+    "lat": 49.75,
+    "lon": 13.39,
+    "name": "Pivovar Raven"
+   },
+   {
+    "lat": 50.3267,
+    "lon": 13.5458,
+    "name": "Falkon Žatec"
+   },
+   {
+    "lat": 49.265,
+    "lon": 13.355,
+    "name": "Kout na Šumavě"
+   },
+   {
+    "lat": 49.1,
+    "lon": 13.45,
+    "name": "Zhůřák (Šumava)"
+   },
+   {
+    "lat": 49.15,
+    "lon": 13.5,
+    "name": "Svatý Florian"
+   },
+   {
+    "lat": 50.1814,
+    "lon": 12.6378,
+    "name": "Permon Sokolov"
+   },
+   {
+    "lat": 49.0195,
+    "lon": 12.0975,
+    "name": "Kneitinger Regensburg"
+   },
+   {
+    "lat": 49.022,
+    "lon": 12.0965,
+    "name": "Spitalbrauerei Regensburg"
+   },
+   {
+    "lat": 48.8175,
+    "lon": 11.83,
+    "name": "Kuchlbauer Abensberg"
+   },
+   {
+    "lat": 48.145,
+    "lon": 11.5447,
+    "name": "Augustiner-Keller"
+   },
+   {
+    "lat": 48.1363,
+    "lon": 11.5802,
+    "name": "Schneider Bräuhaus"
+   },
+   {
+    "lat": 48.115,
+    "lon": 11.58,
+    "name": "Giesinger Bräu"
+   },
+   {
+    "lat": 48.145,
+    "lon": 11.555,
+    "name": "ORCA Brau"
+   },
+   {
+    "lat": 48.1375,
+    "lon": 11.5797,
+    "name": "Hofbräuhaus"
+   },
+   {
+    "lat": 47.9739,
+    "lon": 11.183,
+    "name": "Kloster Andechs"
+   },
+   {
+    "lat": 48.0465,
+    "lon": 11.9691,
+    "name": "Wildbrau Grafing"
+   }
+  ],
+  "path": [
+   [
+    50.0379,
+    8.5622
+   ],
+   [
+    49.8917,
+    10.8868
+   ],
+   [
+    49.7698,
+    11.0058
+   ],
+   [
+    49.883,
+    11.225
+   ],
+   [
+    49.7358,
+    12.1612
+   ],
+   [
+    49.7912,
+    12.6408
+   ],
+   [
+    49.7474,
+    13.3776
+   ],
+   [
+    50.3267,
+    13.5458
+   ],
+   [
+    49.265,
+    13.355
+   ],
+   [
+    49.1,
+    13.45
+   ],
+   [
+    49.0195,
+    12.0975
+   ],
+   [
+    48.8175,
+    11.83
+   ],
+   [
+    48.145,
+    11.5447
+   ],
+   [
+    47.9739,
+    11.183
+   ],
+   [
+    48.0465,
+    11.9691
+   ],
+   [
+    48.145,
+    11.5447
+   ],
+   [
+    50.0379,
+    8.5622
+   ]
+  ]
+ },
+ {
+  "id": "colorado",
+  "file": "colorado_beer_trip.html",
+  "title": "Colorado Craft Beer Odyssey",
+  "subtitle": "Denver to Fort Collins — 30+ taprooms in the Rockies",
+  "days": 12,
+  "countries": "United States",
+  "route": "Denver → Golden → Boulder → Longmont → Fort Collins → Denver",
+  "anchor": [
+   39.9,
+   -105.4
+  ],
+  "stops": [
+   {
+    "lat": 39.8561,
+    "lon": -104.6737,
+    "name": "✈️ Denver International Airport",
+    "city": "DEN"
+   },
+   {
+    "lat": 39.7536,
+    "lon": -104.9998,
+    "name": "Wynkoop Brewing Co",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7636,
+    "lon": -104.9782,
+    "name": "Great Divide - Barrel Bar",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7672,
+    "lon": -104.9805,
+    "name": "Ratio Beerworks",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7654,
+    "lon": -104.9815,
+    "name": "Our Mutual Friend",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7618,
+    "lon": -104.9778,
+    "name": "Bierstadt Lagerhaus",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7201,
+    "lon": -104.9876,
+    "name": "TRVE Brewing",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7195,
+    "lon": -104.987,
+    "name": "Baere Brewing",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7485,
+    "lon": -104.9536,
+    "name": "Cerebral Brewing",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.73,
+    "lon": -105.03,
+    "name": "Westfax Brewing",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.758,
+    "lon": -104.94,
+    "name": "Cohesion Brewing",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.755,
+    "lon": -105.007,
+    "name": "Denver Beer Co",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7548,
+    "lon": -104.994,
+    "name": "Falling Rock Tap House",
+    "city": "Denver"
+   },
+   {
+    "lat": 39.7555,
+    "lon": -105.2211,
+    "name": "Coors Brewery",
+    "city": "Golden"
+   },
+   {
+    "lat": 39.7575,
+    "lon": -105.223,
+    "name": "Golden City Brewery",
+    "city": "Golden"
+   },
+   {
+    "lat": 39.7588,
+    "lon": -105.2198,
+    "name": "Cannonball Creek Brewing",
+    "city": "Golden"
+   },
+   {
+    "lat": 39.7545,
+    "lon": -105.225,
+    "name": "Mountain Toad Brewing",
+    "city": "Golden"
+   },
+   {
+    "lat": 39.771,
+    "lon": -105.195,
+    "name": "New Terrain Brewing",
+    "city": "Golden"
+   },
+   {
+    "lat": 40.019,
+    "lon": -105.278,
+    "name": "Mountain Sun Pub",
+    "city": "Boulder"
+   },
+   {
+    "lat": 40.065,
+    "lon": -105.209,
+    "name": "Avery Brewing Co",
+    "city": "Boulder"
+   },
+   {
+    "lat": 40.026,
+    "lon": -105.248,
+    "name": "Upslope Brewing",
+    "city": "Boulder"
+   },
+   {
+    "lat": 40.008,
+    "lon": -105.275,
+    "name": "The Sink",
+    "city": "Boulder"
+   },
+   {
+    "lat": 40.052,
+    "lon": -105.212,
+    "name": "Wild Woods Brewery",
+    "city": "Boulder"
+   },
+   {
+    "lat": 40.02,
+    "lon": -105.253,
+    "name": "Sanitas Brewing",
+    "city": "Boulder"
+   },
+   {
+    "lat": 40.035,
+    "lon": -105.245,
+    "name": "Finkel & Garf",
+    "city": "Boulder"
+   },
+   {
+    "lat": 40.104,
+    "lon": -105.172,
+    "name": "Fritz Family Brewers ⭐",
+    "city": "Niwot"
+   },
+   {
+    "lat": 40.171,
+    "lon": -105.119,
+    "name": "Left Hand Brewing",
+    "city": "Longmont"
+   },
+   {
+    "lat": 40.165,
+    "lon": -105.101,
+    "name": "Wibby Brewing",
+    "city": "Longmont"
+   },
+   {
+    "lat": 40.163,
+    "lon": -105.108,
+    "name": "300 Suns Brewing",
+    "city": "Longmont"
+   },
+   {
+    "lat": 40.593,
+    "lon": -105.069,
+    "name": "New Belgium Brewing",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.588,
+    "lon": -105.063,
+    "name": "Odell Brewing Co",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.587,
+    "lon": -105.075,
+    "name": "Coopersmith's Pub",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.5885,
+    "lon": -105.0755,
+    "name": "The Mayor of Old Town",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.587,
+    "lon": -105.069,
+    "name": "Funkwerks",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.592,
+    "lon": -105.068,
+    "name": "Horse & Dragon",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.553,
+    "lon": -105.075,
+    "name": "Zwei Brewing",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.554,
+    "lon": -105.0755,
+    "name": "Purpose Brewing",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.568,
+    "lon": -105.064,
+    "name": "Snowbank Brewing",
+    "city": "Fort Collins"
+   },
+   {
+    "lat": 40.575,
+    "lon": -105.09,
+    "name": "Road 34 Bike Bar",
+    "city": "Fort Collins"
+   }
+  ],
+  "path": [
+   [
+    39.8561,
+    -104.6737
+   ],
+   [
+    39.7536,
+    -104.9998
+   ],
+   [
+    39.7575,
+    -105.223
+   ],
+   [
+    40.019,
+    -105.278
+   ],
+   [
+    40.104,
+    -105.172
+   ],
+   [
+    40.171,
+    -105.119
+   ],
+   [
+    40.587,
+    -105.075
+   ],
+   [
+    39.8561,
+    -104.6737
+   ]
+  ]
+ },
+ {
+  "id": "florida",
+  "file": "florida_brewery_trip.html",
+  "title": "Florida Brewery Trail",
+  "subtitle": "Miami → Orlando → Tampa Bay, one-way by car",
+  "days": 12,
+  "countries": "United States",
+  "route": "Miami → Fort Lauderdale → Orlando → Tampa → St. Pete → Dunedin",
+  "anchor": [
+   27.9,
+   -81.9
+  ],
+  "stops": [
+   {
+    "lat": 25.7986,
+    "lon": -80.1987,
+    "name": "J Wakefield Brewing"
+   },
+   {
+    "lat": 25.8105,
+    "lon": -80.3567,
+    "name": "Tripping Animals"
+   },
+   {
+    "lat": 25.7993,
+    "lon": -80.1972,
+    "name": "Wynwood Brewing"
+   },
+   {
+    "lat": 25.8217,
+    "lon": -80.3197,
+    "name": "The Tank Brewing"
+   },
+   {
+    "lat": 25.7993,
+    "lon": -80.1976,
+    "name": "Veza Sur Brewing"
+   },
+   {
+    "lat": 25.7287,
+    "lon": -80.3082,
+    "name": "Unseen Creatures"
+   },
+   {
+    "lat": 25.7358,
+    "lon": -80.3157,
+    "name": "Lincoln's Beard"
+   },
+   {
+    "lat": 25.8012,
+    "lon": -80.3645,
+    "name": "MIA Beer Company"
+   },
+   {
+    "lat": 25.8011,
+    "lon": -80.2003,
+    "name": "Boxelder"
+   },
+   {
+    "lat": 25.7985,
+    "lon": -80.362,
+    "name": "Spanish Marie"
+   },
+   {
+    "lat": 25.7118,
+    "lon": -80.2783,
+    "name": "Titanic Brewery"
+   },
+   {
+    "lat": 25.786,
+    "lon": -80.138,
+    "name": "Abbey Brewing"
+   },
+   {
+    "lat": 26.1694,
+    "lon": -80.1269,
+    "name": "Funky Buddha"
+   },
+   {
+    "lat": 26.1044,
+    "lon": -80.1498,
+    "name": "Riverside Market"
+   },
+   {
+    "lat": 26.092,
+    "lon": -80.12,
+    "name": "LauderAle Brewery"
+   },
+   {
+    "lat": 28.5555,
+    "lon": -81.354,
+    "name": "Sideward Brewing"
+   },
+   {
+    "lat": 28.563,
+    "lon": -81.362,
+    "name": "Ten10 Brewing"
+   },
+   {
+    "lat": 28.557,
+    "lon": -81.378,
+    "name": "Ivanhoe Park Brewing"
+   },
+   {
+    "lat": 28.565,
+    "lon": -81.586,
+    "name": "Crooked Can"
+   },
+   {
+    "lat": 28.596,
+    "lon": -81.361,
+    "name": "The Ravenous Pig"
+   },
+   {
+    "lat": 28.564,
+    "lon": -81.343,
+    "name": "Redlight Redlight"
+   },
+   {
+    "lat": 28.555,
+    "lon": -81.327,
+    "name": "Tactical Brewing"
+   },
+   {
+    "lat": 28.523,
+    "lon": -81.379,
+    "name": "Rockpit Brewing"
+   },
+   {
+    "lat": 28.519,
+    "lon": -81.421,
+    "name": "Dead Lizard Brewing"
+   },
+   {
+    "lat": 28.5405,
+    "lon": -81.381,
+    "name": "Orange County Brewers"
+   },
+   {
+    "lat": 28.5545,
+    "lon": -81.372,
+    "name": "Bowigens Beer Co"
+   },
+   {
+    "lat": 28.565,
+    "lon": -81.394,
+    "name": "Braveheart Pub"
+   },
+   {
+    "lat": 28.759,
+    "lon": -81.34,
+    "name": "Toll Road Brewing"
+   },
+   {
+    "lat": 27.9534,
+    "lon": -82.5068,
+    "name": "Cigar City Brewing"
+   },
+   {
+    "lat": 27.9847,
+    "lon": -82.459,
+    "name": "Angry Chair Brewing"
+   },
+   {
+    "lat": 27.7706,
+    "lon": -82.6412,
+    "name": "Cycle Brewing"
+   },
+   {
+    "lat": 27.778,
+    "lon": -82.6488,
+    "name": "Green Bench Brewing"
+   },
+   {
+    "lat": 27.7625,
+    "lon": -82.661,
+    "name": "3 Daughters Brewing"
+   },
+   {
+    "lat": 27.9589,
+    "lon": -82.4586,
+    "name": "Hidden Springs"
+   },
+   {
+    "lat": 27.9604,
+    "lon": -82.4376,
+    "name": "Coppertail Brewing"
+   },
+   {
+    "lat": 27.9927,
+    "lon": -82.4514,
+    "name": "Magnanimous Brewing"
+   },
+   {
+    "lat": 27.9476,
+    "lon": -82.4522,
+    "name": "Motorworks Brewing"
+   },
+   {
+    "lat": 28.018,
+    "lon": -82.558,
+    "name": "Arkane Aleworks"
+   },
+   {
+    "lat": 27.9608,
+    "lon": -82.4363,
+    "name": "Tampa Bay Brewing"
+   },
+   {
+    "lat": 27.9762,
+    "lon": -82.459,
+    "name": "The Independent"
+   },
+   {
+    "lat": 27.9852,
+    "lon": -82.459,
+    "name": "Penelope"
+   },
+   {
+    "lat": 28.0002,
+    "lon": -82.7722,
+    "name": "Dunedin Brewery"
+   },
+   {
+    "lat": 27.9692,
+    "lon": -82.4594,
+    "name": "Florida Ave Brewing"
+   }
+  ],
+  "path": [
+   [
+    25.79,
+    -80.2
+   ],
+   [
+    25.81,
+    -80.36
+   ],
+   [
+    26.09,
+    -80.13
+   ],
+   [
+    26.17,
+    -80.13
+   ],
+   [
+    28.54,
+    -81.38
+   ],
+   [
+    28.76,
+    -81.34
+   ],
+   [
+    28.6,
+    -81.36
+   ],
+   [
+    27.95,
+    -82.46
+   ],
+   [
+    27.77,
+    -82.64
+   ],
+   [
+    27.8,
+    -82.79
+   ],
+   [
+    27.95,
+    -82.46
+   ],
+   [
+    28.02,
+    -82.79
+   ]
+  ]
+ },
+ {
+  "id": "italy_switzerland",
+  "file": "Italy_Switzerland_14Day_Trip.html",
+  "title": "Italy & Switzerland",
+  "subtitle": "Grand tour with a craft-beer thread through every city",
+  "days": 14,
+  "countries": "Italy · Switzerland",
+  "route": "Rome → Florence → Pisa → Venice → Milan → St. Moritz → Rome",
+  "anchor": [
+   44.4,
+   11.4
+  ],
+  "stops": [
+   {
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "name": "Rome (FCO)"
+   },
+   {
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "name": "Florence"
+   },
+   {
+    "lat": 43.7228,
+    "lon": 10.4017,
+    "name": "Pisa"
+   },
+   {
+    "lat": 45.4408,
+    "lon": 12.3155,
+    "name": "Venice"
+   },
+   {
+    "lat": 45.4642,
+    "lon": 9.19,
+    "name": "Milan"
+   },
+   {
+    "lat": 46.4908,
+    "lon": 9.8355,
+    "name": "St. Moritz"
+   },
+   {
+    "lat": 46.2167,
+    "lon": 10.1667,
+    "name": "Tirano (Bernina start)"
+   }
+  ],
+  "path": [
+   [
+    41.9028,
+    12.4964
+   ],
+   [
+    43.7696,
+    11.2558
+   ],
+   [
+    43.7228,
+    10.4017
+   ],
+   [
+    43.7696,
+    11.2558
+   ],
+   [
+    45.4408,
+    12.3155
+   ],
+   [
+    45.4642,
+    9.19
+   ],
+   [
+    46.2167,
+    10.1667
+   ],
+   [
+    46.4908,
+    9.8355
+   ]
+  ]
+ }
+]
