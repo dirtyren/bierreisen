@@ -1,0 +1,2973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bier Reisen 2027 — v3</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root {
+  --bg: #141627;
+  --surface: #181f38;
+  --surface-alt: #1f2847;
+  --card: #112a4e;
+  --card-hover: #163663;
+  --accent: #e94560;
+  --gold: #f5a623;
+  --beer-light: #f5d76e;
+  --beer-dark: #6b3a2a;
+  --beer-amber: #c87533;
+  --text: #eef1f6;
+  --text-muted: #b0b9ce;
+  --border: #2b3658;
+  --success: #4ecdc4;
+  --germany: #ffcc00;
+  --belgium: #ff9f43;
+  --czech: #38bdf8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+::selection {
+  background: rgba(245, 166, 35, 0.32);
+  color: #ffffff;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Avenir Next', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #2f3b5e; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--surface) 0%, #1a1836 60%, #24192c 100%);
+  padding: 2.1rem 1.5rem 1.75rem;
+  text-align: center;
+  border-bottom: 3px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '🍺';
+  position: absolute;
+  font-size: 7.5rem;
+  opacity: 0.05;
+  top: -0.8rem;
+  left: 2rem;
+  pointer-events: none;
+}
+.header::after {
+  content: '🏰';
+  position: absolute;
+  font-size: 7.5rem;
+  opacity: 0.05;
+  top: -0.8rem;
+  right: 2rem;
+  pointer-events: none;
+}
+.header h1 {
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--gold);
+  margin-bottom: 0.65rem;
+}
+.header .route-string {
+  color: var(--text);
+  font-size: 0.98rem;
+  max-width: 1120px;
+  margin: 0 auto 0.7rem;
+  line-height: 1.5;
+}
+.header .headline-stats {
+  display: inline-block;
+  max-width: 100%;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--beer-light);
+  background: rgba(15, 52, 96, 0.65);
+  border: 1px solid rgba(245, 166, 35, 0.4);
+  padding: 0.42rem 1.1rem;
+  border-radius: 24px;
+}
+.header-links {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.83rem;
+}
+.header-links a {
+  color: var(--success);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.header-links a:hover {
+  color: var(--beer-light);
+}
+
+/* Sticky Tab Bar */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 20px rgba(7, 9, 19, 0.55);
+}
+.tab-btn {
+  padding: 0.95rem 1.45rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.96rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+.tab-btn:hover {
+  color: var(--text);
+  background: rgba(233, 69, 96, 0.1);
+}
+.tab-btn.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  background: rgba(245, 166, 35, 0.09);
+}
+
+.tab-content {
+  display: none;
+  padding: 2rem 1.5rem 3.5rem;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+.tab-content.active {
+  display: block;
+}
+
+.section-intro {
+  margin-bottom: 1.5rem;
+}
+.section-intro h2 {
+  color: var(--gold);
+  font-size: 1.55rem;
+  margin-bottom: 0.35rem;
+}
+.section-intro p {
+  color: var(--text-muted);
+  max-width: 75ch;
+}
+
+/* Filter bar */
+.region-filter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-btn {
+  padding: 0.45rem 0.95rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--gold);
+  color: #111322;
+  border-color: var(--gold);
+}
+.search-input {
+  padding: 0.48rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.88rem;
+  min-width: 240px;
+}
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Tab 1: Flowchart Itinerary */
+.flowchart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.day-node {
+  background: var(--card);
+  border: 1px solid rgba(245, 166, 35, 0.55);
+  border-radius: 12px;
+  padding: 1.35rem 1.55rem;
+  width: 100%;
+  max-width: 880px;
+  position: relative;
+  box-shadow: 0 8px 22px rgba(5, 8, 20, 0.38);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.day-node:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 28px rgba(5, 8, 20, 0.52);
+}
+.day-node.germany { border-left: 5px solid var(--germany); }
+.day-node.belgium { border-left: 5px solid var(--belgium); }
+.day-node.czechia { border-left: 5px solid var(--czech); }
+.day-node.long-day {
+  background: linear-gradient(135deg, #162b50 0%, #2a1829 100%);
+  border-color: var(--accent);
+}
+
+.day-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.65rem;
+}
+.day-number {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.22rem 0.78rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.day-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.base-chip {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.long-badge {
+  background: rgba(233, 69, 96, 0.22);
+  border: 1px solid var(--accent);
+  color: #ffd0d8;
+  padding: 0.2rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.day-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.day-node h3 {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+.jump-map-btn {
+  background: transparent;
+  border: 1px solid rgba(78, 205, 196, 0.45);
+  color: var(--success);
+  padding: 0.2rem 0.62rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.jump-map-btn:hover {
+  background: var(--success);
+  color: #0e1726;
+}
+.drive-pill {
+  display: inline-block;
+  background: rgba(245, 166, 35, 0.12);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  color: var(--beer-light);
+  padding: 0.36rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  margin-bottom: 0.75rem;
+}
+.drive-pill.inplace {
+  background: rgba(78, 205, 196, 0.12);
+  border-color: rgba(78, 205, 196, 0.35);
+  color: var(--success);
+}
+.muted-inline {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.84em;
+}
+.day-items {
+  padding-left: 1.25rem;
+  color: var(--text);
+  font-size: 0.94rem;
+}
+.day-items li {
+  margin-bottom: 0.28rem;
+}
+.connector {
+  width: 3px;
+  height: 28px;
+  background: linear-gradient(to bottom, var(--gold), var(--accent));
+  position: relative;
+}
+.connector::after {
+  content: '▼';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent);
+  font-size: 0.65rem;
+}
+
+/* Tab 2: Map */
+.map-toolbar {
+  display: flex;
+  gap: 0.42rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+  align-items: center;
+}
+.stop-jump-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s;
+}
+.stop-jump-pill:hover {
+  border-color: var(--gold);
+  background: var(--surface-alt);
+}
+.pill-num {
+  background: var(--gold);
+  color: #111322;
+  font-weight: 800;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+.pill-nights {
+  color: var(--beer-light);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+#map-container {
+  height: 660px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0b0c15;
+  box-shadow: 0 12px 32px rgba(5, 8, 20, 0.5);
+}
+.poster-card {
+  margin-top: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+.poster-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+.poster-card-head h3 {
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+.poster-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* Leaflet Dark Popup Theme */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #151c35;
+  color: var(--text);
+  border: 1px solid var(--gold);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.65);
+}
+.leaflet-popup-content {
+  margin: 12px 15px;
+  line-height: 1.48;
+  font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+}
+.popup-title {
+  color: var(--gold);
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+.popup-meta {
+  color: var(--success);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.popup-addr {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.popup-note {
+  font-size: 0.86rem;
+  margin-bottom: 0.5rem;
+}
+.popup-next {
+  background: rgba(245, 166, 35, 0.14);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-radius: 6px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.8rem;
+  color: var(--beer-light);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tab 3: Rankings */
+.city-ranking-section {
+  margin-bottom: 2.5rem;
+}
+.city-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--border);
+}
+.city-section-header h3 {
+  color: var(--gold);
+  font-size: 1.32rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.city-meta-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.16rem 0.6rem;
+  border-radius: 999px;
+}
+.city-subnote {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+.city-famous-pill {
+  background: rgba(245, 166, 35, 0.14);
+  border: 1px solid rgba(245, 166, 35, 0.45);
+  color: var(--beer-light);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+}
+.brewery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.25rem;
+}
+.brewery-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.35rem 1.4rem;
+  border: 1px solid var(--border);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 20px rgba(5, 8, 20, 0.35);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.brewery-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.brewery-card .rank {
+  position: absolute;
+  top: -11px;
+  right: 14px;
+  background: var(--accent);
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.84rem;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.card-city-tag {
+  color: var(--success);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+.brewery-card h4 {
+  color: var(--gold);
+  font-size: 1.12rem;
+  margin-bottom: 0.45rem;
+}
+.brewery-card .desc {
+  color: var(--text);
+  font-size: 0.91rem;
+  margin-bottom: 0.9rem;
+  flex-grow: 1;
+}
+.order-this {
+  background: rgba(12, 22, 42, 0.65);
+  border: 1px solid rgba(245, 215, 110, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.84rem;
+  color: var(--beer-light);
+}
+
+/* Tab 4: Beer Guide */
+.beer-region-block {
+  margin-bottom: 2.1rem;
+}
+.region-table-heading {
+  color: var(--gold);
+  font-size: 1.24rem;
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.count-pill {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.14rem 0.55rem;
+  border-radius: 999px;
+}
+.beer-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.beer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.beer-table th {
+  background: var(--card);
+  color: var(--gold);
+  padding: 0.8rem 0.9rem;
+  text-align: left;
+  border-bottom: 2px solid var(--gold);
+  white-space: nowrap;
+}
+.beer-table td {
+  padding: 0.72rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.beer-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.beer-table tbody tr:hover {
+  background: rgba(245, 166, 35, 0.06);
+}
+.color-swatch {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.base-order-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+.base-order-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+}
+.base-order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+.base-seq {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.base-sig-pill {
+  background: rgba(245, 166, 35, 0.16);
+  border: 1px solid rgba(245, 166, 35, 0.45);
+  color: var(--beer-light);
+  padding: 0.15rem 0.58rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.base-order-card h4 {
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+.base-order-card p {
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+/* Tab 5: Drive Times & 11x11 Matrix */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.8rem;
+}
+.stat-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.95rem 1.1rem;
+}
+.stat-box .stat-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.stat-box .stat-lbl {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+.leg-row-long {
+  background: rgba(233, 69, 96, 0.11);
+}
+.leg-row-hard {
+  background: rgba(245, 166, 35, 0.06);
+}
+.table-alert-pill {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.1rem 0.48rem;
+  border-radius: 4px;
+  margin-right: 0.3rem;
+}
+.table-warn-pill {
+  display: inline-block;
+  background: var(--gold);
+  color: #111322;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.1rem 0.48rem;
+  border-radius: 4px;
+  margin-right: 0.3rem;
+}
+.tfoot-totals td {
+  background: var(--surface-alt);
+  color: var(--beer-light);
+  font-weight: 700;
+  border-top: 2px solid var(--gold);
+}
+
+.matrix-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  margin-top: 0.75rem;
+}
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+.matrix-table th, .matrix-table td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.42rem;
+  text-align: center;
+}
+.matrix-table thead th {
+  background: var(--card);
+  color: var(--gold);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.matrix-row-head {
+  background: var(--card);
+  color: var(--gold);
+  text-align: left !important;
+  padding-left: 0.65rem !important;
+  white-space: nowrap;
+  position: sticky;
+  left: 0;
+}
+.matrix-corner {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+.matrix-diag {
+  background: #101425;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.matrix-cell .m-km {
+  display: block;
+  color: var(--text);
+  font-weight: 700;
+}
+.matrix-cell .m-time {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.73rem;
+}
+.matrix-lower {
+  opacity: 0.86;
+}
+.matrix-route-cell {
+  background: rgba(245, 166, 35, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(245, 166, 35, 0.55);
+}
+.matrix-route-cell .m-km {
+  color: var(--beer-light);
+}
+.matrix-table[data-mode="km"] .m-time { display: none; }
+.matrix-table[data-mode="time"] .m-km { display: none; }
+.matrix-table[data-mode="time"] .m-time { font-size: 0.8rem; color: var(--text); font-weight: 700; }
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.15rem;
+  margin-top: 1rem;
+}
+.practical-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem 1.3rem;
+}
+.practical-card h4 {
+  color: var(--gold);
+  margin-bottom: 0.45rem;
+  font-size: 1.02rem;
+}
+.practical-card p {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* Tab 6: Suggestions & Tips */
+.detour-base-group {
+  margin-bottom: 1.85rem;
+}
+.detour-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border);
+}
+.detour-group-header h3 {
+  color: var(--gold);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.detour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1rem;
+}
+.detour-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+}
+.detour-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+.detour-top h4 {
+  color: var(--beer-light);
+  font-size: 1.02rem;
+}
+.detour-metrics {
+  background: rgba(78, 205, 196, 0.14);
+  border: 1px solid rgba(78, 205, 196, 0.4);
+  color: var(--success);
+  padding: 0.16rem 0.58rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.detour-card p {
+  color: var(--text);
+  font-size: 0.89rem;
+}
+.suggestion-box {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(245, 166, 35, 0.1));
+  border: 1px solid var(--success);
+  border-radius: 12px;
+  padding: 1.45rem;
+  margin-top: 2rem;
+}
+.suggestion-box h3 {
+  color: var(--success);
+  margin-bottom: 0.9rem;
+  font-size: 1.22rem;
+}
+
+@media (max-width: 760px) {
+  .tab-btn { padding: 0.75rem 0.9rem; font-size: 0.86rem; }
+  .tab-content { padding: 1.35rem 1rem 2.5rem; }
+  #map-container { height: 480px; }
+  .detour-grid, .brewery-grid { grid-template-columns: 1fr; }
+}
+.version-chip {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.44em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--gold);
+  padding: 0.14rem 0.52rem;
+  border-radius: 999px;
+  margin: 0 0.2rem;
+  transform: translateY(-0.12em);
+}
+.what-changed {
+  margin: 0.65rem auto 0;
+  max-width: 980px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.what-changed em {
+  color: var(--text);
+  font-style: normal;
+  font-weight: 600;
+}
+.what-changed a {
+  color: var(--success);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.what-changed a:hover {
+  color: var(--beer-light);
+}
+.new-badge {
+  background: rgba(78, 205, 196, 0.18);
+  border: 1px solid var(--success);
+  color: var(--success);
+  padding: 0.2rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.table-new-pill {
+  display: inline-block;
+  background: var(--success);
+  color: #0e1726;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.1rem 0.48rem;
+  border-radius: 4px;
+  margin-right: 0.3rem;
+}
+.why-callout {
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.12) 0%, rgba(78, 205, 196, 0.09) 100%);
+  border: 1px solid rgba(245, 166, 35, 0.48);
+  border-left: 5px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.2rem 1.45rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 22px rgba(5, 8, 20, 0.32);
+}
+.why-callout-eyebrow {
+  color: var(--gold);
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.42rem;
+}
+.why-callout p {
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  max-width: 98ch;
+}
+.region-subnote {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: -0.25rem 0 0.75rem;
+  max-width: 95ch;
+}
+.region-subnote strong {
+  color: var(--beer-light);
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1>🍺 Bier Reisen 2027 <span class="version-chip">v3</span> 🏰</h1>
+  <p class="route-string">Frankfurt Airport → Bruges (2N) → Ghent (1N) → Cologne (1N) → <strong>Würzburg (1N, new)</strong> → Bamberg (2N) → Pivovar Permon, Sokolov (1N) → Plzeň (2N) → Kout na Šumavě (1N) → Maxlrain Bierstube (1N) → Andechs/Herrsching (1N) → Munich (2N) → Frankfurt Airport <span class="muted-inline">(16 days / 15 nights)</span></p>
+  <div class="headline-stats">16 days · 15 nights · 11 bases · 2,307.5 km · 27 h 08 · 3 countries</div>
+  <p class="what-changed">Changed vs v2: <em>Würzburg brewery night added between Cologne and Bamberg — pivoting from Rhenish ale into Franconian lager country and turning Ghent→Bamberg into three short days (3 h 06 · 3 h 02 · 1 h 03)</em> · <a href="../v2/2027-bier-reisen-v2.html">← Back to v2 planner</a> · <a href="../2027-bier-reisen.html">← Back to v1 planner</a></p>
+  <div class="header-links">
+    <a href="assets/2027-route-map-v3.png" target="_blank" rel="noopener">🗺️ Open 4800×3120 Route Poster v3 (PNG)</a>
+    <a href="data/route-2027-v3.json" target="_blank" rel="noopener">📄 Authoritative Route Data v3 (JSON)</a>
+    <a href="../v2/2027-bier-reisen-v2.html">↩️ Compare with v2 (15-Day Cologne Route)</a>
+    <a href="../2027-bier-reisen.html">↩️ Compare with v1 (15-Day Nuremberg Route)</a>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Bier Reisen 2027 sections">
+  <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="itinerary" onclick="switchTab('itinerary', this)">📋 Itinerary</button>
+  <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="map" onclick="switchTab('map', this)">🗺️ Map</button>
+  <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="rankings" onclick="switchTab('rankings', this)">🏆 Rankings</button>
+  <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="beers" onclick="switchTab('beers', this)">🍻 Beer Guide</button>
+  <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="drives" onclick="switchTab('drives', this)">🚗 Drive Times</button>
+  <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="suggestions" onclick="switchTab('suggestions', this)">💡 Suggestions</button>
+</nav>
+
+<!-- TAB 1: ITINERARY -->
+<div id="itinerary" class="tab-content active" role="tabpanel">
+  <div class="section-intro">
+    <h2>📋 16-Day Day-by-Day Itinerary</h2>
+    <p>Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): 15 nights across 11 overnight bases in Belgium, Germany, and Czechia, with 12 driving legs (2,307.5 km / 27 h 08) and 4 car-free brewery crawl days. Every leg except the opening push to Bruges (5 h 15) and the final Munich→FRA return (4 h 04) is now under 3 h 15.</p>
+  </div>
+
+  <aside class="why-callout" aria-label="Why Würzburg">
+    <div class="why-callout-eyebrow">🍺 Why Würzburg — The Surprise Pivot Into Franconia</div>
+    <p>The obvious answer on this corridor is another big-city Kölsch or Altbier stop, yet <strong>Würzburg</strong> is the pivot from Belgian and Rhenish ale into Franconian lager country. Better known as a wine capital, it still runs a brewery founded in 1643 (<strong>Würzburger Hofbräu</strong>) alongside a brewpub pouring its own house beer right under the Alte Mainbrücke (<strong>Goldene Gans</strong>). Add two craft micros in town (<strong>Herbipolis / SMaSH</strong> and <strong>Maischerei Mayr &amp; Müller</strong>) plus two country breweries 20 minutes away in Ochsenfurt (<strong>Kauzen-Bräu</strong> and <strong>Oechsner</strong>), and one stop bridges two brewing worlds. One night there, and the 6 h 51 problem disappears entirely into three short days (3 h 06, 3 h 02, and 1 h 03).</p>
+  </aside>
+
+  <div class="region-filter" id="itinerary-filters">
+    <button type="button" class="filter-btn active" onclick="filterDays('all', this)">All 16 Days</button>
+    <button type="button" class="filter-btn" onclick="filterDays('belgium', this)">🇧🇪 Belgium (Days 1–3)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('rhineland', this)">🇩🇪 Rhineland · Cologne (Day 4)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('franconia', this)">🇩🇪 Franconia · Würzburg &amp; Bamberg (Days 5–7)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('bohemia', this)">🇨🇿 Bohemia (Days 8–11)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('bavaria', this)">🇩🇪 Upper Bavaria &amp; Munich (Days 12–15)</button>
+    <button type="button" class="filter-btn" onclick="filterDays('inplace', this)">🚶 Car-Free Days (4)</button>
+  </div>
+
+  <div class="flowchart" id="itinerary-flowchart">
+      <div class="day-node belgium" data-region="belgium" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 1</span>
+          <div class="day-badges">
+            <span class="base-chip">🇧🇪 Base: <strong>Bruges</strong> · 2 nights at base · Night 1 of 2</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Arrive FRA, drive to Bruges</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('bruges')">📍 Stop #2 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>FRA → Bruges</strong> &nbsp;·&nbsp; <span class="num">493 km</span> <span class="muted-inline">(492.6 km)</span> &nbsp;·&nbsp; <span class="num">5 h 15</span></div>
+        <ul class="day-items">
+          <li>Pick up the rental car at Frankfurt Airport</li>
+          <li>493 km / 5 h 15 west through Belgium</li>
+          <li>Check in inside the old town</li>
+          <li>Evening first pint at De Garre (house tripel, max three)</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node belgium" data-region="belgium" data-drive="no" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 2</span>
+          <div class="day-badges">
+            <span class="base-chip">🇧🇪 Base: <strong>Bruges</strong> · 2 nights at base · Night 2 of 2</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Bruges</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('bruges')">📍 Stop #2 on Map</button>
+        </div>
+        <div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>
+        <ul class="day-items">
+          <li>De Halve Maan XL tour incl. the 3 km beer pipeline</li>
+          <li>&#x27;t Brugs Beertje for the 300-bottle list</li>
+          <li>Café Vlissinghe (1515) for the bocce garden</li>
+          <li>Bourgogne des Flandres on the canal</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node belgium" data-region="belgium" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 3</span>
+          <div class="day-badges">
+            <span class="base-chip">🇧🇪 Base: <strong>Ghent</strong> · 1 night at base</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Drive to Ghent, brewery quarter</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('ghent')">📍 Stop #3 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Bruges → Ghent</strong> &nbsp;·&nbsp; <span class="num">49 km</span> <span class="muted-inline">(49.2 km)</span> &nbsp;·&nbsp; <span class="num">44 min</span></div>
+        <ul class="day-items">
+          <li>49 km / 44 min</li>
+          <li>Gruut Stadsbrouwerij tasting (hop-free herb beers)</li>
+          <li>Dok Noord: Dok Brewing, Stroom Brouwers, De Hopduvel</li>
+          <li>De Dulle Griet (500 beers) and Het Waterhuis aan de Bierkant</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="rhineland" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 4</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Cologne</strong> · 1 night at base</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Drive to Cologne</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('cologne')">📍 Stop #4 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Ghent → Cologne</strong> &nbsp;·&nbsp; <span class="num">265 km</span> <span class="muted-inline">(265.2 km)</span> &nbsp;·&nbsp; <span class="num">3 h 06</span></div>
+        <ul class="day-items">
+          <li>265 km / 3 h 06 through the Rhineland</li>
+          <li>Kölsch at Früh am Dom, then Brauerei zur Malzmühle (Mühlen)</li>
+          <li>Evening in Ehrenfeld: Braustelle for craft beer</li>
+          <li>A Kölsch is 0.2 l — the Köbes keeps refilling until the coaster goes on the glass</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="franconia" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 5</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Würzburg</strong> · 1 night at base</span>
+            <span class="new-badge">✨ NEW IN V3 · Würzburg Brewery Night (3 h 02)</span>
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Cologne to Würzburg</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('wurzburg')">📍 Stop #5 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Cologne → Würzburg</strong> &nbsp;·&nbsp; <span class="num">302 km</span> <span class="muted-inline">(302.1 km)</span> &nbsp;·&nbsp; <span class="num">3 h 02</span></div>
+        <ul class="day-items">
+          <li>302 km / 3 h 02 up the Rhine and Main</li>
+          <li>Goldene Gans: house-brewed beer under the Alte Mainbrücke</li>
+          <li>Würzburger Hofbräukeller: Pils, Hefeweißbier, brewery tour Fri/Sat with keg tapping</li>
+          <li>Nightcap with a Herbipolis or Maischerei Mayr &amp; Müller craft pour</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="franconia" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 6</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Bamberg</strong> · 2 nights at base · Night 1 of 2</span>
+            <span class="new-badge">✨ NEW IN V3 · Easy Hop to Bamberg (1 h 03)</span>
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Würzburg to Bamberg</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('bamberg')">📍 Stop #6 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Würzburg → Bamberg</strong> &nbsp;·&nbsp; <span class="num">94 km</span> <span class="muted-inline">(94.3 km)</span> &nbsp;·&nbsp; <span class="num">1 h 03</span></div>
+        <ul class="day-items">
+          <li>94 km / 1 h 03 — an easy morning on the A70</li>
+          <li>Optional detour to Ochsenfurt (20 min): Kauzen-Bräu and Oechsner</li>
+          <li>Arrive Bamberg, evening at Schlenkerla for the first rauchbier</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="franconia" data-drive="no" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 7</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Bamberg</strong> · 2 nights at base · Night 2 of 2</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Bamberg brewery crawl</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('bamberg')">📍 Stop #6 on Map</button>
+        </div>
+        <div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>
+        <ul class="day-items">
+          <li>Spezial for the locals&#x27; rauchbier</li>
+          <li>Mahr&#x27;s Bräu for the aU Ungespundetes</li>
+          <li>Fässla Zwergla, then Greifenklau&#x27;s beer garden</li>
+          <li>Keesmann Herren Pils before the nightcap</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node czechia" data-region="bohemia" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 8</span>
+          <div class="day-badges">
+            <span class="base-chip">🇨🇿 Base: <strong>Pivovar Permon, Sokolov</strong> · 1 night at base</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Into Bohemia: Permon</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('sokolov')">📍 Stop #7 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Bamberg → Pivovar Permon, Sokolov</strong> &nbsp;·&nbsp; <span class="num">160 km</span> <span class="muted-inline">(160.2 km)</span> &nbsp;·&nbsp; <span class="num">1 h 59</span></div>
+        <ul class="day-items">
+          <li>160 km / 1 h 59 via Bayreuth and Cheb</li>
+          <li>Pivovar Permon brewery tour on Komenského 77</li>
+          <li>Dinner in the brewery restaurant; sleep on site</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node czechia" data-region="bohemia" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 9</span>
+          <div class="day-badges">
+            <span class="base-chip">🇨🇿 Base: <strong>Plzeň</strong> · 2 nights at base · Night 1 of 2</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Sokolov to Plzeň</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('plzen')">📍 Stop #8 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Pivovar Permon, Sokolov → Plzeň</strong> &nbsp;·&nbsp; <span class="num">87 km</span> <span class="muted-inline">(86.8 km)</span> &nbsp;·&nbsp; <span class="num">1 h 28</span></div>
+        <ul class="day-items">
+          <li>87 km / 1 h 28</li>
+          <li>Optional stop in Loket (12 min) or Karlovy Vary (17 min)</li>
+          <li>Evening tank beer at U Salzmannů (1637)</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node czechia" data-region="bohemia" data-drive="no" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 10</span>
+          <div class="day-badges">
+            <span class="base-chip">🇨🇿 Base: <strong>Plzeň</strong> · 2 nights at base · Night 2 of 2</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Plzeň: birthplace of pilsner</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('plzen')">📍 Stop #8 on Map</button>
+        </div>
+        <div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>
+        <ul class="day-items">
+          <li>Pilsner Urquell cellars tour with unfiltered tasting</li>
+          <li>Na Parkánu for the freshest tank Pilsner</li>
+          <li>Purkmistr brewery hotel, Pivovar Raven for Czech craft</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node czechia" data-region="bohemia" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 11</span>
+          <div class="day-badges">
+            <span class="base-chip">🇨🇿 Base: <strong>Kout na Šumavě</strong> · 1 night at base</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Plzeň to the Bohemian forest</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('kout')">📍 Stop #9 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Plzeň → Kout na Šumavě</strong> &nbsp;·&nbsp; <span class="num">62 km</span> <span class="muted-inline">(61.6 km)</span> &nbsp;·&nbsp; <span class="num">1 h 06</span></div>
+        <ul class="day-items">
+          <li>62 km / 1 h 06</li>
+          <li>Pivovar Kout na Šumavě: the cult 12° lager</li>
+          <li>Afternoon walk in the Šumava foothills</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="bavaria" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 12</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Maxlrain Bierstube</strong> · 1 night at base</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Kout to Upper Bavaria</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('maxlrain')">📍 Stop #10 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Kout na Šumavě → Maxlrain Bierstube</strong> &nbsp;·&nbsp; <span class="num">260 km</span> <span class="muted-inline">(259.8 km)</span> &nbsp;·&nbsp; <span class="num">3 h 11</span></div>
+        <ul class="day-items">
+          <li>260 km / 3 h 11 via Regensburg (optional 1 h 32 detour)</li>
+          <li>Schlossbrauerei Maxlrain tour</li>
+          <li>Dinner in the Maxlrain Bierstube, sleep at the brewery</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="bavaria" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 13</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Andechs / Herrsching</strong> · 1 night at base</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Maxlrain to the Holy Mountain</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('andechs')">📍 Stop #11 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Maxlrain Bierstube → Andechs / Herrsching</strong> &nbsp;·&nbsp; <span class="num">89 km</span> <span class="muted-inline">(89.2 km)</span> &nbsp;·&nbsp; <span class="num">1 h 25</span></div>
+        <ul class="day-items">
+          <li>89 km / 1 h 25</li>
+          <li>Kloster Andechs: Doppelbock Dunkel above the Ammersee</li>
+          <li>Sleep in Herrsching by the lake</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="bavaria" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 14</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Munich</strong> · 2 nights at base · Night 1 of 2</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Andechs to Munich</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('munich')">📍 Stop #12 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Andechs / Herrsching → Munich</strong> &nbsp;·&nbsp; <span class="num">45 km</span> <span class="muted-inline">(44.5 km)</span> &nbsp;·&nbsp; <span class="num">45 min</span></div>
+        <ul class="day-items">
+          <li>45 km / 45 min</li>
+          <li>Augustiner-Keller: Edelstoff from the wooden barrel</li>
+          <li>Schneider Bräuhaus for Aventinus</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="bavaria" data-drive="no" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 15</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Munich</strong> · 2 nights at base · Night 2 of 2</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Munich</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('munich')">📍 Stop #12 on Map</button>
+        </div>
+        <div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>
+        <ul class="day-items">
+          <li>Giesinger Bräu Erhellung</li>
+          <li>ORCA Brau taproom for NEIPAs</li>
+          <li>Hofbräuhaus once for the room</li>
+          <li>Tilmans Biere or Paulaner Nockherberg to finish</li>
+        </ul>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <div class="day-node germany" data-region="germany" data-drive="yes" data-long="no">
+        <div class="day-top-row">
+          <span class="day-number">DAY 16</span>
+          <div class="day-badges">
+            <span class="base-chip">🇩🇪 Base: <strong>Frankfurt am Main Airport</strong> · 0 nights · Car return &amp; departure</span>
+            
+          </div>
+        </div>
+        <div class="day-heading-row">
+          <h3>Munich to Frankfurt, fly home</h3>
+          <button type="button" class="jump-map-btn" onclick="focusStopOnMap('fra')">📍 Stop #1 on Map</button>
+        </div>
+        <div class="drive-pill">🚗 <strong>Munich → FRA</strong> &nbsp;·&nbsp; <span class="num">402 km</span> <span class="muted-inline">(402 km)</span> &nbsp;·&nbsp; <span class="num">4 h 04</span></div>
+        <ul class="day-items">
+          <li>402 km / 4 h 04 straight up the A3 — leave after breakfast</li>
+          <li>Return the car at FRA</li>
+          <li>Lunch at the airport before security</li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+<!-- TAB 2: MAP -->
+<div id="map" class="tab-content" role="tabpanel">
+  <div class="section-intro">
+    <h2>🗺️ Interactive Route Map — 12 Stops in Visit Order</h2>
+    <p>Click any numbered marker (1–12) or route leg to inspect overnight stays, brewery addresses, notes, and the next OSRM driving leg.</p>
+  </div>
+
+  <div class="map-toolbar">
+    <button type="button" class="filter-btn active" onclick="fitFullRoute()">🔍 Fit Full Loop</button>
+    <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('fra')"><span class="pill-num">1</span> FRA <span class="pill-nights">S/E</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('bruges')"><span class="pill-num">2</span> Bruges <span class="pill-nights">2N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('ghent')"><span class="pill-num">3</span> Ghent <span class="pill-nights">1N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('cologne')"><span class="pill-num">4</span> Cologne <span class="pill-nights">1N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('wurzburg')"><span class="pill-num">5</span> Würzburg <span class="pill-nights">1N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('bamberg')"><span class="pill-num">6</span> Bamberg <span class="pill-nights">2N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('sokolov')"><span class="pill-num">7</span> Permon (Sokolov) <span class="pill-nights">1N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('plzen')"><span class="pill-num">8</span> Plzeň <span class="pill-nights">2N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('kout')"><span class="pill-num">9</span> Kout na Šumavě <span class="pill-nights">1N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('maxlrain')"><span class="pill-num">10</span> Maxlrain <span class="pill-nights">1N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('andechs')"><span class="pill-num">11</span> Andechs <span class="pill-nights">1N</span></button>
+        <button type="button" class="stop-jump-pill" onclick="focusStopOnMap('munich')"><span class="pill-num">12</span> Munich <span class="pill-nights">2N</span></button>
+  </div>
+
+  <div id="map-container"></div>
+
+  <div class="poster-card">
+    <div class="poster-card-head">
+      <h3>🖼️ High-Resolution Offline Route Poster (4800 × 3120 px)</h3>
+      <a href="assets/2027-route-map-v3.png" target="_blank" rel="noopener" style="color:var(--gold);font-size:0.88rem;">Open full-size PNG in new tab →</a>
+    </div>
+    <img src="assets/2027-route-map-v3.png" alt="Bier Reisen 2027 v3 route map poster showing all 12 stops including Würzburg and Cologne, night chips, leg drive times, and 16-day ledger" loading="lazy" />
+  </div>
+</div>
+
+<!-- TAB 3: RANKINGS -->
+<div id="rankings" class="tab-content" role="tabpanel">
+  <div class="section-intro">
+    <h2>🏆 Per-City Brewery &amp; Bar Rankings</h2>
+    <p>All 49 vetted breweries, medieval cellars, monastery taps, and brown cafés across the 11 overnight bases, ranked 1..n per city with what to order at each stop.</p>
+  </div>
+
+  <div class="region-filter" id="ranking-filters">
+    <button type="button" class="filter-btn active" onclick="filterRankings('all', this)">All Cities (49)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('bruges', this)">🇧🇪 Bruges (6)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('ghent', this)">🇧🇪 Ghent (6)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('cologne', this)">🇩🇪 Cologne (7)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('wurzburg', this)">🇩🇪 Würzburg (6)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('bamberg', this)">🇩🇪 Bamberg (7)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('sokolov', this)">🇨🇿 Sokolov (1)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('plzen', this)">🇨🇿 Plzeň (5)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('kout', this)">🇨🇿 Kout na Šumavě (1)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('maxlrain', this)">🇩🇪 Maxlrain (1)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('andechs', this)">🇩🇪 Andechs (2)</button>
+      <button type="button" class="filter-btn" onclick="filterRankings('munich', this)">🇩🇪 Munich (7)</button>
+    <input type="search" id="venue-search" class="search-input" placeholder="🔍 Search venues, styles, notes..." oninput="searchRankings()" aria-label="Search venues" />
+  </div>
+
+  <div id="rankings-container">
+      <section class="city-ranking-section" data-city-section="bruges">
+        <div class="city-section-header">
+          <div>
+            <h3>🇧🇪 Bruges <span class="city-meta-pill">2 nights · Stop #2</span></h3>
+            <p class="city-subnote">Historic centre, De Halve Maan, brown bars on the canal.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Flemish red</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="bruges" data-search="bruges brugge de halve maan only active brewery in the historic centre; brugse zot, straffe hendrik, 3 km beer pipeline, xl rooftop tour. brugse zot blond or straffe hendrik quadrupel (city signature: flemish red) flemish red">
+            <span class="rank" title="Rank #1 in Bruges">1</span>
+            <div class="card-city-tag">🇧🇪 Bruges · #1 of 6</div>
+            <h4>De Halve Maan</h4>
+            <p class="desc">Only active brewery in the historic centre; Brugse Zot, Straffe Hendrik, 3 km beer pipeline, XL rooftop tour.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Brugse Zot blond or Straffe Hendrik quadrupel (city signature: Flemish red)</div>
+          </div>
+          <div class="brewery-card" data-city="bruges" data-search="bruges brugge de garre hidden alley café, house tripel at 11%, maximum three per person. house tripel 11% — max three per person (city signature: flemish red) flemish red">
+            <span class="rank" title="Rank #2 in Bruges">2</span>
+            <div class="card-city-tag">🇧🇪 Bruges · #2 of 6</div>
+            <h4>De Garre</h4>
+            <p class="desc">Hidden alley café, house tripel at 11%, maximum three per person.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> House Tripel 11% — max three per person (city signature: Flemish red)</div>
+          </div>
+          <div class="brewery-card" data-city="bruges" data-search="bruges brugge &#x27;t brugs beertje 300+ bottles, the classic brown bar of bruges. vintage belgian bottle or aged flemish red from the 300+ bottle list flemish red">
+            <span class="rank" title="Rank #3 in Bruges">3</span>
+            <div class="card-city-tag">🇧🇪 Bruges · #3 of 6</div>
+            <h4>&#x27;t Brugs Beertje</h4>
+            <p class="desc">300+ bottles, the classic brown bar of Bruges.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Vintage Belgian bottle or aged Flemish red from the 300+ bottle list</div>
+          </div>
+          <div class="brewery-card" data-city="bruges" data-search="bruges brugge café vlissinghe oldest pub in bruges (1515), bocce court in the garden. classic belgian abbey pour or flemish red in the 1515 garden flemish red">
+            <span class="rank" title="Rank #4 in Bruges">4</span>
+            <div class="card-city-tag">🇧🇪 Bruges · #4 of 6</div>
+            <h4>Café Vlissinghe</h4>
+            <p class="desc">Oldest pub in Bruges (1515), bocce court in the garden.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Classic Belgian abbey pour or Flemish red in the 1515 garden</div>
+          </div>
+          <div class="brewery-card" data-city="bruges" data-search="bruges brugge le trappiste vaulted cellar bar with a full trappist list. trappist draught/bottle flight alongside a bruges flemish red flemish red">
+            <span class="rank" title="Rank #5 in Bruges">5</span>
+            <div class="card-city-tag">🇧🇪 Bruges · #5 of 6</div>
+            <h4>Le Trappiste</h4>
+            <p class="desc">Vaulted cellar bar with a full Trappist list.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Trappist draught/bottle flight alongside a Bruges Flemish red</div>
+          </div>
+          <div class="brewery-card" data-city="bruges" data-search="bruges brugge bourgogne des flandres brewery-café on the canal, flemish red house beer. flemish red house beer overlooking the canal flemish red">
+            <span class="rank" title="Rank #6 in Bruges">6</span>
+            <div class="card-city-tag">🇧🇪 Bruges · #6 of 6</div>
+            <h4>Bourgogne des Flandres</h4>
+            <p class="desc">Brewery-café on the canal, Flemish red house beer.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Flemish red house beer overlooking the canal</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="ghent">
+        <div class="city-section-header">
+          <div>
+            <h3>🇧🇪 Ghent <span class="city-meta-pill">1 night · Stop #3</span></h3>
+            <p class="city-subnote">Gruut, Dok Noord, Dulle Griet and the Waterhuis.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>gruut</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="ghent" data-search="ghent gent gruut stadsbrouwerij city brewery using a medieval herb-and-spice mix instead of hops: blond, amber, brown, white, inferno. gruut (blond, amber, brown, white, or inferno — hop-free herb beer) gruut">
+            <span class="rank" title="Rank #1 in Ghent">1</span>
+            <div class="card-city-tag">🇧🇪 Ghent · #1 of 6</div>
+            <h4>Gruut Stadsbrouwerij</h4>
+            <p class="desc">City brewery using a medieval herb-and-spice mix instead of hops: Blond, Amber, Brown, White, Inferno.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Gruut (Blond, Amber, Brown, White, or Inferno — hop-free herb beer)</div>
+          </div>
+          <div class="brewery-card" data-city="ghent" data-search="ghent gent dok brewing company dok-noord 4b, 30 taps in a converted metal workshop; pils 13 is the flagship. pils 13 flagship from the 30-tap board (city signature: gruut) gruut">
+            <span class="rank" title="Rank #2 in Ghent">2</span>
+            <div class="card-city-tag">🇧🇪 Ghent · #2 of 6</div>
+            <h4>Dok Brewing Company</h4>
+            <p class="desc">Dok-Noord 4B, 30 taps in a converted metal workshop; Pils 13 is the flagship.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Pils 13 flagship from the 30-tap board (city signature: gruut)</div>
+          </div>
+          <div class="brewery-card" data-city="ghent" data-search="ghent gent stroom brouwers belgian-american duo bridging belgian tradition and us craft; forelstraat taproom. belgian-us craft taproom pour (city signature: gruut) gruut">
+            <span class="rank" title="Rank #3 in Ghent">3</span>
+            <div class="card-city-tag">🇧🇪 Ghent · #3 of 6</div>
+            <h4>Stroom Brouwers</h4>
+            <p class="desc">Belgian-American duo bridging Belgian tradition and US craft; Forelstraat taproom.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Belgian-US craft taproom pour (city signature: gruut)</div>
+          </div>
+          <div class="brewery-card" data-city="ghent" data-search="ghent gent de dulle griet vrijdagmarkt 50, 500 beers, the shoe-in-the-basket ritual for the house max. house max in the yard-glass shoe-basket ritual, or a ghent gruut gruut">
+            <span class="rank" title="Rank #4 in Ghent">4</span>
+            <div class="card-city-tag">🇧🇪 Ghent · #4 of 6</div>
+            <h4>De Dulle Griet</h4>
+            <p class="desc">Vrijdagmarkt 50, 500 beers, the shoe-in-the-basket ritual for the house Max.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> House Max in the yard-glass shoe-basket ritual, or a Ghent gruut</div>
+          </div>
+          <div class="brewery-card" data-city="ghent" data-search="ghent gent het waterhuis aan de bierkant groentenmarkt 9, around 170 beers, canal terrace; house beers gandavum and klokke roeland. gandavum or klokke roeland on the canal terrace (city signature: gruut) gruut">
+            <span class="rank" title="Rank #5 in Ghent">5</span>
+            <div class="card-city-tag">🇧🇪 Ghent · #5 of 6</div>
+            <h4>Het Waterhuis aan de Bierkant</h4>
+            <p class="desc">Groentenmarkt 9, around 170 beers, canal terrace; house beers Gandavum and Klokke Roeland.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Gandavum or Klokke Roeland on the canal terrace (city signature: gruut)</div>
+          </div>
+          <div class="brewery-card" data-city="ghent" data-search="ghent gent de hopduvel beer shop in dok-noord, the best take-home selection in the city. take-home belgian bottles &amp; local ghent gruut selection gruut">
+            <span class="rank" title="Rank #6 in Ghent">6</span>
+            <div class="card-city-tag">🇧🇪 Ghent · #6 of 6</div>
+            <h4>De Hopduvel</h4>
+            <p class="desc">Beer shop in Dok-Noord, the best take-home selection in the city.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Take-home Belgian bottles &amp; local Ghent gruut selection</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="cologne">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Cologne <span class="city-meta-pill">1 night · Stop #4</span></h3>
+            <p class="city-subnote">Kölsch country: Früh am Dom, Päffgen, Mühlen, Lommerzheim and the Ehrenfeld craft scene.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Kölsch</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="cologne" data-search="cologne köln früh am dom the classic kölsch hall beside the cathedral; brewed on site since 1904 and poured by köbes in 0.2 l stangen. früh kölsch poured by köbes in 0.2 l stangen right beside the cathedral kölsch">
+            <span class="rank" title="Rank #1 in Cologne">1</span>
+            <div class="card-city-tag">🇩🇪 Cologne · #1 of 7</div>
+            <h4>Früh am Dom</h4>
+            <p class="desc">The classic Kölsch hall beside the cathedral; brewed on site since 1904 and poured by Köbes in 0.2 l Stangen.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Früh Kölsch poured by Köbes in 0.2 L Stangen right beside the cathedral</div>
+          </div>
+          <div class="brewery-card" data-city="cologne" data-search="cologne köln brauerei zur malzmühle heumarkt 6, mühlen kölsch since 1858 — one of the few houses still brewing its own kölsch in the old town. house-brewed mühlen kölsch (since 1858) at heumarkt 6 kölsch">
+            <span class="rank" title="Rank #2 in Cologne">2</span>
+            <div class="card-city-tag">🇩🇪 Cologne · #2 of 7</div>
+            <h4>Brauerei zur Malzmühle</h4>
+            <p class="desc">Heumarkt 6, Mühlen Kölsch since 1858 — one of the few houses still brewing its own Kölsch in the old town.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> House-brewed Mühlen Kölsch (since 1858) at Heumarkt 6</div>
+          </div>
+          <div class="brewery-card" data-city="cologne" data-search="cologne köln brauhaus päffgen friesenstraße 64-66: the brewery tap, kölsch straight from the wooden barrel, no music, no excuses. päffgen kölsch gravity-tapped straight from the wooden barrel kölsch">
+            <span class="rank" title="Rank #3 in Cologne">3</span>
+            <div class="card-city-tag">🇩🇪 Cologne · #3 of 7</div>
+            <h4>Brauhaus Päffgen</h4>
+            <p class="desc">Friesenstraße 64-66: the brewery tap, Kölsch straight from the wooden barrel, no music, no excuses.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Päffgen Kölsch gravity-tapped straight from the wooden barrel</div>
+          </div>
+          <div class="brewery-card" data-city="cologne" data-search="cologne köln brauhaus sion unter taschenmacher 5-7, a kölsch house with roots in the 14th century, right behind the alter markt. crisp sion kölsch behind the alter markt kölsch">
+            <span class="rank" title="Rank #4 in Cologne">4</span>
+            <div class="card-city-tag">🇩🇪 Cologne · #4 of 7</div>
+            <h4>Brauhaus Sion</h4>
+            <p class="desc">Unter Taschenmacher 5-7, a Kölsch house with roots in the 14th century, right behind the Alter Markt.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Crisp Sion Kölsch behind the Alter Markt</div>
+          </div>
+          <div class="brewery-card" data-city="cologne" data-search="cologne köln peters brauhaus mühlengasse 1, historic panelled rooms near the river, peters kölsch on tap. fresh peters kölsch on tap in the historic panelled rooms kölsch">
+            <span class="rank" title="Rank #5 in Cologne">5</span>
+            <div class="card-city-tag">🇩🇪 Cologne · #5 of 7</div>
+            <h4>Peters Brauhaus</h4>
+            <p class="desc">Mühlengasse 1, historic panelled rooms near the river, Peters Kölsch on tap.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Fresh Peters Kölsch on tap in the historic panelled rooms</div>
+          </div>
+          <div class="brewery-card" data-city="cologne" data-search="cologne köln lommerzheim siegesstraße 18 in deutz: cult pub, kölsch, schweinshaxe and a queue of locals by 18:00. fresh kölsch and schweinshaxe at the cult deutz pub kölsch">
+            <span class="rank" title="Rank #6 in Cologne">6</span>
+            <div class="card-city-tag">🇩🇪 Cologne · #6 of 7</div>
+            <h4>Lommerzheim</h4>
+            <p class="desc">Siegesstraße 18 in Deutz: cult pub, Kölsch, Schweinshaxe and a queue of locals by 18:00.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Fresh Kölsch and Schweinshaxe at the cult Deutz pub</div>
+          </div>
+          <div class="brewery-card" data-city="cologne" data-search="cologne köln braustelle venloer straße 386 in ehrenfeld — cologne&#x27;s craft counterpoint, own beers brewed behind the bar. house ehrenfeld craft beers brewed behind the bar (city signature: kölsch) kölsch">
+            <span class="rank" title="Rank #7 in Cologne">7</span>
+            <div class="card-city-tag">🇩🇪 Cologne · #7 of 7</div>
+            <h4>Braustelle</h4>
+            <p class="desc">Venloer Straße 386 in Ehrenfeld — Cologne&#x27;s craft counterpoint, own beers brewed behind the bar.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> House Ehrenfeld craft beers brewed behind the bar (city signature: Kölsch)</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="wurzburg">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Würzburg <span class="city-meta-pill">1 night · Stop #5</span></h3>
+            <p class="city-subnote">The wine capital that still brews: Hofbräu since 1643, a brewpub under the Old Main Bridge and two craft micros.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Hofbräu Pils &amp; Schwarzbier</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="wurzburg" data-search="würzburg würzburg würzburger hofbräukeller höchberger straße 28: the 1643 hofbräu&#x27;s own keller with beer garden and a friday/saturday brewmaster tour that starts by tapping a keg. würzburger hofbräu pils, schwarzbier, or hefeweißbier — freshly tapped at the 1643 keller hofbräu pils &amp; schwarzbier">
+            <span class="rank" title="Rank #1 in Würzburg">1</span>
+            <div class="card-city-tag">🇩🇪 Würzburg · #1 of 6</div>
+            <h4>Würzburger Hofbräukeller</h4>
+            <p class="desc">Höchberger Straße 28: the 1643 Hofbräu&#x27;s own Keller with beer garden and a Friday/Saturday brewmaster tour that starts by tapping a keg.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Würzburger Hofbräu Pils, Schwarzbier, or Hefeweißbier — freshly tapped at the 1643 Keller</div>
+          </div>
+          <div class="brewery-card" data-city="wurzburg" data-search="würzburg würzburg goldene gans brewpub and beer garden under the alte mainbrücke — its house-brewed beer is poured only in the garden. unfiltered house-brewed goldene gans beer poured exclusively in the garden under the alte mainbrücke hofbräu pils &amp; schwarzbier">
+            <span class="rank" title="Rank #2 in Würzburg">2</span>
+            <div class="card-city-tag">🇩🇪 Würzburg · #2 of 6</div>
+            <h4>Goldene Gans</h4>
+            <p class="desc">Brewpub and beer garden under the Alte Mainbrücke — its house-brewed beer is poured only in the garden.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Unfiltered house-brewed Goldene Gans beer poured exclusively in the garden under the Alte Mainbrücke</div>
+          </div>
+          <div class="brewery-card" data-city="wurzburg" data-search="würzburg würzburg herbipolis (smash brewing project) würzburg&#x27;s craft micro: single-malt, single-hop beers in the city&#x27;s newer scene. single-malt, single-hop (smash) craft pour showcasing one malt and hop varietal hofbräu pils &amp; schwarzbier">
+            <span class="rank" title="Rank #3 in Würzburg">3</span>
+            <div class="card-city-tag">🇩🇪 Würzburg · #3 of 6</div>
+            <h4>Herbipolis (SMaSH Brewing Project)</h4>
+            <p class="desc">Würzburg&#x27;s craft micro: single-malt, single-hop beers in the city&#x27;s newer scene.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Single-malt, single-hop (SMaSH) craft pour showcasing one malt and hop varietal</div>
+          </div>
+          <div class="brewery-card" data-city="wurzburg" data-search="würzburg würzburg maischerei mayr &amp; müller small würzburg brewery doing experimental and classic styles side by side. small-batch würzburg experimental or classic franconian tap pour hofbräu pils &amp; schwarzbier">
+            <span class="rank" title="Rank #4 in Würzburg">4</span>
+            <div class="card-city-tag">🇩🇪 Würzburg · #4 of 6</div>
+            <h4>Maischerei Mayr &amp; Müller</h4>
+            <p class="desc">Small Würzburg brewery doing experimental and classic styles side by side.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Small-batch Würzburg experimental or classic Franconian tap pour</div>
+          </div>
+          <div class="brewery-card" data-city="wurzburg" data-search="würzburg würzburg kauzen-bräu, ochsenfurt 20 km south: a proper franconian country brewery with a brewery tap in the old town. traditional franconian country lager or pils at the ochsenfurt old-town brewery tap (20 km south) hofbräu pils &amp; schwarzbier">
+            <span class="rank" title="Rank #5 in Würzburg">5</span>
+            <div class="card-city-tag">🇩🇪 Würzburg · #5 of 6</div>
+            <h4>Kauzen-Bräu, Ochsenfurt</h4>
+            <p class="desc">20 km south: a proper Franconian country brewery with a brewery tap in the old town.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Traditional Franconian country lager or Pils at the Ochsenfurt old-town brewery tap (20 km south)</div>
+          </div>
+          <div class="brewery-card" data-city="wurzburg" data-search="würzburg würzburg privatbrauerei oechsner, ochsenfurt second ochsenfurt brewery, family-run, classic unfiltered franconian lagers. family-brewed unfiltered franconian kellerbier or lager in ochsenfurt hofbräu pils &amp; schwarzbier">
+            <span class="rank" title="Rank #6 in Würzburg">6</span>
+            <div class="card-city-tag">🇩🇪 Würzburg · #6 of 6</div>
+            <h4>Privatbrauerei Oechsner, Ochsenfurt</h4>
+            <p class="desc">Second Ochsenfurt brewery, family-run, classic unfiltered Franconian lagers.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Family-brewed unfiltered Franconian Kellerbier or lager in Ochsenfurt</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="bamberg">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Bamberg <span class="city-meta-pill">2 nights · Stop #6</span></h3>
+            <p class="city-subnote">UNESCO old town, nine breweries, rauchbier capital.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Rauchbier</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg schlenkerla rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar. rauchbier — beechwood-smoked malt poured straight from oak barrels rauchbier">
+            <span class="rank" title="Rank #1 in Bamberg">1</span>
+            <div class="card-city-tag">🇩🇪 Bamberg · #1 of 7</div>
+            <h4>Schlenkerla</h4>
+            <p class="desc">Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Rauchbier — beechwood-smoked malt poured straight from oak barrels</div>
+          </div>
+          <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg spezial the locals&#x27; rauchbier — subtler smoke than schlenkerla. rauchbier — the locals&#x27; subtler beechwood smoke rauchbier">
+            <span class="rank" title="Rank #2 in Bamberg">2</span>
+            <div class="card-city-tag">🇩🇪 Bamberg · #2 of 7</div>
+            <h4>Spezial</h4>
+            <p class="desc">The locals&#x27; rauchbier — subtler smoke than Schlenkerla.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Rauchbier — the locals&#x27; subtler beechwood smoke</div>
+          </div>
+          <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg mahr&#x27;s bräu the legendary &#x27;au&#x27; ungespundetes, naturally carbonated and unfiltered. &#x27;au&#x27; ungespundetes unfiltered cellar lager (city signature: rauchbier) rauchbier">
+            <span class="rank" title="Rank #3 in Bamberg">3</span>
+            <div class="card-city-tag">🇩🇪 Bamberg · #3 of 7</div>
+            <h4>Mahr&#x27;s Bräu</h4>
+            <p class="desc">The legendary &#x27;aU&#x27; Ungespundetes, naturally carbonated and unfiltered.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> &#x27;aU&#x27; Ungespundetes unfiltered cellar lager (city signature: Rauchbier)</div>
+          </div>
+          <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg fässla dwarf logo, zwergla dark lager, brewery tap opposite spezial. zwergla dark lager at the brewery tap (city signature: rauchbier) rauchbier">
+            <span class="rank" title="Rank #4 in Bamberg">4</span>
+            <div class="card-city-tag">🇩🇪 Bamberg · #4 of 7</div>
+            <h4>Fässla</h4>
+            <p class="desc">Dwarf logo, Zwergla dark lager, brewery tap opposite Spezial.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Zwergla dark lager at the brewery tap (city signature: Rauchbier)</div>
+          </div>
+          <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg greifenklau beer garden with the best view over the city. fresh bamberg cellar lager in the hilltop garden (city signature: rauchbier) rauchbier">
+            <span class="rank" title="Rank #5 in Bamberg">5</span>
+            <div class="card-city-tag">🇩🇪 Bamberg · #5 of 7</div>
+            <h4>Greifenklau</h4>
+            <p class="desc">Beer garden with the best view over the city.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Fresh Bamberg cellar lager in the hilltop garden (city signature: Rauchbier)</div>
+          </div>
+          <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg klosterbräu oldest brewery in bamberg (1533), schwärzla. schwärzla dark lager at bamberg&#x27;s 1533 brewery (city signature: rauchbier) rauchbier">
+            <span class="rank" title="Rank #6 in Bamberg">6</span>
+            <div class="card-city-tag">🇩🇪 Bamberg · #6 of 7</div>
+            <h4>Klosterbräu</h4>
+            <p class="desc">Oldest brewery in Bamberg (1533), Schwärzla.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Schwärzla dark lager at Bamberg&#x27;s 1533 brewery (city signature: Rauchbier)</div>
+          </div>
+          <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg keesmann cult herren pils, the counterpoint to all the smoke. herren pils — crisp counterpoint to bamberg&#x27;s rauchbier rauchbier">
+            <span class="rank" title="Rank #7 in Bamberg">7</span>
+            <div class="card-city-tag">🇩🇪 Bamberg · #7 of 7</div>
+            <h4>Keesmann</h4>
+            <p class="desc">Cult Herren Pils, the counterpoint to all the smoke.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Herren Pils — crisp counterpoint to Bamberg&#x27;s Rauchbier</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="sokolov">
+        <div class="city-section-header">
+          <div>
+            <h3>🇨🇿 Sokolov <span class="city-meta-pill">1 night · Stop #7</span></h3>
+            <p class="city-subnote">Mining-country craft brewery with its own restaurant and rooms.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Permon IPA 15°</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="sokolov" data-search="sokolov sokolov pivovar permon komenského 77: mining-country craft brewery, permon ipa 15°, dark specials, brewery restaurant on site. permon ipa 15° and house dark specials on tap permon ipa 15°">
+            <span class="rank" title="Rank #1 in Sokolov">1</span>
+            <div class="card-city-tag">🇨🇿 Sokolov · #1 of 1</div>
+            <h4>Pivovar Permon</h4>
+            <p class="desc">Komenského 77: mining-country craft brewery, Permon IPA 15°, dark specials, brewery restaurant on site.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Permon IPA 15° and house dark specials on tap</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="plzen">
+        <div class="city-section-header">
+          <div>
+            <h3>🇨🇿 Plzeň <span class="city-meta-pill">2 nights · Stop #8</span></h3>
+            <p class="city-subnote">Birthplace of pilsner, tank beer, Pilsner Urquell cellars.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>tank Pilsner</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň pilsner urquell where pilsner was born in 1842; cellars tour with unfiltered, unpasteurised tank beer. unfiltered, unpasteurised tank pilsner straight from the cellars tank pilsner">
+            <span class="rank" title="Rank #1 in Plzeň">1</span>
+            <div class="card-city-tag">🇨🇿 Plzeň · #1 of 5</div>
+            <h4>Pilsner Urquell</h4>
+            <p class="desc">Where pilsner was born in 1842; cellars tour with unfiltered, unpasteurised tank beer.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Unfiltered, unpasteurised tank Pilsner straight from the cellars</div>
+          </div>
+          <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň u salzmannů pražská 8, a pub since 1637 and the best-poured tank urquell in town. tank pilsner (pilsner urquell) poured at 1637 pub pražská 8 tank pilsner">
+            <span class="rank" title="Rank #2 in Plzeň">2</span>
+            <div class="card-city-tag">🇨🇿 Plzeň · #2 of 5</div>
+            <h4>U Salzmannů</h4>
+            <p class="desc">Pražská 8, a pub since 1637 and the best-poured tank Urquell in town.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Tank Pilsner (Pilsner Urquell) poured at 1637 pub Pražská 8</div>
+          </div>
+          <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň na parkánu attached to the brewery, freshest tank pilsner you will get. brewery-fresh unpasteurised tank pilsner next door to urquell tank pilsner">
+            <span class="rank" title="Rank #3 in Plzeň">3</span>
+            <div class="card-city-tag">🇨🇿 Plzeň · #3 of 5</div>
+            <h4>Na Parkánu</h4>
+            <p class="desc">Attached to the brewery, freshest tank Pilsner you will get.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Brewery-fresh unpasteurised tank Pilsner next door to Urquell</div>
+          </div>
+          <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň purkmistr brewery hotel with its own beer spa and a solid dark lager. house dark lager at the brewery spa hotel (city signature: tank pilsner) tank pilsner">
+            <span class="rank" title="Rank #4 in Plzeň">4</span>
+            <div class="card-city-tag">🇨🇿 Plzeň · #4 of 5</div>
+            <h4>Purkmistr</h4>
+            <p class="desc">Brewery hotel with its own beer spa and a solid dark lager.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> House dark lager at the brewery spa hotel (city signature: tank Pilsner)</div>
+          </div>
+          <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň pivovar raven czech craft pioneer: ipas, stouts and sours outside the pilsner tradition. czech craft ipa, stout, or sour (city signature: tank pilsner) tank pilsner">
+            <span class="rank" title="Rank #5 in Plzeň">5</span>
+            <div class="card-city-tag">🇨🇿 Plzeň · #5 of 5</div>
+            <h4>Pivovar Raven</h4>
+            <p class="desc">Czech craft pioneer: IPAs, stouts and sours outside the pilsner tradition.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Czech craft IPA, stout, or sour (city signature: tank Pilsner)</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="kout">
+        <div class="city-section-header">
+          <div>
+            <h3>🇨🇿 Kout na Šumavě <span class="city-meta-pill">1 night · Stop #9</span></h3>
+            <p class="city-subnote">Cult 12° lager, revived 2006, deep in the Bohemian forest.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Kout 12°</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="kout" data-search="kout na šumavě kout na šumavě pivovar kout na šumavě revived in 2006 from a defunct 19th-century brewery; the 12° pale lager is a cult beer among czech beer nerds. kout 12° pale lager — the revived bohemian forest cult beer kout 12°">
+            <span class="rank" title="Rank #1 in Kout na Šumavě">1</span>
+            <div class="card-city-tag">🇨🇿 Kout na Šumavě · #1 of 1</div>
+            <h4>Pivovar Kout na Šumavě</h4>
+            <p class="desc">Revived in 2006 from a defunct 19th-century brewery; the 12° pale lager is a cult beer among Czech beer nerds.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Kout 12° pale lager — the revived Bohemian Forest cult beer</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="maxlrain">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Maxlrain <span class="city-meta-pill">1 night · Stop #10</span></h3>
+            <p class="city-subnote">Schlossbrauerei Maxlrain, brewery inn south of Munich.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Maxlrainer Helles</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="maxlrain" data-search="maxlrain tuntenhausen-maxlrain schlossbrauerei maxlrain family-owned castle brewery in tuntenhausen; helles, dunkel and weißbier served in the bierstube next door. maxlrainer helles (plus dunkel &amp; weißbier) in the bierstube maxlrainer helles">
+            <span class="rank" title="Rank #1 in Maxlrain">1</span>
+            <div class="card-city-tag">🇩🇪 Maxlrain · #1 of 1</div>
+            <h4>Schlossbrauerei Maxlrain</h4>
+            <p class="desc">Family-owned castle brewery in Tuntenhausen; Helles, Dunkel and Weißbier served in the Bierstube next door.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Maxlrainer Helles (plus Dunkel &amp; Weißbier) in the Bierstube</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="andechs">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Andechs <span class="city-meta-pill">1 night · Stop #11</span></h3>
+            <p class="city-subnote">Benedictine monastery brewery above the Ammersee; sleep in Herrsching.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Doppelbock</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="andechs" data-search="andechs andechs kloster andechs benedictine monastery brewery since 1455; doppelbock dunkel at 7.1% with a view over the ammersee. doppelbock dunkel (7.1%) above the ammersee doppelbock">
+            <span class="rank" title="Rank #1 in Andechs">1</span>
+            <div class="card-city-tag">🇩🇪 Andechs · #1 of 2</div>
+            <h4>Kloster Andechs</h4>
+            <p class="desc">Benedictine monastery brewery since 1455; Doppelbock Dunkel at 7.1% with a view over the Ammersee.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Doppelbock Dunkel (7.1%) above the Ammersee</div>
+          </div>
+          <div class="brewery-card" data-city="andechs" data-search="andechs andechs andechser hof, herrsching inn and restaurant by the lake, pours the full andechs range; the practical base for the night. andechs doppelbock dunkel and full monastery range by the lake doppelbock">
+            <span class="rank" title="Rank #2 in Andechs">2</span>
+            <div class="card-city-tag">🇩🇪 Andechs · #2 of 2</div>
+            <h4>Andechser Hof, Herrsching</h4>
+            <p class="desc">Inn and restaurant by the lake, pours the full Andechs range; the practical base for the night.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Andechs Doppelbock Dunkel and full monastery range by the lake</div>
+          </div>
+        </div>
+      </section>
+      <section class="city-ranking-section" data-city-section="munich">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Munich <span class="city-meta-pill">2 nights · Stop #12</span></h3>
+            <p class="city-subnote">Augustiner, Schneider, Giesinger, ORCA and the beer halls.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Helles</strong></div>
+        </div>
+        <div class="brewery-grid">
+          <div class="brewery-card" data-city="munich" data-search="munich münchen augustiner-keller munich&#x27;s oldest brewery and the locals&#x27; choice; edelstoff from wooden barrels under the chestnuts. holzfass edelstoff &amp; munich helles under the chestnut trees helles">
+            <span class="rank" title="Rank #1 in Munich">1</span>
+            <div class="card-city-tag">🇩🇪 Munich · #1 of 7</div>
+            <h4>Augustiner-Keller</h4>
+            <p class="desc">Munich&#x27;s oldest brewery and the locals&#x27; choice; Edelstoff from wooden barrels under the chestnuts.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Holzfass Edelstoff &amp; Munich Helles under the chestnut trees</div>
+          </div>
+          <div class="brewery-card" data-city="munich" data-search="munich münchen schneider bräuhaus the original wheat-beer house; aventinus is the benchmark weizenbock. aventinus weizenbock (city signature: munich helles) helles">
+            <span class="rank" title="Rank #2 in Munich">2</span>
+            <div class="card-city-tag">🇩🇪 Munich · #2 of 7</div>
+            <h4>Schneider Bräuhaus</h4>
+            <p class="desc">The original wheat-beer house; Aventinus is the benchmark Weizenbock.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Aventinus Weizenbock (city signature: Munich Helles)</div>
+          </div>
+          <div class="brewery-card" data-city="munich" data-search="munich münchen hofbräuhaus brewing since 1589 — go once for the room, not for the quiet. munich helles in the historic 1589 beer hall helles">
+            <span class="rank" title="Rank #3 in Munich">3</span>
+            <div class="card-city-tag">🇩🇪 Munich · #3 of 7</div>
+            <h4>Hofbräuhaus</h4>
+            <p class="desc">Brewing since 1589 — go once for the room, not for the quiet.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Munich Helles in the historic 1589 beer hall</div>
+          </div>
+          <div class="brewery-card" data-city="munich" data-search="munich münchen giesinger bräu garage-to-glory munich craft brewery; erhellung unfiltered helles. erhellung unfiltered helles helles">
+            <span class="rank" title="Rank #4 in Munich">4</span>
+            <div class="card-city-tag">🇩🇪 Munich · #4 of 7</div>
+            <h4>Giesinger Bräu</h4>
+            <p class="desc">Garage-to-glory Munich craft brewery; Erhellung unfiltered Helles.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Erhellung unfiltered Helles</div>
+          </div>
+          <div class="brewery-card" data-city="munich" data-search="munich münchen orca brau tiny nano-brewery making juicy neipas that rival new england. juicy nano-batch neipa (city signature: munich helles) helles">
+            <span class="rank" title="Rank #5 in Munich">5</span>
+            <div class="card-city-tag">🇩🇪 Munich · #5 of 7</div>
+            <h4>ORCA Brau</h4>
+            <p class="desc">Tiny nano-brewery making juicy NEIPAs that rival New England.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Juicy nano-batch NEIPA (city signature: Munich Helles)</div>
+          </div>
+          <div class="brewery-card" data-city="munich" data-search="munich münchen tilmans biere small, refined munich brewery for a quieter final round. refined small-batch munich helles or pils helles">
+            <span class="rank" title="Rank #6 in Munich">6</span>
+            <div class="card-city-tag">🇩🇪 Munich · #6 of 7</div>
+            <h4>Tilmans Biere</h4>
+            <p class="desc">Small, refined Munich brewery for a quieter final round.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Refined small-batch Munich Helles or Pils</div>
+          </div>
+          <div class="brewery-card" data-city="munich" data-search="munich münchen paulaner nockherberg historic brewery site above the isar, home of the starkbierfest. munich helles (and starkbier tradition above the isar) helles">
+            <span class="rank" title="Rank #7 in Munich">7</span>
+            <div class="card-city-tag">🇩🇪 Munich · #7 of 7</div>
+            <h4>Paulaner Nockherberg</h4>
+            <p class="desc">Historic brewery site above the Isar, home of the Starkbierfest.</p>
+            <div class="order-this">🍺 <strong>Order this:</strong> Munich Helles (and Starkbier tradition above the Isar)</div>
+          </div>
+        </div>
+      </section>
+  </div>
+</div>
+
+<!-- TAB 4: BEER GUIDE -->
+<div id="beers" class="tab-content" role="tabpanel">
+  <div class="section-intro">
+    <h2>🍻 Regional Beer Style Guide &amp; What to Order Where</h2>
+    <p>Five distinct European brewing cultures in one loop: Flanders wild &amp; herb ales, Rhineland top-fermented Kölsch &amp; Düsseldorf Altbier, Lower &amp; Upper Franconian Schwarzbier, smoked Rauchbier &amp; unbunged cellar lagers, Bohemian decoction tank pilsners, and Upper Bavarian wheat &amp; monastery bocks.</p>
+  </div>
+
+  <div class="region-filter" id="beer-region-filters">
+    <button type="button" class="filter-btn active" onclick="filterBeerRegions('all', this)">All Regions (5)</button> <button type="button" class="filter-btn" onclick="filterBeerRegions('belgium', this)">Belgium (7)</button> <button type="button" class="filter-btn" onclick="filterBeerRegions('rhineland', this)">Rhineland (2)</button> <button type="button" class="filter-btn" onclick="filterBeerRegions('franconia', this)">Franconia (6)</button> <button type="button" class="filter-btn" onclick="filterBeerRegions('bohemia', this)">Bohemia (4)</button> <button type="button" class="filter-btn" onclick="filterBeerRegions('bavaria', this)">Bavaria (4)</button>
+  </div>
+
+  <div id="beer-regions-wrap">
+      <section class="beer-region-block" data-beer-region="belgium">
+        <h3 class="region-table-heading">Belgium <span class="count-pill">7 styles</span></h3>
+        <div class="beer-table-wrap">
+          <table class="beer-table">
+            <thead>
+              <tr>
+                <th style="width:20%">Style</th>
+                <th style="width:38%">What to Expect</th>
+                <th style="width:14%">Typical ABV</th>
+                <th style="width:28%">Serving Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><span class="color-swatch" style="background:#7c1d24"></span><strong>Flemish red</strong></td>
+              <td>Oak-foeder aged red-brown ale; tart red-currant, cherry, balsamic tang balanced by soft caramel malt.</td>
+              <td class="num"><strong>5.0 – 6.5%</strong></td>
+              <td>Stemmed tulip or goblet at 8–10 °C; blend of young and oak-aged stock (Bourgogne des Flandres, Rodenbach).</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#d99b26"></span><strong>lambic / gueuze</strong></td>
+              <td>Spontaneously fermented wild wheat-barley beer; bone-dry barnyard funk, lemon zest, lively champagne fizz in gueuze blends.</td>
+              <td class="num"><strong>5.0 – 7.0%</strong></td>
+              <td>Uncarbonated straight lambic in a tumbler or sparkling Oude Gueuze from corked bottles in a fluted glass.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#eab308"></span><strong>saison</strong></td>
+              <td>Dry, peppery Wallonian farmhouse ale; expressive yeast phenols, citrus peel, earthy noble hop snap.</td>
+              <td class="num"><strong>5.5 – 7.0%</strong></td>
+              <td>Wide tulip glass at 8–10 °C with a rocky, persistent white foam cap.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#f5c451"></span><strong>tripel</strong></td>
+              <td>Deceptively strong pale abbey-style ale; spicy yeast esters, honeyed pilsner malt, dry warming finish.</td>
+              <td class="num"><strong>8.0 – 11.0%</strong></td>
+              <td>Wide chalice or house goblet at 8–10 °C (De Garre&#x27;s 11% house tripel comes with cheese cubes; max 3).</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#5b2c1d"></span><strong>dubbel</strong></td>
+              <td>Rich mahogany abbey ale brewed with dark candi sugar; dried plum, raisin, toasted bread crust, gentle spice.</td>
+              <td class="num"><strong>6.5 – 8.0%</strong></td>
+              <td>Wide-mouthed Trappist chalice at cellar temperature (10–12 °C) to open dark-fruit aromatics.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#f6e599"></span><strong>witbier</strong></td>
+              <td>Unfiltered spiced wheat beer with coriander seed and bitter Curaçao orange peel; silky, zesty, refreshing.</td>
+              <td class="num"><strong>4.5 – 5.5%</strong></td>
+              <td>Hexagonal tumbler chilled (5–7 °C), swirled gently to suspend the yeast cloud.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#b76e22"></span><strong>gruut (herb beer)</strong></td>
+              <td>Medieval Ghent style brewed with a botanical gruit spice-and-herb blend instead of hops; herbal, earthy, lightly floral.</td>
+              <td class="num"><strong>5.0 – 9.0%</strong></td>
+              <td>Poured across Blond, Amber, Brown, White, and Inferno strengths at Gruut Stadsbrouwerij in Ghent.</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="beer-region-block" data-beer-region="rhineland">
+        <h3 class="region-table-heading">Rhineland <span class="count-pill">2 styles</span></h3>
+        <div class="beer-table-wrap">
+          <table class="beer-table">
+            <thead>
+              <tr>
+                <th style="width:20%">Style</th>
+                <th style="width:38%">What to Expect</th>
+                <th style="width:14%">Typical ABV</th>
+                <th style="width:28%">Serving Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><span class="color-swatch" style="background:#f6de7a"></span><strong>Kölsch</strong></td>
+              <td>Protected-origin (Kölsch-Konvention) top-fermented, cold-conditioned pale ale; delicate pilsner malt, subtle pear-apple ester, crisp noble hop finish.</td>
+              <td class="num"><strong>4.8%</strong></td>
+              <td>0.2 L cylindrical Stange carried in a Kranz tray; Köbes keeps refilling fresh glasses until you place your coaster (Bierdeckel) on top.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#8c3b1e"></span><strong>Altbier (Düsseldorf, 39 km)</strong></td>
+              <td>Cologne&#x27;s copper-bronze Rhineland rival 39 km downriver: top-fermented, cold-lagered ale with nutty Munich malt snap and firm hop bitterness.</td>
+              <td class="num"><strong>4.7 – 5.2%</strong></td>
+              <td>0.2 L or 0.25 L straight Altbierbecher tapped from wooden barrels at Düsseldorf&#x27;s Altstadt Hausbrauereien (Uerige, Schlüssel, Füchschen, Schumacher).</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="beer-region-block" data-beer-region="franconia">
+        <h3 class="region-table-heading">Franconia <span class="count-pill">6 styles</span></h3>
+        <p class="region-subnote"><strong>Würzburg note (Stop #5):</strong> v3 enters Franconia on the Main at <strong>Würzburg</strong> — a wine capital that still pours 1643 <strong>Würzburger Hofbräu</strong> Pils &amp; Schwarzbier, house-brewed garden lager under the Alte Mainbrücke at <strong>Goldene Gans</strong>, craft pours at <strong>Herbipolis (SMaSH)</strong> and <strong>Maischerei Mayr &amp; Müller</strong>, and traditional country lagers 20 minutes south in Ochsenfurt (<strong>Kauzen-Bräu</strong>, <strong>Oechsner</strong>) before Bamberg's Rauchbier.</p>
+        <div class="beer-table-wrap">
+          <table class="beer-table">
+            <thead>
+              <tr>
+                <th style="width:20%">Style</th>
+                <th style="width:38%">What to Expect</th>
+                <th style="width:14%">Typical ABV</th>
+                <th style="width:28%">Serving Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><span class="color-swatch" style="background:#6e3419"></span><strong>Rauchbier</strong></td>
+              <td>Bottom-fermented lager kilned over open beechwood logs; savoury campfire smoke over clean Franconian malt.</td>
+              <td class="num"><strong>4.8 – 6.5%</strong></td>
+              <td>Gravity-dispensed straight from pitched oak barrels (vom Holzfass) in ceramic or dimpled 0.5 L Seidla.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#c97a2b"></span><strong>Ungespundetes / Kellerbier</strong></td>
+              <td>Unfiltered, unbunged cellar lager with soft natural carbonation, bready Munich/Vienna malt, and herbal hops.</td>
+              <td class="num"><strong>4.8 – 5.5%</strong></td>
+              <td>Served cool from cellar lagering tanks with a low, creamy head; order &#x27;ein U&#x27; (e.g. Mahr&#x27;s Bräu aU).</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#f1c232"></span><strong>Helles</strong></td>
+              <td>Drier and slightly hoppier than Southern Bavarian Helles; crisp pilsner malt graininess with clean floral balance.</td>
+              <td class="num"><strong>4.7 – 5.3%</strong></td>
+              <td>0.5 L Seidla mug in brewery taverns or shaded hillside Bierkeller.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#f7df74"></span><strong>Pils</strong></td>
+              <td>Assertively bitter, bone-dry Franconian Pilsner showcasing aromatic Hallertau and Spalt noble hops.</td>
+              <td class="num"><strong>4.8 – 5.2%</strong></td>
+              <td>Tall slender Pilsner glass or tulip with a tight 3-minute foam crown (Keesmann Herren Pils benchmark).</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#78350f"></span><strong>Bock</strong></td>
+              <td>Seasonal strong lager (autumn/winter Urbock &amp; Maibock); deep melanoidin malt richness, warming, smoked or unsmoked.</td>
+              <td class="num"><strong>6.5 – 7.5%</strong></td>
+              <td>0.5 L glass or stoneware mug in late autumn/spring; pace carefully alongside hearty Franconian roast pork.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#1f1410"></span><strong>Schwarzbier (Würzburg)</strong></td>
+              <td>Lower Franconian deep-ebony bottom-fermented dark lager (anchored in Würzburg&#x27;s brewing tradition alongside 1643 Hofbräu); smooth roasted cocoa-coffee malt with a crisp, dry herbal finish.</td>
+              <td class="num"><strong>4.8 – 5.2%</strong></td>
+              <td>0.5 L mug or Pokal in Würzburg&#x27;s Main-side beer gardens and Keller — the first Franconian lager stop after Rhenish Kölsch.</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="beer-region-block" data-beer-region="bohemia">
+        <h3 class="region-table-heading">Bohemia <span class="count-pill">4 styles</span></h3>
+        <div class="beer-table-wrap">
+          <table class="beer-table">
+            <thead>
+              <tr>
+                <th style="width:20%">Style</th>
+                <th style="width:38%">What to Expect</th>
+                <th style="width:14%">Typical ABV</th>
+                <th style="width:28%">Serving Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><span class="color-swatch" style="background:#eab308"></span><strong>světlý ležák 12°</strong></td>
+              <td>The classic 12° Plato Czech pale lager: triple-decoction mash, Moravian malt depth, spicy Žatec (Saaz) hop bitterness.</td>
+              <td class="num"><strong>4.4 – 5.2%</strong></td>
+              <td>Heavy dimpled 0.5 L Tübinger mug poured &#x27;na hladinku&#x27; under a dense, wet, creamy foam cap.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#2e1912"></span><strong>tmavé (dark lager)</strong></td>
+              <td>Bohemian dark lager balancing roasted chocolate and caramel malt sweetness with clean lager crispness — never burnt.</td>
+              <td class="num"><strong>4.4 – 5.8%</strong></td>
+              <td>0.5 L handled mug; also ordered &#x27;řezané&#x27; (half-and-half cut with pale lager) in traditional hospody.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#f4c430"></span><strong>tank beer</strong></td>
+              <td>Unpasteurised (and in Urquell&#x27;s cellars, unfiltered) světlý ležák delivered straight from brewery to pub steel/copper bladders.</td>
+              <td class="num"><strong>4.4 – 5.0%</strong></td>
+              <td>Tankové pivo kept at 6–8 °C without CO₂ contact; fresher, rounder malt and livelier Saaz hop oils than kegged pours.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#e07a1f"></span><strong>Czech IPA</strong></td>
+              <td>Modern Bohemian craft wave (typically 14°–16° Plato) pairing New World citrus/pine hops with structured Czech malt.</td>
+              <td class="num"><strong>5.8 – 6.8%</strong></td>
+              <td>0.4 L or 0.5 L craft tulip/shaker at brewpubs like Pivovar Permon (Permon IPA 15°) and Pivovar Raven.</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="beer-region-block" data-beer-region="bavaria">
+        <h3 class="region-table-heading">Bavaria <span class="count-pill">4 styles</span></h3>
+        <div class="beer-table-wrap">
+          <table class="beer-table">
+            <thead>
+              <tr>
+                <th style="width:20%">Style</th>
+                <th style="width:38%">What to Expect</th>
+                <th style="width:14%">Typical ABV</th>
+                <th style="width:28%">Serving Note</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><span class="color-swatch" style="background:#f6d358"></span><strong>Helles</strong></td>
+              <td>Soft-water Munich golden lager; gentle bready-sweet pilsner malt, whisper-light Hallertau floral hops, effortless drinkability.</td>
+              <td class="num"><strong>4.8 – 5.6%</strong></td>
+              <td>0.5 L Willibecher or 1 L Maßkrug; supreme when tapped from wooden barrels (Holzfass Augustiner Edelstoff).</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#df8b28"></span><strong>Weißbier</strong></td>
+              <td>Top-fermented Bavarian wheat beer (50%+ malted wheat); signature banana and clove yeast esters, lush effervescence.</td>
+              <td class="num"><strong>5.0 – 5.6% (Weizenbock 8.2%)</strong></td>
+              <td>Tall curved 0.5 L Weizenglas; swirl the last centimetre of bottle yeast before topping the foam dome.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#3d1f16"></span><strong>Doppelbock</strong></td>
+              <td>Monastic &#x27;liquid bread&#x27; brewed originally for Lenten fasting; dark dried fig, toasted bread crust, velvety malt body.</td>
+              <td class="num"><strong>7.0 – 8.5%</strong></td>
+              <td>0.5 L mug or stemmed Pokal; Kloster Andechs Doppelbock Dunkel (7.1%) on the Holy Mountain is the archetype.</td>
+            </tr>
+            <tr>
+              <td><span class="color-swatch" style="background:#e5a922"></span><strong>Festbier</strong></td>
+              <td>Deep-golden seasonal festival lager; slightly richer and stronger than everyday Helles with a clean, crisp finish.</td>
+              <td class="num"><strong>5.6 – 6.3%</strong></td>
+              <td>1 L Maßkrug in beer gardens and festival halls during late summer and autumn.</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+  </div>
+
+  <div class="section-intro" style="margin-top:2.6rem;">
+    <h2>📍 What to Order Where — Keyed to All 11 Bases</h2>
+    <p>Quick ordering cheat sheet in itinerary order from Night 1 in Bruges through Cologne and Würzburg to Night 15 in Munich.</p>
+  </div>
+  <div class="base-order-grid">
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 1 · 2N</span>
+            <span class="base-sig-pill">🍺 Flemish red</span>
+          </div>
+          <h4>🇧🇪 Bruges</h4>
+          <p>Bourgogne des Flandres on the canal; pair with Brugse Zot / Straffe Hendrik at De Halve Maan and the 11% house tripel at De Garre.</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 2 · 1N</span>
+            <span class="base-sig-pill">🍺 gruut (herb beer)</span>
+          </div>
+          <h4>🇧🇪 Ghent</h4>
+          <p>Blond, Amber, Brown, White, and Inferno at Gruut Stadsbrouwerij; follow with Pils 13 at Dok Brewing and house Max at De Dulle Griet.</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 3 · 1N</span>
+            <span class="base-sig-pill">🍺 Kölsch</span>
+          </div>
+          <h4>🇩🇪 Cologne</h4>
+          <p>Fresh 0.2 L Stangen at Früh am Dom and house-brewed Mühlen Kölsch at Heumarkt, wooden-barrel Päffgen Kölsch, Lommerzheim in Deutz, and Ehrenfeld craft pours at Braustelle.</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 4 · 1N</span>
+            <span class="base-sig-pill">🍺 Hofbräu Pils &amp; Schwarzbier</span>
+          </div>
+          <h4>🇩🇪 Würzburg</h4>
+          <p>House-brewed beer in the garden under the Alte Mainbrücke at Goldene Gans, Pils, Schwarzbier &amp; Fri/Sat keg-tapping tour at 1643 Würzburger Hofbräukeller, craft pours at Herbipolis &amp; Maischerei, plus Ochsenfurt&#x27;s Kauzen-Bräu &amp; Oechsner (20 min).</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 5 · 2N</span>
+            <span class="base-sig-pill">🍺 Rauchbier</span>
+          </div>
+          <h4>🇩🇪 Bamberg</h4>
+          <p>Oak-barrel Märzen Rauchbier at Schlenkerla, subtler Rauchbier at Spezial, &#x27;aU&#x27; Ungespundetes at Mahr&#x27;s Bräu, Zwergla at Fässla, and Herren Pils at Keesmann (plus optional 54-min Rotbier trip to Nuremberg).</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 6 · 1N</span>
+            <span class="base-sig-pill">🍺 Permon IPA 15°</span>
+          </div>
+          <h4>🇨🇿 Pivovar Permon, Sokolov</h4>
+          <p>Permon IPA 15° and dark specials straight from the taps in Pivovar Permon&#x27;s Komenského 77 restaurant.</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 7 · 2N</span>
+            <span class="base-sig-pill">🍺 tank Pilsner</span>
+          </div>
+          <h4>🇨🇿 Plzeň</h4>
+          <p>Unfiltered Urquell in the historic cellars, copper-tank Pilsner at U Salzmannů and Na Parkánu, dark lager at Purkmistr, and craft pours at Raven.</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 8 · 1N</span>
+            <span class="base-sig-pill">🍺 Kout 12°</span>
+          </div>
+          <h4>🇨🇿 Kout na Šumavě</h4>
+          <p>Unpasteurised Kout 12° pale lager at the revived 19th-century brewery in the Šumava foothills.</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 9 · 1N</span>
+            <span class="base-sig-pill">🍺 Maxlrainer Helles</span>
+          </div>
+          <h4>🇩🇪 Maxlrain Bierstube</h4>
+          <p>Schlossbrauerei Maxlrain Helles, Dunkel, and Weißbier at the castle Bierstube next door.</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 10 · 1N</span>
+            <span class="base-sig-pill">🍺 Doppelbock</span>
+          </div>
+          <h4>🇩🇪 Andechs / Herrsching</h4>
+          <p>Monastery Doppelbock Dunkel (7.1%) overlooking the Ammersee at Kloster Andechs, and the full range down at Andechser Hof in Herrsching.</p>
+        </div>
+        <div class="base-order-card">
+          <div class="base-order-top">
+            <span class="base-seq">Base 11 · 2N</span>
+            <span class="base-sig-pill">🍺 Helles</span>
+          </div>
+          <h4>🇩🇪 Munich</h4>
+          <p>Wooden-barrel Edelstoff at Augustiner-Keller, Erhellung unfiltered Helles at Giesinger Bräu, Aventinus at Schneider Bräuhaus, and NEIPAs at ORCA Brau.</p>
+        </div>
+  </div>
+</div>
+
+<!-- TAB 5: DRIVE TIMES -->
+<div id="drives" class="tab-content" role="tabpanel">
+  <div class="section-intro">
+    <h2>🚗 Drive Times, Itinerary Legs &amp; 12 × 12 OSRM Car Matrix</h2>
+    <p>Every distance and duration below comes directly from OSRM car routing in <code>data/route-2027-v3.json</code> — zero estimates.</p>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-box">
+      <div class="stat-val">2,307.5 km</div>
+      <div class="stat-lbl">Exact Route Total (2,308 km rounded)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">27 h 08</div>
+      <div class="stat-lbl">1,628 Total Driving Minutes</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">12 legs</div>
+      <div class="stat-lbl">12 Drive Days · 4 Car-Free Days</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">≤ 3 h 11</div>
+      <div class="stat-lbl">No Middle Leg Over 3 h 15 (Max: Kout → Maxlrain)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">44 – 45 min</div>
+      <div class="stat-lbl">Shortest Hops (Bruges→Ghent &amp; Andechs→Munich)</div>
+    </div>
+  </div>
+
+  <h3 class="region-table-heading" style="margin-bottom:0.75rem;">(a) The 12 Itinerary Driving Legs</h3>
+  <div class="beer-table-wrap" style="margin-bottom:2.4rem;">
+    <table class="beer-table">
+      <thead>
+        <tr>
+          <th style="width:10%">Day</th>
+          <th style="width:28%">From → To</th>
+          <th style="width:15%">Distance (km)</th>
+          <th style="width:15%">Time (h:mm)</th>
+          <th style="width:32%">Route Note</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr class="leg-row-hard">
+              <td class="num"><strong>Day 1</strong></td>
+              <td>🇩🇪 <strong>Frankfurt am Main Airport</strong> → 🇧🇪 <strong>Bruges</strong></td>
+              <td class="num">492.6 km <span class="muted-inline">(493)</span></td>
+              <td class="num"><strong>5:15</strong> <span class="muted-inline">(5 h 15)</span></td>
+              <td><span class="table-warn-pill">BOOKEND · 5 h 15</span> Opening airport motorway push west across Germany &amp; Belgium (E40) — swap drivers if jet-lagged.</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 3</strong></td>
+              <td>🇧🇪 <strong>Bruges</strong> → 🇧🇪 <strong>Ghent</strong></td>
+              <td class="num">49.2 km <span class="muted-inline">(49)</span></td>
+              <td class="num"><strong>0:44</strong> <span class="muted-inline">(44 min)</span></td>
+              <td>Short Flemish hop on the E40; arrives in Ghent well before lunch.</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 4</strong></td>
+              <td>🇧🇪 <strong>Ghent</strong> → 🇩🇪 <strong>Cologne</strong></td>
+              <td class="num">265.2 km <span class="muted-inline">(265)</span></td>
+              <td class="num"><strong>3:06</strong> <span class="muted-inline">(3 h 06)</span></td>
+              <td>Short day 1 of 3 on the Ghent→Bamberg corridor: 3 h 06 into Cologne for 0.2 L Kölsch.</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 5</strong></td>
+              <td>🇩🇪 <strong>Cologne</strong> → 🇩🇪 <strong>Würzburg</strong></td>
+              <td class="num">302.1 km <span class="muted-inline">(302)</span></td>
+              <td class="num"><strong>3:02</strong> <span class="muted-inline">(3 h 02)</span></td>
+              <td><span class="table-new-pill">NEW · WÜRZBURG</span> Short day 2 of 3: 3 h 02 up the Rhine &amp; Main to Würzburg for Goldene Gans &amp; 1643 Hofbräukeller.</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 6</strong></td>
+              <td>🇩🇪 <strong>Würzburg</strong> → 🇩🇪 <strong>Bamberg</strong></td>
+              <td class="num">94.3 km <span class="muted-inline">(94)</span></td>
+              <td class="num"><strong>1:03</strong> <span class="muted-inline">(1 h 03)</span></td>
+              <td><span class="table-new-pill">NEW · 1 h 03 HOP</span> Short day 3 of 3: 1 h 03 on the A70 into Bamberg (optional 20-min Ochsenfurt detour to Kauzen-Bräu &amp; Oechsner).</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 8</strong></td>
+              <td>🇩🇪 <strong>Bamberg</strong> → 🇨🇿 <strong>Pivovar Permon, Sokolov</strong></td>
+              <td class="num">160.2 km <span class="muted-inline">(160)</span></td>
+              <td class="num"><strong>1:59</strong> <span class="muted-inline">(1 h 59)</span></td>
+              <td>Scenic cross-border run via Bayreuth &amp; Cheb; activate Czech e-vignette before crossing.</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 9</strong></td>
+              <td>🇨🇿 <strong>Pivovar Permon, Sokolov</strong> → 🇨🇿 <strong>Plzeň</strong></td>
+              <td class="num">86.8 km <span class="muted-inline">(87)</span></td>
+              <td class="num"><strong>1:28</strong> <span class="muted-inline">(1 h 28)</span></td>
+              <td>Relaxed Bohemian drive along the Ohře valley; easy detour to Loket (12 min) or Karlovy Vary (17 min).</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 11</strong></td>
+              <td>🇨🇿 <strong>Plzeň</strong> → 🇨🇿 <strong>Kout na Šumavě</strong></td>
+              <td class="num">61.6 km <span class="muted-inline">(62)</span></td>
+              <td class="num"><strong>1:06</strong> <span class="muted-inline">(1 h 06)</span></td>
+              <td>Short drive south-west into the Šumava (Bohemian Forest) foothills.</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 12</strong></td>
+              <td>🇨🇿 <strong>Kout na Šumavě</strong> → 🇩🇪 <strong>Maxlrain Bierstube</strong></td>
+              <td class="num">259.8 km <span class="muted-inline">(260)</span></td>
+              <td class="num"><strong>3:11</strong> <span class="muted-inline">(3 h 11)</span></td>
+              <td>Crosses back into Upper Bavaria past Regensburg — longest middle leg at 3 h 11 (still under 3 h 15).</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 13</strong></td>
+              <td>🇩🇪 <strong>Maxlrain Bierstube</strong> → 🇩🇪 <strong>Andechs / Herrsching</strong></td>
+              <td class="num">89.2 km <span class="muted-inline">(89)</span></td>
+              <td class="num"><strong>1:25</strong> <span class="muted-inline">(1 h 25)</span></td>
+              <td>Pre-Alpine country roads west across Upper Bavaria to Ammersee.</td>
+            </tr>
+            <tr class="">
+              <td class="num"><strong>Day 14</strong></td>
+              <td>🇩🇪 <strong>Andechs / Herrsching</strong> → 🇩🇪 <strong>Munich</strong></td>
+              <td class="num">44.5 km <span class="muted-inline">(45)</span></td>
+              <td class="num"><strong>0:45</strong> <span class="muted-inline">(45 min)</span></td>
+              <td>Shortest Bavarian hop (44.5 km / 45 min) straight into Munich.</td>
+            </tr>
+            <tr class="leg-row-hard">
+              <td class="num"><strong>Day 16</strong></td>
+              <td>🇩🇪 <strong>Munich</strong> → 🇩🇪 <strong>Frankfurt am Main Airport</strong></td>
+              <td class="num">402 km <span class="muted-inline">(402)</span></td>
+              <td class="num"><strong>4:04</strong> <span class="muted-inline">(4 h 04)</span></td>
+              <td><span class="table-warn-pill">BOOKEND · 4 h 04</span> Direct 4 h 04 motorway return from Munich to FRA — leave right after breakfast (or sleep near FRA on Night 15 for early flights).</td>
+            </tr>
+      </tbody>
+      <tfoot>
+        <tr class="tfoot-totals">
+          <td>16 Days</td>
+          <td>Closed Loop: FRA → 11 Bases → FRA (12 legs)</td>
+          <td class="num">2,307.5 km (2,308 km)</td>
+          <td class="num">27:08 (1,628 min)</td>
+          <td>3 countries · 15 nights · 4 in-place crawl days</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.5rem;">
+    <h3 class="region-table-heading" style="margin-bottom:0;">(b) Full 12 × 12 Car Distance &amp; Duration Matrix</h3>
+    <div class="region-filter" style="margin-bottom:0;" id="matrix-mode-btns">
+      <button type="button" class="filter-btn active" onclick="setMatrixMode('both', this)">Both (km + h:mm)</button>
+      <button type="button" class="filter-btn" onclick="setMatrixMode('km', this)">Distance (km)</button>
+      <button type="button" class="filter-btn" onclick="setMatrixMode('time', this)">Time (h:mm)</button>
+    </div>
+  </div>
+  <p style="color:var(--text-muted);font-size:0.86rem;margin-bottom:0.65rem;">Upper triangle directly from <code>matrix.pairs</code> (66 OSRM pairs over all 12 stops including Cologne and Würzburg), mirrored symmetrically across the <code>—</code> diagonal. Gold-outlined cells mark consecutive stops driven on the v3 itinerary — v1's <code>ghent|bamberg</code> marathon (651 km / 6:51) is now three short days: <code>ghent|cologne</code> (265 km / 3:06) + <code>cologne|wurzburg</code> (302 km / 3:02) + <code>wurzburg|bamberg</code> (94 km / 1:03), so <strong>no middle leg anywhere on the trip exceeds 3 h 15</strong> (longest middle drive is <code>kout|maxlrain</code> at 3:11).</p>
+
+  <div class="matrix-wrap" style="margin-bottom:2.4rem;">
+    <table class="matrix-table" id="car-matrix" data-mode="both">
+      <thead>
+        <tr><th class="matrix-corner">From \ To</th><th title="Frankfurt am Main Airport">FRA</th><th title="Bruges">Bruges</th><th title="Ghent">Ghent</th><th title="Cologne">Cologne</th><th title="Würzburg">Würzburg</th><th title="Bamberg">Bamberg</th><th title="Pivovar Permon, Sokolov">Permon (Sokolov)</th><th title="Plzeň">Plzeň</th><th title="Kout na Šumavě">Kout na Šumavě</th><th title="Maxlrain Bierstube">Maxlrain</th><th title="Andechs / Herrsching">Andechs</th><th title="Munich">Munich</th></tr>
+      </thead>
+      <tbody>
+            <tr><th scope="row" class="matrix-row-head" title="Frankfurt am Main Airport">FRA</th><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Frankfurt am Main Airport ↔ Bruges: 492.6 km · 5:15"><span class="m-km">493 km</span><span class="m-time">5:15</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Ghent: 453.2 km · 4:54"><span class="m-km">453 km</span><span class="m-time">4:54</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Cologne: 181.1 km · 2:05"><span class="m-km">181 km</span><span class="m-time">2:05</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Würzburg: 127.9 km · 1:25"><span class="m-km">128 km</span><span class="m-time">1:25</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Bamberg: 212.9 km · 2:24"><span class="m-km">213 km</span><span class="m-time">2:24</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Pivovar Permon, Sokolov: 375.3 km · 4:07"><span class="m-km">375 km</span><span class="m-time">4:07</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Plzeň: 425.3 km · 4:13"><span class="m-km">425 km</span><span class="m-time">4:13</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Kout na Šumavě: 394.4 km · 4:21"><span class="m-km">394 km</span><span class="m-time">4:21</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Maxlrain Bierstube: 441.3 km · 4:30"><span class="m-km">441 km</span><span class="m-time">4:30</span></td><td class="matrix-cell num matrix-upper" title="Frankfurt am Main Airport ↔ Andechs / Herrsching: 439.3 km · 4:27"><span class="m-km">439 km</span><span class="m-time">4:27</span></td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Frankfurt am Main Airport ↔ Munich: 402 km · 4:04"><span class="m-km">402 km</span><span class="m-time">4:04</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Bruges">Bruges</th><td class="matrix-cell num matrix-route-cell matrix-lower" title="Bruges ↔ Frankfurt am Main Airport: 492.6 km · 5:15"><span class="m-km">493 km</span><span class="m-time">5:15</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Bruges ↔ Ghent: 49.2 km · 0:44"><span class="m-km">49 km</span><span class="m-time">0:44</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Cologne: 296.2 km · 3:31"><span class="m-km">296 km</span><span class="m-time">3:31</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Würzburg: 596.5 km · 6:18"><span class="m-km">597 km</span><span class="m-time">6:18</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Bamberg: 681.5 km · 7:17"><span class="m-km">682 km</span><span class="m-time">7:17</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Pivovar Permon, Sokolov: 843.9 km · 9:01"><span class="m-km">844 km</span><span class="m-time">9:01</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Plzeň: 893.9 km · 9:06"><span class="m-km">894 km</span><span class="m-time">9:06</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Kout na Šumavě: 863 km · 9:14"><span class="m-km">863 km</span><span class="m-time">9:14</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Maxlrain Bierstube: 909.9 km · 9:23"><span class="m-km">910 km</span><span class="m-time">9:23</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Andechs / Herrsching: 868.7 km · 9:10"><span class="m-km">869 km</span><span class="m-time">9:10</span></td><td class="matrix-cell num matrix-upper" title="Bruges ↔ Munich: 870.6 km · 8:57"><span class="m-km">871 km</span><span class="m-time">8:57</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Ghent">Ghent</th><td class="matrix-cell num matrix-lower" title="Ghent ↔ Frankfurt am Main Airport: 453.2 km · 4:54"><span class="m-km">453 km</span><span class="m-time">4:54</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Ghent ↔ Bruges: 49.2 km · 0:44"><span class="m-km">49 km</span><span class="m-time">0:44</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Ghent ↔ Cologne: 265.2 km · 3:06"><span class="m-km">265 km</span><span class="m-time">3:06</span></td><td class="matrix-cell num matrix-upper" title="Ghent ↔ Würzburg: 565.4 km · 5:53"><span class="m-km">565 km</span><span class="m-time">5:53</span></td><td class="matrix-cell num matrix-upper" title="Ghent ↔ Bamberg: 650.5 km · 6:51"><span class="m-km">651 km</span><span class="m-time">6:51</span></td><td class="matrix-cell num matrix-upper" title="Ghent ↔ Pivovar Permon, Sokolov: 812.8 km · 8:35"><span class="m-km">813 km</span><span class="m-time">8:35</span></td><td class="matrix-cell num matrix-upper" title="Ghent ↔ Plzeň: 862.8 km · 8:41"><span class="m-km">863 km</span><span class="m-time">8:41</span></td><td class="matrix-cell num matrix-upper" title="Ghent ↔ Kout na Šumavě: 832 km · 8:48"><span class="m-km">832 km</span><span class="m-time">8:48</span></td><td class="matrix-cell num matrix-upper" title="Ghent ↔ Maxlrain Bierstube: 878.8 km · 8:57"><span class="m-km">879 km</span><span class="m-time">8:57</span></td><td class="matrix-cell num matrix-upper" title="Ghent ↔ Andechs / Herrsching: 837.6 km · 8:45"><span class="m-km">838 km</span><span class="m-time">8:45</span></td><td class="matrix-cell num matrix-upper" title="Ghent ↔ Munich: 839.6 km · 8:31"><span class="m-km">840 km</span><span class="m-time">8:31</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Cologne">Cologne</th><td class="matrix-cell num matrix-lower" title="Cologne ↔ Frankfurt am Main Airport: 181.1 km · 2:05"><span class="m-km">181 km</span><span class="m-time">2:05</span></td><td class="matrix-cell num matrix-lower" title="Cologne ↔ Bruges: 296.2 km · 3:31"><span class="m-km">296 km</span><span class="m-time">3:31</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Cologne ↔ Ghent: 265.2 km · 3:06"><span class="m-km">265 km</span><span class="m-time">3:06</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Cologne ↔ Würzburg: 302.1 km · 3:02"><span class="m-km">302 km</span><span class="m-time">3:02</span></td><td class="matrix-cell num matrix-upper" title="Cologne ↔ Bamberg: 387.2 km · 4:01"><span class="m-km">387 km</span><span class="m-time">4:01</span></td><td class="matrix-cell num matrix-upper" title="Cologne ↔ Pivovar Permon, Sokolov: 549.6 km · 5:45"><span class="m-km">550 km</span><span class="m-time">5:45</span></td><td class="matrix-cell num matrix-upper" title="Cologne ↔ Plzeň: 599.6 km · 5:50"><span class="m-km">600 km</span><span class="m-time">5:50</span></td><td class="matrix-cell num matrix-upper" title="Cologne ↔ Kout na Šumavě: 568.7 km · 5:58"><span class="m-km">569 km</span><span class="m-time">5:58</span></td><td class="matrix-cell num matrix-upper" title="Cologne ↔ Maxlrain Bierstube: 615.6 km · 6:07"><span class="m-km">616 km</span><span class="m-time">6:07</span></td><td class="matrix-cell num matrix-upper" title="Cologne ↔ Andechs / Herrsching: 613.6 km · 6:04"><span class="m-km">614 km</span><span class="m-time">6:04</span></td><td class="matrix-cell num matrix-upper" title="Cologne ↔ Munich: 576.3 km · 5:41"><span class="m-km">576 km</span><span class="m-time">5:41</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Würzburg">Würzburg</th><td class="matrix-cell num matrix-lower" title="Würzburg ↔ Frankfurt am Main Airport: 127.9 km · 1:25"><span class="m-km">128 km</span><span class="m-time">1:25</span></td><td class="matrix-cell num matrix-lower" title="Würzburg ↔ Bruges: 596.5 km · 6:18"><span class="m-km">597 km</span><span class="m-time">6:18</span></td><td class="matrix-cell num matrix-lower" title="Würzburg ↔ Ghent: 565.4 km · 5:53"><span class="m-km">565 km</span><span class="m-time">5:53</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Würzburg ↔ Cologne: 302.1 km · 3:02"><span class="m-km">302 km</span><span class="m-time">3:02</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Würzburg ↔ Bamberg: 94.3 km · 1:03"><span class="m-km">94 km</span><span class="m-time">1:03</span></td><td class="matrix-cell num matrix-upper" title="Würzburg ↔ Pivovar Permon, Sokolov: 247.5 km · 2:46"><span class="m-km">248 km</span><span class="m-time">2:46</span></td><td class="matrix-cell num matrix-upper" title="Würzburg ↔ Plzeň: 301.7 km · 2:58"><span class="m-km">302 km</span><span class="m-time">2:58</span></td><td class="matrix-cell num matrix-upper" title="Würzburg ↔ Kout na Šumavě: 270.9 km · 3:06"><span class="m-km">271 km</span><span class="m-time">3:06</span></td><td class="matrix-cell num matrix-upper" title="Würzburg ↔ Maxlrain Bierstube: 317.8 km · 3:15"><span class="m-km">318 km</span><span class="m-time">3:15</span></td><td class="matrix-cell num matrix-upper" title="Würzburg ↔ Andechs / Herrsching: 315.8 km · 3:12"><span class="m-km">316 km</span><span class="m-time">3:12</span></td><td class="matrix-cell num matrix-upper" title="Würzburg ↔ Munich: 278.5 km · 2:49"><span class="m-km">279 km</span><span class="m-time">2:49</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Bamberg">Bamberg</th><td class="matrix-cell num matrix-lower" title="Bamberg ↔ Frankfurt am Main Airport: 212.9 km · 2:24"><span class="m-km">213 km</span><span class="m-time">2:24</span></td><td class="matrix-cell num matrix-lower" title="Bamberg ↔ Bruges: 681.5 km · 7:17"><span class="m-km">682 km</span><span class="m-time">7:17</span></td><td class="matrix-cell num matrix-lower" title="Bamberg ↔ Ghent: 650.5 km · 6:51"><span class="m-km">651 km</span><span class="m-time">6:51</span></td><td class="matrix-cell num matrix-lower" title="Bamberg ↔ Cologne: 387.2 km · 4:01"><span class="m-km">387 km</span><span class="m-time">4:01</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Bamberg ↔ Würzburg: 94.3 km · 1:03"><span class="m-km">94 km</span><span class="m-time">1:03</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Bamberg ↔ Pivovar Permon, Sokolov: 160.2 km · 1:59"><span class="m-km">160 km</span><span class="m-time">1:59</span></td><td class="matrix-cell num matrix-upper" title="Bamberg ↔ Plzeň: 255.3 km · 2:41"><span class="m-km">255 km</span><span class="m-time">2:41</span></td><td class="matrix-cell num matrix-upper" title="Bamberg ↔ Kout na Šumavě: 224.4 km · 2:48"><span class="m-km">224 km</span><span class="m-time">2:48</span></td><td class="matrix-cell num matrix-upper" title="Bamberg ↔ Maxlrain Bierstube: 271.3 km · 2:57"><span class="m-km">271 km</span><span class="m-time">2:57</span></td><td class="matrix-cell num matrix-upper" title="Bamberg ↔ Andechs / Herrsching: 269.3 km · 2:54"><span class="m-km">269 km</span><span class="m-time">2:54</span></td><td class="matrix-cell num matrix-upper" title="Bamberg ↔ Munich: 232 km · 2:31"><span class="m-km">232 km</span><span class="m-time">2:31</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Pivovar Permon, Sokolov">Permon (Sokolov)</th><td class="matrix-cell num matrix-lower" title="Pivovar Permon, Sokolov ↔ Frankfurt am Main Airport: 375.3 km · 4:07"><span class="m-km">375 km</span><span class="m-time">4:07</span></td><td class="matrix-cell num matrix-lower" title="Pivovar Permon, Sokolov ↔ Bruges: 843.9 km · 9:01"><span class="m-km">844 km</span><span class="m-time">9:01</span></td><td class="matrix-cell num matrix-lower" title="Pivovar Permon, Sokolov ↔ Ghent: 812.8 km · 8:35"><span class="m-km">813 km</span><span class="m-time">8:35</span></td><td class="matrix-cell num matrix-lower" title="Pivovar Permon, Sokolov ↔ Cologne: 549.6 km · 5:45"><span class="m-km">550 km</span><span class="m-time">5:45</span></td><td class="matrix-cell num matrix-lower" title="Pivovar Permon, Sokolov ↔ Würzburg: 247.5 km · 2:46"><span class="m-km">248 km</span><span class="m-time">2:46</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Pivovar Permon, Sokolov ↔ Bamberg: 160.2 km · 1:59"><span class="m-km">160 km</span><span class="m-time">1:59</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Pivovar Permon, Sokolov ↔ Plzeň: 86.8 km · 1:28"><span class="m-km">87 km</span><span class="m-time">1:28</span></td><td class="matrix-cell num matrix-upper" title="Pivovar Permon, Sokolov ↔ Kout na Šumavě: 111.7 km · 1:51"><span class="m-km">112 km</span><span class="m-time">1:51</span></td><td class="matrix-cell num matrix-upper" title="Pivovar Permon, Sokolov ↔ Maxlrain Bierstube: 322 km · 3:32"><span class="m-km">322 km</span><span class="m-time">3:32</span></td><td class="matrix-cell num matrix-upper" title="Pivovar Permon, Sokolov ↔ Andechs / Herrsching: 320 km · 3:29"><span class="m-km">320 km</span><span class="m-time">3:29</span></td><td class="matrix-cell num matrix-upper" title="Pivovar Permon, Sokolov ↔ Munich: 282.7 km · 3:06"><span class="m-km">283 km</span><span class="m-time">3:06</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Plzeň">Plzeň</th><td class="matrix-cell num matrix-lower" title="Plzeň ↔ Frankfurt am Main Airport: 425.3 km · 4:13"><span class="m-km">425 km</span><span class="m-time">4:13</span></td><td class="matrix-cell num matrix-lower" title="Plzeň ↔ Bruges: 893.9 km · 9:06"><span class="m-km">894 km</span><span class="m-time">9:06</span></td><td class="matrix-cell num matrix-lower" title="Plzeň ↔ Ghent: 862.8 km · 8:41"><span class="m-km">863 km</span><span class="m-time">8:41</span></td><td class="matrix-cell num matrix-lower" title="Plzeň ↔ Cologne: 599.6 km · 5:50"><span class="m-km">600 km</span><span class="m-time">5:50</span></td><td class="matrix-cell num matrix-lower" title="Plzeň ↔ Würzburg: 301.7 km · 2:58"><span class="m-km">302 km</span><span class="m-time">2:58</span></td><td class="matrix-cell num matrix-lower" title="Plzeň ↔ Bamberg: 255.3 km · 2:41"><span class="m-km">255 km</span><span class="m-time">2:41</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Plzeň ↔ Pivovar Permon, Sokolov: 86.8 km · 1:28"><span class="m-km">87 km</span><span class="m-time">1:28</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Plzeň ↔ Kout na Šumavě: 61.6 km · 1:06"><span class="m-km">62 km</span><span class="m-time">1:06</span></td><td class="matrix-cell num matrix-upper" title="Plzeň ↔ Maxlrain Bierstube: 328.4 km · 3:30"><span class="m-km">328 km</span><span class="m-time">3:30</span></td><td class="matrix-cell num matrix-upper" title="Plzeň ↔ Andechs / Herrsching: 326.4 km · 3:27"><span class="m-km">326 km</span><span class="m-time">3:27</span></td><td class="matrix-cell num matrix-upper" title="Plzeň ↔ Munich: 289.1 km · 3:04"><span class="m-km">289 km</span><span class="m-time">3:04</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Kout na Šumavě">Kout na Šumavě</th><td class="matrix-cell num matrix-lower" title="Kout na Šumavě ↔ Frankfurt am Main Airport: 394.4 km · 4:21"><span class="m-km">394 km</span><span class="m-time">4:21</span></td><td class="matrix-cell num matrix-lower" title="Kout na Šumavě ↔ Bruges: 863 km · 9:14"><span class="m-km">863 km</span><span class="m-time">9:14</span></td><td class="matrix-cell num matrix-lower" title="Kout na Šumavě ↔ Ghent: 832 km · 8:48"><span class="m-km">832 km</span><span class="m-time">8:48</span></td><td class="matrix-cell num matrix-lower" title="Kout na Šumavě ↔ Cologne: 568.7 km · 5:58"><span class="m-km">569 km</span><span class="m-time">5:58</span></td><td class="matrix-cell num matrix-lower" title="Kout na Šumavě ↔ Würzburg: 270.9 km · 3:06"><span class="m-km">271 km</span><span class="m-time">3:06</span></td><td class="matrix-cell num matrix-lower" title="Kout na Šumavě ↔ Bamberg: 224.4 km · 2:48"><span class="m-km">224 km</span><span class="m-time">2:48</span></td><td class="matrix-cell num matrix-lower" title="Kout na Šumavě ↔ Pivovar Permon, Sokolov: 111.7 km · 1:51"><span class="m-km">112 km</span><span class="m-time">1:51</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Kout na Šumavě ↔ Plzeň: 61.6 km · 1:06"><span class="m-km">62 km</span><span class="m-time">1:06</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Kout na Šumavě ↔ Maxlrain Bierstube: 259.8 km · 3:11"><span class="m-km">260 km</span><span class="m-time">3:11</span></td><td class="matrix-cell num matrix-upper" title="Kout na Šumavě ↔ Andechs / Herrsching: 257.8 km · 3:07"><span class="m-km">258 km</span><span class="m-time">3:07</span></td><td class="matrix-cell num matrix-upper" title="Kout na Šumavě ↔ Munich: 220.5 km · 2:45"><span class="m-km">221 km</span><span class="m-time">2:45</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Maxlrain Bierstube">Maxlrain</th><td class="matrix-cell num matrix-lower" title="Maxlrain Bierstube ↔ Frankfurt am Main Airport: 441.3 km · 4:30"><span class="m-km">441 km</span><span class="m-time">4:30</span></td><td class="matrix-cell num matrix-lower" title="Maxlrain Bierstube ↔ Bruges: 909.9 km · 9:23"><span class="m-km">910 km</span><span class="m-time">9:23</span></td><td class="matrix-cell num matrix-lower" title="Maxlrain Bierstube ↔ Ghent: 878.8 km · 8:57"><span class="m-km">879 km</span><span class="m-time">8:57</span></td><td class="matrix-cell num matrix-lower" title="Maxlrain Bierstube ↔ Cologne: 615.6 km · 6:07"><span class="m-km">616 km</span><span class="m-time">6:07</span></td><td class="matrix-cell num matrix-lower" title="Maxlrain Bierstube ↔ Würzburg: 317.8 km · 3:15"><span class="m-km">318 km</span><span class="m-time">3:15</span></td><td class="matrix-cell num matrix-lower" title="Maxlrain Bierstube ↔ Bamberg: 271.3 km · 2:57"><span class="m-km">271 km</span><span class="m-time">2:57</span></td><td class="matrix-cell num matrix-lower" title="Maxlrain Bierstube ↔ Pivovar Permon, Sokolov: 322 km · 3:32"><span class="m-km">322 km</span><span class="m-time">3:32</span></td><td class="matrix-cell num matrix-lower" title="Maxlrain Bierstube ↔ Plzeň: 328.4 km · 3:30"><span class="m-km">328 km</span><span class="m-time">3:30</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Maxlrain Bierstube ↔ Kout na Šumavě: 259.8 km · 3:11"><span class="m-km">260 km</span><span class="m-time">3:11</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Maxlrain Bierstube ↔ Andechs / Herrsching: 89.2 km · 1:25"><span class="m-km">89 km</span><span class="m-time">1:25</span></td><td class="matrix-cell num matrix-upper" title="Maxlrain Bierstube ↔ Munich: 49.7 km · 0:50"><span class="m-km">50 km</span><span class="m-time">0:50</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Andechs / Herrsching">Andechs</th><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Frankfurt am Main Airport: 439.3 km · 4:27"><span class="m-km">439 km</span><span class="m-time">4:27</span></td><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Bruges: 868.7 km · 9:10"><span class="m-km">869 km</span><span class="m-time">9:10</span></td><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Ghent: 837.6 km · 8:45"><span class="m-km">838 km</span><span class="m-time">8:45</span></td><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Cologne: 613.6 km · 6:04"><span class="m-km">614 km</span><span class="m-time">6:04</span></td><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Würzburg: 315.8 km · 3:12"><span class="m-km">316 km</span><span class="m-time">3:12</span></td><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Bamberg: 269.3 km · 2:54"><span class="m-km">269 km</span><span class="m-time">2:54</span></td><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Pivovar Permon, Sokolov: 320 km · 3:29"><span class="m-km">320 km</span><span class="m-time">3:29</span></td><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Plzeň: 326.4 km · 3:27"><span class="m-km">326 km</span><span class="m-time">3:27</span></td><td class="matrix-cell num matrix-lower" title="Andechs / Herrsching ↔ Kout na Šumavě: 257.8 km · 3:07"><span class="m-km">258 km</span><span class="m-time">3:07</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Andechs / Herrsching ↔ Maxlrain Bierstube: 89.2 km · 1:25"><span class="m-km">89 km</span><span class="m-time">1:25</span></td><td class="matrix-diag">—</td><td class="matrix-cell num matrix-route-cell matrix-upper" title="Andechs / Herrsching ↔ Munich: 44.5 km · 0:45"><span class="m-km">45 km</span><span class="m-time">0:45</span></td></tr>
+            <tr><th scope="row" class="matrix-row-head" title="Munich">Munich</th><td class="matrix-cell num matrix-route-cell matrix-lower" title="Munich ↔ Frankfurt am Main Airport: 402 km · 4:04"><span class="m-km">402 km</span><span class="m-time">4:04</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Bruges: 870.6 km · 8:57"><span class="m-km">871 km</span><span class="m-time">8:57</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Ghent: 839.6 km · 8:31"><span class="m-km">840 km</span><span class="m-time">8:31</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Cologne: 576.3 km · 5:41"><span class="m-km">576 km</span><span class="m-time">5:41</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Würzburg: 278.5 km · 2:49"><span class="m-km">279 km</span><span class="m-time">2:49</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Bamberg: 232 km · 2:31"><span class="m-km">232 km</span><span class="m-time">2:31</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Pivovar Permon, Sokolov: 282.7 km · 3:06"><span class="m-km">283 km</span><span class="m-time">3:06</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Plzeň: 289.1 km · 3:04"><span class="m-km">289 km</span><span class="m-time">3:04</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Kout na Šumavě: 220.5 km · 2:45"><span class="m-km">221 km</span><span class="m-time">2:45</span></td><td class="matrix-cell num matrix-lower" title="Munich ↔ Maxlrain Bierstube: 49.7 km · 0:50"><span class="m-km">50 km</span><span class="m-time">0:50</span></td><td class="matrix-cell num matrix-route-cell matrix-lower" title="Munich ↔ Andechs / Herrsching: 44.5 km · 0:45"><span class="m-km">45 km</span><span class="m-time">0:45</span></td><td class="matrix-diag">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="region-table-heading">(c) Totals &amp; Practical Road Notes</h3>
+  <div class="notes-grid">
+    <div class="practical-card">
+      <h4>⏱️ No Middle Leg Exceeds 3 h 15</h4>
+      <p>Adding Würzburg between Cologne and Bamberg turns Ghent→Bamberg into three relaxed legs — 265.2 km / 3 h 06, 302.1 km / 3 h 02, and 94.3 km / 1 h 03 — while adding just 9.2 km and 4 minutes vs v2. Every single middle leg (Days 3–14) now stays at or below 3 h 11; only the FRA arrival (5 h 15) and FRA departure (4 h 04) exceed 3 h 15.</p>
+    </div>
+    <div class="practical-card">
+      <h4>🇨🇿 Czech Motorway Vignette Required</h4>
+      <p>Passenger cars on Czech motorways require an official electronic vignette (<em>edalnice.cz</em>) registered to the rental license plate — purchase it before crossing near Cheb on Day 8 to cover the Bohemian stretch (Days 8–12), and confirm cross-border permission for Belgium and Czechia at the FRA rental desk.</p>
+    </div>
+    <div class="practical-card">
+      <h4>🇧🇪🇩🇪 Ghent LEZ &amp; German Umweltzonen</h4>
+      <p>Belgian and German motorways are toll-free for passenger cars, but watch urban Low Emission Zones: register foreign German rental plates online before entering inner Ghent, and verify the green German <em>Umweltplakette</em> windscreen sticker at FRA pick-up for Cologne and Munich.</p>
+    </div>
+    <div class="practical-card">
+      <h4>✈️ Planning the 4 h 04 Munich → FRA Final Drive</h4>
+      <p>Day 16 runs 402.0 km / 4 h 04 straight up the A9 and A3 from Munich to Frankfurt Airport. Leave Munich right after breakfast for afternoon/evening flights — or drive north on evening 15 and sleep near FRA if catching an early flight.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 6: SUGGESTIONS -->
+<div id="suggestions" class="tab-content" role="tabpanel">
+  <div class="section-intro">
+    <h2>💡 Measured Side-Trip Detours &amp; Practical Trip Tips</h2>
+    <p>18 optional side trips measured from their nearest overnight base, followed by six essential planning rules for a smooth pilgrimage.</p>
+  </div>
+
+  <div class="region-filter" id="detour-filters">
+    <button type="button" class="filter-btn active" onclick="filterDetours('all', this)">All 18 Side Trips</button>
+    <button type="button" class="filter-btn" onclick="filterDetours('belgium', this)">🇧🇪 From Belgian Bases (3)</button>
+    <button type="button" class="filter-btn" onclick="filterDetours('germany', this)">🇩🇪 From German Bases (10)</button>
+    <button type="button" class="filter-btn" onclick="filterDetours('czechia', this)">🇨🇿 From Czech Bases (5)</button>
+  </div>
+
+  <div id="detours-container">
+      <section class="detour-base-group" data-detour-country="belgium">
+        <div class="detour-group-header">
+          <h3>🇧🇪 From Bruges <span class="count-pill">2 side trips</span></h3>
+          <span class="muted-inline">Stop #2 · 2 nights</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Westvleteren (In de Vrede)</h4>
+              <span class="detour-metrics num">72 km · 1 h 06 (1:06)</span>
+            </div>
+            <p>Abbey café opposite Sint-Sixtus pouring Trappist Westvleteren 12, 8, and Blond on the terrace without needing a crate reservation.</p>
+          </div>
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Roeselare (Rodenbach)</h4>
+              <span class="detour-metrics num">38 km · 35 min (0:35)</span>
+            </div>
+            <p>Cathedral-like foeder halls where Flemish red-brown ales age for years in towering oak vats.</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="belgium">
+        <div class="detour-group-header">
+          <h3>🇧🇪 From Ghent <span class="count-pill">1 side trip</span></h3>
+          <span class="muted-inline">Stop #3 · 1 night</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Antwerp</h4>
+              <span class="detour-metrics num">61 km · 51 min (0:51)</span>
+            </div>
+            <p>Flemish beer port home to De Koninck city brewery, historic brown bars, and legendary vintage-bottle café Kulminator.</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="germany">
+        <div class="detour-group-header">
+          <h3>🇩🇪 From Cologne <span class="count-pill">2 side trips</span></h3>
+          <span class="muted-inline">Stop #4 · 1 night</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Düsseldorf (Altbier houses)</h4>
+              <span class="detour-metrics num">39 km · 34 min (0:34)</span>
+            </div>
+            <p>Classic Rhineland beer rival 39 km north: wooden-barrel Altbier halls in the Altstadt as the brisk, bitter foil to Cologne&#x27;s Kölsch.</p>
+          </div>
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Bonn (Beethoven house, Rhine)</h4>
+              <span class="detour-metrics num">31 km · 31 min (0:31)</span>
+            </div>
+            <p>Easy half-day run up the Rhine to Beethoven-Haus, riverfront promenades, and traditional Rhineland Brauhäuser.</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="germany">
+        <div class="detour-group-header">
+          <h3>🇩🇪 From Würzburg <span class="count-pill">2 side trips</span></h3>
+          <span class="muted-inline">Stop #5 · 1 night</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Ochsenfurt (Kauzen-Bräu, Oechsner)</h4>
+              <span class="detour-metrics num">20 km · 21 min (0:21)</span>
+            </div>
+            <p>Twin Lower Franconian country breweries 20 minutes south on the Main — Kauzen-Bräu and family-run Privatbrauerei Oechsner — ideal as an evening hop or a quick detour en route to Bamberg.</p>
+          </div>
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Kloster Kreuzberg (Rhön)</h4>
+              <span class="detour-metrics num">90 km · 1 h 01 (1:01)</span>
+            </div>
+            <p>Franciscan monastery brewery high in the Bavarian Rhön mountains (brewing since 1731), famed for dark monastic Klosterbier tapped straight from the barrel.</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="germany">
+        <div class="detour-group-header">
+          <h3>🇩🇪 From Bamberg <span class="count-pill">3 side trips</span></h3>
+          <span class="muted-inline">Stop #6 · 2 nights</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Forchheim</h4>
+              <span class="detour-metrics num">28 km · 28 min (0:28)</span>
+            </div>
+            <p>Forested Kellerwald hillside lined with traditional rock-cut Franconian beer cellars under chestnut trees.</p>
+          </div>
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Aufseß (four-brewery loop)</h4>
+              <span class="detour-metrics num">29 km · 34 min (0:34)</span>
+            </div>
+            <p>Walkable Franconian Switzerland trail linking four village family breweries (Reichold, Rothenbach, Stadter, Kathi-Bräu).</p>
+          </div>
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Nuremberg (Rotbier day trip)</h4>
+              <span class="detour-metrics num">61 km · 54 min (0:54)</span>
+            </div>
+            <p>Keep Nuremberg&#x27;s copper-red Rotbier on the itinerary as an easy 54-min day trip from Bamberg (Altstadthof, Schanzenbräu, Tucher Mautkeller).</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="czechia">
+        <div class="detour-group-header">
+          <h3>🇨🇿 From Pivovar Permon, Sokolov <span class="count-pill">2 side trips</span></h3>
+          <span class="muted-inline">Stop #7 · 1 night</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Loket</h4>
+              <span class="detour-metrics num">12 km · 12 min (0:12)</span>
+            </div>
+            <p>Dramatic medieval castle town wrapped inside a tight horseshoe bend of the Ohře River — effortless stop en route to Plzeň.</p>
+          </div>
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Karlovy Vary</h4>
+              <span class="detour-metrics num">20 km · 17 min (0:17)</span>
+            </div>
+            <p>Grand Bohemian spa town of riverside colonnades and steaming mineral springs just east of Sokolov.</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="czechia">
+        <div class="detour-group-header">
+          <h3>🇨🇿 From Plzeň <span class="count-pill">2 side trips</span></h3>
+          <span class="muted-inline">Stop #8 · 2 nights</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Žatec (hop capital)</h4>
+              <span class="detour-metrics num">86 km · 1 h 29 (1:29)</span>
+            </div>
+            <p>Historic Saaz hop capital with the Hop Museum, Temple of Hops, and local brews yards from the bines.</p>
+          </div>
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Chodová Planá (Chodovar beer spa)</h4>
+              <span class="detour-metrics num">67 km · 52 min (0:52)</span>
+            </div>
+            <p>Centuries-old granite beer caves with an underground restaurant and traditional warm beer-bath spa.</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="czechia">
+        <div class="detour-group-header">
+          <h3>🇨🇿 From Kout na Šumavě <span class="count-pill">1 side trip</span></h3>
+          <span class="muted-inline">Stop #9 · 1 night</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Regensburg</h4>
+              <span class="detour-metrics num">102 km · 1 h 32 (1:32)</span>
+            </div>
+            <p>UNESCO medieval Danube city with time-capsule Kneitinger beer hall and Spitalbrauerei by the Stone Bridge (natural Day 10 break).</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="germany">
+        <div class="detour-group-header">
+          <h3>🇩🇪 From Maxlrain Bierstube <span class="count-pill">1 side trip</span></h3>
+          <span class="muted-inline">Stop #10 · 1 night</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Wendelstein</h4>
+              <span class="detour-metrics num">24 km · 20 min (0:20)</span>
+            </div>
+            <p>Bavarian pre-Alps peak reached by historic cog railway or cable car for clear-day Alpine panoramas.</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="germany">
+        <div class="detour-group-header">
+          <h3>🇩🇪 From Andechs / Herrsching <span class="count-pill">1 side trip</span></h3>
+          <span class="muted-inline">Stop #11 · 1 night</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Herrsching (Ammersee)</h4>
+              <span class="detour-metrics num">5 km · 8 min (0:08)</span>
+            </div>
+            <p>Lakeside overnight base below Kloster Andechs — walk or ride the local bus up the Holy Mountain so the car stays parked.</p>
+          </div>
+        </div>
+      </section>
+      <section class="detour-base-group" data-detour-country="germany">
+        <div class="detour-group-header">
+          <h3>🇩🇪 From Munich <span class="count-pill">1 side trip</span></h3>
+          <span class="muted-inline">Stop #12 · 2 nights</span>
+        </div>
+        <div class="detour-grid">
+          <div class="detour-card">
+            <div class="detour-top">
+              <h4>Freising (Weihenstephan)</h4>
+              <span class="detour-metrics num">41 km · 39 min (0:39)</span>
+            </div>
+            <p>Hilltop Bavarian State Brewery Weihenstephan north of Munich, revered for benchmark Hefeweizen, Vitus, and Korbinian.</p>
+          </div>
+        </div>
+      </section>
+  </div>
+
+  <div class="suggestion-box">
+    <h3>🧭 Six Trip-Level Tips Before You Go</h3>
+    <div class="notes-grid">
+      <div class="practical-card">
+        <h4>1. Book Brewery Tours &amp; Beer Spas Ahead</h4>
+        <p>Reserve Pilsner Urquell's unfiltered cellar tour, Purkmistr beer-spa slots, De Halve Maan's XL pipeline tour in Bruges, and — if hitting Würzburg on a Friday or Saturday — Würzburger Hofbräukeller's brewmaster tour with keg tapping.</p>
+      </div>
+      <div class="practical-card">
+        <h4>2. Watch Monday Closures (<em>Ruhetag</em>)</h4>
+        <p>Small family breweries in Lower &amp; Upper Franconia (Ochsenfurt, Bamberg), rural Bohemia, and Upper Bavaria frequently close on Mondays and/or Tuesdays (as does Lommerzheim in Cologne). Check taproom hours ahead.</p>
+      </div>
+      <div class="practical-card">
+        <h4>3. Cash, Coasters &amp; Bridge-Garden Pours</h4>
+        <p>Carry cash for Cologne Brauhäuser, Würzburg's Goldene Gans garden (house beer poured only outdoors under the Alte Mainbrücke), Bamberg <em>Schwemme</em> windows, and Czech pubs. In Cologne, lay your <em>Bierdeckel</em> on your glass to pause Kölsch refills.</p>
+      </div>
+      <div class="practical-card">
+        <h4>4. Strict Driving &amp; Drinking Rules (0.0% in Czechia)</h4>
+        <p>Czechia enforces <strong>zero tolerance (0.0% BAC)</strong> behind the wheel, and Germany and Belgium enforce strict limits as well. With every middle drive under 3 h 15, finish driving early, park the car, and explore on foot or local transit.</p>
+      </div>
+      <div class="practical-card">
+        <h4>5. Best Season: May – September</h4>
+        <p>Late spring through early autumn opens Goldene Gans under Würzburg's Alte Mainbrücke, Hofbräukeller's garden, Bamberg's Greifenklau terrace, Munich's chestnut-shaded Augustiner-Keller, and Ammersee views at Andechs.</p>
+      </div>
+      <div class="practical-card">
+        <h4>6. Final 4 h Munich → FRA Leg on Day 16</h4>
+        <p>The Day 16 Munich→FRA drive is 402 km / 4 h 04 before roadworks (<em>Baustellen</em>), refuelling, and rental return. Leave Munich right after breakfast — or sleep near FRA on Night 15 for morning flights. Pack bottle sleeves the night before.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+window.ROUTE_2027 = {"trip": {"title": "Bier Reisen 2027 — v3", "subtitle": "Bruges, Ghent, Cologne, Würzburg, Bamberg, Bohemia, Bavaria", "year": 2027, "days": 16, "nights": 15, "bases": 11, "countries": ["Germany", "Belgium", "Czechia"], "total_km": 2307.5, "total_drive_minutes": 1628, "start": "Frankfurt am Main Airport (FRA)", "end": "Frankfurt am Main Airport (FRA)", "version": "v3", "changes": "Würzburg night added between Cologne and Bamberg — the Ghent→Bamberg run is now three short days"}, "stops": [{"id": "fra", "order": 0, "name": "Frankfurt am Main Airport", "city": "Frankfurt", "country": "Germany", "nights": 0, "lat": 50.0379, "lon": 8.5622, "kind": "airport", "note": "Pick up the rental car on arrival, return it here on day 15."}, {"id": "bruges", "order": 1, "name": "Bruges", "city": "Brugge", "country": "Belgium", "nights": 2, "lat": 51.2087, "lon": 3.2244, "kind": "city", "note": "Historic centre, De Halve Maan, brown bars on the canal."}, {"id": "ghent", "order": 2, "name": "Ghent", "city": "Gent", "country": "Belgium", "nights": 1, "lat": 51.0543, "lon": 3.7174, "kind": "city", "note": "Gruut, Dok Noord, Dulle Griet and the Waterhuis."}, {"id": "cologne", "order": 3, "name": "Cologne", "city": "Köln", "country": "Germany", "nights": 1, "lat": 50.9424, "lon": 6.9555, "kind": "city", "note": "Kölsch country: Früh am Dom, Päffgen, Mühlen, Lommerzheim and the Ehrenfeld craft scene."}, {"id": "wurzburg", "order": 4, "name": "Würzburg", "city": "Würzburg", "country": "Germany", "nights": 1, "lat": 49.7913, "lon": 9.9534, "kind": "city", "note": "The wine capital that still brews: Hofbräu since 1643, a brewpub under the Old Main Bridge and two craft micros."}, {"id": "bamberg", "order": 5, "name": "Bamberg", "city": "Bamberg", "country": "Germany", "nights": 2, "lat": 49.8913, "lon": 10.8825, "kind": "city", "note": "UNESCO old town, nine breweries, rauchbier capital."}, {"id": "sokolov", "order": 6, "name": "Pivovar Permon, Sokolov", "city": "Sokolov", "country": "Czechia", "nights": 1, "lat": 50.1788, "lon": 12.6379, "kind": "brewery", "address": "Komenského 77, 356 01 Sokolov, Czechia", "note": "Mining-country craft brewery with its own restaurant and rooms."}, {"id": "plzen", "order": 7, "name": "Plzeň", "city": "Plzeň", "country": "Czechia", "nights": 2, "lat": 49.7473, "lon": 13.3776, "kind": "city", "note": "Birthplace of pilsner, tank beer, Pilsner Urquell cellars."}, {"id": "kout", "order": 8, "name": "Kout na Šumavě", "city": "Kout na Šumavě", "country": "Czechia", "nights": 1, "lat": 49.4025, "lon": 13.0017, "kind": "brewery", "address": "Kout na Šumavě 2, 345 02 Kout na Šumavě, Czechia", "note": "Cult 12° lager, revived 2006, deep in the Bohemian forest."}, {"id": "maxlrain", "order": 9, "name": "Maxlrain Bierstube", "city": "Tuntenhausen-Maxlrain", "country": "Germany", "nights": 1, "lat": 47.8987, "lon": 11.9883, "kind": "brewery", "address": "Aiblinger Str. 1, 83104 Tuntenhausen-Maxlrain, Germany", "note": "Schlossbrauerei Maxlrain, brewery inn south of Munich."}, {"id": "andechs", "order": 10, "name": "Andechs / Herrsching", "city": "Andechs", "country": "Germany", "nights": 1, "lat": 47.9747, "lon": 11.1826, "kind": "brewery", "address": "Kloster Andechs, Bergstraße 2, 82346 Andechs, Germany", "note": "Benedictine monastery brewery above the Ammersee; sleep in Herrsching."}, {"id": "munich", "order": 11, "name": "Munich", "city": "München", "country": "Germany", "nights": 2, "lat": 48.1371, "lon": 11.5754, "kind": "city", "note": "Augustiner, Schneider, Giesinger, ORCA and the beer halls."}], "days": [{"day": 1, "base": "bruges", "title": "Arrive FRA, drive to Bruges", "drive": "fra->bruges", "items": ["Pick up the rental car at Frankfurt Airport", "493 km / 5 h 15 west through Belgium", "Check in inside the old town", "Evening first pint at De Garre (house tripel, max three)"]}, {"day": 2, "base": "bruges", "title": "Bruges", "drive": null, "items": ["De Halve Maan XL tour incl. the 3 km beer pipeline", "'t Brugs Beertje for the 300-bottle list", "Café Vlissinghe (1515) for the bocce garden", "Bourgogne des Flandres on the canal"]}, {"day": 3, "base": "ghent", "title": "Drive to Ghent, brewery quarter", "drive": "bruges->ghent", "items": ["49 km / 44 min", "Gruut Stadsbrouwerij tasting (hop-free herb beers)", "Dok Noord: Dok Brewing, Stroom Brouwers, De Hopduvel", "De Dulle Griet (500 beers) and Het Waterhuis aan de Bierkant"]}, {"day": 4, "base": "cologne", "title": "Drive to Cologne", "drive": "ghent->cologne", "items": ["265 km / 3 h 06 through the Rhineland", "Kölsch at Früh am Dom, then Brauerei zur Malzmühle (Mühlen)", "Evening in Ehrenfeld: Braustelle for craft beer", "A Kölsch is 0.2 l — the Köbes keeps refilling until the coaster goes on the glass"]}, {"day": 5, "base": "wurzburg", "title": "Cologne to Würzburg", "drive": "cologne->wurzburg", "items": ["302 km / 3 h 02 up the Rhine and Main", "Goldene Gans: house-brewed beer under the Alte Mainbrücke", "Würzburger Hofbräukeller: Pils, Hefeweißbier, brewery tour Fri/Sat with keg tapping", "Nightcap with a Herbipolis or Maischerei Mayr & Müller craft pour"]}, {"day": 6, "base": "bamberg", "title": "Würzburg to Bamberg", "drive": "wurzburg->bamberg", "items": ["94 km / 1 h 03 — an easy morning on the A70", "Optional detour to Ochsenfurt (20 min): Kauzen-Bräu and Oechsner", "Arrive Bamberg, evening at Schlenkerla for the first rauchbier"]}, {"day": 7, "base": "bamberg", "title": "Bamberg brewery crawl", "drive": null, "items": ["Spezial for the locals' rauchbier", "Mahr's Bräu for the aU Ungespundetes", "Fässla Zwergla, then Greifenklau's beer garden", "Keesmann Herren Pils before the nightcap"]}, {"day": 8, "base": "sokolov", "title": "Into Bohemia: Permon", "drive": "bamberg->sokolov", "items": ["160 km / 1 h 59 via Bayreuth and Cheb", "Pivovar Permon brewery tour on Komenského 77", "Dinner in the brewery restaurant; sleep on site"]}, {"day": 9, "base": "plzen", "title": "Sokolov to Plzeň", "drive": "sokolov->plzen", "items": ["87 km / 1 h 28", "Optional stop in Loket (12 min) or Karlovy Vary (17 min)", "Evening tank beer at U Salzmannů (1637)"]}, {"day": 10, "base": "plzen", "title": "Plzeň: birthplace of pilsner", "drive": null, "items": ["Pilsner Urquell cellars tour with unfiltered tasting", "Na Parkánu for the freshest tank Pilsner", "Purkmistr brewery hotel, Pivovar Raven for Czech craft"]}, {"day": 11, "base": "kout", "title": "Plzeň to the Bohemian forest", "drive": "plzen->kout", "items": ["62 km / 1 h 06", "Pivovar Kout na Šumavě: the cult 12° lager", "Afternoon walk in the Šumava foothills"]}, {"day": 12, "base": "maxlrain", "title": "Kout to Upper Bavaria", "drive": "kout->maxlrain", "items": ["260 km / 3 h 11 via Regensburg (optional 1 h 32 detour)", "Schlossbrauerei Maxlrain tour", "Dinner in the Maxlrain Bierstube, sleep at the brewery"]}, {"day": 13, "base": "andechs", "title": "Maxlrain to the Holy Mountain", "drive": "maxlrain->andechs", "items": ["89 km / 1 h 25", "Kloster Andechs: Doppelbock Dunkel above the Ammersee", "Sleep in Herrsching by the lake"]}, {"day": 14, "base": "munich", "title": "Andechs to Munich", "drive": "andechs->munich", "items": ["45 km / 45 min", "Augustiner-Keller: Edelstoff from the wooden barrel", "Schneider Bräuhaus for Aventinus"]}, {"day": 15, "base": "munich", "title": "Munich", "drive": null, "items": ["Giesinger Bräu Erhellung", "ORCA Brau taproom for NEIPAs", "Hofbräuhaus once for the room", "Tilmans Biere or Paulaner Nockherberg to finish"]}, {"day": 16, "base": "fra", "title": "Munich to Frankfurt, fly home", "drive": "munich->fra", "items": ["402 km / 4 h 04 straight up the A3 — leave after breakfast", "Return the car at FRA", "Lunch at the airport before security"]}], "legs": [{"from": "fra", "to": "bruges", "day": 1, "km": 492.6, "minutes": 315}, {"from": "bruges", "to": "ghent", "day": 3, "km": 49.2, "minutes": 44}, {"from": "ghent", "to": "cologne", "day": 4, "km": 265.2, "minutes": 186}, {"from": "cologne", "to": "wurzburg", "day": 5, "km": 302.1, "minutes": 182}, {"from": "wurzburg", "to": "bamberg", "day": 6, "km": 94.3, "minutes": 63}, {"from": "bamberg", "to": "sokolov", "day": 8, "km": 160.2, "minutes": 119}, {"from": "sokolov", "to": "plzen", "day": 9, "km": 86.8, "minutes": 88}, {"from": "plzen", "to": "kout", "day": 11, "km": 61.6, "minutes": 66}, {"from": "kout", "to": "maxlrain", "day": 12, "km": 259.8, "minutes": 191}, {"from": "maxlrain", "to": "andechs", "day": 13, "km": 89.2, "minutes": 85}, {"from": "andechs", "to": "munich", "day": 14, "km": 44.5, "minutes": 45}, {"from": "munich", "to": "fra", "day": 16, "km": 402.0, "minutes": 244}], "matrix": {"nodes": ["fra", "bruges", "ghent", "cologne", "wurzburg", "bamberg", "sokolov", "plzen", "kout", "maxlrain", "andechs", "munich"], "pairs": {"fra|bruges": [492.6, 315], "fra|ghent": [453.2, 294], "fra|cologne": [181.1, 125], "fra|wurzburg": [127.9, 85], "fra|bamberg": [212.9, 144], "fra|sokolov": [375.3, 247], "fra|plzen": [425.3, 253], "fra|kout": [394.4, 261], "fra|maxlrain": [441.3, 270], "fra|andechs": [439.3, 267], "fra|munich": [402.0, 244], "bruges|ghent": [49.2, 44], "bruges|cologne": [296.2, 211], "bruges|wurzburg": [596.5, 378], "bruges|bamberg": [681.5, 437], "bruges|sokolov": [843.9, 541], "bruges|plzen": [893.9, 546], "bruges|kout": [863.0, 554], "bruges|maxlrain": [909.9, 563], "bruges|andechs": [868.7, 550], "bruges|munich": [870.6, 537], "ghent|cologne": [265.2, 186], "ghent|wurzburg": [565.4, 353], "ghent|bamberg": [650.5, 411], "ghent|sokolov": [812.8, 515], "ghent|plzen": [862.8, 521], "ghent|kout": [832.0, 528], "ghent|maxlrain": [878.8, 537], "ghent|andechs": [837.6, 525], "ghent|munich": [839.6, 511], "cologne|wurzburg": [302.1, 182], "cologne|bamberg": [387.2, 241], "cologne|sokolov": [549.6, 345], "cologne|plzen": [599.6, 350], "cologne|kout": [568.7, 358], "cologne|maxlrain": [615.6, 367], "cologne|andechs": [613.6, 364], "cologne|munich": [576.3, 341], "wurzburg|bamberg": [94.3, 63], "wurzburg|sokolov": [247.5, 166], "wurzburg|plzen": [301.7, 178], "wurzburg|kout": [270.9, 186], "wurzburg|maxlrain": [317.8, 195], "wurzburg|andechs": [315.8, 192], "wurzburg|munich": [278.5, 169], "bamberg|sokolov": [160.2, 119], "bamberg|plzen": [255.3, 161], "bamberg|kout": [224.4, 168], "bamberg|maxlrain": [271.3, 177], "bamberg|andechs": [269.3, 174], "bamberg|munich": [232.0, 151], "sokolov|plzen": [86.8, 88], "sokolov|kout": [111.7, 111], "sokolov|maxlrain": [322.0, 212], "sokolov|andechs": [320.0, 209], "sokolov|munich": [282.7, 186], "plzen|kout": [61.6, 66], "plzen|maxlrain": [328.4, 210], "plzen|andechs": [326.4, 207], "plzen|munich": [289.1, 184], "kout|maxlrain": [259.8, 191], "kout|andechs": [257.8, 187], "kout|munich": [220.5, 165], "maxlrain|andechs": [89.2, 85], "maxlrain|munich": [49.7, 50], "andechs|munich": [44.5, 45]}}, "side_legs": [{"from": "bruges", "to": "Westvleteren (In de Vrede)", "km": 72, "minutes": 66}, {"from": "bruges", "to": "Roeselare (Rodenbach)", "km": 38, "minutes": 35}, {"from": "ghent", "to": "Antwerp", "km": 61, "minutes": 51}, {"from": "bamberg", "to": "Forchheim", "km": 28, "minutes": 28}, {"from": "sokolov", "to": "Loket", "km": 12, "minutes": 12}, {"from": "sokolov", "to": "Karlovy Vary", "km": 20, "minutes": 17}, {"from": "plzen", "to": "Žatec (hop capital)", "km": 86, "minutes": 89}, {"from": "plzen", "to": "Chodová Planá (Chodovar beer spa)", "km": 67, "minutes": 52}, {"from": "kout", "to": "Regensburg", "km": 102, "minutes": 92}, {"from": "maxlrain", "to": "Wendelstein", "km": 24, "minutes": 20}, {"from": "andechs", "to": "Herrsching (Ammersee)", "km": 5, "minutes": 8}, {"from": "munich", "to": "Freising (Weihenstephan)", "km": 41, "minutes": 39}, {"from": "bamberg", "to": "Aufseß (four-brewery loop)", "km": 29, "minutes": 34}, {"from": "cologne", "to": "Düsseldorf (Altbier houses)", "km": 39.0, "minutes": 34}, {"from": "cologne", "to": "Bonn (Beethoven house, Rhine)", "km": 30.9, "minutes": 31}, {"from": "bamberg", "to": "Nuremberg (Rotbier day trip)", "km": 60.7, "minutes": 54}, {"from": "wurzburg", "to": "Ochsenfurt (Kauzen-Bräu, Oechsner)", "km": 19.6, "minutes": 21}, {"from": "wurzburg", "to": "Kloster Kreuzberg (Rhön)", "km": 90.3, "minutes": 61}], "venues": {"Bruges": [{"name": "De Halve Maan", "note": "Only active brewery in the historic centre; Brugse Zot, Straffe Hendrik, 3 km beer pipeline, XL rooftop tour."}, {"name": "De Garre", "note": "Hidden alley café, house tripel at 11%, maximum three per person."}, {"name": "'t Brugs Beertje", "note": "300+ bottles, the classic brown bar of Bruges."}, {"name": "Café Vlissinghe", "note": "Oldest pub in Bruges (1515), bocce court in the garden."}, {"name": "Le Trappiste", "note": "Vaulted cellar bar with a full Trappist list."}, {"name": "Bourgogne des Flandres", "note": "Brewery-café on the canal, Flemish red house beer."}], "Ghent": [{"name": "Gruut Stadsbrouwerij", "note": "City brewery using a medieval herb-and-spice mix instead of hops: Blond, Amber, Brown, White, Inferno."}, {"name": "Dok Brewing Company", "note": "Dok-Noord 4B, 30 taps in a converted metal workshop; Pils 13 is the flagship."}, {"name": "Stroom Brouwers", "note": "Belgian-American duo bridging Belgian tradition and US craft; Forelstraat taproom."}, {"name": "De Dulle Griet", "note": "Vrijdagmarkt 50, 500 beers, the shoe-in-the-basket ritual for the house Max."}, {"name": "Het Waterhuis aan de Bierkant", "note": "Groentenmarkt 9, around 170 beers, canal terrace; house beers Gandavum and Klokke Roeland."}, {"name": "De Hopduvel", "note": "Beer shop in Dok-Noord, the best take-home selection in the city."}], "Bamberg": [{"name": "Schlenkerla", "note": "Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar."}, {"name": "Spezial", "note": "The locals' rauchbier — subtler smoke than Schlenkerla."}, {"name": "Mahr's Bräu", "note": "The legendary 'aU' Ungespundetes, naturally carbonated and unfiltered."}, {"name": "Fässla", "note": "Dwarf logo, Zwergla dark lager, brewery tap opposite Spezial."}, {"name": "Greifenklau", "note": "Beer garden with the best view over the city."}, {"name": "Klosterbräu", "note": "Oldest brewery in Bamberg (1533), Schwärzla."}, {"name": "Keesmann", "note": "Cult Herren Pils, the counterpoint to all the smoke."}], "Sokolov": [{"name": "Pivovar Permon", "note": "Komenského 77: mining-country craft brewery, Permon IPA 15°, dark specials, brewery restaurant on site."}], "Plzeň": [{"name": "Pilsner Urquell", "note": "Where pilsner was born in 1842; cellars tour with unfiltered, unpasteurised tank beer."}, {"name": "U Salzmannů", "note": "Pražská 8, a pub since 1637 and the best-poured tank Urquell in town."}, {"name": "Na Parkánu", "note": "Attached to the brewery, freshest tank Pilsner you will get."}, {"name": "Purkmistr", "note": "Brewery hotel with its own beer spa and a solid dark lager."}, {"name": "Pivovar Raven", "note": "Czech craft pioneer: IPAs, stouts and sours outside the pilsner tradition."}], "Kout na Šumavě": [{"name": "Pivovar Kout na Šumavě", "note": "Revived in 2006 from a defunct 19th-century brewery; the 12° pale lager is a cult beer among Czech beer nerds."}], "Maxlrain": [{"name": "Schlossbrauerei Maxlrain", "note": "Family-owned castle brewery in Tuntenhausen; Helles, Dunkel and Weißbier served in the Bierstube next door."}], "Andechs": [{"name": "Kloster Andechs", "note": "Benedictine monastery brewery since 1455; Doppelbock Dunkel at 7.1% with a view over the Ammersee."}, {"name": "Andechser Hof, Herrsching", "note": "Inn and restaurant by the lake, pours the full Andechs range; the practical base for the night."}], "Munich": [{"name": "Augustiner-Keller", "note": "Munich's oldest brewery and the locals' choice; Edelstoff from wooden barrels under the chestnuts."}, {"name": "Schneider Bräuhaus", "note": "The original wheat-beer house; Aventinus is the benchmark Weizenbock."}, {"name": "Hofbräuhaus", "note": "Brewing since 1589 — go once for the room, not for the quiet."}, {"name": "Giesinger Bräu", "note": "Garage-to-glory Munich craft brewery; Erhellung unfiltered Helles."}, {"name": "ORCA Brau", "note": "Tiny nano-brewery making juicy NEIPAs that rival New England."}, {"name": "Tilmans Biere", "note": "Small, refined Munich brewery for a quieter final round."}, {"name": "Paulaner Nockherberg", "note": "Historic brewery site above the Isar, home of the Starkbierfest."}], "Cologne": [{"name": "Früh am Dom", "note": "The classic Kölsch hall beside the cathedral; brewed on site since 1904 and poured by Köbes in 0.2 l Stangen."}, {"name": "Brauerei zur Malzmühle", "note": "Heumarkt 6, Mühlen Kölsch since 1858 — one of the few houses still brewing its own Kölsch in the old town."}, {"name": "Brauhaus Päffgen", "note": "Friesenstraße 64-66: the brewery tap, Kölsch straight from the wooden barrel, no music, no excuses."}, {"name": "Brauhaus Sion", "note": "Unter Taschenmacher 5-7, a Kölsch house with roots in the 14th century, right behind the Alter Markt."}, {"name": "Peters Brauhaus", "note": "Mühlengasse 1, historic panelled rooms near the river, Peters Kölsch on tap."}, {"name": "Lommerzheim", "note": "Siegesstraße 18 in Deutz: cult pub, Kölsch, Schweinshaxe and a queue of locals by 18:00."}, {"name": "Braustelle", "note": "Venloer Straße 386 in Ehrenfeld — Cologne's craft counterpoint, own beers brewed behind the bar."}], "Würzburg": [{"name": "Würzburger Hofbräukeller", "note": "Höchberger Straße 28: the 1643 Hofbräu's own Keller with beer garden and a Friday/Saturday brewmaster tour that starts by tapping a keg."}, {"name": "Goldene Gans", "note": "Brewpub and beer garden under the Alte Mainbrücke — its house-brewed beer is poured only in the garden."}, {"name": "Herbipolis (SMaSH Brewing Project)", "note": "Würzburg's craft micro: single-malt, single-hop beers in the city's newer scene."}, {"name": "Maischerei Mayr & Müller", "note": "Small Würzburg brewery doing experimental and classic styles side by side."}, {"name": "Kauzen-Bräu, Ochsenfurt", "note": "20 km south: a proper Franconian country brewery with a brewery tap in the old town."}, {"name": "Privatbrauerei Oechsner, Ochsenfurt", "note": "Second Ochsenfurt brewery, family-run, classic unfiltered Franconian lagers."}]}, "styles": [{"region": "Belgium", "styles": ["Flemish red", "lambic / gueuze", "saison", "tripel", "dubbel", "witbier", "gruut (herb beer)"]}, {"region": "Rhineland", "styles": ["Kölsch", "Altbier (Düsseldorf, 39 km)"]}, {"region": "Franconia", "styles": ["Rauchbier", "Ungespundetes / Kellerbier", "Helles", "Pils", "Bock", "Schwarzbier (Würzburg)"]}, {"region": "Bohemia", "styles": ["světlý ležák 12°", "tmavé (dark lager)", "tank beer", "Czech IPA"]}, {"region": "Bavaria", "styles": ["Helles", "Weißbier", "Doppelbock", "Festbier"]}]};
+
+let leafletMap = null;
+const markerByStopId = {};
+let routeBounds = null;
+
+function fmtHmm(mins) {
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  return h === 0 ? (m + ' min') : (h + ' h ' + String(m).padStart(2, '0'));
+}
+
+function switchTab(id, btnEl) {
+  document.querySelectorAll('.tab-content').forEach(pane => pane.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  const targetPane = document.getElementById(id);
+  if (targetPane) targetPane.classList.add('active');
+  const activeBtn = btnEl || document.querySelector('.tab-btn[data-tab="' + id + '"]');
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+    activeBtn.setAttribute('aria-selected', 'true');
+  }
+  if (id === 'map') {
+    initMap();
+    if (leafletMap) setTimeout(() => leafletMap.invalidateSize(), 80);
+  }
+}
+
+// Keyboard arrow support on tablist
+document.querySelector('.tabs').addEventListener('keydown', (e) => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const btns = Array.from(document.querySelectorAll('.tab-btn'));
+  const idx = btns.indexOf(document.activeElement);
+  if (idx === -1) return;
+  e.preventDefault();
+  const next = btns[(idx + (e.key === 'ArrowRight' ? 1 : btns.length - 1)) % btns.length];
+  next.focus();
+  switchTab(next.dataset.tab, next);
+});
+
+function filterDays(mode, btnEl) {
+  document.querySelectorAll('#itinerary-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  const cards = Array.from(document.querySelectorAll('#itinerary-flowchart .day-node'));
+  const connectors = Array.from(document.querySelectorAll('#itinerary-flowchart .connector'));
+
+  cards.forEach(card => {
+    let show = true;
+    if (mode === 'inplace') show = card.dataset.drive === 'no';
+    else if (mode === 'long') show = card.dataset.long === 'yes';
+    else if (mode !== 'all') show = card.dataset.region === mode;
+    card.style.display = show ? '' : 'none';
+  });
+
+  connectors.forEach((conn, idx) => {
+    const prevVis = cards[idx] && cards[idx].style.display !== 'none';
+    const anyAfterVis = cards.slice(idx + 1).some(c => c.style.display !== 'none');
+    conn.style.display = (prevVis && anyAfterVis) ? '' : 'none';
+  });
+}
+
+let currentRankingCity = 'all';
+function filterRankings(citySlug, btnEl) {
+  currentRankingCity = citySlug;
+  document.querySelectorAll('#ranking-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  applyRankingFilter();
+}
+
+function searchRankings() {
+  applyRankingFilter();
+}
+
+function applyRankingFilter() {
+  const q = (document.getElementById('venue-search').value || '').trim().toLowerCase();
+  document.querySelectorAll('.city-ranking-section').forEach(sec => {
+    const secCity = sec.dataset.citySection;
+    const cityMatch = (currentRankingCity === 'all' || secCity === currentRankingCity);
+    let visibleCards = 0;
+    sec.querySelectorAll('.brewery-card').forEach(card => {
+      const textMatch = !q || card.dataset.search.includes(q);
+      const show = cityMatch && textMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visibleCards++;
+    });
+    sec.style.display = visibleCards > 0 ? '' : 'none';
+  });
+}
+
+function filterBeerRegions(regionSlug, btnEl) {
+  document.querySelectorAll('#beer-region-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  document.querySelectorAll('.beer-region-block').forEach(sec => {
+    sec.style.display = (regionSlug === 'all' || sec.dataset.beerRegion === regionSlug) ? '' : 'none';
+  });
+}
+
+function setMatrixMode(mode, btnEl) {
+  document.querySelectorAll('#matrix-mode-btns .filter-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  document.getElementById('car-matrix').setAttribute('data-mode', mode);
+}
+
+function filterDetours(countrySlug, btnEl) {
+  document.querySelectorAll('#detour-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  document.querySelectorAll('.detour-base-group').forEach(sec => {
+    sec.style.display = (countrySlug === 'all' || sec.dataset.detourCountry === countrySlug) ? '' : 'none';
+  });
+}
+
+function initMap() {
+  if (leafletMap) return;
+  const container = document.getElementById('map-container');
+  if (typeof window.L === 'undefined') {
+    container.innerHTML = '<div style="padding:2rem;color:#b0b9ce;text-align:center;">Leaflet library unavailable offline — view the full 4800×3120 route map poster right below.</div>';
+    return;
+  }
+
+  leafletMap = L.map('map-container', { zoomControl: true }).setView([49.8, 9.2], 6);
+
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+    maxZoom: 16
+  }).addTo(leafletMap);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16
+  }).addTo(leafletMap);
+
+  const stops = window.ROUTE_2027.stops.slice().sort((a, b) => a.order - b.order);
+  const stopById = {};
+  stops.forEach(s => { stopById[s.id] = s; });
+
+  const legByFrom = {};
+  window.ROUTE_2027.legs.forEach(l => { legByFrom[l.from] = l; });
+  const returnLeg = window.ROUTE_2027.legs[window.ROUTE_2027.legs.length - 1];
+
+  const countryColors = {
+    Germany: '#f5a623',
+    Belgium: '#ff7a59',
+    Czechia: '#38bdf8'
+  };
+
+  // Draw each route leg as an interactive polyline
+  window.ROUTE_2027.legs.forEach((leg, idx) => {
+    const sA = stopById[leg.from];
+    const sB = stopById[leg.to];
+    const pts = [[sA.lat, sA.lon], [sB.lat, sB.lon]];
+    const isFinal = idx === window.ROUTE_2027.legs.length - 1;
+    const isLong = leg.day === 5 || leg.day === 6;
+    const lineColor = isLong ? '#e94560' : (isFinal ? '#b283f8' : '#f5a623');
+
+    // Subtle dark casing
+    L.polyline(pts, { color: '#080a14', weight: 7, opacity: 0.75, interactive: false }).addTo(leafletMap);
+
+    const seg = L.polyline(pts, {
+      color: lineColor,
+      weight: isLong ? 4 : 3.2,
+      opacity: 0.9,
+      dashArray: isFinal ? '8, 7' : null
+    }).addTo(leafletMap);
+
+    seg.bindPopup(
+      '<div class="popup-title">Day ' + leg.day + ' Drive</div>' +
+      '<div class="popup-meta">' + sA.name + ' → ' + sB.name + '</div>' +
+      '<div class="popup-next">' + leg.km.toFixed(1) + ' km (' + Math.round(leg.km) + ' km) · ' + fmtHmm(leg.minutes) + '</div>'
+    );
+  });
+
+  const boundsLatLngs = [];
+
+  stops.forEach((s) => {
+    const visitNum = s.order + 1;
+    boundsLatLngs.push([s.lat, s.lon]);
+    const bgCol = s.kind === 'airport' ? '#4ecdc4' : (countryColors[s.country] || '#f5a623');
+
+    const icon = L.divIcon({
+      className: '',
+      html: '<div style="background:' + bgCol + ';color:#111322;width:28px;height:28px;border-radius:50%;border:2.5px solid #eef1f6;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;box-shadow:0 3px 10px rgba(0,0,0,0.65);font-variant-numeric:tabular-nums;">' + visitNum + '</div>',
+      iconSize: [28, 28],
+      iconAnchor: [14, 14],
+      popupAnchor: [0, -14]
+    });
+
+    const nightsLine = s.nights > 0
+      ? (s.nights + (s.nights === 1 ? ' night' : ' nights') + ' · ' + s.city + ', ' + s.country)
+      : ('Start (Day 1) & End (Day 16) · ' + s.city + ', ' + s.country + ' · 0 nights');
+
+    const addrLine = s.address
+      ? '<div class="popup-addr">📍 ' + s.address + '</div>'
+      : '';
+
+    const nextLeg = legByFrom[s.id];
+    let nextLine = '';
+    if (nextLeg) {
+      const nextStop = stopById[nextLeg.to];
+      nextLine = '<div class="popup-next"><strong>Next leg (Day ' + nextLeg.day + '):</strong> → ' +
+        nextStop.name + ' · ' + nextLeg.km.toFixed(1) + ' km · ' + fmtHmm(nextLeg.minutes) + '</div>';
+    }
+    if (s.id === 'fra' && returnLeg) {
+      const prevStop = stopById[returnLeg.from];
+      nextLine += '<div class="popup-next" style="margin-top:5px;"><strong>Return leg (Day ' + returnLeg.day + '):</strong> ' +
+        prevStop.name + ' → FRA · ' + returnLeg.km.toFixed(1) + ' km · ' + fmtHmm(returnLeg.minutes) + '</div>';
+    }
+
+    const popupHtml =
+      '<div class="popup-title">#' + visitNum + ' · ' + s.name + '</div>' +
+      '<div class="popup-meta">' + nightsLine + '</div>' +
+      addrLine +
+      '<div class="popup-note">' + s.note + '</div>' +
+      nextLine;
+
+    const marker = L.marker([s.lat, s.lon], { icon: icon }).bindPopup(popupHtml, { maxWidth: 320 }).addTo(leafletMap);
+    markerByStopId[s.id] = marker;
+  });
+
+  routeBounds = L.latLngBounds(boundsLatLngs);
+  leafletMap.fitBounds(routeBounds, { padding: [42, 42] });
+
+  const legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function() {
+    const div = L.DomUtil.create('div', 'legend');
+    div.style.cssText = 'background:#151c35;color:#eef1f6;padding:10px 14px;border-radius:8px;border:1px solid #2b3658;box-shadow:0 6px 18px rgba(0,0,0,0.55);font-size:12px;line-height:1.75;';
+    div.innerHTML =
+      '<strong style="color:#f5a623;font-size:12.5px;">Route Legend (1–12)</strong><br>' +
+      '<span style="display:inline-block;width:10px;height:10px;background:#4ecdc4;border-radius:50%;margin-right:6px;"></span>Start &amp; End (FRA)<br>' +
+      '<span style="display:inline-block;width:10px;height:10px;background:#ff7a59;border-radius:50%;margin-right:6px;"></span>Belgium Base<br>' +
+      '<span style="display:inline-block;width:10px;height:10px;background:#f5a623;border-radius:50%;margin-right:6px;"></span>Germany Base<br>' +
+      '<span style="display:inline-block;width:10px;height:10px;background:#38bdf8;border-radius:50%;margin-right:6px;"></span>Czechia Base<br>' +
+      '<span style="display:inline-block;width:18px;border-top:3px solid #e94560;vertical-align:middle;margin-right:6px;"></span>New in v3 (Days 5–6: via Würzburg)<br>' +
+      '<span style="display:inline-block;width:18px;border-top:2.5px dashed #b283f8;vertical-align:middle;margin-right:6px;"></span>Day 16 Return to FRA';
+    return div;
+  };
+  legend.addTo(leafletMap);
+}
+
+function fitFullRoute() {
+  initMap();
+  if (leafletMap && routeBounds) {
+    leafletMap.fitBounds(routeBounds, { padding: [42, 42] });
+  }
+}
+
+function focusStopOnMap(stopId) {
+  switchTab('map');
+  setTimeout(() => {
+    if (!leafletMap) return;
+    const m = markerByStopId[stopId];
+    if (m) {
+      leafletMap.setView(m.getLatLng(), 9, { animate: true });
+      m.openPopup();
+    }
+  }, 120);
+}
+</script>
+</body>
+</html>
