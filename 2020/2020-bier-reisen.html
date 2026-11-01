@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bier Reisen 2020 — 17-Day European Beer Trip</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{--bg:#0b0c15;--panel:#151833;--border:#2a3050;--gold:#e6a817;--text:#eef1f6;--muted:#9aa5bc}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Avenir Next','Segoe UI',system-ui,sans-serif;line-height:1.55}
+.header{padding:2.4rem 2rem 1.6rem;text-align:center;border-bottom:2px solid var(--gold);
+  background:linear-gradient(135deg,#0f0c29,#1b1e3d,#0b0c15)}
+.header h1{font-size:2.3rem;color:var(--gold);font-weight:800;letter-spacing:.02em}
+.header .dates{color:var(--muted);margin-top:.35rem;font-size:1rem}
+.route{color:var(--text);margin-top:.7rem;font-size:.92rem;opacity:.9}
+.stats{margin-top:.9rem;display:inline-block;padding:.45rem 1rem;border:1px solid var(--border);
+  border-radius:999px;font-size:.86rem;color:var(--gold);font-weight:700}
+.links{margin-top:1rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:.85rem}
+.links a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--border)}
+.links a:hover{color:var(--gold)}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem;background:#0d0f1c;
+  border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500}
+.tab{background:none;border:none;color:var(--muted);padding:.95rem 1.3rem;font:inherit;font-weight:600;
+  cursor:pointer;border-bottom:3px solid transparent}
+.tab:hover{color:var(--gold)}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(230,168,23,.06)}
+.tab-content{display:none;max-width:1180px;margin:0 auto;padding:2rem 1.4rem 4rem}
+.tab-content.active{display:block}
+h2.section{font-size:1.35rem;color:var(--gold);margin:0 0 .4rem}
+p.lede{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}
+.day-node{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:12px;padding:1.1rem 1.3rem;margin:0 auto .9rem;max-width:820px}
+.day-head{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:.4rem}
+.day-num{background:var(--gold);color:#0b0c15;font-weight:800;font-size:.75rem;padding:.18rem .6rem;
+  border-radius:999px;letter-spacing:.06em}
+.day-date{color:var(--muted);font-size:.78rem;letter-spacing:.08em}
+.base-chip{font-size:.75rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:.15rem .6rem}
+.day-node h3{font-size:1.05rem;margin:.15rem 0 .5rem;color:var(--text)}
+.drive-pill{font-size:.84rem;color:var(--gold);background:rgba(230,168,23,.07);border:1px solid rgba(230,168,23,.25);
+  border-radius:8px;padding:.4rem .7rem;display:inline-block;margin-bottom:.6rem}
+.drive-pill.in-place{color:var(--muted);background:rgba(154,165,188,.06);border-color:var(--border)}
+.day-items{margin-left:1.1rem;color:var(--muted);font-size:.9rem}
+.day-items li{margin:.2rem 0}
+#map-container{height:620px;border-radius:12px;border:1px solid var(--border)}
+.city-block{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem}
+.city-block h3{color:var(--gold);font-size:1.1rem;margin-bottom:.8rem}
+.venue{display:flex;gap:.9rem;padding:.6rem 0;border-top:1px solid rgba(42,48,80,.6)}
+.venue:first-of-type{border-top:none}
+.venue .rank{color:var(--gold);font-weight:800;opacity:.75;min-width:1.6rem}
+.venue h4{font-size:.98rem;margin-bottom:.15rem}
+.venue p{color:var(--muted);font-size:.88rem}
+table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:1.4rem}
+th,td{padding:.55rem .7rem;border-bottom:1px solid var(--border);text-align:left}
+th{color:var(--gold);font-weight:700;background:rgba(21,24,51,.9);position:sticky;top:52px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.diag{color:#3a4368;text-align:center}
+.matrix-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px}
+.totals{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0 2rem}
+.total{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:.8rem 1.1rem;min-width:150px}
+.total b{display:block;color:var(--gold);font-size:1.25rem}
+.total span{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.legend{display:flex;gap:1.2rem;flex-wrap:wrap;margin:.8rem 0 0;font-size:.82rem;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:.35rem}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>🍺 Bier Reisen 2020</h1>
+  <div class="dates">2 – 18 February 2020 · the trip that started it</div>
+  <div class="route">Porto Alegre → Munich → Bamberg → Düsseldorf → La Trappe → Antwerp → Brussels →
+    Ghent → Bruges → Westvleteren → Chimay → Zwiefaltendorf → Munich → Porto Alegre</div>
+  <div class="stats">17 days · 14 nights · 10 bases · 2,089 km driving · 21,422 km flying · 4 countries</div>
+  <div class="links">
+    <a href="assets/2020-route-map.png" target="_blank" rel="noopener">🗺️ Route poster (PNG)</a>
+    <a href="data/route-2020.json" target="_blank" rel="noopener">📄 Route data (JSON)</a>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" onclick="showTab('itinerary',this)">📋 Itinerary</button>
+  <button class="tab" onclick="showTab('map',this)">🗺️ Map</button>
+  <button class="tab" onclick="showTab('rankings',this)">🍺 Rankings</button>
+  <button class="tab" onclick="showTab('beers',this)">📖 Beer Guide</button>
+  <button class="tab" onclick="showTab('drives',this)">🚗 Drive Times</button>
+  <button class="tab" onclick="showTab('suggest',this)">💡 Suggestions</button>
+</nav>
+
+<section id="itinerary" class="tab-content active">
+  <h2 class="section">17 days, day by day</h2>
+  <p class="lede">The trip as it happened: two flights, twelve driving legs, fourteen nights and ten bases
+    across Brazil, Germany, the Netherlands and Belgium.</p>
+  
+      <article class="day-node" data-day="1">
+        <div class="day-head">
+          <span class="day-num">DAY 1</span>
+          <span class="day-date">02.02.2020</span>
+          
+        </div>
+        <h3>Porto Alegre → Munich</h3>
+        <div class="drive-pill">✈️ <strong>Flight day</strong> · overnight</div>
+        <ul class="day-items"><li>Overnight flight POA → MUC (10,698 km, ~13 h 35 in the air)</li><li>Dinner at the airport before boarding</li><li>Sleep on the plane — Munich starts the next morning</li></ul>
+      </article>
+      <article class="day-node" data-day="2">
+        <div class="day-head">
+          <span class="day-num">DAY 2</span>
+          <span class="day-date">03.02.2020</span>
+          <span class="base-chip">🇩🇪 Munich (arrival) · 1 night</span>
+        </div>
+        <h3>Arrive Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Land at Franz Josef Strauss, train into town</li><li>Hotel Royal, first walk through the Altstadt</li><li>Evening: Augustiner or Schneider, whichever is closer to the hotel</li></ul>
+      </article>
+      <article class="day-node" data-day="3">
+        <div class="day-head">
+          <span class="day-num">DAY 3</span>
+          <span class="day-date">04.02.2020</span>
+          <span class="base-chip">🇩🇪 Bamberg · 1 night</span>
+        </div>
+        <h3>Munich → Bamberg</h3>
+        <div class="drive-pill">🚗 <strong>Munich (arrival) → Bamberg</strong> · 232 km · 2 h 31</div>
+        <ul class="day-items"><li>232 km / 2 h 31 north on the A9 and A70</li><li>Ibis Styles, then the old town on foot</li><li>Evening at Schlenkerla: Rauchbier from the oak barrel</li></ul>
+      </article>
+      <article class="day-node" data-day="4">
+        <div class="day-head">
+          <span class="day-num">DAY 4</span>
+          <span class="day-date">05.02.2020</span>
+          <span class="base-chip">🇩🇪 Düsseldorf · 2 nights</span>
+        </div>
+        <h3>Bamberg → Düsseldorf</h3>
+        <div class="drive-pill">🚗 <strong>Bamberg → Düsseldorf</strong> · 425 km · 4 h 25</div>
+        <ul class="day-items"><li>425 km / 4 h 25 west across Franconia and the Rhineland</li><li>Altstadt Hotel Rheinblick, check in</li><li>First Altbier at Uerige, straight from the barrel</li></ul>
+      </article>
+      <article class="day-node" data-day="5">
+        <div class="day-head">
+          <span class="day-num">DAY 5</span>
+          <span class="day-date">06.02.2020</span>
+          <span class="base-chip">🇩🇪 Düsseldorf · 2 nights</span>
+        </div>
+        <h3>Düsseldorf</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Altbier crawl in the Altstadt: Uerige, Schumacher, Füchschen, Schlüssel</li><li>Rheinturm and the MedienHafen if the weather holds</li><li>Dinner with Altbier, not wine — the local rule</li></ul>
+      </article>
+      <article class="day-node" data-day="6">
+        <div class="day-head">
+          <span class="day-num">DAY 6</span>
+          <span class="day-date">07.02.2020</span>
+          <span class="base-chip">🇧🇪 Antwerp · 1 night</span>
+        </div>
+        <h3>Düsseldorf → La Trappe → Antwerp</h3>
+        <div class="drive-pill">🚗 <strong>Düsseldorf → La Trappe</strong> · 141 km · 1 h 45</div>
+        <ul class="day-items"><li>141 km / 1 h 45 to Berkel-Enschot</li><li>Brouwerij La Trappe tour and tasting — the Dutch Trappist</li><li>81 km / 1 h 03 to Antwerp; Hotel Banks, then Kulminator</li></ul>
+      </article>
+      <article class="day-node" data-day="7">
+        <div class="day-head">
+          <span class="day-num">DAY 7</span>
+          <span class="day-date">08.02.2020</span>
+          <span class="base-chip">🇧🇪 Brussels · 2 nights</span>
+        </div>
+        <h3>Antwerp → Brussels</h3>
+        <div class="drive-pill">🚗 <strong>Antwerp → Brussels</strong> · 47 km · 0 h 49</div>
+        <ul class="day-items"><li>47 km / 0 h 49 south</li><li>Ibis Brussels City Centre, drop the bags</li><li>Cantillon in the afternoon, Moeder Lambic in the evening</li></ul>
+      </article>
+      <article class="day-node" data-day="8">
+        <div class="day-head">
+          <span class="day-num">DAY 8</span>
+          <span class="day-date">09.02.2020</span>
+          <span class="base-chip">🇧🇪 Brussels · 2 nights</span>
+        </div>
+        <h3>Brussels</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Cantillon brewery tour — lambic, gueuze, kriek</li><li>A la Mort Subite for the 1928 room</li><li>Grand Place at night, then Delirium or Poechenellekelder</li></ul>
+      </article>
+      <article class="day-node" data-day="9">
+        <div class="day-head">
+          <span class="day-num">DAY 9</span>
+          <span class="day-date">10.02.2020</span>
+          <span class="base-chip">🇧🇪 Bruges · 1 night</span>
+        </div>
+        <h3>Brussels → Ghent → Bruges</h3>
+        <div class="drive-pill">🚗 <strong>Brussels → Ghent (lunch)</strong> · 59 km · 0 h 56</div>
+        <ul class="day-items"><li>59 km / 0 h 56 to Ghent for lunch</li><li>Gruut city brewery and the Graslei</li><li>47 km / 0 h 41 on to Bruges; Martin&#x27;s Brugge, De Garre at night</li></ul>
+      </article>
+      <article class="day-node" data-day="10">
+        <div class="day-head">
+          <span class="day-num">DAY 10</span>
+          <span class="day-date">11.02.2020</span>
+          <span class="base-chip">🇧🇪 Chimay (Poteaupré) · 1 night</span>
+        </div>
+        <h3>Bruges → Westvleteren → Chimay</h3>
+        <div class="drive-pill">🚗 <strong>Bruges → Westvleteren</strong> · 72 km · 1 h 06</div>
+        <ul class="day-items"><li>72 km / 1 h 06 to Sint-Sixtus; In de Vrede for Westvleteren 12</li><li>189 km / 2 h 32 south-east through the Walloon countryside</li><li>Auberge de Poteaupré — Chimay at the source, dinner included</li></ul>
+      </article>
+      <article class="day-node" data-day="11">
+        <div class="day-head">
+          <span class="day-num">DAY 11</span>
+          <span class="day-date">12.02.2020</span>
+          <span class="base-chip">🇩🇪 Zwiefaltendorf · 1 night</span>
+        </div>
+        <h3>Chimay → Zwiefaltendorf</h3>
+        <div class="drive-pill">🚗 <strong>Chimay (Poteaupré) → Zwiefaltendorf</strong> · 573 km · 6 h 54</div>
+        <ul class="day-items"><li>573 km / 6 h 54 — the long transfer day</li><li>Bauer am Bach in Zwiefaltendorf, on the Danube</li><li>Dinner at Blank&#x27;s Brauerei: Swabian village beer</li></ul>
+      </article>
+      <article class="day-node" data-day="12">
+        <div class="day-head">
+          <span class="day-num">DAY 12</span>
+          <span class="day-date">13.02.2020</span>
+          <span class="base-chip">🇩🇪 Munich (return) · 4 nights</span>
+        </div>
+        <h3>Zwiefaltendorf → Munich</h3>
+        <div class="drive-pill">🚗 <strong>Zwiefaltendorf → Munich (arrival)</strong> · 186 km · 2 h 12</div>
+        <ul class="day-items"><li>186 km / 2 h 12 south-east on the B311 and A96</li><li>Hotel Royal for the last four nights</li><li>Evening at Augustiner-Keller</li></ul>
+      </article>
+      <article class="day-node" data-day="13">
+        <div class="day-head">
+          <span class="day-num">DAY 13</span>
+          <span class="day-date">14.02.2020</span>
+          <span class="base-chip">🇩🇪 Munich (return) · 4 nights</span>
+        </div>
+        <h3>Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Schneider Bräuhaus for Aventinus</li><li>Hofbräuhaus once, for the room</li><li>Viktualienmarkt and the beer garden if it is open</li></ul>
+      </article>
+      <article class="day-node" data-day="14">
+        <div class="day-head">
+          <span class="day-num">DAY 14</span>
+          <span class="day-date">15.02.2020</span>
+          <span class="base-chip">🇩🇪 Munich (return) · 4 nights</span>
+        </div>
+        <h3>Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Giesinger Bräu in the south of the city</li><li>Deutsches Museum or the Pinakothek in the afternoon</li><li>Dinner at a Brauhaus, Maß in hand</li></ul>
+      </article>
+      <article class="day-node" data-day="15">
+        <div class="day-head">
+          <span class="day-num">DAY 15</span>
+          <span class="day-date">16.02.2020</span>
+          <span class="base-chip">🇩🇪 Munich (return) · 4 nights</span>
+        </div>
+        <h3>Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Day trip to Andechs if the weather is clear (Kloster Andechs, Doppelbock)</li><li>Or Freising for Weihenstephan</li><li>Last night in the Altstadt</li></ul>
+      </article>
+      <article class="day-node" data-day="16">
+        <div class="day-head">
+          <span class="day-num">DAY 16</span>
+          <span class="day-date">17.02.2020</span>
+          <span class="base-chip">🇩🇪 Munich (return) · 4 nights</span>
+        </div>
+        <h3>Munich → Airport</h3>
+        <div class="drive-pill">🚗 <strong>Munich (arrival) → Munich Airport</strong> · 39 km · 0 h 35</div>
+        <ul class="day-items"><li>39 km / 0 h 35 to Franz Josef Strauss</li><li>Return the car, check in</li><li>Overnight flight home</li></ul>
+      </article>
+      <article class="day-node" data-day="17">
+        <div class="day-head">
+          <span class="day-num">DAY 17</span>
+          <span class="day-date">18.02.2020</span>
+          
+        </div>
+        <h3>Home</h3>
+        <div class="drive-pill">✈️ <strong>Flight day</strong> · overnight</div>
+        <ul class="day-items"><li>Land in Porto Alegre on 18 February</li><li>17 days, 14 nights, 5 breweries and one Trappist abbey at dawn</li></ul>
+      </article>
+</section>
+
+<section id="map" class="tab-content">
+  <h2 class="section">The route in Europe</h2>
+  <p class="lede">Numbered in visit order, from Munich to the airport. The Porto Alegre legs are flights and
+    sit outside this frame.</p>
+  <div id="map-container"></div>
+  <div class="legend">
+    <span><span class="dot" style="background:#e8b93b"></span>Germany</span>
+    <span><span class="dot" style="background:#f5a623"></span>Netherlands</span>
+    <span><span class="dot" style="background:#43d19e"></span>Belgium</span>
+  </div>
+</section>
+
+<section id="rankings" class="tab-content">
+  <h2 class="section">What to drink where</h2>
+  <p class="lede">One section per stop, ranked by how much the place is worth a detour — the breweries and bars
+    that defined each night of this trip.</p>
+  
+      <section class="city-block">
+        <h3>Munich (arrival)</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Augustiner-Keller</h4><p>Munich&#x27;s oldest brewery and the locals&#x27; choice; Edelstoff from wooden barrels under the chestnuts.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Schneider Bräuhaus</h4><p>The original wheat-beer house; Aventinus is the benchmark Weizenbock.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Hofbräuhaus</h4><p>Brewing since 1589 — go once for the room.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Giesinger Bräu</h4><p>Garage-to-glory craft brewery in the south; Erhellung unfiltered Helles.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Bamberg</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Schlenkerla</h4><p>Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Spezial</h4><p>The locals&#x27; rauchbier — subtler smoke than Schlenkerla.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Mahr&#x27;s Bräu</h4><p>The legendary &#x27;aU&#x27; Ungespundetes, naturally carbonated and unfiltered.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Fässla</h4><p>Zwergla dark lager, brewery tap opposite Spezial.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">05</span>
+            <div><h4>Greifenklau</h4><p>Beer garden with the best view over the city.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Düsseldorf</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Uerige</h4><p>The reference Altbier: copper kettles, waiters who never stop pouring, and a house bitter enough to reset your palate.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Brauerei Schumacher</h4><p>Oldest Altbier brewery in the city, blond and spritzy, in a tiled 19th-century hall.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Im Füchschen</h4><p>Altbier and Rhineland food in the Altstadt&#x27;s busiest corner.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Zum Schlüssel</h4><p>Brewpub with a copper kettle in the cellar and a quieter room upstairs.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>La Trappe</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Brouwerij La Trappe</h4><p>The only Dutch Trappist brewery, at Berkel-Enschot near Tilburg: Witte, Blond, Dubbel, Tripel and the barrel-aged Quadrupel.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Antwerp</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Kulminator</h4><p>700+ bottles with vintages going back decades; the cellar list is the reason to come.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Billie&#x27;s Bier Kafétaria</h4><p>300+ beers in a cosy neighbourhood room, staff who know the list.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>De Koninck City Brewery</h4><p>The Antwerp classic, Bolleke in its bowl-shaped glass.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Brussels</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Cantillon</h4><p>The last traditional lambic brewery inside the city: coolship, barrels, Gueuze and Kriek with no sweetening.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Moeder Lambic</h4><p>40 taps of rare Belgian craft; the best introduction to the modern scene.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>A la Mort Subite</h4><p>1928 Art Deco café; order the house gueuze at the bar.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Poechenellekelder</h4><p>Puppet-themed pub opposite Manneken Pis, 100+ Belgian beers.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Ghent</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Gruut Stadsbrouwerij</h4><p>City brewery using a medieval herb-and-spice mix instead of hops.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>De Dulle Griet</h4><p>500 beers on the Vrijdagmarkt, and the shoe-in-the-basket ritual.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Het Waterhuis aan de Bierkant</h4><p>Canal-side beer hall, around 170 beers.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Bruges</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>De Halve Maan</h4><p>Only active brewery in the historic centre; Brugse Zot and Straffe Hendrik, with the 3 km beer pipeline.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>De Garre</h4><p>Hidden alley café, house tripel at 11%, maximum three per person.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>&#x27;t Brugs Beertje</h4><p>300+ bottles, the classic brown bar of Bruges.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Café Vlissinghe</h4><p>Oldest pub in Bruges (1515), bocce court in the garden.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Westvleteren</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>In de Vrede</h4><p>The café opposite Sint-Sixtus: the only reliable place to drink Westvleteren 12 on tap, with the abbey cheese.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Sint-Sixtus Abbey</h4><p>The Trappist monastery itself — no tours, but the gate and the shop are part of the pilgrimage.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Chimay (Poteaupré)</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Auberge de Poteaupré</h4><p>The abbey&#x27;s own inn and restaurant, a few hundred metres from Scourmont; Chimay Blue with abbey cheese.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Chimay Scourmont Abbey</h4><p>The largest Trappist brewery; the Espace Chimay explains the brewing and the cheese.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Zwiefaltendorf</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Blank&#x27;s Brauerei</h4><p>Village brewery and Gasthof on the Danube — Swabian Landbier, roast pork and no pretence.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Munich (return)</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Augustiner-Keller</h4><p>Wooden-barrel Edelstoff under the chestnuts; the locals&#x27; answer to every tourist beer hall.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Schneider Bräuhaus</h4><p>Wheat-beer masters, Aventinus and the original Tap7.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Hofbräuhaus</h4><p>The room everyone has heard of; go early or late.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Giesinger Bräu</h4><p>Munich craft with a neighbourhood taproom.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">05</span>
+            <div><h4>Kloster Andechs (day trip)</h4><p>Benedictine monastery brewery above the Ammersee — Doppelbock Dunkel, 45 km from the city.</p></div>
+          </div>
+      </section>
+</section>
+
+<section id="beers" class="tab-content">
+  <h2 class="section">Beer guide</h2>
+  <p class="lede">Five beer regions in seventeen days: Bavarian lager, Franconian smoke, Rhenish Altbier,
+    Trappist and lambic, and a Swabian village brewery on the way home.</p>
+  <table><thead><tr><th>Region</th><th>Styles to look for</th></tr></thead><tbody><tr><td>Bavaria</td><td>Helles · Weißbier · Doppelbock · Festbier</td></tr><tr><td>Franconia</td><td>Rauchbier · Ungespundetes / Kellerbier · Pils · Bock</td></tr><tr><td>Rhineland</td><td>Altbier</td></tr><tr><td>Brabant &amp; Flanders</td><td>Trappist (Westmalle, Westvleteren, Chimay) · lambic / gueuze · Flemish red · witbier · gruut (herb beer)</td></tr><tr><td>Swabia</td><td>Landbier · Export · Hefeweizen</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">What to order, stop by stop</h2>
+  <table><thead><tr><th>Stop</th><th>Start here</th><th>Why</th></tr></thead><tbody><tr><td>Munich (arrival)</td><td>Augustiner-Keller</td><td>Munich&#x27;s oldest brewery and the locals&#x27; choice; Edelstoff from wooden barrels under the chestnuts.</td></tr><tr><td>Bamberg</td><td>Schlenkerla</td><td>Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar.</td></tr><tr><td>Düsseldorf</td><td>Uerige</td><td>copper kettles, waiters who never stop pouring, and a house bitter enough to reset your palate.</td></tr><tr><td>La Trappe</td><td>Brouwerij La Trappe</td><td>Witte, Blond, Dubbel, Tripel and the barrel-aged Quadrupel.</td></tr><tr><td>Antwerp</td><td>Kulminator</td><td>700+ bottles with vintages going back decades; the cellar list is the reason to come.</td></tr><tr><td>Brussels</td><td>Cantillon</td><td>coolship, barrels, Gueuze and Kriek with no sweetening.</td></tr><tr><td>Ghent</td><td>Gruut Stadsbrouwerij</td><td>City brewery using a medieval herb-and-spice mix instead of hops.</td></tr><tr><td>Bruges</td><td>De Halve Maan</td><td>Only active brewery in the historic centre; Brugse Zot and Straffe Hendrik, with the 3 km beer pipeline.</td></tr><tr><td>Westvleteren</td><td>In de Vrede</td><td>the only reliable place to drink Westvleteren 12 on tap, with the abbey cheese.</td></tr><tr><td>Chimay (Poteaupré)</td><td>Auberge de Poteaupré</td><td>The abbey&#x27;s own inn and restaurant, a few hundred metres from Scourmont; Chimay Blue with abbey cheese.</td></tr><tr><td>Zwiefaltendorf</td><td>Blank&#x27;s Brauerei</td><td>Village brewery and Gasthof on the Danube — Swabian Landbier, roast pork and no pretence.</td></tr><tr><td>Munich (return)</td><td>Augustiner-Keller</td><td>Wooden-barrel Edelstoff under the chestnuts; the locals&#x27; answer to every tourist beer hall.</td></tr></tbody></table>
+</section>
+
+<section id="drives" class="tab-content">
+  <h2 class="section">Drive times</h2>
+  <p class="lede">Every distance below is OSRM car routing, measured after the fact. The two flights are
+    great-circle distances; the times are in the air, not door to door.</p>
+  <div class="totals">
+    <div class="total"><b>2,089 km</b><span>driving</span></div>
+    <div class="total"><b>25 h 29</b><span>behind the wheel</span></div>
+    <div class="total"><b>21,422 km</b><span>flying</span></div>
+    <div class="total"><b>14</b><span>legs</span></div>
+  </div>
+  <table><thead><tr><th>Mode</th><th>From</th><th>To</th><th class="num">km</th><th class="num">time</th></tr></thead>
+  <tbody><tr><td>✈️ flight</td><td>Porto Alegre</td><td>Munich (arrival)</td><td class='num'>10,698</td><td class='num'>13 h 35</td></tr><tr><td>🚗 drive</td><td>Munich (arrival)</td><td>Bamberg</td><td class='num'>232</td><td class='num'>2 h 31</td></tr><tr><td>🚗 drive</td><td>Bamberg</td><td>Düsseldorf</td><td class='num'>425</td><td class='num'>4 h 25</td></tr><tr><td>🚗 drive</td><td>Düsseldorf</td><td>La Trappe</td><td class='num'>141</td><td class='num'>1 h 45</td></tr><tr><td>🚗 drive</td><td>La Trappe</td><td>Antwerp</td><td class='num'>81</td><td class='num'>1 h 03</td></tr><tr><td>🚗 drive</td><td>Antwerp</td><td>Brussels</td><td class='num'>47</td><td class='num'>0 h 49</td></tr><tr><td>🚗 drive</td><td>Brussels</td><td>Ghent (lunch)</td><td class='num'>59</td><td class='num'>0 h 56</td></tr><tr><td>🚗 drive</td><td>Ghent (lunch)</td><td>Bruges</td><td class='num'>47</td><td class='num'>0 h 41</td></tr><tr><td>🚗 drive</td><td>Bruges</td><td>Westvleteren</td><td class='num'>72</td><td class='num'>1 h 06</td></tr><tr><td>🚗 drive</td><td>Westvleteren</td><td>Chimay (Poteaupré)</td><td class='num'>189</td><td class='num'>2 h 32</td></tr><tr><td>🚗 drive</td><td>Chimay (Poteaupré)</td><td>Zwiefaltendorf</td><td class='num'>573</td><td class='num'>6 h 54</td></tr><tr><td>🚗 drive</td><td>Zwiefaltendorf</td><td>Munich (arrival)</td><td class='num'>186</td><td class='num'>2 h 12</td></tr><tr><td>🚗 drive</td><td>Munich (arrival)</td><td>Munich Airport</td><td class='num'>39</td><td class='num'>0 h 35</td></tr><tr><td>✈️ flight</td><td>Munich Airport</td><td>Porto Alegre</td><td class='num'>10,725</td><td class='num'>13 h 37</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">Distance matrix</h2>
+  <p class="lede">Car kilometres between every pair of land stops, from <code>matrix.pairs</code>.</p>
+  <div class="matrix-wrap"><table><thead><tr><th>From \ To</th><th>Munich</th><th>Bamberg</th><th>Düsseldorf</th><th>La Trappe</th><th>Antwerp</th><th>Brussels</th><th>Ghent</th><th>Bruges</th><th>Westvleteren</th><th>Chimay</th><th>Zwiefaltendorf</th><th>Munich</th></tr></thead><tbody><tr><th>Munich</th><td class='diag'>—</td><td class='num'>232</td><td class='num'>614</td><td class='num'>765</td><td class='num'>788</td><td class='num'>791</td><td class='num'>849</td><td class='num'>888</td><td class='num'>931</td><td class='num'>705</td><td class='num'>187</td><td class='num'>0</td></tr><tr><th>Bamberg</th><td class='num'>232</td><td class='diag'>—</td><td class='num'>425</td><td class='num'>575</td><td class='num'>598</td><td class='num'>601</td><td class='num'>659</td><td class='num'>699</td><td class='num'>742</td><td class='num'>652</td><td class='num'>305</td><td class='num'>0</td></tr><tr><th>Düsseldorf</th><td class='num'>614</td><td class='num'>425</td><td class='diag'>—</td><td class='num'>141</td><td class='num'>191</td><td class='num'>202</td><td class='num'>252</td><td class='num'>300</td><td class='num'>342</td><td class='num'>270</td><td class='num'>484</td><td class='num'>0</td></tr><tr><th>La Trappe</th><td class='num'>765</td><td class='num'>575</td><td class='num'>141</td><td class='diag'>—</td><td class='num'>81</td><td class='num'>124</td><td class='num'>142</td><td class='num'>167</td><td class='num'>225</td><td class='num'>240</td><td class='num'>609</td><td class='num'>0</td></tr><tr><th>Antwerp</th><td class='num'>788</td><td class='num'>598</td><td class='num'>191</td><td class='num'>81</td><td class='diag'>—</td><td class='num'>47</td><td class='num'>62</td><td class='num'>103</td><td class='num'>146</td><td class='num'>166</td><td class='num'>630</td><td class='num'>0</td></tr><tr><th>Brussels</th><td class='num'>791</td><td class='num'>601</td><td class='num'>202</td><td class='num'>124</td><td class='num'>47</td><td class='diag'>—</td><td class='num'>59</td><td class='num'>97</td><td class='num'>140</td><td class='num'>122</td><td class='num'>637</td><td class='num'>0</td></tr><tr><th>Ghent</th><td class='num'>849</td><td class='num'>659</td><td class='num'>252</td><td class='num'>142</td><td class='num'>62</td><td class='num'>59</td><td class='diag'>—</td><td class='num'>47</td><td class='num'>96</td><td class='num'>173</td><td class='num'>690</td><td class='num'>0</td></tr><tr><th>Bruges</th><td class='num'>888</td><td class='num'>699</td><td class='num'>300</td><td class='num'>167</td><td class='num'>103</td><td class='num'>97</td><td class='num'>47</td><td class='diag'>—</td><td class='num'>72</td><td class='num'>195</td><td class='num'>721</td><td class='num'>0</td></tr><tr><th>Westvleteren</th><td class='num'>931</td><td class='num'>742</td><td class='num'>342</td><td class='num'>225</td><td class='num'>146</td><td class='num'>140</td><td class='num'>96</td><td class='num'>72</td><td class='diag'>—</td><td class='num'>189</td><td class='num'>777</td><td class='num'>0</td></tr><tr><th>Chimay</th><td class='num'>705</td><td class='num'>652</td><td class='num'>270</td><td class='num'>240</td><td class='num'>166</td><td class='num'>122</td><td class='num'>173</td><td class='num'>195</td><td class='num'>189</td><td class='diag'>—</td><td class='num'>573</td><td class='num'>0</td></tr><tr><th>Zwiefaltendorf</th><td class='num'>187</td><td class='num'>305</td><td class='num'>484</td><td class='num'>609</td><td class='num'>630</td><td class='num'>637</td><td class='num'>690</td><td class='num'>721</td><td class='num'>777</td><td class='num'>573</td><td class='diag'>—</td><td class='num'>0</td></tr><tr><th>Munich</th><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td class='diag'>—</td></tr></tbody></table></div>
+</section>
+
+<section id="suggest" class="tab-content">
+  <h2 class="section">If you had one more day</h2>
+  <p class="lede">Detours that were on the list and did not fit — measured from the nearest base.</p>
+  <table><thead><tr><th>From</th><th>Detour</th><th class="num">km</th><th class="num">time</th></tr></thead>
+  <tbody><tr><td>Bruges</td><td>Roeselare (Rodenbach)</td><td class='num'>38</td><td class='num'>0 h 35</td></tr><tr><td>Bamberg</td><td>Aufseß (four-brewery loop)</td><td class='num'>29</td><td class='num'>0 h 34</td></tr><tr><td>Munich (return)</td><td>Andechs (Kloster Andechs)</td><td class='num'>45</td><td class='num'>0 h 45</td></tr><tr><td>Chimay (Poteaupré)</td><td>Orval Abbey</td><td class='num'>120</td><td class='num'>1 h 40</td></tr><tr><td>Brussels</td><td>Westmalle Abbey</td><td class='num'>70</td><td class='num'>1 h 05</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">What this trip taught us</h2>
+  <ul style="color:var(--muted);margin-left:1.2rem;font-size:.92rem;line-height:1.9">
+    <li>February in Franconia and Bavaria is quiet and cheap — but check <em>Ruhetag</em>, small breweries close Mondays.</li>
+    <li>Düsseldorf's Altbier houses pour faster than you can drink; the coaster on the glass is how you stop the round.</li>
+    <li>Trappist visits are appointment-only — La Trappe and Westvleteren both need planning weeks ahead.</li>
+    <li>Chimay's Auberge de Poteaupré is the best-value night of the trip: brewery, cheese and forest in one place.</li>
+    <li>The 6 h 54 Chimay → Zwiefaltendorf transfer is the one day worth splitting next time (Strasbourg or Baden-Baden).</li>
+  </ul>
+</section>
+
+<script>
+var mapReady = false;
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(function (s) { s.classList.remove('active'); });
+  document.querySelectorAll('.tab').forEach(function (b) { b.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (id === 'map') setTimeout(initMap, 60);
+}
+function initMap() {
+  if (mapReady) { window.tripMap.invalidateSize(); return; }
+  if (typeof L === 'undefined') return;
+  mapReady = true;
+  var map = L.map('map-container');
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri', maxZoom: 16
+  }).addTo(map);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16
+  }).addTo(map);
+  var stops = [
+[48.1371,11.5754,"Munich (arrival)","Hotel Royal. First night, first Maß.","#e8b93b",1],
+[49.8913,10.8825,"Bamberg","Ibis Styles. Rauchbier country in the UNESCO old town.","#e8b93b",1],
+[51.2277,6.7735,"Düsseldorf","Altstadt Hotel Rheinblick, two nights in the Altstadt.","#e8b93b",2],
+[51.5426,5.1295,"La Trappe","Brouwerij La Trappe — the only Trappist brewery in the Netherlands, on the way south.","#f5a623",0],
+[51.2194,4.4025,"Antwerp","Hotel Banks. Kulminator and the cathedral quarter.","#43d19e",1],
+[50.8467,4.3525,"Brussels","Ibis Brussels City Centre. Cantillon, Moeder Lambic, the Grand Place.","#43d19e",2],
+[51.0543,3.7174,"Ghent (lunch)","Lunch stop on the way to Bruges — Gruut and the Graslei.","#43d19e",0],
+[51.2087,3.2244,"Bruges","Martin&#x27;s Brugge. De Halve Maan, De Garre, the Markt at night.","#43d19e",1],
+[50.8895,2.7218,"Westvleteren","Sint-Sixtus Abbey and In de Vrede — the reason this road exists.","#43d19e",0],
+[49.9888,4.3420,"Chimay (Poteaupré)","Auberge de Poteaupré, the abbey&#x27;s own inn, at the edge of the forest.","#43d19e",1],
+[48.2155,9.5166,"Zwiefaltendorf","Bauer am Bach and dinner at Blank&#x27;s Brauerei — a Swabian village brewery on the Danube.","#e8b93b",1],
+[48.1571,11.5954,"Munich (return)","Hotel Royal again, four nights: the long Munich finish.","#e8b93b",4]
+  ];
+  var pts = [];
+  stops.forEach(function (s, i) {
+    var icon = L.divIcon({className: 'pin', html: '<div style="width:22px;height:22px;border-radius:50%;background:' + s[4] +
+      ';color:#0b0c15;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;border:2px solid #0b0c15">' + (i + 1) + '</div>', iconSize: [22, 22], iconAnchor: [11, 11]});
+    L.marker([s[0], s[1]], {icon: icon}).addTo(map)
+      .bindPopup('<strong style="color:#e6a817">' + s[2] + '</strong><br><span style="font-size:.85em">' + s[3] + '</span>');
+    pts.push([s[0], s[1]]);
+  });
+  L.polyline(pts, {color: '#e6a817', weight: 2, opacity: .55, dashArray: '6,8'}).addTo(map);
+  map.invalidateSize();
+  map.fitBounds(L.latLngBounds(pts).pad(0.06));
+  window.tripMap = map;
+}
+</script>
+</body>
+</html>

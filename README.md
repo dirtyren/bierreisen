@@ -34,9 +34,33 @@ Every trip below ships as a single HTML file: an interactive Leaflet map, a day-
 
 ---
 
+## 2020 — the trip that started it
+
+![Bier Reisen 2020 route poster](2020/assets/2020-route-map.png)
+
+The original: 17 days in February 2020, from Porto Alegre to Bavaria, the Rhineland, the Belgian
+Trappists and back. 14 nights, 10 bases, **2,089 km behind the wheel** and 21,422 km in the air.
+
+| Dates | Base | Nights |
+|---|---|---|
+| 03.02 | Munich — Hotel Royal | 1 |
+| 04.02 | Bamberg — Ibis Styles | 1 |
+| 05–06.02 | Düsseldorf — Altstadt Hotel Rheinblick | 2 |
+| 07.02 | Antwerp — Hotel Banks (via La Trappe) | 1 |
+| 08–09.02 | Brussels — Ibis Brussels City Centre | 2 |
+| 10.02 | Bruges — Martin's Brugge (lunch in Ghent) | 1 |
+| 11.02 | Chimay — Auberge de Poteaupré (via Westvleteren) | 1 |
+| 12.02 | Zwiefaltendorf — Bauer am Bach (dinner at Blank's) | 1 |
+| 13–16.02 | Munich — Hotel Royal | 4 |
+
+- [`2020/2020-bier-reisen.html`](2020/2020-bier-reisen.html) — the dossier: itinerary, map, rankings, beer guide, drive times, suggestions
+- [`2020/data/route-2020.json`](2020/data/route-2020.json) — every leg, every stop, OSRM distances
+- [`2020/scripts/`](2020/scripts) — `build_html.py` and `make_route_map.py` regenerate the page and the poster
+
 ## Contents
 
 - [Maps](#maps)
+- [2020 — the trip that started it](#2020--the-trip-that-started-it)
 - [The six trips at a glance](#the-six-trips-at-a-glance)
 - [1. UK Beer Pilgrimage — 12 days](#1-uk-beer-pilgrimage--12-days)
 - [2. Belgian Beer Pilgrimage — 9 days](#2-belgian-beer-pilgrimage--9-days)
@@ -289,9 +313,21 @@ bierreisen/
 │   ├── trips.json                         # extracted stops + routes
 │   ├── ne_50m_countries.geojson           # Natural Earth 1:50m basemap
 │   └── us_states.geojson                  # US state lines for the NA panel
+├── assets/maps/                           # regional posters (README hero)
+│   ├── usa.png · europe.png · uk.png
+├── 2020/                                  # the first trip, as it happened
+│   ├── 2020-bier-reisen.html
+│   ├── assets/2020-route-map.png
+│   ├── data/route-2020.json
+│   └── scripts/                           # build_html.py, make_route_map.py
+├── 2027/                                  # the next one, three variants
+│   ├── 2027-bier-reisen.html              # v1
+│   ├── v2/ · v3/
+│   ├── data/ · assets/ · scripts/ · i18n/
 └── scripts/
     ├── extract_trips.py                   # dossiers → trips.json
-    └── make_map.py                        # trips.json → map poster
+    ├── make_map.py                        # trips.json → overview poster
+    └── make_region_maps.py                # trips.json → USA / Europe / UK
 ```
 
 Each dossier is a single HTML file with four or five tabs: **Flowchart** (day-by-day), **Map** (Leaflet, dark tiles), **Rankings** (every place, scored), **Beer guide** (style, ABV, IBU, colour) and **Tips** (transport, lodging, budget, season).
