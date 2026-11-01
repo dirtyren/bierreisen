@@ -47,6 +47,21 @@ Posters scale 1.035 on hover over 700ms. Everything collapses to static under `p
 `::selection` gold on ink, `caret-color` gold, themed scrollbars, `text-underline-offset: .18em`,
 tabular numerals in every fact and tally, 2px gold `:focus-visible` ring at 3px offset.
 
+## Language
+
+Three real pages, not a runtime swap: `/` (EN), `/pt/` (PT-BR), `/de/` (DE). Each carries
+`<html lang>`, a canonical, three `hreflang` alternates plus `x-default`, and a switcher that links
+to the actual files (`pt/index.html`) so navigation also works from disk. Copy lives in
+`scripts/index_strings.py`; the template holds no English. City names localise (Munich / Munique /
+München, Bruges / Brügge), product and brewery names do not. Search matches either language, and
+ignores diacritics.
+
+## The planned trip
+
+2027 is always the v3 Würzburg route: the entry links to `2027/v3/`, uses the v3 poster and v3
+distances, and offers v1 and v2 as labelled alternatives. Numbers come from
+`2027/v3/data/route-2027-v3.json`, never from the copy.
+
 ## Rules that must not regress
 
 1. No kicker/eyebrow above any heading.

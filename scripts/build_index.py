@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
-"""Generate index.html — the catalog page for every trip in this repository.
+"""Generate the trilingual catalog: index.html (EN), pt/index.html, de/index.html.
 
-Reads the numbers from each year's data file (never hand-typed) and the six
-AI-drafted trips from assets/trips.json, then writes a single self-contained
-index.html that references the thumbnails in assets/thumbs/.
+Numbers come from each trip's own data file; copy and interface strings come from
+scripts/index_strings.py. The planned trip is 2027 v3 (the Würzburg route).
 """
 from __future__ import annotations
 
 import html
 import json
 import pathlib
-import re
+
+from index_strings import IDEAS, LANG_ATTR, LANGS, SITE, TRIPS, UI
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-OUT = ROOT / "index.html"
+TEMPLATE = (ROOT / "scripts" / "index_template.html").read_text()
+
+PATHS = {"en": "", "pt": "pt/", "de": "de/"}
+# internal links name the file so the switcher also works from file:// or a bare
+# static host without directory indexes; canonical/hreflang keep the clean URL.
+LINKS = {"en": "index.html", "pt": "pt/index.html", "de": "de/index.html"}
+OG_LOCALE = {"en": "en_GB", "pt": "pt_BR", "de": "de_DE"}
 
 
 def load(rel: str) -> dict:
@@ -31,88 +37,53 @@ def km(n) -> str:
 # ------------------------------------------------------------------ trips
 YEARS = [
     {
-        "key": "2027", "href": "2027/2027-bier-reisen.html", "poster": "2027/assets/2027-route-map.png",
-        "data": "2027/data/route-2027.json", "status": "planned",
-        "title": "The 2027 plan",
-        "subtitle": "Frankfurt → Bruges → Ghent → Bamberg → Sokolov → Plzeň → Kout na Šumavě → Maxlrain → Andechs → Munich → Nuremberg → Frankfurt",
-        "blurb": "Two nights in Bruges, two in Bamberg, both Czech brewing towns and a night at a Franconian "
-                 "castle brewery. The trip this whole archive has been building towards.",
+        "key": "2027", "href": "2027/v3/2027-bier-reisen-v3.html",
+        "poster": "2027/v3/assets/2027-route-map-v3.png",
+        "data": "2027/v3/data/route-2027-v3.json", "status": "planned", "thumb": "2027-v3",
         "tags": ["planned", "car", "germany", "czechia", "belgium"],
         "mode": "car",
-        "extra": '<a class="variant" href="2027/v2/2027-bier-reisen-v2.html">v2, with a Cologne night</a>'
-                 '<a class="variant" href="2027/v3/2027-bier-reisen-v3.html">v3, with Würzburg</a>',
+        "variants": [("2027/2027-bier-reisen.html", "v1"),
+                     ("2027/v2/2027-bier-reisen-v2.html", "v2")],
+        "variant_labels": {
+            "en": ["v1, the original route", "v2, with a Cologne night"],
+            "pt": ["v1, a rota original", "v2, com uma noite em Colônia"],
+            "de": ["v1, die ursprüngliche Route", "v2, mit einer Nacht in Köln"],
+        },
     },
     {
         "key": "2026", "href": "2026/2026-bier-reisen.html", "poster": "2026/assets/2026-route-map.png",
         "data": "2026/data/route-2026.json", "status": "travelled",
-        "title": "Franconia, Bohemia and the Alps",
-        "subtitle": "Frankfurt → Merkendorf → Plzeň → České Budějovice → Bad Reichenhall → Munich",
-        "blurb": "Three nights in a village brewery, two with Budvar, three under the Watzmann with Salzburg "
-                 "across the border, then four in Munich.",
-        "tags": ["travelled", "car", "germany", "czechia"],
-        "mode": "car",
+        "tags": ["travelled", "car", "germany", "czechia"], "mode": "car",
     },
     {
         "key": "2024", "href": "2024/2024-bier-reisen.html", "poster": "2024/assets/2024-route-map.png",
         "data": "2024/data/route-2024.json", "status": "travelled",
-        "title": "Franconia, Bohemia and Advent",
-        "subtitle": "Frankfurt → Memmelsdorf → Plzeň → České Budějovice → Berchtesgaden → Munich",
-        "blurb": "Late November: Christmas markets opening, brewery tours half empty, and the other Budweiser "
-                 "in its home town.",
-        "tags": ["travelled", "car", "germany", "czechia"],
-        "mode": "car",
+        "tags": ["travelled", "car", "germany", "czechia"], "mode": "car",
     },
     {
         "key": "2021", "href": "2021/2021-bier-reisen.html", "poster": "2021/assets/2021-route-map.png",
         "data": "2021/data/route-2021.json", "status": "travelled",
-        "title": "Bamberg to the Allgäu",
-        "subtitle": "Frankfurt → Bamberg → Nuremberg → Essing → Traunstein → Schönram → Berchtesgaden → Nesselwang → Missen-Wilhams → Munich",
-        "blurb": "Village breweries and two nights sleeping above the brewhouse, then a week in Munich at the "
-                 "end of October.",
-        "tags": ["travelled", "car", "germany"],
-        "mode": "car",
+        "tags": ["travelled", "car", "germany"], "mode": "car",
     },
     {
         "key": "2020", "href": "2020/2020-bier-reisen.html", "poster": "2020/assets/2020-route-map.png",
         "data": "2020/data/route-2020.json", "status": "travelled",
-        "title": "The first European loop",
-        "subtitle": "Munich → Bamberg → Düsseldorf → La Trappe → Antwerp → Brussels → Bruges → Westvleteren → Chimay → Zwiefaltendorf → Munich",
-        "blurb": "The trip that started it: Altbier, Trappists, lambic, and a Swabian village brewery on the "
-                 "Danube on the way home.",
-        "tags": ["travelled", "car", "germany", "belgium", "netherlands"],
-        "mode": "car",
+        "tags": ["travelled", "car", "germany", "belgium", "netherlands"], "mode": "car",
     },
     {
         "key": "2019", "href": "2019/2019-bier-reisen.html", "poster": "2019/assets/2019-route-map.png",
         "data": "2019/data/route-2019.json", "status": "travelled",
-        "title": "Munich by rail",
-        "subtitle": "Munich · Andechs · Aying · Bamberg",
-        "blurb": "The first one, and the only one without a car: nine nights in one hotel, with day returns to "
-                 "a monastery, a village brewery and a Rauchbier town.",
-        "tags": ["travelled", "rail", "germany"],
-        "mode": "rail",
+        "tags": ["travelled", "rail", "germany"], "mode": "rail",
     },
 ]
 
-IDEAS = [
-    {"key": "uk", "meta": "uk", "file": "uk_beer_trip.html",
-     "title": "UK Beer Pilgrimage",
-     "tags": ["idea", "rail", "uk"], "mode": "rail"},
-    {"key": "belgian", "meta": "belgium", "file": "belgian.html",
-     "title": "Belgian Beer Pilgrimage",
-     "tags": ["idea", "car", "belgium"], "mode": "car"},
-    {"key": "bavaria-bohemia", "meta": "germany_czech", "file": "germany_czech_beer_trip.html",
-     "title": "Bavaria & Bohemia",
-     "tags": ["idea", "car", "germany", "czechia"], "mode": "car"},
-    {"key": "colorado", "meta": "colorado", "file": "colorado_beer_trip.html",
-     "title": "Colorado Craft Beer Odyssey",
-     "tags": ["idea", "car", "usa"], "mode": "car"},
-    {"key": "florida", "meta": "florida", "file": "florida_brewery_trip.html",
-     "title": "Florida Brewery Trail",
-     "tags": ["idea", "car", "usa"], "mode": "car"},
-    {"key": "italy-grand-tour", "meta": "italy_switzerland", "file": "Italy_Switzerland_14Day_Trip.html",
-     "title": "Italy & Switzerland Grand Tour",
-     "tags": ["idea", "rail", "italy"], "mode": "rail"},
+IDEAS_ORDER = [
+    ("uk", "uk", "uk_beer_trip.html", ["idea", "rail", "uk"]),
+    ("belgian", "belgium", "belgian.html", ["idea", "car", "belgium"]),
+    ("bavaria-bohemia", "germany_czech", "germany_czech_beer_trip.html", ["idea", "car", "germany", "czechia"]),
+    ("colorado", "colorado", "colorado_beer_trip.html", ["idea", "car", "usa"]),
+    ("florida", "florida", "florida_brewery_trip.html", ["idea", "car", "usa"]),
+    ("italy-grand-tour", "italy_switzerland", "Italy_Switzerland_14Day_Trip.html", ["idea", "rail", "italy"]),
 ]
 
 
@@ -123,119 +94,175 @@ def drive_km(data: dict) -> float:
     return sum(float(l["km"]) for l in data.get("legs", []) if l.get("mode", "drive") == "drive")
 
 
-def year_card(t: dict) -> dict:
-    data = load(t["data"])
-    d = data["trip"]
+def trip_facts(t: dict, ui: dict) -> dict:
+    d = load(t["data"])["trip"]
     return {
         **t,
         "days": d["days"],
         "nights": d["nights"],
-        "distance": km(drive_km(data)),
-        "mode_label": "by rail" if t["mode"] == "rail" else "driving",
-        "status_label": "Planned" if t["status"] == "planned" else "Travelled",
-        "search": " ".join([t["key"], t["title"], t["subtitle"], t["blurb"], " ".join(t["tags"])]).lower(),
+        "distance": km(drive_km(load(t["data"]))),
+        "mode_label": ui["d_km_rail"] if t["mode"] == "rail" else ui["d_km_drive"],
+        "status_label": ui["status_planned"] if t["status"] == "planned" else ui["status_travelled"],
     }
 
 
-def idea_card(t: dict, meta: dict) -> dict:
-    return {
-        **t,
-        "href": f"AI-suggested-trips/{t['file']}",
-        "days": meta.get("days", 0),
-        "stops": len(meta.get("stops", [])),
-        "search": " ".join([t["title"], " ".join(t["tags"]), "idea", "draft"]).lower(),
-    }
-
-
-year_trips = [year_card(t) for t in YEARS]
 trips_meta = {t["id"]: t for t in load("assets/trips.json")}
-ideas = [idea_card(t, trips_meta[t["meta"]]) for t in IDEAS]
-
-travelled = [t for t in year_trips if t["status"] == "travelled"]
-total_days = sum(t["days"] for t in travelled)
-total_km = sum(drive_km(load(t["data"])) for t in travelled)
-countries = sorted({c for t in travelled for c in load(t["data"])["trip"].get("countries", [])
-                    if c != "Brazil"})
-
-n_all = len(year_trips) + len(ideas)
-n_travelled = len(travelled)
-n_planned = len(year_trips) - n_travelled
-n_ideas = len(ideas)
-n_rail = sum(1 for c in year_trips + ideas if "rail" in c["tags"])
 
 
-# ------------------------------------------------------------------ markup
-def entry_html(c: dict) -> str:
-    cls = "entry planned" if c["status"] == "planned" else "entry"
-    facts = (f'<span><b>{c["days"]}</b> days</span>'
-             f'<span><b>{c["nights"]}</b> nights</span>'
-             f'<span><b>{c["distance"]}</b> km {c["mode_label"]}</span>')
+def entry_html(t: dict, lang: str, ui: dict, base: str) -> str:
+    copy = TRIPS[t["key"]][lang]
+    cls = "entry planned" if t["status"] == "planned" else "entry"
+    facts = (f'<span><b>{t["days"]}</b> {ui["d_days"]}</span>'
+             f'<span><b>{t["nights"]}</b> {ui["d_nights"]}</span>'
+             f'<span><b>{t["distance"]}</b> {t["mode_label"]}</span>')
     variants = ""
-    if c.get("extra"):
-        links = re.findall(r'href="([^"]+)"[^>]*>([^<]+)</a>', c["extra"])
-        if links:
-            variants = ('<p class="variants">' + "".join(
-                f'<a class="variant" href="{esc(h)}">{esc(t)}</a>' for h, t in links) + "</p>")
+    if t.get("variants"):
+        labels = t["variant_labels"][lang]
+        links = "".join(f'<a class="variant" href="{base}{esc(h)}">{esc(label)}</a>'
+                        for (h, _), label in zip(t["variants"], labels))
+        variants = f'<p class="variants">{links}</p>'
+    search = " ".join([t["key"], copy["title"], TRIPS[t["key"]]["en"]["title"],
+                       copy["route"], copy["blurb"], " ".join(t["tags"])]).lower()
     return (
-        f'\n      <li class="{cls}" data-tags="{" ".join(c["tags"])}" data-search="{esc(c["search"])}">'
-        f'\n        <a class="entry-poster" href="{esc(c["href"])}" aria-hidden="true" tabindex="-1">'
-        f'\n          <img src="assets/thumbs/{c["key"]}.jpg" alt="" loading="lazy" width="960" height="624">'
+        f'\n      <li class="{cls}" data-tags="{" ".join(t["tags"])}" data-search="{esc(search)}">'
+        f'\n        <a class="entry-poster" href="{base}{esc(t["href"])}" aria-hidden="true" tabindex="-1">'
+        f'\n          <img src="{base}assets/thumbs/{t.get("thumb", t["key"])}.jpg" alt="" loading="lazy" width="960" height="624">'
         f'\n        </a>'
         f'\n        <div class="entry-body">'
-        f'\n          <p class="entry-meta"><span class="yr">{c["key"][:4]}</span>'
-        f' <span class="dot" aria-hidden="true"></span> {c["status_label"]}</p>'
-        f'\n          <h3><a href="{esc(c["href"])}">{esc(c["title"])}</a></h3>'
-        f'\n          <p class="route">{esc(c["subtitle"])}</p>'
-        f'\n          <p class="blurb">{esc(c["blurb"])}</p>'
+        f'\n          <p class="entry-meta"><span class="yr">{t["key"]}</span>'
+        f' <span class="dot" aria-hidden="true"></span> {t["status_label"]}</p>'
+        f'\n          <h3><a href="{base}{esc(t["href"])}">{esc(copy["title"])}</a></h3>'
+        f'\n          <p class="route">{esc(copy["route"])}</p>'
+        f'\n          <p class="blurb">{esc(copy["blurb"])}</p>'
         f'\n          <p class="facts">{facts}</p>'
-        f'\n          <p class="links"><a class="open" href="{esc(c["href"])}">Open the dossier</a>'
-        f'<a class="quiet" href="{esc(c["poster"])}" target="_blank" rel="noopener">Route poster</a></p>'
+        f'\n          <p class="links"><a class="open" href="{base}{esc(t["href"])}">{esc(ui["open"])}</a>'
+        f'<a class="quiet" href="{base}{esc(t["poster"])}" target="_blank" rel="noopener">'
+        f'{esc(ui["poster"])}</a></p>'
         f'\n          {variants}'
         f'\n        </div>'
         f'\n      </li>')
 
 
-def shelf_html(c: dict) -> str:
+def shelf_html(key: str, meta_id: str, file: str, tags: list, lang: str, ui: dict, base: str) -> str:
+    meta = trips_meta[meta_id]
+    title = IDEAS[key][lang]
+    search = " ".join([title, IDEAS[key]["en"], " ".join(tags)]).lower()
+    href = f"AI-suggested-trips/{file}"
     return (
-        f'\n      <li class="shelf-item" data-tags="{" ".join(c["tags"])}" data-search="{esc(c["search"])}">'
-        f'\n        <a href="{esc(c["href"])}">'
-        f'\n          <img src="assets/thumbs/{c["key"]}.jpg" alt="" loading="lazy" width="960" height="624">'
-        f'\n          <h3>{esc(c["title"])}</h3>'
-        f'\n          <p>{c["days"]} days · {c["stops"]} stops</p>'
+        f'\n      <li class="shelf-item" data-tags="{" ".join(tags)}" data-search="{esc(search)}">'
+        f'\n        <a href="{base}{esc(href)}">'
+        f'\n          <img src="{base}assets/thumbs/{key}.jpg" alt="" loading="lazy" width="960" height="624">'
+        f'\n          <h3>{esc(title)}</h3>'
+        f'\n          <p>{meta.get("days", 0)} {ui["d_days"]} · {len(meta.get("stops", []))} {ui["d_stops"]}</p>'
         f'\n        </a>'
         f'\n      </li>')
 
 
-entry_cards = "".join(entry_html(c) for c in year_trips)
-shelf_cards = "".join(shelf_html(c) for c in ideas)
+def hreflang_block() -> str:
+    rows = [f'<link rel="alternate" hreflang="{LANG_ATTR[l]}" href="{SITE}/{PATHS[l]}">' for l in LANGS]
+    rows.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}/">')
+    return "\n".join(rows)
 
-TEMPLATE = (ROOT / "scripts" / "index_template.html").read_text()
 
-html_out = (TEMPLATE
-            .replace("__ENTRIES__", entry_cards)
-            .replace("__SHELF__", shelf_cards)
-            .replace("__N_ALL__", str(n_all))
-            .replace("__N_TRAVELLED__", str(n_travelled))
-            .replace("__N_PLANNED__", str(n_planned))
-            .replace("__N_IDEAS__", str(n_ideas))
-            .replace("__N_RAIL__", str(n_rail))
-            .replace("__TOTAL_DAYS__", str(total_days))
-            .replace("__TOTAL_KM__", km(total_km)))
+def lang_switch(lang: str, base: str) -> str:
+    out = []
+    for other in LANGS:
+        label = {"en": "EN", "pt": "PT", "de": "DE"}[other]
+        href = f"{base}{LINKS[other]}"
+        current = ' aria-current="page"' if other == lang else ""
+        out.append(f'<a href="{href}" hreflang="{LANG_ATTR[other]}" lang="{LANG_ATTR[other]}"{current}>{label}</a>')
+    return "".join(out)
 
-OUT.write_text(html_out, encoding="utf-8")
+
+stats = {"days": 0, "km": 0.0}
+for t in YEARS:
+    if t["status"] == "travelled":
+        d = load(t["data"])["trip"]
+        stats["days"] += d["days"]
+        stats["km"] += drive_km(load(t["data"]))
+
+written = []
+for lang in LANGS:
+    ui = UI[lang]
+    base = "../" if lang != "en" else ""
+    canonical = f"{SITE}/{PATHS[lang]}"
+
+    entries = "".join(entry_html(trip_facts(t, ui), lang, ui, base) for t in YEARS)
+    shelf = "".join(
+        shelf_html(key, meta_id, file, tags, lang, ui, base)
+        for key, meta_id, file, tags in IDEAS_ORDER
+    )
+
+    page = (TEMPLATE
+            .replace("__LANG_ATTR__", LANG_ATTR[lang])
+            .replace("__TITLE__", esc(ui["title"]))
+            .replace("__DESC__", esc(ui["desc"]))
+            .replace("__OG_TITLE__", esc(ui["og_title"]))
+            .replace("__OG_DESC__", esc(ui["og_desc"]))
+            .replace("__OG_LOCALE__", OG_LOCALE[lang])
+            .replace("__CANONICAL__", canonical)
+            .replace("__HREFLANG__", hreflang_block())
+            .replace("__BASE__", base)
+            .replace("__SKIP__", esc(ui["skip"]))
+            .replace("__H1_A__", esc(ui["h1_a"]))
+            .replace("__H1_B__", esc(ui["h1_b"]))
+            .replace("__STANDFIRST__", ui["standfirst"]
+                     .replace("{km}", km(stats["km"]))
+                     .replace("{days}", str(stats["days"])))
+            .replace("__CTA__", esc(ui["cta"]))
+            .replace("__SEARCH_PH__", esc(ui["search_ph"]))
+            .replace("__ARIA_SEARCH__", esc(ui["aria_search"]))
+            .replace("__ARIA_FILTER__", esc(ui["aria_filter"]))
+            .replace("__F_ALL__", esc(ui["f_all"]))
+            .replace("__F_TRAVELLED__", esc(ui["f_travelled"]))
+            .replace("__F_PLANNED__", esc(ui["f_planned"]))
+            .replace("__F_DRAFTS__", esc(ui["f_drafts"]))
+            .replace("__F_RAIL__", esc(ui["f_rail"]))
+            .replace("__H_TRIPS__", esc(ui["h_trips"]))
+            .replace("__N_TRIPS__", esc(ui["n_trips"]))
+            .replace("__H_IDEAS__", esc(ui["h_ideas"]))
+            .replace("__N_IDEAS__", esc(ui["n_ideas"]))
+            .replace("__EMPTY_A__", esc(ui["empty_a"]))
+            .replace("__EMPTY_B__", esc(ui["empty_b"]))
+            .replace("__FOOT_A__", esc(ui["foot_a"]))
+            .replace("__FOOT_HOW__", esc(ui["foot_how"]))
+            .replace("__FOOT_DATA__", esc(ui["foot_data"]))
+            .replace("__FOOT_POSTERS__", esc(ui["foot_posters"]))
+            .replace("__LANG_LABEL__", esc(ui["lang_label"]))
+            .replace("__LANGS__", lang_switch(lang, base))
+            .replace("__ENTRIES__", entries)
+            .replace("__SHELF__", shelf)
+            .replace("__JS_COUNT__", json.dumps(ui["count"]))
+            .replace("__N_DRAFTS__", str(len(IDEAS_ORDER)))
+            .replace("__N_ALL__", str(len(YEARS) + len(IDEAS_ORDER)))
+            .replace("__N_TRAVELLED__", str(sum(1 for t in YEARS if t["status"] == "travelled")))
+            .replace("__N_PLANNED__", str(sum(1 for t in YEARS if t["status"] == "planned")))
+            .replace("__N_RAIL__", str(sum(1 for t in YEARS + [{"tags": t} for _, _, _, t in IDEAS_ORDER]
+                                             if "rail" in t["tags"]))))
+
+    out = ROOT / PATHS[lang] / "index.html" if PATHS[lang] else ROOT / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(page, encoding="utf-8")
+    written.append(out)
 
 # ------------------------------------------------------------------ sitemap
-SITE = "https://renreisen.duckdns.org"
-urls = [("/", "1.0", "weekly")] + \
-       [(f"/{c['href']}", "0.9", "monthly") for c in year_trips] + \
-       [(f"/{c['href']}", "0.6", "yearly") for c in ideas] + \
-       [("/README.md", "0.3", "monthly")]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>',
-      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-for path, prio, freq in urls:
-    sm.append(f"  <url><loc>{SITE}{path}</loc><priority>{prio}</priority>"
-              f"<changefreq>{freq}</changefreq></url>")
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+      'xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+alts = "\n".join(
+    f'    <xhtml:link rel="alternate" hreflang="{LANG_ATTR[l]}" href="{SITE}/{PATHS[l]}"/>'
+    for l in LANGS)
+for lang in LANGS:
+    sm.append(f"  <url>\n    <loc>{SITE}/{PATHS[lang]}</loc>\n{alts}\n"
+              f"    <priority>1.0</priority><changefreq>weekly</changefreq>\n  </url>")
+for t in YEARS:
+    sm.append(f"  <url><loc>{SITE}/{t['href']}</loc><priority>0.9</priority>"
+              f"<changefreq>monthly</changefreq></url>")
+for key, _meta, file, _tags in IDEAS_ORDER:
+    sm.append(f"  <url><loc>{SITE}/AI-suggested-trips/{file}</loc><priority>0.6</priority>"
+              f"<changefreq>yearly</changefreq></url>")
 sm.append("</urlset>")
 (ROOT / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")
-print(f"wrote index.html ({len(html_out)//1024} KB) · {n_all} entries · "
-      f"{total_days} travelled days · {km(total_km)} km · {len(countries)} countries")
+
+print("wrote " + ", ".join(str(p.relative_to(ROOT)) for p in written)
+      + f" · {len(YEARS)} trips + {len(IDEAS_ORDER)} drafts · {stats['days']} days · {km(stats['km'])} km")

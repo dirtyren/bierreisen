@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bier Reisen — fünf Bierreisen, jede Station gemessen</title>
+<meta name="description" content="Fünf unternommene Bierreisen und eine in Planung: Reiseverläufe, Routenkarten, Brauereiranglisen und jede Distanz gemessen. München mit der Bahn, belgische Trappisten, die Pilsner Städte Böhmens und die Dorfbrauereien Frankens.">
+<meta name="theme-color" content="#0b0c15">
+<meta property="og:title" content="Bier Reisen — fünf Bierreisen, jede Station gemessen">
+<meta property="og:description" content="Fünf Reisen gemacht, eine in Planung. Tagesdossiers, Routenposter und Brauereiranglisten für Bierreisen durch Europa und die USA.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://renreisen.duckdns.org/de/">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://renreisen.duckdns.org/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bier Reisen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bier Reisen — fünf Bierreisen, jede Station gemessen">
+<meta name="twitter:description" content="Fünf Reisen gemacht, eine in Planung. Tagesdossiers, Routenposter und Brauereiranglisten für Bierreisen durch Europa und die USA.">
+<meta name="twitter:image" content="https://renreisen.duckdns.org/assets/og-card.png">
+<link rel="canonical" href="https://renreisen.duckdns.org/de/">
+<link rel="alternate" hreflang="en" href="https://renreisen.duckdns.org/">
+<link rel="alternate" hreflang="pt-BR" href="https://renreisen.duckdns.org/pt/">
+<link rel="alternate" hreflang="de" href="https://renreisen.duckdns.org/de/">
+<link rel="alternate" hreflang="x-default" href="https://renreisen.duckdns.org/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/og-card.png">
+<style>
+:root{
+  --bg:#0b0c15; --bg-raise:#101224; --rule:#262c48; --rule-soft:rgba(38,44,72,.62);
+  --gold:#e6a817; --text:#eef1f6; --muted:#a8b2c6; --dim:#8d97ad;
+  --serif:Charter,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Avenir Next","Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+  --measure:66ch;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;caret-color:var(--gold);scrollbar-color:#3a4166 var(--bg)}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+::selection{background:var(--gold);color:#0b0c15}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#2f365a;border:3px solid var(--bg);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:#3f4874}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:.06em}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:#0b0c15;padding:.7rem 1.1rem;
+  z-index:100;font-weight:700;text-decoration:none}
+.skip:focus{left:0}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important}
+  .entry,.shelf-item{opacity:1!important;transform:none!important}
+}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:min(72vh,640px);display:flex;align-items:center}
+.hero-art{position:absolute;inset:0;z-index:-2}
+.hero-art img{width:100%;height:100%;object-fit:cover;object-position:22% 42%;
+  filter:saturate(.45) brightness(.3);transform:scale(1.14)}
+.hero-art::after{content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(11,12,21,.42), rgba(11,12,21,.42)),
+    radial-gradient(115% 95% at 14% 55%, rgba(11,12,21,.55) 0%, rgba(11,12,21,.94) 58%, var(--bg) 100%),
+    linear-gradient(180deg, rgba(11,12,21,.6) 0%, rgba(11,12,21,.25) 34%, rgba(11,12,21,1) 100%)}
+.hero-inner{width:100%;max-width:1180px;margin:0 auto;
+  padding:clamp(2.75rem,7vh,5.5rem) 1.6rem clamp(2rem,5.5vh,4rem)}
+.hero h1{
+  font-family:var(--serif);font-weight:600;letter-spacing:-.021em;line-height:1.02;
+  font-size:clamp(2.5rem,6.2vw,5rem);margin:0 0 1.1rem;max-width:19ch;text-wrap:balance;
+}
+.hero h1 .next{display:block;color:var(--gold)}
+.standfirst{max-width:56ch;color:#cfd6e4;font-size:clamp(1rem,1.5vw,1.15rem);margin:0 0 2rem}
+.standfirst b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.hero-cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:#0b0c15;
+  font-weight:700;text-decoration:none;padding:.85rem 1.5rem;border-radius:2px;font-size:.95rem;
+  letter-spacing:.01em;transition:background .18s ease,transform .18s ease}
+.hero-cta:hover{background:#f2b62a;transform:translateY(-1px)}
+.hero-cta span{transition:transform .18s ease}
+.hero-cta:hover span{transform:translateX(3px)}
+
+/* controls */
+.controls{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--rule-soft)}
+.controls-in{max-width:1180px;margin:0 auto;padding:.8rem 1.6rem;display:flex;gap:.75rem;
+  align-items:center;flex-wrap:wrap}
+.search{flex:1 1 220px;max-width:330px;display:flex;align-items:center;gap:.55rem;
+  border-bottom:1px solid var(--rule);padding:.35rem 0}
+.search:focus-within{border-bottom-color:var(--gold)}
+.search svg{flex:none;opacity:.7}
+.search input{flex:1;background:none;border:0;color:var(--text);font:inherit;font-size:.95rem;padding:.25rem 0}
+.search input::placeholder{color:var(--dim);opacity:1}
+.search input:focus{outline:none}
+.filters{display:flex;gap:.15rem;flex-wrap:wrap}
+.chip{background:none;border:0;color:var(--muted);font:inherit;font-size:.86rem;font-weight:600;
+  padding:.42rem .62rem;border-radius:2px;cursor:pointer;position:relative;transition:color .16s}
+.chip:hover{color:var(--text)}
+.chip[aria-pressed="true"]{color:var(--gold)}
+.chip[aria-pressed="true"]::after{content:"";position:absolute;left:.62rem;right:.62rem;bottom:.18rem;
+  height:2px;background:var(--gold)}
+.tally{margin-left:auto;color:var(--dim);font-size:.82rem;font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.langs{display:flex;gap:.1rem;align-items:center}
+.langs a{font-size:.78rem;font-weight:700;letter-spacing:.08em;color:var(--dim);text-decoration:none;
+  padding:.3rem .45rem;border-radius:2px}
+.langs a:hover{color:var(--text)}
+.langs a[aria-current="page"]{color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
+
+/* archive */
+main{max-width:1180px;margin:0 auto;padding:0 1.6rem 5rem}
+section[id]{scroll-margin-top:72px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  flex-wrap:wrap;padding:3.4rem 0 .4rem;border-bottom:1px solid var(--rule)}
+.section-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.4rem,2.4vw,1.95rem);
+  margin:0;letter-spacing:-.012em}
+.section-head p{margin:0;color:var(--dim);font-size:.88rem}
+
+.entries{list-style:none;margin:0;padding:0}
+.entry{display:grid;grid-template-columns:300px minmax(0,1fr);gap:2.2rem;align-items:start;
+  padding:2.4rem 0;border-bottom:1px solid var(--rule-soft);
+  opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.16,1,.3,1),
+    transform .6s cubic-bezier(.16,1,.3,1)}
+.entry.in{opacity:1;transform:none}
+.entry[hidden]{display:none}
+.entry-poster{display:block;overflow:hidden;background:#070810;border:1px solid var(--rule-soft)}
+.entry-poster img{width:100%;aspect-ratio:16/10;object-fit:cover;
+  transition:transform .7s cubic-bezier(.16,1,.3,1),filter .4s ease;filter:saturate(.92) brightness(.94)}
+.entry:hover .entry-poster img,.entry:focus-within .entry-poster img{transform:scale(1.035);
+  filter:saturate(1.02) brightness(1)}
+.entry-meta{display:flex;align-items:center;gap:.7rem;margin:0 0 .45rem;
+  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700}
+.entry-meta .yr{color:var(--gold);font-variant-numeric:tabular-nums}
+.entry-meta .dot{width:3px;height:3px;background:var(--rule);border-radius:50%;display:inline-block}
+.entry h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.35rem,2.3vw,1.85rem);
+  line-height:1.15;letter-spacing:-.012em;margin:0 0 .5rem}
+.entry h3 a{text-decoration:underline;text-decoration-color:transparent;
+  text-decoration-thickness:1px;transition:text-decoration-color .3s ease}
+.entry h3 a:hover{text-decoration-color:var(--gold)}
+.route{color:var(--muted);font-size:.92rem;margin:0 0 .7rem;max-width:var(--measure)}
+.blurb{margin:0 0 .9rem;color:#c3cadb;max-width:var(--measure)}
+.facts{display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;margin:0;color:var(--dim);font-size:.85rem;
+  font-variant-numeric:tabular-nums}
+.facts b{color:var(--text);font-weight:600}
+.links{display:flex;align-items:center;gap:1.4rem;margin:1rem 0 0;font-size:.88rem}
+.open{color:var(--gold);font-weight:700;text-decoration:underline;
+  text-decoration-color:rgba(230,168,23,.45);text-decoration-thickness:1px}
+.open:hover{text-decoration-color:var(--gold)}
+.quiet{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--rule)}
+.quiet:hover{color:var(--text);border-bottom-color:var(--gold)}
+.variants{display:flex;gap:.6rem;flex-wrap:wrap;margin:.85rem 0 0}
+.variant{font-size:.8rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--rule)}
+.variant:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.planned .entry-poster{border-color:rgba(230,168,23,.4)}
+
+/* shelf */
+.shelf{list-style:none;margin:0;padding:1.8rem 0 0;display:grid;gap:1.6rem;
+  grid-template-columns:repeat(3,minmax(0,1fr))}
+.shelf-item{opacity:0;transform:translateY(12px);transition:opacity .55s cubic-bezier(.16,1,.3,1),
+  transform .55s cubic-bezier(.16,1,.3,1)}
+.shelf-item.in{opacity:1;transform:none}
+.shelf-item[hidden]{display:none}
+.shelf-item a{display:block;text-decoration:none}
+.shelf-item img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(.85) brightness(.85);
+  transition:filter .3s ease,transform .4s cubic-bezier(.16,1,.3,1)}
+.shelf-item a:hover img{filter:saturate(1) brightness(1);transform:translateY(-2px)}
+.shelf-item h3{font-family:var(--serif);font-weight:600;font-size:1.05rem;margin:.7rem 0 .2rem}
+.shelf-item a:hover h3{color:var(--gold)}
+.shelf-item p{margin:0;color:var(--dim);font-size:.82rem;font-variant-numeric:tabular-nums}
+
+.none{margin:3rem 0 0;padding:2.2rem;border:1px solid var(--rule-soft);color:var(--muted);
+  text-align:center;font-size:.95rem}
+.none[hidden]{display:none}
+.none button{background:none;border:0;color:var(--gold);font:inherit;font-weight:700;
+  text-decoration:underline;cursor:pointer;padding:0}
+
+footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
+.foot{max-width:1180px;margin:0 auto;padding:2.4rem 1.6rem;display:flex;gap:1.6rem;
+  justify-content:space-between;flex-wrap:wrap;color:var(--dim);font-size:.86rem}
+.foot p{margin:0;max-width:58ch}
+.foot a{color:var(--muted);border-bottom:1px dotted var(--rule)}
+.foot a:hover{color:var(--gold)}
+
+@media (max-height:760px) and (min-width:681px){
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.5rem)}
+  .standfirst{font-size:1rem;margin-bottom:1.5rem}
+}
+@media (max-width:900px){
+  .entry{grid-template-columns:240px minmax(0,1fr);gap:1.6rem}
+  .shelf{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:680px){
+  body{font-size:16px}
+  .hero{min-height:auto}
+  .hero-inner{padding:4rem 1.15rem 2.6rem}
+  .controls-in{padding:.7rem 1.15rem}
+  main{padding:0 1.15rem 3.5rem}
+  .entry{grid-template-columns:1fr;gap:1.1rem;padding:2rem 0}
+  .shelf{grid-template-columns:1fr;gap:1.4rem}
+  .tally{display:none}
+  .langs{margin-left:auto}
+  .section-head{padding-top:2.4rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#trips">Zu den Reisen springen</a>
+
+<header class="hero">
+  <div class="hero-art"><img src="../assets/thumbs/hero-europe.jpg" alt="" aria-hidden="true" fetchpriority="high"></div>
+  <div class="hero-inner">
+    <h1>Fünf Bierreisen gemacht.<span class="next">Eine ist in Planung.</span></h1>
+    <p class="standfirst">Von neun Nächten in einem Münchner Hotel zu den belgischen Trappisten und den Pilsner Städten Böhmens. Jedes Dossier enthält den Tagesplan, das Routenposter, die Brauereirangliste und die Distanzen dahinter: bisher <b>6,849 km</b> in <b>77 Tagen</b>.</p>
+    <a class="hero-cta" href="#trips">Das Archiv ansehen <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="controls-in">
+    <label class="search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="Jahr, Stadt oder Brauerei suchen" aria-label="Reisen suchen" autocomplete="off">
+    </label>
+    <div class="filters" role="group" aria-label="Reisen filtern">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">Alle 12</button>
+      <button class="chip" type="button" data-filter="travelled" aria-pressed="false">Gemacht 5</button>
+      <button class="chip" type="button" data-filter="planned" aria-pressed="false">Geplant 1</button>
+      <button class="chip" type="button" data-filter="idea" aria-pressed="false">Entwürfe 6</button>
+      <button class="chip" type="button" data-filter="rail" aria-pressed="false">Mit der Bahn 3</button>
+    </div>
+    <span class="tally" id="count" aria-live="polite"></span>
+    <nav class="langs" aria-label="Sprache"><a href="../index.html" hreflang="en" lang="en">EN</a><a href="../pt/index.html" hreflang="pt-BR" lang="pt-BR">PT</a><a href="../de/index.html" hreflang="de" lang="de" aria-current="page">DE</a></nav>
+  </div>
+</div>
+
+<main>
+  <section id="trips" aria-labelledby="trips-h">
+    <div class="section-head">
+      <h2 id="trips-h">Die Reisen</h2>
+      <p>Sechs Dossiers, das neueste zuerst.</p>
+    </div>
+    <ul class="entries">
+      <li class="entry planned" data-tags="planned car germany czechia belgium" data-search="2027 der plan für 2027 · route über würzburg the 2027 plan · würzburg route frankfurt → brügge → gent → bamberg → sokolov → plzeň → kout na šumavě → maxlrain → andechs → münchen → nürnberg → frankfurt zwei nächte in brügge, zwei in bamberg, beide tschechischen braustädte und eine nacht in einer fränkischen schlossbrauerei, mit dem langen tag gent → bamberg geteilt in würzburg. die route, auf die dieses archiv hinausläuft. planned car germany czechia belgium">
+        <a class="entry-poster" href="../2027/v3/2027-bier-reisen-v3.html" aria-hidden="true" tabindex="-1">
+          <img src="../assets/thumbs/2027-v3.jpg" alt="" loading="lazy" width="960" height="624">
+        </a>
+        <div class="entry-body">
+          <p class="entry-meta"><span class="yr">2027</span> <span class="dot" aria-hidden="true"></span> Geplant</p>
+          <h3><a href="../2027/v3/2027-bier-reisen-v3.html">Der Plan für 2027 · Route über Würzburg</a></h3>
+          <p class="route">Frankfurt → Brügge → Gent → Bamberg → Sokolov → Plzeň → Kout na Šumavě → Maxlrain → Andechs → München → Nürnberg → Frankfurt</p>
+          <p class="blurb">Zwei Nächte in Brügge, zwei in Bamberg, beide tschechischen Braustädte und eine Nacht in einer fränkischen Schlossbrauerei, mit dem langen Tag Gent → Bamberg geteilt in Würzburg. Die Route, auf die dieses Archiv hinausläuft.</p>
+          <p class="facts"><span><b>15</b> Tage</span><span><b>14</b> Nächte</span><span><b>2,306</b> km Fahrt</span></p>
+          <p class="links"><a class="open" href="../2027/v3/2027-bier-reisen-v3.html">Dossier öffnen</a><a class="quiet" href="../2027/v3/assets/2027-route-map-v3.png" target="_blank" rel="noopener">Routenposter</a></p>
+          <p class="variants"><a class="variant" href="../2027/2027-bier-reisen.html">v1, die ursprüngliche Route</a><a class="variant" href="../2027/v2/2027-bier-reisen-v2.html">v2, mit einer Nacht in Köln</a></p>
+        </div>
+      </li>
+      <li class="entry" data-tags="travelled car germany czechia" data-search="2026 franken, böhmen und die alpen franconia, bohemia and the alps frankfurt → merkendorf → plzeň → české budějovice → bad reichenhall → münchen drei nächte in einer dorfbrauerei, zwei bei budvar, drei unter dem watzmann mit salzburg gleich hinter der grenze, dann vier in münchen. travelled car germany czechia">
+        <a class="entry-poster" href="../2026/2026-bier-reisen.html" aria-hidden="true" tabindex="-1">
+          <img src="../assets/thumbs/2026.jpg" alt="" loading="lazy" width="960" height="624">
+        </a>
+        <div class="entry-body">
+          <p class="entry-meta"><span class="yr">2026</span> <span class="dot" aria-hidden="true"></span> Gemacht</p>
+          <h3><a href="../2026/2026-bier-reisen.html">Franken, Böhmen und die Alpen</a></h3>
+          <p class="route">Frankfurt → Merkendorf → Plzeň → České Budějovice → Bad Reichenhall → München</p>
+          <p class="blurb">Drei Nächte in einer Dorfbrauerei, zwei bei Budvar, drei unter dem Watzmann mit Salzburg gleich hinter der Grenze, dann vier in München.</p>
+          <p class="facts"><span><b>16</b> Tage</span><span><b>13</b> Nächte</span><span><b>1,406</b> km Fahrt</span></p>
+          <p class="links"><a class="open" href="../2026/2026-bier-reisen.html">Dossier öffnen</a><a class="quiet" href="../2026/assets/2026-route-map.png" target="_blank" rel="noopener">Routenposter</a></p>
+          
+        </div>
+      </li>
+      <li class="entry" data-tags="travelled car germany czechia" data-search="2024 franken, böhmen und der advent franconia, bohemia and advent frankfurt → memmelsdorf → plzeň → české budějovice → berchtesgaden → münchen ende november: weihnachtsmärkte öffnen, brauereiführungen sind halb leer, und der andere budweiser in seiner heimatstadt. travelled car germany czechia">
+        <a class="entry-poster" href="../2024/2024-bier-reisen.html" aria-hidden="true" tabindex="-1">
+          <img src="../assets/thumbs/2024.jpg" alt="" loading="lazy" width="960" height="624">
+        </a>
+        <div class="entry-body">
+          <p class="entry-meta"><span class="yr">2024</span> <span class="dot" aria-hidden="true"></span> Gemacht</p>
+          <h3><a href="../2024/2024-bier-reisen.html">Franken, Böhmen und der Advent</a></h3>
+          <p class="route">Frankfurt → Memmelsdorf → Plzeň → České Budějovice → Berchtesgaden → München</p>
+          <p class="blurb">Ende November: Weihnachtsmärkte öffnen, Brauereiführungen sind halb leer, und der andere Budweiser in seiner Heimatstadt.</p>
+          <p class="facts"><span><b>16</b> Tage</span><span><b>13</b> Nächte</span><span><b>1,062</b> km Fahrt</span></p>
+          <p class="links"><a class="open" href="../2024/2024-bier-reisen.html">Dossier öffnen</a><a class="quiet" href="../2024/assets/2024-route-map.png" target="_blank" rel="noopener">Routenposter</a></p>
+          
+        </div>
+      </li>
+      <li class="entry" data-tags="travelled car germany" data-search="2021 von bamberg ins allgäu bamberg to the allgäu frankfurt → bamberg → nürnberg → essing → traunstein → schönram → berchtesgaden → nesselwang → missen-wilhams → münchen dorfbrauereien und zwei nächte über dem sudhaus, dann eine woche münchen ende oktober. travelled car germany">
+        <a class="entry-poster" href="../2021/2021-bier-reisen.html" aria-hidden="true" tabindex="-1">
+          <img src="../assets/thumbs/2021.jpg" alt="" loading="lazy" width="960" height="624">
+        </a>
+        <div class="entry-body">
+          <p class="entry-meta"><span class="yr">2021</span> <span class="dot" aria-hidden="true"></span> Gemacht</p>
+          <h3><a href="../2021/2021-bier-reisen.html">Von Bamberg ins Allgäu</a></h3>
+          <p class="route">Frankfurt → Bamberg → Nürnberg → Essing → Traunstein → Schönram → Berchtesgaden → Nesselwang → Missen-Wilhams → München</p>
+          <p class="blurb">Dorfbrauereien und zwei Nächte über dem Sudhaus, dann eine Woche München Ende Oktober.</p>
+          <p class="facts"><span><b>18</b> Tage</span><span><b>16</b> Nächte</span><span><b>1,561</b> km Fahrt</span></p>
+          <p class="links"><a class="open" href="../2021/2021-bier-reisen.html">Dossier öffnen</a><a class="quiet" href="../2021/assets/2021-route-map.png" target="_blank" rel="noopener">Routenposter</a></p>
+          
+        </div>
+      </li>
+      <li class="entry" data-tags="travelled car germany belgium netherlands" data-search="2020 die erste europaschleife the first european loop münchen → bamberg → düsseldorf → la trappe → antwerpen → brüssel → brügge → westvleteren → chimay → zwiefaltendorf → münchen die reise, mit der alles begann: altbier, trappisten, lambic und eine schwäbische dorfbrauerei an der donau auf dem rückweg. travelled car germany belgium netherlands">
+        <a class="entry-poster" href="../2020/2020-bier-reisen.html" aria-hidden="true" tabindex="-1">
+          <img src="../assets/thumbs/2020.jpg" alt="" loading="lazy" width="960" height="624">
+        </a>
+        <div class="entry-body">
+          <p class="entry-meta"><span class="yr">2020</span> <span class="dot" aria-hidden="true"></span> Gemacht</p>
+          <h3><a href="../2020/2020-bier-reisen.html">Die erste Europaschleife</a></h3>
+          <p class="route">München → Bamberg → Düsseldorf → La Trappe → Antwerpen → Brüssel → Brügge → Westvleteren → Chimay → Zwiefaltendorf → München</p>
+          <p class="blurb">Die Reise, mit der alles begann: Altbier, Trappisten, Lambic und eine schwäbische Dorfbrauerei an der Donau auf dem Rückweg.</p>
+          <p class="facts"><span><b>17</b> Tage</span><span><b>14</b> Nächte</span><span><b>2,089</b> km Fahrt</span></p>
+          <p class="links"><a class="open" href="../2020/2020-bier-reisen.html">Dossier öffnen</a><a class="quiet" href="../2020/assets/2020-route-map.png" target="_blank" rel="noopener">Routenposter</a></p>
+          
+        </div>
+      </li>
+      <li class="entry" data-tags="travelled rail germany" data-search="2019 münchen mit der bahn munich by rail münchen · andechs · aying · bamberg die erste und die einzige ohne auto: neun nächte in einem hotel, mit tagesausflügen zu einem kloster, einer dorfbrauerei und einer rauchbierstadt. travelled rail germany">
+        <a class="entry-poster" href="../2019/2019-bier-reisen.html" aria-hidden="true" tabindex="-1">
+          <img src="../assets/thumbs/2019.jpg" alt="" loading="lazy" width="960" height="624">
+        </a>
+        <div class="entry-body">
+          <p class="entry-meta"><span class="yr">2019</span> <span class="dot" aria-hidden="true"></span> Gemacht</p>
+          <h3><a href="../2019/2019-bier-reisen.html">München mit der Bahn</a></h3>
+          <p class="route">München · Andechs · Aying · Bamberg</p>
+          <p class="blurb">Die erste und die einzige ohne Auto: neun Nächte in einem Hotel, mit Tagesausflügen zu einem Kloster, einer Dorfbrauerei und einer Rauchbierstadt.</p>
+          <p class="facts"><span><b>10</b> Tage</span><span><b>9</b> Nächte</span><span><b>730</b> km mit der Bahn</span></p>
+          <p class="links"><a class="open" href="../2019/2019-bier-reisen.html">Dossier öffnen</a><a class="quiet" href="../2019/assets/2019-route-map.png" target="_blank" rel="noopener">Routenposter</a></p>
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="ideas" aria-labelledby="ideas-h">
+    <div class="section-head">
+      <h2 id="ideas-h">Entworfen, noch nicht gegangen</h2>
+      <p>Sechs Routen aus Recherche statt aus Erinnerung.</p>
+    </div>
+    <ul class="shelf">
+      <li class="shelf-item" data-tags="idea rail uk" data-search="bierpilgerreise durch großbritannien uk beer pilgrimage idea rail uk">
+        <a href="../AI-suggested-trips/uk_beer_trip.html">
+          <img src="../assets/thumbs/uk.jpg" alt="" loading="lazy" width="960" height="624">
+          <h3>Bierpilgerreise durch Großbritannien</h3>
+          <p>12 Tage · 32 Stationen</p>
+        </a>
+      </li>
+      <li class="shelf-item" data-tags="idea car belgium" data-search="belgische bierpilgerreise belgian beer pilgrimage idea car belgium">
+        <a href="../AI-suggested-trips/belgian.html">
+          <img src="../assets/thumbs/belgian.jpg" alt="" loading="lazy" width="960" height="624">
+          <h3>Belgische Bierpilgerreise</h3>
+          <p>9 Tage · 42 Stationen</p>
+        </a>
+      </li>
+      <li class="shelf-item" data-tags="idea car germany czechia" data-search="bayern und böhmen bavaria &amp; bohemia idea car germany czechia">
+        <a href="../AI-suggested-trips/germany_czech_beer_trip.html">
+          <img src="../assets/thumbs/bavaria-bohemia.jpg" alt="" loading="lazy" width="960" height="624">
+          <h3>Bayern und Böhmen</h3>
+          <p>14 Tage · 40 Stationen</p>
+        </a>
+      </li>
+      <li class="shelf-item" data-tags="idea car usa" data-search="colorado craft-bier-odyssee colorado craft beer odyssey idea car usa">
+        <a href="../AI-suggested-trips/colorado_beer_trip.html">
+          <img src="../assets/thumbs/colorado.jpg" alt="" loading="lazy" width="960" height="624">
+          <h3>Colorado Craft-Bier-Odyssee</h3>
+          <p>12 Tage · 39 Stationen</p>
+        </a>
+      </li>
+      <li class="shelf-item" data-tags="idea car usa" data-search="florida brauereiroute florida brewery trail idea car usa">
+        <a href="../AI-suggested-trips/florida_brewery_trip.html">
+          <img src="../assets/thumbs/florida.jpg" alt="" loading="lazy" width="960" height="624">
+          <h3>Florida Brauereiroute</h3>
+          <p>12 Tage · 43 Stationen</p>
+        </a>
+      </li>
+      <li class="shelf-item" data-tags="idea rail italy" data-search="grand tour italien und schweiz italy &amp; switzerland grand tour idea rail italy">
+        <a href="../AI-suggested-trips/Italy_Switzerland_14Day_Trip.html">
+          <img src="../assets/thumbs/italy-grand-tour.jpg" alt="" loading="lazy" width="960" height="624">
+          <h3>Grand Tour Italien und Schweiz</h3>
+          <p>14 Tage · 7 Stationen</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <p class="none" id="empty" hidden>Dazu passt nichts. Versuch ein Jahr, ein Land oder eine Brauerei, oder
+    <button type="button" id="reset">zeig wieder alles</button>.</p>
+</main>
+
+<footer>
+  <div class="foot">
+    <p><strong style="color:var(--text)">Bier Reisen</strong>. Ein persönliches Archiv von Bierreisen. Jedes Dossier ist eine einzelne HTML-Datei; jede Distanz wurde gemessen, nicht geschätzt: OSRM in den Autojahren, Großkreis bei Flügen, Fahrpläne in den Jahren ohne Auto.</p>
+    <p><a href="../README.md">Wie das gebaut ist</a> ·
+      <a href="../2027/data/route-2027.json">Routendaten</a> ·
+      <a href="../assets/maps/europe.png">Regionale Poster</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var COUNT = "{n} von {total}";
+  var entries = Array.prototype.slice.call(document.querySelectorAll('.entry, .shelf-item'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));
+  var input = document.getElementById('q');
+  var countEl = document.getElementById('count');
+  var emptyEl = document.getElementById('empty');
+  var resetEl = document.getElementById('reset');
+  var filter = 'all';
+
+  function fold(s) {
+    return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function apply() {
+    var term = fold(input.value.trim());
+    var shown = 0;
+    entries.forEach(function (el) {
+      var tags = (el.dataset.tags || '').split(' ');
+      var kindOk = filter === 'all' || tags.indexOf(filter) !== -1;
+      var textOk = !term || fold(el.dataset.search).indexOf(term) !== -1;
+      var show = kindOk && textOk;
+      el.hidden = !show;
+      if (show) shown++;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('main section'), function (section) {
+      var any = Array.prototype.some.call(section.querySelectorAll('.entry, .shelf-item'),
+        function (el) { return !el.hidden; });
+      section.hidden = !any;
+    });
+    countEl.textContent = COUNT.replace('{n}', shown).replace('{total}', entries.length);
+    emptyEl.hidden = shown !== 0;
+  }
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      filter = chip.dataset.filter;
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+  resetEl.addEventListener('click', function () {
+    input.value = '';
+    filter = 'all';
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.filter === 'all')); });
+    apply();
+    input.focus();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+    if (e.key === 'Escape' && document.activeElement === input) { input.value = ''; apply(); input.blur(); }
+  });
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (rows) {
+      rows.forEach(function (row) {
+        if (!row.isIntersecting) return;
+        var el = row.target;
+        var sibs = Array.prototype.slice.call(el.parentNode.children);
+        var i = Math.min(sibs.indexOf(el), 4);
+        setTimeout(function () { el.classList.add('in'); }, i * 70);
+        io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+    entries.forEach(function (el) { io.observe(el); });
+  } else {
+    entries.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  apply();
+})();
+</script>
+</body>
+</html>

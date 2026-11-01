@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://renreisen.duckdns.org/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://renreisen.duckdns.org/2027/2027-bier-reisen.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://renreisen.duckdns.org/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://renreisen.duckdns.org/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://renreisen.duckdns.org/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://renreisen.duckdns.org/de/"/>
+    <priority>1.0</priority><changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://renreisen.duckdns.org/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://renreisen.duckdns.org/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://renreisen.duckdns.org/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://renreisen.duckdns.org/de/"/>
+    <priority>1.0</priority><changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://renreisen.duckdns.org/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://renreisen.duckdns.org/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://renreisen.duckdns.org/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://renreisen.duckdns.org/de/"/>
+    <priority>1.0</priority><changefreq>weekly</changefreq>
+  </url>
+  <url><loc>https://renreisen.duckdns.org/2027/v3/2027-bier-reisen-v3.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://renreisen.duckdns.org/2026/2026-bier-reisen.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://renreisen.duckdns.org/2024/2024-bier-reisen.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://renreisen.duckdns.org/2021/2021-bier-reisen.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
@@ -13,5 +33,4 @@
   <url><loc>https://renreisen.duckdns.org/AI-suggested-trips/colorado_beer_trip.html</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://renreisen.duckdns.org/AI-suggested-trips/florida_brewery_trip.html</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://renreisen.duckdns.org/AI-suggested-trips/Italy_Switzerland_14Day_Trip.html</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://renreisen.duckdns.org/README.md</loc><priority>0.3</priority><changefreq>monthly</changefreq></url>
 </urlset>
