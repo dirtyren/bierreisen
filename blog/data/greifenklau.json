@@ -1,0 +1,234 @@
+{
+  "slug": "greifenklau",
+  "type": "brewery",
+  "name": "Brauerei Greifenklau",
+  "where": "Bamberg, Germany",
+  "coords": [
+    49.8836831,
+    10.8821688
+  ],
+  "span": 0.22,
+  "subtitle_en": "A beer garden on a rock cellar, brewing since 1719",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Brauerei+Greifenklau+Laurenziplatz+20+Bamberg",
+  "trips": [
+    "2020",
+    "2021",
+    "2027"
+  ],
+  "related": [
+    "bamberg",
+    "spezial",
+    "fassla",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing since",
+        "pt": "cerveja desde",
+        "de": "gebraut seit"
+      },
+      "v": {
+        "en": "1719"
+      }
+    },
+    {
+      "k": {
+        "en": "beer",
+        "pt": "cerveja",
+        "de": "Bier"
+      },
+      "v": {
+        "en": "Lager, 4.9%"
+      }
+    },
+    {
+      "k": {
+        "en": "garden",
+        "pt": "jardim",
+        "de": "Biergarten"
+      },
+      "v": {
+        "en": "about 350 seats",
+        "pt": "cerca de 350 lugares",
+        "de": "rund 350 Plätze"
+      }
+    },
+    {
+      "k": {
+        "en": "output",
+        "pt": "produção",
+        "de": "Ausstoß"
+      },
+      "v": {
+        "en": "about 990 hl a year"
+      }
+    },
+    {
+      "k": {
+        "en": "family",
+        "pt": "família",
+        "de": "Familie"
+      },
+      "v": {
+        "en": "Brockard, since 1914",
+        "pt": "Brockard, desde 1914",
+        "de": "Brockard, seit 1914"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Greifenklau stands a short walk uphill from Bamberg's old town, and the climb is part of the order. The brewery has been at Laurenziplatz since 1719, makes under a thousand hectolitres a year, and keeps a beer garden on top of a three-storey rock cellar, looking up at the Altenburg.",
+    "pt": "A Greifenklau fica no alto, a uma subida curta do centro histórico de Bamberg, e a caminhada faz parte do pedido. A cervejaria está no Laurenziplatz desde 1719, produz menos de mil hectolitros por ano e mantém um jardim em cima de um porão escavado na rocha, de três andares, de frente para a Altenburg.",
+    "de": "Greifenklau liegt einen kurzen Anstieg über der Bamberger Altstadt, und der Weg hinauf gehört zur Bestellung. Die Brauerei sitzt seit 1719 am Laurenziplatz, macht weniger als tausend Hektoliter im Jahr und hält einen Biergarten über einem dreistöckigen Felsenkeller, über dessen Gewölben die alten Kastanien stehen. Wer oben sitzt, hat die Stadt unter sich."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The garden on the cellar",
+        "pt": "O jardim sobre o porão",
+        "de": "Der Garten über dem Keller"
+      },
+      "p": [
+        {
+          "en": "The garden seats around 350 and is served at the table, which is not universal in Franconia. It lies behind the pub on ground that was once the brewery's beer cellar: three floors of vaults cut into the rock, where beer was stored and cooled with ice from the ponds nearby, under chestnut trees that still shade the tables. The trees are old, the benches simple, and the beer arrives on a tray.",
+          "pt": "O jardim tem cerca de 350 lugares e é servido à mesa, o que não é regra na Francônia. Fica atrás do bar, num terreno que já foi o porão de cerveja da casa: três andares de abóbadas cavadas na rocha, onde a cerveja era guardada e resfriada com gelo dos lagos vizinhos, sob castanheiros que ainda fazem sombra nas mesas. As árvores são velhas, os bancos simples, e a cerveja chega em bandeja.",
+          "de": "Der Garten hat rund 350 Plätze und wird am Tisch bedient, was in Franken nicht selbstverständlich ist. Er liegt hinter dem Gasthof auf dem Grund des alten Bierkellers: drei Etagen Gewölbe im Fels, in denen das Bier lagerte und mit Eis aus den umliegenden Weihern gekühlt wurde, unter Kastanien, die noch heute Schatten geben. Die Bäume sind alt, die Bänke einfach, und das Bier kommt auf dem Tablett."
+        },
+        {
+          "en": "The view is the reason people climb: over the green slope to the Altenburg, with the roofs of the old town below and to the side. It is one of the oldest beer cellars in Bamberg, and the chestnuts do the same work above ground — shade, so the beer stays cool through the summer. The benches face the hill rather than the town, which tells you what the regulars came for.",
+          "pt": "A vista é o motivo da subida: o declive verde até a Altenburg, com os telhados da cidade velha abaixo e ao lado. É um dos porões de cerveja mais antigos de Bamberg, e os castanheiros fazem o mesmo trabalho lá em cima — sombra, para a cerveja ficar fresca no verão. Os bancos olham para a colina, não para a cidade, o que diz muito sobre os frequentadores.",
+          "de": "Die Aussicht ist der Grund für den Anstieg: über den grünen Hang hinauf zur Altenburg, mit den Dächern der Altstadt darunter und daneben. Es ist einer der ältesten Bierkeller Bambergs, und die Kastanien leisten oben dieselbe Arbeit — Schatten, damit das Bier den Sommer über kühl bleibt. Die Bänke stehen zur Höhe, nicht zur Stadt, und das sagt genug über die Stammgäste."
+        },
+        {
+          "en": "In winter the same ground hosts Eisstockschießen from November to February, which is the Franconian version of curling and a good reason to climb the hill when the garden is shut. The pub has 80 seats in the old room, 65 in the Laurenzi and 80 in the brewery hall, and the menu covers Schäuferla, Sauerbraten and offal. The offal is not a curiosity here; it is part of the offer, cooked plainly.",
+          "pt": "No inverno, o mesmo terreno recebe Eisstockschießen de novembro a fevereiro, a versão francônia do curling e um bom motivo para subir quando o jardim está fechado. O bar tem 80 lugares na sala antiga, 65 no Laurenzi e 80 no salão da cervejaria, com um cardápio que vai do Schäuferla ao Sauerbraten e miúdos. Os miúdos não são curiosidade aqui; fazem parte da oferta, cozidos sem enfeite.",
+          "de": "Im Winter findet auf demselben Grund von November bis Februar Eisstockschießen statt, die fränkische Variante des Curlings und ein guter Grund für den Anstieg, wenn der Garten zu ist. Der Gasthof hat 80 Plätze im alten Raum, 65 im Laurenzi und 80 im Brauereisaal, mit einer Karte von Schäuferla über Sauerbraten bis zu Innereien. Die Innereien sind hier keine Kuriosität, sondern Teil des Angebots, schlicht gekocht."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "A brewery the size of a house",
+        "pt": "Uma cervejaria do tamanho de uma casa",
+        "de": "Eine Brauerei in Hausgröße"
+      },
+      "p": [
+        {
+          "en": "The brewery produces about 990 hectolitres a year, which puts it among the smallest in Bamberg and means the beer is essentially a house product. Three beers run all year: a Lager at 12.4% original wort and 4.9%, a Helles at 11.4% and 4.7%, and a Kellerbier at 12.4% and 4.9%, unfiltered and poured cloudy. The brewery lists the figures for each on its own site, which is more than most places bother to do.",
+          "pt": "A produção é de cerca de 990 hectolitros por ano, o que a coloca entre as menores de Bamberg e faz da cerveja um produto essencialmente da casa. Três cervejas o ano todo: uma Lager de 12,4% de extrato e 4,9%, uma Helles de 11,4% e 4,7%, e uma Kellerbier de 12,4% e 4,9%, não filtrada e servida turva. A casa publica os números de cada uma no próprio site, o que é mais do que a maioria faz.",
+          "de": "Die Brauerei kommt auf etwa 990 Hektoliter im Jahr, womit sie zu den kleinsten Bambergs gehört und das Bier im Wesentlichen ein Hausprodukt ist. Drei Biere gibt es ganzjährig: ein Lager mit 12,4 % Stammwürze und 4,9 %, ein Helles mit 11,4 % und 4,7 %, ein Kellerbier mit 12,4 % und 4,9 %, unfiltriert und trüb ausgeschenkt. Die Brauerei nennt die Werte für jedes Bier auf ihrer Website — mehr, als die meisten Brauereien preisgeben."
+        },
+        {
+          "en": "The house was built by Franz Friedrich von Greifenklau, a cathedral canon, in the early eighteenth century, on a site first mentioned in 1585. When he died in 1729 it passed to a brewer, Willibald Mayer, and then through a series of owners until Sigmund Brockard bought it at auction in 1914 for 38,000 marks. The building was in such a state that he brewed elsewhere, at the Riegelhof, until 1919.",
+          "pt": "A casa foi construída por Franz Friedrich von Greifenklau, cônego da catedral, no início do século XVIII, num terreno mencionado pela primeira vez em 1585. Com sua morte em 1729, passou ao cervejeiro Willibald Mayer e depois por uma série de donos até Sigmund Brockard comprá-la em leilão em 1914 por 38 mil marcos. O prédio estava em tal estado que ele mandou produzir em outra cervejaria, a Riegelhof, até 1919.",
+          "de": "Das Haus wurde von Franz Friedrich von Greifenklau, einem Domherrn, Anfang des achtzehnten Jahrhunderts auf einem 1585 erstmals erwähnten Grundstück errichtet. Nach seinem Tod 1729 ging es an den Braumeister Willibald Mayer und danach durch mehrere Hände, bis Sigmund Brockard es 1914 für 38.000 Mark ersteigerte. Das Gebäude war damals stark heruntergewirtschaftet und kaum bewohnbar; bevor an Bier zu denken war, standen Renovierungen an, und gebraut wurde bis 1919 bei Riegelhof."
+        },
+        {
+          "en": "Four generations later the family still runs it: Sigmund Brockard and his sister Ulrike Göller, with a small team and no ambitions to grow. The brewhouse was rebuilt at the back of the property in the 1970s, and the plant was replaced again in 2021. What has not changed is the arithmetic: 990 hectolitres, sold within a few kilometres, in a city of eleven breweries.",
+          "pt": "Quatro gerações depois, a família ainda toca a casa: Sigmund Brockard e a irmã Ulrike Göller, com uma equipe pequena e sem ambição de crescer. A sala de brassagem foi reconstruída no fundo do terreno nos anos 1970, e a tecnologia foi trocada de novo em 2021. O que não mudou é a aritmética: 990 hectolitros, vendidos em poucos quilômetros, numa cidade de onze cervejarias.",
+          "de": "Vier Generationen später führt die Familie die Brauerei noch immer: Sigmund Brockard und seine Schwester Ulrike Göller, mit einem kleinen Team und ohne Ehrgeiz zu wachsen. Seit 2007 steht die vierte Generation am Kessel und in der Wirtschaft. Das Sudhaus wurde in den 1970er-Jahren im Hintergebäude neu gebaut, 2021 wurde die Technik erneut ersetzt. Unverändert ist die Rechnung: 990 Hektoliter, verkauft im Umkreis weniger Kilometer, in einer Stadt mit elf Brauereien."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The year in five beers",
+        "pt": "O ano em cinco cervejas",
+        "de": "Das Jahr in fünf Bieren"
+      },
+      "p": [
+        {
+          "en": "Greifenklau's year is worth planning around. January starts with cold-hopped pale bocks, poured for the traditional “Vom Stärk' antrinken” — drinking for strength. March brings a Roter Bock at 16.8% original wort and 7.0%, copper-coloured and malty. May brings Greif-R, a lager with a smoke note, which is as close as this brewery comes to its neighbours' speciality. September is Märzen, and November is the Bockbieranstich with a 16.4% bock at 6.9%.",
+          "pt": "O ano da Greifenklau merece planejamento. Janeiro começa com bocks claras e lupuladas a frio, servidas na tradição do “Vom Stärk' antrinken” — beber para tomar força. Março traz uma Roter Bock de 16,8% de extrato e 7,0%, cor de cobre e maltada. Maio traz a Greif-R, uma lager com nota de fumaça, o mais perto que a casa chega da especialidade dos vizinhos. Setembro é Märzen, e novembro é o Bockbieranstich, com uma bock de 16,4% e 6,9%.",
+          "de": "Das Jahr der Greifenklau lohnt Planung. Im Januar beginnt es mit kaltgehopften hellen Bockbieren, ausgeschenkt zum traditionellen „Vom Stärk' antrinken“. Im März kommt ein Roter Bock mit 16,8 % Stammwürze und 7,0 %, kupferfarben und malzig. Im Mai folgt der Greif-R, ein Lager mit Rauchnote — näher kommt diese Brauerei der Spezialität der Nachbarn nicht. September ist Märzen, November der Bockbieranstich mit einem Bock von 16,4 % und 6,9 %."
+        },
+        {
+          "en": "The result is a brewery that is quiet for most of the year and then has a reason to be visited in every season. The beers are not experimental; they are precise, and the seasonal ones give the regulars something to argue about at the top of the hill. The small output explains the rest: there is no surplus to export, and what is left stays in the city. That is the whole business model, and it has worked since 1914.",
+          "pt": "O resultado é uma cervejaria silenciosa na maior parte do ano e com um motivo de visita em cada estação. As cervejas não são experimentais; são precisas, e as sazonais dão aos frequentadores algo para discutir no alto da colina. A produção pequena explica o resto: não há excedente para exportar, e o que sobra fica na cidade. É esse o modelo inteiro, e funciona desde 1914.",
+          "de": "Das Ergebnis ist eine Brauerei, die die meiste Zeit des Jahres ruhig ist und in jeder Jahreszeit einen Grund zum Kommen hat. Die Biere sind nicht experimentell, sondern präzise, und die saisonalen geben den Stammgästen Stoff für Diskussionen oben auf dem Hügel. Die kleine Menge erklärt den Rest: Es gibt keinen Überschuss für den Export, und was übrig bleibt, bleibt in der Stadt. Das ist das ganze Geschäftsmodell, und es funktioniert seit 1914."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Lager — 4.9%, the house beer, and the one that tells you what the brewery is about.",
+      "pt": "Lager — 4,9%, a cerveja da casa, e a que diz do que a cervejaria é feita.",
+      "de": "Lager — 4,9 %, das Hausbier, und das Bier, das die Brauerei erklärt."
+    },
+    {
+      "en": "Kellerbier, unfiltered and softer, if you want the same beer with the yeast left in.",
+      "pt": "Kellerbier, não filtrada e mais macia, se você quiser a mesma cerveja com a levedura dentro.",
+      "de": "Kellerbier, unfiltriert und weicher, wenn es dasselbe Bier mit Hefe sein soll."
+    },
+    {
+      "en": "Helles if you are eating; it is the lightest thing on the list and the best with the food.",
+      "pt": "Helles se você for comer; é a mais leve da lista e a melhor com a comida.",
+      "de": "Helles, wenn gegessen wird; es ist das Leichteste auf der Karte und passt am besten zum Essen."
+    },
+    {
+      "en": "Whatever the calendar says: Roter Bock in March, Greif-R in May, Bock in November.",
+      "pt": "O que o calendário mandar: Roter Bock em março, Greif-R em maio, Bock em novembro.",
+      "de": "Was der Kalender sagt: Roter Bock im März, Greif-R im Mai, Bock im November."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Schäuferla with sauerkraut, roasted until the skin cracks.",
+      "pt": "Schäuferla com chucrute, assado até a pele rachar.",
+      "de": "Schäuferla mit Sauerkraut, gebraten, bis die Kruste bricht."
+    },
+    {
+      "en": "Tafelspitz in horseradish sauce with lingonberries, boiled beef the way Franconia serves it.",
+      "pt": "Tafelspitz com molho de raiz-forte e cranberry, carne cozida do jeito que a Francônia serve.",
+      "de": "Tafelspitz in Meerrettichsoße mit Preiselbeeren, gekochtes Rind, wie Franken es serviert."
+    },
+    {
+      "en": "From the Brotzeit kitchen: “Backstaakäs' mit Musik”, cold pork neck with horseradish, or blaue Zipfel.",
+      "pt": "Da cozinha de Brotzeit: “Backstaakäs' mit Musik”, pescoço de porco frio com raiz-forte, ou blaue Zipfel.",
+      "de": "Aus der Brotzeitküche: „Backstaakäs' mit Musik“, kalter Schweinenacken mit Meerrettich oder blaue Zipfel."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The pub keeps short hours — afternoons and evenings from Tuesday to Friday, from late morning on Saturday. Check the site before climbing the hill.",
+      "pt": "O bar abre poucas horas — tardes e noites de terça a sexta, e a partir do fim da manhã no sábado. Confira o site antes de subir.",
+      "de": "Der Gasthof hat kurze Zeiten — nachmittags und abends von Dienstag bis Freitag, samstags ab dem späten Vormittag. Vor dem Anstieg auf der Website nachsehen."
+    },
+    {
+      "en": "The garden takes reservations by telephone for groups of ten or more; smaller tables are first come.",
+      "pt": "O jardim aceita reserva por telefone para grupos de dez ou mais; mesas menores são por ordem de chegada.",
+      "de": "Der Garten nimmt Reservierungen telefonisch für Gruppen ab zehn Personen an; kleinere Tische nach Reihenfolge."
+    },
+    {
+      "en": "From November to February the cellar hosts Eisstockschießen, which is a reason locals climb the hill in winter.",
+      "pt": "De novembro a fevereiro, o porão recebe Eisstockschießen, o motivo pelo qual os moradores sobem a colina no inverno.",
+      "de": "Von November bis Februar findet im Keller das Eisstockschießen statt — der Grund, warum Einheimische im Winter hinaufsteigen."
+    },
+    {
+      "en": "The garden is served at the table, so sit down and wait rather than queue at a hatch.",
+      "pt": "O jardim é servido à mesa, então sente-se e espere em vez de fazer fila no balcão.",
+      "de": "Im Garten wird am Tisch bedient, also setzen und warten statt am Fenster anzustehen."
+    },
+    {
+      "en": "Bottles are sold at the brewery; the range is small, so ask what is in the fridge that week.",
+      "pt": "As garrafas são vendidas na cervejaria; a linha é pequena, então pergunte o que há na geladeira naquela semana.",
+      "de": "Flaschen gibt es in der Brauerei; das Sortiment ist klein, also fragen, was diese Woche im Kühlschrank steht."
+    }
+  ],
+  "links": [
+    {
+      "label": "Brauerei Greifenklau",
+      "url": "https://www.greifenklau.de/"
+    },
+    {
+      "label": "Wikipedia — Brauerei Greifenklau",
+      "url": "https://de.wikipedia.org/wiki/Brauerei_Greifenklau"
+    },
+    {
+      "label": "Bierland Franken — Greifenklau",
+      "url": "https://www.bierland-franken.de/brauereien/brauerei-greifenklau-gmbh/"
+    }
+  ]
+}

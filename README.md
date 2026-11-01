@@ -167,6 +167,7 @@ and four nights in Munich. **13 nights, 5 bases, 1,406 km behind the wheel.**
 - [6. Italy & Switzerland — 14 days](#6-italy--switzerland--14-days)
 - [Choosing a trip](#choosing-a-trip)
 - [Repository layout](#repository-layout)
+- [Notes from the road](#notes-from-the-road)
 - [Regenerating the map](#regenerating-the-map)
 - [Notes on accuracy](#notes-on-accuracy)
 
@@ -414,6 +415,7 @@ bierreisen/
 │   └── us_states.geojson                  # US state lines for the NA panel
 ├── index.html · pt/index.html · de/index.html   # trilingual catalog (generated)
 ├── 404.html                               # branded not-found page
+├── blog/                                  # long-form notes, per trip / city / brewery
 ├── robots.txt · sitemap.xml               # crawl + index hints (sitemap generated)
 ├── DESIGN.md                              # the catalog's design system and its rules
 ├── assets/maps/                           # regional posters (README hero)
@@ -455,6 +457,11 @@ bierreisen/
     ├── make_region_maps.py                # trips.json → USA / Europe / UK
     ├── make_thumbs.py                     # posters → assets/thumbs/*.jpg
     ├── make_social_card.py                # → assets/og-card.png
+    ├── blog_template.html                 # post shell
+    ├── blog_index_template.html           # post index shell
+    ├── blog_strings.py                    # blog interface copy, 3 languages
+    ├── make_blog_art.py                   # locator plates → blog/assets/
+    ├── build_blog.py                      # blog/data → 3 × every post + indexes
     ├── index_strings.py                   # EN / PT-BR / DE copy for the catalog
     ├── index_template.html                # catalog shell (tokens, not content)
     └── build_index.py                     # year data → 3 catalog pages + sitemap
@@ -463,6 +470,31 @@ bierreisen/
 Each dossier is a single HTML file with four or five tabs: **Flowchart** (day-by-day), **Map** (Leaflet, dark tiles), **Rankings** (every place, scored), **Beer guide** (style, ABV, IBU, colour) and **Tips** (transport, lodging, budget, season).
 
 ---
+
+## Notes from the road
+
+`blog/` holds long-form posts that the dossiers have no room for: one per trip, one per city, and one
+for each brewery that carries the archive. Every post is a colour plate (name, coordinates, the place
+marked on its route), a short history, what to order, where to eat, and the practical notes a
+traveller actually needs — where the shop is, when the season runs, which door to use.
+
+All of it ships in **English, Brazilian Portuguese and German**, generated from one JSON file per
+place. Each post has its own locator plate, a Google Maps link, and outbound links to the live rating
+sites rather than a copied score that goes stale.
+
+```
+blog/
+├── index.html · en/ · pt/ · de/      # post indexes, one per language
+├── data/<slug>.json                  # the content: every text field in en / pt / de
+├── assets/<slug>.png                 # generated locator plates
+└── <lang>/<slug>/index.html          # generated posts
+```
+
+```bash
+python3 scripts/make_blog_art.py   # plates → blog/assets/*.png
+python3 scripts/build_blog.py      # blog/data/*.json → 3 languages × every post
+npx impeccable@latest detect blog/en/schlenkerla/index.html   # zero findings
+```
 
 ## Regenerating the map
 

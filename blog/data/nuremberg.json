@@ -1,0 +1,231 @@
+{
+  "slug": "nuremberg",
+  "type": "city",
+  "name": "Nuremberg",
+  "where": "Bavaria, Germany",
+  "coords": [
+    49.4537,
+    11.0773
+  ],
+  "span": 0.55,
+  "subtitle_en": "Red beer from cellars cut into the sandstone",
+  "maps": "https://www.google.com/maps/search/?api=1&query=N%C3%BCrnberg+Hauptmarkt",
+  "trips": [
+    "2021"
+  ],
+  "related": [
+    "altstadthof",
+    "bamberg",
+    "berchtesgaden",
+    "trip-2021"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first documented",
+        "pt": "primeiro documento",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "1050",
+        "pt": "1050",
+        "de": "1050"
+      }
+    },
+    {
+      "k": {
+        "en": "cellar ordinance",
+        "pt": "lei sobre os porões",
+        "de": "Kellerverordnung"
+      },
+      "v": {
+        "en": "1380",
+        "pt": "1380",
+        "de": "1380"
+      }
+    },
+    {
+      "k": {
+        "en": "cellar area",
+        "pt": "área dos porões",
+        "de": "Kellerfläche"
+      },
+      "v": {
+        "en": "25,000 m²",
+        "pt": "25.000 m²",
+        "de": "25.000 m²"
+      }
+    },
+    {
+      "k": {
+        "en": "breweries, medieval",
+        "pt": "cervejarias, Idade Média",
+        "de": "Brauereien im Mittelalter"
+      },
+      "v": {
+        "en": "up to 42",
+        "pt": "até 42",
+        "de": "bis zu 42"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Nuremberg dug its beer cellars before it built most of its churches. From 1380 the sandstone under the old town was hollowed out for fermentation and storage, and the red beer that filled it went out across Europe. The cellars are still there, the beer is back, and the city is easier to walk than its size suggests.",
+    "pt": "Nuremberg cavou seus porões de cerveja antes de construir a maioria das igrejas. A partir de 1380, o arenito sob a cidade velha foi escavado para fermentar e armazenar, e a cerveja vermelha que enchia esses porões ia para toda a Europa. Os porões continuam lá, a cerveja voltou, e a cidade é mais fácil de percorrer do que o tamanho sugere.",
+    "de": "Nürnberg hat seine Bierkeller gegraben, bevor die meisten Kirchen standen. Ab 1380 wurde der Sandstein unter der Altstadt für Gärung und Lagerung ausgehöhlt, und das rote Bier daraus ging hinaus nach Europa. Die Keller gibt es noch, das Bier ist zurück, und die Stadt ist leichter zu Fuß zu fassen, als ihre Größe vermuten lässt."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Up and down the hill",
+        "pt": "Subindo e descendo o morro",
+        "de": "Den Hügel hinauf und hinunter"
+      },
+      "p": [
+        {
+          "en": "The old town sits inside a ring of walls and towers, cut in two by the Pegnitz. Start at the Hauptmarkt, where the Schöner Brunnen stands under its iron grille and the Frauenkirche faces it across the square. Then climb: through the Tiergärtnertor, past Dürer's house, where he lived and worked from 1509, and up to the Kaiserburg on the sandstone ridge. The way up is steep in places, and the reward is the view back over the roofs rather than the castle itself.",
+          "pt": "A cidade velha fica dentro de um anel de muralhas e torres, cortada pelo rio Pegnitz. Comece na Hauptmarkt, onde o Schöner Brunnen está sob sua grade de ferro e a Frauenkirche o encara do outro lado da praça. Depois suba: pelo Tiergärtnertor, passando pela casa de Dürer, onde ele morou e trabalhou a partir de 1509, até a Kaiserburg, no cume de arenito. A subida é íngreme em trechos, e a recompensa é a vista sobre os telhados, mais do que o castelo em si.",
+          "de": "Die Altstadt liegt in einem Ring aus Mauern und Türmen, den die Pegnitz teilt. Anfangen am Hauptmarkt, wo der Schöne Brunnen unter seinem Eisengitter steht und die Frauenkirche gegenüberliegt. Dann hinauf: durch das Tiergärtnertor, am Dürerhaus vorbei, in dem er ab 1509 wohnte und arbeitete, bis zur Kaiserburg auf dem Sandsteinrücken. Der Weg hinauf ist stellenweise steil, und die Belohnung ist der Blick zurück über die Dächer, nicht die Burg selbst."
+        },
+        {
+          "en": "The castle is the high point and the reason for the walk. From the courtyard the roofs run away in red tiles, and the Tiergärtnertor below looks like a gate in a model. On the way down, the Weißgerbergasse runs along the water with wooden galleries built out over the river, and the streets between it and the castle are steep and cobbled. The Weißgerbergasse is the best-preserved corner of the old town, and short enough to walk twice without noticing.",
+          "pt": "O castelo é o ponto alto e o motivo da caminhada. Do pátio, os telhados vermelhos se estendem, e o Tiergärtnertor lá embaixo parece um portão de maquete. Na descida, a Weißgerbergasse acompanha a água com galerias de madeira sobre o rio, e as ruas entre ela e o castelo são íngremes e de pedra. A Weißgerbergasse é o canto mais preservado da cidade velha, e curta o bastante para percorrer duas vezes sem notar.",
+          "de": "Die Burg ist der höchste Punkt und der Grund für den Weg. Vom Hof laufen die roten Ziegeldächer davon, und das Tiergärtnertor darunter wirkt wie ein Tor im Modell. Beim Abstieg begleitet die Weißgerbergasse das Wasser, mit hölzernen Galerien über dem Fluss, und die Gassen dazwischen sind steil und gepflastert. Die Weißgerbergasse ist die am besten erhaltene Ecke der Altstadt und kurz genug, um sie zweimal zu gehen, ohne es zu merken."
+        },
+        {
+          "en": "From the station the U1 runs one stop to Lorenzkirche, and the Hauptmarkt is five minutes further on foot across the river. The whole old town fits inside a circle of two kilometres, so you can drink in one quarter and sleep in another without a taxi. That is the main practical fact about Nuremberg. Trams and buses fill the gaps, but inside the walls you will not need them.",
+          "pt": "Da estação, a linha U1 vai uma parada até Lorenzkirche, e a Hauptmarkt fica a cinco minutos a pé, cruzando o rio. A cidade velha inteira cabe num círculo de dois quilômetros, então dá para beber num bairro e dormir em outro sem táxi. Esse é o dado prático principal sobre Nuremberg. Bondes e ônibus cobrem as distâncias, mas dentro das muralhas você não vai precisar deles.",
+          "de": "Vom Bahnhof fährt die U1 eine Station bis Lorenzkirche, von dort sind es fünf Gehminuten über den Fluss zum Hauptmarkt. Die ganze Altstadt passt in einen Kreis von zwei Kilometern, man kann also im einen Viertel trinken und im anderen schlafen, ohne Taxi. Das ist die wichtigste praktische Tatsache über Nürnberg. Straßenbahnen und Busse schließen die Lücken, innerhalb der Mauern braucht man sie aber nicht."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "A beer city before Munich",
+        "pt": "Uma cidade de cerveja antes de Munique",
+        "de": "Bierstadt vor München"
+      },
+      "p": [
+        {
+          "en": "In 1303 the council ruled that only barley could go into beer, two hundred years before the Bavarian Reinheitsgebot, and in 1380 it ordered every brewer to dig his own cellar to a fixed depth and width. The cellars grew into a labyrinth of up to four storeys, covering 25,000 square metres, at a constant eight to twelve degrees. The council inspected the works, and a brewer whose pillars did not stand over one another was punished for it.",
+          "pt": "Em 1303, o conselho determinou que só cevada podia entrar na cerveja, duzentos anos antes do Reinheitsgebot bávaro, e em 1380 ordenou que cada cervejeiro cavasse o próprio porão com profundidade e largura fixas. Os porões cresceram num labirinto de até quatro andares, cobrindo 25 mil metros quadrados, entre oito e doze graus constantes. O conselho fiscalizava as obras, e o cervejeiro cujos pilares não ficassem uns sobre os outros era punido.",
+          "de": "1303 verfügte der Rat, dass nur Gerste ins Bier darf, zweihundert Jahre vor dem bayerischen Reinheitsgebot, und 1380 musste jeder Brauer einen eigenen Keller in festgelegter Tiefe und Breite graben. Daraus wurde ein Labyrinth von bis zu vier Geschossen auf 25.000 Quadratmetern, bei konstant acht bis zwölf Grad. Der Rat kontrollierte die Arbeiten, und ein Brauer, dessen Pfeiler nicht übereinander standen, wurde dafür bestraft."
+        },
+        {
+          "en": "In the late Middle Ages the city had up to 42 breweries, and Nuremberg remained Bavaria's leading beer city well into the nineteenth century, ahead of Munich. The first German railway, from Nuremberg to Fürth in 1835, carried barrels of it as freight. Then the red beer went under: paler lagers and wheat beer were easier to brew and easier to sell, and the style disappeared. In the war the cellars were fitted out as air-raid shelters and held tens of thousands of people.",
+          "pt": "No fim da Idade Média, a cidade tinha até 42 cervejarias, e Nuremberg continuou sendo a principal cidade cervejeira da Baviera até bem entrado o século XIX, à frente de Munique. A primeira ferrovia alemã, de Nuremberg a Fürth em 1835, levou barris dela como carga. Depois a cerveja vermelha afundou: lagers claras e cerveja de trigo eram mais fáceis de produzir e de vender, e o estilo sumiu. Na guerra, os porões foram adaptados como abrigos antiaéreos e receberam dezenas de milhares de pessoas.",
+          "de": "Im späten Mittelalter gab es bis zu 42 Brauereien, und Nürnberg blieb bis weit ins 19. Jahrhundert Bayerns führende Bierstadt, vor München. Die erste deutsche Eisenbahn, 1835 von Nürnberg nach Fürth, hatte Fässer davon als Fracht. Dann ging das rote Bier unter: hellere Lager und Weizenbier waren einfacher zu brauen und zu verkaufen, der Stil verschwand. Im Krieg wurden die Keller zu Luftschutzbunkern ausgebaut und boten Zehntausenden Platz."
+        },
+        {
+          "en": "Altstadthof brought it back in 1984, in the house on Bergstraße that had been the Rotes Brauhaus. The cellars next door are open to visitors, and the tour ends with a glass in the brewery. That is the correct order: underground first, beer afterwards, and then the hill again if the evening is still young. The brewery keeps the same address, and the cellars beside it are the ones the council ordered in 1380.",
+          "pt": "A Altstadthof a trouxe de volta em 1984, na casa da Bergstraße que tinha sido a Rotes Brauhaus. Os porões ao lado estão abertos a visitantes, e a visita termina com um copo na cervejaria. A ordem é essa: primeiro o subsolo, depois a cerveja, e depois o morro de novo, se a noite ainda estiver no começo. A cervejaria mantém o mesmo endereço, e os porões ao lado são os que o conselho exigiu em 1380.",
+          "de": "Altstadthof hat es 1984 zurückgeholt, in dem Haus in der Bergstraße, das einst das Rote Brauhaus war. Die Keller nebenan sind zugänglich, die Führung endet mit einem Glas in der Brauerei. Das ist die richtige Reihenfolge: erst unter die Erde, dann das Bier, und danach noch einmal den Hügel hinauf, wenn der Abend jung ist. Die Brauerei hat dieselbe Adresse, und die Keller daneben sind die, die der Rat 1380 verlangte."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Sausages, markets, and the shape of a day",
+        "pt": "Linguiças, mercados e a forma do dia",
+        "de": "Bratwürste, Märkte und die Form eines Tages"
+      },
+      "p": [
+        {
+          "en": "Nuremberg's sausage is small, about twenty grams, and has been protected by EU law since 2003: only sausages made inside the city to the old recipe may carry the name. They come grilled, three at a time, in a roll — drei im Weggla — with mustard. The Bratwursthäusle at Rathausplatz 1 has been in the same trade since 1312, just behind the Hauptmarkt. The protected status covers the recipe and the size, not only the name, which is why the word means something specific here.",
+          "pt": "A linguiça de Nuremberg é pequena, cerca de vinte gramas, e é protegida por lei europeia desde 2003: só as feitas dentro da cidade, segundo a receita antiga, podem levar o nome. Vêm grelhadas, três de cada vez, num pão — drei im Weggla — com mostarda. O Bratwursthäusle, na Rathausplatz 1, está no mesmo ofício desde 1312, atrás da Hauptmarkt. O status protegido cobre a receita e o tamanho, não só o nome, e por isso a palavra significa algo específico aqui.",
+          "de": "Die Nürnberger Bratwurst ist klein, etwa zwanzig Gramm, und seit 2003 EU-weit geschützt: Nur innerhalb der Stadt nach altem Rezept hergestellte Würste dürfen den Namen tragen. Sie kommen gegrillt, drei auf einmal, im Weggla, mit Senf. Das Bratwursthäusle am Rathausplatz 1 betreibt dieses Handwerk seit 1312, gleich hinter dem Hauptmarkt. Der Schutz umfasst Rezept und Größe, nicht nur den Namen, deshalb bedeutet das Wort hier etwas Bestimmtes."
+        },
+        {
+          "en": "In December the Christkindlesmarkt takes over the Hauptmarkt, from the Friday before the first Advent until Christmas Eve. The Christkind, chosen every two years, opens it with a prologue from the gallery of the Frauenkirche. For the rest of the year the square is a vegetable market with tables in summer and the smell of roasted almonds only in memory. The stalls sell Lebkuchen and sausages, and the city has baked the first of those for centuries.",
+          "pt": "Em dezembro, o Christkindlesmarkt ocupa a Hauptmarkt, da sexta-feira antes do primeiro Advento até a véspera de Natal. O Christkind, escolhido a cada dois anos, abre a feira com um prólogo da galeria da Frauenkirche. No resto do ano, a praça é mercado de verduras, com mesas no verão e o cheiro de amêndoas torradas só na memória. As barracas vendem Lebkuchen e linguiças; o primeiro é especialidade da cidade há séculos.",
+          "de": "Im Dezember übernimmt der Christkindlesmarkt den Hauptmarkt, vom Freitag vor dem ersten Advent bis Heiligabend. Das Christkind, alle zwei Jahre gewählt, eröffnet ihn mit einem Prolog von der Empore der Frauenkirche. Sonst ist der Platz ein Gemüsemarkt, im Sommer mit Tischen und dem Geruch von gebrannten Mandeln nur in der Erinnerung. An den Ständen gibt es Lebkuchen und Bratwürste, und das erste davon backt die Stadt seit Jahrhunderten."
+        },
+        {
+          "en": "A day can be built around beer without much planning: Rotbier at the Altstadthof in the afternoon, the cellar tour at 17:30, then Schanzenbräu on the hill or the Tucher Mautkeller in the Mauthalle, a sandstone building from 1489, for the evening. Between them there is time for the castle and a plate of sausages. With one evening only, spend it at the Altstadthof and walk up to the castle afterwards in the dark.",
+          "pt": "Dá para montar um dia em torno da cerveja sem muito planejamento: Rotbier na Altstadthof à tarde, a visita aos porões às 17h30, depois a Schanzenbräu no alto ou o Tucher Mautkeller na Mauthalle, um prédio de arenito de 1489, à noite. Entre uma coisa e outra sobra tempo para o castelo e um prato de linguiças. Com apenas uma noite, passe-a na Altstadthof e suba ao castelo depois, no escuro.",
+          "de": "Ein Tag lässt sich ohne viel Planung um das Bier bauen: nachmittags Rotbier im Altstadthof, um 17.30 Uhr die Kellerführung, abends dann Schanzenbräu auf dem Hügel oder der Tucher Mautkeller in der Mauthalle, einem Sandsteinbau von 1489. Dazwischen bleibt Zeit für die Burg und einen Teller Bratwürste. Mit nur einem Abend: im Altstadthof bleiben und danach im Dunkeln zur Burg hinaufgehen."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Original Nürnberger Rotbier at the Altstadthof — copper-coloured, 5.2%, and the reason the style exists again.",
+      "pt": "Original Nürnberger Rotbier na Altstadthof — cor de cobre, 5,2%, e o motivo de o estilo existir de novo.",
+      "de": "Original Nürnberger Rotbier im Altstadthof — kupferfarben, 5,2 %, und der Grund, warum es den Stil wieder gibt."
+    },
+    {
+      "en": "Tucher Rotbier in the vaulted Mautkeller, if you want the same colour in a bigger room.",
+      "pt": "Tucher Rotbier no abobadado Mautkeller, se quiser a mesma cor numa sala maior.",
+      "de": "Tucher Rotbier im gewölbten Mautkeller, wenn es dieselbe Farbe in größerem Raum sein soll."
+    },
+    {
+      "en": "Schanzenbräu Helles, unfiltered, in the taproom on the hill.",
+      "pt": "Schanzenbräu Helles, não filtrada, no salão no alto do morro.",
+      "de": "Schanzenbräu Helles, ungefiltert, im Ausschank auf dem Hügel."
+    },
+    {
+      "en": "The house Pils at Barfüßer by the river, with the copper kettles in the room.",
+      "pt": "O Pils da casa na Barfüßer, à beira do rio, com as caldeiras de cobre na sala.",
+      "de": "Das Haus-Pils im Barfüßer am Fluss, mit den Kupferkesseln im Raum."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Drei im Weggla: three grilled sausages in a roll with mustard, at the Bratwursthäusle behind the Hauptmarkt.",
+      "pt": "Drei im Weggla: três linguiças grelhadas num pão com mostarda, no Bratwursthäusle atrás da Hauptmarkt.",
+      "de": "Drei im Weggla: drei gegrillte Bratwürste im Weck mit Senf, im Bratwursthäusle hinter dem Hauptmarkt."
+    },
+    {
+      "en": "Blaue Zipfel, sausages in a vinegar broth, at the Altstadthof, where the red beer goes into the stock.",
+      "pt": "Blaue Zipfel, linguiças em caldo de vinagre, na Altstadthof, onde a cerveja vermelha entra no caldo.",
+      "de": "Blaue Zipfel, Bratwürste im Essigsud, im Altstadthof, wo das rote Bier in die Brühe kommt."
+    },
+    {
+      "en": "Schäufele with red beer sauce and a dumpling: pork shoulder, crackling, enough for a long afternoon.",
+      "pt": "Schäufele com molho de cerveja vermelha e um bolinho: paleta de porco, pele crocante, o suficiente para uma tarde longa.",
+      "de": "Schäufele in Rotbiersoße mit Knödel: Schweineschulter, Kruste, genug für einen langen Nachmittag."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The tour Rotes Bier in tiefen Kellern leaves daily at 17:30 from Bergstraße 19, in front of the brewery shop. It takes about an hour and ends with a tasting.",
+      "pt": "A visita Rotes Bier in tiefen Kellern sai todos os dias às 17h30 da Bergstraße 19, diante da loja da cervejaria. Dura cerca de uma hora e termina com degustação.",
+      "de": "Die Führung „Rotes Bier in tiefen Kellern“ startet täglich um 17.30 Uhr in der Bergstraße 19 vor dem Brauereiladen. Sie dauert etwa eine Stunde und endet mit einer Probe."
+    },
+    {
+      "en": "The cellars are not barrier-free and the passages are low. Watch your head, and wear something you do not mind getting dusty.",
+      "pt": "Os porões não têm acessibilidade e as passagens são baixas. Cuidado com a cabeça e use algo que possa sujar de poeira.",
+      "de": "Die Keller sind nicht barrierefrei, die Gänge sind niedrig. Kopf einziehen, und Kleidung anziehen, die staubig werden darf."
+    },
+    {
+      "en": "Tickets come from the brewery shop or the tourist office. Audio guides are available in several languages, Portuguese among them.",
+      "pt": "Os ingressos saem na loja da cervejaria ou no posto de turismo. Há audioguias em vários idiomas, inclusive português.",
+      "de": "Tickets gibt es im Brauereiladen oder in der Tourist Information. Audioguides gibt es in mehreren Sprachen, auch Portugiesisch."
+    },
+    {
+      "en": "The Christmas market opens on the Friday before the first Advent and closes at 14:00 on 24 December.",
+      "pt": "A feira de Natal abre na sexta-feira antes do primeiro Advento e fecha às 14h em 24 de dezembro.",
+      "de": "Der Christkindlesmarkt öffnet am Freitag vor dem ersten Advent und schließt am 24. Dezember um 14 Uhr."
+    },
+    {
+      "en": "Most of what is named here is within fifteen minutes of the Hauptmarkt on foot, so leave the car at the hotel.",
+      "pt": "Quase tudo o que está aqui fica a quinze minutos a pé da Hauptmarkt, então deixe o carro no hotel.",
+      "de": "Das meiste hier Genannte liegt fünfzehn Gehminuten vom Hauptmarkt entfernt, das Auto kann im Hotel bleiben."
+    }
+  ],
+  "links": [
+    {
+      "label": "Hausbrauerei Altstadthof",
+      "url": "https://hausbrauerei-altstadthof.de/"
+    },
+    {
+      "label": "Historische Felsengänge",
+      "url": "https://www.historische-felsengaenge.de/"
+    },
+    {
+      "label": "Nürnberg tourism — red beer",
+      "url": "https://tourismus.nuernberg.de/geniessen/spezialitaeten/bier/rotes-bier-in-tiefen-kellern/"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "slug": "hofbrauhaus-berchtesgaden",
+  "type": "brewery",
+  "name": "Hofbrauhaus Berchtesgaden",
+  "where": "Berchtesgaden, Germany",
+  "coords": [
+    47.6346,
+    13.0072
+  ],
+  "span": 0.14,
+  "subtitle_en": "The valley's own brewery, in princely hands since 1645",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Hofbrauhaus+Berchtesgaden+Br%C3%A4uhausstra%C3%9Fe+15",
+  "trips": [
+    "2021",
+    "2024"
+  ],
+  "related": [
+    "berchtesgaden",
+    "trip-2021",
+    "trip-2024",
+    "munich"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first documented",
+        "pt": "primeiro documento",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "1610",
+        "pt": "1610",
+        "de": "1610"
+      }
+    },
+    {
+      "k": {
+        "en": "Hofbräuhaus from",
+        "pt": "Hofbräuhaus desde",
+        "de": "Hofbräuhaus ab"
+      },
+      "v": {
+        "en": "1645",
+        "pt": "1645",
+        "de": "1645"
+      }
+    },
+    {
+      "k": {
+        "en": "private since",
+        "pt": "privada desde",
+        "de": "privat seit"
+      },
+      "v": {
+        "en": "1808",
+        "pt": "1808",
+        "de": "1808"
+      }
+    },
+    {
+      "k": {
+        "en": "rebuilt",
+        "pt": "reconstruída",
+        "de": "neu gebaut"
+      },
+      "v": {
+        "en": "1906–07",
+        "pt": "1906–07",
+        "de": "1906–07"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Berchtesgaden had no brewery of its own until 1645, when the prince-provost bought a property below the castle and built one. The reason was wine: an inquiry had found the valley drinking imported wine instead of beer. Four centuries later the brewery still supplies the valley, and its Helles is on tap in almost every pub and hut.",
+    "pt": "Berchtesgaden não tinha cervejaria própria até 1645, quando o príncipe-prior comprou uma propriedade abaixo do castelo e construiu uma. O motivo era o vinho: uma investigação descobrira que o vale bebia vinho importado em vez de cerveja. Quatro séculos depois, a cervejaria ainda abastece o vale, e seu Helles está em quase todo bar e cabana.",
+    "de": "Berchtesgaden hatte keine eigene Brauerei, bis der Fürstpropst 1645 ein Anwesen unterhalb des Schlosses kaufte und eine baute. Der Grund war der Wein: Eine Untersuchung hatte ergeben, dass das Tal importierten Wein statt Bier trank. Vier Jahrhunderte später beliefert die Brauerei das Tal noch immer, und ihr Helles läuft in fast jeder Wirtschaft und auf jeder Hütte."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "A brewery against wine",
+        "pt": "Uma cervejaria contra o vinho",
+        "de": "Eine Brauerei gegen den Wein"
+      },
+      "p": [
+        {
+          "en": "Until the seventeenth century the court of the prince-provost bought its beer from Kaltenhausen, near Salzburg, because there was no brewery in the valley. An inquiry in 1614 found that the population drank mainly imported wine, which was expensive and left the money outside the territory. Beer, brewed at home, was the cheaper and more patriotic answer. For a small territory that was a statement: the prince-provost was buying independence from Salzburg's beer.",
+          "pt": "Até o século XVII, a corte do príncipe-prior comprava a cerveja em Kaltenhausen, perto de Salzburgo, porque não havia cervejaria no vale. Uma investigação em 1614 constatou que a população bebia sobretudo vinho importado, caro e que levava o dinheiro para fora. Cerveja feita em casa era a resposta mais barata e mais patriótica. Para um território pequeno, era uma declaração: o príncipe-prior comprava independência da cerveja de Salzburgo.",
+          "de": "Bis ins 17. Jahrhundert kaufte der Hof des Fürstpropsts sein Bier in Kaltenhausen bei Salzburg, weil es im Tal keine Brauerei gab. Eine Untersuchung von 1614 ergab, dass die Bevölkerung vor allem importierten Wein trank, teuer und mit dem Geld außer Landes. Selbst gebrautes Bier war die billigere und patriotischere Antwort. Für ein kleines Territorium war das ein Zeichen: Der Fürstpropst kaufte sich vom Salzburger Bier frei."
+        },
+        {
+          "en": "In 1645 Prince-Provost Ferdinand of Bavaria acquired the Preustat zu Pfister, below the royal castle, and built the Hofbräuhaus there. The brewery is documented from 1610, so a brewhouse already stood on the site; what Ferdinand added was the court's own works, with the right to supply the territory. The Hof in the name dates from that arrangement. The site has not moved since; only the buildings are younger.",
+          "pt": "Em 1645, o príncipe-prior Ferdinand da Baviera adquiriu a Preustat zu Pfister, abaixo do castelo real, e construiu ali o Hofbräuhaus. A cervejaria é documentada desde 1610, então já havia uma casa de brassagem no local; Ferdinand acrescentou a cervejaria da corte, com o direito de abastecer o território. O Hof do nome vem daí. O lugar não mudou desde então; só os prédios são mais novos.",
+          "de": "1645 erwarb Fürstpropst Ferdinand von Bayern die Preustat zu Pfister unterhalb des Königlichen Schlosses und baute dort das Hofbräuhaus. Belegt ist die Brauerei ab 1610, ein Sudhaus stand also schon; Ferdinand fügte das eigene Werk des Hofes hinzu, mit dem Recht, das Territorium zu versorgen. Das Hof im Namen stammt aus dieser Zeit. Der Standort ist seither derselbe, nur die Gebäude sind jünger."
+        },
+        {
+          "en": "Output at the time was around 7,000 hectolitres a year, which for a valley of a few thousand people was a serious industry. The brewery also bought two beer houses with the property, one of them the Bier Adam on the Marktplatz, which is still pouring. That is how a brewery works in a small place: it owns the taps. The Bier Adam is older than the brewery that bought it: it appears in a purchase letter of 1546.",
+          "pt": "A produção na época era de cerca de 7 mil hectolitros por ano, o que, para um vale de alguns milhares de pessoas, era indústria séria. Com a propriedade, a cervejaria comprou também duas casas de cerveja, uma delas o Bier Adam, na Marktplatz, que continua servindo. É assim que uma cervejaria funciona num lugar pequeno: ela é dona das torneiras. O Bier Adam é mais antigo que a cervejaria que o comprou: aparece numa escritura de compra de 1546.",
+          "de": "Der Ausstoß lag damals bei rund 7.000 Hektolitern im Jahr, für ein Tal mit ein paar tausend Menschen eine ernste Industrie. Mit dem Anwesen kaufte die Brauerei zwei Bierhäuser, eines davon der Bier Adam am Marktplatz, der noch heute zapft. So arbeitet eine Brauerei an einem kleinen Ort: Sie besitzt die Zapfhähne. Der Bier Adam ist älter als die Brauerei, die ihn kaufte: Er taucht in einem Kaufbrief von 1546 auf."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Private since 1808",
+        "pt": "Privada desde 1808",
+        "de": "Privat seit 1808"
+      },
+      "p": [
+        {
+          "en": "The prince-provost's territory was secularised in 1803, and the brewery passed to Austria in 1805. In 1808 it was auctioned. The buyer was Anton Wurm, a hop merchant, and the brewery stayed with his family until 1833. Then came Haller and Wannerstorfer, and the Wannerstorfers held it, through changes of name, until 1970. The brewery has been privately held ever since, which is unusual for a house with a Hof in its name.",
+          "pt": "O território do príncipe-prior foi secularizado em 1803, e a cervejaria passou para a Áustria em 1805. Em 1808 foi leiloada. O comprador foi Anton Wurm, comerciante de lúpulo, e a cervejaria ficou com a família dele até 1833. Depois vieram Haller e Wannerstorfer, e os Wannerstorfer a mantiveram, entre mudanças de nome, até 1970. A cervejaria é privada desde então, o que é incomum para uma casa com Hof no nome.",
+          "de": "Das Territorium des Fürstpropsts wurde 1803 säkularisiert, 1805 ging die Brauerei an Österreich. 1808 wurde sie versteigert. Käufer war Anton Wurm, ein Hopfenhändler, und die Brauerei blieb bis 1833 bei seiner Familie. Dann kamen Haller und Wannerstorfer, und die Wannerstorfers hielten sie, über Namenswechsel hinweg, bis 1970. Damit endete ein Jahrhundert Familienbesitz. Privat ist sie allerdings schon seit 1808, ungewöhnlich für ein Haus mit Hof im Namen."
+        },
+        {
+          "en": "Rudolf Kriß senior rebuilt the brewery and the Bräustüberl in 1906 and 1907, and the buildings have survived almost unchanged; 1910 is given as the founding year of the pub as it stands today. Thurn und Taxis bought the business in 1970, Spaten-Löwenbräu held it from 1989 to 2008, and since then it has belonged to Sedlmayr Grund und Immobilien and the managing director. The Wannerstorfers had run it for more than 130 years by then, and the sale ended that.",
+          "pt": "Rudolf Kriß senior reconstruiu a cervejaria e o Bräustüberl em 1906 e 1907, e os prédios sobreviveram quase intactos; 1910 é dado como o ano de fundação do pub como ele é hoje. A Thurn und Taxis comprou o negócio em 1970, a Spaten-Löwenbräu o teve de 1989 a 2008, e desde então pertence à Sedlmayr Grund und Immobilien e ao diretor-gerente. Os Wannerstorfer já a administravam havia mais de 130 anos, e a venda encerrou isso.",
+          "de": "Rudolf Kriß senior baute Brauerei und Bräustüberl 1906 und 1907 neu, die Gebäude sind fast unverändert erhalten; 1910 gilt als Gründungsjahr des heutigen Wirtshauses. 1970 kaufte Thurn und Taxis das Unternehmen, von 1989 bis 2008 gehörte es zu Spaten-Löwenbräu, seither der Sedlmayr Grund und Immobilien und dem Betriebsleiter. Die Wannerstorfers führten sie damals seit über 130 Jahren, der Verkauf beendete das."
+        },
+        {
+          "en": "None of this shows in the glass, and that is the point of a valley brewery. It stayed small enough to belong to the place, kept buying malt and hops as a house of its size does, and kept the same beer in the same pubs. Almost every Wirtshaus and Alm in the five communes pours it, and there is a folk song about exactly that. The delivery radius is the valley and a little beyond, which is why the beer tastes fresher here than in a city.",
+          "pt": "Nada disso aparece no copo, e é justamente esse o sentido de uma cervejaria de vale. Ela ficou pequena o bastante para pertencer ao lugar, continuou comprando malte e lúpulo como uma casa do seu tamanho, e manteve a mesma cerveja nos mesmos bares. Quase toda Wirtshaus e Alm das cinco comunas a serve, e há uma canção popular exatamente sobre isso. O raio de entrega é o vale e um pouco além, e por isso a cerveja sabe mais fresca aqui do que numa cidade.",
+          "de": "Nichts davon schmeckt man, und genau das ist der Sinn einer Talbrauerei. Sie blieb klein genug, um zum Ort zu gehören, kaufte Malz und Hopfen weiter wie ein Haus dieser Größe, und ließ dasselbe Bier in denselben Wirtschaften. Fast jedes Wirtshaus und jede Alm in den fünf Gemeinden zapft es, und es gibt ein Volkslied genau darüber. Das Liefergebiet ist das Tal und ein Stück darüber hinaus, deshalb schmeckt das Bier hier frischer als in einer Stadt."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The beer and the room",
+        "pt": "A cerveja e a sala",
+        "de": "Das Bier und der Raum"
+      },
+      "p": [
+        {
+          "en": "The core is Helles and Dunkel, with a Pils, a Festbier in autumn and a Böckei, a Christmas bock, in Advent. There is a Königsseer Helles for the lake end of the valley, a Radler, and a Pfiff. Judge the brewery by the Helles: pale, softly bitter, and built to be drunk in quantity after a walk. The Helles is the one you will see on every table in the valley.",
+          "pt": "O centro é Helles e Dunkel, com um Pils, um Festbier no outono e um Böckei, bock de Natal, no Advento. Há um Königsseer Helles para o lado do lago, um Radler e um Pfiff. Julgue a cervejaria pelo Helles: claro, amargor suave, feito para beber em quantidade depois de uma caminhada. O Helles é o que se vê em todas as mesas do vale.",
+          "de": "Der Kern ist Helles und Dunkel, dazu ein Pils, ein Festbier im Herbst und ein Böckei, ein Weihnachtsbock, im Advent. Es gibt ein Königsseer Helles für die Seeseite des Tals, ein Radler und einen Pfiff. An der Brauerei misst man das Helles: hell, mild bitter, gemacht, um nach einer Wanderung in Mengen getrunken zu werden. Das Helles steht im Tal auf jedem Tisch."
+        },
+        {
+          "en": "The Bräustüberl next door, at Bräuhausstraße 13, is the room that belongs to the beer. Walter Bankhammer took it on in 2002 and closes it on 3 January 2027, which is worth knowing before you plan an evening around it. Until then it is the best place in town to drink this beer where it is made. The Bankhammers are moving back to their two houses in Salzburg, which is where the regulars will follow.",
+          "pt": "O Bräustüberl ao lado, na Bräuhausstraße 13, é a sala que pertence à cerveja. Walter Bankhammer assumiu em 2002 e fecha em 3 de janeiro de 2027, o que vale saber antes de planejar uma noite em torno dele. Até lá, é o melhor lugar da cidade para beber essa cerveja onde ela é feita. Os Bankhammer voltam para as duas casas que têm em Salzburgo, e é para lá que os habitués vão seguir.",
+          "de": "Das Bräustüberl nebenan, Bräuhausstraße 13, ist der Raum, der zu diesem Bier gehört. Walter Bankhammer übernahm es 2002 und schließt es am 3. Januar 2027 — gut zu wissen, bevor man einen Abend darum plant. Bis dahin ist es der beste Ort im Ort, um dieses Bier dort zu trinken, wo es gebraut wird. Die Bankhammers gehen zurück in ihre zwei Häuser in Salzburg, und dorthin werden die Stammgäste folgen."
+        },
+        {
+          "en": "The brewery shop sells bottles and crates, and the beer travels no further than it has to. In a valley where the same beer is in every pub, the difference is freshness and the view: a Helles at 600 metres, with the Watzmann in front of you, is a different drink from the same bottle at home. The shop also sells glasses and the usual brewery merchandise, which is useful if the Helles grows on you.",
+          "pt": "A loja da cervejaria vende garrafas e caixas, e a cerveja não viaja mais do que o necessário. Num vale onde a mesma cerveja está em todo bar, a diferença é o frescor e a vista: um Helles a 600 metros, com o Watzmann à frente, é outra bebida comparado à mesma garrafa em casa. A loja também vende copos e os produtos habituais da casa, útil se o Helles conquistar você.",
+          "de": "Der Brauereiladen verkauft Flaschen und Kästen, und das Bier reist nicht weiter als nötig. In einem Tal, in dem dasselbe Bier in jeder Wirtschaft steht, sind Frische und Aussicht der Unterschied: ein Helles auf 600 Metern, den Watzmann vor sich, ist ein anderes Getränk als dieselbe Flasche zu Hause. Der Laden verkauft auch Gläser und das übliche Zubehör, nützlich, wenn das Helles einem ans Herz wächst."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Berchtesgadener Helles — pale, softly bitter, the valley's everyday beer.",
+      "pt": "Berchtesgadener Helles — claro, amargor suave, a cerveja de todo dia do vale.",
+      "de": "Berchtesgadener Helles — hell, mild bitter, das Alltagsbier des Tals."
+    },
+    {
+      "en": "Berchtesgadener Dunkel — maltier, and better once the valley has gone dark.",
+      "pt": "Berchtesgadener Dunkel — mais maltada, e melhor quando o vale escurece.",
+      "de": "Berchtesgadener Dunkel — malziger, und besser, wenn das Tal dunkel wird."
+    },
+    {
+      "en": "Böckei, the Christmas bock, if you are here in Advent.",
+      "pt": "Böckei, o bock de Natal, se estiver aqui no Advento.",
+      "de": "Böckei, das Weihnachtsbock, wer im Advent hier ist."
+    },
+    {
+      "en": "Königsseer Helles at the lake, so the label matches the view.",
+      "pt": "Königsseer Helles no lago, para o rótulo combinar com a vista.",
+      "de": "Königsseer Helles am See, damit das Etikett zur Aussicht passt."
+    }
+  ],
+  "eat": [
+    {
+      "en": "At the Bräustüberl, until 3 January 2027: plain Bavarian cooking, and the brewery on the other side of the wall.",
+      "pt": "No Bräustüberl, até 3 de janeiro de 2027: cozinha bávara simples, e a cervejaria do outro lado da parede.",
+      "de": "Im Bräustüberl, bis 3. Januar 2027: schlichte bayerische Küche, die Brauerei auf der anderen Seite der Wand."
+    },
+    {
+      "en": "At the Bier Adam on the Marktplatz, one of the two beer houses the brewery bought in 1645 and still the oldest tavern in the valley.",
+      "pt": "No Bier Adam, na Marktplatz, uma das duas casas de cerveja compradas pela cervejaria em 1645 e ainda a taverna mais antiga do vale.",
+      "de": "Im Bier Adam am Marktplatz, einem der zwei Bierhäuser, die die Brauerei 1645 erwarb, und noch immer die älteste Wirtschaft des Tals."
+    },
+    {
+      "en": "Käsespätzle on an Alm after the walk down, with the same beer you started with.",
+      "pt": "Käsespätzle numa Alm na descida, com a mesma cerveja do começo.",
+      "de": "Käsespätzle auf einer Alm beim Abstieg, mit demselben Bier wie am Anfang."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The Bräustüberl closes on 3 January 2027. The brewery carries on, and the shop keeps selling.",
+      "pt": "O Bräustüberl fecha em 3 de janeiro de 2027. A cervejaria continua, e a loja segue vendendo.",
+      "de": "Das Bräustüberl schließt am 3. Januar 2027. Die Brauerei bleibt, der Laden verkauft weiter."
+    },
+    {
+      "en": "The brewery is a working plant, not a visitor centre. The shop in Bräuhausstraße is where to ask.",
+      "pt": "A cervejaria é uma cervejaria em atividade, não um centro de visitantes. A loja na Bräuhausstraße é o lugar para perguntar.",
+      "de": "Die Brauerei ist ein laufender Betrieb, kein Besucherzentrum. Fragen kann man im Laden in der Bräuhausstraße."
+    },
+    {
+      "en": "The Königssee is five kilometres away; bus 841 runs from the station forecourt about every half hour.",
+      "pt": "O Königssee fica a cinco quilômetros; o ônibus 841 sai do pátio da estação a cada meia hora.",
+      "de": "Der Königssee liegt fünf Kilometer entfernt; der Bus 841 fährt etwa alle halbe Stunde vom Bahnhofsvorplatz."
+    },
+    {
+      "en": "The beer is in every pub and hut in the five valley communes, so you will not have to look for it.",
+      "pt": "A cerveja está em todo bar e cabana das cinco comunas do vale, então não será preciso procurar.",
+      "de": "Das Bier gibt es in jeder Wirtschaft und auf jeder Hütte der fünf Talgemeinden, man muss nicht suchen."
+    },
+    {
+      "en": "In Advent, ask for the Böckei; it is the seasonal worth carrying home.",
+      "pt": "No Advento, peça o Böckei; é a sazonal que vale levar para casa.",
+      "de": "Im Advent nach dem Böckei fragen; das ist das Saisonbier, das sich zum Mitnehmen lohnt."
+    }
+  ],
+  "links": [
+    {
+      "label": "Hofbrauhaus Berchtesgaden",
+      "url": "https://hofbrauhaus-berchtesgaden.de/"
+    },
+    {
+      "label": "Bräustüberl (closing notice)",
+      "url": "https://braeustueberl-berchtesgaden.de/"
+    },
+    {
+      "label": "Berchtesgaden tourism",
+      "url": "https://www.berchtesgaden.de/pois/hofbrauhaus-berchtesgaden"
+    }
+  ]
+}

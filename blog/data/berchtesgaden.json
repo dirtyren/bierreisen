@@ -1,0 +1,232 @@
+{
+  "slug": "berchtesgaden",
+  "type": "city",
+  "name": "Berchtesgaden",
+  "where": "Bavaria, Germany",
+  "coords": [
+    47.6326,
+    13.0006
+  ],
+  "span": 0.45,
+  "subtitle_en": "A valley with its own brewery and a lake at the end of it",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Berchtesgaden+Marktplatz",
+  "trips": [
+    "2021",
+    "2024"
+  ],
+  "related": [
+    "hofbrauhaus-berchtesgaden",
+    "munich",
+    "trip-2021",
+    "trip-2024"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first mentioned",
+        "pt": "primeira menção",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "1102–1105",
+        "pt": "1102–1105",
+        "de": "1102–1105"
+      }
+    },
+    {
+      "k": {
+        "en": "Königssee length",
+        "pt": "comprimento do Königssee",
+        "de": "Königssee Länge"
+      },
+      "v": {
+        "en": "7.2 km",
+        "pt": "7,2 km",
+        "de": "7,2 km"
+      }
+    },
+    {
+      "k": {
+        "en": "Königssee depth",
+        "pt": "profundidade",
+        "de": "Tiefe"
+      },
+      "v": {
+        "en": "190 m",
+        "pt": "190 m",
+        "de": "190 m"
+      }
+    },
+    {
+      "k": {
+        "en": "first electric boat",
+        "pt": "primeiro barco elétrico",
+        "de": "erstes Elektroboot"
+      },
+      "v": {
+        "en": "1909",
+        "pt": "1909",
+        "de": "1909"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Berchtesgaden is a market town in a bowl of mountains, with the Watzmann over the roofs and the Königssee twenty minutes down the road. It has brewed its own beer since the seventeenth century, and that brewery still supplies almost every pub and hut in the valley. People come for the lake; the valley is small enough to walk.",
+    "pt": "Berchtesgaden é uma vila de mercado numa bacia de montanhas, com o Watzmann acima dos telhados e o Königssee a vinte minutos de estrada. Produz a própria cerveja desde o século XVII, e essa cervejaria ainda abastece quase todos os bares e cabanas do vale. As pessoas vêm pelo lago; o vale é pequeno o bastante para percorrer a pé.",
+    "de": "Berchtesgaden ist ein Markt in einem Bergkessel, der Watzmann über den Dächern und der Königssee zwanzig Minuten die Straße hinunter. Seit dem 17. Jahrhundert braut der Ort sein eigenes Bier, und diese Brauerei beliefert noch fast jede Wirtschaft und jede Hütte im Tal. Die Leute kommen wegen des Sees; das Tal ist klein genug, um es zu Fuß zu fassen."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The market and the mountain",
+        "pt": "O mercado e a montanha",
+        "de": "Der Markt und der Berg"
+      },
+      "p": [
+        {
+          "en": "The centre is one long street and a square. On the Marktplatz the Stiftskirche stands on one side and the Bier Adam on the other, which calls itself the oldest beer tavern in the Berchtesgadener Land. The station is ten minutes downhill; the whole town is ten minutes wide, and everything in it is on a slope. Nothing in the centre is more than five minutes from the square.",
+          "pt": "O centro é uma rua comprida e uma praça. Na Marktplatz, a Stiftskirche fica de um lado e o Bier Adam do outro, que se apresenta como a taverna de cerveja mais antiga do Berchtesgadener Land. A estação fica a dez minutos ladeira abaixo; a cidade inteira tem dez minutos de largura, e tudo nela é inclinado. Nada no centro fica a mais de cinco minutos da praça.",
+          "de": "Das Zentrum ist eine lange Straße und ein Platz. Am Marktplatz steht die Stiftskirche auf der einen, der Bier Adam auf der anderen Seite, der sich die älteste Bierwirtschaft im Berchtesgadener Land nennt. Der Bahnhof liegt zehn Minuten bergab; der ganze Ort ist zehn Minuten breit, und alles darin liegt am Hang. Nichts im Zentrum ist mehr als fünf Minuten vom Platz entfernt."
+        },
+        {
+          "en": "Above the town the ground goes up fast: the Lockstein, the Kälberstein, then the Jenner and the Watzmann. The Watzmann's middle peak is 2,713 metres, and its east face drops almost 1,800 metres to the valley floor — the highest wall in the Eastern Alps. You do not need to climb anything to see it; it is there from the Marktplatz. From the Jenner, on the other side of the valley, the whole wall is visible at once.",
+          "pt": "Acima da cidade o terreno sobe rápido: o Lockstein, o Kälberstein, depois o Jenner e o Watzmann. O pico central do Watzmann tem 2.713 metros, e sua face leste cai quase 1.800 metros até o fundo do vale — a parede mais alta dos Alpes Orientais. Não é preciso escalar nada para vê-la; ela está lá da Marktplatz. Do Jenner, do outro lado do vale, a parede inteira aparece de uma vez.",
+          "de": "Über dem Ort steigt der Grund schnell an: Lockstein, Kälberstein, dann Jenner und Watzmann. Der Watzmann hat eine Mittelspitze von 2.713 Metern, seine Ostwand fällt fast 1.800 Meter in den Talboden — die höchste Wand der Ostalpen. Man muss nichts besteigen, um sie zu sehen; sie steht vom Marktplatz aus da. Vom Jenner auf der anderen Talseite ist die ganze Wand auf einmal zu sehen."
+        },
+        {
+          "en": "Summer fills the valley with walkers, and the buses to the lake run every half hour. Winter is quieter: the Christmas market sits on the Schlossplatz from the first Advent Sunday to Christmas Eve, and on 5 and 6 December the Buttnmandl walk through the streets in straw, which is worth rearranging an evening for. The Advent market is small, around fifty stalls, and it stays in the old streets instead of spreading.",
+          "pt": "O verão enche o vale de caminhantes, e os ônibus para o lago passam a cada meia hora. O inverno é mais quieto: a feira de Natal fica na Schlossplatz do primeiro domingo do Advento à véspera de Natal, e em 5 e 6 de dezembro os Buttnmandl percorrem as ruas vestidos de palha, o que vale reorganizar uma noite. O mercado de Advento é pequeno, cerca de cinquenta barracas, e fica nas ruas antigas em vez de se espalhar.",
+          "de": "Der Sommer füllt das Tal mit Wanderern, die Busse zum See fahren alle halbe Stunde. Der Winter ist ruhiger: Der Weihnachtsmarkt steht vom ersten Adventssonntag bis Heiligabend auf dem Schlossplatz, und am 5. und 6. Dezember ziehen die Buttnmandl in Strohgewändern durch die Gassen, wofür man einen Abend umstellen sollte. Der Adventsmarkt ist klein, rund fünfzig Stände, und bleibt in den alten Gassen, statt sich auszubreiten."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The lake",
+        "pt": "O lago",
+        "de": "Der See"
+      },
+      "p": [
+        {
+          "en": "The Königssee is 7.2 kilometres long and 190 metres deep, pressed between the Watzmann and the Hagengebirge. It looks like a fjord, and geologically it nearly is one: a glacial trough filled with water that counts among the cleanest in Germany. The steep sides mean there is no shore path — the lake is the road, and always has been. The lake freezes over only in very cold winters, roughly once a decade, and the boats stop when it does.",
+          "pt": "O Königssee tem 7,2 quilômetros de comprimento e 190 metros de profundidade, comprimido entre o Watzmann e o Hagengebirge. Parece um fiorde, e geologicamente quase é: um vale glacial cheio de água que está entre as mais limpas da Alemanha. As encostas íngremes não deixam caminho pela margem — o lago é a estrada, e sempre foi. O lago congela só em invernos muito frios, mais ou menos uma vez por década, e os barcos param quando isso acontece.",
+          "de": "Der Königssee ist 7,2 Kilometer lang und 190 Meter tief, zwischen Watzmann und Hagengebirge eingespannt. Er sieht aus wie ein Fjord, und geologisch ist er fast einer: eine Gletscherwanne mit Wasser, das zu den saubersten Deutschlands zählt. Die steilen Hänge lassen keinen Uferweg zu — der See ist die Straße, und war es immer. Der See friert nur in sehr kalten Wintern zu, etwa einmal pro Jahrzehnt, dann ruht die Schifffahrt."
+        },
+        {
+          "en": "The boats are electric and have been since July 1909. Eighteen of them run from the jetty at Schönau to St. Bartholomä, and halfway across the boatman plays a trumpet at the echo wall; the answer comes back once, sometimes twice. Private boats and diving are not permitted, which is part of why the water looks the way it does. The hulls were wood until 1998; the last three boats were built on steel.",
+          "pt": "Os barcos são elétricos desde julho de 1909. Dezoito deles saem do cais em Schönau até St. Bartholomä, e no meio do caminho o barqueiro toca um trompete contra a parede de eco; a resposta volta uma vez, às vezes duas. Barcos particulares e mergulho não são permitidos, e isso ajuda a explicar a cor da água. Os cascos eram de madeira até 1998; os três últimos barcos foram feitos de aço.",
+          "de": "Die Boote fahren elektrisch, seit Juli 1909. Achtzehn von ihnen pendeln vom Anleger in Schönau nach St. Bartholomä, und auf halber Strecke bläst der Bootsführer ein Flügelhorn gegen die Echowand; die Antwort kommt einmal zurück, manchmal zweimal. Private Boote und Tauchen sind nicht erlaubt, was zur Farbe des Wassers beiträgt. Bis 1998 waren die Rümpfe aus Holz, die letzten drei Boote wurden auf Stahl gebaut."
+        },
+        {
+          "en": "St. Bartholomä sits on a peninsula under the east face, with a pilgrimage church that got its dome in 1698. From the jetty the Malerwinkel path climbs to the viewpoint every photograph is taken from. The boats carry on to Salet, where a path leads up to the Obersee; the last boat back is the one to organise your day around. The site has been a pilgrimage since the twelfth century, longer than the dome has stood.",
+          "pt": "St. Bartholomä fica numa península sob a face leste, com uma igreja de peregrinação que ganhou a cúpula em 1698. Do cais, o caminho do Malerwinkel sobe até o mirante de onde saem todas as fotos. Os barcos seguem até Salet, de onde um caminho leva ao Obersee; o último barco de volta é o que organiza o seu dia. O lugar é destino de peregrinação desde o século XII, há mais tempo do que a cúpula.",
+          "de": "St. Bartholomä liegt auf einer Halbinsel unter der Ostwand, mit einer Wallfahrtskirche, die 1698 ihre Kuppel bekam. Vom Anleger steigt der Malerwinkelweg zum Aussichtspunkt, von dem jedes Foto gemacht wird. Die Boote fahren weiter nach Salet, von dort führt ein Weg zum Obersee; das letzte Boot zurück bestimmt den Tagesablauf. Der Ort ist seit dem 12. Jahrhundert Ziel von Wallfahrten, länger als die Kuppel steht."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Salt, and the rest of the valley",
+        "pt": "Sal e o resto do vale",
+        "de": "Salz und der Rest des Tals"
+      },
+      "p": [
+        {
+          "en": "Salt has been mined here since the twelfth century, and the mine is now a show mine. You go in on a small train, come down two miners' slides, and cross the underground Spiegelsee on a raft. It is twelve degrees down there all year, the guided tour lasts an hour, and with changing and queuing it takes two. The first tunnel was driven in 1517, which makes the workings older than the brewery above them.",
+          "pt": "O sal é extraído aqui desde o século XII, e a mina hoje é aberta a visitação. Entra-se num trenzinho, desce-se por dois escorregadores de mineiro e atravessa-se o Spiegelsee subterrâneo numa balsa. Lá embaixo faz doze graus o ano todo, a visita guiada dura uma hora, e com troca de roupa e fila leva duas horas. O primeiro túnel foi aberto em 1517, o que torna as galerias mais antigas que a cervejaria acima delas.",
+          "de": "Salz wird hier seit dem 12. Jahrhundert abgebaut, die Mine ist heute ein Besucherbergwerk. Man fährt mit der Grubenbahn ein, rutscht zwei Bergmannsrutschen hinunter und überquert den unterirdischen Spiegelsee auf einem Floß. Unten sind es ganzjährig zwölf Grad, die Führung dauert eine Stunde, mit Umkleiden und Anstehen zwei Stunden. Der erste Stollen wurde 1517 vorgetrieben, die Gruben sind also älter als die Brauerei im Ort."
+        },
+        {
+          "en": "The Rossfeld road climbs out of the valley in hairpins, and the Jenner cable car goes higher still, with the lake below and the Steinernes Meer on the horizon. In autumn the woods turn before the valley does. The Grassl distillery, which calls itself the oldest Enzian distillery in Germany, is on the edge of town and open to visitors. A signposted tour leads through the distillery and ends in a tasting room, which is the sensible order.",
+          "pt": "A estrada do Rossfeld sobe o vale em curvas fechadas, e o teleférico do Jenner vai mais alto, com o lago abaixo e o Steinernes Meer no horizonte. No outono, os bosques mudam de cor antes do vale. A destilaria Grassl, que se apresenta como a mais antiga destilaria de Enzian da Alemanha, fica na saída da cidade e recebe visitantes. Um percurso sinalizado leva pela destilaria e termina numa sala de degustação, que é a ordem sensata.",
+          "de": "Die Rossfeldstraße zieht in Kehren aus dem Tal, die Jennerbahn fährt noch höher, der See unten, das Steinerne Meer am Horizont. Im Herbst färben sich die Wälder früher als der Talboden. Die Brennerei Grassl, die sich die älteste Enzianbrennerei Deutschlands nennt, liegt am Ortsrand und ist zu besichtigen. Ein beschilderter Rundgang führt durch die Brennerei und endet im Verkostungsraum, was die vernünftige Reihenfolge ist."
+        },
+        {
+          "en": "The valley has five communes and one beer, which is a simpler arrangement than most beer regions manage. Berchtesgaden, Schönau, Bischofswiesen, Ramsau and Marktschellenberg all pour the same brewery, and the huts on the alms do too. It makes ordering easy and it makes the one brewery worth understanding. That is why the beer lists in the valley look the same, and why nobody argues about which brewery to drink.",
+          "pt": "O vale tem cinco municípios e uma cerveja, arranjo mais simples do que o de quase toda região cervejeira. Berchtesgaden, Schönau, Bischofswiesen, Ramsau e Marktschellenberg servem a mesma cervejaria, e as cabanas nos Alpes também. Isso facilita o pedido e faz com que a única cervejaria mereça atenção. É por isso que as cartas de cerveja do vale parecem iguais, e ninguém discute qual cervejaria beber.",
+          "de": "Das Tal hat fünf Gemeinden und ein Bier, eine einfachere Ordnung als in den meisten Bierregionen. Berchtesgaden, Schönau, Bischofswiesen, Ramsau und Marktschellenberg zapfen dieselbe Brauerei, die Hütten auf den Almen auch. Das macht das Bestellen leicht und die eine Brauerei interessant. Für zwei Tage reicht eine Brauerei vollkommen. Deshalb sehen die Bierkarten im Tal gleich aus, und niemand streitet darüber, welche Brauerei man trinkt."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "A Helles at the Hofbrauhaus, then a Dunkel — the valley's own beer, in the town that brews it.",
+      "pt": "Um Helles no Hofbrauhaus, depois um Dunkel — a cerveja do vale, na cidade que a produz.",
+      "de": "Ein Helles im Hofbrauhaus, dann ein Dunkel — das Bier des Tals, in dem Ort, der es braut."
+    },
+    {
+      "en": "Königsseer Helles by the lake, so the label matches the view.",
+      "pt": "Königsseer Helles à beira do lago, para o rótulo combinar com a vista.",
+      "de": "Königsseer Helles am See, damit das Etikett zur Aussicht passt."
+    },
+    {
+      "en": "Enzian at Grassl: not beer, but the local firewater and the right end to a cold walk.",
+      "pt": "Enzian na Grassl: não é cerveja, mas é o destilado local e o fim certo para uma caminhada no frio.",
+      "de": "Enzian bei Grassl: kein Bier, aber der hiesige Schnaps und der richtige Schluss für einen kalten Spaziergang."
+    },
+    {
+      "en": "A Böckei, the Christmas bock, if you are here in Advent.",
+      "pt": "Um Böckei, o bock de Natal, se estiver aqui no Advento.",
+      "de": "Ein Böckei, das Weihnachtsbock, wer im Advent hier ist."
+    }
+  ],
+  "eat": [
+    {
+      "en": "At the Bier Adam on the Marktplatz, the oldest beer tavern in the valley: roast pork, dumplings, and a table facing the square.",
+      "pt": "No Bier Adam, na Marktplatz, a taverna de cerveja mais antiga do vale: porco assado, bolinhos e uma mesa de frente para a praça.",
+      "de": "Im Bier Adam am Marktplatz, der ältesten Bierwirtschaft des Tals: Braten, Knödel und ein Tisch zum Platz hin."
+    },
+    {
+      "en": "Käsespätzle at a mountain hut after the lake, with the same beer you drank at the bottom.",
+      "pt": "Käsespätzle numa cabana de montanha depois do lago, com a mesma cerveja que você bebeu lá embaixo.",
+      "de": "Käsespätzle auf einer Hütte nach dem See, mit demselben Bier wie unten im Tal."
+    },
+    {
+      "en": "The Bräustüberl at the brewery, which closes as a pub on 3 January 2027 — go while it is still there.",
+      "pt": "O Bräustüberl na cervejaria, que fecha como pub em 3 de janeiro de 2027 — vá enquanto ainda existe.",
+      "de": "Das Bräustüberl an der Brauerei, das am 3. Januar 2027 als Wirtshaus schließt — hingehen, solange es noch da ist."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The bus to the Königssee leaves from the station forecourt about every half hour, and the guest card covers it.",
+      "pt": "O ônibus para o Königssee sai do pátio da estação a cada meia hora, e o cartão de hóspede cobre a viagem.",
+      "de": "Der Bus zum Königssee fährt etwa alle halbe Stunde vom Bahnhofsvorplatz, die Gästekarte deckt ihn ab."
+    },
+    {
+      "en": "The salt mine is one hour underground at twelve degrees. Bring a jacket and allow two hours in total.",
+      "pt": "A mina de sal é uma hora no subsolo a doze graus. Leve um casaco e reserve duas horas no total.",
+      "de": "Das Salzbergwerk ist eine Stunde unter Tage bei zwölf Grad. Jacke mitnehmen und insgesamt zwei Stunden einplanen."
+    },
+    {
+      "en": "Check the last boat back from Salet before walking to the Obersee. There is no other way out of the valley.",
+      "pt": "Confira o último barco de volta de Salet antes de caminhar até o Obersee. Não há outra saída do vale.",
+      "de": "Vor dem Weg zum Obersee die letzte Rückfahrt ab Salet prüfen. Einen anderen Weg aus dem Tal gibt es nicht."
+    },
+    {
+      "en": "The centre is small and steep; leave the car at the hotel or the station and walk.",
+      "pt": "O centro é pequeno e inclinado; deixe o carro no hotel ou na estação e ande.",
+      "de": "Das Zentrum ist klein und steil; das Auto am Hotel oder Bahnhof lassen und zu Fuß gehen."
+    },
+    {
+      "en": "In Advent the market is on the Schlossplatz, and the Buttnmandl come on 5 and 6 December.",
+      "pt": "No Advento, a feira fica na Schlossplatz, e os Buttnmandl aparecem em 5 e 6 de dezembro.",
+      "de": "Im Advent steht der Markt auf dem Schlossplatz, die Buttnmandl kommen am 5. und 6. Dezember."
+    }
+  ],
+  "links": [
+    {
+      "label": "Berchtesgaden tourism",
+      "url": "https://www.berchtesgaden.de/"
+    },
+    {
+      "label": "Königssee boats",
+      "url": "https://www.seenschifffahrt.de/koenigssee/"
+    },
+    {
+      "label": "Salt mine",
+      "url": "https://www.salzbergwerk.de/"
+    }
+  ]
+}

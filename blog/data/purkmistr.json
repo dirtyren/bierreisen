@@ -1,0 +1,245 @@
+{
+  "slug": "purkmistr",
+  "type": "brewery",
+  "name": "Purkmistr",
+  "where": "Plzeň-Černice, Czechia",
+  "coords": [
+    49.6989,
+    13.4142
+  ],
+  "span": 0.35,
+  "subtitle_en": "Brewery, hotel and a bath of beer on the edge of Plzeň",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Purkmistr+Selsk%C3%A1+n%C3%A1ves+21+Plze%C5%88-%C4%8Cernice",
+  "trips": [
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "plzen",
+    "pilsner-urquell",
+    "trip-2027",
+    "trip-2024"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing since",
+        "pt": "produzindo desde",
+        "de": "gebraut seit"
+      },
+      "v": {
+        "en": "2007",
+        "pt": "2007",
+        "de": "2007"
+      }
+    },
+    {
+      "k": {
+        "en": "from the centre",
+        "pt": "do centro",
+        "de": "vom Zentrum"
+      },
+      "v": {
+        "en": "6 km",
+        "pt": "6 km",
+        "de": "6 km"
+      }
+    },
+    {
+      "k": {
+        "en": "fermentation",
+        "pt": "fermentação",
+        "de": "Gärung"
+      },
+      "v": {
+        "en": "open vats",
+        "pt": "tinas abertas",
+        "de": "offene Bottiche"
+      }
+    },
+    {
+      "k": {
+        "en": "beer",
+        "pt": "cerveja",
+        "de": "Bier"
+      },
+      "v": {
+        "en": "unfiltered, unpasteurised",
+        "pt": "não filtrada, não pasteurizada",
+        "de": "ungefiltert, unpasteurisiert"
+      }
+    },
+    {
+      "k": {
+        "en": "brewery tour",
+        "pt": "visita à cervejaria",
+        "de": "Brauereitour"
+      },
+      "v": {
+        "en": "about 30 minutes",
+        "pt": "cerca de 30 minutos",
+        "de": "etwa 30 Minuten"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Purkmistr is a brewery, hotel and beer spa in a farmyard on the southern edge of Plzeň, brewing since 2007. The name is the old Czech word for a mayor, the man who ran the town council, which is a large title for a place with a bowling alley in the cellar. It works because everything is in one yard.",
+    "pt": "A Purkmistr é cervejaria, hotel e spa de cerveja num pátio rural na saída sul de Plzeň, produzindo desde 2007. O nome é a palavra tcheca antiga para prefeito, o homem que comandava o conselho da cidade, um título grande para um lugar com uma pista de boliche no porão. Funciona porque está tudo no mesmo pátio.",
+    "de": "Purkmistr ist Brauerei, Hotel und Bierspa in einem Hof am Südrand von Plzeň, gebraut wird seit 2007. Der Name ist das alte tschechische Wort für Bürgermeister, den Mann an der Spitze des Stadtrats, ein großer Titel für einen Ort mit einer Bowlingbahn im Keller. Es funktioniert, weil alles in einem Hof liegt."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "A farmyard with a brewhouse",
+        "pt": "Um pátio rural com uma cervejaria",
+        "de": "Ein Hof mit Sudhaus"
+      },
+      "p": [
+        {
+          "en": "The brewery occupies a historic farmyard in Černice, six kilometres from náměstí Republiky, and the yard does everything: brewing, a restaurant, a hotel, a spa, a place for motorhomes and three bowling lanes. It opened in 2007. The beer is fermented in open vats, left unfiltered and unpasteurised, and lagered in tanks; the range runs from light lagers through a 12° semi-dark to a 12° dark at 4.8%, with seasonals alongside.",
+          "pt": "A cervejaria ocupa um pátio rural histórico em Černice, seis quilômetros da náměstí Republiky, e o pátio faz tudo: cerveja, restaurante, hotel, spa, área para motorhomes e três pistas de boliche. Abriu em 2007. A cerveja fermenta em tinas abertas, fica não filtrada e não pasteurizada e matura em tanques; a linha vai de lagers claras a uma 12° meio escura e uma 12° escura de 4,8%, com sazonais ao lado.",
+          "de": "Die Brauerei sitzt in einem historischen Hof in Černice, sechs Kilometer von der náměstí Republiky, und der Hof macht alles: Brauen, Restaurant, Hotel, Spa, Stellplätze für Wohnmobile und drei Bowlingbahnen. Eröffnet wurde 2007. Das Bier gärt in offenen Bottichen, bleibt ungefiltert und unpasteurisiert und lagert in Tanks; die Reihe reicht von hellen Lagern über ein halbdunkles 12° bis zu einem dunklen 12° mit 4,8 %, dazu Saisonbiere."
+        },
+        {
+          "en": "Open fermentation is the old way: the yeast works in shallow vessels you can see into, and the beer is exposed to air in a way that closed tanks do not allow. Most Czech breweries gave it up for cylindrical tanks in the twentieth century because it is slower and harder to control. Here it is the point, along with Moravian malt, Czech hops and spring water, and the beer is served young enough that the difference is easy to taste.",
+          "pt": "A fermentação aberta é o método antigo: o fermento trabalha em tinas rasas, que se pode olhar por dentro, e a cerveja fica exposta ao ar de um jeito que os tanques fechados não permitem. Quase todas as cervejarias tchecas trocaram isso por tanques cilíndricos no século XX, porque é mais lento e mais difícil de controlar. Aqui é o ponto central, junto com malte da Morávia, lúpulo tcheco e água de fonte, e a cerveja é servida jovem o bastante para a diferença ser fácil de sentir.",
+          "de": "Offene Gärung ist der alte Weg: Die Hefe arbeitet in flachen Gefäßen, in die man hineinschauen kann, und das Bier steht auf eine Weise an der Luft, die geschlossene Tanks nicht zulassen. Die meisten tschechischen Brauereien gaben sie im 20. Jahrhundert für zylindrische Tanks auf, weil sie langsamer und schwerer zu steuern ist. Hier ist sie der Punkt, zusammen mit mährischem Malz, tschechischem Hopfen und Quellwasser, und das Bier wird jung genug ausgeschenkt, dass man den Unterschied leicht schmeckt."
+        },
+        {
+          "en": "The name is worth a sentence. A purkmistr was the burgomaster, the head of a town council in the Bohemian lands, and the word is still the Czech for mayor. Naming a brewery after him is a claim to civic seriousness, and the yard backs it up with the hotel, the restaurant and the spa rather than with flags and brass.",
+          "pt": "O nome merece uma frase. Um purkmistr era o burgomestre, o chefe do conselho municipal nas terras boêmias, e a palavra ainda é o tcheco para prefeito. Batizar uma cervejaria com o nome dele é uma reivindicação de seriedade cívica, e o pátio sustenta isso com o hotel, o restaurante e o spa, não com bandeiras e metais. O pátio já foi uma fazenda, e a fazenda ainda se vê nas paredes.",
+          "de": "Der Name verdient einen Satz. Ein Purkmistr war der Bürgermeister, der Kopf des Stadtrats in den böhmischen Ländern, und das Wort ist noch heute das tschechische für Bürgermeister. Eine Brauerei nach ihm zu benennen ist ein Anspruch auf bürgerliche Seriosität, und der Hof stützt ihn mit Hotel, Restaurant und Spa statt mit Fahnen und Blech. Der Hof war einmal ein Bauernhof, und das sieht man den Mauern noch an."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The bath",
+        "pt": "O banho",
+        "de": "Das Bad"
+      },
+      "p": [
+        {
+          "en": "The beer spa is the reason half the guests come. The baths are drawn warm with beer yeast, herbs and mineral oils, in private rooms with a tap beside the tub, and you are meant to drink while you soak. The claim is that yeast, hops and warm water do something for the skin. Believe it or not, an hour in a warm bath with a beer tap is not a hard sell.",
+          "pt": "O spa de cerveja é o motivo de metade dos hóspedes. As banheiras são preparadas com fermento de cerveja, ervas e óleos minerais, em salas privativas com uma torneira ao lado da banheira, e a ideia é beber enquanto se relaxa. A promessa é que fermento, lúpulo e água quente fazem bem à pele. Acredite ou não, uma hora numa banheira quente com chope ao lado não precisa de propaganda.",
+          "de": "Das Bierspa ist der Grund, warum die Hälfte der Gäste kommt. Die Wannen werden warm mit Bierhefe, Kräutern und Mineralölen gefüllt, in privaten Räumen mit einem Zapfhahn neben der Wanne, und man soll trinken, während man badet. Die Behauptung ist, dass Hefe, Hopfen und warmes Wasser der Haut guttun. Ob man das glaubt oder nicht, eine Stunde in warmem Wasser mit Bier am Rand braucht keine Werbung."
+        },
+        {
+          "en": "Book it. The spa takes couples and small groups in private rooms and fills at weekends; the hotel packages include a bath and dinner. The rooms are in the same yard, which means you can go from the bath to the table without going outside, and the restaurant serves the beer you have just been sitting in. Say at the desk if you want the bath before or after dinner, because the order changes the evening.",
+          "pt": "Reserve. O spa recebe casais e grupos pequenos em salas privativas e enche nos fins de semana; os pacotes do hotel incluem banho e jantar. Os quartos ficam no mesmo pátio, o que permite ir da banheira à mesa sem sair, e o restaurante serve a cerveja em que você acabou de se sentar. Diga na recepção se quer o banho antes ou depois do jantar, porque a ordem muda a noite.",
+          "de": "Buchen. Das Spa nimmt Paare und kleine Gruppen in privaten Räumen und füllt sich am Wochenende; die Hotelpakete enthalten Bad und Abendessen. Die Zimmer liegen im selben Hof, man kommt also vom Bad an den Tisch, ohne hinauszugehen, und das Restaurant serviert das Bier, in dem man gerade gesessen hat. An der Rezeption sagen, ob das Bad vor oder nach dem Essen liegen soll, denn die Reihenfolge ändert den Abend."
+        },
+        {
+          "en": "The brewery tour is short, about thirty minutes, and covers the yard's history, the brewhouse and a tasting. It is not the Pilsner Urquell tour and does not pretend to be. What it has that the big brewery does not is the smell of a working small brewhouse and a brewer who will answer a question about fermentation without checking a script.",
+          "pt": "A visita à cervejaria é curta, cerca de trinta minutos, e cobre a história do pátio, a sala de brassagem e uma degustação. Não é a visita da Pilsner Urquell e não finge ser. O que ela tem que a grande cervejaria não tem é o cheiro de uma pequena cervejaria em atividade e um mestre cervejeiro que responde a uma pergunta sobre fermentação sem consultar o roteiro.",
+          "de": "Die Brauereitour ist kurz, etwa dreißig Minuten, und umfasst die Geschichte des Hofs, das Sudhaus und eine Verkostung. Es ist nicht die Pilsner-Urquell-Tour und tut auch nicht so. Was sie hat und die große Brauerei nicht, ist der Geruch eines arbeitenden kleinen Sudhauses und ein Brauer, der eine Frage zur Gärung beantwortet, ohne in ein Skript zu schauen. Danach riecht die Jacke nach Malz, was als Beweis reicht."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The table",
+        "pt": "A mesa",
+        "de": "Der Tisch"
+      },
+      "p": [
+        {
+          "en": "The restaurant is a brewery restaurant in the proper sense: pork, dumplings, cabbage, dark beer sauces, and a menu that changes with the season. The beer list is the point, and the seasonal taps change often enough to justify a second glass. In summer there are tables in the yard and a grill; in winter the vaulted rooms do the work.",
+          "pt": "O restaurante é um restaurante de cervejaria no sentido próprio: porco, bolinhos, repolho, molhos de cerveja escura e um menu que muda com a estação. A carta de cervejas é o ponto, e as torneiras sazonais mudam o bastante para justificar um segundo copo. No verão há mesas no pátio e grelhado; no inverno, as salas abobadadas fazem o trabalho.",
+          "de": "Das Restaurant ist ein Brauereirestaurant im eigentlichen Sinn: Schweinefleisch, Knödel, Kohl, dunkle Biersoßen und eine Karte, die sich mit der Saison ändert. Die Bierkarte ist der Punkt, und die saisonalen Hähne wechseln oft genug für ein zweites Glas. Im Sommer stehen Tische im Hof und der Grill läuft, im Winter leisten die Gewölberäume die Arbeit, und an kalten Abenden ist der Raum voller als die Straße."
+        },
+        {
+          "en": "Černice is a village that Plzeň swallowed, and the yard sits among houses and fields rather than in an industrial park. The walk from the tram stop is short but not pretty. A taxi from the centre takes fifteen minutes, which is the practical way to do this if you plan to drink, and the last stretch is a village lane rather than a slip road.",
+          "pt": "Černice é um vilarejo que Plzeň engoliu, e o pátio fica entre casas e campos, não num distrito industrial. A caminhada do ponto de bonde é curta, mas não é bonita. Um táxi do centro leva quinze minutos, e é o jeito prático de fazer isso se você pretende beber; o último trecho é uma rua de vilarejo, não uma via expressa.",
+          "de": "Černice ist ein Dorf, das Plzeň geschluckt hat, und der Hof liegt zwischen Häusern und Feldern, nicht in einem Gewerbegebiet. Der Weg von der Straßenbahnhaltestelle ist kurz, aber nicht schön, und man geht ihn besser bei Licht. Ein Taxi aus dem Zentrum braucht fünfzehn Minuten, und das ist die praktische Lösung, wenn man trinken will; das letzte Stück ist eine Dorfstraße."
+        },
+        {
+          "en": "For the rest of Plzeň, the brewery is a base rather than a destination: the centre is a fifteen-minute drive, the Pilsner Urquell brewery twenty, and the motorway west is close enough that this is a sensible last night before Bavaria. It is also near enough to the D5 for a lunch stop on the way through. The place for motorhomes in the yard suggests the management has thought about who turns up.",
+          "pt": "Para o resto de Plzeň, a cervejaria é uma base, não um destino: o centro fica a quinze minutos de carro, a Pilsner Urquell a vinte, e a rodovia para o oeste é perto o bastante para esta ser uma última noite sensata antes da Baviera. Também está perto o suficiente da D5 para uma parada de almoço no caminho. A área para motorhomes no pátio sugere que a direção pensou em quem aparece.",
+          "de": "Für den Rest von Plzeň ist die Brauerei eher Basis als Ziel: Das Zentrum liegt fünfzehn Fahrminuten entfernt, die Pilsner-Urquell-Brauerei zwanzig, und die Autobahn nach Westen ist nah genug, dass dies eine vernünftige letzte Nacht vor Bayern ist. Auch für einen Mittagsstopp an der D5 liegt sie günstig. Der Stellplatz für Wohnmobile im Hof deutet darauf hin, dass die Leitung mitgedacht hat, wer hier auftaucht."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Purkmistr 12° semi-dark: the house's most interesting standard, malty without being sweet.",
+      "pt": "Purkmistr 12° meio escura: o padrão mais interessante da casa, maltada sem ser doce.",
+      "de": "Purkmistr 12° halbdunkel: der interessanteste Standard des Hauses, malzig ohne süß zu sein."
+    },
+    {
+      "en": "A light lager for the second glass, when the first one has done its work.",
+      "pt": "Uma lager clara para o segundo copo, quando o primeiro já fez o que tinha de fazer.",
+      "de": "Ein helles Lager für das zweite Glas, wenn das erste seine Arbeit getan hat."
+    },
+    {
+      "en": "Purkmistr 12° dark, 4.8%, if you want the roasted version with the pork.",
+      "pt": "Purkmistr 12° escura, 4,8%, se você quer a versão torrada com o porco.",
+      "de": "Purkmistr 12° dunkel, 4,8 %, wenn es die Röstversion zum Schweinebraten sein soll."
+    },
+    {
+      "en": "Whatever seasonal is on. The brewers change them through the year, and the board is the place to look.",
+      "pt": "A sazonal que estiver saindo. O quadro muda ao longo do ano, e é onde se olha.",
+      "de": "Das Saisonbier, das gerade läuft. Die Brauer wechseln es über das Jahr, und die Tafel ist der Ort, an dem man nachsieht."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Pork with dumplings and cabbage, which is the test of a Czech brewery kitchen.",
+      "pt": "Porco com bolinhos e repolho, que é o teste de qualquer cozinha de cervejaria tcheca.",
+      "de": "Schweinebraten mit Knödeln und Kohl, die Prüfung jeder tschechischen Brauereiküche."
+    },
+    {
+      "en": "Sausage and bread with the first glass, which is what the table wants before the food arrives.",
+      "pt": "Linguiça e pão com o primeiro copo, que é o que a mesa quer antes de a comida chegar.",
+      "de": "Wurst und Brot zum ersten Glas, worauf der Tisch wartet, bevor das Essen kommt."
+    },
+    {
+      "en": "Dessert in the yard in summer, when the grill is going and nobody is in a hurry.",
+      "pt": "Sobremesa no pátio no verão, quando a grelha está acesa e ninguém tem pressa.",
+      "de": "Dessert im Hof im Sommer, wenn der Grill läuft und niemand es eilig hat."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Book the beer spa ahead, especially at weekends. The hotel packages include the bath and dinner.",
+      "pt": "Reserve o spa de cerveja com antecedência, principalmente nos fins de semana. Os pacotes do hotel incluem banho e jantar.",
+      "de": "Das Bierspa vorher buchen, besonders am Wochenende. Die Hotelpakete enthalten Bad und Abendessen."
+    },
+    {
+      "en": "Černice is six kilometres from the centre. A taxi is easier than tram plus walk if you are staying for the spa.",
+      "pt": "Černice fica a seis quilômetros do centro. Um táxi é mais fácil que bonde e caminhada se você vai ficar para o spa.",
+      "de": "Černice liegt sechs Kilometer vom Zentrum. Ein Taxi ist einfacher als Straßenbahn plus Fußweg, wenn man für das Spa bleibt."
+    },
+    {
+      "en": "Ask at reception about the brewery tour. It runs about thirty minutes and is not always on the hour.",
+      "pt": "Pergunte na recepção sobre a visita à cervejaria. Dura cerca de trinta minutos e nem sempre começa na hora cheia.",
+      "de": "An der Rezeption nach der Brauereitour fragen. Sie dauert etwa dreißig Minuten und startet nicht immer zur vollen Stunde."
+    },
+    {
+      "en": "There is parking in the yard and a place for motorhomes behind it, which makes this a reasonable stop on a driving trip.",
+      "pt": "Há estacionamento no pátio e uma área para motorhomes atrás, o que faz daqui uma parada razoável numa viagem de carro.",
+      "de": "Im Hof gibt es Parkplätze und dahinter einen Stellplatz für Wohnmobile, was dies zu einem vernünftigen Halt auf einer Autorundreise macht."
+    },
+    {
+      "en": "The e-shop ships beer and glassware, which is the answer to a suitcase that is already full.",
+      "pt": "A loja online envia cerveja e copos, o que resolve a mala que já está cheia.",
+      "de": "Der Onlineshop verschickt Bier und Gläser, die Antwort auf einen Koffer, der schon voll ist."
+    }
+  ],
+  "links": [
+    {
+      "label": "Hotel Purkmistr",
+      "url": "https://www.purkmistr.cz/en"
+    },
+    {
+      "label": "Visit Plzeň — where to drink Pilsner",
+      "url": "https://www.visitplzen.eu/en/gastro/where-to-go-for-pilsner-beer-in-pilsen/"
+    },
+    {
+      "label": "Purkmistr Brewery — Plzeň Region",
+      "url": "https://www.visitplzenskykraj.eu/en/tips-for-things-to-do/gastronomy/purkmistr-brewery-pilsen/"
+    }
+  ]
+}

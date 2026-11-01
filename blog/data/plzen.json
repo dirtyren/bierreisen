@@ -1,0 +1,245 @@
+{
+  "slug": "plzen",
+  "type": "city",
+  "name": "Plzeň",
+  "where": "Czechia",
+  "coords": [
+    49.7475,
+    13.3775
+  ],
+  "span": 0.55,
+  "subtitle_en": "The town that made pale lager the default",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Plze%C5%88+Czechia",
+  "trips": [
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "pilsner-urquell",
+    "purkmistr",
+    "ceske-budejovice",
+    "trip-2024"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundação",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1295",
+        "pt": "1295",
+        "de": "1295"
+      }
+    },
+    {
+      "k": {
+        "en": "population",
+        "pt": "população",
+        "de": "Einwohner"
+      },
+      "v": {
+        "en": "about 188,000",
+        "pt": "cerca de 188 mil",
+        "de": "rund 188.000"
+      }
+    },
+    {
+      "k": {
+        "en": "first pilsner",
+        "pt": "primeira pilsner",
+        "de": "erstes Pilsner"
+      },
+      "v": {
+        "en": "5 October 1842",
+        "pt": "5 de outubro de 1842",
+        "de": "5. Oktober 1842"
+      }
+    },
+    {
+      "k": {
+        "en": "cathedral tower",
+        "pt": "torre da catedral",
+        "de": "Kirchturm"
+      },
+      "v": {
+        "en": "102.26 m",
+        "pt": "102,26 m",
+        "de": "102,26 m"
+      }
+    },
+    {
+      "k": {
+        "en": "historical underground",
+        "pt": "subsolo histórico",
+        "de": "historischer Untergrund"
+      },
+      "v": {
+        "en": "nearly 20 km",
+        "pt": "quase 20 km",
+        "de": "fast 20 km"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Plzeň is a working city of about 188,000 people that changed what the world drinks. Beer has been brewed here since the town was founded in 1295, but the pale lager that came out of the burghers' brewery in 1842 became the model for most beer made since. The centre is small enough to cross on foot.",
+    "pt": "Plzeň é uma cidade operária de cerca de 188 mil habitantes que mudou o que o mundo bebe. Cerveja é feita aqui desde a fundação da cidade, em 1295, mas a lager clara que saiu da cervejaria dos burgueses em 1842 virou o modelo da maior parte da cerveja produzida desde então. O centro é pequeno o bastante para atravessar a pé.",
+    "de": "Plzeň ist eine Arbeiterstadt mit rund 188.000 Einwohnern, die verändert hat, was die Welt trinkt. Gebraut wird hier seit der Stadtgründung 1295, doch das helle Lager aus der Bürgerbrauerei von 1842 wurde zum Vorbild für den größten Teil des Biers, das seither entsteht. Das Zentrum lässt sich zu Fuß durchqueren."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The beer that had to be invented",
+        "pt": "A cerveja que precisou ser inventada",
+        "de": "Das Bier, das erfunden werden musste"
+      },
+      "p": [
+        {
+          "en": "Until the 1830s the beer of Plzeň was top-fermented, brewed by burghers who held the brewing rights, and it did not keep. Cheaper bottom-fermented beer from Bavaria arrived by cart and sold better than the local stuff, which went sour in the barrel. In 1838 the town made its point by pouring the bad batches into the street. The next year the burghers put money into a brewery built for cold fermentation and hired a Bavarian brewer to run it.",
+          "pt": "Até a década de 1830, a cerveja de Plzeň era de fermentação alta, feita por burgueses que detinham os direitos de fabricação, e não durava. Cerveja de fermentação baixa mais barata chegava da Baviera em carroças e vendia melhor que a local, que azedava no barril. Em 1838 a cidade fez sua reclamação despejando os lotes ruins na rua. No ano seguinte, os burgueses investiram numa cervejaria feita para fermentação fria e contrataram um mestre cervejeiro bávaro.",
+          "de": "Bis in die 1830er Jahre war das Bier von Plzeň obergärig, gebraut von Bürgern mit Braurecht, und es hielt nicht. Billigeres untergäriges Bier aus Bayern kam mit dem Wagen und verkaufte sich besser als das einheimische, das im Fass sauer wurde. 1838 machte die Stadt ihrem Ärger Luft und schüttete die schlechten Sude auf die Straße. Im Jahr darauf steckten die Bürger Geld in eine Brauerei für kalte Gärung und holten einen bayerischen Brauer."
+        },
+        {
+          "en": "Josef Groll came from Vilshofen an der Donau, where his father kept a brewery and had been working on bottom fermentation. He brewed the first batch at the new Burghers' Brewery on 5 October 1842, and the beer was first sold at the St Martin's market on 11 November. It was pale where other beers were brown, clear where they were cloudy, and it lasted. By the 1850s it was being copied across Bohemia, and the brewery was already trying to stop it.",
+          "pt": "Josef Groll veio de Vilshofen an der Donau, onde o pai tinha uma cervejaria e vinha trabalhando com fermentação baixa. Ele fez o primeiro lote na nova Cervejaria dos Burgueses em 5 de outubro de 1842, e a cerveja foi vendida pela primeira vez na feira de São Martinho, em 11 de novembro. Era clara onde as outras eram escuras, límpida onde eram turvas, e durava. Nos anos 1850 já era copiada pela Boêmia, e a cervejaria já tentava impedir.",
+          "de": "Josef Groll kam aus Vilshofen an der Donau, wo sein Vater eine Brauerei betrieb und mit untergäriger Gärung experimentiert hatte. Am 5. Oktober 1842 braute er den ersten Sud in der neuen Bürgerbrauerei, verkauft wurde das Bier erstmals zum Martinsmarkt am 11. November. Es war hell, wo andere dunkel waren, klar, wo sie trüb waren, und es hielt. In den 1850er Jahren wurde es in ganz Böhmen nachgebraut, und die Brauerei versuchte bereits, das zu verhindern."
+        },
+        {
+          "en": "The name took longer to settle. Pilsner Bier was registered as a trademark in 1859, which did nothing to stop other Plzeň breweries using it, and the brewery spent decades arguing about what it owned. The words Pilsner Urquell and Plzeňský Prazdroj, both meaning original source, were registered in 1898 and are the names that stuck. The beer is brewed in one yard again, after a spell of licensed brewing in Poland and Russia between 2002 and 2017.",
+          "pt": "O nome demorou mais a se firmar. Pilsner Bier foi registrado como marca em 1859, o que não impediu outras cervejarias de Plzeň de usá-lo, e a empresa passou décadas discutindo o que era seu. As palavras Pilsner Urquell e Plzeňský Prazdroj, ambas com sentido de fonte original, foram registradas em 1898 e são as que ficaram. A cerveja voltou a ser feita num único pátio, depois de um período de produção licenciada na Polônia e na Rússia entre 2002 e 2017.",
+          "de": "Der Name brauchte länger. Pilsner Bier wurde 1859 als Marke eingetragen, was andere Brauereien in Plzeň nicht daran hinderte, ihn zu benutzen, und das Unternehmen stritt jahrzehntelang darüber, was ihm gehörte. Die Wörter Pilsner Urquell und Plzeňský Prazdroj, beide für ursprüngliche Quelle, wurden 1898 eingetragen und blieben. Gebraut wird wieder in einem Hof, nach einer Zeit lizenzierter Produktion in Polen und Russland zwischen 2002 und 2017."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The square and the underground",
+        "pt": "A praça e o subsolo",
+        "de": "Der Platz und der Untergrund"
+      },
+      "p": [
+        {
+          "en": "Náměstí Republiky is the centre, and the Cathedral of St Bartholomew stands over it with a tower of 102.26 metres, the tallest church tower in the country. There are nearly 300 steps to the gallery. Beside it is the Great Synagogue, finished in 1893 and one of the largest in Europe; the city council made the architect lower its towers by twenty metres so they would not compete with the cathedral.",
+          "pt": "A praça náměstí Republiky é o centro, e a Catedral de São Bartolomeu domina a praça com uma torre de 102,26 metros, a mais alta torre de igreja do país. São quase 300 degraus até a galeria. Ao lado fica a Grande Sinagoga, concluída em 1893 e uma das maiores da Europa; o conselho da cidade obrigou o arquiteto a baixar as torres em vinte metros para que não competissem com a catedral.",
+          "de": "Der Platz náměstí Republiky ist das Zentrum, und darüber steht der Dom St. Bartholomäus mit einem Turm von 102,26 Metern, dem höchsten Kirchturm des Landes. Knapp 300 Stufen führen zur Galerie. Daneben die Große Synagoge, 1893 vollendet und eine der größten Europas; der Stadtrat ließ den Architekten die Türme um zwanzig Meter senken, damit sie dem Dom nicht die Schau stehlen."
+        },
+        {
+          "en": "Under the streets is the other city: nearly twenty kilometres of passages, cellars and wells, dug from the end of the thirteenth century and up to three floors deep in places. The tour covers about 800 metres and starts in the brewing house that holds the Brewery Museum on Veleslavínova. It is 12°C down there and they hand you a helmet. At the end you get a voucher for a beer in one of the brewery pubs.",
+          "pt": "Sob as ruas está a outra cidade: quase vinte quilômetros de passagens, caves e poços, escavados desde o fim do século XIII e, em alguns pontos, com três andares de profundidade. O passeio cobre cerca de 800 metros e começa na casa de direitos de fabricação que abriga o Museu da Cerveja, na Veleslavínova. Lá embaixo faz 12°C e eles entregam um capacete. No fim, você recebe um voucher para uma cerveja em um dos bares da cervejaria.",
+          "de": "Unter den Straßen liegt die andere Stadt: fast zwanzig Kilometer Gänge, Keller und Brunnen, seit dem späten 13. Jahrhundert gegraben und stellenweise drei Geschosse tief. Der Rundgang führt über etwa 800 Meter und beginnt in dem Brauhaus, in dem das Biermuseum an der Veleslavínova sitzt. Unten sind es 12 °C, und man bekommt einen Helm. Am Ende gibt es einen Gutschein für ein Bier in einem der Brauereiausschänke."
+        },
+        {
+          "en": "The Brewery Museum has occupied the fifteenth-century brewing-rights house since 1958, and it is the place to understand what a brewing right was: a licence to brew a fixed quantity, attached to a house and traded like property. Plzeň's beer was made in dozens of these houses before the burghers pooled them into one brewery. The museum keeps the malthouse, the cellars and a case of beer curiosities, including the smallest jug in the world, according to the label.",
+          "pt": "O Museu da Cerveja ocupa a casa de direitos de fabricação do século XV desde 1958, e é o lugar para entender o que era um direito de fabricação: uma licença para produzir uma quantidade fixa, ligada a uma casa e negociada como propriedade. A cerveja de Plzeň era feita em dezenas dessas casas antes de os burgueses reunirem tudo numa cervejaria só. O museu guarda a malteria, as caves e uma vitrine de curiosidades, incluindo o menor caneco do mundo, segundo a etiqueta.",
+          "de": "Das Biermuseum sitzt seit 1958 in dem Braurechthaus aus dem 15. Jahrhundert und erklärt, was ein Braurecht war: eine Lizenz für eine feste Menge, an ein Haus gebunden und wie Eigentum gehandelt. Das Bier von Plzeň entstand in Dutzenden dieser Häuser, bevor die Bürger sie in einer Brauerei zusammenführten. Das Museum bewahrt die Mälzerei, die Keller und eine Vitrine mit Bierkuriositäten, darunter der kleinste Krug der Welt, laut Etikett."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Where to drink it",
+        "pt": "Onde beber",
+        "de": "Wo man es trinkt"
+      },
+      "p": [
+        {
+          "en": "The brewery is a fifteen-minute walk from the square, across the river and through a gate whose emblem ended up on a Czech gold coin. Inside the forecourt, Na Spilce fills the old fermentation cellars: 550 places, vaulted brick, and unfiltered Pilsner Urquell that does not leave the building. It is one of the largest pubs in the country and it fills up, so book a table or arrive early.",
+          "pt": "A cervejaria fica a quinze minutos a pé da praça, do outro lado do rio e depois de um portão cujo emblema acabou numa moeda de ouro tcheca. No pátio interno, a Na Spilce ocupa as antigas caves de fermentação: 550 lugares, tijolo abobadado e Pilsner Urquell não filtrada que não sai do prédio. É um dos maiores bares do país e enche, então reserve mesa ou chegue cedo.",
+          "de": "Die Brauerei liegt fünfzehn Gehminuten vom Platz, über den Fluss und durch ein Tor, dessen Emblem auf einer tschechischen Goldmünze landete. Im Vorhof füllt Na Spilce die alten Gärkeller: 550 Plätze, Gewölbe aus Backstein und ungefiltertes Pilsner Urquell, das das Haus nicht verlässt. Es ist eines der größten Lokale des Landes, und es füllt sich, also reservieren oder früh kommen und an der Theke warten, bis ein Tisch frei wird. Die Halle ist laut, wenn sie voll ist, und das gehört dazu."
+        },
+        {
+          "en": "Na Parkánu, beside the Brewery Museum, has been pouring since 1966 and is the place for a quiet half-litre and a plate of sausages. U Salzmannů on Pražská has been a pub since 1637 and claims the title of oldest in town. Both keep Pilsner Urquell properly, which in Czechia means a tank or a clean line rather than a bottle.",
+          "pt": "Na Parkánu, ao lado do Museu da Cerveja, serve desde 1966 e é o lugar para um meio litro tranquilo e um prato de linguiças. U Salzmannů, na Pražská, é um bar desde 1637 e reivindica o título de mais antigo da cidade. As duas tratam bem a Pilsner Urquell, o que, na República Tcheca, significa tanque ou chopeira limpa, não garrafa.",
+          "de": "Na Parkánu neben dem Biermuseum zapft seit 1966 und ist der Ort für ein ruhiges Halbes und einen Teller Würste. U Salzmannů in der Pražská ist seit 1637 ein Wirtshaus und beansprucht den Titel des ältesten der Stadt. Beide pflegen Pilsner Urquell richtig, was in Tschechien Tank oder saubere Leitung heißt und nicht Flasche, und beide sind klein genug, dass man am Tresen ins Gespräch kommt."
+        },
+        {
+          "en": "For something else, Purkmistr in Černice is a brewery, hotel and beer spa in a farmyard on the southern edge, and Pivovar Raven in the north of the city brews ales rather than lager. Neither is in the centre, and both are worth the trip. Gambrinus, brewed here since 1869, is the everyday beer: lighter than Prazdroj, cheaper, and in most pubs the default pour.",
+          "pt": "Para variar, a Purkmistr, em Černice, é cervejaria, hotel e spa de cerveja num pátio rural na saída sul, e a Pivovar Raven, no norte da cidade, faz ales em vez de lager. Nenhuma das duas fica no centro, e as duas valem o desvio. A Gambrinus, produzida aqui desde 1869, é a cerveja do dia a dia: mais leve que a Prazdroj, mais barata e, na maioria dos bares, o chope padrão.",
+          "de": "Für Abwechslung sorgt Purkmistr in Černice, Brauerei, Hotel und Bierspa in einem Hof am Südrand, und Pivovar Raven im Norden der Stadt braut Ales statt Lager. Keine der beiden liegt im Zentrum, und beide lohnen den Weg. Gambrinus, seit 1869 hier gebraut, ist das Alltagsbier: leichter als Prazdroj, billiger und in den meisten Kneipen der Standard, wenn niemand etwas anderes verlangt."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Pilsner Urquell from the tank, in a pub that keeps it cold and moves it fast. The beer is the same; the pour is not.",
+      "pt": "Pilsner Urquell do tanque, num bar que mantém a cerveja gelada e gira rápido. A cerveja é a mesma; o chope não.",
+      "de": "Pilsner Urquell aus dem Tank, in einem Lokal, das es kalt hält und schnell abgibt. Das Bier ist dasselbe, der Ausschank nicht."
+    },
+    {
+      "en": "The unfiltered, unpasteurised pour in the brewery cellars at the end of the tour, which exists nowhere else.",
+      "pt": "O chope não filtrado e não pasteurizado nas caves da cervejaria, no fim do passeio: não existe em nenhum outro lugar.",
+      "de": "Der ungefilterte, unpasteurisierte Ausschank in den Kellern am Ende der Tour, den es sonst nirgends gibt."
+    },
+    {
+      "en": "Gambrinus, the everyday lager of Plzeň since 1869, with half the fuss.",
+      "pt": "Gambrinus, a lager do dia a dia de Plzeň desde 1869, com metade do alvoroço.",
+      "de": "Gambrinus, das Alltagslager aus Plzeň seit 1869, mit halb so viel Aufhebens."
+    },
+    {
+      "en": "A dark lager at Purkmistr, if you have made it out to Černice.",
+      "pt": "Uma lager escura na Purkmistr, se você tiver chegado a Černice.",
+      "de": "Ein dunkles Lager bei Purkmistr, wenn es dich nach Černice verschlagen hat."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Na Spilce: goulash, bread dumplings and a beer bread made with the house lager, under the vaults of the old fermentation room.",
+      "pt": "Na Spilce: guláš, bolinhos de pão e um pão de cerveja feito com a lager da casa, sob as abóbadas da antiga sala de fermentação.",
+      "de": "Na Spilce: Gulasch, Semmelknödel und ein Bierbrot aus dem Hausbier, unter den Gewölben des alten Gärraums."
+    },
+    {
+      "en": "U Salzmannů, Pražská 8: roast pork and dumplings in a room that has been feeding people since 1637.",
+      "pt": "U Salzmannů, Pražská 8: porco assado e bolinhos num salão que alimenta gente desde 1637.",
+      "de": "U Salzmannů, Pražská 8: Schweinebraten und Knödel in einem Raum, in dem seit 1637 gegessen wird."
+    },
+    {
+      "en": "Na Parkánu, beside the Brewery Museum, for sausages, bread and a quick lunch between tours.",
+      "pt": "Na Parkánu, ao lado do Museu da Cerveja, para linguiças, pão e um almoço rápido entre um passeio e outro.",
+      "de": "Na Parkánu neben dem Biermuseum für Würste, Brot und ein schnelles Mittagessen zwischen zwei Touren."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Book the brewery tour: 100 minutes, several languages a day, and a bus ride to the bottling hall. The cellars are cold, so take a jacket.",
+      "pt": "Reserve o passeio da cervejaria: 100 minutos, vários idiomas por dia e um trajeto de ônibus até a linha de envase. As caves são frias, leve um casaco.",
+      "de": "Die Brauereitour buchen: 100 Minuten, mehrere Sprachen am Tag und eine Busfahrt zur Abfüllung. In den Kellern ist es kalt, also eine Jacke mitnehmen."
+    },
+    {
+      "en": "The historical underground runs at 12°C, tours go at fixed times, and you wear a helmet. Leave the big bag at the hotel.",
+      "pt": "O subsolo histórico fica a 12°C, os passeios saem em horários fixos e você usa capacete. Deixe a mala grande no hotel.",
+      "de": "Im historischen Untergrund sind es 12 °C, die Führungen starten zu festen Zeiten, und man trägt einen Helm. Die große Tasche im Hotel lassen."
+    },
+    {
+      "en": "The centre is flat and walkable. Trams are for the edges, including Černice and the station.",
+      "pt": "O centro é plano e dá para fazer a pé. Os bondes servem para as bordas, incluindo Černice e a estação.",
+      "de": "Das Zentrum ist flach und fußläufig. Straßenbahnen braucht man für die Ränder, auch für Černice und den Bahnhof."
+    },
+    {
+      "en": "Cards are accepted in most places now, but keep cash for small pubs and the brewery shop.",
+      "pt": "Cartão é aceito na maioria dos lugares hoje, mas leve dinheiro para bares pequenos e para a loja da cervejaria.",
+      "de": "Karten werden inzwischen meistens genommen, aber Bargeld für kleine Kneipen und den Brauereiladen behalten."
+    },
+    {
+      "en": "Plzeň is about an hour and a quarter from Prague by train, which makes it a day trip. Two nights is the better answer.",
+      "pt": "Plzeň fica a cerca de uma hora e quinze de trem de Praga, o que permite bater e voltar. Duas noites é a resposta melhor.",
+      "de": "Plzeň ist mit dem Zug etwa eineinviertel Stunden von Prag entfernt, also ein Tagesausflug. Zwei Nächte sind die bessere Antwort."
+    }
+  ],
+  "links": [
+    {
+      "label": "Prazdroj — history",
+      "url": "https://www.prazdroj.cz/en/our-story/history"
+    },
+    {
+      "label": "Visit Plzeň",
+      "url": "https://www.visitplzen.eu/en/"
+    },
+    {
+      "label": "Plzeň (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Plze%C5%88"
+    }
+  ]
+}

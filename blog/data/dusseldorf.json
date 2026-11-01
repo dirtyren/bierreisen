@@ -1,0 +1,231 @@
+{
+  "slug": "dusseldorf",
+  "type": "city",
+  "name": "Düsseldorf",
+  "where": "North Rhine-Westphalia, Germany",
+  "coords": [
+    51.227,
+    6.7714
+  ],
+  "span": 0.45,
+  "subtitle_en": "Altbier in small glasses, until you put the coaster on top",
+  "maps": "https://www.google.com/maps/search/?api=1&query=D%C3%BCsseldorf+Altstadt",
+  "trips": [
+    "2020"
+  ],
+  "related": [
+    "uerige",
+    "trip-2020",
+    "bamberg",
+    "bruges"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "Altstadt area",
+        "pt": "área da Altstadt",
+        "de": "Altstadt Fläche"
+      },
+      "v": {
+        "en": "0.5 km²",
+        "pt": "0,5 km²",
+        "de": "0,5 km²"
+      }
+    },
+    {
+      "k": {
+        "en": "places to eat and drink",
+        "pt": "bares e restaurantes",
+        "de": "Gaststätten"
+      },
+      "v": {
+        "en": "260+",
+        "pt": "260+",
+        "de": "260+"
+      }
+    },
+    {
+      "k": {
+        "en": "house breweries",
+        "pt": "cervejarias próprias",
+        "de": "Hausbrauereien"
+      },
+      "v": {
+        "en": "6",
+        "pt": "6",
+        "de": "6"
+      }
+    },
+    {
+      "k": {
+        "en": "Altbier",
+        "pt": "Altbier",
+        "de": "Altbier"
+      },
+      "v": {
+        "en": "4.7%",
+        "pt": "4,7%",
+        "de": "4,7 %"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Düsseldorf's Altstadt is half a square kilometre with more than 260 places to eat and drink, which is why it calls itself the longest bar in the world. The beer is Alt: top-fermented, copper-coloured, served in 0.2-litre glasses by waiters who keep the supply coming. The rule is simple — the coaster on the glass means stop.",
+    "pt": "A Altstadt de Düsseldorf tem meio quilômetro quadrado e mais de 260 lugares para comer e beber, e por isso se chama o balcão mais longo do mundo. A cerveja é a Alt: de alta fermentação, cor de cobre, servida em copos de 0,2 litro por garçons que mantêm o abastecimento. A regra é simples — o descanso sobre o copo significa parar.",
+    "de": "Düsseldorfs Altstadt ist einen halben Quadratkilometer groß und hat über 260 Lokale, deshalb nennt sie sich die längste Theke der Welt. Das Bier ist Alt: obergärig, kupferfarben, im 0,2-Liter-Glas, ausgeschenkt von Köbessen, die den Nachschub nicht ausgehen lassen. Die Regel ist einfach — der Bierdeckel auf dem Glas heißt Stopp."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Half a square kilometre",
+        "pt": "Meio quilômetro quadrado",
+        "de": "Ein halber Quadratkilometer"
+      },
+      "p": [
+        {
+          "en": "The Altstadt runs from the Heinrich-Heine-Allee to the Rhine, with the Burgplatz and its Schlossturm at one corner and St. Lambertus behind it. By day it is a shopping district; after six it is a drinking one; in summer it is both at once, when the tables spread along the Rheinuferpromenade and the streets behind the church fill up. The whole quarter is pedestrian, and the Rhine is three minutes away whichever way you turn.",
+          "pt": "A Altstadt vai da Heinrich-Heine-Allee até o Reno, com a Burgplatz e a Schlossturm numa esquina e a St. Lambertus atrás. De dia é comércio; depois das seis é bebida; no verão é as duas coisas ao mesmo tempo, quando as mesas se espalham pela Rheinuferpromenade e as ruas atrás da igreja enchem. O bairro inteiro é de pedestres, e o Reno está a três minutos em qualquer direção.",
+          "de": "Die Altstadt reicht von der Heinrich-Heine-Allee bis zum Rhein, mit dem Burgplatz und dem Schlossturm an einer Ecke und St. Lambertus dahinter. Tagsüber Geschäftsviertel, nach sechs ein Trinkviertel, im Sommer beides zugleich, wenn sich die Tische über die Rheinuferpromenade und die Gassen hinter der Kirche verteilen. Das ganze Viertel ist Fußgängerzone, und der Rhein ist drei Minuten entfernt, egal wohin man geht."
+        },
+        {
+          "en": "Arriving is easy. The main station is two U-Bahn stops from Heinrich-Heine-Allee, and from there the old town begins across the street. The Königsallee, the wide shopping boulevard with the water in the middle, borders it to the south; the MedienHafen with its Gehry buildings is twenty minutes further along the river. Every U-Bahn line into the centre stops at Heinrich-Heine-Allee, so the route needs no thought.",
+          "pt": "Chegar é fácil. A estação central fica a duas paradas de U-Bahn de Heinrich-Heine-Allee, e dali a cidade velha começa do outro lado da rua. A Königsallee, a avenida larga de compras com água no meio, faz limite ao sul; o MedienHafen, com os prédios de Gehry, fica vinte minutos adiante, junto ao rio. Toda linha de U-Bahn para o centro para em Heinrich-Heine-Allee, então a rota não exige planejamento.",
+          "de": "Die Anreise ist einfach. Der Hauptbahnhof liegt zwei U-Bahn-Stationen von Heinrich-Heine-Allee entfernt, von dort beginnt die Altstadt gleich gegenüber. Die Königsallee, der breite Einkaufsboulevard mit dem Wasser in der Mitte, grenzt im Süden an; der MedienHafen mit den Gehry-Bauten liegt zwanzig Minuten weiter am Fluss. Jede U-Bahn in die Innenstadt hält an der Heinrich-Heine-Allee, die Route braucht also keine Planung."
+        },
+        {
+          "en": "Six house breweries still brew in the city: Schumacher, Uerige, Füchschen, Schlüssel, Kürzer and Belsen. Five of them stand within a few minutes of each other in the Altstadt, which makes a crawl possible without a plan, a map or a taxi. That concentration is the reason the place works as a beer destination. A crawl of all five is a long afternoon rather than an evening, and the order matters less than the pace.",
+          "pt": "Seis cervejarias próprias ainda produzem na cidade: Schumacher, Uerige, Füchschen, Schlüssel, Kürzer e Belsen. Cinco ficam a poucos minutos umas das outras na Altstadt, o que permite um roteiro sem plano, mapa ou táxi. Essa concentração é o que faz do lugar um destino cervejeiro. Um roteiro pelas cinco é uma tarde longa, não uma noite, e a ordem importa menos que o ritmo.",
+          "de": "Sechs Hausbrauereien brauen noch in der Stadt: Schumacher, Uerige, Füchschen, Schlüssel, Kürzer und Belsen. Fünf davon liegen wenige Minuten auseinander in der Altstadt, eine Runde ist also ohne Plan, Karte und Taxi möglich. Diese Dichte macht den Ort als Bierziel aus. Eine Runde durch alle fünf ist ein langer Nachmittag, kein Abend, und die Reihenfolge zählt weniger als das Tempo."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "How Altbier works",
+        "pt": "Como funciona a Altbier",
+        "de": "Wie Altbier funktioniert"
+      },
+      "p": [
+        {
+          "en": "Alt is top-fermented and then stored cold. The name means old, in the sense of the old way of brewing, as against the pale lagers that arrived from Bavaria and Bohemia in the nineteenth century. The colour runs from copper to brown, the bitterness is firm, and the strength is usually around 4.7%. Düsseldorf has brewed since at least 873, when the archbishop of Cologne granted the right to the Gerresheim monastery. It does not travel well, which is why almost all of it is drunk within the region.",
+          "pt": "A Alt fermenta em alta temperatura e depois é guardada no frio. O nome quer dizer velha, no sentido do modo antigo de fabricar, em oposição às lagers claras que chegaram da Baviera e da Boêmia no século XIX. A cor vai do cobre ao marrom, o amargor é firme, e o teor costuma ficar em torno de 4,7%. Düsseldorf produz desde pelo menos 873, quando o arcebispo de Colônia concedeu o direito ao mosteiro de Gerresheim. Ela não viaja bem, e por isso quase toda é bebida dentro da própria região.",
+          "de": "Alt vergärt obergärig und wird dann kalt gelagert. Der Name meint die alte Brauart, im Gegensatz zu den hellen Lagern, die im 19. Jahrhundert aus Bayern und Böhmen kamen. Die Farbe reicht von Kupfer bis Braun, die Bittere ist kräftig, der Alkohol liegt meist um 4,7 %. Gebraut wird in Düsseldorf mindestens seit 873, als der Kölner Erzbischof dem Kloster Gerresheim das Recht verlieh. Es reist schlecht, deshalb wird fast alles davon in der Region selbst getrunken."
+        },
+        {
+          "en": "It arrives in a small glass, usually 0.2 litres. The Köbes — the waiter, named after the many Jakobs who once did the job — carries a tray of them and puts a stroke on your coaster for each one. When a glass is empty, another appears without being ordered. To stop the supply, put the coaster on the glass. The glasses are thin and small enough to finish before the beer warms, which is the whole argument for the size.",
+          "pt": "Chega num copo pequeno, geralmente 0,2 litro. O Köbes — o garçom, nome que vem dos muitos Jakobs que faziam o serviço — carrega uma bandeja deles e faz um risco no seu descanso a cada copo. Quando um copo esvazia, outro aparece sem pedido. Para parar o abastecimento, ponha o descanso sobre o copo. Os copos são finos e pequenos o bastante para acabar antes de a cerveja esquentar, e é esse o argumento do tamanho.",
+          "de": "Es kommt im kleinen Glas, meist 0,2 Liter. Der Köbes — der Kellner, benannt nach den vielen Jakobs, die diesen Beruf einst ausübten — trägt ein Tablett davon und macht für jedes Glas einen Strich auf den Bierdeckel. Ist ein Glas leer, steht das nächste da, ohne Bestellung. Wer aufhören will, legt den Deckel aufs Glas. Die Gläser sind dünn und klein genug, um leer zu sein, bevor das Bier warm wird, das ist das Argument für die Größe."
+        },
+        {
+          "en": "It is not a system for a long conversation over a full glass. It is a system for cold beer: small measures, fresh from the tap, replaced often. During carnival the whole Altstadt runs on it, and on Rose Monday the Uerige shuts rather than deal with the consequences. The rest of the year the pace is calmer, but the mechanism is the same. Outside carnival the mechanism runs from lunchtime, and the afternoon regulars are gentler than the evening ones.",
+          "pt": "Não é um sistema para conversa longa com um copo cheio. É um sistema para cerveja gelada: doses pequenas, tiradas na hora, trocadas com frequência. No carnaval a Altstadt inteira funciona assim, e na Rosenmontag a Uerige fecha em vez de lidar com as consequências. No resto do ano o ritmo é mais calmo, mas o mecanismo é o mesmo. Fora do carnaval, o mecanismo funciona desde o almoço, e os habitués da tarde são mais tranquilos que os da noite.",
+          "de": "Das System ist nicht für lange Gespräche bei vollem Glas gemacht. Es ist ein System für kaltes Bier: kleine Mengen, frisch gezapft, oft ersetzt. Im Karneval läuft die ganze Altstadt so, und am Rosenmontag schließt das Uerige, statt die Folgen zu tragen. Sonst ist das Tempo ruhiger, der Mechanismus derselbe. Außerhalb des Karnevals läuft der Mechanismus ab mittags, und die Stammgäste am Nachmittag sind sanfter als die am Abend."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Beyond the Altbier mile",
+        "pt": "Além da milha da Altbier",
+        "de": "Jenseits der Altbier-Meile"
+      },
+      "p": [
+        {
+          "en": "The Altstadt is not only breweries. Bolkerstraße is the loudest street, Berger Straße the one with the Uerige, and the lanes behind St. Lambertus are quieter. The Rathaus and the Jan Wellem statue are worth a look between bars, and the Rhine promenade is where everyone ends up, with the Oberkassel bank across the water and the bridge lights coming on. The promenade is stepped, and on a clear evening the far bank looks closer than it is.",
+          "pt": "A Altstadt não é só cervejaria. A Bolkerstraße é a rua mais barulhenta, a Berger Straße é a da Uerige, e as vielas atrás da St. Lambertus são mais quietas. O Rathaus e a estátua de Jan Wellem merecem uma olhada entre um bar e outro, e a orla do Reno é onde todo mundo acaba, com a margem de Oberkassel do outro lado e as luzes da ponte acendendo. A orla tem degraus, e numa noite clara a outra margem parece mais perto do que é.",
+          "de": "Die Altstadt ist nicht nur Brauereien. Die Bolkerstraße ist die lauteste Straße, die Berger Straße die mit dem Uerige, die Gassen hinter St. Lambertus sind ruhiger. Rathaus und Jan-Wellem-Denkmal lohnen zwischen zwei Lokalen, und an der Rheinuferpromenade landet am Ende alles, mit Oberkassel auf der anderen Seite und den Lichtern der Brücke. Die Promenade ist gestuft, und an einem klaren Abend wirkt das andere Ufer näher, als es ist."
+        },
+        {
+          "en": "Food in the breweries is Rhineland cooking. Halve Hahn is a rye roll with cheese, mustard and onion — no chicken, despite the name. Himmel un Ääd is black pudding with apple and mashed potato. Sauerbraten comes with raisin sauce. It is plain food built to sit under beer, and it does its job without asking for attention. Portions are large and the menus are short, which is the correct arrangement for food like this.",
+          "pt": "A comida das cervejarias é cozinha renana. Halve Hahn é um pão de centeio com queijo, mostarda e cebola — nada de frango, apesar do nome. Himmel un Ääd é morcela com maçã e purê de batata. O Sauerbraten vem com molho de passas. É comida simples, feita para acompanhar cerveja, e faz o serviço sem pedir atenção. As porções são grandes e os menus curtos, arranjo correto para comida desse tipo.",
+          "de": "Das Essen in den Brauhäusern ist rheinische Küche. Halve Hahn ist ein Roggenbrötchen mit Käse, Senf und Zwiebel — kein Huhn, trotz des Namens. Himmel un Ääd ist Blutwurst mit Apfel und Kartoffelpüree. Sauerbraten kommt mit Rosinensoße. Schlichtes Essen, das zum Bier gehört, und es tut seinen Dienst ohne Aufhebens. Die Portionen sind groß, die Karten kurz, die richtige Kombination für solches Essen."
+        },
+        {
+          "en": "From mid-November to 30 December the Christmas market spreads through the centre, with a wheel on the Burgplatz and stalls along the Flinger Straße. The rest of the year the city lives off trade fairs: when a big one is on, the hotels go first and the Altstadt fills early. Book before you decide to come. Room rates follow the fair calendar, so a cheap weekend usually means nothing is on.",
+          "pt": "De meados de novembro a 30 de dezembro, a feira de Natal se espalha pelo centro, com uma roda-gigante na Burgplatz e barracas na Flinger Straße. No resto do ano a cidade vive de feiras de negócios: quando há uma grande, os hotéis acabam primeiro e a Altstadt enche cedo. Reserve antes de decidir vir. Os preços dos hotéis seguem o calendário de feiras, então um fim de semana barato geralmente significa que não há evento.",
+          "de": "Von Mitte November bis 30. Dezember verteilt sich der Weihnachtsmarkt durch die Innenstadt, mit einem Riesenrad am Burgplatz und Ständen in der Flinger Straße. Sonst lebt die Stadt von Messen: Wenn eine große läuft, sind die Hotels zuerst weg und die Altstadt früh voll. Also buchen, bevor man die Reise beschließt. Die Zimmerpreise folgen dem Messekalender, ein günstiges Wochenende heißt also meist, dass nichts läuft."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Uerige Alt — the bitterest of the Düsseldorf houses, and the one to start with.",
+      "pt": "Uerige Alt — a mais amarga das casas de Düsseldorf, e a primeira a pedir.",
+      "de": "Uerige Alt — das herbste der Düsseldorfer Häuser und der richtige Anfang."
+    },
+    {
+      "en": "Schumacher Alt, blond and spritzy, from the oldest Altbier brewery in the city.",
+      "pt": "Schumacher Alt, clara e com gás, da cervejaria de Altbier mais antiga da cidade.",
+      "de": "Schumacher Alt, blond und spritzig, aus der ältesten Altbierbrauerei der Stadt."
+    },
+    {
+      "en": "Füchschen Alt in the busiest corner of the Altstadt, with a Sauerbraten beside it.",
+      "pt": "Füchschen Alt no canto mais movimentado da Altstadt, com um Sauerbraten ao lado.",
+      "de": "Füchschen Alt in der belebtesten Ecke der Altstadt, mit einem Sauerbraten daneben."
+    },
+    {
+      "en": "Schlüssel Alt, from the copper kettle in the cellar, in the quieter room upstairs.",
+      "pt": "Schlüssel Alt, da caldeira de cobre no porão, na sala mais quieta lá em cima.",
+      "de": "Schlüssel Alt, aus dem Kupferkessel im Keller, im ruhigeren Raum oben."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Halve Hahn: rye roll, cheese, mustard, onions. The name is a joke; there is no chicken.",
+      "pt": "Halve Hahn: pão de centeio, queijo, mostarda, cebola. O nome é piada; não tem frango.",
+      "de": "Halve Hahn: Roggenbrötchen, Käse, Senf, Zwiebeln. Der Name ist ein Witz, kein Huhn."
+    },
+    {
+      "en": "Himmel un Ääd: black pudding, apple compote and mashed potato, which sounds wrong and works.",
+      "pt": "Himmel un Ääd: morcela, compota de maçã e purê de batata, que parece errado e funciona.",
+      "de": "Himmel un Ääd: Blutwurst, Apfelmus und Kartoffelpüree, klingt falsch und funktioniert."
+    },
+    {
+      "en": "Rheinischer Sauerbraten with raisin sauce, in one of the brewery kitchens.",
+      "pt": "Rheinischer Sauerbraten com molho de passas, numa das cozinhas de cervejaria.",
+      "de": "Rheinischer Sauerbraten mit Rosinensoße, in einer der Brauhausküchen."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Do not order a large Alt. The glass is small on purpose, and the refills are the point.",
+      "pt": "Não peça uma Alt grande. O copo é pequeno de propósito, e as recargas são o ponto.",
+      "de": "Kein großes Alt bestellen. Das Glas ist absichtlich klein, und der Nachschub ist der Punkt."
+    },
+    {
+      "en": "Put the coaster on the glass when you want to stop, or the Köbes will keep going.",
+      "pt": "Ponha o descanso sobre o copo quando quiser parar, ou o Köbes continua.",
+      "de": "Den Bierdeckel aufs Glas legen, wenn Schluss sein soll, sonst macht der Köbes weiter."
+    },
+    {
+      "en": "Park under the Rheinufer at Rathausufer 10; the Altstadt itself is pedestrian and short of spaces.",
+      "pt": "Estacione sob o Rheinufer, em Rathausufer 10; a Altstadt é de pedestres e tem poucas vagas.",
+      "de": "Unter dem Rheinufer in der Rathausufer 10 parken; die Altstadt ist Fußgängerzone mit wenig Platz."
+    },
+    {
+      "en": "Friday and Saturday nights the Altstadt is loud and full. A weekday lunch is a different city.",
+      "pt": "Sexta e sábado à noite a Altstadt é barulhenta e cheia. Um almoço em dia de semana é outra cidade.",
+      "de": "Freitag und Samstagabend ist die Altstadt laut und voll. Ein Mittagessen unter der Woche ist eine andere Stadt."
+    },
+    {
+      "en": "In summer, the tables outside the Uerige on Rheinstraße are the best seats and the hardest to get.",
+      "pt": "No verão, as mesas na rua em frente à Uerige, na Rheinstraße, são os melhores lugares e os mais disputados.",
+      "de": "Im Sommer sind die Tische draußen am Uerige in der Rheinstraße die besten Plätze und die schwersten."
+    }
+  ],
+  "links": [
+    {
+      "label": "Düsseldorf Altstadt",
+      "url": "https://www.visitduesseldorf.de/attraktionen/altstadt-19519f54f5"
+    },
+    {
+      "label": "Uerige",
+      "url": "https://uerige.de/"
+    },
+    {
+      "label": "Altbier (Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Altbier"
+    }
+  ]
+}

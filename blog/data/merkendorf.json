@@ -1,0 +1,227 @@
+{
+  "slug": "merkendorf",
+  "type": "city",
+  "name": "Merkendorf",
+  "where": "Merkendorf (Memmelsdorf), Germany",
+  "coords": [
+    49.9586,
+    10.9567
+  ],
+  "span": 1.2,
+  "subtitle_en": "Two breweries, 924 people, one church",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Brauerei+Wagner+Pointstrasse+1+Merkendorf",
+  "trips": [
+    "2026"
+  ],
+  "related": [
+    "brauerei-wagner",
+    "memmelsdorf",
+    "drei-kronen",
+    "bamberg"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "inhabitants",
+        "pt": "habitantes",
+        "de": "Einwohner"
+      },
+      "v": {
+        "en": "924",
+        "pt": "924",
+        "de": "924"
+      }
+    },
+    {
+      "k": {
+        "en": "breweries",
+        "pt": "cervejarias",
+        "de": "Brauereien"
+      },
+      "v": {
+        "en": "two",
+        "pt": "duas",
+        "de": "zwei"
+      }
+    },
+    {
+      "k": {
+        "en": "Wagner brewing since",
+        "pt": "Wagner produz desde",
+        "de": "Wagner braut seit"
+      },
+      "v": {
+        "en": "1797"
+      }
+    },
+    {
+      "k": {
+        "en": "brewing on the Hummel estate since",
+        "pt": "cerveja no terreno Hummel desde",
+        "de": "Braurecht am Hummel-Anwesen seit"
+      },
+      "v": {
+        "en": "1556"
+      }
+    },
+    {
+      "k": {
+        "en": "part of Memmelsdorf since",
+        "pt": "parte de Memmelsdorf desde",
+        "de": "Teil von Memmelsdorf seit"
+      },
+      "v": {
+        "en": "1972"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Merkendorf is a village of 924 people with two breweries, which is not remarkable in Upper Franconia and is the only reason to come. It joined Memmelsdorf in 1972 and sits east of it, with a church in the middle and fields on every side. Neither brewery is a museum: both pour in their own house and both cook.",
+    "pt": "Merkendorf é um vilarejo de 924 habitantes com duas cervejarias, o que não é extraordinário na Alta Francônia e é o único motivo para ir até lá. Virou parte de Memmelsdorf em 1972 e fica a leste dela, com uma igreja no meio e campos de todos os lados. Nenhuma das duas cervejarias é um museu: as duas servem no próprio salão e cozinham.",
+    "de": "Merkendorf ist ein Dorf mit 924 Einwohnern und zwei Brauereien — in Oberfranken nichts Besonderes und der einzige Grund hinzufahren. 1972 kam der Ort zu Memmelsdorf und liegt östlich davon, mit einer Kirche in der Mitte und Feldern ringsum. Keine der beiden Brauereien ist ein Museum: Beide zapfen im eigenen Haus, beide kochen fränkisch."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Two breweries, nine hundred people",
+        "pt": "Duas cervejarias, novecentos habitantes",
+        "de": "Zwei Brauereien, neunhundert Menschen"
+      },
+      "p": [
+        {
+          "en": "The village is a parish in its own right, with the church of Kreuzerhöhung standing in the middle of it, and a few streets of farmhouses around. There is a bus stop, a hall, and no shop worth the name. In a region where almost every village once brewed, Merkendorf kept two, and both still make beer in the building where they sell it.",
+          "pt": "O vilarejo é paróquia própria, com a igreja de Kreuzerhöhung no centro e algumas ruas de casas de fazenda em volta. Há uma parada de ônibus, um salão comunitário e nenhuma loja que mereça o nome. Numa região onde quase toda aldeia já teve cervejaria, Merkendorf manteve duas, e as duas ainda produzem no mesmo prédio onde vendem a cerveja, a poucos passos da igreja.",
+          "de": "Der Ort ist eine eigene Pfarrei, die Kirche Kreuzerhöhung steht mitten im Ort, ringsum ein paar Gassen mit Bauernhäusern. Es gibt eine Bushaltestelle, ein Gemeindehaus und keinen Laden, der den Namen verdient. In einer Gegend, in der fast jedes Dorf einmal braute, hat Merkendorf zwei behalten — und beide brauen noch in dem Gebäude, in dem sie ausschenken. Beide liegen keine fünf Minuten voneinander."
+        },
+        {
+          "en": "Wagner, at Pointstraße 1, has brewed since 1797 and has belonged to the same family since 1919. The output is around 17,000 hectolitres a year, which makes it a substantial village brewery rather than a hobby: lorries leave for the region most mornings. The taproom is a few steps from the kettle, and the beer garden behind the house sits under old trees, with a playground beside it.",
+          "pt": "A Wagner, na Pointstraße 1, produz desde 1797 e pertence à mesma família desde 1919. A produção é de cerca de 17 mil hectolitros por ano, o que a torna uma cervejaria de vilarejo substancial, e não um passatempo: quase toda manhã saem caminhões para a região. O salão fica a poucos passos do tanque, e o beer garden atrás da casa está sob árvores antigas, com um parquinho ao lado.",
+          "de": "Wagner in der Pointstraße 1 braut seit 1797 und gehört seit 1919 derselben Familie. Die Ausstoßmenge liegt bei rund 17.000 Hektolitern im Jahr, was aus der Dorfbrauerei einen Betrieb macht und nicht aus einem Hobby: Fast jeden Morgen fahren Lastwagen in die Region. Die Gaststube liegt wenige Schritte vom Sudkessel entfernt, der Biergarten hinter dem Haus unter alten Bäumen, mit Spielplatz daneben."
+        },
+        {
+          "en": "Hummel, at Lindenstraße 9, is the older of the two and the smaller. Beer has been brewed on the estate since 1556; the family bought it in 1846 and is now in the seventh generation. There is a Gastwirtschaft, a Bräustübla for about eighteen people, and a beer garden for the summer. It closes on Tuesdays, which is worth knowing before you get on a bus.",
+          "pt": "A Hummel, na Lindenstraße 9, é a mais antiga das duas e a menor. Produz-se cerveja no terreno desde 1556; a família comprou a casa em 1846 e está na sétima geração. Há uma Gastwirtschaft, um Bräustübla para cerca de dezoito pessoas e um beer garden para o verão. Fecha às terças, o que vale saber antes de pegar o ônibus.",
+          "de": "Hummel in der Lindenstraße 9 ist die ältere und die kleinere der beiden. Seit 1556 wird auf dem Anwesen gebraut; 1846 kaufte es die Familie, inzwischen in der siebten Generation. Es gibt eine Gastwirtschaft, ein Bräustübla für etwa achtzehn Personen und einen Biergarten für den Sommer. Die Karte ist fränkisch und wechselt mit der Saison. Dienstag ist Ruhetag — gut zu wissen, bevor man in den Bus steigt."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The village year",
+        "pt": "O ano do vilarejo",
+        "de": "Das Jahr im Dorf"
+      },
+      "p": [
+        {
+          "en": "Two dates organise the year. Wagner's Kirchweih falls on the second Sunday after Assumption, in late August, and the Bockbieranstich on the Friday before Buß- und Bettag in November, when the dark Bock goes on tap and the taproom fills with the village. Both are ordinary Franconian customs, and both are a better reason to come than any weekend in between.",
+          "pt": "Duas datas organizam o ano. A Kirchweih da Wagner cai no segundo domingo depois da Assunção, no fim de agosto, e o Bockbieranstich na sexta-feira antes do Buß- und Bettag, em novembro, quando o Bock escuro entra no barril e o salão enche com o vilarejo. As duas são costumes francônios comuns, e as duas são motivo melhor para ir do que qualquer fim de semana entre elas.",
+          "de": "Zwei Termine ordnen das Jahr. Wagners Kirchweih fällt auf den zweiten Sonntag nach Mariä Himmelfahrt, Ende August, der Bockbieranstich auf den Freitag vor Buß- und Bettag im November, wenn der dunkle Bock angestochen wird und die Gaststube vollläuft. Beides sind gewöhnliche fränkische Bräuche — und beide ein besserer Grund zu kommen als jeder andere Samstag. Der Ort ist klein genug, dass man alles zu Fuß erreicht."
+        },
+        {
+          "en": "The rest of the year the village is quiet. You can walk the length of it in ten minutes, past the church and the last houses, out to where the fields begin and the orchards stand in rows. There is nothing to see, which is the point: the taproom is the sight, and the beer is brewed on the other side of the wall.",
+          "pt": "No resto do ano o vilarejo é silencioso. Dá para atravessá-lo em dez minutos, passando pela igreja e pelas últimas casas, até onde começam os campos e os pomares ficam em fila. Não há nada para ver, e é essa a questão: o salão é a atração, a cerveja é feita do outro lado da parede, e o resto do vilarejo continua agrícola.",
+          "de": "Im Rest des Jahres ist es still. Man durchquert den Ort in zehn Minuten, an der Kirche und den letzten Häusern vorbei, hinaus zu den Feldern, wo die Obstwiesen in Reihen stehen. Es gibt nichts zu besichtigen, und genau das ist der Punkt: Die Gaststube ist die Sehenswürdigkeit, das Bier entsteht auf der anderen Seite der Wand, und der Rest des Dorfes bleibt der Landwirtschaft überlassen."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Getting there and eating",
+        "pt": "Como chegar e onde comer",
+        "de": "Hinkommen und essen"
+      },
+      "p": [
+        {
+          "en": "Bus 917 stops at Merkendorf (Memmelsd.) Kirche, which is as central as the village gets. There is no station, and the service is thin at weekends, so check the return times before the first beer rather than after. A car makes both breweries in one afternoon easy, and the drive from Bamberg takes about fifteen minutes. From Memmelsdorf the walk over the fields takes about forty.",
+          "pt": "O ônibus 917 para em Merkendorf (Memmelsd.) Kirche, o ponto mais central que o vilarejo tem. Não há estação, e o serviço é escasso nos fins de semana, então confira os horários de volta antes da primeira cerveja, não depois. De carro, dá para visitar as duas cervejarias numa tarde, e o trajeto desde Bamberg leva cerca de quinze minutos. De Memmelsdorf, a caminhada pelos campos leva uns quarenta.",
+          "de": "Der Bus 917 hält an der Haltestelle Merkendorf (Memmelsd.) Kirche, zentraler wird es nicht. Einen Bahnhof gibt es nicht, und am Wochenende fährt wenig — die Rückfahrt also vor dem ersten Bier klären und nicht danach. Mit dem Auto sind beide Brauereien an einem Nachmittag zu schaffen, die Fahrt von Bamberg dauert etwa fünfzehn Minuten. Wer in Memmelsdorf übernachtet, geht in etwa vierzig Minuten über die Felder herüber."
+        },
+        {
+          "en": "Food is the reason to stay past one beer. Wagner cooks Franconian roasts and Klöße from a menu that changes daily, with Leberkäse on Wednesday and fish on Friday, and serves Brotzeiten all day. Hummel does roasts, a Fleischspieß the house is known for, and its own Kellerbier alongside. Neither is a destination restaurant; both are village kitchens that happen to brew.",
+          "pt": "A comida é o motivo para ficar além da primeira cerveja. A Wagner faz assados francônios e Klöße de um menu que muda todo dia, com Leberkäse na quarta e peixe na sexta, e serve Brotzeiten o dia inteiro. A Hummel faz assados, um Fleischspieß pelo qual a casa é conhecida, e o próprio Kellerbier ao lado. Nenhuma é restaurante de destino; as duas são cozinhas de vilarejo que também produzem cerveja.",
+          "de": "Das Essen ist der Grund, länger als ein Bier zu bleiben. Wagner kocht fränkische Braten und Klöße nach einer Karte, die täglich wechselt — mittwochs Leberkäse, freitags Fisch —, und serviert durchgehend Brotzeiten. Hummel hat Braten, einen Fleischspieß, für den das Haus bekannt ist, und das eigene Kellerbier daneben. Keins von beiden ist ein Zielrestaurant; es sind Dorfküchen, die nebenbei brauen. Beide Küchen schließen früh am Abend, nicht erst um Mitternacht."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Wagner Lagerbier Ungespunden, unfiltered and poured in the taproom a few steps from the brewhouse.",
+      "pt": "Wagner Lagerbier Ungespunden, não filtrada e servida no salão a poucos passos do tanque.",
+      "de": "Wagner Lagerbier Ungespunden, ungefiltert und in der Gaststube wenige Schritte vom Sudhaus gezapft."
+    },
+    {
+      "en": "Wagner Kupferstich Rotbier, a red lager and the rarer style on this stretch of the road.",
+      "pt": "Wagner Kupferstich Rotbier, uma lager vermelha e o estilo mais raro neste trecho de estrada.",
+      "de": "Wagner Kupferstich Rotbier, ein rotes Lager und der seltenere Stil an dieser Straße."
+    },
+    {
+      "en": "Hummel Kellerbier, low in carbonation and served young, which is the other village's answer.",
+      "pt": "Hummel Kellerbier, com pouco gás e servida jovem, que é a resposta do outro vilarejo.",
+      "de": "Hummel Kellerbier, kohlensäurearm und jung ausgeschenkt — die Antwort des anderen Dorfes."
+    },
+    {
+      "en": "Wagner Dunkler Bock from the November tapping, if your dates happen to line up with it.",
+      "pt": "Wagner Dunkler Bock do barril de novembro, se as suas datas coincidirem.",
+      "de": "Wagner Dunkler Bock vom November-Anstich, wenn die Reise zufällig passt."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Braten mit Klößen at Wagner, from a menu that changes daily: Leberkäse on Wednesday, fish on Friday.",
+      "pt": "Braten mit Klößen na Wagner, de um menu que muda diariamente: Leberkäse na quarta, peixe na sexta.",
+      "de": "Braten mit Klößen bei Wagner, nach einer täglich wechselnden Karte: mittwochs Leberkäse, freitags Fisch."
+    },
+    {
+      "en": "The Fleischspieß at Hummel, the dish the house is known for, with the Kellerbier beside it.",
+      "pt": "O Fleischspieß da Hummel, o prato pelo qual a casa é conhecida, com o Kellerbier ao lado.",
+      "de": "Der Fleischspieß bei Hummel, das Gericht, für das das Haus bekannt ist, mit dem Kellerbier daneben."
+    },
+    {
+      "en": "A Brotzeit in either taproom: bread, butter, cheese, sausage, and no reason to hurry.",
+      "pt": "Uma Brotzeit em qualquer um dos dois salões: pão, manteiga, queijo, linguiça, e nenhuma pressa.",
+      "de": "Eine Brotzeit in einer der beiden Gaststuben: Brot, Butter, Käse, Wurst — und kein Grund zur Eile."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Bus 917 stops at Merkendorf (Memmelsd.) Kirche. Services are thin at weekends, so check the last return before you start.",
+      "pt": "O ônibus 917 para em Merkendorf (Memmelsd.) Kirche. Nos fins de semana há poucas partidas, então confira o último horário antes de começar.",
+      "de": "Der Bus 917 hält in Merkendorf (Memmelsd.) Kirche. Am Wochenende fährt wenig — den letzten Rückweg vorher prüfen."
+    },
+    {
+      "en": "Both breweries close at the start of the week: Wagner on Monday and Tuesday, Hummel on Tuesday.",
+      "pt": "As duas cervejarias fecham no começo da semana: a Wagner na segunda e na terça, a Hummel na terça.",
+      "de": "Beide Brauereien schließen zu Wochenbeginn: Wagner montags und dienstags, Hummel dienstags."
+    },
+    {
+      "en": "Wagner has no rooms but will find you one in the village. The nearest hotel is the Drei Kronen in Memmelsdorf.",
+      "pt": "A Wagner não tem quartos, mas arruma um no vilarejo. O hotel mais próximo é o Drei Kronen, em Memmelsdorf.",
+      "de": "Wagner hat keine Zimmer, vermittelt aber eine Unterkunft im Ort. Das nächste Hotel ist das Drei Kronen in Memmelsdorf."
+    },
+    {
+      "en": "Both sell bottles at the house, which is how most of the village drinks their beer during the week.",
+      "pt": "As duas vendem garrafas na própria casa, e é assim que boa parte do vilarejo bebe a cerveja durante a semana.",
+      "de": "Beide verkaufen Flaschen im Haus — so trinkt das halbe Dorf sein Bier unter der Woche."
+    },
+    {
+      "en": "Cash is the rule. Neither taproom is set up for a card in the way a city restaurant is.",
+      "pt": "Dinheiro em espécie é a regra. Nenhum dos salões está aparelhado para cartão como um restaurante de cidade.",
+      "de": "Bargeld ist die Regel. Keine der beiden Gaststuben ist auf Karten eingerichtet wie ein Stadtrestaurant."
+    }
+  ],
+  "links": [
+    {
+      "label": "Brauerei Wagner",
+      "url": "https://www.wagner-merkendorf.de/"
+    },
+    {
+      "label": "Brauerei Hummel",
+      "url": "https://brauerei-hummel.de/"
+    },
+    {
+      "label": "Memmelsdorf",
+      "url": "https://www.memmelsdorf.de/"
+    }
+  ]
+}

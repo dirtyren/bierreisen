@@ -1,0 +1,223 @@
+{
+  "slug": "fassla",
+  "type": "brewery",
+  "name": "Brauerei Fässla",
+  "where": "Bamberg, Germany",
+  "coords": [
+    49.8971413,
+    10.8926972
+  ],
+  "span": 0.22,
+  "subtitle_en": "A dwarf, a dark lager and the strongest beer in Bamberg",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Brauerei+Faessla+Obere+Koenigstrasse+19+Bamberg",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2027"
+  ],
+  "related": [
+    "spezial",
+    "schlenkerla",
+    "bamberg",
+    "trip-2019"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing since",
+        "pt": "cerveja desde",
+        "de": "gebraut seit"
+      },
+      "v": {
+        "en": "1649"
+      }
+    },
+    {
+      "k": {
+        "en": "beer",
+        "pt": "cerveja",
+        "de": "Bier"
+      },
+      "v": {
+        "en": "Zwergla, 6.0%"
+      }
+    },
+    {
+      "k": {
+        "en": "strongest",
+        "pt": "mais forte",
+        "de": "stärkstes"
+      },
+      "v": {
+        "en": "Bambergator, 8.5%"
+      }
+    },
+    {
+      "k": {
+        "en": "range",
+        "pt": "linha",
+        "de": "Sortiment"
+      },
+      "v": {
+        "en": "six beers",
+        "pt": "seis cervejas",
+        "de": "sechs Biere"
+      }
+    },
+    {
+      "k": {
+        "en": "output",
+        "pt": "produção",
+        "de": "Ausstoß"
+      },
+      "v": {
+        "en": "about 40,000 hl a year"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Fässla has the best-known sign in Bamberg: a dwarf in a green coat and a red cap, rolling a barrel taller than himself. The brewery behind it dates from 1649, stands directly opposite Spezial, and makes the strongest beer in the city. By volume it is also the second-largest brewery in Bamberg, which the dwarf does not advertise.",
+    "pt": "A Fässla tem a marca mais conhecida de Bamberg: um anão de casaco verde e gorro vermelho rolando um barril maior que ele. A cervejaria atrás dela é de 1649, fica em frente à Spezial e faz a cerveja mais forte da cidade. Em volume, é também a segunda maior de Bamberg — o que o anão não anuncia.",
+    "de": "Fässla hat das bekannteste Zeichen Bambergs: einen Zwerg im grünen Rock und mit roter Zipfelmütze, der ein Fass rollt, das größer ist als er. Die Brauerei dahinter stammt von 1649, liegt Spezial direkt gegenüber und braut das stärkste Bier der Stadt. Nach Ausstoß ist sie außerdem die zweitgrößte Brauerei Bambergs — was der Zwerg nicht erwähnt."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The dwarf and the dark beer",
+        "pt": "O anão e a cerveja escura",
+        "de": "Der Zwerg und das dunkle Bier"
+      },
+      "p": [
+        {
+          "en": "The dwarf is on every label, rolling a barrel bigger than he is. The beer named after him is the reason to come: Zwergla is a dark lager, almost mahogany in the glass, 13.5% original wort and 6.0%, soft and malty with the hop note kept low. It tastes better in the second mug than the first, which is true of most dark lagers and worth knowing before ordering a small one.",
+          "pt": "O anão está em todo rótulo, rolando um barril maior que ele. A cerveja que leva seu nome é o motivo de vir: a Zwergla é uma lager escura, quase cor de mogno no copo, 13,5% de extrato primitivo e 6,0%, macia e maltada, com amargor de lúpulo baixo de propósito. Fica melhor no segundo copo que no primeiro — o que vale para quase toda lager escura e é bom saber antes de pedir um pequeno.",
+          "de": "Der Zwerg steht auf jedem Etikett und rollt ein Fass, das größer ist als er. Das Bier, das nach ihm heißt, ist der Grund zu kommen: Zwergla ist ein dunkles Lager, fast mahagonifarben im Glas, 13,5 % Stammwürze und 6,0 %, weich und malzig, mit absichtlich leiser Hopfennote. Es schmeckt im zweiten Krug besser als im ersten — das gilt für die meisten dunklen Lager und ist gut zu wissen, bevor man ein kleines bestellt."
+        },
+        {
+          "en": "Fässla is a diminutive of Fass, a barrel, so the name and the crest say the same thing twice. Bambergers recognise the beer by the dwarf before they read the word, which is the test of a good crest. He wears green and red, rolls a brown barrel and looks busy — which suits a brewery better than a coat of arms with lions on it.",
+          "pt": "Fässla é o diminutivo de Fass, barril, então nome e brasão dizem a mesma coisa duas vezes. Os moradores de Bamberg reconhecem a cerveja pelo anão antes de ler o nome; é o teste de um bom brasão. Ele veste verde e vermelho, rola um barril marrom e parece ocupado — o que combina com uma cervejaria melhor que um brasão com leões.",
+          "de": "Fässla ist die Verkleinerung von Fass, Name und Wappen sagen also zweimal dasselbe. Die Bamberger erkennen das Bier am Zwerg, bevor sie das Wort lesen; das ist die Probe für ein gutes Wappen. Er trägt Grün und Rot, rollt ein braunes Fass und wirkt beschäftigt — was besser zu einer Brauerei passt als ein Wappen mit Löwen. Wer ihn einmal gesehen hat, findet die Flasche im Regal sofort."
+        },
+        {
+          "en": "The range is six beers and none of them is a novelty. A lager at 5.5%, a gold pils at the same strength, a helles at 5.4%, a bottle-fermented wheat beer at 5.0%, the Zwergla at 6.0%, and the bock in autumn. For a brewery of forty thousand hectolitres — the second largest in Bamberg after Kaiserdom — that is a short list.",
+          "pt": "A linha tem seis cervejas, e nenhuma é novidade. Uma lager de 5,5%, uma Gold-Pils da mesma força, uma Helles de 5,4%, uma de trigo com fermentação na garrafa, 5,0%, a Zwergla de 6,0% e, no outono, a bock. Para uma cervejaria de quarenta mil hectolitros — a segunda de Bamberg, depois da Kaiserdom — é uma lista curta. Nenhuma delas tenta ser outra coisa.",
+          "de": "Das Sortiment umfasst sechs Biere, und keines ist eine Neuheit. Ein Lager mit 5,5 %, ein Gold-Pils gleicher Stärke, ein Helles mit 5,4 %, ein flaschenvergorenes Weizen mit 5,0 %, das Zwergla mit 6,0 % und im Herbst der Bock. Für eine Brauerei mit vierzigtausend Hektolitern — die zweitgrößte Bambergs nach Kaiserdom — ist das eine kurze Liste. Keines davon will etwas anderes sein."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "1649, the year after the war",
+        "pt": "1649, um ano depois da guerra",
+        "de": "1649, ein Jahr nach dem Krieg"
+      },
+      "p": [
+        {
+          "en": "The brewery was founded in 1649, a year after the Thirty Years' War ended, by Hanß Lauer, a brewer and cooper, in the corner house at the Gang zum Heiligen Grab. The house is older than the brewery: it appears in the oldest rent books of the St. Gangolf foundation in the fourteenth century and was leased on St Vitus's Day 1398 to Conrad Kauffmann and his wife Kunigund for a pound of money in local currency.",
+          "pt": "A cervejaria foi fundada em 1649, um ano depois do fim da Guerra dos Trinta Anos, por Hanß Lauer, cervejeiro e tanoeiro, na casa de esquina no Gang zum Heiligen Grab. A casa é mais velha que a cervejaria: aparece nos livros de foro mais antigos do mosteiro de St. Gangolf, no século XIV, e foi arrendada no dia de São Vito de 1398 a Conrad Kauffmann e sua mulher Kunigund por uma libra de dinheiro local.",
+          "de": "Gegründet wurde die Brauerei 1649, ein Jahr nach dem Ende des Dreißigjährigen Krieges, von Hanß Lauer, Brauer und Büttner, im Eckhaus am Gang zum Heiligen Grab. Das Haus ist älter als die Brauerei: Es steht in den ältesten Zinsbüchern des Stifts St. Gangolf im vierzehnten Jahrhundert und wurde am St.-Veits-Tag 1398 an Conrad Kauffmann und seine Frau Kunigund gegen ein Pfund Geld enger Währung zu Lehen gegeben."
+        },
+        {
+          "en": "The site changed hands many times before the Kalb family took it on 1 October 1986. Roland and Lukas Kalb run it now, with six beers in the range and a kitchen that cooks Franconian food without decoration. There are guest rooms upstairs and the station is five minutes away, which makes this one of the few beds in Bamberg directly above the bar.",
+          "pt": "A casa trocou de mãos muitas vezes antes de a família Kalb assumir em 1º de outubro de 1986. Roland e Lukas Kalb tocam o negócio hoje, com seis cervejas na linha e uma cozinha que faz comida francônia sem enfeite. Há quartos de hóspedes em cima, e a estação fica a cinco minutos a pé: uma das poucas camas de Bamberg em cima do próprio bar.",
+          "de": "Viele Besitzer wechselten, bevor die Familie Kalb am 1. Oktober 1986 übernahm. Roland und Lukas Kalb führen den Betrieb heute, mit sechs Bieren im Sortiment und einer Küche, die fränkisch kocht, ohne etwas dazuzuerfinden. Oben im Haus gibt es Gästezimmer, der Bahnhof liegt fünf Gehminuten entfernt, die Altstadt zwei Straßen weiter — eines der wenigen Betten Bambergs direkt über dem Ausschank."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Bambergator",
+        "pt": "Bambergator",
+        "de": "Bambergator"
+      },
+      "p": [
+        {
+          "en": "Every autumn the brewery makes Bambergator, a doppelbock at 21% original wort and 8.5%. It is dark brown, heavy and round, and the brewery calls it the strongest beer in Bamberg — the numbers support the sentence. It is brewed in September, tapped at the October Bockbieranstich, and gone by spring. Ask for it in July and you get a sympathetic shake of the head.",
+          "pt": "Todo outono a cervejaria faz a Bambergator, uma doppelbock de 21% de extrato e 8,5%. Marrom-escura, pesada e redonda, e a casa a chama de a cerveja mais forte de Bamberg — os números sustentam a frase. É produzida em setembro, tirada no Bockbieranstich de outubro, e some até a primavera. Quem pede em julho recebe um não com pena.",
+          "de": "Jeden Herbst entsteht der Bambergator, ein Doppelbock mit 21 % Stammwürze und 8,5 %. Dunkelbraun, schwer und rund, und die Brauerei nennt ihn das stärkste Bier Bambergs — die Zahlen stützen den Satz. Gebraut wird er im September, angestochen beim Bockbieranstich im Oktober, und im Frühjahr ist er weg. Wer im Sommer danach fragt, bekommt ein bedauerndes Kopfschütteln. Der Bock ist das einzige Bier des Hauses, das nur ein paar Wochen bleibt."
+        },
+        {
+          "en": "The rest is ordinary in the best sense: a lager at 5.5%, a gold pils at the same strength, a helles at 5.4%, a bottle-fermented wheat beer at 5.0%. Nothing is extreme except the bock. That is the point of a house like this: the everyday beer pays the bills, and the strong one is the annual event. Between the two sits the actual character of the brewery, a dark lager you can drink all evening.",
+          "pt": "O resto é comum no melhor sentido: uma lager de 5,5%, uma Gold-Pils da mesma força, uma Helles de 5,4%, uma de trigo com fermentação na garrafa, 5,0%. Nada é extremo, exceto a bock. É o sentido de uma casa assim: a cerveja de todo dia paga as contas e a forte é o acontecimento do ano. Entre as duas está o caráter da casa: uma escura que se bebe a noite inteira.",
+          "de": "Der Rest ist gewöhnlich im besten Sinn: ein Lager mit 5,5 %, ein Gold-Pils gleicher Stärke, ein Helles mit 5,4 %, ein flaschenvergorenes Weizen mit 5,0 %. Extrem ist nur der Bock. Das ist der Sinn eines Hauses wie diesem: Das Alltagsbier zahlt die Rechnungen, das starke ist das Ereignis des Jahres. Dazwischen liegt der eigentliche Charakter der Brauerei: ein dunkles Lager, das man den ganzen Abend trinken kann."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Zwergla — the dark lager, 6.0%, and the house's signature.",
+      "pt": "Zwergla — a lager escura, 6,0%, e a assinatura da casa.",
+      "de": "Zwergla — das dunkle Lager, 6,0 %, und die Signatur des Hauses."
+    },
+    {
+      "en": "Lagerbier, 5.5%, if you want the plainer, drier pour.",
+      "pt": "Lagerbier, 5,5%, se você quiser o gole mais simples e seco.",
+      "de": "Lagerbier, 5,5 %, wenn es der schlichtere, trockenere Einschenk sein soll."
+    },
+    {
+      "en": "Gold-Pils for the hops; same strength as the lager, with the bitterness turned up.",
+      "pt": "Gold-Pils para o lúpulo; mesma força da lager, com o amargor mais alto.",
+      "de": "Gold-Pils für den Hopfen; gleiche Stärke wie das Lager, mit mehr Bittere."
+    },
+    {
+      "en": "Bambergator in October — 8.5%, and the only beer here that needs a plan for the walk home.",
+      "pt": "Bambergator em outubro — 8,5%, e a única cerveja daqui que exige um plano para a volta a pé.",
+      "de": "Bambergator im Oktober — 8,5 %, und das einzige Bier hier, das einen Plan für den Heimweg braucht."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Schäuferla, the roasted pork shoulder, is on every Franconian menu and this one does it plainly, with a dark beer sauce and dumplings.",
+      "pt": "Schäuferla, a paleta de porco assada, está em todo menu francônio, e aqui é feita sem firula, com molho escuro de cerveja e bolinhos.",
+      "de": "Schäuferla, die gebratene Schweineschulter, steht auf jeder fränkischen Karte, und hier kommt sie schlicht auf den Tisch, mit dunkler Biersoße und Klößen."
+    },
+    {
+      "en": "Braten of the day at lunch, carved to order and served with Klöße.",
+      "pt": "O assado do dia no almoço, fatiado na hora e servido com Klöße.",
+      "de": "Der Braten des Tages zum Mittag, frisch aufgeschnitten und mit Klößen serviert."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The kitchen closes in the afternoon, and outside cooking hours the house lets you bring your own Brotzeit — an unusual permission, and a useful one.",
+      "pt": "A cozinha fecha à tarde, e fora do horário de cozinha a casa deixa você trazer sua própria Brotzeit — uma permissão incomum e útil.",
+      "de": "Die Küche schließt am Nachmittag, und außerhalb der Küchenzeiten darf man seine eigene Brotzeit mitbringen — eine ungewöhnliche und nützliche Erlaubnis."
+    },
+    {
+      "en": "Sunday is a morning here: the pub opens at 8.30 and shuts at noon, with no kitchen.",
+      "pt": "Domingo aqui é manhã: o bar abre às 8h30 e fecha ao meio-dia, sem cozinha.",
+      "de": "Der Sonntag ist hier ein Vormittag: Der Gasthof öffnet um 8.30 Uhr und schließt um zwölf, ohne Küche."
+    },
+    {
+      "en": "The rooms upstairs are recently refurbished and the station is five minutes away — the most practical bed in Bamberg if you arrive by train.",
+      "pt": "Os quartos em cima foram reformados há pouco e a estação fica a cinco minutos — a cama mais prática de Bamberg para quem chega de trem.",
+      "de": "Die Zimmer oben sind frisch renoviert, der Bahnhof liegt fünf Minuten entfernt — das praktischste Bett Bambergs für alle, die mit dem Zug ankommen."
+    },
+    {
+      "en": "Bambergator is brewed in September and poured from the October tapping; in summer it is a memory.",
+      "pt": "A Bambergator é produzida em setembro e servida a partir do barril de outubro; no verão, é lembrança.",
+      "de": "Der Bambergator wird im September gebraut und ab dem Anstich im Oktober ausgeschenkt; im Sommer ist er nur noch Erinnerung."
+    },
+    {
+      "en": "The pub faces Spezial across the street: order a Zwergla, cross, order a Rauchbier Lager, and you have the two poles of Bamberg beer in ten minutes.",
+      "pt": "O bar fica de frente para a Spezial: peça uma Zwergla, atravesse a rua, peça uma Rauchbier Lager, e você tem os dois polos da cerveja de Bamberg em dez minutos.",
+      "de": "Der Gasthof liegt Spezial gegenüber: ein Zwergla bestellen, die Straße überqueren, ein Rauchbier Lager bestellen — und man hat die beiden Pole des Bamberger Biers in zehn Minuten."
+    }
+  ],
+  "links": [
+    {
+      "label": "Brauerei-Gasthof Fässla",
+      "url": "https://www.faessla.de/"
+    },
+    {
+      "label": "Wikipedia — Brauerei Fässla",
+      "url": "https://de.wikipedia.org/wiki/Brauerei_F%C3%A4ssla"
+    },
+    {
+      "label": "Bamberg tourism — Fässla",
+      "url": "https://www.bamberg.info/poi/brauerei_faessla-5203/"
+    }
+  ]
+}

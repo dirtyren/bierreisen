@@ -1,0 +1,242 @@
+{
+  "slug": "andechs",
+  "type": "brewery",
+  "name": "Kloster Andechs",
+  "where": "Andechs, Germany",
+  "coords": [
+    47.974444,
+    11.183056
+  ],
+  "span": 0.35,
+  "subtitle_en": "Doppelbock from a working monastery above the Ammersee",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Kloster+Andechs+Bergstra%C3%9Fe+2",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "munich",
+    "ayinger",
+    "augustiner",
+    "trip-2026"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing documented",
+        "pt": "produção documentada",
+        "de": "Braubetrieb belegt"
+      },
+      "v": {
+        "en": "1455"
+      }
+    },
+    {
+      "k": {
+        "en": "Doppelbock Dunkel",
+        "pt": "Doppelbock Dunkel",
+        "de": "Doppelbock Dunkel"
+      },
+      "v": {
+        "en": "7.1%"
+      }
+    },
+    {
+      "k": {
+        "en": "original wort",
+        "pt": "mosto original",
+        "de": "Stammwürze"
+      },
+      "v": {
+        "en": "18.8 °P"
+      }
+    },
+    {
+      "k": {
+        "en": "output",
+        "pt": "produção",
+        "de": "Ausstoß"
+      },
+      "v": {
+        "en": "over 100,000 hl",
+        "pt": "mais de 100 mil hl",
+        "de": "über 100.000 hl"
+      }
+    },
+    {
+      "k": {
+        "en": "from Munich",
+        "pt": "de Munique",
+        "de": "von München"
+      },
+      "v": {
+        "en": "S8 to Herrsching, then bus 951",
+        "pt": "S8 até Herrsching, depois ônibus 951",
+        "de": "S8 nach Herrsching, dann Bus 951"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Andechs is a Benedictine monastery on a hill above the Ammersee, a pilgrimage site since 1388 and a brewery since 1455. The beer is Doppelbock Dunkel at 7.1 per cent, drunk on a terrace that looks over the lake and the woods. The tanks are at the foot of the hill; the drinking is at the top.",
+    "pt": "Andechs é um mosteiro beneditino numa colina acima do Ammersee, local de peregrinação desde 1388 e cervejaria desde 1455. A cerveja é a Doppelbock Dunkel, 7,1%, bebida num terraço que olha o lago e os bosques. Os tanques ficam no pé da colina; a bebida, no alto.",
+    "de": "Andechs ist ein Benediktinerkloster auf einer Anhöhe über dem Ammersee, Wallfahrtsort seit 1388 und Brauerei seit 1455. Das Bier ist der Doppelbock Dunkel mit 7,1 Prozent, getrunken auf einer Terrasse mit Blick über den See und die Wälder. Die Tanks stehen am Fuß des Berges, getrunken wird oben."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The holy mountain",
+        "pt": "O monte sagrado",
+        "de": "Der heilige Berg"
+      },
+      "p": [
+        {
+          "en": "On 26 May 1388 a hoard of relics was found under the altar of the ruined castle chapel, and the pilgrimage began almost at once. The Three Hosts came back in 1394; the church that holds them was built between 1423 and 1427, and Johann Baptist Zimmermann gave it its rococo interior between 1751 and 1755. The site had been the seat of the Counts of Andechs, a family that died out in 1248.",
+          "pt": "Em 26 de maio de 1388 um tesouro de relíquias foi encontrado sob o altar da capela arruinada do castelo, e a peregrinação começou quase imediatamente. As Três Hóstias voltaram em 1394; a igreja que as guarda foi construída entre 1423 e 1427, e Johann Baptist Zimmermann lhe deu o interior rococó entre 1751 e 1755. O local tinha sido a sede dos condes de Andechs, família extinta em 1248.",
+          "de": "Am 26. Mai 1388 wurde unter dem Altar der verfallenen Burgkapelle ein Reliquienschatz gefunden, und die Wallfahrt begann fast sofort. 1394 kehrten die Heiligen Drei Hostien zurück; die Kirche, die sie birgt, entstand zwischen 1423 und 1427, und Johann Baptist Zimmermann gab ihr zwischen 1751 und 1755 die Rokokoausstattung. Der Ort war zuvor Sitz der Grafen von Andechs, die 1248 ausstarben."
+        },
+        {
+          "en": "In 1455 Duke Albrecht III turned the canonry into a Benedictine monastery. Fire destroyed almost everything in 1669, the brewery and bakery included, and the rebuild was finished by 1674. Secularisation dissolved the house in 1803. Ludwig I bought it in 1846 for 65,000 gulden and gave the buildings and estates to St. Bonifaz in 1850, the abbey he had founded in Munich.",
+          "pt": "Em 1455 o duque Alberto III transformou o cabido em mosteiro beneditino. Um incêndio destruiu quase tudo em 1669, inclusive a cervejaria e a padaria, e a reconstrução terminou em 1674. A secularização dissolveu a casa em 1803. Luís I comprou-a em 1846 por 65 mil florins e doou os prédios e as terras a São Bonifácio em 1850, a abadia que ele havia fundado em Munique.",
+          "de": "1455 machte Herzog Albrecht III. aus dem Chorherrenstift ein Benediktinerkloster. 1669 zerstörte ein Feuer fast alles, auch Brauerei und Bäckerei, und der Wiederaufbau war 1674 abgeschlossen. Die Säkularisation löste das Haus 1803 auf. Ludwig I. kaufte es 1846 für 65.000 Gulden und schenkte Gebäude und Güter 1850 dem Kloster St. Bonifaz, das er in München gegründet hatte. Damit begann die zweite Geschichte des Ortes."
+        },
+        {
+          "en": "The monastery is a priory of St. Bonifaz and sits in the diocese of Augsburg, which surprises people who assume Bavaria is one ecclesiastical block. The brewery is its largest business and pays for the abbey's scholarly, cultural and social work. Carl Orff is buried in the Schmerzhafte Kapelle, a side chapel off the nave, which is either incongruous or exactly right.",
+          "pt": "O mosteiro é um priorado de São Bonifácio e fica na diocese de Augsburgo, o que surpreende quem imagina a Baviera como um bloco eclesiástico único. A cervejaria é o maior negócio da casa e paga o trabalho acadêmico, cultural e social da abadia. Carl Orff está enterrado na Schmerzhafte Kapelle, uma capela lateral da nave, o que é incongruente ou exatamente certo.",
+          "de": "Das Kloster ist ein Priorat von St. Bonifaz und liegt im Bistum Augsburg, was alle überrascht, die Bayern für einen einzigen kirchlichen Block halten. Die Brauerei ist der größte Betrieb und finanziert die wissenschaftliche, kulturelle und soziale Arbeit der Abtei. Carl Orff liegt in der Schmerzhaften Kapelle begraben, einer Seitenkapelle am Langhaus, was entweder unpassend ist oder genau richtig. Für ein bayerisches Kloster ist das eine Ausnahme."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The brewery",
+        "pt": "A cervejaria",
+        "de": "Die Brauerei"
+      },
+      "p": [
+        {
+          "en": "Brewing here is documented from 1455. Today it is the largest of the few German monastery breweries still run by a living order and independent of any group, and everything is brewed and bottled on the site. Output is over 100,000 hectolitres a year, most of it sold across Germany and exported; only a small share is drunk on the hill, which is why the beer turns up in Munich bars at all.",
+          "pt": "A produção aqui está documentada desde 1455. Hoje é a maior entre as poucas cervejarias monásticas alemãs ainda administradas por uma ordem viva e independentes de qualquer grupo, e tudo é produzido e engarrafado no local. O volume passa de 100 mil hectolitros por ano, a maior parte vendida na Alemanha e exportada; só uma pequena fatia é bebida na colina, e é por isso que a cerveja aparece em bares de Munique.",
+          "de": "Gebraut wird hier nachweislich seit 1455. Heute ist es die größte der wenigen deutschen Klosterbrauereien, die noch von einem lebenden Orden geführt und von Konzernen unabhängig ist, und alles wird am Ort gebraut und abgefüllt. Der Ausstoß liegt über 100.000 Hektolitern im Jahr, meistverkauft in Deutschland und exportiert; nur ein kleiner Teil wird auf dem Berg getrunken, weshalb das Bier überhaupt in Münchner Bars auftaucht."
+        },
+        {
+          "en": "Doppelbock Dunkel, 7.1 per cent and 18.8 degrees Plato, is the beer to order: dark bread, dried fruit, a finish drier than the nose promises. It is brewed all year, which is unusual for a German monastery brewery and the reason it travels. Spezial Hell, Vollbier Hell, Bergbock Hell, Export Dunkel, Weißbier Hell and Dunkel, and a Weizenbock in season complete the range.",
+          "pt": "A Doppelbock Dunkel, 7,1% e 18,8 graus Plato, é a cerveja a pedir: pão escuro, fruta seca, um final mais seco do que o aroma promete. É produzida o ano todo, o que é incomum numa cervejaria monástica alemã e é a razão de ela viajar. Spezial Hell, Vollbier Hell, Bergbock Hell, Export Dunkel, Weißbier Hell e Dunkel, e um Weizenbock na temporada completam a linha.",
+          "de": "Der Doppelbock Dunkel mit 7,1 Prozent und 18,8 Grad Plato ist das Bier der Wahl: dunkles Brot, Trockenfrüchte, ein Abgang trockener als die Nase verspricht. Er wird ganzjährig gebraut, was für eine deutsche Klosterbrauerei ungewöhnlich ist und der Grund, warum er reist. Spezial Hell, Vollbier Hell, Bergbock Hell, Export Dunkel, Weißbier Hell und Dunkel sowie ein Weizenbock zur Saison ergänzen die Reihe."
+        },
+        {
+          "en": "The tanks are not in the monastery. The brewery stands at the foot of the hill, built in 1972, with the barrel and bottle cellar added in 1974, a new brewhouse in 1983 and a thorough renewal in 2007. So the walk up is to the church, the terrace and the Bräustüberl; the production side sits below, out of sight, sending beer up by lorry.",
+          "pt": "Os tanques não estão no mosteiro. A cervejaria fica no pé da colina, construída em 1972, com a adega de barris e garrafas em 1974, uma nova casa de brassagem em 1983 e uma reforma profunda em 2007. Portanto, a subida é para a igreja, o terraço e a Bräustüberl; a produção fica embaixo, fora de vista, e manda a cerveja para cima de caminhão.",
+          "de": "Die Tanks stehen nicht im Kloster. Die Brauerei liegt am Fuß des Berges, errichtet 1972, mit Fass- und Flaschenkeller von 1974, einem neuen Sudhaus 1983 und einer gründlichen Erneuerung 2007. Der Aufstieg gilt also der Kirche, der Terrasse und dem Bräustüberl; die Produktion liegt unten, außer Sicht, und schickt das Bier per Lastwagen hinauf. Oben bleibt die Aussicht. Das ist die Arbeitsteilung des Hauses."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The Bräustüberl",
+        "pt": "A Bräustüberl",
+        "de": "Das Bräustüberl"
+      },
+      "p": [
+        {
+          "en": "It is a self-service room: take a tray, queue at the counter, pay, then find a table in the vault or on the terrace. Cold plates, cheese, sausages, a few warm dishes, and bread that is better than it needs to be. You may bring your own Brotzeit, as at any Bavarian beer garden, as long as the beer comes from the house. The room is plain, the queue moves, and the view does the decorating.",
+          "pt": "É um salão de autosserviço: pegue uma bandeja, faça fila no balcão, pague e procure mesa na abóbada ou no terraço. Pratos frios, queijo, linguiças, alguns pratos quentes, e um pão melhor do que seria necessário. Pode-se levar a própria Brotzeit, como em qualquer biergarten bávaro, desde que a cerveja venha da casa. A sala é simples, a fila anda, e a vista faz a decoração.",
+          "de": "Es ist ein Selbstbedienungsraum: Tablett nehmen, an der Theke anstehen, zahlen, dann einen Tisch in der Wölbung oder auf der Terrasse suchen. Kalte Platten, Käse, Würste, ein paar warme Gerichte und Brot, das besser ist, als es sein müsste. Eigene Brotzeit darf man mitbringen, wie in jedem bayerischen Biergarten, solange das Bier vom Haus kommt. Der Raum ist schlicht, die Schlange bewegt sich, und die Aussicht übernimmt die Dekoration."
+        },
+        {
+          "en": "The walk up from Herrsching is about five kilometres along the Kienbach, through woods, with the monastery appearing above the trees near the end. It takes an hour at an easy pace. Bus 951 does the same trip from the station in ten minutes, and the S8 from Munich takes about fifty, so the whole thing is a half-day rather than an expedition.",
+          "pt": "A subida a partir de Herrsching tem cerca de cinco quilômetros ao longo do Kienbach, por dentro do bosque, com o mosteiro aparecendo acima das árvores no fim. Leva uma hora em ritmo tranquilo. O ônibus 951 faz o mesmo trajeto da estação em dez minutos, e o S8 de Munique leva cerca de cinquenta, então o programa inteiro é meio dia, não uma expedição.",
+          "de": "Der Aufstieg von Herrsching führt etwa fünf Kilometer am Kienbach entlang, durch Wald, und gegen Ende taucht das Kloster über den Bäumen auf. In ruhigem Tempo dauert er eine Stunde. Der Bus 951 braucht von der Station zehn Minuten, die S8 von München etwa fünfzig, das Ganze ist also ein halber Tag und keine Expedition. Wer zu Fuß kommt, hat den besseren Teil."
+        },
+        {
+          "en": "Below the church, the Klostergasthof is the sit-down restaurant and the place to sleep if you want the hill at dawn. The Bräustüberl is the more useful room, and the terrace is the reason most people come. Weekends are crowded, weekday mornings are not, and the church is worth ten minutes before the beer. Book the Klostergasthof well ahead in summer.",
+          "pt": "Abaixo da igreja, o Klostergasthof é o restaurante com serviço de mesa e o lugar para dormir se você quiser a colina ao amanhecer. A Bräustüberl é o salão mais útil, e o terraço é o motivo pelo qual a maioria vem. Os fins de semana são cheios, as manhãs de dia de semana não, e a igreja vale dez minutos antes da cerveja. Reserve o Klostergasthof com antecedência no verão.",
+          "de": "Unterhalb der Kirche ist der Klostergasthof das Restaurant mit Bedienung und die Unterkunft, wenn man den Berg im Morgengrauen will. Das Bräustüberl ist der nützlichere Raum, und die Terrasse ist der Grund, warum die meisten kommen. Am Wochenende ist es voll, an Wochentagvormittagen nicht, und die Kirche lohnt zehn Minuten vor dem Bier. Den Klostergasthof im Sommer frühzeitig buchen. Das ist der praktische Teil."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Doppelbock Dunkel: 7.1 per cent, dark, and the beer the monastery is known for.",
+      "pt": "Doppelbock Dunkel: 7,1%, escura, e a cerveja pela qual o mosteiro é conhecido.",
+      "de": "Doppelbock Dunkel: 7,1 Prozent, dunkel, das Bier, für das Andechs bekannt ist."
+    },
+    {
+      "en": "Spezial Hell, if the dark bock is too much before lunch.",
+      "pt": "Spezial Hell, se o bock escuro for demais antes do almoço.",
+      "de": "Spezial Hell, wenn der dunkle Bock vor dem Mittag zu viel ist."
+    },
+    {
+      "en": "Bergbock Hell, the lighter bock, on the terrace.",
+      "pt": "Bergbock Hell, o bock mais claro, no terraço.",
+      "de": "Bergbock Hell, der hellere Bock, auf der Terrasse."
+    },
+    {
+      "en": "Weißbier Dunkel, which few visitors order and should.",
+      "pt": "Weißbier Dunkel, que poucos visitantes pedem e deveriam.",
+      "de": "Weißbier Dunkel, das wenige Besucher bestellen und bestellen sollten."
+    }
+  ],
+  "eat": [
+    {
+      "en": "A Brotzeit of Obatzda, radishes, rye bread and salt, assembled at the counter.",
+      "pt": "Uma Brotzeit de Obatzda, rabanete, pão de centeio e sal, montada no balcão.",
+      "de": "Eine Brotzeit aus Obatzda, Radi, Roggenbrot und Salz, an der Theke zusammengestellt."
+    },
+    {
+      "en": "Cold cuts and mountain cheese, which is what the monks' tenants would have eaten with the beer.",
+      "pt": "Frios e queijo de montanha, o que os arrendatários dos monges teriam comido com a cerveja.",
+      "de": "Aufschnitt und Bergkäse, was die Pächter der Mönche zum Bier gegessen hätten."
+    },
+    {
+      "en": "The warm dish of the day, whatever it is; the menu is short and changes with the kitchen.",
+      "pt": "O prato quente do dia, seja qual for; o menu é curto e muda com a cozinha.",
+      "de": "Das warme Tagesgericht, was auch immer es ist; die Karte ist kurz und wechselt mit der Küche."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Go on a weekday morning and take the terrace before the coach parties arrive around midday.",
+      "pt": "Vá numa manhã de dia de semana e pegue o terraço antes de os ônibus de excursão chegarem perto do meio-dia.",
+      "de": "An einem Wochentagvormittag kommen und die Terrasse nehmen, bevor gegen Mittag die Reisebusse eintreffen."
+    },
+    {
+      "en": "Walk up and take the bus down. The path along the Kienbach is the better half of the visit.",
+      "pt": "Suba a pé e desça de ônibus. O caminho ao longo do Kienbach é a melhor metade da visita.",
+      "de": "Zu Fuß hinauf und mit dem Bus hinunter. Der Weg am Kienbach ist die bessere Hälfte des Besuchs."
+    },
+    {
+      "en": "Check the last bus from Andechs to Herrsching before you settle in; the hill is quiet after it.",
+      "pt": "Confira o último ônibus de Andechs para Herrsching antes de se acomodar; a colina fica vazia depois dele.",
+      "de": "Vor dem Einrichten den letzten Bus von Andechs nach Herrsching prüfen; danach wird der Berg still."
+    },
+    {
+      "en": "The Bräustüberl is self-service: tray, counter, cash desk, table. Do not wait to be seated.",
+      "pt": "A Bräustüberl é autosserviço: bandeja, balcão, caixa, mesa. Não espere para ser acomodado.",
+      "de": "Das Bräustüberl ist Selbstbedienung: Tablett, Theke, Kasse, Tisch. Nicht auf einen Platz warten."
+    },
+    {
+      "en": "The Klosterladen sells bottles and crates, and the church is open to visitors outside services.",
+      "pt": "A Klosterladen vende garrafas e caixas, e a igreja é aberta a visitantes fora dos horários de missa.",
+      "de": "Der Klosterladen verkauft Flaschen und Kästen, und die Kirche ist außerhalb der Gottesdienste offen."
+    }
+  ],
+  "links": [
+    {
+      "label": "Kloster Andechs",
+      "url": "https://www.andechs.de/"
+    },
+    {
+      "label": "Kloster Andechs (Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Kloster_Andechs"
+    },
+    {
+      "label": "Klosterbrauerei Andechs",
+      "url": "https://de.wikipedia.org/wiki/Klosterbrauerei_Andechs"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "slug": "spezial",
+  "type": "brewery",
+  "name": "Brauerei Spezial",
+  "where": "Bamberg, Germany",
+  "coords": [
+    49.8968694,
+    10.892783
+  ],
+  "span": 0.22,
+  "subtitle_en": "Bamberg's quieter smoke, brewed since 1536",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Brauerei+Spezial+Obere+Koenigstrasse+10+Bamberg",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "schlenkerla",
+    "bamberg",
+    "fassla",
+    "trip-2021"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing since",
+        "pt": "cerveja desde",
+        "de": "gebraut seit"
+      },
+      "v": {
+        "en": "1536"
+      }
+    },
+    {
+      "k": {
+        "en": "beer",
+        "pt": "cerveja",
+        "de": "Bier"
+      },
+      "v": {
+        "en": "Rauchbier Lager, 4.9%"
+      }
+    },
+    {
+      "k": {
+        "en": "malt",
+        "pt": "malte",
+        "de": "Malz"
+      },
+      "v": {
+        "en": "own kiln, beechwood fire",
+        "pt": "malteria própria, lenha de faia",
+        "de": "eigene Darre, Buchenholzfeuer"
+      }
+    },
+    {
+      "k": {
+        "en": "output",
+        "pt": "produção",
+        "de": "Ausstoß"
+      },
+      "v": {
+        "en": "about 6,000 hl a year"
+      }
+    },
+    {
+      "k": {
+        "en": "bock",
+        "pt": "bock",
+        "de": "Bock"
+      },
+      "v": {
+        "en": "16.9 °P, 7.1%"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Spezial is the other smoked beer in Bamberg, and the one the city drinks. The brewery at Obere Königstraße 10 dates from 1536, malts its own barley over a beechwood fire, and keeps the smoke lower than its better-known neighbour. The result is a lager you can drink by the half-litre rather than the sip.",
+    "pt": "A Spezial é a outra cerveja defumada de Bamberg, e a que a cidade bebe. Cerveja desde 1536 na Obere Königstraße 10, com malte próprio secado em fogo de faia e fumaça mais baixa que a da vizinha mais conhecida. O resultado é uma lager que se bebe em caneca, não em golinhos.",
+    "de": "Spezial ist das andere Rauchbier in Bamberg, und das, was die Stadt trinkt. Gebraut wird in der Oberen Königstraße 10 seit 1536, das Malz wird über Buchenholzfeuer gedarrt, und der Rauch bleibt dezenter als beim bekannteren Nachbarn. Das Ergebnis ist ein Lagerbier, das man in Krügen trinkt, nicht in Schlucken."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Smoke, turned down",
+        "pt": "Fumaça em volume mais baixo",
+        "de": "Der Rauch, leiser gedreht"
+      },
+      "p": [
+        {
+          "en": "The malt is made in the yard behind the pub. Barley from organic farms in Upper Franconia is steeped, germinated and then dried for about twenty-four hours over an open fire of split beechwood, fed by hand. Christian Merz, who runs the brewery, is often there at night to watch the kiln. The slow drying is what puts smoke into the malt, and the malt is what gives the beer its softer, rounder smoke than the one a few minutes' walk away.",
+          "pt": "O malte nasce no pátio atrás do salão. Cevada de cultivo orgânico da Francônia é encharcada, germinada e secada por cerca de vinte e quatro horas sobre fogo aberto de lenha de faia, alimentado à mão. Christian Merz, dono da cervejaria, costuma estar lá à noite, de olho no forno. A secagem lenta é o que põe fumaça no malte, e o malte é o que dá à cerveja um defumado mais macio e redondo que o do vizinho a poucos minutos de caminhada.",
+          "de": "Das Malz entsteht im Hof hinter dem Gasthaus. Gerste aus ökologischem Anbau in Oberfranken wird geweicht, gekeimt und dann rund vierundzwanzig Stunden über einem offenen Feuer aus gespaltenem Buchenholz gedarrt, von Hand geschürt. Christian Merz, der die Brauerei führt, steht nachts oft selbst an der Darre. Das langsame Trocknen bringt den Rauch ins Malz, und das Malz gibt dem Bier seinen weicheren, runderen Geschmack als beim Nachbarn ein paar Minuten weiter."
+        },
+        {
+          "en": "Only two breweries in Germany still malt their own this way: Spezial and Schlenkerla. Both are in Bamberg, which is either a coincidence of history or a sign of how stubborn the city is about beer. Slow Food put both on its Ark of Taste list for the method. The brewery makes around six thousand hectolitres a year and does not send it far: you will not find the beer in a drinks market much beyond fifteen kilometres from the cathedral.",
+          "pt": "Só duas cervejarias na Alemanha ainda maltam assim: a Spezial e a Schlenkerla. As duas ficam em Bamberg, o que pode ser acaso da história ou teimosia da cidade com cerveja. O Slow Food incluiu as duas na Arca do Gosto pelo método. A produção é de cerca de seis mil hectolitros por ano e não viaja longe: em loja de bebidas, é difícil achar a cerveja a mais de quinze quilômetros da catedral.",
+          "de": "Nur zwei Brauereien in Deutschland malzen noch auf diese Weise: Spezial und Schlenkerla. Beide stehen in Bamberg, was entweder ein Zufall der Geschichte ist oder ein Zeichen dafür, wie stur die Stadt beim Bier bleibt. Slow Food hat beide für das Verfahren in die Arche des Geschmacks aufgenommen. Die Brauerei kommt auf etwa sechstausend Hektoliter im Jahr und schickt sie nicht weit: In Getränkemärkten findet man das Bier kaum weiter als fünfzehn Kilometer vom Dom entfernt."
+        },
+        {
+          "en": "The Lager is the way in: amber, around 4.9% and 12.3% original wort, with a smoke that arrives after the malt rather than over it. The Märzen is darker and firmer in the body and takes a bigger mouthful. The wheat beer absorbs the smoke in a way that sounds wrong at first and then tastes like bread toasted over a fire. Order the first one small and the second one large.",
+          "pt": "A Lager é a porta de entrada: âmbar, uns 4,9% e 12,3% de extrato primitivo, com fumaça que chega depois do malte e não por cima dele. A Märzen é mais escura e mais firme no corpo, e pede um gole maior. A de trigo recebe a fumaça de um jeito que parece errado no começo e depois lembra pão torrado na lenha. Peça a primeira pequena e a segunda grande.",
+          "de": "Das Lager ist der Einstieg: bernsteinfarben, rund 4,9 % und 12,3 % Stammwürze, mit einem Rauch, der nach dem Malz kommt und nicht darüber. Das Märzen ist dunkler und fester im Körper und verträgt einen kräftigeren Schluck. Das Weizenbier nimmt den Rauch so auf, dass es zunächst falsch klingt und dann nach Brot schmeckt, das über einem Feuer geröstet wurde. Das erste klein bestellen, das zweite groß."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The beer without smoke",
+        "pt": "A cerveja sem fumaça",
+        "de": "Das Bier ohne Rauch"
+      },
+      "p": [
+        {
+          "en": "Spezial also brews one beer with no smoked malt at all. The Ungespundetes is pale, unfiltered and lagered without a spunding valve, so the carbon dioxide escapes instead of dissolving into the beer. What arrives is almost still, cloudy and dry, with a hop bitterness that turns up late. It has been made since 2006, the hops come from contracted farms in Bavaria, and it stays in the house: shops do not get it.",
+          "pt": "A Spezial também faz uma cerveja sem malte defumado. A Ungespundetes é clara, não filtrada e matura sem espundagem, então o gás carbônico escapa em vez de se dissolver na cerveja. O que chega é quase sem gás, turvo e seco, com amargor de lúpulo que aparece tarde. É feita desde 2006, o lúpulo vem de contrato na Baviera, e fica em casa: o comércio não recebe.",
+          "de": "Spezial braut auch ein Bier ganz ohne Rauchmalz. Das Ungespundete ist hell, unfiltriert und reift ohne Spundung, das heißt: Das Kohlendioxid entweicht, statt sich im Bier zu lösen. Was ankommt, ist fast still, trüb und trocken, mit einer Hopfenbittere, die spät einsetzt. Gebraut wird es seit 2006, der Hopfen kommt aus bayerischem Vertragsanbau, und es bleibt im Haus: In den Handel kommt es nicht."
+        },
+        {
+          "en": "Order it as a Seidla, the Franconian half-litre, and eat something salty with it. Without gas the beer tastes warmer and grainier than a normal lager, closer to the cellar than to the tap. Regulars use it as a pause between smoked beers — a sensible way to spend an afternoon in a town where every second beer tastes of a fireplace. Nobody hurries you out of the seat, either.",
+          "pt": "Peça como Seidla, o meio litro francônio, e coma algo salgado junto. Sem gás, a cerveja fica mais quente e mais granulada que uma lager comum, mais perto do porão do que da torneira. Os frequentadores usam como pausa entre duas defumadas — um jeito sensato de passar a tarde numa cidade em que toda segunda cerveja lembra lareira. E ninguém apressa sua saída.",
+          "de": "Bestellen Sie es als Seidla, das fränkische Halbliter, und essen Sie etwas Salziges dazu. Ohne Kohlensäure wirkt das Bier wärmer und körniger als ein normales Lager, näher am Keller als am Zapfhahn. Stammgäste nutzen es als Pause zwischen zwei Rauchbieren — ein vernünftiger Umgang mit einem Nachmittag in einer Stadt, in der jedes zweite Bier nach Kamin schmeckt. Und niemand drängt zum Gehen."
+        },
+        {
+          "en": "In winter the dark Wirtsstube does the work; in summer it is the courtyard behind the house, where the beer comes out of the same tap and the tables sit against the wall. The kitchen is Franconian and unhurried, Sundays are for roast meat with Klöße, and the cycle path along the Rhine–Main–Danube canal passes less than fifty metres from the door, which is why the bike racks are full at lunch.",
+          "pt": "No inverno, o salão escuro da Wirtsstube faz o trabalho; no verão, é o pátio atrás da casa, onde a cerveja sai da mesma torneira e as mesas ficam encostadas no muro. A cozinha é francônia e sem pressa, domingo é dia de assado com Klöße, e a ciclovia do canal Reno–Meno–Danúbio passa a menos de cinquenta metros da porta, o que explica as bicicletas no almoço.",
+          "de": "Im Winter macht die dunkle Wirtsstube die Arbeit, im Sommer der Hof hinter dem Haus, wo das Bier aus demselben Hahn kommt und die Tische an der Mauer stehen. Die Küche ist fränkisch und ohne Eile, sonntags gibt es Braten mit Klößen, und der Radweg am Rhein-Main-Donau-Kanal führt keine fünfzig Meter an der Tür vorbei — deshalb stehen mittags die Fahrräder dicht."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The house and the hill",
+        "pt": "A casa e a colina",
+        "de": "Das Haus und der Hügel"
+      },
+      "p": [
+        {
+          "en": "Apart from a few technical fittings, the property is regarded as a textbook example of a sixteenth-century brewery, on the old trade road from Prague to Frankfurt. The name is less clear. It first appears attached to Niklas Delscher, described in a document as “Spicial genannt, eyn Bräuer und auch Büttner” — a brewer and a cooper, called Spezial. Whether that was a nickname or a trade description, the house kept it.",
+          "pt": "Fora alguns equipamentos, o prédio é considerado um exemplo típico de uma cervejaria do século XVI, na antiga estrada comercial de Praga a Frankfurt. O nome é menos claro. Aparece pela primeira vez ligado a Niklas Delscher, descrito num documento como “Spicial genannt, eyn Bräuer und auch Büttner” — cervejeiro e tanoeiro, chamado Spezial. Apelido ou descrição de ofício, a casa ficou com o nome.",
+          "de": "Von einigen technischen Einbauten abgesehen, gilt das Anwesen als Musterbeispiel einer Brauerei aus dem sechzehnten Jahrhundert, an der alten Handelsstraße von Prag nach Frankfurt. Der Name ist weniger klar. Er taucht zuerst bei Niklas Delscher auf, den eine Urkunde als „Spicial genannt, eyn Bräuer und auch Büttner“ führt — ein Brauer und Böttcher, Spezial genannt. Ob Spitzname oder Berufsbezeichnung, das Haus hat den Namen behalten."
+        },
+        {
+          "en": "The Merz family has owned it since October 1898, and both sons trained as brewers. The brewery has stayed small on purpose: around six thousand hectolitres, one brewhouse, one malting floor, and a delivery radius short enough that the beer is still fresh when it reaches the table. The Bock is the event of the winter: 16.9% original wort, 7.1%, brewed in summer, tapped at the start of November and poured until the barrel runs out.",
+          "pt": "A família Merz é dona desde outubro de 1898, e os dois filhos se formaram cervejeiros. A cervejaria continuou pequena de propósito: cerca de seis mil hectolitros, uma sala de brassagem, uma malteria, e um raio de entrega curto o bastante para a cerveja chegar fresca à mesa. A Bock é o acontecimento do inverno: 16,9% de extrato primitivo, 7,1%, produzida no verão, tirada do barril no começo de novembro e servida até acabar.",
+          "de": "Seit Oktober 1898 gehört die Brauerei der Familie Merz, und beide Söhne sind Brauer geworden. Die Brauerei ist mit Absicht klein geblieben: rund sechstausend Hektoliter, ein Sudhaus, eine Mälzerei und ein Lieferradius, der kurz genug ist, dass das Bier frisch auf den Tisch kommt. Der Bock ist das Ereignis des Winters: 16,9 % Stammwürze, 7,1 %, im Sommer eingebraut, Anfang November angestochen und ausgeschenkt, bis das Fass leer ist."
+        },
+        {
+          "en": "Up on the Stephansberg the brewery keeps its Keller: a cellar bought in 1830 to cool the beer, an ice gallows on the site that was in use into the 1960s, and a garden above it that serves the same beer with a view over the roofs. On a summer evening the garden is the better seat, and the climb is short enough to justify a second round before walking back down.",
+          "pt": "No alto do Stephansberg, a cervejaria mantém seu Keller: um porão comprado em 1830 para resfriar a cerveja, uma estrutura de gelo no terreno usada até os anos 1960 e um jardim em cima, que serve a mesma cerveja com vista sobre os telhados. Numa noite de verão, o jardim é o melhor lugar, e a subida é curta o bastante para justificar mais uma rodada antes de descer.",
+          "de": "Oben auf dem Stephansberg hält die Brauerei ihren Keller: 1830 als Kühlkeller erworben, mit einem Eisgalgen auf dem Grundstück, der bis in die 1960er-Jahre benutzt wurde, und darüber ein Garten, in dem dasselbe Bier mit Blick über die Dächer ausgeschenkt wird. An einem Sommerabend sitzt man dort besser, und der Anstieg ist kurz genug, um vor dem Abstieg noch eine Runde zu rechtfertigen."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Rauchbier Lager in a Seidla — the house beer, and the measure of how gentle smoke can be.",
+      "pt": "Rauchbier Lager num Seidla — a cerveja da casa e a medida de como a fumaça pode ser discreta.",
+      "de": "Rauchbier Lager als Seidla — das Hausbier und der Maßstab dafür, wie leise Rauch sein kann."
+    },
+    {
+      "en": "Rauchbier Märzen for more malt and a darker pour.",
+      "pt": "Rauchbier Märzen para mais malte e um gole mais escuro.",
+      "de": "Rauchbier Märzen für mehr Malz und einen dunkleren Einschenk."
+    },
+    {
+      "en": "Ungespundetes for the pause: unfiltered, barely carbonated and sold only here.",
+      "pt": "Ungespundetes para a pausa: não filtrada, quase sem gás e vendida só aqui.",
+      "de": "Ungespundetes für die Pause: unfiltriert, kaum Kohlensäure und nur hier erhältlich."
+    },
+    {
+      "en": "Bock from early November, at 7.1% — one is usually enough before dinner.",
+      "pt": "Bock a partir do começo de novembro, com 7,1% — um copo costuma bastar antes do jantar.",
+      "de": "Bock ab Anfang November, mit 7,1 % — einer reicht vor dem Abendessen meist."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Sunday lunch is the traditional roast — pork, beef or game with Klöße and a dark sauce.",
+      "pt": "O almoço de domingo é o assado tradicional — porco, boi ou caça com Klöße e molho escuro.",
+      "de": "Sonntags gibt es den traditionellen Braten — Schwein, Rind oder Wild mit Klößen und dunkler Soße."
+    },
+    {
+      "en": "Blauer Zipfel, bratwurst simmered in vinegar and served sour, makes more sense with the second beer than the first.",
+      "pt": "Blauer Zipfel, linguiça cozida no vinagre e servida azeda, faz mais sentido com a segunda cerveja que com a primeira.",
+      "de": "Blauer Zipfel, in Essig gesottene Bratwurst, passt besser zum zweiten Bier als zum ersten."
+    },
+    {
+      "en": "A plate of Kalterbraten with bread, if you are eating at the bar rather than at a table.",
+      "pt": "Um prato de Kalterbraten com pão, se você for comer no balcão e não à mesa.",
+      "de": "Ein Teller Kalterbraten mit Brot, wenn man an der Theke statt am Tisch isst."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Reservations are taken by telephone only, and the house keeps tables back for walk-ins — outside Sunday lunch, turning up is a reasonable plan.",
+      "pt": "Reserva só por telefone, e a casa guarda mesas para quem chega sem reservar — fora do almoço de domingo, aparecer é um plano razoável.",
+      "de": "Reserviert wird nur telefonisch, und das Haus hält Tische für Laufkundschaft frei — außer am Sonntagsmittag ist Hineingehen ein vernünftiger Plan."
+    },
+    {
+      "en": "There are rooms above the pub, which makes this the easiest base in Bamberg: the station is 700 metres away and the centre ten minutes on foot.",
+      "pt": "Há quartos em cima do salão, o que faz daqui a base mais prática em Bamberg: a estação fica a 700 metros e o centro, a dez minutos a pé.",
+      "de": "Über dem Gasthaus gibt es Zimmer, damit ist dies die einfachste Basis in Bamberg: Der Bahnhof liegt 700 Meter entfernt, die Altstadt zehn Gehminuten."
+    },
+    {
+      "en": "The courtyard behind the house opens in good weather and sits beside the canal cycle path, which makes it a sensible stop on a bike day.",
+      "pt": "O pátio atrás da casa abre no tempo bom e fica ao lado da ciclovia do canal, o que resolve uma parada num dia de bicicleta.",
+      "de": "Der Hof hinter dem Haus öffnet bei gutem Wetter und liegt keine fünfzig Meter vom Radweg des Kanals entfernt — ein sinnvoller Halt an einem Radtag."
+    },
+    {
+      "en": "The beer travels badly by design: the brewery sells within roughly fifteen kilometres, so buy what you want to take home at the counter.",
+      "pt": "A cerveja não viaja por desenho: a cervejaria vende num raio de uns quinze quilômetros, então compre no balcão o que quiser levar.",
+      "de": "Das Bier reist von Natur aus nicht weit: Die Brauerei verkauft im Umkreis von etwa fünfzehn Kilometern, also kauft man zum Mitnehmen an der Theke."
+    },
+    {
+      "en": "If the smoke has worn out your palate, the Ungespundetes is the reset — order it before the food, not after.",
+      "pt": "Se a fumaça cansar o paladar, a Ungespundetes é o reinício — peça antes da comida, não depois.",
+      "de": "Wenn der Rauch den Gaumen müde gemacht hat, ist das Ungespundete der Neustart — vor dem Essen bestellen, nicht danach."
+    }
+  ],
+  "links": [
+    {
+      "label": "Brauerei Spezial",
+      "url": "https://brauerei-spezial.de/"
+    },
+    {
+      "label": "Bamberg tourism — Spezial",
+      "url": "https://en.bamberg.info/poi/brauerei_spezial-5202"
+    },
+    {
+      "label": "Wikipedia — Brauerei Spezial",
+      "url": "https://de.wikipedia.org/wiki/Brauerei_Spezial"
+    }
+  ]
+}

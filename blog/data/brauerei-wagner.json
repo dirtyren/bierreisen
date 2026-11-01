@@ -1,0 +1,228 @@
+{
+  "slug": "brauerei-wagner",
+  "type": "brewery",
+  "name": "Brauerei Wagner",
+  "where": "Merkendorf, Germany",
+  "coords": [
+    49.9584241,
+    10.9564337
+  ],
+  "span": 0.45,
+  "subtitle_en": "A village brewery eleven kilometres from Bamberg, brewing since 1797",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Brauerei+Wagner+Pointstrasse+1+Merkendorf",
+  "trips": [
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "merkendorf",
+    "memmelsdorf",
+    "bamberg",
+    "trip-2026"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing since",
+        "pt": "cerveja desde",
+        "de": "gebraut seit"
+      },
+      "v": {
+        "en": "1797"
+      }
+    },
+    {
+      "k": {
+        "en": "family",
+        "pt": "família",
+        "de": "Familie"
+      },
+      "v": {
+        "en": "Wagner, since 1919",
+        "pt": "Wagner, desde 1919",
+        "de": "Wagner, seit 1919"
+      }
+    },
+    {
+      "k": {
+        "en": "bestseller",
+        "pt": "mais vendida",
+        "de": "meistverkauft"
+      },
+      "v": {
+        "en": "Pils",
+        "pt": "Pils",
+        "de": "Pils"
+      }
+    },
+    {
+      "k": {
+        "en": "bock",
+        "pt": "bock",
+        "de": "Bock"
+      },
+      "v": {
+        "en": "16.8 °P, 7.5%"
+      }
+    },
+    {
+      "k": {
+        "en": "output",
+        "pt": "produção",
+        "de": "Ausstoß"
+      },
+      "v": {
+        "en": "about 17,000 hl a year"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Merkendorf is a village eleven kilometres from Bamberg with two breweries and a neo-Gothic parish church. Wagner has brewed here since 1797, in family hands since 1919, and produces a range of Franconian lagers and around 17,000 hectolitres a year — more than several breweries inside Bamberg's walls. The taproom has not been designed for visitors, which is the point.",
+    "pt": "Merkendorf é um vilarejo a onze quilômetros de Bamberg, com duas cervejarias e uma igreja paroquial neogótica. A Wagner produz aqui desde 1797, em mãos da família desde 1919, e faz uma linha de lagers francônias e cerca de 17 mil hectolitros por ano — mais que várias cervejarias dentro das muralhas de Bamberg. O salão não foi desenhado para turistas, e é isso que interessa.",
+    "de": "Merkendorf ist ein Dorf elf Kilometer von Bamberg entfernt, mit zwei Brauereien und einer neugotischen Pfarrkirche. Wagner braut hier seit 1797, seit 1919 in Familienbesitz, und macht eine Reihe fränkischer Lagerbiere und rund 17.000 Hektoliter im Jahr — mehr als manche Brauerei innerhalb der Bamberger Mauern. Die Gaststube ist nicht für Besucher eingerichtet, und genau das ist der Punkt."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The village",
+        "pt": "O vilarejo",
+        "de": "Das Dorf"
+      },
+      "p": [
+        {
+          "en": "Merkendorf belongs to Memmelsdorf and sits north-east of Bamberg, close enough that people drive out for lunch and back for the afternoon. The village has two breweries: Wagner on the Pointstraße and Hummel on the Lindenstraße, the second brewing on a site that goes back to 1556. Two breweries in a village this size is not unusual in Franconia, but it is worth pausing over: the competition never forced either of them out.",
+          "pt": "Merkendorf pertence a Memmelsdorf e fica a nordeste de Bamberg, perto o bastante para as pessoas irem almoçar e voltarem à tarde. O vilarejo tem duas cervejarias: a Wagner na Pointstraße e a Hummel na Lindenstraße, esta última num terreno que remonta a 1556. Duas cervejarias num vilarejo desse tamanho não é raro na Francônia, mas vale a pausa: a concorrência nunca expulsou nenhuma das duas.",
+          "de": "Merkendorf gehört zu Memmelsdorf und liegt nordöstlich von Bamberg, nah genug, dass man zum Mittagessen hinfährt und am Nachmittag zurück. Das Dorf hat zwei Brauereien: Wagner an der Pointstraße und Hummel an der Lindenstraße, letztere auf einem Grundstück von 1556. Zwei Brauereien in einem Dorf dieser Größe sind in Franken nicht ungewöhnlich — aber die Konkurrenz hat keine von beiden vertrieben."
+        },
+        {
+          "en": "The Gasthaus is a working room: a dining room, a bar, a daily card and a brewery behind the wall. Nothing is staged for visitors, and the awards the brewery has won hang on the website rather than on the wall. The family has run it since 1919; Günther and Rainer Wagner are the names on the company now, and the kitchen still cooks for the village.",
+          "pt": "O Gasthaus é uma sala de trabalho: sala de jantar, balcão, cardápio diário e a cervejaria atrás da parede. Nada é montado para turista, e os prêmios da casa ficam no site, não na parede. A família está à frente desde 1919; Günther e Rainer Wagner são os nomes da empresa hoje, e a cozinha ainda segue um plano feito para o vilarejo.",
+          "de": "Die Gastwirtschaft ist ein Arbeitsraum: Gaststube, Theke, Tageskarte und dahinter die Brauerei. Nichts ist für Besucher inszeniert, und die Auszeichnungen des Hauses stehen auf der Website, nicht an der Wand. Die Familie führt den Betrieb seit 1919; heute führen Günther und Rainer Wagner das Unternehmen, und die Küche kocht noch nach einem Plan, der für das Dorf gemacht ist. Wer hier isst, sitzt zwischen Leuten, die seit Jahrzehnten kommen."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The range, brewed dry",
+        "pt": "A linha, feita no seco",
+        "de": "Das Sortiment, trocken gebraut"
+      },
+      "p": [
+        {
+          "en": "The core beer is a Lagerbier Ungespunden, 12.7% original wort and 5.3%, a speciality the brewery says exists only in Bamberg and its district: low carbonation, firm malt, a late hop. It is the beer to order first, and the one that shows the house style — dry, precise, and less soft than the city's smoke beers. It is also what fills the room at lunch, ordered by people who never look at the card.",
+          "pt": "A cerveja central é uma Lagerbier Ungespunden, 12,7% de extrato e 5,3%, especialidade que a casa diz existir só em Bamberg e no distrito: pouco gás, malte firme, lúpulo tardio. É a primeira que se pede e a que mostra o estilo da casa — seca, precisa e menos macia que as defumadas da cidade. É também a que enche o salão no almoço, pedida por quem não olha o cardápio.",
+          "de": "Das Kernbier ist ein Lagerbier Ungespunden, 12,7 % Stammwürze und 5,3 %, eine Spezialität, die es laut Brauerei nur in Bamberg und seinem Landkreis gibt: wenig Kohlensäure, fester Malzkörper, späte Hopfengabe. Es ist das erste Bier, das man bestellt, und das den Stil des Hauses zeigt — trocken, präzise und weniger weich als die Rauchbiere der Stadt. Es ist auch das Bier, das mittags die Stube füllt, bestellt von Leuten, die nie auf die Karte schauen."
+        },
+        {
+          "en": "Around it: a Pils at 12.1% and 4.9%, the brewery's best seller; a Märzen at 13.2% and 5.4%; a Kupferstich Rotbier at 12.1% and 4.9%, red from a special malt mix; a Festbier at 13.5% and 5.7%; a Kellerbier brewed for the village's 850th anniversary; and two bocks at 16.8% and 7.5%, one pale and one dark, released in mid-November.",
+          "pt": "Em volta dela: uma Pils de 12,1% e 4,9%, a mais vendida da casa; uma Märzen de 13,2% e 5,4%; uma Kupferstich Rotbier de 12,1% e 4,9%, vermelha por uma mistura especial de maltes; uma Festbier de 13,5% e 5,7%; uma Kellerbier feita para os 850 anos do vilarejo; e duas bocks de 16,8% e 7,5%, uma clara e uma escura, a partir de meados de novembro.",
+          "de": "Darum herum: ein Pils mit 12,1 % und 4,9 %, das meistverkaufte Bier des Hauses; ein Märzen mit 13,2 % und 5,4 %; ein Kupferstich Rotbier mit 12,1 % und 4,9 %, rot durch eine besondere Malzmischung; ein Festbier mit 13,5 % und 5,7 %; ein Kellerbier zum 850-jährigen Bestehen des Dorfes; und zwei Bockbiere mit 16,8 % und 7,5 %, eines hell, eines dunkel, ab Mitte November."
+        },
+        {
+          "en": "The odd one out is Richard Wagner Dunkel, a dark lager at 13.2% and 5.5%, first brewed for the 75th birthday of the senior boss and kept on because the village would not let it go. The label carries the name of the man it was brewed for, which is a very Franconian way of naming a beer: not a style, not an adjective, just the person.",
+          "pt": "A exceção é a Richard Wagner Dunkel, uma lager escura de 13,2% e 5,5%, feita pela primeira vez para os 75 anos do patriarca e mantida porque o vilarejo não deixou sumir. O rótulo carrega o nome do homem para quem foi feita, um jeito muito francônio de nomear cerveja: não um estilo, não um adjetivo, só a pessoa. A história não está no rótulo; ficou na família.",
+          "de": "Der Sonderfall ist Richard Wagner Dunkel, ein dunkles Lager mit 13,2 % und 5,5 %, erstmals zum 75. Geburtstag des Seniorchefs gebraut und geblieben, weil das Dorf es nicht hergab. Auf dem Etikett steht der Name des Mannes, für den es gebraut wurde — eine sehr fränkische Art, ein Bier zu benennen: kein Stil, kein Adjektiv, nur der Mensch. Die Geschichte dazu erzählt die Brauerei nicht auf dem Etikett; sie bleibt im Haus."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The table and the garden",
+        "pt": "A mesa e o jardim",
+        "de": "Tisch und Garten"
+      },
+      "p": [
+        {
+          "en": "The kitchen is Franconian and unpretentious: Braten with Klöße from Wednesday to Sunday, Brotzeiten all day, a daily card that runs to Leberkäse and Bratkartoffeln on Wednesday and fish on Friday. On Sundays the roast is served until two, then a short evening card takes over. The portions are large and the prices are village prices. Nobody comes for a tasting menu; they come because the beer is good and the plate is full.",
+          "pt": "A cozinha é francônia e sem pretensão: assados com Klöße de quarta a domingo, Brotzeiten o dia todo, um cardápio diário que traz Leberkäse e batatas salteadas na quarta e peixe na sexta. No domingo o assado é servido até as duas, e depois entra uma carta curta de noite. As porções são grandes e os preços são de vilarejo. Ninguém vem por menu degustação; vem porque a cerveja é boa e o prato vem cheio.",
+          "de": "Die Küche ist fränkisch und ohne Anspruch: Braten mit Klößen von Mittwoch bis Sonntag, Brotzeiten den ganzen Tag, eine Tageskarte mit Leberkäse und Bratkartoffeln am Mittwoch und Fisch am Freitag. Sonntags gibt es Braten bis zwei Uhr, danach eine kleine Abendkarte. Die Portionen sind groß, die Preise sind Dorfpreise. Niemand kommt für ein Degustationsmenü; man kommt, weil das Bier gut ist und der Teller voll."
+        },
+        {
+          "en": "Behind the house there is a beer garden under trees, away from the road, with a playground beside it and space for bicycles. Twice a year the village takes over: Kirchweih on the second Sunday after Assumption in August, and the Bockbieranstich on the Friday before Buß- und Bettag in November. Both dates are published by the brewery, and both fill the garden.",
+          "pt": "Atrás da casa há um jardim de cerveja sob as árvores, longe da estrada, com parquinho ao lado e espaço para bicicletas. Duas vezes por ano o vilarejo toma conta: a Kirchweih no segundo domingo depois da Assunção, em agosto, e o Bockbieranstich na sexta-feira antes do Buß- und Bettag, em novembro. As duas datas são publicadas pela cervejaria, e as duas enchem o jardim.",
+          "de": "Hinter dem Haus liegt ein Biergarten unter Bäumen, abseits der Straße, mit Spielplatz daneben und Platz für Fahrräder. Zweimal im Jahr übernimmt das Dorf: Kirchweih am zweiten Sonntag nach Mariä Himmelfahrt im August und Bockbieranstich am Freitag vor dem Buß- und Bettag im November. Beide Termine veröffentlicht die Brauerei, und beide füllen den Garten. Im Winter bleibt er zu, dann sitzt man in der Stube."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Lagerbier Ungespunden — 5.3%, low gas, and the reason to drive out.",
+      "pt": "Lagerbier Ungespunden — 5,3%, pouco gás, e o motivo de pegar a estrada.",
+      "de": "Lagerbier Ungespunden — 5,3 %, wenig Gas, und der Grund für die Fahrt aufs Land."
+    },
+    {
+      "en": "Pils, the brewery's best seller, drier and more bitter than the lager.",
+      "pt": "Pils, a mais vendida da casa, mais seca e mais amarga que a lager.",
+      "de": "Pils, das meistverkaufte Bier des Hauses, trockener und bitterer als das Lager."
+    },
+    {
+      "en": "Kupferstich Rotbier — red from the malt, lightly hoppy, and a change from the pale lagers.",
+      "pt": "Kupferstich Rotbier — vermelha pelo malte, levemente lupulada, e uma mudança em relação às lagers claras.",
+      "de": "Kupferstich Rotbier — rot vom Malz, leicht gehopft, und eine Abwechslung zu den hellen Lagern."
+    },
+    {
+      "en": "Heller or Dunkler Bock from mid-November, 7.5% — the winter beer.",
+      "pt": "Heller ou Dunkler Bock a partir de meados de novembro, 7,5% — a cerveja do inverno.",
+      "de": "Heller oder Dunkler Bock ab Mitte November, 7,5 % — das Winterbier."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Braten mit Klöße — pork, beef or game, depending on the day — is why the dining room is full at half past twelve.",
+      "pt": "Braten mit Klöße — porco, boi ou caça, conforme o dia — é o motivo de o salão estar cheio às 12h30.",
+      "de": "Braten mit Klößen — Schwein, Rind oder Wild, je nach Tag — ist der Grund, warum die Gaststube um halb eins voll ist."
+    },
+    {
+      "en": "Brotzeit: bread, butter, cheese, cold cuts, radishes. Order it at four in the afternoon with a Lagerbier Ungespunden.",
+      "pt": "Brotzeit: pão, manteiga, queijo, frios, rabanete. Peça às quatro da tarde com uma Lagerbier Ungespunden.",
+      "de": "Brotzeit: Brot, Butter, Käse, Aufschnitt, Radieschen. Am Nachmittag um vier mit einem Lagerbier Ungespunden bestellen."
+    },
+    {
+      "en": "Leberkäse with Bratkartoffeln on Wednesdays, if you are there on the right day.",
+      "pt": "Leberkäse com Bratkartoffeln na quarta-feira, se você estiver lá no dia certo.",
+      "de": "Leberkäse mit Bratkartoffeln am Mittwoch, wenn man am richtigen Tag da ist."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The kitchen and pub close on Monday and Tuesday; beer sales run every day from eight in the morning to eight in the evening.",
+      "pt": "A cozinha e o bar fecham na segunda e na terça; a venda de cerveja funciona todo dia das oito da manhã às oito da noite.",
+      "de": "Küche und Gaststube sind Montag und Dienstag geschlossen; Bierverkauf gibt es täglich von acht bis acht."
+    },
+    {
+      "en": "It is eleven kilometres from Bamberg, about twenty minutes by car, and the drive is the easy part — the beer is why you need a driver.",
+      "pt": "São onze quilômetros desde Bamberg, uns vinte minutos de carro, e a estrada é a parte fácil — a cerveja é o motivo de você precisar de um motorista.",
+      "de": "Es sind elf Kilometer von Bamberg, etwa zwanzig Minuten mit dem Auto, und die Fahrt ist der leichte Teil — wegen des Biers braucht man einen Fahrer."
+    },
+    {
+      "en": "Bock comes out in mid-November and does not last; ask for it by name.",
+      "pt": "A bock sai em meados de novembro e não dura; peça pelo nome.",
+      "de": "Der Bock kommt Mitte November und bleibt nicht lange; nach ihm fragen."
+    },
+    {
+      "en": "Buy bottles at the brewery; the shop sells daily and the range includes the seasonals.",
+      "pt": "Compre garrafas na cervejaria; a loja vende todos os dias e a linha inclui as sazonais.",
+      "de": "Flaschen direkt in der Brauerei kaufen; der Verkauf ist täglich offen und führt auch die Saisonbiere."
+    },
+    {
+      "en": "In summer ask for the garden rather than the dining room — it is behind the house, away from the road.",
+      "pt": "No verão, peça o jardim e não o salão — fica atrás da casa, longe da estrada.",
+      "de": "Im Sommer nach dem Garten fragen statt nach der Gaststube — er liegt hinter dem Haus, abseits der Straße."
+    }
+  ],
+  "links": [
+    {
+      "label": "Brauerei Wagner Merkendorf",
+      "url": "https://www.wagner-merkendorf.de/"
+    },
+    {
+      "label": "Wikipedia — Brauerei Wagner",
+      "url": "https://de.wikipedia.org/wiki/Brauerei_Wagner"
+    },
+    {
+      "label": "Fränkische Brauereien — Merkendorf",
+      "url": "https://fraenkischebrauereien.de/bestehende-brauereien/m/merkendorf/merkendorf.html"
+    }
+  ]
+}

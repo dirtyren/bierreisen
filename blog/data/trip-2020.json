@@ -1,0 +1,200 @@
+{
+  "slug": "trip-2020",
+  "type": "trip",
+  "name": "The first European loop, 2020",
+  "where": "Germany, Netherlands, Belgium · February 2020",
+  "coords": [
+    50.8467,
+    4.3525
+  ],
+  "image": "2020/assets/2020-route-map.png",
+  "trips": [
+    "2020"
+  ],
+  "trip_stats": "",
+  "related": [
+    "bamberg",
+    "bruges",
+    "brussels",
+    "westvleteren",
+    "trip-2021"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "days",
+        "pt": "dias",
+        "de": "Tage"
+      },
+      "v": {
+        "en": "17"
+      }
+    },
+    {
+      "k": {
+        "en": "nights",
+        "pt": "noites",
+        "de": "Nächte"
+      },
+      "v": {
+        "en": "14"
+      }
+    },
+    {
+      "k": {
+        "en": "km driving",
+        "pt": "km de carro",
+        "de": "km Fahrt"
+      },
+      "v": {
+        "en": "2,089 km"
+      }
+    },
+    {
+      "k": {
+        "en": "bases",
+        "pt": "bases",
+        "de": "Standorte"
+      },
+      "v": {
+        "en": "10"
+      }
+    },
+    {
+      "k": {
+        "en": "countries",
+        "pt": "países",
+        "de": "Länder"
+      },
+      "v": {
+        "en": "4"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Seventeen days in February 2020, ten beds, and a loop that started as a list of breweries and ended as a way of travelling: Munich, Bamberg, Düsseldorf, the Trappists of Belgium, and a Swabian village brewery on the Danube on the way home. Two weeks later the borders closed.",
+    "pt": "Dezessete dias em fevereiro de 2020, dez camas e um circuito que começou como lista de cervejarias e terminou como jeito de viajar: Munique, Bamberg, Düsseldorf, os trapistas da Bélgica e uma cervejaria de aldeia da Suábia no Danúbio, na volta. Duas semanas depois as fronteiras fecharam.",
+    "de": "Siebzehn Tage im Februar 2020, zehn Betten und eine Schleife, die als Brauereiliste begann und als Art zu reisen endete: München, Bamberg, Düsseldorf, die Trappisten Belgiens und eine schwäbische Dorfbrauerei an der Donau auf dem Rückweg. Zwei Wochen später schlossen die Grenzen."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The shape of it",
+        "pt": "O desenho",
+        "de": "Der Zuschnitt"
+      },
+      "p": [
+        {
+          "en": "The loop went north first: Bamberg for a night, then Düsseldorf for two, then across the Dutch border to La Trappe, down to Antwerp, and a week in Belgium with Brussels as the pivot. Bruges got a night, Westvleteren a detour, Chimay a night in the woods at Poteaupré.",
+          "pt": "O circuito foi primeiro para o norte: Bamberg por uma noite, depois Düsseldorf por duas, então a fronteira holandesa até La Trappe, descida a Antuérpia, e uma semana na Bélgica com Bruxelas como eixo. Bruges ganhou uma noite, Westvleteren um desvio, Chimay uma noite na mata em Poteaupré.",
+          "de": "Die Schleife ging zuerst nach Norden: eine Nacht Bamberg, zwei Düsseldorf, dann über die niederländische Grenze nach La Trappe, hinunter nach Antwerpen und eine Woche Belgien mit Brüssel als Achse. Brügge bekam eine Nacht, Westvleteren einen Umweg, Chimay eine Nacht im Wald bei Poteaupré."
+        },
+        {
+          "en": "The return was the part nobody plans well: Chimay to Zwiefaltendorf is five and a half hours, and the reward is a village brewery with rooms above the brewhouse and a dinner of Swabian things that have no equivalent anywhere else on the route.",
+          "pt": "A volta foi a parte que ninguém planeja bem: de Chimay a Zwiefaltendorf são cinco horas e meia, e a recompensa é uma cervejaria de aldeia com quartos acima da sala de brassagem e um jantar de coisas da Suábia sem equivalente em nenhum outro ponto da rota.",
+          "de": "Die Rückfahrt war der Teil, den niemand gut plant: Chimay nach Zwiefaltendorf sind fünfeinhalb Stunden, und die Belohnung ist eine Dorfbrauerei mit Zimmern über dem Sudhaus und einem Abendessen schwäbischer Dinge, die es sonst nirgends auf der Route gibt."
+        },
+        {
+          "en": "It was February, so the beer gardens were shut and the towns were empty. Bruges in the rain at eight in the morning, with nobody on the Markt, is a different city from the one in the photographs, and better.",
+          "pt": "Era fevereiro, então os biergartens estavam fechados e as cidades vazias. Bruges na chuva às oito da manhã, sem ninguém no Markt, é outra cidade daquela das fotos, e melhor.",
+          "de": "Es war Februar, die Biergärten geschlossen, die Städte leer. Brügge im Regen um acht Uhr morgens, niemand auf dem Markt, ist eine andere Stadt als auf den Fotos — und die bessere."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "What it taught about driving",
+        "pt": "O que ensinou sobre dirigir",
+        "de": "Was es über das Fahren lehrte"
+      },
+      "p": [
+        {
+          "en": "Ten beds in seventeen days is too many. The Belgian week worked because Brussels held for two nights; the German legs did not, and Bamberg in particular deserved the second night it did not get.",
+          "pt": "Dez camas em dezessete dias é demais. A semana belga funcionou porque Bruxelas segurou duas noites; as etapas alemãs não, e Bamberg em especial merecia a segunda noite que não teve.",
+          "de": "Zehn Betten in siebzehn Tagen sind zu viele. Die belgische Woche funktionierte, weil Brüssel zwei Nächte hielt; die deutschen Etappen nicht, und Bamberg besonders hätte die zweite Nacht verdient, die es nicht bekam."
+        },
+        {
+          "en": "The car made the Trappist day possible — La Trappe, Westvleteren and Chimay are not connected by any sensible train — but it also made the trip a sequence of car parks. The next version cut the driving and added rail where the beer was in a city.",
+          "pt": "O carro tornou possível o dia trapista — La Trappe, Westvleteren e Chimay não se conectam por nenhum trem razoável —, mas também transformou a viagem numa sequência de estacionamentos. A versão seguinte cortou direção e somou trem onde a cerveja estava na cidade.",
+          "de": "Das Auto machte den Trappistentag möglich — La Trappe, Westvleteren und Chimay verbindet kein vernünftiger Zug —, machte die Reise aber auch zu einer Folge von Parkplätzen. Die nächste Fassung kürzte das Fahren und nahm die Bahn, wo das Bier in der Stadt lag."
+        },
+        {
+          "en": "Germany and Belgium both enforce their low-emission zones; a rental without the right sticker is a fine waiting to happen. Check the Umweltzone before booking the car, not after.",
+          "pt": "Alemanha e Bélgica fiscalizam suas zonas de baixa emissão; um aluguel sem o selo certo é uma multa esperando. Confira a Umweltzone antes de reservar o carro, não depois.",
+          "de": "Deutschland und Belgien kontrollieren ihre Umweltzonen; ein Mietwagen ohne die richtige Plakette ist ein Bußgeld auf Abruf. Die Umweltzone vor der Buchung prüfen, nicht danach."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Westvleteren XII, if you got through the reservation system — and the blonde and the 8 if you did not.",
+      "pt": "Westvleteren XII, se você passou pelo sistema de reservas — e a blond e a 8 se não passou.",
+      "de": "Westvleteren XII, wenn man durch das Reservierungssystem gekommen ist — sonst das Blonde und die 8."
+    },
+    {
+      "en": "La Trappe Quadrupel at the abbey, with the cheese made by the monks.",
+      "pt": "La Trappe Quadrupel na abadia, com o queijo feito pelos monges.",
+      "de": "La Trappe Quadrupel in der Abtei, mit dem Käse der Mönche."
+    },
+    {
+      "en": "Schlenkerla Rauchbier Märzen in Bamberg, the first night of the trip.",
+      "pt": "Schlenkerla Rauchbier Märzen em Bamberg, na primeira noite da viagem.",
+      "de": "Schlenkerla Rauchbier Märzen in Bamberg, die erste Nacht der Reise."
+    },
+    {
+      "en": "Altbier at Uerige, standing up, in the Altstadt.",
+      "pt": "Altbier no Uerige, em pé, na Altstadt.",
+      "de": "Altbier im Uerige, im Stehen, in der Altstadt."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Mussels in Brussels, in any brasserie that has been there longer than the menu trends.",
+      "pt": "Mexilhões em Bruxelas, em qualquer brasserie mais antiga que as modas do menu.",
+      "de": "Miesmuscheln in Brüssel, in jeder Brasserie, die älter ist als die Menütendenzen."
+    },
+    {
+      "en": "Carbonnade flamande in Bruges, with the beer it was cooked in.",
+      "pt": "Carbonnade flamande em Bruges, com a cerveja em que foi cozida.",
+      "de": "Carbonnade flamande in Brügge, mit dem Bier, in dem sie geschmort ist."
+    },
+    {
+      "en": "The abbey cheese board at La Trappe, which is the meal the Quadrupel was built for.",
+      "pt": "A tábua de queijos da abadia em La Trappe, que é a refeição para a qual o Quadrupel foi feito.",
+      "de": "Die Käseplatte der Abtei in La Trappe — die Mahlzeit, für die der Quadrupel gebaut ist."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Westvleteren sells only by reservation, by phone or through the abbey's own system, with a per-person limit; it is not a brewery you turn up at.",
+      "pt": "Westvleteren vende só por reserva, por telefone ou pelo sistema da abadia, com limite por pessoa; não é cervejaria para chegar sem aviso.",
+      "de": "Westvleteren verkauft nur mit Reservierung, telefonisch oder über das System der Abtei, mit Begrenzung pro Person; keine Brauerei für den spontanen Besuch."
+    },
+    {
+      "en": "The Belgian Trappists are spread across three provinces; plan them as a driving day or not at all.",
+      "pt": "Os trapistas belgas estão espalhados por três províncias; planeje como um dia de carro ou não planeje.",
+      "de": "Die belgischen Trappisten liegen in drei Provinzen; als Fahrtag planen oder gar nicht."
+    },
+    {
+      "en": "Poteaupré, where you sleep at Chimay, is in the forest with nothing else around: eat at the auberge rather than driving out again.",
+      "pt": "Poteaupré, onde se dorme em Chimay, fica na mata sem nada em volta: coma na auberge em vez de sair de carro de novo.",
+      "de": "Poteaupré, wo man bei Chimay schläft, liegt im Wald ohne alles: in der Auberge essen statt noch einmal loszufahren."
+    },
+    {
+      "en": "February is cheap, quiet and cold. It is also when the smaller breweries take their holidays, so check opening days twice.",
+      "pt": "Fevereiro é barato, vazio e frio. É também quando as cervejarias menores tiram férias, então confira os dias de abertura duas vezes.",
+      "de": "Februar ist günstig, leer und kalt. Es ist auch die Zeit, in der kleinere Brauereien Betriebsferien machen — Öffnungstage doppelt prüfen."
+    }
+  ],
+  "links": [
+    {
+      "label": "Sint-Sixtusabdij",
+      "url": "https://www.sintsixtus.be/"
+    },
+    {
+      "label": "La Trappe",
+      "url": "https://www.latrappe.nl/"
+    }
+  ]
+}

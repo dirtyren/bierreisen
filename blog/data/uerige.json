@@ -1,0 +1,231 @@
+{
+  "slug": "uerige",
+  "type": "brewery",
+  "name": "Uerige",
+  "where": "Düsseldorf, Germany",
+  "coords": [
+    51.225,
+    6.7722
+  ],
+  "span": 0.12,
+  "subtitle_en": "Altbier at the corner of Bergerstraße, since 1862",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Zum+Uerige+Berger+Stra%C3%9Fe+1+D%C3%BCsseldorf",
+  "trips": [
+    "2020"
+  ],
+  "related": [
+    "dusseldorf",
+    "trip-2020",
+    "bamberg",
+    "munich"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing since",
+        "pt": "produzindo desde",
+        "de": "gebraut seit"
+      },
+      "v": {
+        "en": "1862",
+        "pt": "1862",
+        "de": "1862"
+      }
+    },
+    {
+      "k": {
+        "en": "Alt",
+        "pt": "Alt",
+        "de": "Alt"
+      },
+      "v": {
+        "en": "4.7%",
+        "pt": "4,7%",
+        "de": "4,7 %"
+      }
+    },
+    {
+      "k": {
+        "en": "Sticke",
+        "pt": "Sticke",
+        "de": "Sticke"
+      },
+      "v": {
+        "en": "6%",
+        "pt": "6%",
+        "de": "6 %"
+      }
+    },
+    {
+      "k": {
+        "en": "Doppelsticke",
+        "pt": "Doppelsticke",
+        "de": "Doppelsticke"
+      },
+      "v": {
+        "en": "8.5%",
+        "pt": "8,5%",
+        "de": "8,5 %"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Uerige is a brewery, a pub and a Düsseldorf argument all at once. The house on the corner of Bergerstraße has brewed since 1862, when Wilhelm Cürten installed a brewhouse in the cellar and served top-fermented beer on the ground floor. The beer is bitter, the service is fast, and the room has not been tidied up for visitors.",
+    "pt": "A Uerige é cervejaria, bar e uma discussão düsseldorfiana ao mesmo tempo. A casa na esquina da Bergerstraße produz desde 1862, quando Wilhelm Cürten instalou a brassagem no porão e passou a servir cerveja de alta fermentação no térreo. A cerveja é amarga, o serviço é rápido, e a sala não foi arrumada para turista.",
+    "de": "Uerige ist Brauerei, Wirtshaus und ein Düsseldorfer Streitfall zugleich. Das Haus an der Ecke Bergerstraße braut seit 1862, als Wilhelm Cürten im Keller ein Sudhaus einrichtete und im Erdgeschoss obergäriges Bier ausschenkte. Das Bier ist herb, der Service schnell, und der Raum wurde für Besucher nicht aufgeräumt. Wer einmal drin war, versteht, warum die Stadt darauf besteht."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The grumpy Wilhelm",
+        "pt": "O Wilhelm mal-humorado",
+        "de": "Der uerige Wilhelm"
+      },
+      "p": [
+        {
+          "en": "The building had several names before it had a brewery: Heidelberger Fass, then Bergischer Hof, then Berliner Hof. In 1862 the widow Bender sold it to Wilhelm Cürten, a landlord and brewer, who put the brewhouse in the cellar and the taps on the ground floor. He was known for his temper. In Düsseldorf dialect, uerig means grumpy, and the nickname stayed with the house. The brewery's own history dates the conversion to 4 January 1862, the day the deed was signed.",
+          "pt": "O prédio teve vários nomes antes de ter uma cervejaria: Heidelberger Fass, depois Bergischer Hof, depois Berliner Hof. Em 1862, a viúva Bender o vendeu a Wilhelm Cürten, dono de restaurante e cervejeiro, que pôs a brassagem no porão e as torneiras no térreo. Ele era conhecido pelo mau humor. No dialeto de Düsseldorf, uerig quer dizer mal-humorado, e o apelido ficou com a casa. A história da própria cervejaria data a transformação em 4 de janeiro de 1862, o dia da assinatura da escritura.",
+          "de": "Das Haus hatte mehrere Namen, bevor es eine Brauerei hatte: Heidelberger Fass, dann Bergischer Hof, dann Berliner Hof. 1862 verkaufte es die Witwe Bender an Wilhelm Cürten, Gastwirt und Brauer, der das Sudhaus in den Keller legte und die Hähne ins Erdgeschoss. Er war für seinen Zorn bekannt. Im Düsseldorfer Platt heißt uerig schlecht gelaunt, und der Spitzname blieb am Haus. Die Chronik der Brauerei datiert den Umbau auf den 4. Januar 1862, den Tag der Unterschrift."
+        },
+        {
+          "en": "The sign over the entrance still says Heidelberger Fass. Cürten died in 1886, his son Max in 1902, and the brewery passed through several hands before Rudolf Arnold took it on in 1937. Bombs destroyed the front of the house in 1943 and burned the brewery out in 1944. Arnold cleared the site with his waiters and brewers and reopened in 1949. What stands today is largely the post-war building, which is why the rooms are plainer than the façade suggests.",
+          "pt": "A placa sobre a entrada ainda diz Heidelberger Fass. Cürten morreu em 1886, o filho Max em 1902, e a cervejaria passou por várias mãos até Rudolf Arnold assumi-la em 1937. Bombas destruíram a frente da casa em 1943 e queimaram a cervejaria em 1944. Arnold limpou o terreno com seus garçons e cervejeiros e reabriu em 1949. O que está de pé hoje é em grande parte o prédio do pós-guerra, e por isso as salas são mais simples do que a fachada sugere.",
+          "de": "Über dem Eingang steht noch heute Heidelberger Fass. Cürten starb 1886, sein Sohn Max 1902, die Brauerei wechselte mehrfach den Besitzer, bis Rudolf Arnold sie 1937 übernahm. 1943 zerstörten Bomben das Vorderhaus, 1944 brannte die Brauerei aus. Arnold räumte das Gelände mit Köbessen und Brauern und eröffnete 1949 wieder. Was heute steht, ist weitgehend der Nachkriegsbau, deshalb sind die Räume schlichter, als die Fassade vermuten lässt."
+        },
+        {
+          "en": "The Schnitzler family took over in 1976, and Michael Schnitzler has run it since 1999. The brewery grew into the neighbouring houses on Rheinstraße and added a distillery in 2008. It remains one of the last independent breweries in the city, and it sells almost nothing outside the region — a deliberate choice, not a shortage. Its slogan is dat leckere Dröppke — the tasty little drop — which is dialect for exactly what it says.",
+          "pt": "A família Schnitzler assumiu em 1976, e Michael Schnitzler dirige desde 1999. A cervejaria cresceu para as casas vizinhas na Rheinstraße e ganhou uma destilaria em 2008. Continua uma das últimas cervejarias independentes da cidade, e vende quase nada fora da região — escolha deliberada, não escassez. O slogan é dat leckere Dröppke — a gotinha gostosa —, dialeto para exatamente o que diz.",
+          "de": "1976 übernahm die Familie Schnitzler, seit 1999 führt Michael Schnitzler das Haus. Die Brauerei wuchs in die Nachbarhäuser an der Rheinstraße und bekam 2008 eine Destillerie. Sie ist eine der letzten unabhängigen Brauereien der Stadt und verkauft fast nichts außerhalb der Region — eine Entscheidung, kein Mangel. Der Slogan lautet dat leckere Dröppke — das leckere Tröpfchen —, Dialekt für genau das."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The beer",
+        "pt": "A cerveja",
+        "de": "Das Bier"
+      },
+      "p": [
+        {
+          "en": "Uerige Alt is 4.7%, brewed from barley, caramel and roasted malt, with whole-cone hops and the house yeast. The brewery claims the highest bitter content of any German beer, which sounds like advertising until you taste it: the bitterness is dry and long, and the malt underneath is sweeter than the colour suggests. The malt bill is short and the hopping is not, which is the opposite of most German lagers.",
+          "pt": "A Uerige Alt tem 4,7%, feita com malte de cevada, caramelo e torrado, lúpulo em cone inteiro e o fermento da casa. A cervejaria afirma ter o maior teor de amargor entre as cervejas alemãs, o que soa como propaganda até você provar: o amargor é seco e longo, e o malte por baixo é mais doce do que a cor sugere. A lista de maltes é curta e o lúpulo não, o oposto da maioria das lagers alemãs.",
+          "de": "Uerige Alt hat 4,7 %, gebraut aus Gersten-, Karamel- und Röstmalz, mit ganzen Hopfendolden und der eigenen Hefe. Die Brauerei behauptet den höchsten Bitterstoffgehalt aller deutschen Biere, was nach Werbung klingt, bis man es trinkt: Die Bittere ist trocken und lang, das Malz darunter süßer, als die Farbe vermuten lässt. Die Malzliste ist kurz, die Hopfengabe nicht, das Gegenteil der meisten deutschen Lager."
+        },
+        {
+          "en": "The beer is amber rather than brown, which makes it pale by the standards of the city. It is served unfiltered from the tap and drunk young. Alongside it the house makes a Sticke at 6%, brewed twice a year and tapped on the third Tuesday of January and October, and a Doppelsticke at 8.5% that began as an export beer for the United States. The Sticke is the same beer brewed stronger, not a different recipe, which is why it tastes familiar.",
+          "pt": "A cerveja é âmbar, não marrom, o que a torna clara para os padrões da cidade. É servida não filtrada, tirada na hora, e bebida jovem. Ao lado dela, a casa faz uma Sticke de 6%, produzida duas vezes por ano e tirada na terceira terça-feira de janeiro e de outubro, e uma Doppelsticke de 8,5% que nasceu como cerveja de exportação para os Estados Unidos. A Sticke é a mesma cerveja produzida mais forte, não outra receita, e por isso o gosto é familiar.",
+          "de": "Das Bier ist bernsteinfarben, nicht braun, für Düsseldorfer Verhältnisse also hell. Es kommt ungefiltert vom Hahn und wird jung getrunken. Daneben gibt es das Sticke mit 6 %, zweimal im Jahr gebraut und am dritten Dienstag im Januar und Oktober angestochen, sowie ein Doppelsticke mit 8,5 %, das als Exportbier für die USA begann. Das Sticke ist dasselbe Bier, stärker eingebraut, kein anderes Rezept, deshalb schmeckt es vertraut."
+        },
+        {
+          "en": "The Sticke days are the ones to plan around. The beer is stronger, the room is fuller, and the supply runs out. The rest of the year the ordinary Alt is the point: a beer built to be drunk in small glasses across a long evening, not admired in one. The house also makes an alcohol-free version, which is better than it needs to be. The alcohol-free version, by contrast, is available all year.",
+          "pt": "Os dias de Sticke são os que valem planejamento. A cerveja é mais forte, a sala mais cheia, e o estoque acaba. No resto do ano, a Alt comum é o ponto: uma cerveja feita para ser bebida em copos pequenos ao longo de uma noite longa, não admirada num só. A casa engarrafa também uma sem álcool, melhor do que precisaria ser. Ela existe o ano todo, ao contrário da Sticke.",
+          "de": "Die Sticke-Tage sind die, um die man planen sollte. Das Bier ist stärker, der Raum voller, und es geht aus. Im Rest des Jahres ist das normale Alt der Punkt: ein Bier, um es in kleinen Gläsern über einen langen Abend zu trinken, nicht in einem Glas zu bewundern. Es gibt auch eine alkoholfreie Fassung, besser als nötig. Die alkoholfreie Fassung dagegen gibt es das ganze Jahr."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The room",
+        "pt": "A sala",
+        "de": "Der Raum"
+      },
+      "p": [
+        {
+          "en": "Inside, the rooms are narrow and wood-panelled, with long tables and no music. The copper pans in the brewhouse are cladding over stainless steel now, and since 2023 the beer comes from the tanks through a pipe to a cask that is a shell rather than a cask. The beer itself is still brewed on the premises, which is what the sign promises. The 2008 annex was built so guests could watch the brewing, which is the closest the place gets to a museum.",
+          "pt": "Dentro, as salas são estreitas e revestidas de madeira, com mesas compridas e sem música. As caldeiras de cobre da brassagem hoje são revestimento sobre aço inox, e desde 2023 a cerveja vem dos tanques por um tubo até um barril que é casca, não barril. A cerveja continua sendo feita no local, que é o que a placa promete. O anexo de 2008 foi construído para que os clientes vejam a produção, o mais perto que a casa chega de um museu.",
+          "de": "Innen sind die Räume eng und holzgetäfelt, mit langen Tischen und ohne Musik. Die Kupferpfannen im Sudhaus sind heute Verkleidung über Edelstahl, und seit 2023 kommt das Bier aus den Tanks durch eine Leitung in einen Hahn, dessen Fass eine Attrappe ist. Gebraut wird weiterhin im Haus, und das verspricht auch das Schild. Der Anbau von 2008 sollte Gästen den Blick in die Brauerei erlauben, näher kommt das Haus einem Museum nicht."
+        },
+        {
+          "en": "The Köbes carry trays of 0.2-litre glasses, mark a stroke on your coaster for each one, and write the food on the same piece of cardboard. They add it up in their heads. You pay at the end, at the table, and nobody asks you to move along. The system works because everyone in the room knows it. Nothing goes into a till until the end, so the coaster is the only record of the evening.",
+          "pt": "Os Köbes carregam bandejas de copos de 0,2 litro, marcam um risco no seu descanso a cada copo e escrevem a comida no mesmo descanso de copo. Somam de cabeça. Você paga no fim, na mesa, e ninguém pede que você saia. O sistema funciona porque todo mundo na sala o conhece. Nada entra no caixa antes do fim, então o descanso é o único registro da noite.",
+          "de": "Die Köbesse tragen Tabletts mit 0,2-Liter-Gläsern, machen für jedes einen Strich auf den Bierdeckel und schreiben das Essen auf dasselbe Stück Pappe. Sie rechnen im Kopf zusammen. Bezahlt wird am Ende, am Tisch, und niemand bittet einen weiterzugehen. Das System funktioniert, weil es jeder im Raum kennt. Die Summe steht am Ende auf dem Deckel, nicht auf einem Bon. Bis zum Schluss geht nichts in eine Kasse, der Bierdeckel ist die einzige Aufzeichnung des Abends."
+        },
+        {
+          "en": "The kitchen is plain and follows the day: lentil soup on Monday, Königsberg meatballs with beetroot and caper sauce on Tuesday, potato soup with a bockwurst on Wednesday, goulash on Thursday, cabbage roulade on Friday, pea soup on Saturday, goulash again on Sunday. The knuckle of pork has to be ordered ahead. The pea soup is the one locals mention. The menu is short because the kitchen cooks one thing properly each day, which is a reasonable arrangement.",
+          "pt": "A cozinha é simples e segue o dia: sopa de lentilha na segunda, almôndegas de Königsberg com beterraba e molho de alcaparras na terça, sopa de batata com bockwurst na quarta, goulash na quinta, rolo de repolho na sexta, sopa de ervilha no sábado, goulash de novo no domingo. O joelho de porco precisa ser encomendado antes. A sopa de ervilha é a que os locais citam. O menu é curto porque a cozinha faz uma coisa bem por dia, arranjo razoável.",
+          "de": "Die Küche ist schlicht und folgt dem Tag: Montag Linsensuppe, Dienstag Königsberger Klopse mit Rote Bete und Kapernsoße, Mittwoch Kartoffelsuppe mit Bockwurst, Donnerstag Gulasch, Freitag Kohlroulade, Samstag Erbsensuppe, Sonntag wieder Gulasch. Die Schweinshaxe muss vorbestellt werden. Die Erbsensuppe ist die, von der die Einheimischen reden. Die Karte ist kurz, weil die Küche jeden Tag eine Sache richtig kocht, eine vernünftige Ordnung."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Uerige Alt — 4.7%, amber, dry and bitter. The first glass decides the evening.",
+      "pt": "Uerige Alt — 4,7%, âmbar, seca e amarga. O primeiro copo decide a noite.",
+      "de": "Uerige Alt — 4,7 %, bernsteinfarben, trocken und herb. Das erste Glas entscheidet den Abend."
+    },
+    {
+      "en": "Uerige Sticke on the third Tuesday of January or October — 6%, and only while it lasts.",
+      "pt": "Uerige Sticke na terceira terça-feira de janeiro ou de outubro — 6%, e só enquanto durar.",
+      "de": "Uerige Sticke am dritten Dienstag im Januar oder Oktober — 6 %, und nur solange es reicht."
+    },
+    {
+      "en": "Doppelsticke, 8.5%, if you want the same beer with the volume turned up.",
+      "pt": "Doppelsticke, 8,5%, para a mesma cerveja com o volume aumentado.",
+      "de": "Doppelsticke, 8,5 %, wenn es dasselbe Bier mit mehr Volumen sein soll."
+    },
+    {
+      "en": "The alcohol-free Uerige, if you are pacing yourself and still want the taste.",
+      "pt": "A Uerige sem álcool, se estiver dosando e ainda quiser o gosto.",
+      "de": "Das alkoholfreie Uerige, wer sich einteilen und trotzdem den Geschmack will."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Königsberg meatballs with beetroot and caper sauce, on Tuesdays, straight from the saucepan.",
+      "pt": "Almôndegas de Königsberg com beterraba e molho de alcaparras, às terças, direto da panela.",
+      "de": "Königsberger Klopse mit Rote Bete und Kapernsoße, dienstags, direkt aus dem Topf."
+    },
+    {
+      "en": "Saturday pea soup with knuckle of pork, which is the dish the house is known for.",
+      "pt": "Sopa de ervilha de sábado com joelho de porco, o prato pelo qual a casa é conhecida.",
+      "de": "Samstags Erbsensuppe mit Schweinshaxe, das Gericht, für das das Haus bekannt ist."
+    },
+    {
+      "en": "Crispy knuckle of pork, ordered in advance, for a table that intends to stay.",
+      "pt": "Joelho de porco crocante, encomendado antes, para uma mesa que pretende ficar.",
+      "de": "Knusprige Schweinshaxe, vorbestellt, für einen Tisch, der bleiben will."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Put the coaster on the glass when you have had enough; otherwise the next Alt arrives.",
+      "pt": "Ponha o descanso sobre o copo quando já bastar; senão chega a próxima Alt.",
+      "de": "Den Bierdeckel aufs Glas legen, wenn es genug ist; sonst kommt das nächste Alt."
+    },
+    {
+      "en": "No spirits in the pub. Arnold's old ban is still on signs in the yard, and only the Stickum bar breaks it.",
+      "pt": "Nada de destilados no bar. A proibição antiga de Arnold continua em placas no pátio, e só o bar Stickum a quebra.",
+      "de": "Kein Schnaps im Ausschank. Arnolds altes Verbot hängt noch als Schild im Hof, nur die Stickum-Bar bricht es."
+    },
+    {
+      "en": "In summer, stand outside on Rheinstraße. The tables across the street belong to the pub too.",
+      "pt": "No verão, fique do lado de fora, na Rheinstraße. As mesas do outro lado da rua também são do bar.",
+      "de": "Im Sommer draußen in der Rheinstraße stehen. Auch die Tische gegenüber gehören zum Lokal."
+    },
+    {
+      "en": "Closed on 25 December and Rose Monday; on 24 and 31 December it shuts at 14:00.",
+      "pt": "Fechado em 25 de dezembro e na Rosenmontag; em 24 e 31 de dezembro fecha às 14h.",
+      "de": "Am 25. Dezember und am Rosenmontag geschlossen; am 24. und 31. Dezember bis 14 Uhr."
+    },
+    {
+      "en": "The Sticke dates are fixed but the beer is not: it is tapped on the third Tuesday of January and October and goes quickly.",
+      "pt": "As datas da Sticke são fixas, mas a cerveja não: é tirada na terceira terça-feira de janeiro e de outubro e acaba rápido.",
+      "de": "Die Sticke-Termine stehen fest, das Bier nicht: Es wird am dritten Dienstag im Januar und Oktober angestochen und ist schnell weg."
+    }
+  ],
+  "links": [
+    {
+      "label": "Uerige",
+      "url": "https://uerige.de/"
+    },
+    {
+      "label": "Uerige — history",
+      "url": "https://uerige.de/en/history"
+    },
+    {
+      "label": "Uerige (Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Uerige_Oberg%C3%A4rige_Hausbrauerei"
+    }
+  ]
+}

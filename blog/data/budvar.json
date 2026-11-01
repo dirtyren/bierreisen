@@ -1,0 +1,244 @@
+{
+  "slug": "budvar",
+  "type": "brewery",
+  "name": "Budweiser Budvar",
+  "where": "České Budějovice, Czechia",
+  "coords": [
+    48.9936,
+    14.4762
+  ],
+  "span": 0.35,
+  "subtitle_en": "The other Budweiser, and the case that will not end",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Budweiser+Budvar+Brewery+Karoliny+Sv%C4%9Btl%C3%A9+512+%C4%8Cesk%C3%A9+Bud%C4%9Bjovice",
+  "trips": [
+    "2024",
+    "2026"
+  ],
+  "related": [
+    "ceske-budejovice",
+    "pilsner-urquell",
+    "plzen",
+    "trip-2026"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundação",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1895",
+        "pt": "1895",
+        "de": "1895"
+      }
+    },
+    {
+      "k": {
+        "en": "first brew",
+        "pt": "primeira brassagem",
+        "de": "erster Sud"
+      },
+      "v": {
+        "en": "7 October 1895",
+        "pt": "7 de outubro de 1895",
+        "de": "7. Oktober 1895"
+      }
+    },
+    {
+      "k": {
+        "en": "strength",
+        "pt": "teor alcoólico",
+        "de": "Stärke"
+      },
+      "v": {
+        "en": "5.0%",
+        "pt": "5,0%",
+        "de": "5,0 %"
+      }
+    },
+    {
+      "k": {
+        "en": "lagering",
+        "pt": "maturação",
+        "de": "Lagerung"
+      },
+      "v": {
+        "en": "about 90 days",
+        "pt": "cerca de 90 dias",
+        "de": "etwa 90 Tage"
+      }
+    },
+    {
+      "k": {
+        "en": "tour",
+        "pt": "visita",
+        "de": "Tour"
+      },
+      "v": {
+        "en": "70–80 minutes",
+        "pt": "70–80 minutos",
+        "de": "70–80 Minuten"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Budweiser Budvar is brewed in a town the Germans called Budweis, from water drawn out of an Ice Age aquifer, and lagered for about three months. It has been in court with the American brewery since 1907, longer than most of its customers have been alive. The beer is why anyone cares who wins.",
+    "pt": "A Budweiser Budvar é feita numa cidade que os alemães chamavam de Budweis, com água tirada de um aquífero da Era do Gelo e maturada por cerca de três meses. Está nos tribunais contra a cervejaria americana desde 1907, mais tempo do que a maioria dos seus clientes tem de vida. A cerveja é o motivo de alguém se importar com quem ganha.",
+    "de": "Budweiser Budvar wird in einer Stadt gebraut, die die Deutschen Budweis nannten, mit Wasser aus einem eiszeitlichen Grundwasserleiter, und reift etwa drei Monate. Seit 1907 streitet die Brauerei mit der amerikanischen Brauerei, länger als die meisten ihrer Kunden leben und länger als die Tschechoslowakei bestand. Das Bier ist der Grund, warum sich überhaupt jemand dafür interessiert, wer gewinnt."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Before the name",
+        "pt": "Antes do nome",
+        "de": "Vor dem Namen"
+      },
+      "p": [
+        {
+          "en": "Brewing in České Budějovice goes back to the city's founding in 1265, when Přemysl Otakar II granted the town brewing rights along with its land. By 1351 Charles IV had added the one-mile law, which kept foreign breweries and taverns out of a circle of about ten kilometres; later kings tightened it. For centuries the town's beer was called Budweiser Bier, beer from Budweis, and that is all the name meant.",
+          "pt": "A produção de cerveja em České Budějovice remonta à fundação da cidade, em 1265, quando Přemysl Otakar II concedeu ao município direitos de fabricação junto com as terras. Em 1351, Carlos IV acrescentou a lei da milha, que mantinha cervejarias e tavernas estrangeiras fora de um raio de cerca de dez quilômetros; reis posteriores a endureceram. Por séculos a cerveja da cidade se chamou Budweiser Bier, cerveja de Budweis, e era só isso que o nome significava.",
+          "de": "Gebraut wird in České Budějovice seit der Stadtgründung 1265, als Přemysl Otakar II. der Stadt mit dem Land auch das Braurecht verlieh. 1351 kam unter Karl IV. die Bannmeile dazu, die fremde Brauereien und Tavernen aus einem Kreis von rund zehn Kilometern hielt; spätere Könige verschärften sie. Jahrhunderte lang hieß das Bier der Stadt Budweiser Bier, Bier aus Budweis, und mehr bedeutete der Name nicht."
+        },
+        {
+          "en": "The beer went to America from 1872, carried by emigrants and importers. In 1876 Anheuser-Busch began brewing its own Budweiser, and C. Conrad registered the trademark in 1878; Adolphus Busch later testified that the aim was beer of the same quality, colour and taste as the beer of Budweis. The Czech brewery that became Budvar was founded in 1895, when Czech-speaking burghers merged their rights into a joint-stock company.",
+          "pt": "A cerveja foi para a América a partir de 1872, levada por emigrantes e importadores. Em 1876 a Anheuser-Busch começou a produzir sua própria Budweiser, e C. Conrad registrou a marca em 1878; Adolphus Busch depois testemunhou que o objetivo era uma cerveja com a mesma qualidade, cor e sabor da cerveja de Budweis. A cervejaria tcheca que se tornaria a Budvar foi fundada em 1895, quando burgueses de língua tcheca reuniram seus direitos numa sociedade anônima.",
+          "de": "Ab 1872 ging das Bier nach Amerika, mit Auswanderern und Importeuren. 1876 begann Anheuser-Busch, ein eigenes Budweiser zu brauen, und C. Conrad ließ die Marke 1878 eintragen; Adolphus Busch sagte später aus, Ziel sei ein Bier von gleicher Qualität, Farbe und gleichem Geschmack wie das Bier aus Budweis gewesen. Die tschechische Brauerei, aus der Budvar wurde, entstand 1895, als tschechischsprachige Bürger ihre Rechte in eine Aktiengesellschaft einbrachten."
+        },
+        {
+          "en": "The first batch, 200 hectolitres, was brewed on 7 October 1895 by Antonín Holeček. The company took the name Budvar in 1930, from Budějovice and pivo, and became a national enterprise in 1967. It is still owned by the state, which is unusual in the Czech beer industry and one reason the trademark fight has never been settled by a takeover.",
+          "pt": "O primeiro lote, 200 hectolitros, foi feito em 7 de outubro de 1895 por Antonín Holeček. A empresa adotou o nome Budvar em 1930, de Budějovice e pivo, e virou empresa nacional em 1967. Continua estatal, o que é incomum no setor cervejeiro tcheco e uma das razões pelas quais a briga de marcas nunca foi resolvida por uma compra.",
+          "de": "Der erste Sud, 200 Hektoliter, entstand am 7. Oktober 1895 unter der Leitung von Antonín Holeček. 1930 nahm das Unternehmen den Namen Budvar an, aus Budějovice und pivo, und 1967 wurde es ein Staatsbetrieb. Noch heute gehört es dem Staat, was in der tschechischen Brauwirtschaft ungewöhnlich ist und ein Grund dafür, dass der Markenstreit nie durch eine Übernahme beendet wurde. Ein Verkauf an die Gegenseite ist damit ausgeschlossen, und darum geht es in dem Verfahren."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The case",
+        "pt": "O processo",
+        "de": "Der Fall"
+      },
+      "p": [
+        {
+          "en": "The two companies have been arguing since 1907, when they agreed that the Americans could use Budweiser in North America and the Bohemians in Europe. The agreement did not hold. There have been more than a hundred cases, in dozens of jurisdictions, with rulings that contradict each other because trademark law is national and the word means different things in different places.",
+          "pt": "As duas empresas discutem desde 1907, quando combinaram que os americanos poderiam usar Budweiser na América do Norte e os boêmios na Europa. O acordo não se sustentou. Já houve mais de cem processos, em dezenas de jurisdições, com decisões que se contradizem porque a lei de marcas é nacional e a palavra significa coisas diferentes em lugares diferentes. Nenhuma decisão vale fora do país que a tomou.",
+          "de": "Die beiden Unternehmen streiten seit 1907, als sie vereinbarten, dass die Amerikaner Budweiser in Nordamerika und die Böhmen ihn in Europa nutzen dürften. Der Vertrag hielt nicht. Es gab mehr als hundert Verfahren in Dutzenden von Ländern, mit Urteilen, die einander widersprechen, weil Markenrecht national ist und das Wort an verschiedenen Orten Verschiedenes bedeutet. Ein Urteil in einem Land bindet kein anderes, und so wächst die Zahl der Verfahren weiter."
+        },
+        {
+          "en": "The result is a map. In the United States and Canada, Budvar's beer is sold as Czechvar and the American beer is Budweiser. In most of Europe, Budvar sells as Budweiser Budvar and the American beer is sold as Bud. Elsewhere it depends on which registry got there first, and on whether a court accepted that a place name can be a brand.",
+          "pt": "O resultado é um mapa. Nos Estados Unidos e no Canadá, a cerveja da Budvar é vendida como Czechvar e a americana é Budweiser. Em quase toda a Europa, a Budvar vende como Budweiser Budvar e a americana como Bud. No resto, depende de qual registro chegou primeiro e de o tribunal ter aceitado que um topônimo pode ser marca.",
+          "de": "Das Ergebnis ist eine Landkarte. In den USA und Kanada wird Budvars Bier als Czechvar verkauft und das amerikanische als Budweiser. In fast ganz Europa heißt Budvars Bier Budweiser Budvar und das amerikanische Bud. Anderswo hängt es davon ab, welches Register zuerst da war und ob ein Gericht akzeptierte, dass ein Ortsname eine Marke sein kann. Im Regal steht je nach Land ein anderer Name auf derselben Flasche."
+        },
+        {
+          "en": "The European Union protects Budějovické pivo as a geographical indication, which gives Budvar a lever that trademark law alone does not. AB InBev's answer was to buy the other brewery in town: Samson, the old Bürgerbräu, acquired in 2014, partly to strengthen its claim to a name that both companies insist is theirs. In České Budějovice the two breweries sit a kilometre apart, one state-owned and one belonging to the opposition.",
+          "pt": "A União Europeia protege Budějovické pivo como indicação geográfica, o que dá à Budvar uma alavanca que a lei de marcas sozinha não dá. A resposta da AB InBev foi comprar a outra cervejaria da cidade: a Samson, a antiga Bürgerbräu, adquirida em 2014, em parte para reforçar sua reivindicação sobre um nome que as duas empresas juram ser seu. Em České Budějovice as duas ficam a um quilômetro, uma estatal e a outra do adversário.",
+          "de": "Die Europäische Union schützt Budějovické pivo als geografische Angabe, was Budvar einen Hebel gibt, den das Markenrecht allein nicht bietet. AB InBev antwortete mit dem Kauf der anderen Brauerei der Stadt: Samson, die alte Bürgerbräu, 2014 erworben, auch um den Anspruch auf einen Namen zu stützen, den beide Firmen für sich beanspruchen. In České Budějovice liegen die beiden Brauereien einen Kilometer auseinander, die eine staatlich, die andere im Besitz der Gegenseite."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The tour and the glass",
+        "pt": "A visita e o copo",
+        "de": "Die Tour und das Glas"
+      },
+      "p": [
+        {
+          "en": "The visitor centre is in Kněžské Dvory, two kilometres north of the square, and the tour runs 70 to 80 minutes with a maximum of thirty people. It covers the brewhouse, the lagering tanks and a tasting, and it leaves at fixed times: Czech at 14:00, German at 14:20, English at 14:40, with extra morning tours in July and August. Book, especially in summer.",
+          "pt": "O centro de visitantes fica em Kněžské Dvory, dois quilômetros ao norte da praça, e a visita dura de 70 a 80 minutos, com no máximo trinta pessoas. Passa pela sala de brassagem, pelos tanques de maturação e por uma degustação, e sai em horários fixos: tcheco às 14h, alemão às 14h20, inglês às 14h40, com visitas extras pela manhã em julho e agosto. Reserve, principalmente no verão.",
+          "de": "Das Besucherzentrum liegt in Kněžské Dvory, zwei Kilometer nördlich des Platzes, und die Tour dauert 70 bis 80 Minuten bei höchstens dreißig Personen. Sie führt durch das Sudhaus, die Lagertanks und eine Verkostung, mit festen Zeiten: Tschechisch um 14 Uhr, Deutsch um 14.20 Uhr, Englisch um 14.40 Uhr, im Juli und August zusätzlich vormittags. Der Weg dorthin führt durch einen ruhigen Vorort, nicht durch ein Industriegebiet. Reservieren, besonders im Sommer."
+        },
+        {
+          "en": "The beer is 5.0% and 22 IBU, brewed from Moravian barley, whole-cone Saaz hops and the brewery's own yeast, and lagered for around ninety days. The tank version at the end of the tour is unfiltered; the bottled beer is filtered and pasteurised so it can travel. Budvar Dark uses the same yeast with roasted malt, and Budvar 33 is the lighter draught for the middle of the day.",
+          "pt": "A cerveja tem 5,0% e 22 IBU, feita com cevada da Morávia, lúpulo Saaz em cone inteiro e o fermento da casa, e matura por cerca de noventa dias. A versão de tanque no fim da visita é não filtrada; a engarrafada é filtrada e pasteurizada para viajar. A Budvar Dark usa o mesmo fermento com malte torrado, e a Budvar 33 é o chope mais leve para o meio do dia.",
+          "de": "Das Bier hat 5,0 % und 22 IBU, gebraut aus mährischer Gerste, ganzem Saazer Hopfen und eigener Hefe, und reift etwa neunzig Tage. Die Tankversion am Ende der Tour ist ungefiltert; die Flasche wird gefiltert und pasteurisiert, damit sie reisen kann. Budvar Dark nutzt dieselbe Hefe mit Röstmalz, und Budvar 33 ist das leichtere Bier für die Mitte des Tages."
+        },
+        {
+          "en": "Budvarka, the brewery's restaurant, is the obvious place after the tour and does goulash, dumplings and roast pork. In town, Masné krámy has poured Budvar and nothing else since 1954, in a sixteenth-century meat market with copper tanks behind the bar. Between the two rooms you can eat and drink the whole afternoon without leaving the orbit of the brewery.",
+          "pt": "A Budvarka, restaurante da cervejaria, é o lugar óbvio depois da visita e serve guláš, bolinhos e porco assado. No centro, a Masné krámy só serve Budvar desde 1954, num mercado de carne do século XVI com tanques de cobre atrás do balcão. Entre as duas salas, dá para comer e beber a tarde inteira sem sair da órbita da cervejaria.",
+          "de": "Budvarka, das Restaurant der Brauerei, ist nach der Tour der naheliegende Ort und serviert Gulasch, Knödel und Schweinebraten. In der Stadt zapft Masné krámy seit 1954 nur Budvar, in einem Fleischmarkt aus dem 16. Jahrhundert mit Kupfertanks hinter der Theke. Zwischen den beiden Räumen lässt sich der ganze Nachmittag essen und trinken, ohne die Umlaufbahn der Brauerei zu verlassen, und beide sind nah genug für einen Vergleich am selben Tag."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Budvar Original from the tank at the end of the tour: 5%, unfiltered, and softer than the bottle.",
+      "pt": "Budvar Original do tanque no fim da visita: 5%, não filtrada e mais macia que a de garrafa.",
+      "de": "Budvar Original aus dem Tank am Ende der Tour: 5 %, ungefiltert und weicher als die Flasche."
+    },
+    {
+      "en": "Budvar Dark, the roasted lager, if the bar has it: same yeast, darker malt, dry finish.",
+      "pt": "Budvar Dark, a lager torrada, se o bar tiver: mesmo fermento, malte mais escuro, final seco.",
+      "de": "Budvar Dark, das Röstbier, wenn es das Lokal hat: dieselbe Hefe, dunkleres Malz, trockener Abgang."
+    },
+    {
+      "en": "Budvar 33, the lighter draught, for the middle of the day.",
+      "pt": "Budvar 33, o chope mais leve, para o meio do dia.",
+      "de": "Budvar 33, das leichtere Bier, für die Mitte des Tages."
+    },
+    {
+      "en": "Samson Tmavé across town, for the comparison and for the politics.",
+      "pt": "Samson Tmavé do outro lado da cidade, pela comparação e pela política.",
+      "de": "Samson Tmavé am anderen Ende der Stadt, für den Vergleich und die Politik."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Budvarka, at the brewery: goulash, dumplings and roasted pork, with the tour groups for company.",
+      "pt": "Budvarka, na cervejaria: guláš, bolinhos e porco assado, com os grupos de visita como companhia.",
+      "de": "Budvarka in der Brauerei: Gulasch, Knödel und Schweinebraten, in Gesellschaft der Tourgruppen."
+    },
+    {
+      "en": "Masné krámy in Krajinská: svíčková and dumplings in a basilican hall, Budvar only, since 1954.",
+      "pt": "Masné krámy, na Krajinská: svíčková e bolinhos num salão basilical, só Budvar, desde 1954.",
+      "de": "Masné krámy in der Krajinská: svíčková und Knödel in einer basilikalen Halle, nur Budvar, seit 1954."
+    },
+    {
+      "en": "The arcades on Přemysl Otakar II square, for coffee and cake after the tasting.",
+      "pt": "As arcadas da praça Přemysl Otakar II, para café e bolo depois da degustação.",
+      "de": "Die Arkaden am Přemysl-Otakar-II.-Platz für Kaffee und Kuchen nach der Verkostung."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Book the tour. The English slot is at 14:40 and capacity is thirty; in July and August there is a second one in the morning.",
+      "pt": "Reserve a visita. O horário em inglês é às 14h40 e a capacidade é de trinta pessoas; em julho e agosto há uma segunda pela manhã.",
+      "de": "Die Tour buchen. Der englische Termin ist um 14.40 Uhr, dreißig Plätze; im Juli und August gibt es vormittags einen zweiten."
+    },
+    {
+      "en": "The brewery is a twenty-five-minute walk from the square, across the Malše. A taxi is short. Trams and buses around it change with roadworks, so check locally.",
+      "pt": "A cervejaria fica a vinte e cinco minutos a pé da praça, do outro lado do Malše. De táxi é rápido. Bondes e ônibus por ali mudam com as obras, então confira no local.",
+      "de": "Die Brauerei liegt fünfundzwanzig Gehminuten vom Platz, über die Malše. Mit dem Taxi geht es schnell. Straßenbahnen und Busse ändern sich mit den Baustellen, also vor Ort prüfen."
+    },
+    {
+      "en": "The tasting is for visitors over eighteen, and they may ask for identification.",
+      "pt": "A degustação é para maiores de dezoito anos, e podem pedir documento.",
+      "de": "Die Verkostung ist ab achtzehn, und es kann nach dem Ausweis gefragt werden."
+    },
+    {
+      "en": "The visitor centre sells glassware and will engrave it, which makes a better souvenir than a bottle.",
+      "pt": "O centro de visitantes vende copos e grava o seu nome, o que é uma lembrança melhor que uma garrafa.",
+      "de": "Das Besucherzentrum verkauft Gläser und graviert sie, ein besseres Souvenir als eine Flasche."
+    },
+    {
+      "en": "In January and February the visitor centre closes on Sundays. Check the calendar before building a day around it.",
+      "pt": "Em janeiro e fevereiro o centro de visitantes fecha aos domingos. Confira o calendário antes de montar o dia em volta dele.",
+      "de": "Im Januar und Februar schließt das Besucherzentrum sonntags. Vor der Tagesplanung den Kalender prüfen."
+    }
+  ],
+  "links": [
+    {
+      "label": "Budweiser Budvar",
+      "url": "https://www.budejovickybudvar.cz/en/"
+    },
+    {
+      "label": "Budweiser Budvar Brewery (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Budweiser_Budvar_Brewery"
+    },
+    {
+      "label": "Budweiser trademark dispute (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Budweiser_trademark_dispute"
+    }
+  ]
+}

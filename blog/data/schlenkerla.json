@@ -1,0 +1,207 @@
+{
+  "slug": "schlenkerla",
+  "type": "brewery",
+  "name": "Schlenkerla",
+  "where": "Bamberg, Germany",
+  "coords": [
+    49.8916,
+    10.8853
+  ],
+  "span": 0.35,
+  "subtitle_en": "Smoked beer, poured in the same house since 1405",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Aecht+Schlenkerla+Dominikanerstrasse+6+Bamberg",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2027"
+  ],
+  "related": [
+    "bamberg",
+    "spezial",
+    "brauerei-wagner",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first recorded",
+        "pt": "primeiro registro",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "1405"
+      }
+    },
+    {
+      "k": {
+        "en": "beer",
+        "pt": "cerveja",
+        "de": "Bier"
+      },
+      "v": {
+        "en": "Rauchbier"
+      }
+    },
+    {
+      "k": {
+        "en": "malt",
+        "pt": "malte",
+        "de": "Malz"
+      },
+      "v": {
+        "en": "beechwood-smoked",
+        "pt": "defumado em faia",
+        "de": "buchenholzgeräuchert"
+      }
+    },
+    {
+      "k": {
+        "en": "tapped from",
+        "pt": "servida de",
+        "de": "gezapft aus"
+      },
+      "v": {
+        "en": "oak cask, by gravity",
+        "pt": "barril de carvalho, por gravidade",
+        "de": "Eichenfass, per Schwerkraft"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Bamberg's smoked beer is not a novelty invented for visitors. It is what beer tasted like across Franconia before kilns learned to dry malt without fire, and Schlenkerla has kept the old method running in the same building for six centuries.",
+    "pt": "A cerveja defumada de Bamberg não é uma novidade criada para turistas. É o gosto que a cerveja tinha em toda a Francônia antes de os fornos aprenderem a secar malte sem fogo, e a Schlenkerla mantém o método antigo no mesmo prédio há seis séculos.",
+    "de": "Bamberger Rauchbier ist keine Erfindung für Besucher. Es ist der Geschmack, den Bier in ganz Franken hatte, bevor Darren lernten, Malz ohne Feuer zu trocknen — und Schlenkerla hält das alte Verfahren seit sechs Jahrhunderten im selben Haus am Laufen."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Why it tastes of smoke",
+        "pt": "Por que tem gosto de fumaça",
+        "de": "Warum es nach Rauch schmeckt"
+      },
+      "p": [
+        {
+          "en": "Before indirect kilning arrived in the nineteenth century, every brewery dried its malt over an open fire. The smoke went into the grain, and the grain went into the beer. Most of Europe replaced that method with hot-air kilns and forgot the flavour. Bamberg did not: the malt for Schlenkerla is still dried over beechwood logs, which is why the beer smells of a cold fireplace and tastes, on the first sip, like bacon and rye bread.",
+          "pt": "Antes de a secagem indireta chegar no século XIX, toda cervejaria secava o malte sobre fogo aberto. A fumaça entrava no grão, e o grão entrava na cerveja. Quase toda a Europa trocou esse método por fornos de ar quente e esqueceu o sabor. Bamberg não: o malte da Schlenkerla ainda é secado sobre lenha de faia, e é por isso que a cerveja cheira a lareira apagada e, no primeiro gole, lembra bacon e pão de centeio.",
+          "de": "Bevor im 19. Jahrhundert die indirekte Darre kam, trocknete jede Brauerei ihr Malz über offenem Feuer. Der Rauch ging ins Korn, und das Korn ging ins Bier. Fast ganz Europa ersetzte das Verfahren durch Heißluftdarren und vergaß den Geschmack. Bamberg nicht: Das Malz für Schlenkerla wird bis heute über Buchenholz getrocknet — deshalb riecht das Bier nach kaltem Kamin und schmeckt beim ersten Schluck nach Speck und Roggenbrot."
+        },
+        {
+          "en": "The first glass is the difficult one. By the third, the smoke has stopped being a flavour and become the frame everything else sits in — the malt sweetness, the dry finish, the way it cuts through a plate of smoked ham.",
+          "pt": "O primeiro copo é o difícil. No terceiro, a fumaça deixa de ser um sabor e vira a moldura onde todo o resto se apoia — o doce do malte, o final seco, o jeito como corta um prato de presunto defumado.",
+          "de": "Das erste Glas ist das schwierige. Beim dritten ist der Rauch kein Geschmack mehr, sondern der Rahmen, in dem alles andere steht — die Malzsüße, das trockene Finish, die Art, wie es durch eine Platte Räucherschinken schneidet."
+        },
+        {
+          "en": "The name is younger than the beer. <em>Schlenkerla</em> comes from <em>schlenkern</em>, to sway, and only stuck at the end of the nineteenth century — a nickname for the house, or for the walk home. The building is the older story: Dominikanerstraße 6, the house <em>zum Blauen Löwen</em>, with a line of owners documented since 1405, in the old Dominican quarter beside the church.",
+          "pt": "O nome é mais novo que a cerveja. <em>Schlenkerla</em> vem de <em>schlenkern</em>, cambalear, e só pegou no fim do século XIX — um apelido da casa, ou do caminho de volta. O prédio é a história mais antiga: Dominikanerstraße 6, a casa <em>zum Blauen Löwen</em>, com uma linhagem de donos documentada desde 1405, no antigo bairro dominicano ao lado da igreja.",
+          "de": "Der Name ist jünger als das Bier. <em>Schlenkerla</em> kommt von <em>schlenkern</em> und setzte sich erst Ende des 19. Jahrhunderts durch — ein Spitzname für das Haus oder für den Heimweg. Das Gebäude ist die ältere Geschichte: Dominikanerstraße 6, das Haus <em>zum Blauen Löwen</em>, mit einer seit 1405 belegten Besitzerreihe, im alten Dominikanerviertel neben der Kirche."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Inside the tavern",
+        "pt": "Dentro da taverna",
+        "de": "In der Gaststube"
+      },
+      "p": [
+        {
+          "en": "The room is dark wood, low ceilings and long tables shared with whoever sits down. There is no music and no television. The beer is tapped by gravity straight from an oakwood cask behind the bar, arrives in stoneware mugs, and the menu is Franconian cooking without pretension: pork shoulder, sausages, sauerkraut, a slice of bread with lard.",
+          "pt": "A sala é de madeira escura, pé-direito baixo e mesas compridas divididas com quem sentar. Não há música nem televisão. A cerveja sai por gravidade de um barril de carvalho atrás do balcão, chega em canecas de cerâmica, e o menu é cozinha francônia sem pretensão: paleta de porco, linguiças, chucrute, uma fatia de pão com banha.",
+          "de": "Der Raum ist dunkles Holz, niedrige Decken, lange Tische, an denen sitzt, wer sich dazusetzt. Keine Musik, kein Fernseher. Das Bier läuft per Schwerkraft aus einem Eichenfass hinter der Theke, kommt im Steinzeugkrug, und die Karte ist fränkische Küche ohne Attitüde: Schweineschulter, Bratwürste, Sauerkraut, eine Scheibe Brot mit Schmalz."
+        },
+        {
+          "en": "It is a working tavern, not a museum. Locals stand at the bar for a quick one on the way home; visitors linger. Both are welcome, and nobody rushes you out.",
+          "pt": "É uma taverna de trabalho, não um museu. Os moradores ficam no balcão para um copo rápido no caminho de casa; os visitantes demoram. Os dois são bem-vindos, e ninguém apressa a saída.",
+          "de": "Es ist eine Arbeitsstube, kein Museum. Die Einheimischen stehen an der Theke für ein schnelles Bier auf dem Heimweg, Besucher bleiben sitzen. Beide sind willkommen, und niemand drängt hinaus."
+        },
+        {
+          "en": "The house pours more than the famous Märzen: a smoked wheat beer, an Urbock, an oak-smoked Doppelbock, a cherrywood-smoked red lager, an alder-smoked black lager, and — the one worth planning a trip around — the Fastenbier, unfiltered at around 5.9%, on tap only between Ash Wednesday and Easter.",
+          "pt": "A casa serve mais que a famosa Märzen: uma cerveja de trigo defumada, uma Urbock, uma Doppelbock defumada em carvalho, uma lager vermelha defumada em cerejeira, uma lager preta defumada em amieiro e — a que vale planejar uma viagem em volta — a Fastenbier, não filtrada, em torno de 5,9%, no barril só entre a Quarta-feira de Cinzas e a Páscoa.",
+          "de": "Das Haus zapft mehr als die berühmte Märzen: ein geräuchertes Weizenbier, einen Urbock, einen eichenholzgeräucherten Doppelbock, ein kirschholzgeräuchertes Rotbier, ein erlenholzgeräuchertes Schwarzbier und — der Grund, eine Reise zu planen — das Fastenbier, ungefiltert mit rund 5,9 %, nur zwischen Aschermittwoch und Ostern am Holzfass."
+        },
+        {
+          "en": "One date belongs in any beer calendar: 23 July, Smokebeer Preservation Day, when the brewery taps special Märzen editions — unfiltered, and a pale one — that exist for that week only.",
+          "pt": "Uma data que pertence a qualquer calendário cervejeiro: 23 de julho, o Dia da Preservação do Rauchbier, quando a cervejaria tira edições especiais da Märzen — uma não filtrada e uma clara — que existem só naquela semana.",
+          "de": "Ein Termin gehört in jeden Bierkalender: der 23. Juli, der Rauchbierbewahrungstag, an dem die Brauerei besondere Märzen-Editionen zapft — eine ungefilterte und eine helle —, die es nur diese Woche gibt."
+        },
+        {
+          "en": "The building itself is part of the argument. The tavern sits in the old Dominican quarter, a few steps from the church, in a house that has been selling beer since the fifteenth century — one of the oldest continuously operating brewery taverns in the world.",
+          "pt": "O prédio faz parte do argumento. A taverna fica no antigo bairro dominicano, a poucos passos da igreja, numa casa que vende cerveja desde o século XV — uma das tavernas-cervejaria em funcionamento contínuo mais antigas do mundo.",
+          "de": "Das Gebäude ist Teil des Arguments. Die Gaststube liegt im alten Dominikanerviertel, wenige Schritte von der Kirche, in einem Haus, das seit dem 15. Jahrhundert Bier verkauft — eine der ältesten durchgehend betriebenen Brauereigaststätten der Welt."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Aecht Schlenkerla Rauchbier Märzen — the benchmark; order the first one in the 0.5 l mug and give it three sips before deciding.",
+      "pt": "Aecht Schlenkerla Rauchbier Märzen — a referência; peça a primeira na caneca de 0,5 l e dê três goles antes de decidir.",
+      "de": "Aecht Schlenkerla Rauchbier Märzen — der Maßstab; den ersten im 0,5-l-Krug bestellen und drei Schlucke geben, bevor man urteilt."
+    },
+    {
+      "en": "Rauchbier Helles if you want the smoke turned down and the malt turned up.",
+      "pt": "Rauchbier Helles se quiser a fumaça mais baixa e o malte mais alto.",
+      "de": "Rauchbier Helles, wenn der Rauch leiser und das Malz lauter sein soll."
+    },
+    {
+      "en": "Fastenbier in Lent — the seasonal that regulars wait for.",
+      "pt": "Fastenbier na Quaresma — a sazonal que os habitués esperam.",
+      "de": "Fastenbier in der Fastenzeit — das Saisonbier, auf das die Stammgäste warten."
+    },
+    {
+      "en": "Bock in winter, if it is on.",
+      "pt": "Bock no inverno, se estiver disponível.",
+      "de": "Bock im Winter, wenn es ihn gibt."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The Schäuferla — roasted pork shoulder with a dark beer gravy — is the city's Sunday dish and the reason to sit down rather than stand at the bar.",
+      "pt": "O Schäuferla — paleta de porco assada com molho escuro de cerveja — é o prato de domingo da cidade e o motivo para sentar em vez de ficar no balcão.",
+      "de": "Das Schäuferla — gebratene Schweineschulter in dunkler Biersoße — ist das Sonntagsgericht der Stadt und der Grund, sich zu setzen statt an der Theke zu stehen."
+    },
+    {
+      "en": "Smoked ham with bread and butter, which is less a dish than the correct answer to the beer.",
+      "pt": "Presunto defumado com pão e manteiga, que é menos um prato e mais a resposta certa para a cerveja.",
+      "de": "Geräucherter Schinken mit Brot und Butter — weniger ein Gericht als die richtige Antwort auf das Bier."
+    },
+    {
+      "en": "Across the river in the Sandstraße, Spezial and Fässla are a five-minute walk if the tables here are full.",
+      "pt": "Do outro lado do rio, na Sandstraße, Spezial e Fässla ficam a cinco minutos a pé se as mesas aqui estiverem cheias.",
+      "de": "Über den Fluss in der Sandstraße liegen Spezial und Fässla fünf Gehminuten entfernt, falls hier alles voll ist."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Bottles to take home come from the brewery itself — sold at the house and through its own shop (shop.schlenkerla.de), which also ships the seasonals.",
+      "pt": "Garrafas para levar saem da própria cervejaria — vendidas na casa e pela loja própria (shop.schlenkerla.de), que também envia as sazonais.",
+      "de": "Flaschen für zu Hause kommen von der Brauerei selbst — im Haus und über den eigenen Shop (shop.schlenkerla.de), der auch die Saisonbiere verschickt."
+    },
+    {
+      "en": "No reservations and no host stand: walk in, look for seats, and ask to share a table. That is normal here.",
+      "pt": "Sem reservas e sem recepção: entre, procure lugares e peça para dividir a mesa. Isso é normal aqui.",
+      "de": "Keine Reservierungen, kein Empfang: hineingehen, Plätze suchen, um einen Platz am Tisch bitten. Das ist hier normal."
+    },
+    {
+      "en": "Cash is the default across Bamberg's taverns. Cards are increasingly accepted but not guaranteed, especially at busy times.",
+      "pt": "Dinheiro em espécie é o padrão nas tavernas de Bamberg. Cartão é cada vez mais aceito, mas não é garantido, especialmente nos horários cheios.",
+      "de": "Bargeld ist in Bambergs Gaststuben die Regel. Karten werden häufiger genommen, sind aber nicht garantiert, besonders wenn viel los ist."
+    },
+    {
+      "en": "The beer is stronger than it reads. Two mugs and the walk back over the river is longer than you think — which is, more or less, where the name came from.",
+      "pt": "A cerveja é mais forte do que parece. Dois canecos e a volta a pé pela ponte fica mais longa do que você imagina — que é, mais ou menos, de onde veio o nome.",
+      "de": "Das Bier ist stärker, als es wirkt. Zwei Krüge, und der Weg zurück über den Fluss wird länger als gedacht — was ungefähr der Ursprung des Namens ist."
+    }
+  ],
+  "links": [
+    {
+      "label": "Schlenkerla",
+      "url": "https://www.schlenkerla.de/"
+    },
+    {
+      "label": "Bamberg tourism",
+      "url": "https://www.bamberg.info/"
+    }
+  ]
+}

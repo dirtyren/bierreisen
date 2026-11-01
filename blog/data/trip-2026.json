@@ -1,0 +1,200 @@
+{
+  "slug": "trip-2026",
+  "type": "trip",
+  "name": "Franconia, Bohemia and the Alps, 2026",
+  "where": "Germany, Czechia, Austria · February and March 2026",
+  "coords": [
+    49.2037,
+    10.7018
+  ],
+  "image": "2026/assets/2026-route-map.png",
+  "trips": [
+    "2026"
+  ],
+  "trip_stats": "",
+  "related": [
+    "merkendorf",
+    "brauerei-wagner",
+    "ceske-budejovice",
+    "berchtesgaden",
+    "trip-2024"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "days",
+        "pt": "dias",
+        "de": "Tage"
+      },
+      "v": {
+        "en": "16"
+      }
+    },
+    {
+      "k": {
+        "en": "nights",
+        "pt": "noites",
+        "de": "Nächte"
+      },
+      "v": {
+        "en": "13"
+      }
+    },
+    {
+      "k": {
+        "en": "km driving",
+        "pt": "km de carro",
+        "de": "km Fahrt"
+      },
+      "v": {
+        "en": "1,406 km"
+      }
+    },
+    {
+      "k": {
+        "en": "bases",
+        "pt": "bases",
+        "de": "Standorte"
+      },
+      "v": {
+        "en": "5"
+      }
+    },
+    {
+      "k": {
+        "en": "countries",
+        "pt": "países",
+        "de": "Länder"
+      },
+      "v": {
+        "en": "4"
+      }
+    }
+  ],
+  "lede": {
+    "en": "The 2024 trip with the right timings: three nights in Merkendorf above Brauerei Wagner, two with Budvar, three under the Watzmann with Salzburg across the border, and four in Munich. Late February, early March, no crowds.",
+    "pt": "A viagem de 2024 com os tempos certos: três noites em Merkendorf sobre a Brauerei Wagner, duas com a Budvar, três sob o Watzmann com Salzburgo do outro lado da fronteira, e quatro em Munique. Fim de fevereiro, começo de março, sem multidão.",
+    "de": "Die Reise von 2024 mit den richtigen Zeiten: drei Nächte in Merkendorf über der Brauerei Wagner, zwei bei Budvar, drei unter dem Watzmann mit Salzburg hinter der Grenze und vier in München. Ende Februar, Anfang März, keine Menschentrauben."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "A village as a base",
+        "pt": "Uma vila como base",
+        "de": "Ein Dorf als Basis"
+      },
+      "p": [
+        {
+          "en": "Merkendorf has a brewery, a church and not much else, and that was the point. Three nights there meant the Wagner tap room became a local rather than a stop, and the drive to Bamberg, twenty minutes away, was a decision rather than a commute.",
+          "pt": "Merkendorf tem uma cervejaria, uma igreja e não muito mais, e era essa a ideia. Três noites ali fizeram da sala da Wagner um lugar habitual e não uma parada, e o deslocamento até Bamberg, a vinte minutos, virou decisão e não deslocamento diário.",
+          "de": "Merkendorf hat eine Brauerei, eine Kirche und nicht viel mehr — genau darum ging es. Drei Nächte machten aus der Wagner-Stube einen Stammplatz statt einer Station, und die Fahrt nach Bamberg, zwanzig Minuten, wurde eine Entscheidung statt Pendeln."
+        },
+        {
+          "en": "Brauerei Wagner has been in the family since 1797 and brews lagers that taste like the village they come from: soft, malty, unfiltered, served in the tap room a few steps from the kettle.",
+          "pt": "A Brauerei Wagner está na família desde 1797 e faz lagers que sabem à vila de onde vêm: macias, maltadas, não filtradas, servidas na sala a poucos passos do tacho.",
+          "de": "Brauerei Wagner ist seit 1797 in Familienhand und braut Lager, die nach dem Dorf schmecken, aus dem sie kommen: weich, malzig, unfiltriert, in der Stube wenige Schritte vom Sudkessel."
+        },
+        {
+          "en": "The Czech leg went deeper than 2024: two nights in České Budějovice instead of one, which is the difference between seeing Budvar and understanding the town that made it possible.",
+          "pt": "A etapa tcheca foi mais fundo que em 2024: duas noites em České Budějovice em vez de uma, que é a diferença entre ver a Budvar e entender a cidade que tornou isso possível.",
+          "de": "Die tschechische Etappe ging tiefer als 2024: zwei Nächte in České Budějovice statt einer — der Unterschied zwischen Budvar sehen und die Stadt verstehen, die es möglich machte."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The Alps in early March",
+        "pt": "Os Alpes no começo de março",
+        "de": "Die Alpen Anfang März"
+      },
+      "p": [
+        {
+          "en": "Bad Reichenhall as a base puts Berchtesgaden, the Königssee and Salzburg inside an hour. In early March the lake is still closed to boats, the snow is on the high paths, and the towns are full of people who live there.",
+          "pt": "Bad Reichenhall como base coloca Berchtesgaden, o Königssee e Salzburgo a menos de uma hora. No começo de março o lago ainda está fechado para barcos, a neve está nos caminhos altos, e as cidades estão cheias de gente que mora ali.",
+          "de": "Bad Reichenhall als Basis bringt Berchtesgaden, den Königssee und Salzburg in eine Stunde. Anfang März ist der See noch für Boote geschlossen, Schnee liegt auf den höheren Wegen, und die Orte sind voll mit Leuten, die dort wohnen."
+        },
+        {
+          "en": "Salzburg is a day trip, not a beer destination — but the Augustiner Bräustübl on the Mönchsberg is a beer hall at a scale that Munich no longer has, and it is worth the border crossing on its own.",
+          "pt": "Salzburgo é passeio de um dia, não destino cervejeiro — mas o Augustiner Bräustübl no Mönchsberg é um salão de cerveja numa escala que Munique já não tem, e vale a travessia da fronteira sozinho.",
+          "de": "Salzburg ist ein Tagesausflug, kein Bierziel — aber der Augustiner Bräustübl am Mönchsberg ist ein Bierlokal in einer Größe, die München nicht mehr hat, und die Grenzübertretung allein wert."
+        },
+        {
+          "en": "Four nights in Munich at the end, again, was the correction that worked: the city is a set of rooms, not a checklist, and four nights is the amount that lets you go back to the one you liked.",
+          "pt": "Quatro noites em Munique no fim, de novo, foi a correção que funcionou: a cidade é um conjunto de salões, não uma lista, e quatro noites é o tanto que permite voltar ao que você gostou.",
+          "de": "Vier Nächte München am Ende, wieder, war die Korrektur, die funktionierte: Die Stadt ist eine Reihe von Stuben, keine Liste, und vier Nächte reichen, um in die zurückzugehen, die gefiel."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Wagner Lagerbier in the tap room in Merkendorf, the first evening, before anything else.",
+      "pt": "Wagner Lagerbier na sala em Merkendorf, na primeira noite, antes de tudo.",
+      "de": "Wagner Lagerbier in der Stube in Merkendorf, am ersten Abend, vor allem anderen."
+    },
+    {
+      "en": "Budvar's dark lager, which most visitors skip and should not.",
+      "pt": "A lager escura da Budvar, que a maioria dos visitantes pula e não deveria.",
+      "de": "Das dunkle Budvar-Lager, das die meisten Besucher auslassen und nicht sollten."
+    },
+    {
+      "en": "Augustiner Bräustübl in Salzburg, from the wooden barrels, in the hall.",
+      "pt": "Augustiner Bräustübl em Salzburgo, dos barris de madeira, no salão.",
+      "de": "Augustiner Bräustübl in Salzburg, aus den Holzfässern, im Saal."
+    },
+    {
+      "en": "A Maß of Augustiner Helles in Munich, at the Bräustuben, to close the loop.",
+      "pt": "Uma Maß de Augustiner Helles em Munique, no Bräustuben, para fechar o ciclo.",
+      "de": "Eine Maß Augustiner Helles in München, in der Bräustuben, um den Kreis zu schließen."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The Wagner tap room's own board: sausages, cheese, bread, and whatever the kitchen made that day.",
+      "pt": "O quadro da própria sala da Wagner: linguiças, queijo, pão e o que a cozinha fez no dia.",
+      "de": "Die Tafel der Wagner-Stube: Würste, Käse, Brot und was die Küche an dem Tag gemacht hat."
+    },
+    {
+      "en": "Trdelník is for tourists; in České Budějovice order the goulash and the dumplings.",
+      "pt": "Trdelník é para turista; em České Budějovice peça o goulash e os bolinhos.",
+      "de": "Trdelník ist für Touristen; in České Budějovice Gulasch und Knödel bestellen."
+    },
+    {
+      "en": "Salzburger Nockerl, once, in Salzburg, because it is a dessert that only makes sense there.",
+      "pt": "Salzburger Nockerl, uma vez, em Salzburgo, porque é uma sobremesa que só faz sentido ali.",
+      "de": "Salzburger Nockerl, einmal, in Salzburg, weil das Dessert nur dort Sinn ergibt."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Late February is still winter in the Alps: chains may be required on the passes, and the Königssee boats do not run.",
+      "pt": "Fim de fevereiro ainda é inverno nos Alpes: correntes podem ser exigidas nos passes, e os barcos do Königssee não operam.",
+      "de": "Ende Februar ist in den Alpen noch Winter: Auf den Pässen können Ketten Pflicht sein, und die Königssee-Boote fahren nicht."
+    },
+    {
+      "en": "Czech village breweries often close on Mondays; check before building a day around one.",
+      "pt": "Cervejarias de vila tchecas costumam fechar às segundas; confira antes de montar um dia em torno de uma.",
+      "de": "Tschechische Dorfbrauereien haben oft montags zu; vor einem Tag darum herum prüfen."
+    },
+    {
+      "en": "Salzburg's Bräustübl is cash-and-tray: pick up the food yourself and pay at the counter.",
+      "pt": "O Bräustübl de Salzburgo é bandeja e dinheiro: pegue a comida você mesmo e pague no balcão.",
+      "de": "Der Salzburger Bräustübl ist Tablett und Bargeld: Essen selbst holen, am Schalter zahlen."
+    },
+    {
+      "en": "Merkendorf has almost no taxis; decide who drinks before the drive back from Bamberg.",
+      "pt": "Merkendorf quase não tem táxi; decida quem bebe antes da volta de carro de Bamberg.",
+      "de": "Merkendorf hat fast keine Taxis; vor der Rückfahrt aus Bamberg klären, wer trinkt."
+    }
+  ],
+  "links": [
+    {
+      "label": "Brauerei Wagner",
+      "url": "https://www.brauerei-wagner.de/"
+    },
+    {
+      "label": "Augustiner Bräustübl Salzburg",
+      "url": "https://www.augustiner-braeu.at/"
+    }
+  ]
+}

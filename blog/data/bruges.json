@@ -1,0 +1,224 @@
+{
+  "slug": "bruges",
+  "type": "city",
+  "name": "Bruges",
+  "where": "West Flanders, Belgium",
+  "coords": [
+    51.2087,
+    3.2244
+  ],
+  "span": 0.05,
+  "subtitle_en": "A medieval port with two breweries and a long bar list",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Markt+Brugge+Belgium",
+  "trips": [
+    "2020",
+    "2027"
+  ],
+  "related": [
+    "de-halve-maan",
+    "ghent",
+    "brussels",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "breweries in the centre",
+        "pt": "cervejarias no centro",
+        "de": "Brauereien im Zentrum"
+      },
+      "v": {
+        "en": "2"
+      }
+    },
+    {
+      "k": {
+        "en": "belfry height",
+        "pt": "altura do campanário",
+        "de": "Höhe des Belfrieds"
+      },
+      "v": {
+        "en": "83 m"
+      }
+    },
+    {
+      "k": {
+        "en": "steps to the top",
+        "pt": "degraus até o topo",
+        "de": "Stufen nach oben"
+      },
+      "v": {
+        "en": "366"
+      }
+    },
+    {
+      "k": {
+        "en": "UNESCO listing",
+        "pt": "patrimônio da UNESCO",
+        "de": "UNESCO-Status"
+      },
+      "v": {
+        "en": "2000"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Bruges grew rich on the sea, lost the sea when the Zwin silted up, and stayed poor long enough to keep its medieval centre intact. The result is a small city that looks like a stage set and is still lived in: two working breweries in the centre, a few hundred bars and restaurants, and streets that empty by seven.",
+    "pt": "Bruges enriqueceu com o mar, perdeu o mar quando o Zwin assoreou e ficou pobre tempo suficiente para manter o centro medieval intacto. O resultado é uma cidade pequena que parece um cenário e continua habitada: duas cervejarias em funcionamento no centro, algumas centenas de bares e restaurantes, e ruas que esvaziam às sete.",
+    "de": "Brügge wurde reich vom Meer, verlor das Meer, als der Zwin verlandete, und blieb lange genug arm, um sein mittelalterliches Zentrum zu erhalten. Das Ergebnis ist eine kleine Stadt, die wie eine Kulisse wirkt und trotzdem bewohnt ist: zwei aktive Brauereien im Zentrum, ein paar hundert Bars und Restaurants, und Straßen, die sich um sieben leeren."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "A centre you cross, not cover",
+        "pt": "Um centro que se atravessa, não se percorre",
+        "de": "Ein Zentrum zum Durchqueren, nicht zum Abarbeiten"
+      },
+      "p": [
+        {
+          "en": "From the station it is a fifteen-minute walk to the Markt. From there almost everything sits inside a twenty-minute circle. The Belfry closes the square at 83 metres, with 366 steps, a carillon and a view that makes the flatness of West Flanders obvious. Climb it early, before the coaches arrive, and the city reads as one piece: canals, roofs and the brick tower of Our Lady's church.",
+          "pt": "Da estação são quinze minutos a pé até a Markt. De lá, quase tudo cabe num círculo de vinte minutos. O campanário fecha a praça a 83 metros, com 366 degraus, um carrilhão e uma vista que deixa óbvia a planura da Flandres Ocidental. Suba cedo, antes de os ônibus chegarem, e a cidade se lê de uma vez: canais, telhados e a torre de tijolos da igreja de Nossa Senhora.",
+          "de": "Vom Bahnhof sind es fünfzehn Minuten zu Fuß zum Markt. Von dort liegt fast alles in einem Umkreis von zwanzig Minuten. Der Belfried schließt den Platz mit 83 Metern ab, mit 366 Stufen, einem Glockenspiel und einer Aussicht, die die Flachheit Westflanderns offenlegt. Früh hinauf, bevor die Busse kommen, und die Stadt liest sich als ein Stück: Kanäle, Dächer und der Backsteinturm der Liebfrauenkirche."
+        },
+        {
+          "en": "Walk through the Burg, past the town hall, down to the Rozenhoedkaai, where most photographs of Bruges are taken. Follow the water to the Begijnhof and the Minnewater, the long pond at the southern edge of the old town. The Groeningemuseum holds the Flemish Primitives; the Church of Our Lady holds Michelangelo's Madonna, carved in Florence and installed here in 1506. Both are worth the ticket.",
+          "pt": "Atravesse o Burg, passe pela prefeitura e desça até o Rozenhoedkaai, onde são feitas quase todas as fotos de Bruges. Siga a água até o Begijnhof e o Minnewater, o lago comprido na borda sul do centro antigo. O Groeningemuseum guarda os primitivos flamengos; a igreja de Nossa Senhora guarda a Madonna de Michelangelo, esculpida em Florença e instalada aqui em 1506. As duas valem o ingresso.",
+          "de": "Durch den Burg, am Rathaus vorbei, hinunter zum Rozenhoedkaai, wo die meisten Fotos von Brügge entstehen. Dem Wasser folgen bis zum Beginenhof und zum Minnewater, dem langen Teich am Südrand der Altstadt. Das Groeningemuseum hält die flämischen Primitiven; die Liebfrauenkirche hält Michelangelos Madonna, in Florenz gehauen und 1506 hier aufgestellt. Beide lohnen den Eintritt und eine halbe Stunde. Beide sind schnell erreicht."
+        },
+        {
+          "en": "Bruges is not a city to cover. It is one to cross and re-cross, noticing the same bridge from a different angle, the same canal at another hour. The centre is small enough that a wrong turn costs three minutes. That is the pleasure of the place, and also the reason it fills up so quickly. Come back the same way after dark and it is a different town.",
+          "pt": "Bruges não é uma cidade para percorrer. É uma cidade para atravessar e atravessar de novo, notando a mesma ponte de outro ângulo, o mesmo canal em outra hora. O centro é pequeno a ponto de uma rua errada custar três minutos. É esse o prazer do lugar, e também o motivo de ele encher tão rápido. Volte pelo mesmo caminho depois do escuro e será outra cidade.",
+          "de": "Brügge ist keine Stadt zum Abarbeiten. Es ist eine Stadt zum Durchqueren und Nochmal-Durchqueren, dieselbe Brücke aus einem anderen Winkel, derselbe Kanal zu einer anderen Stunde. Das Zentrum ist so klein, dass ein falscher Abzweig drei Minuten kostet. Das ist der Reiz des Ortes — und der Grund, warum er sich so schnell füllt. Am Abend denselben Weg zurück, und die Stadt ist eine andere."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Two breweries, many bars",
+        "pt": "Duas cervejarias, muitos bares",
+        "de": "Zwei Brauereien, viele Bars"
+      },
+      "p": [
+        {
+          "en": "De Halve Maan, on the Walplein, is the brewery the city is known for: brewing on the same site since 1856 and in the same family for six generations. Brugse Zot and Straffe Hendrik are the local beers worth ordering. The brewery tour is one of the most visited in Belgium, which tells you what demand looks like in a city of this size.",
+          "pt": "De Halve Maan, no Walplein, é a cervejaria pela qual a cidade é conhecida: produz no mesmo lugar desde 1856 e está na mesma família há seis gerações. Brugse Zot e Straffe Hendrik são as cervejas locais que valem o pedido. A visita à cervejaria é uma das mais concorridas da Bélgica, o que dá a medida da demanda numa cidade deste tamanho.",
+          "de": "De Halve Maan am Walplein ist die Brauerei, für die die Stadt bekannt ist: seit 1856 am selben Ort und seit sechs Generationen in derselben Familie. Brugse Zot und Straffe Hendrik sind die lokalen Biere, die man bestellen sollte. Die Brauereiführung ist eine der meistbesuchten Belgiens, was den Bedarf in einer Stadt dieser Größe zeigt. Die Nachfrage ist größer als das Angebot."
+        },
+        {
+          "en": "The bars carry the beer culture. De Garre sits at the end of an alley off Breidelstraat, pours a house tripel at 11% and limits each customer to three. 't Brugs Beertje has a long bottle list and a brown room that has not changed its habits in decades. Café Vlissinghe has been licensed since 1515 and keeps a pétanque court in the garden. Le Trappiste occupies a vaulted cellar near the Burg. Bourgogne des Flandres, beside the canal, brews a Flemish red on site.",
+          "pt": "Os bares carregam a cultura cervejeira. O De Garre fica no fim de um beco que sai da Breidelstraat, serve um tripel da casa a 11% e limita cada cliente a três. 't Brugs Beertje tem uma lista longa de garrafas e uma sala escura que não muda de hábitos há décadas. O Café Vlissinghe tem licença desde 1515 e mantém uma cancha de petanca no jardim. Le Trappiste ocupa um porão abobadado perto do Burg. Bourgogne des Flandres, ao lado do canal, produz uma cerveja vermelha flamenga no local.",
+          "de": "Die Bars tragen die Bierkultur. De Garre liegt am Ende einer Gasse ab der Breidelstraat, zapft ein Haustripel mit 11 % und begrenzt jeden Gast auf drei. 't Brugs Beertje hat eine lange Flaschenkarte und eine dunkle Stube, die ihre Gewohnheiten seit Jahrzehnten nicht geändert hat. Café Vlissinghe ist seit 1515 lizenziert und hat einen Bouleplatz im Garten. Le Trappiste sitzt in einem Gewölbekeller nahe dem Burg. Bourgogne des Flandres braut am Kanal ein flämisches Rotbier im Haus."
+        },
+        {
+          "en": "This is a town that lives off visitors, so the middle of the market is weak: menus in five languages, mussels priced for the Markt. The rule is to drink where the list is long and the room is dark, and to eat one street away from the square. The difference in both price and quality is immediate, and it costs nothing but a short walk.",
+          "pt": "É uma cidade que vive de visitantes, então o meio do mercado é fraco: menus em cinco línguas, mexilhões com preço de Markt. A regra é beber onde a lista é longa e a sala é escura, e comer uma rua atrás da praça. A diferença de preço e de qualidade é imediata, e não custa nada além de alguns passos.",
+          "de": "Die Stadt lebt von Besuchern, und die Mitte des Marktes ist entsprechend schwach: Karten in fünf Sprachen, Muscheln zu Marktpreisen. Die Regel lautet: trinken, wo die Karte lang und die Stube dunkel ist, und eine Straße hinter dem Platz essen. Der Unterschied bei Preis und Qualität ist sofort spürbar, und er kostet nichts weiter als einen kurzen Fußweg. Ein paar Schritte genügen."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Practical",
+        "pt": "Prático",
+        "de": "Praktisch"
+      },
+      "p": [
+        {
+          "en": "Bruges station sits on the edge of the centre, a straight fifteen-minute walk down Oostmeers or a short bus ride. Belfry tickets are timed and sell out at weekends; the staircase is narrow and shared with people coming down. The climb is steep, and not suitable for anyone who dislikes enclosed spaces, low doorways or a single-file staircase. Wear shoes with grip.",
+          "pt": "A estação de Bruges fica na borda do centro, a quinze minutos retos a pé pela Oostmeers ou a um trajeto curto de ônibus. Os ingressos do campanário têm hora marcada e esgotam nos fins de semana; a escada é estreita e dividida com quem desce. A subida é íngreme e não serve para quem não gosta de espaço fechado ou de portas baixas.",
+          "de": "Der Bahnhof liegt am Rand des Zentrums, fünfzehn Minuten geradeaus über die Oostmeers oder eine kurze Busfahrt. Tickets für den Belfried sind zeitgebunden und am Wochenende ausverkauft; die Treppe ist eng und wird mit den Hinabsteigenden geteilt. Der Aufstieg ist steil und nichts für Menschen, die Enge, niedrige Türen oder eine Treppe im Gänsemarsch nicht mögen. Schuhe mit Profil tragen."
+        },
+        {
+          "en": "Cruise passengers arrive from Zeebrugge in waves from mid-morning until late afternoon. The Markt and the Rozenhoedkaai are miserable at those hours and calm at eight in the morning. November to March is cold, quiet and cheaper; museums stay open, bars keep winter hours, and you can eat without booking. Weekends bring Belgians in for the day, which is a different crowd and a fuller one.",
+          "pt": "Os passageiros de cruzeiro chegam de Zeebrugge em ondas, do meio da manhã ao fim da tarde. A Markt e o Rozenhoedkaai são sofríveis nessas horas e calmos às oito da manhã. De novembro a março faz frio, é silencioso e mais barato; os museus continuam abertos, os bares mantêm horário de inverno e dá para comer sem reserva. Nos fins de semana vêm belgas de bate-volta, outra multidão e mais cheia.",
+          "de": "Kreuzfahrtgäste kommen aus Zeebrugge in Wellen, vom späten Vormittag bis zum späten Nachmittag. Markt und Rozenhoedkaai sind zu diesen Stunden mühsam und um acht Uhr morgens ruhig. November bis März ist kalt, still und günstiger; die Museen bleiben offen, die Bars halten Winterzeiten, und man kann ohne Reservierung essen. Am Wochenende kommen Belgier für einen Tagesausflug — ein anderes Publikum, und ein volleres."
+        },
+        {
+          "en": "Cash still matters in the smaller cafés, though cards are widely accepted. Restaurant prices on the Markt are a tax on not walking. Book dinner in summer, and do not plan a long night: most kitchens close by ten, and the last trains leave before midnight. Taxis are few and the ranks are not where you expect them. Assume you will walk back.",
+          "pt": "Dinheiro ainda importa nos cafés menores, embora cartão seja aceito em quase tudo. Os preços dos restaurantes da Markt são um imposto por não caminhar. Reserve o jantar no verão e não planeje uma noite longa: a maioria das cozinhas fecha às dez, e os últimos trens saem antes da meia-noite. Os táxis são poucos e os pontos não ficam onde você imagina.",
+          "de": "Bargeld zählt in den kleineren Cafés noch, auch wenn Karten fast überall gehen. Die Preise der Restaurants am Markt sind eine Steuer aufs Nichtgehen. Im Sommer das Abendessen reservieren und keine lange Nacht planen: Die meisten Küchen schließen um zehn, die letzten Züge fahren vor Mitternacht. Taxis sind rar, und die Stände stehen nicht dort, wo man sie erwartet. Rechnen Sie mit dem Fußweg zurück."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Brugse Zot Blond, unfiltered, at the brewery — the only place it is poured that way.",
+      "pt": "Brugse Zot Blond, não filtrada, na cervejaria — o único lugar onde ela é servida assim.",
+      "de": "Brugse Zot Blond, ungefiltert, in der Brauerei — der einzige Ort, an dem sie so gezapft wird."
+    },
+    {
+      "en": "Straffe Hendrik Quadrupel: dark, strong and the right note to finish on.",
+      "pt": "Straffe Hendrik Quadrupel: escura, forte e a nota certa para terminar.",
+      "de": "Straffe Hendrik Quadrupel: dunkel, stark und der richtige Schlusspunkt."
+    },
+    {
+      "en": "The house tripel at De Garre, with the cube of cheese, and stop at three.",
+      "pt": "O tripel da casa no De Garre, com o cubo de queijo, e pare no terceiro.",
+      "de": "Das Haustripel im De Garre, mit dem Käsewürfel, und nach drei aufhören."
+    },
+    {
+      "en": "A Flemish red at 't Brugs Beertje when the blond beers have gone flat on the palate.",
+      "pt": "Uma cerveja vermelha flamenga no 't Brugs Beertje quando as claras já cansaram o paladar.",
+      "de": "Ein flämisches Rotbier im 't Brugs Beertje, wenn die hellen Biere dem Gaumen nichts mehr sagen."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Stoverij — beef stewed in beer, served with bread and mustard — is the local answer to the weather.",
+      "pt": "Stoverij — carne cozida na cerveja, servida com pão e mostarda — é a resposta local ao clima.",
+      "de": "Stoverij — in Bier geschmortes Rindfleisch, mit Brot und Senf — ist die lokale Antwort auf das Wetter."
+    },
+    {
+      "en": "Mussels from September, in a pot with white wine or beer, at a table away from the Markt.",
+      "pt": "Mexilhões a partir de setembro, numa panela com vinho branco ou cerveja, numa mesa longe da Markt.",
+      "de": "Muscheln ab September, im Topf mit Weißwein oder Bier, an einem Tisch abseits des Marktes."
+    },
+    {
+      "en": "Cheese croquettes in a brown café, or the brasserie at De Halve Maan for a full Flemish plate.",
+      "pt": "Croquete de queijo num café escuro, ou a brasserie da De Halve Maan para um prato flamengo completo.",
+      "de": "Käsekroketten im braunen Café oder die Brasserie von De Halve Maan für einen ganzen flämischen Teller."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The station is a fifteen-minute walk; buses run, but the centre is compact enough to walk.",
+      "pt": "A estação fica a quinze minutos a pé; há ônibus, mas o centro é compacto o bastante para caminhar.",
+      "de": "Der Bahnhof ist fünfzehn Gehminuten entfernt; Busse fahren, aber das Zentrum ist klein genug zum Gehen."
+    },
+    {
+      "en": "Book the Belfry online; 366 steps, timed entry, no lift.",
+      "pt": "Reserve o campanário online; 366 degraus, entrada com hora marcada, sem elevador.",
+      "de": "Den Belfried online buchen; 366 Stufen, Zeitfenster, kein Aufzug."
+    },
+    {
+      "en": "Cruise crowds peak between eleven and five; walk the canals before nine.",
+      "pt": "O pico dos cruzeiros é entre onze e cinco; caminhe pelos canais antes das nove.",
+      "de": "Die Kreuzfahrtmassen sind zwischen elf und fünf am größten; vor neun an den Kanälen gehen."
+    },
+    {
+      "en": "Carry some cash for the smaller cafés.",
+      "pt": "Leve dinheiro para os cafés menores.",
+      "de": "Für die kleineren Cafés etwas Bargeld mitnehmen."
+    },
+    {
+      "en": "Avoid restaurants with photographs of the food; walk two streets back.",
+      "pt": "Evite restaurantes com fotos da comida; caminhe duas ruas para trás.",
+      "de": "Restaurants mit Fotos vom Essen meiden; zwei Straßen weiter gehen."
+    }
+  ],
+  "links": [
+    {
+      "label": "Visit Bruges",
+      "url": "https://visitbruges.be/en"
+    },
+    {
+      "label": "De Halve Maan",
+      "url": "https://www.halvemaan.be/en/"
+    },
+    {
+      "label": "Bruges, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bruges"
+    }
+  ]
+}

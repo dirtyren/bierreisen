@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes from the road — Bier Reisen</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://renreisen.duckdns.org/blog/en/">
+<link rel="alternate" hreflang="en" href="https://renreisen.duckdns.org/blog/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://renreisen.duckdns.org/blog/pt/">
+<link rel="alternate" hreflang="de" href="https://renreisen.duckdns.org/blog/de/">
+<link rel="alternate" hreflang="x-default" href="https://renreisen.duckdns.org/blog/en/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta http-equiv="refresh" content="0;url=en/">
+<style>body{margin:0;background:#0b0c15;color:#eef1f6;font:17px/1.6 "Avenir Next",system-ui,sans-serif;
+display:grid;place-items:center;min-height:100dvh}a{color:#e6a817}ul{list-style:none;padding:0}
+li{margin:.4rem 0}</style>
+</head>
+<body>
+<main>
+<p>Choose a language:</p>
+<ul>
+<li><a href="en/" hreflang="en">English</a></li>
+<li><a href="pt/" hreflang="pt-BR">Português (Brasil)</a></li>
+<li><a href="de/" hreflang="de">Deutsch</a></li>
+</ul>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search).get('lang');
+  var stored = null;
+  try { stored = localStorage.getItem('bierreisen:lang'); } catch (e) {}
+  var pick = q || stored || (navigator.language || 'en');
+  var lang = pick.toLowerCase().indexOf('pt') === 0 ? 'pt' : pick.toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
+  if (lang !== 'en') location.replace(lang + '/');
+})();
+</script>
+</body>
+</html>

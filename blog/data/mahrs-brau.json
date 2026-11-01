@@ -1,0 +1,230 @@
+{
+  "slug": "mahrs-brau",
+  "type": "brewery",
+  "name": "Mahr's Bräu",
+  "where": "Bamberg, Germany",
+  "coords": [
+    49.8899326,
+    10.9064075
+  ],
+  "span": 0.22,
+  "subtitle_en": "Two vowels, one unfiltered beer, and a pub that still feels local",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Mahr%27s+Braeu+Wunderburg+10+Bamberg",
+  "trips": [
+    "2027"
+  ],
+  "related": [
+    "bamberg",
+    "spezial",
+    "fassla",
+    "trip-2027"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first mentioned",
+        "pt": "primeira menção",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "1670"
+      }
+    },
+    {
+      "k": {
+        "en": "family",
+        "pt": "família",
+        "de": "Familie"
+      },
+      "v": {
+        "en": "Michel, since 1895",
+        "pt": "Michel, desde 1895",
+        "de": "Michel, seit 1895"
+      }
+    },
+    {
+      "k": {
+        "en": "beer",
+        "pt": "cerveja",
+        "de": "Bier"
+      },
+      "v": {
+        "en": "aU, 12.7 °P"
+      }
+    },
+    {
+      "k": {
+        "en": "fermentation",
+        "pt": "fermentação",
+        "de": "Gärung"
+      },
+      "v": {
+        "en": "unfiltered, unspunded",
+        "pt": "não filtrada, sem espundagem",
+        "de": "unfiltriert, ungespundet"
+      }
+    },
+    {
+      "k": {
+        "en": "name",
+        "pt": "nome",
+        "de": "Name"
+      },
+      "v": {
+        "en": "from Karl Mahr, 1840",
+        "pt": "de Karl Mahr, 1840",
+        "de": "von Karl Mahr, 1840"
+      }
+    }
+  ],
+  "lede": {
+    "en": "In Bamberg you can order a beer with two vowels. “A U”, pronounced “a oo”, is the shorthand for Ungespundetes, the unfiltered cellar beer poured at Wunderburg 10, where the Michel family has brewed since 1895. It is cloudy, almost still, and the best argument you will find that carbonation is optional.",
+    "pt": "Em Bamberg dá para pedir uma cerveja com duas vogais. “A U”, pronunciado “a u”, é a forma curta de Ungespundetes, a cerveja de porão não filtrada servida na Wunderburg 10, onde a família Michel produz desde 1895. É turva, quase sem gás, e o melhor argumento de que carbonatação é opcional.",
+    "de": "In Bamberg kann man ein Bier mit zwei Vokalen bestellen. „A U“, gesprochen „a u“, ist die Kurzform für Ungespundetes, das unfiltrierte Kellerbier, das in der Wunderburg 10 ausgeschenkt wird, wo die Familie Michel seit 1895 braut. Es ist hefetrüb, fast still, und das beste Argument dafür, dass Kohlensäure optional ist."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Two vowels",
+        "pt": "Duas vogais",
+        "de": "Zwei Vokale"
+      },
+      "p": [
+        {
+          "en": "Ungespundet means unspunded: the barrel is left open while the beer matures, so the carbon dioxide from fermentation escapes instead of being trapped in the beer. The result is flat, soft and slightly tart, and it never clears like a filtered lager — the aU is hazy amber with a loose white head. The style survives in Bamberg and the villages around it, and hardly anywhere else.",
+          "pt": "Ungespundet quer dizer sem espundagem: o barril fica aberto enquanto a cerveja matura, então o gás carbônico da fermentação escapa em vez de ficar preso. O resultado é plano, macio e levemente ácido, e nunca fica límpido como uma lager filtrada — a aU é âmbar e turva, com espuma branca frouxa. O estilo sobrevive em Bamberg e nos vilarejos ao redor, e quase em nenhum outro lugar.",
+          "de": "Ungespundet heißt ohne Spund: Das Fass bleibt während der Reifung offen, das Kohlendioxid der Gärung entweicht, statt im Bier eingeschlossen zu werden. Das Ergebnis ist flach, weich und leicht säuerlich, und es klärt sich nie wie ein filtriertes Lager — das aU ist bernsteinfarben trüb mit lockerer weißer Krone. Die Sorte gibt es in Bamberg und den Dörfern drumherum, sonst fast nirgends."
+        },
+        {
+          "en": "Mahr's version is about 12.7% original wort and 5.2%, bittered with Hallertauer Perle, and served in a stoneware mug at seven to nine degrees. It is a session beer in the literal sense: little gas, moderate alcohol, long afternoon. The brewery calls it “halt a U” — just a U — and the ordering ritual is half the pleasure. Nobody says the whole word at the bar.",
+          "pt": "A versão da Mahr's tem cerca de 12,7% de extrato primitivo e 5,2%, com lúpulo Hallertauer Perle, e chega em caneca de cerâmica a sete ou nove graus. É uma cerveja de sessão no sentido literal: pouco gás, álcool moderado, tarde longa. A casa chama isso de “halt a U” — só um U — e o ritual do pedido é metade do prazer. Ninguém fala a palavra inteira no balcão.",
+          "de": "Mahr's Version hat etwa 12,7 % Stammwürze und 5,2 %, ist mit Hallertauer Perle gehopft und kommt bei sieben bis neun Grad in den Steinzeugkrug. Es ist ein Sessionbier im wörtlichen Sinn: wenig Gas, wenig Alkohol, langer Nachmittag. Die Brauerei sagt „halt a U“ — und der Bestellritus ist der halbe Genuss. Kaum jemand spricht das ganze Wort an der Theke aus."
+        },
+        {
+          "en": "The other advantage, according to the town's own beer writing, is that after two or three mugs “a U” is still pronounceable. That sums up what the beer is for. The brewery also makes a Pils, a Helles, a dark lager called E.T.A., a bottle-fermented wheat beer, and two bocks at the start of winter. In a town with eleven breweries, it is the one beer locals order without looking at a card.",
+          "pt": "A outra vantagem, segundo a própria literatura cervejeira da cidade, é que depois de dois ou três canecos “a U” ainda sai da boca. É um bom resumo da função da cerveja. A casa também faz uma Pils, uma Helles, uma escura chamada E.T.A., uma de trigo com fermentação na garrafa e duas bocks no começo do inverno. Numa cidade com onze cervejarias, é a cerveja que os moradores pedem sem olhar o cardápio.",
+          "de": "Der andere Vorteil, laut der Bierliteratur der Stadt, ist, dass „a U“ nach zwei oder drei Krügen immer noch deutlich auszusprechen ist. Das fasst ganz gut zusammen, wofür das Bier da ist. Die Brauerei macht außerdem ein Pils, ein Helles, ein dunkles Lager namens E.T.A., ein flaschenvergorenes Weizen und ab Winteranfang zwei Bockbiere. In einer Stadt mit elf Brauereien ist es das Bier, das die Einheimischen bestellen, ohne auf die Karte zu schauen."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The Wunderburg",
+        "pt": "A Wunderburg",
+        "de": "Die Wunderburg"
+      },
+      "p": [
+        {
+          "en": "Mahr's is not in the old town. It sits in the Wunderburg, the working neighbourhood east of the centre, opposite Keesmann's brewery, in a courtyard where beer has been brewed since at least 1670. The Michels arrived in 1895, when Johann Michel Jr bought the estate at Wunderburg 10 together with the cellars cut into the sandstone of the Stephansberg. The pub opens straight off the yard.",
+          "pt": "A Mahr's não fica no centro histórico. Fica na Wunderburg, o bairro operário a leste do centro, em frente à cervejaria Keesmann, num pátio onde se faz cerveja desde pelo menos 1670. Os Michel chegaram em 1895, quando Johann Michel Jr. comprou o imóvel da Wunderburg 10 junto com os porões cavados no arenito do Stephansberg. O pátio é fechado e o bar abre para ele, sem hall nem recepção.",
+          "de": "Mahr's liegt nicht in der Altstadt. Die Brauerei steht in der Wunderburg, dem Arbeiterviertel östlich des Zentrums, gegenüber der Brauerei Keesmann, in einem Hof, in dem seit mindestens 1670 gebraut wird. Die Michels kamen 1895, als Johann Michel junior das Anwesen Wunderburg 10 mit den in den Sandstein des Stephansbergs gehauenen Kellern kaufte. Der Hof ist bis heute der Brauereihof, und die Gaststube grenzt direkt an ihn."
+        },
+        {
+          "en": "The brick brewhouse dates from 1908, when the old building — known as “Zum Brenner” — was pulled down and rebuilt with a 32-metre chimney; it is now a protected monument. The name is older than the family: Karl Mahr bought the estate in 1840, and the Michels arrived in 1895. In 1913 the brewery went bankrupt and was auctioned; Elise Michel, Johann's third wife, bought it back. Stephan Michel has been sole managing director since 2016.",
+          "pt": "O edifício de tijolos é de 1908, quando a construção antiga — conhecida como “Zum Brenner” — foi demolida e refeita com uma chaminé de 32 metros; hoje é patrimônio protegido. O nome é mais velho que a família: Karl Mahr comprou o imóvel em 1840, e os Michel chegaram em 1895. Em 1913 a cervejaria faliu e foi a leilão; Elise Michel, terceira mulher de Johann, comprou de volta. Stephan Michel é o único diretor desde 2016.",
+          "de": "Das Brauhaus aus Backstein stammt von 1908, als der alte Betrieb „Zum Brenner“ abgerissen und mit einem 32 Meter hohen Kamin neu gebaut wurde; heute steht es unter Denkmalschutz. Der Name ist älter als die Familie: Karl Mahr kaufte das Anwesen 1840, die Michels kamen 1895. 1913 ging die Brauerei in Konkurs und wurde zwangsversteigert; Elise Michel, Johanns dritte Frau, kaufte sie zurück. Seit 2016 ist Stephan Michel alleiniger Geschäftsführer."
+        },
+        {
+          "en": "One beer carries a date. The E.T.A. is a dark lager first brewed in 2008, the city's E.T.A. Hoffmann anniversary year, for the writer who worked in Bamberg's theatre. It was meant to be a one-off. It is now a permanent beer at 13.5% original wort and 5.0%, with a little chocolate and a dry finish, and it has stayed on the list ever since. The malt comes from the Bamberg malting house, as it does for the rest of the range.",
+          "pt": "Uma cerveja carrega uma data. A E.T.A. é uma lager escura feita pela primeira vez em 2008, o ano do aniversário de E.T.A. Hoffmann na cidade, para o escritor que trabalhou no teatro de Bamberg. Era para ser única. Hoje é cerveja fixa, com 13,5% de extrato e 5,0%, um pouco de chocolate e final seco, e nunca mais saiu da lista. O malte vem da malteria de Bamberg, como o do resto da linha.",
+          "de": "Ein Bier trägt ein Datum. Das E.T.A. ist ein dunkles Lager, 2008 zum Jubiläumsjahr E.T.A. Hoffmanns erstmals gebraut, für den Schriftsteller, der in Bamberg am Theater arbeitete. Gedacht war es als Einmaliges. Heute ist es mit 13,5 % Stammwürze und 5,0 % fester Teil des Sortiments, mit etwas Schokolade und trockenem Abgang. Das Malz kommt aus der Bamberger Mälzerei, wie das der übrigen Biere auch."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The taproom",
+        "pt": "O salão",
+        "de": "Die Gaststube"
+      },
+      "p": [
+        {
+          "en": "Inside, the pub is a run of low rooms with dark beams, a tiled stove in the corner and tables that seat whoever arrives. The beer garden behind is small, fenced and shaded, and in summer it takes most of the custom. Food is Franconian and generous: Fleischpflanzerl, Biergulasch, goose in season, Brotzeit at any hour. It is a brewery with a pub attached, not a restaurant with a brewery at the back, and the pace shows it.",
+          "pt": "Dentro, o bar é uma sequência de salas baixas, vigas escuras, um fogão de azulejos no canto e mesas que acomodam quem chega. O jardim atrás é pequeno, cercado e à sombra, e no verão concentra o movimento. A comida é francônia e generosa: Fleischpflanzerl, gulasch de cerveja, ganso na temporada, Brotzeit a qualquer hora. É uma cervejaria com bar anexo, não um restaurante com cervejaria no fundo, e o ritmo denuncia isso.",
+          "de": "Drinnen ist der Gasthof eine Folge niedriger Räume mit dunklen Balken, einem Kachelofen in der Ecke und Tischen, an denen sitzt, wer Platz findet. Der Biergarten dahinter ist klein, eingezäunt und schattig; im Sommer spielt sich dort der meiste Betrieb ab. Gegessen wird fränkisch und reichlich: Fleischpflanzerl, Biergulasch, im Winter Gans, Brotzeiten zu jeder Stunde. Es ist eine Brauerei mit Gasthof, kein Restaurant mit Brauerei im Hinterhof, und das merkt man am Tempo."
+        },
+        {
+          "en": "The scale is domestic, and the address is still a house rather than a plant: a gate, a yard, a pub, and the brewhouse behind it. Mahr's is a neighbourhood pub that happens to brew, which is why the room feels less visited than Schlenkerla's and why the corner seats still belong to people who walked in without a map. The garden was renovated and now pours more of the range than the taproom does.",
+          "pt": "A escala é doméstica, e o endereço ainda é uma casa, não uma fábrica: portão, pátio, bar e a sala de brassagem atrás. A Mahr's é um bar de bairro que também fabrica cerveja, e por isso a sala parece menos visitada que a da Schlenkerla, e os cantos ainda são de quem entrou sem mapa. O jardim foi reformado e hoje serve mais tipos da casa que o salão interno.",
+          "de": "Der Maßstab ist häuslich, und die Adresse ist noch ein Haus und keine Fabrik: Tor, Hof, Gaststube und dahinter das Sudhaus. Mahr's ist ein Viertelgasthof, der zufällig auch braut — deshalb wirkt der Raum weniger besucht als der bei Schlenkerla, und die Ecken gehören noch denen, die ohne Stadtplan hereingekommen sind. Der Biergarten wurde renoviert und bietet heute mehr Sorten als die Gaststube."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "aU — say “a U”, take it in stoneware, and give the lack of gas a minute to stop feeling like a fault.",
+      "pt": "aU — diga “a U”, peça na caneca de cerâmica e dê um minuto para a falta de gás deixar de parecer defeito.",
+      "de": "aU — „a U“ sagen, im Steinzeugkrug nehmen und der fehlenden Kohlensäure eine Minute geben, bis sie kein Fehler mehr ist."
+    },
+    {
+      "en": "Pils, cold-hopped and much drier than the aU, if you want the other half of the house.",
+      "pt": "Pils, com lúpulo a frio e bem mais seca que a aU, se você quiser a outra metade da casa.",
+      "de": "Pils, kalt gehopft und viel trockener als das aU, wenn es die andere Hälfte des Hauses sein soll."
+    },
+    {
+      "en": "E.T.A. Dunkel for the malt: a dark lager with a little chocolate and a dry finish.",
+      "pt": "E.T.A. Dunkel para o malte: uma lager escura com um pouco de chocolate e final seco.",
+      "de": "E.T.A. Dunkel für das Malz: ein dunkles Lager mit etwas Schokolade und trockenem Abgang."
+    },
+    {
+      "en": "Heller or Weisser Bock from the start of winter, both strong and both worth the detour.",
+      "pt": "Heller ou Weisser Bock a partir do começo do inverno, as duas fortes e as duas valendo o desvio.",
+      "de": "Heller oder Weißer Bock ab Winteranfang, beide stark und beide den Umweg wert."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Fleischpflanzerl — a flat, spiced meat patty, closer to a burger without the bun — is the thing to order with the aU.",
+      "pt": "Fleischpflanzerl — um bolinho de carne temperado e achatado, mais perto de um hambúrguer sem pão — é o pedido certo para acompanhar a aU.",
+      "de": "Fleischpflanzerl — ein flacher, gewürzter Hackbraten, näher am Burger ohne Brötchen — gehört zum aU."
+    },
+    {
+      "en": "Biergulasch, dark and beery, with dumplings or bread.",
+      "pt": "Gulasch de cerveja, escuro e com gosto de malte, com bolinhos ou pão.",
+      "de": "Biergulasch, dunkel und bierig, mit Knödeln oder Brot."
+    },
+    {
+      "en": "Brotzeit: bread, butter, radishes, cheese, cold meat. In Franconia it is a meal, not a starter.",
+      "pt": "Brotzeit: pão, manteiga, rabanete, queijo, frios. Na Francônia é refeição, não entrada.",
+      "de": "Brotzeit: Brot, Butter, Radieschen, Käse, kalter Braten. In Franken eine Mahlzeit, keine Vorspeise."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Ask for “a U” and nothing else; the full word is for labels and export lists.",
+      "pt": "Peça “a U” e nada mais; a palavra inteira é para rótulos e listas de exportação.",
+      "de": "Bestellen Sie „a U“ und sonst nichts; das ganze Wort ist für Etiketten und Exportlisten."
+    },
+    {
+      "en": "The beer garden behind the pub is small and fills in good weather; the taproom is the better room anyway.",
+      "pt": "O jardim atrás do bar é pequeno e enche no tempo bom; de todo modo, a sala interna é o melhor lugar.",
+      "de": "Der Biergarten hinter dem Haus ist klein und füllt sich bei gutem Wetter; die Gaststube ist ohnehin der bessere Raum."
+    },
+    {
+      "en": "Mahr's is about twenty minutes on foot from the station through the Wunderburg, and Keesmann's brewery is across the road — two visits in one walk.",
+      "pt": "A Mahr's fica a uns vinte minutos a pé da estação, atravessando a Wunderburg, e a cervejaria Keesmann está do outro lado da rua — duas visitas numa caminhada.",
+      "de": "Vom Bahnhof sind es durch die Wunderburg etwa zwanzig Minuten zu Fuß, und Keesmann liegt auf der anderen Straßenseite — zwei Besuche in einem Spaziergang."
+    },
+    {
+      "en": "Bock season starts at the beginning of winter: a Heller Bock and a Weisser Bock, the second a dark, strong wheat beer.",
+      "pt": "A temporada de bock começa no início do inverno: uma Heller Bock e uma Weisser Bock, a segunda uma cerveja de trigo escura e forte.",
+      "de": "Die Bockzeit beginnt mit dem Winter: ein Heller Bock und ein Weißer Bock, letzterer ein dunkles Weizenstarkbier."
+    },
+    {
+      "en": "Bottles come from the brewery's online shop, which ships the aU and the seasonals.",
+      "pt": "As garrafas vêm da loja online da cervejaria, que envia a aU e as sazonais.",
+      "de": "Flaschen kommen aus dem Onlineshop der Brauerei, der das aU und die Saisonbiere verschickt."
+    }
+  ],
+  "links": [
+    {
+      "label": "Mahr's Bräu",
+      "url": "https://mahrs.de/"
+    },
+    {
+      "label": "Bamberg tourism — Mahr's Bräu",
+      "url": "https://en.bamberg.info/poi/mahrs_braeu-5204"
+    }
+  ]
+}

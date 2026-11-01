@@ -1,0 +1,201 @@
+{
+  "slug": "trip-2027",
+  "type": "trip",
+  "name": "The 2027 plan · Würzburg route",
+  "where": "Germany, Belgium, Czechia · planned",
+  "coords": [
+    50.1109,
+    8.6821
+  ],
+  "image": "2027/v3/assets/2027-route-map-v3.png",
+  "trips": [
+    "2027"
+  ],
+  "trip_stats": "",
+  "related": [
+    "bruges",
+    "ghent",
+    "wurzburg",
+    "bamberg",
+    "plzen",
+    "munich"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "days",
+        "pt": "dias",
+        "de": "Tage"
+      },
+      "v": {
+        "en": "15"
+      }
+    },
+    {
+      "k": {
+        "en": "nights",
+        "pt": "noites",
+        "de": "Nächte"
+      },
+      "v": {
+        "en": "14"
+      }
+    },
+    {
+      "k": {
+        "en": "km driving",
+        "pt": "km de carro",
+        "de": "km Fahrt"
+      },
+      "v": {
+        "en": "2,306 km"
+      }
+    },
+    {
+      "k": {
+        "en": "bases",
+        "pt": "bases",
+        "de": "Standorte"
+      },
+      "v": {
+        "en": "10"
+      }
+    },
+    {
+      "k": {
+        "en": "countries",
+        "pt": "países",
+        "de": "Länder"
+      },
+      "v": {
+        "en": "3"
+      }
+    }
+  ],
+  "lede": {
+    "en": "The trip this archive has been building towards: fifteen days from Frankfurt, two nights in Bruges and one in Ghent, the long day south split at Würzburg, two nights in Bamberg, then the Czech brewing towns and a Bavarian castle brewery before Munich. Thirty-one hundred kilometres of driving, all measured.",
+    "pt": "A viagem para a qual este arquivo vem sendo construído: quinze dias a partir de Frankfurt, duas noites em Bruges e uma em Gante, o longo dia para o sul dividido em Würzburg, duas noites em Bamberg, depois as cidades cervejeiras tchecas e uma cervejaria de castelo bávara antes de Munique. Dois mil e trezentos quilômetros de carro, todos medidos.",
+    "de": "Die Reise, auf die dieses Archiv hinausläuft: fünfzehn Tage ab Frankfurt, zwei Nächte Brügge und eine Gent, der lange Tag nach Süden geteilt in Würzburg, zwei Nächte Bamberg, dann die tschechischen Braustädte und eine bayerische Schlossbrauerei vor München. 2.306 Kilometer Fahrt, alle gemessen."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "What changed from v1 and v2",
+        "pt": "O que mudou da v1 e da v2",
+        "de": "Was sich gegenüber v1 und v2 ändert"
+      },
+      "p": [
+        {
+          "en": "This is the third version of the same two weeks. v1 ran the Belgian leg into the Czech one in a single 800-kilometre day; v2 added a night in Cologne, which split the drive but put a city between two better ones. v3 keeps the Belgian nights and splits the long day at Würzburg instead.",
+          "pt": "Esta é a terceira versão das mesmas duas semanas. A v1 emendava a etapa belga na tcheca num único dia de 800 quilômetros; a v2 acrescentou uma noite em Colônia, o que dividiu a direção mas colocou uma cidade entre duas melhores. A v3 mantém as noites belgas e divide o dia longo em Würzburg.",
+          "de": "Das ist die dritte Fassung derselben zwei Wochen. v1 zog die belgische Etappe in die tschechische an einem einzigen 800-Kilometer-Tag; v2 fügte eine Nacht Köln hinzu, was die Fahrt teilte, aber eine Stadt zwischen zwei bessere setzte. v3 behält die belgischen Nächte und teilt den langen Tag stattdessen in Würzburg."
+        },
+        {
+          "en": "Würzburg is the right split because it is on the way and because the town is worth an evening: the Residenz, the old bridge with its wine drinkers, and Bürgerspital and Juliusspital making wine in a city that also brews beer.",
+          "pt": "Würzburg é a divisão certa porque está no caminho e porque a cidade merece uma noite: a Residenz, a ponte velha com seus bebedores de vinho, e Bürgerspital e Juliusspital fazendo vinho numa cidade que também faz cerveja.",
+          "de": "Würzburg ist die richtige Teilung, weil es auf dem Weg liegt und weil die Stadt einen Abend verdient: die Residenz, die alte Brücke mit ihren Weintrinkern und Bürgerspital und Juliusspital, die in einer Stadt Wein machen, die auch Bier braut."
+        },
+        {
+          "en": "The Franconian block is unchanged and deliberately so: two nights in Bamberg, the Schlenkerla–Spezial–Mahr's–Fässla walk, the drive out to Wagner in Merkendorf and Drei Kronen in Memmelsdorf, and one night at Maxlrain's castle brewery on the way south.",
+          "pt": "O bloco francônio está inalterado e de propósito: duas noites em Bamberg, a caminhada Schlenkerla–Spezial–Mahr's–Fässla, o desvio até a Wagner em Merkendorf e a Drei Kronen em Memmelsdorf, e uma noite na cervejaria de castelo de Maxlrain no caminho para o sul.",
+          "de": "Der fränkische Block bleibt unverändert, mit Absicht: zwei Nächte Bamberg, der Spaziergang Schlenkerla–Spezial–Mahr's–Fässla, der Ausflug zu Wagner nach Merkendorf und Drei Kronen nach Memmelsdorf und eine Nacht in Maxlrains Schlossbrauerei auf dem Weg nach Süden."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The numbers behind it",
+        "pt": "Os números por trás",
+        "de": "Die Zahlen dahinter"
+      },
+      "p": [
+        {
+          "en": "Every leg is routed rather than estimated: 2,305.6 km of driving over eleven legs, 26 h 53 behind the wheel, plus four brewery-crawl days that use no car at all — three of them in cities where the beer is within walking distance.",
+          "pt": "Cada trecho é roteado e não estimado: 2.305,6 km de carro em onze trechos, 26 h 53 ao volante, mais quatro dias de caminhada cervejeira sem carro — três deles em cidades onde a cerveja está a distância de caminhada.",
+          "de": "Jede Etappe ist geroutet, nicht geschätzt: 2.305,6 km Fahrt in elf Etappen, 26 h 53 am Steuer, dazu vier Brauereitage ohne Auto — drei davon in Städten, in denen das Bier zu Fuß erreichbar ist."
+        },
+        {
+          "en": "The single longest day is Bruges to Würzburg at just over five hours; the shortest is Bamberg to Sokolov. Nothing on the plan is a driving day disguised as a brewery day.",
+          "pt": "O dia mais longo é Bruges–Würzburg com pouco mais de cinco horas; o mais curto é Bamberg–Sokolov. Nada no plano é um dia de estrada disfarçado de dia de cervejaria.",
+          "de": "Der längste Tag ist Brügge–Würzburg mit knapp über fünf Stunden, der kürzeste Bamberg–Sokolov. Nichts im Plan ist ein Fahrtag, der sich als Brauereitag ausgibt."
+        },
+        {
+          "en": "Fourteen nights, ten beds: that is more moving than 2024 and less than 2020, and the bets are that Bruges and Bamberg carry the two-night stays while the one-night stops are placed where the driving needs them.",
+          "pt": "Quatorze noites, dez camas: é mais mudança que 2024 e menos que 2020, e a aposta é que Bruges e Bamberg sustentam as estadias de duas noites enquanto as paradas de uma noite ficam onde a estrada precisa.",
+          "de": "Vierzehn Nächte, zehn Betten: mehr Umzug als 2024, weniger als 2020. Die Wette ist, dass Brügge und Bamberg die Zwei-Nächte-Aufenthalte tragen, während die Ein-Nächte-Halte dort liegen, wo die Fahrt sie braucht."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "De Halve Maan's Brugse Zot in Bruges, on the roof terrace if the weather allows.",
+      "pt": "A Brugse Zot da De Halve Maan em Bruges, no terraço se o tempo permitir.",
+      "de": "Brugse Zot von De Halve Maan in Brügge, auf der Dachterrasse, wenn das Wetter es zulässt."
+    },
+    {
+      "en": "Schlenkerla Fastenbier if the dates land in Lent — it is only on between Ash Wednesday and Easter.",
+      "pt": "Schlenkerla Fastenbier se as datas caírem na Quaresma — só sai entre a Quarta-feira de Cinzas e a Páscoa.",
+      "de": "Schlenkerla Fastenbier, wenn die Daten in die Fastenzeit fallen — es gibt es nur zwischen Aschermittwoch und Ostern."
+    },
+    {
+      "en": "Pilsner Urquell from the wood in Plzeň, and Budvar's tank beer the next day for the comparison.",
+      "pt": "Pilsner Urquell do madeira em Plzeň, e o chope de tanque da Budvar no dia seguinte para comparar.",
+      "de": "Pilsner Urquell aus dem Holz in Plzeň und am nächsten Tag Budvar aus dem Tank zum Vergleich."
+    },
+    {
+      "en": "Maxlrain's Schlossbier at the castle brewery, which is the quietest night of the trip.",
+      "pt": "A Schlossbier da Maxlrain na cervejaria do castelo, que é a noite mais silenciosa da viagem.",
+      "de": "Das Maxlrainer Schlossbier in der Schlossbrauerei — die stillste Nacht der Reise."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Moules in Bruges or Ghent, in a room that has been serving them for fifty years.",
+      "pt": "Mexilhões em Bruges ou Gante, numa casa que os serve há cinquenta anos.",
+      "de": "Muscheln in Brügge oder Gent, in einem Haus, das sie seit fünfzig Jahren serviert."
+    },
+    {
+      "en": "Franconian Schäuferla in Bamberg, and the smoked ham in between breweries.",
+      "pt": "Schäuferla francônio em Bamberg, e o presunto defumado entre cervejarias.",
+      "de": "Fränkisches Schäuferla in Bamberg und dazwischen Räucherschinken."
+    },
+    {
+      "en": "Czech roast pork with bread dumplings in Plzeň, at a pub with no English menu.",
+      "pt": "Porco assado tcheco com bolinhos de pão em Plzeň, num pub sem menu em inglês.",
+      "de": "Tschechischer Schweinebraten mit Semmelknödeln in Plzeň, in einer Kneipe ohne englische Karte."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Bruges and Bamberg both reward the second night; if you have to cut one, cut a driving stop, not these.",
+      "pt": "Bruges e Bamberg recompensam a segunda noite; se precisar cortar uma, corte uma parada de estrada, não estas.",
+      "de": "Brügge und Bamberg belohnen die zweite Nacht; wenn gekürzt werden muss, dann einen Fahrtstopp, nicht diese."
+    },
+    {
+      "en": "Book Westvleteren and any Trappist visit weeks ahead; the reservation windows are narrow and not negotiable.",
+      "pt": "Reserve Westvleteren e qualquer visita trapista com semanas de antecedência; as janelas de reserva são estreitas e não negociáveis.",
+      "de": "Westvleteren und jeden Trappistenbesuch Wochen vorher buchen; die Reservierungsfenster sind eng und nicht verhandelbar."
+    },
+    {
+      "en": "The German low-emission zones apply in Würzburg and Munich; make sure the rental has the green sticker.",
+      "pt": "As zonas de baixa emissão alemãs valem em Würzburg e Munique; confirme que o aluguel tem o selo verde.",
+      "de": "Die deutschen Umweltzonen gelten in Würzburg und München; der Mietwagen braucht die grüne Plakette."
+    },
+    {
+      "en": "Kout na Šumavě is appointment-only for groups and keeps odd hours: confirm the day before, not the week before.",
+      "pt": "Kout na Šumavě é só com agendamento para grupos e tem horários irregulares: confirme no dia anterior, não na semana anterior.",
+      "de": "Kout na Šumavě ist für Gruppen nur mit Termin und hat unregelmäßige Zeiten: am Vortag bestätigen, nicht eine Woche vorher."
+    }
+  ],
+  "links": [
+    {
+      "label": "The 2027 dossier",
+      "url": "https://renreisen.duckdns.org/2027/v3/2027-bier-reisen-v3.html"
+    },
+    {
+      "label": "De Halve Maan",
+      "url": "https://www.halvemaan.be/"
+    }
+  ]
+}

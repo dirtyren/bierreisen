@@ -1,0 +1,239 @@
+{
+  "slug": "ceske-budejovice",
+  "type": "city",
+  "name": "České Budějovice",
+  "where": "Czechia",
+  "coords": [
+    48.9745,
+    14.4747
+  ],
+  "span": 0.55,
+  "subtitle_en": "One square, two breweries, one long argument",
+  "maps": "https://www.google.com/maps/search/?api=1&query=%C4%8Cesk%C3%A9+Bud%C4%9Bjovice+Czechia",
+  "trips": [
+    "2024",
+    "2026"
+  ],
+  "related": [
+    "budvar",
+    "plzen",
+    "pilsner-urquell",
+    "trip-2026"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundação",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1265",
+        "pt": "1265",
+        "de": "1265"
+      }
+    },
+    {
+      "k": {
+        "en": "main square",
+        "pt": "praça principal",
+        "de": "Hauptplatz"
+      },
+      "v": {
+        "en": "about 133 × 133 m",
+        "pt": "cerca de 133 × 133 m",
+        "de": "etwa 133 × 133 m"
+      }
+    },
+    {
+      "k": {
+        "en": "Black Tower",
+        "pt": "Torre Negra",
+        "de": "Schwarzer Turm"
+      },
+      "v": {
+        "en": "72.25 m",
+        "pt": "72,25 m",
+        "de": "72,25 m"
+      }
+    },
+    {
+      "k": {
+        "en": "Budvar founded",
+        "pt": "fundação da Budvar",
+        "de": "Budvar gegründet"
+      },
+      "v": {
+        "en": "1895",
+        "pt": "1895",
+        "de": "1895"
+      }
+    },
+    {
+      "k": {
+        "en": "first Budvar brew",
+        "pt": "primeira brassagem da Budvar",
+        "de": "erster Budvar-Sud"
+      },
+      "v": {
+        "en": "7 October 1895",
+        "pt": "7 de outubro de 1895",
+        "de": "7. Oktober 1895"
+      }
+    }
+  ],
+  "lede": {
+    "en": "České Budějovice is the capital of South Bohemia, laid out around one very large square in 1265 where the Vltava meets the Malše. It has tram lines and a provincial calm, and two breweries a kilometre apart: the state-owned one that has spent a century in court, and the one owned by the company it is in court with.",
+    "pt": "České Budějovice é a capital da Boêmia do Sul, traçada em torno de uma praça enorme em 1265, no encontro do Vltava com o Malše. Tem bondes e uma calma provinciana, e duas cervejarias a um quilômetro de distância: a estatal que passa um século nos tribunais e a que pertence à empresa com quem ela litiga.",
+    "de": "České Budějovice ist die Hauptstadt Südböhmens, 1265 um einen sehr großen Platz herum angelegt, dort wo die Vltava die Malše trifft. Es gibt Straßenbahnen und eine provinzielle Ruhe, und zwei Brauereien einen Kilometer voneinander entfernt: die staatliche, die seit einem Jahrhundert prozessiert, und die der Gegenseite, die sie verklagt. Das Zentrum ist in einer Stunde durchquert."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "A square with a town attached",
+        "pt": "Uma praça com uma cidade em volta",
+        "de": "Ein Platz mit einer Stadt daran"
+      },
+      "p": [
+        {
+          "en": "Přemysl Otakar II founded the city in 1265 on a grid, and the grid still holds. The square is about 133 metres on each side, the second largest square-shaped plaza in the country, ringed by arcades and 48 houses. In the middle stands Samson's Fountain, built in the 1720s, its basin fifteen metres across; the stone shell had to come through the Vienna Gate, which was widened to let it pass, and it arrived on 62 horses.",
+          "pt": "Přemysl Otakar II fundou a cidade em 1265 sobre uma malha ortogonal, e a malha continua de pé. A praça tem cerca de 133 metros de lado, a segunda maior praça quadrada do país, cercada por arcadas e 48 casas. No meio fica a Fonte de Sansão, construída nos anos 1720, com um tanque de quinze metros de diâmetro; a concha de pedra teve de passar pelo Portão de Viena, que foi alargado para isso, e chegou puxada por 62 cavalos.",
+          "de": "Přemysl Otakar II. gründete die Stadt 1265 auf einem Raster, und das Raster hält bis heute. Der Platz misst etwa 133 Meter je Seite, der zweitgrößte quadratische Platz des Landes, umgeben von Arkaden und 48 Häusern. In der Mitte steht der Samsonbrunnen aus den 1720er Jahren, sein Becken fünfzehn Meter breit; die steinerne Schale musste durch das Wiener Tor, das dafür verbreitert wurde, und kam auf 62 Pferden an."
+        },
+        {
+          "en": "The Black Tower went up between 1550 and 1577, 72.25 metres of Renaissance stone beside the Cathedral of St Nicholas, with 225 steps to the gallery. From the top the whole plan is visible: the square, the roofs, the two rivers. In the south-east corner of the paving lies the Stray Boulder, a rounded stone with a cross cut into it, said to mark the executioner's block where ten young men were beheaded in 1470 or 1478.",
+          "pt": "A Torre Negra subiu entre 1550 e 1577, 72,25 metros de pedra renascentista ao lado da Catedral de São Nicolau, com 225 degraus até a galeria. Do alto se vê o plano inteiro: a praça, os telhados, os dois rios. No canto sudeste do calçamento está a Pedra Errante, uma pedra arredondada com uma cruz gravada, que marcaria o cepo onde dez jovens foram decapitados em 1470 ou 1478.",
+          "de": "Der Schwarze Turm entstand zwischen 1550 und 1577, 72,25 Meter Stein aus der Renaissance neben der Nikolauskathedrale, 225 Stufen bis zur Galerie. Von oben sieht man den ganzen Plan: den Platz, die Dächer, die zwei Flüsse. In der Südostecke des Pflasters liegt der Bludný kámen, ein gerundeter Stein mit eingeritztem Kreuz, der den Richtblock markieren soll, auf dem 1470 oder 1478 zehn junge Männer enthauptet wurden."
+        },
+        {
+          "en": "The city got rich on salt and on the one-mile law, granted in 1351 and tightened in 1410: no foreign brewery, malt house or tavern within roughly ten kilometres. That privilege kept brewing in the hands of the town's own burghers for centuries, and it explains why Budějovice beer had a name before it had any real competition. The salt came down from the Salzkammergut, and from 1825 a horse-drawn railway was built to Linz to bring it faster.",
+          "pt": "A cidade enriqueceu com sal e com a lei da milha, concedida em 1351 e reforçada em 1410: nenhuma cervejaria, malteria ou taverna estrangeira num raio de cerca de dez quilômetros. O privilégio manteve a produção nas mãos dos burgueses locais por séculos, e explica por que a cerveja de Budějovice tinha nome antes de ter concorrência de verdade. O sal vinha do Salzkammergut, e a partir de 1825 uma ferrovia puxada por cavalos foi construída até Linz para trazê-lo mais rápido.",
+          "de": "Reich wurde die Stadt mit Salz und mit der Bannmeile, 1351 verliehen und 1410 verschärft: keine fremde Brauerei, Mälzerei oder Taverne im Umkreis von rund zehn Kilometern. Das Privileg hielt das Brauen jahrhundertelang in den Händen der eigenen Bürger und erklärt, warum das Bier von Budějovice einen Namen hatte, bevor es Konkurrenz hatte. Das Salz kam aus dem Salzkammergut, und ab 1825 wurde eine Pferdeeisenbahn nach Linz gebaut, um es schneller herzubringen."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Two breweries, one word",
+        "pt": "Duas cervejarias, uma palavra",
+        "de": "Zwei Brauereien, ein Wort"
+      },
+      "p": [
+        {
+          "en": "Budvar was founded in 1895 as the Czech Joint Stock Brewery, when the Czech-speaking burghers pooled their brewing rights and built a modern plant in Kněžské Dvory. The first batch, 200 hectolitres, was brewed on 7 October 1895 by Antonín Holeček. The name Budvar arrived in 1930, a contraction of Budějovice and pivo, beer. The company has been a state enterprise since 1967 and is still owned by the state.",
+          "pt": "A Budvar foi fundada em 1895 como Cervejaria Tcheca por Ações, quando os burgueses de língua tcheca reuniram seus direitos de fabricação e construíram uma fábrica moderna em Kněžské Dvory. O primeiro lote, 200 hectolitros, foi feito em 7 de outubro de 1895 por Antonín Holeček. O nome Budvar veio em 1930, contração de Budějovice e pivo, cerveja. A empresa é estatal desde 1967 e continua nas mãos do Estado.",
+          "de": "Budvar entstand 1895 als Tschechische Aktienbrauerei, als die tschechischsprachigen Bürger ihre Braurechte bündelten und in Kněžské Dvory eine moderne Anlage bauten. Der erste Sud, 200 Hektoliter, wurde am 7. Oktober 1895 von Antonín Holeček gebraut. Der Name Budvar kam 1930, eine Kontraktion aus Budějovice und pivo, Bier. Seit 1967 ist das Unternehmen ein Staatsbetrieb, und der Staat hält es bis heute."
+        },
+        {
+          "en": "Across town, Samson descends from the German-speaking burghers' brewery of 1795, which moved to its present site in the Linz suburb in 1847 and brewed Budweiser Bier for export. Under communism it produced Pito, a beer for drivers, whose name comes from pivo and auto. In 2014 it was bought by AB InBev, the company Budvar has been fighting since 1907, which is the kind of detail a town of this size enjoys.",
+          "pt": "Do outro lado da cidade, a Samson descende da cervejaria dos burgueses germanófonos de 1795, que se mudou para o endereço atual, no subúrbio de Linz, em 1847, e produzia Budweiser Bier para exportação. No comunismo, criou a Pito, uma cerveja para motoristas, cujo nome vem de pivo e auto. Em 2014 foi comprada pela AB InBev, a empresa com quem a Budvar litiga desde 1907, o tipo de detalhe que uma cidade deste tamanho aprecia.",
+          "de": "Am anderen Ende der Stadt steht Samson, hervorgegangen aus der Brauerei der deutschsprachigen Bürger von 1795, die 1847 an den heutigen Standort im Linzer Vorort zog und Budweiser Bier für den Export braute. Im Kommunismus entstand dort Pito, ein Bier für Fahrer, dessen Name aus pivo und auto kommt. 2014 kaufte AB InBev die Brauerei, also die Firma, mit der Budvar seit 1907 streitet, was in einer Stadt dieser Größe für Gesprächsstoff sorgt."
+        },
+        {
+          "en": "The dispute has run through more than a hundred cases. AB InBev holds the Budweiser name in North America, where Budvar sells as Czechvar; Budvar holds it across most of Europe, where the American beer is sold as Bud. Both sides cite the same contracts of 1911 and 1939. The European Union protects Budějovické pivo as a geographical indication, which is the legal ground under most of the argument.",
+          "pt": "A disputa já passou de cem processos. A AB InBev detém o nome Budweiser na América do Norte, onde a Budvar vende como Czechvar; a Budvar o detém em quase toda a Europa, onde a cerveja americana é vendida como Bud. Os dois lados citam os mesmos contratos de 1911 e 1939. A União Europeia protege a Budějovické pivo como indicação geográfica, e é nesse terreno que se apoia a maior parte da briga.",
+          "de": "Der Streit lief durch mehr als hundert Verfahren. AB InBev hält den Namen Budweiser in Nordamerika, wo Budvar als Czechvar verkauft wird; Budvar hält ihn in fast ganz Europa, wo das amerikanische Bier als Bud verkauft wird. Beide Seiten berufen sich auf dieselben Verträge von 1911 und 1939. Die Europäische Union schützt Budějovické pivo als geografische Angabe, und darauf steht der größte Teil des Streits."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "What to do with a day",
+        "pt": "O que fazer em um dia",
+        "de": "Was man mit einem Tag macht"
+      },
+      "p": [
+        {
+          "en": "The Budvar tour runs 70 to 80 minutes, takes up to thirty people, and goes through the brewhouse, the lagering tanks and a tasting. Tours leave at fixed times, with English in the early afternoon, so book ahead in summer. The visitor centre is in Kněžské Dvory, two kilometres north of the square, and the walk there crosses the Malše and a stretch of ordinary Czech suburb that is worth seeing for its own sake.",
+          "pt": "O passeio da Budvar dura de 70 a 80 minutos, recebe até trinta pessoas e passa pela sala de brassagem, pelos tanques de maturação e por uma degustação. As visitas saem em horários fixos, com inglês no começo da tarde, então reserve no verão. O centro de visitantes fica em Kněžské Dvory, dois quilômetros ao norte da praça, e o caminho até lá cruza o Malše e um trecho de subúrbio tcheco comum que vale por si.",
+          "de": "Die Budvar-Tour dauert 70 bis 80 Minuten, nimmt bis zu dreißig Personen auf und führt durch Sudhaus, Lagertanks und eine Verkostung. Die Führungen starten zu festen Zeiten, Englisch am frühen Nachmittag, im Sommer also reservieren. Das Besucherzentrum liegt in Kněžské Dvory, zwei Kilometer nördlich des Platzes, und der Weg dorthin, über die Malše und durch einen gewöhnlichen Vorort, lohnt sich für sich genommen."
+        },
+        {
+          "en": "Masné krámy, the old meat market in Krajinská, has been a restaurant since 1954 and has poured nothing but Budvar the whole time. The foundations are sixteenth-century, the hall is basilican, and the beer comes from copper tanks behind the bar. It is the right place for a long lunch of svíčková and dumplings, and the room is loud in the way that beer halls are loud.",
+          "pt": "A Masné krámy, o antigo mercado de carne na Krajinská, é restaurante desde 1954 e nunca serviu outra cerveja além da Budvar. Os alicerces são do século XVI, o salão tem planta basilical e o chope sai de tanques de cobre atrás do balcão. É o lugar certo para um almoço demorado de svíčková com bolinhos, e a sala é barulhenta como são barulhentas as cervejarias.",
+          "de": "Masné krámy, der alte Fleischmarkt in der Krajinská, ist seit 1954 ein Restaurant und hat die ganze Zeit nur Budvar gezapft. Das Fundament stammt aus dem 16. Jahrhundert, die Halle ist basilikal, und das Bier kommt aus Kupfertanks hinter der Theke. Der richtige Ort für ein langes Mittagessen mit svíčková und Knödeln, und der Saal ist laut, wie Bierhallen laut sind."
+        },
+        {
+          "en": "Outside the centre, Hluboká nad Vltavou is ten kilometres north: a castle rebuilt in the nineteenth century to look English, with a park and a view over the river. Český Krumlov is twenty kilometres south and needs half a day of its own. Both sit on the Vltava, which is the shape of the region: the river runs from one to the other, and the beer has always followed the water.",
+          "pt": "Fora do centro, Hluboká nad Vltavou fica dez quilômetros ao norte: um castelo reconstruído no século XIX para parecer inglês, com parque e vista sobre o rio. Český Krumlov está vinte quilômetros ao sul e pede meio dia só para ele. Os dois ficam no Vltava, que é o desenho da região: o rio corre de um ao outro, e a cerveja sempre seguiu a água.",
+          "de": "Außerhalb des Zentrums liegt Hluboká nad Vltavou zehn Kilometer nördlich: ein Schloss, im 19. Jahrhundert im englischen Stil umgebaut, mit Park und Blick über den Fluss. Český Krumlov liegt zwanzig Kilometer südlich und braucht einen halben Tag für sich. Beide liegen an der Vltava, und das ist die Form der Region: Der Fluss läuft von einem zum anderen, und das Bier ist dem Wasser immer gefolgt."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Budvar Original, 5%, from the tank at the end of the tour: unfiltered, and the reason to take the tour rather than skip it.",
+      "pt": "Budvar Original, 5%, do tanque no fim do passeio: não filtrada, e o motivo para fazer o passeio em vez de pular.",
+      "de": "Budvar Original, 5 %, aus dem Tank am Ende der Tour: ungefiltert, und der Grund, die Tour mitzumachen statt sie auszulassen."
+    },
+    {
+      "en": "Budvar Dark, if the pub has it: the same yeast, roasted malt, and a drier finish than most dark lagers.",
+      "pt": "Budvar Dark, se o bar tiver: o mesmo fermento, malte torrado e um final mais seco que a maioria das lagers escuras.",
+      "de": "Budvar Dark, wenn es das Lokal hat: dieselbe Hefe, Röstmalz und ein trockeneres Finish als die meisten dunklen Lager."
+    },
+    {
+      "en": "Samson Tmavé on the square, from the brewery that stayed in the centre of town.",
+      "pt": "Samson Tmavé na praça, da cervejaria que ficou no centro.",
+      "de": "Samson Tmavé am Platz, aus der Brauerei, die im Zentrum geblieben ist."
+    },
+    {
+      "en": "Budvar 33, the lighter draught, for the middle of the day.",
+      "pt": "Budvar 33, o chope mais leve, para o meio do dia.",
+      "de": "Budvar 33, das leichtere Bier, für die Mitte des Tages."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Masné krámy: svíčková, dumplings and Budvar only, in a sixteenth-century meat market.",
+      "pt": "Masné krámy: svíčková, bolinhos e só Budvar, num mercado de carne do século XVI.",
+      "de": "Masné krámy: svíčková, Knödel und ausschließlich Budvar, in einem Fleischmarkt aus dem 16. Jahrhundert."
+    },
+    {
+      "en": "Budvarka, the brewery's own restaurant, for goulash and a plate of sausage after the tour.",
+      "pt": "Budvarka, o restaurante da própria cervejaria, para um guláš e um prato de linguiça depois do passeio.",
+      "de": "Budvarka, das eigene Restaurant der Brauerei, für Gulasch und einen Teller Wurst nach der Tour."
+    },
+    {
+      "en": "The arcades on the square, for coffee and cake under the vaults while the weather decides what happens next.",
+      "pt": "As arcadas da praça, para café e bolo sob as abóbadas enquanto o tempo decide o que vem depois.",
+      "de": "Die Arkaden am Platz für Kaffee und Kuchen unter den Gewölben, während das Wetter entscheidet, was als Nächstes passiert."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Book the Budvar tour. The English slot is fixed, capacity is thirty, and the brewery is a twenty-five-minute walk from the square.",
+      "pt": "Reserve o passeio da Budvar. O horário em inglês é fixo, a capacidade é de trinta pessoas e a cervejaria fica a vinte e cinco minutos a pé da praça.",
+      "de": "Die Budvar-Tour buchen. Der englische Termin ist fest, dreißig Plätze, und die Brauerei liegt fünfundzwanzig Gehminuten vom Platz."
+    },
+    {
+      "en": "The Black Tower is 225 steps and closes in the early evening. Check the time at the door before you start climbing.",
+      "pt": "A Torre Negra tem 225 degraus e fecha no começo da noite. Confira o horário na porta antes de começar a subir.",
+      "de": "Der Schwarze Turm hat 225 Stufen und schließt am frühen Abend. Vor dem Aufstieg die Zeit an der Tür prüfen."
+    },
+    {
+      "en": "Parking in the historic centre is limited. Hotels on the ring road have garages, and the centre is small once the car is put away.",
+      "pt": "Estacionar no centro histórico é limitado. Hotéis no anel viário têm garagem, e o centro é pequeno depois que o carro está guardado.",
+      "de": "Parken in der Altstadt ist begrenzt. Hotels am Ring haben Garagen, und das Zentrum ist klein, wenn das Auto erst steht."
+    },
+    {
+      "en": "Trains to Prague take about two hours, and the station is a ten-minute walk from the square.",
+      "pt": "Os trens para Praga levam cerca de duas horas, e a estação fica a dez minutos a pé da praça.",
+      "de": "Züge nach Prag brauchen etwa zwei Stunden, und der Bahnhof liegt zehn Gehminuten vom Platz."
+    }
+  ],
+  "links": [
+    {
+      "label": "Budweiser Budvar",
+      "url": "https://www.budejovickybudvar.cz/en/"
+    },
+    {
+      "label": "České Budějovice",
+      "url": "https://www.budejce.cz/en/"
+    },
+    {
+      "label": "Budweiser Budvar Brewery (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Budweiser_Budvar_Brewery"
+    }
+  ]
+}

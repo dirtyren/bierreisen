@@ -1,0 +1,223 @@
+{
+  "slug": "la-trappe",
+  "type": "brewery",
+  "name": "La Trappe",
+  "where": "Berkel-Enschot, Netherlands",
+  "coords": [
+    51.5437,
+    5.1304
+  ],
+  "span": 0.015,
+  "subtitle_en": "The Dutch Trappist abbey just over the Belgian border",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Brouwerij+de+Koningshoeven+Eindhovenseweg+3+Berkel-Enschot",
+  "trips": [
+    "2020"
+  ],
+  "related": [
+    "westvleteren",
+    "cantillon",
+    "bruges",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "abbey founded",
+        "pt": "fundação do mosteiro",
+        "de": "Abtei gegründet"
+      },
+      "v": {
+        "en": "1881"
+      }
+    },
+    {
+      "k": {
+        "en": "brewing since",
+        "pt": "produzindo desde",
+        "de": "gebraut seit"
+      },
+      "v": {
+        "en": "1884"
+      }
+    },
+    {
+      "k": {
+        "en": "Quadrupel",
+        "pt": "Quadrupel",
+        "de": "Quadrupel"
+      },
+      "v": {
+        "en": "10%"
+      }
+    },
+    {
+      "k": {
+        "en": "water wells",
+        "pt": "poços de água",
+        "de": "Wasserbrunnen"
+      },
+      "v": {
+        "en": "5"
+      }
+    }
+  ],
+  "lede": {
+    "en": "La Trappe is the Dutch exception in a list of Belgian breweries: a Trappist abbey ten kilometres from Tilburg, just over the border, brewing since 1884. The monks started making beer to pay for the monastery, and the beer is still brewed beside it, under the Trappist seal. It is quieter than the Belgian houses, and just as strict.",
+    "pt": "La Trappe é a exceção holandesa numa lista de cervejarias belgas: um mosteiro trapista a dez quilômetros de Tilburg, logo depois da fronteira, produzindo desde 1884. Os monges começaram a fazer cerveja para pagar o mosteiro, e a cerveja ainda é produzida ao lado dele, sob o selo trapista. É mais silenciosa que as casas belgas, e igualmente rígida.",
+    "de": "La Trappe ist die niederländische Ausnahme in einer Liste belgischer Brauereien: eine Trappistenabtei zehn Kilometer von Tilburg, gleich hinter der Grenze, die seit 1884 braut. Die Mönche begannen mit dem Bier, um das Kloster zu bezahlen, und das Bier wird noch neben ihm gebraut, unter dem Trappistensiegel. Es ist stiller als die belgischen Häuser und genauso streng."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Koningshoeven",
+        "pt": "Koningshoeven",
+        "de": "Koningshoeven"
+      },
+      "p": [
+        {
+          "en": "The abbey of Our Lady of Koningshoeven was founded in 1881 by Trappist monks from Mont des Cats in northern France, who crossed the border to escape anti-religious laws and bought three farms and a sheep pen. The name means the king's farms. Brewing began in 1884, with equipment that was modern for its time, and the income paid for the abbey buildings that still stand around the courtyard.",
+          "pt": "O mosteiro de Nossa Senhora de Koningshoeven foi fundado em 1881 por monges trapistas de Mont des Cats, no norte da França, que atravessaram a fronteira para escapar das leis antirreligiosas e compraram três fazendas e um aprisco. O nome quer dizer as fazendas do rei. A produção começou em 1884, com equipamento moderno para a época, e a renda pagou os prédios do mosteiro que ainda rodeiam o pátio.",
+          "de": "Die Abtei Unserer Lieben Frau von Koningshoeven wurde 1881 von Trappistenmönchen aus Mont des Cats in Nordfrankreich gegründet, die vor antireligiösen Gesetzen über die Grenze kamen und drei Höfe und einen Schafstall kauften. Der Name bedeutet die Höfe des Königs. 1884 begann das Brauen, mit für die Zeit moderner Anlage, und der Erlös bezahlte die Klostergebäude, die noch heute den Hof umstehen."
+        },
+        {
+          "en": "The Trappist label is not a style. It means the beer is brewed by monks or under their supervision, inside the monastery, and that the profits go to the community and its charitable work rather than to shareholders. La Trappe carries the seal, and was the only Dutch brewery to do so for most of its history. The rules are checked; the logo is not decorative.",
+          "pt": "O selo trapista não é um estilo. Significa que a cerveja é feita por monges ou sob sua supervisão, dentro do mosteiro, e que o lucro vai para a comunidade e suas obras assistenciais, não para acionistas. La Trappe carrega o selo, e foi a única cervejaria holandesa a fazê-lo durante a maior parte de sua história. As regras são fiscalizadas; o selo não é decorativo.",
+          "de": "Das Trappistensiegel ist kein Stil. Es bedeutet, dass das Bier von Mönchen oder unter ihrer Aufsicht im Kloster gebraut wird und der Gewinn der Gemeinschaft und ihren karitativen Werken zugutekommt, nicht Aktionären. La Trappe trägt das Siegel und war lange die einzige niederländische Brauerei damit. Die Regeln werden geprüft; das Logo ist nicht Dekoration. Wer das Siegel sieht, sieht eine Prüfung, keine Werbung."
+        },
+        {
+          "en": "The community is smaller than it was and the brewery is now run with lay staff, but the abbey still owns it and the monks still have the last word. The visitor side — tasting room, shop, tours — is professional without being a theme park. You can hear the bells from the terrace, and the fields start at the car park.",
+          "pt": "A comunidade é menor do que foi, e a cervejaria hoje é tocada com equipe leiga, mas o mosteiro ainda é dono e os monges ainda têm a palavra final. O lado turístico — sala de degustação, loja, visitas — é profissional sem virar parque temático. Dá para ouvir os sinos do terraço, e os campos começam no estacionamento. É uma fronteira discreta entre mosteiro e campo.",
+          "de": "Die Gemeinschaft ist kleiner als früher, die Brauerei wird inzwischen mit weltlichem Personal geführt, aber die Abtei besitzt sie noch, und die Mönche haben das letzte Wort. Die Besucherseite — Verkostungsraum, Laden, Führungen — ist professionell, ohne Themenpark zu sein. Von der Terrasse hört man die Glocken, und hinter dem Parkplatz beginnen die Felder. Der Übergang zwischen Kloster und Feld ist fließend."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The beers",
+        "pt": "As cervejas",
+        "de": "Die Biere"
+      },
+      "p": [
+        {
+          "en": "The core is Blond at 6.5%, Dubbel at 7%, Tripel at 8% and Quadrupel at 10%. The Quadrupel is the one people remember: dark, figgy, warming, and strong enough that a second glass is a decision. The Witte is the odd one out, a wheat beer with coriander and orange peel, and the only Trappist witbier brewed anywhere. It is the beer to order first on a warm day.",
+          "pt": "A base é Blond, 6,5%, Dubbel, 7%, Tripel, 8%, e Quadrupel, 10%. A Quadrupel é a que fica na memória: escura, com figo, que aquece, e forte o bastante para um segundo copo ser uma decisão. A Witte é a diferente, uma cerveja de trigo com coentro e casca de laranja, e a única witbier trapista produzida em qualquer lugar.",
+          "de": "Der Kern ist Blond mit 6,5 %, Dubbel mit 7 %, Tripel mit 8 % und Quadrupel mit 10 %. Das Quadrupel bleibt im Kopf: dunkel, feigig, wärmend und stark genug, dass ein zweites Glas eine Entscheidung ist. Das Witte fällt heraus, ein Weizenbier mit Koriander und Orangenschale, und das einzige Trappisten-Witbier überhaupt. Im Sommer beginnt man besser mit dem Witte. Es ist leicht und trocken."
+        },
+        {
+          "en": "There is also Isid'or, an amber brewed for the abbey's 125th anniversary and named for Brother Isidorus, its first brewer, and an oak-aged Quadrupel released in batches. The water comes from five wells 200 metres deep on the abbey grounds, and the spent grain feeds the abbey's cows. The range is deliberately short; there is no experimental line. The oak-aged version is worth the extra.",
+          "pt": "Há também a Isid'or, uma âmbar feita para os 125 anos do mosteiro e batizada em homenagem ao irmão Isidorus, primeiro cervejeiro, e uma Quadrupel maturada em carvalho, lançada em lotes. A água vem de cinco poços de 200 metros no terreno do mosteiro, e o bagaço alimenta as vacas da abadia. A linha é curta de propósito; não há série experimental.",
+          "de": "Dazu kommen Isid'or, ein Bernsteinbier zum 125-jährigen Bestehen der Abtei, benannt nach Bruder Isidorus, dem ersten Brauer, und ein im Eichenfass gereiftes Quadrupel in Chargen. Das Wasser kommt aus fünf 200 Meter tiefen Brunnen auf dem Klostergelände, das Treber verfüttert die Abtei an ihre Kühe. Die Reihe ist absichtlich kurz; eine Versuchslinie gibt es nicht. Beide sind nicht immer im Laden zu haben."
+        },
+        {
+          "en": "The beer is bottle-conditioned except the Blond, which is filtered. The styles are Belgian in form and Dutch in tone: dry finishes, restrained sweetness, nothing exaggerated. If you know Westmalle or Rochefort, you will recognise the family and the differences. The Quadrupel travels best, which is why it is the one you see abroad. The Blond is the one for a hot afternoon.",
+          "pt": "A cerveja tem segunda fermentação na garrafa, exceto a Blond, que é filtrada. Os estilos são belgas na forma e holandeses no tom: final seco, doçura contida, nada exagerado. Quem conhece Westmalle ou Rochefort reconhece a família e as diferenças. A Quadrupel viaja melhor, e é por isso que é a que se vê no exterior. A Blond é a exceção, e é a mais leve.",
+          "de": "Das Bier ist flaschenvergoren, außer dem Blond, das gefiltert wird. Die Stile sind belgisch in der Form und niederländisch im Ton: trockene Finale, zurückhaltende Süße, nichts übertrieben. Wer Westmalle oder Rochefort kennt, erkennt die Familie und die Unterschiede. Das Quadrupel reist am besten, deshalb sieht man es im Ausland. Das Blond ist das Leichteste der Reihe und das einzige gefilterte."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The visit",
+        "pt": "A visita",
+        "de": "Der Besuch"
+      },
+      "p": [
+        {
+          "en": "The brewery sits at Eindhovenseweg 3, on the edge of Berkel-Enschot, with the abbey behind it. The tasting room serves the full range and a short menu of soup, sandwiches and cheese; the shop sells bottles, glasses and the abbey's cheese. Tours run on set days and need booking, and they end with a tasting in the room. Booking is online.",
+          "pt": "A cervejaria fica na Eindhovenseweg 3, na borda de Berkel-Enschot, com o mosteiro atrás. A sala de degustação serve a linha completa e um menu curto de sopa, sanduíches e queijo; a loja vende garrafas, copos e o queijo da abadia. As visitas acontecem em dias marcados, precisam de reserva e terminam com degustação na sala. A reserva é online.",
+          "de": "Die Brauerei liegt an der Eindhovenseweg 3 am Rand von Berkel-Enschot, die Abtei dahinter. Der Verkostungsraum schenkt die ganze Reihe aus und hat eine kurze Karte mit Suppe, Broten und Käse; der Laden verkauft Flaschen, Gläser und den Käse der Abtei. Führungen finden an festen Tagen statt, müssen gebucht werden und enden mit einer Verkostung. Die Führung ist kurz und konkret."
+        },
+        {
+          "en": "It is an easy stop between Tilburg and Eindhoven, and a sensible one if you are driving from Germany or the Belgian border. Tilburg is ten kilometres west, Eindhoven fifteen south-east. Buses connect both, but the Sunday timetable is thin and the tasting room is at its busiest. Coming from Eindhoven is quicker by car, slower by bus. It is a plain ride through Brabant farmland.",
+          "pt": "É uma parada fácil entre Tilburg e Eindhoven, e sensata para quem vem de carro da Alemanha ou da fronteira belga. Tilburg fica dez quilômetros a oeste, Eindhoven quinze a sudeste. Há ônibus das duas cidades, mas o horário de domingo é escasso e a sala de degustação fica mais cheia. Vir de Eindhoven é mais rápido de carro, mais lento de ônibus.",
+          "de": "Ein einfacher Halt zwischen Tilburg und Eindhoven und sinnvoll für alle, die aus Deutschland oder von der belgischen Grenze kommen. Tilburg liegt zehn Kilometer westlich, Eindhoven fünfzehn südöstlich. Busse verbinden beide, doch am Sonntag ist der Fahrplan dünn und der Verkostungsraum am vollsten. Die Abtei ist eine kurze Busfahrt vom Bahnhof Tilburg entfernt, und der Weg von der Haltestelle ist flach."
+        },
+        {
+          "en": "Do not treat it as a substitute for the Belgian Trappists. It is a different country, a different scale and a different atmosphere: quieter, more modern, less pilgrimage. That is the reason to come, not a drawback. Spend an hour, drink the Quadrupel, buy cheese, and be back on the road before the afternoon traffic. The visit takes an hour, not a day.",
+          "pt": "Não trate como substituto dos trapistas belgas. É outro país, outra escala e outra atmosfera: mais silenciosa, mais moderna, menos peregrinação. É esse o motivo de vir, não um defeito. Passe uma hora, beba a Quadrupel, compre queijo e volte para a estrada antes do trânsito da tarde. A visita leva uma hora, não um dia. E vale a pena.",
+          "de": "Man sollte es nicht als Ersatz für die belgischen Trappisten sehen. Ein anderes Land, ein anderer Maßstab, eine andere Atmosphäre: ruhiger, moderner, weniger Pilgerfahrt. Das ist der Grund zu kommen, kein Mangel. Eine Stunde bleiben, das Quadrupel trinken, Käse kaufen und vor dem Nachmittagsverkehr wieder auf der Straße sein. Es ist zuerst ein arbeitendes Kloster. Eine Stunde genügt vollkommen für alles."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Quadrupel — dark, figgy and the beer the brewery is known for.",
+      "pt": "Quadrupel — escura, com figo, e a cerveja pela qual a casa é conhecida.",
+      "de": "Quadrupel — dunkel, feigig und das Bier, für das die Brauerei bekannt ist."
+    },
+    {
+      "en": "Quadrupel Oak Aged, if the batch is in the shop; the wood softens the edges.",
+      "pt": "Quadrupel Oak Aged, se o lote estiver na loja; a madeira suaviza as bordas.",
+      "de": "Quadrupel Oak Aged, wenn die Charge im Laden steht; das Holz nimmt die Kanten."
+    },
+    {
+      "en": "Tripel for a second glass, drier than the Quadrupel and easier to finish.",
+      "pt": "Tripel para um segundo copo, mais seca que a Quadrupel e mais fácil de terminar.",
+      "de": "Tripel für ein zweites Glas, trockener als das Quadrupel und leichter zu Ende zu trinken."
+    },
+    {
+      "en": "Witte in summer, on the terrace, with the abbey cheese.",
+      "pt": "Witte no verão, no terraço, com o queijo da abadia.",
+      "de": "Witte im Sommer, auf der Terrasse, mit dem Käse der Abtei."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The tasting room's cheese board and bitterballen — pub food, done properly.",
+      "pt": "A tábua de queijos e os bitterballen da sala de degustação — comida de pub, bem feita.",
+      "de": "Käseplatte und Bitterballen im Verkostungsraum — Pub-Essen, ordentlich gemacht."
+    },
+    {
+      "en": "A quiet lunch in Tilburg, ten kilometres west, if you want more than snacks.",
+      "pt": "Um almoço tranquilo em Tilburg, dez quilômetros a oeste, se quiser mais que petiscos.",
+      "de": "Ein ruhiges Mittagessen in Tilburg, zehn Kilometer westlich, wenn es mehr als Snacks sein soll."
+    },
+    {
+      "en": "The abbey shop sells cheese to take home; it travels better than the beer.",
+      "pt": "A loja do mosteiro vende queijo para levar; ele viaja melhor que a cerveja.",
+      "de": "Der Klosterladen verkauft Käse für zu Hause; er reist besser als das Bier."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Book the brewery tour in advance; times are limited outside weekends.",
+      "pt": "Reserve a visita à cervejaria antes; os horários são limitados fora dos fins de semana.",
+      "de": "Die Brauereiführung vorher buchen; außerhalb der Wochenenden sind die Zeiten begrenzt."
+    },
+    {
+      "en": "It is in the Netherlands: bring euros and expect Dutch, not French.",
+      "pt": "Fica nos Países Baixos: leve euros e espere holandês, não francês.",
+      "de": "Es liegt in den Niederlanden: Euro mitnehmen und Niederländisch erwarten, nicht Französisch."
+    },
+    {
+      "en": "A car is easiest; buses from Tilburg and Eindhoven are slow on Sundays.",
+      "pt": "Carro é o mais fácil; os ônibus de Tilburg e Eindhoven são lentos aos domingos.",
+      "de": "Mit dem Auto am einfachsten; Busse aus Tilburg und Eindhoven sind sonntags langsam."
+    },
+    {
+      "en": "Check the tasting room's hours before setting out; they change by season.",
+      "pt": "Confira o horário da sala de degustação antes de sair; muda com a estação.",
+      "de": "Vor der Abfahrt die Zeiten des Verkostungsraums prüfen; sie ändern sich mit der Saison."
+    },
+    {
+      "en": "Combine it with Tilburg or Eindhoven rather than making it the whole day.",
+      "pt": "Combine com Tilburg ou Eindhoven em vez de fazer disso o dia inteiro.",
+      "de": "Mit Tilburg oder Eindhoven verbinden, statt daraus den ganzen Tag zu machen."
+    }
+  ],
+  "links": [
+    {
+      "label": "La Trappe",
+      "url": "https://uk.latrappetrappist.com/"
+    },
+    {
+      "label": "Koningshoeven Abbey",
+      "url": "https://www.koningshoeven.nl/"
+    },
+    {
+      "label": "De Koningshoeven Brewery, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/De_Koningshoeven_Brewery"
+    }
+  ]
+}

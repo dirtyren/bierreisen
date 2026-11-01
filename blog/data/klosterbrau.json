@@ -1,0 +1,235 @@
+{
+  "slug": "klosterbrau",
+  "type": "brewery",
+  "name": "Klosterbräu",
+  "where": "Bamberg, Germany",
+  "coords": [
+    49.8927,
+    10.8893
+  ],
+  "span": 0.35,
+  "subtitle_en": "The prince-bishops' dark beer house, brewing since 1533",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Klosterbraeu+Obere+Muehlbruecke+1+Bamberg",
+  "trips": [
+    "2019",
+    "2021",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "bamberg",
+    "schlenkerla",
+    "spezial",
+    "trip-2021"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundada",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1533"
+      }
+    },
+    {
+      "k": {
+        "en": "first mentioned as a brewery",
+        "pt": "primeira menção como cervejaria",
+        "de": "als Brauerei erwähnt"
+      },
+      "v": {
+        "en": "1333"
+      }
+    },
+    {
+      "k": {
+        "en": "output",
+        "pt": "produção",
+        "de": "Ausstoß"
+      },
+      "v": {
+        "en": "about 4,000 hl",
+        "pt": "cerca de 4.000 hl",
+        "de": "rund 4.000 hl"
+      }
+    },
+    {
+      "k": {
+        "en": "house beer",
+        "pt": "cerveja da casa",
+        "de": "Hausbier"
+      },
+      "v": {
+        "en": "Schwärzla",
+        "pt": "Schwärzla",
+        "de": "Schwärzla"
+      }
+    },
+    {
+      "k": {
+        "en": "address",
+        "pt": "endereço",
+        "de": "Adresse"
+      },
+      "v": {
+        "en": "Obere Mühlbrücke 1–3"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Klosterbräu has been the oldest brewery in Bamberg for long enough that the claim has stopped being interesting to the people who drink there. It was founded in 1533 as the prince-bishopric's dark beer house, and it still makes the beer that name describes: a black lager, mild and dry, poured a few steps from the Regnitz.",
+    "pt": "O Klosterbräu é a cervejaria mais antiga de Bamberg há tempo suficiente para que a frase tenha deixado de interessar a quem bebe ali. Foi fundada em 1533 como a cervejaria de cerveja escura do principado episcopal, e ainda faz a cerveja que o nome descreve: uma lager preta, suave e seca, servida a poucos passos do Regnitz.",
+    "de": "Klosterbräu ist so lange die älteste Brauerei Bambergs, dass der Satz niemanden mehr interessiert, der hier trinkt. Gegründet 1533 als fürstbischöfliches Braunbierhaus, braut sie noch immer das Bier, das dieser Name beschreibt: ein schwarzes Lager, mild und trocken, wenige Schritte von der Regnitz entfernt gezapft. Ein paar Stuben, ein Garten am Wasser, mehr braucht es nicht."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The oldest brewhouse in town",
+        "pt": "A cervejaria mais antiga da cidade",
+        "de": "Das älteste Sudhaus der Stadt"
+      },
+      "p": [
+        {
+          "en": "The date on the sign is 1533, when the prince-bishopric set up a dark beer house here. The building is older than that: a brewery on the site is mentioned in 1333, and the archbishops owned the place until 1790. The name comes from the Franciscan monastery that stood nearby, not from the brewery itself, which has always been a commercial house rather than a monastic one.",
+          "pt": "A data na fachada é 1533, quando o principado episcopal instalou aqui uma cervejaria de cerveja escura. O prédio é mais antigo: uma cervejaria no local é mencionada em 1333, e os arcebispos foram donos do lugar até 1790. O nome vem do mosteiro franciscano que ficava perto, não da cervejaria, que sempre foi uma casa comercial e não monástica.",
+          "de": "Auf dem Schild steht 1533, als das Hochstift hier ein Braunbierhaus einrichtete. Das Gebäude ist älter: 1333 wird am Ort eine Brauerei erwähnt, und bis 1790 gehörte das Haus den Erzbischöfen. Der Name kommt vom Franziskanerkloster in der Nachbarschaft, nicht von der Brauerei selbst, die immer ein gewerbliches Haus war und kein klösterliches. Gebraut wurde für die Stadt, nicht für die Brüder."
+        },
+        {
+          "en": "The output is about 4,000 hectolitres a year, which is small. Most of it is drunk in the rooms and the garden; the rest goes to a handful of pubs in Bamberg. That is the economics of the place: a brewery the size of a village one, in the middle of a town of 77,000, selling beer across its own counter to people who walk here.",
+          "pt": "A produção é de cerca de 4 mil hectolitros por ano, o que é pouco. A maior parte é bebida nos salões e no jardim; o resto vai para um punhado de bares de Bamberg. É a economia do lugar: uma cervejaria do tamanho de uma de vilarejo, no meio de uma cidade de 77 mil habitantes, vendendo cerveja no próprio balcão para quem chega a pé.",
+          "de": "Der Ausstoß liegt bei rund 4.000 Hektolitern im Jahr, das ist wenig. Das meiste wird in den Stuben und im Garten getrunken, der Rest geht an eine Handvoll Bamberger Kneipen. Das ist die Ökonomie des Hauses: eine Brauerei in Dorfgröße mitten in einer Stadt mit 77.000 Einwohnern, die ihr Bier am eigenen Tresen an Leute verkauft, die zu Fuß kommen."
+        },
+        {
+          "en": "It stands in the Mühlenviertel, the mill quarter, where the Regnitz is split into channels and runs between the buildings. The house is half-timbered and sits on the Obere Mühlbrücke with water on two sides. In summer the garden is on the bank itself, and stone steps lead down to the river where people sit with a glass. The water here is a working channel, with weirs and sluices, and it moves fast.",
+          "pt": "Fica no Mühlenviertel, o bairro dos moinhos, onde o Regnitz se divide em canais e corre entre os prédios. A casa é de enxaimel e ocupa a Obere Mühlbrücke, com água dos dois lados. No verão o jardim fica na própria margem, e degraus de pedra descem até o rio, onde as pessoas sentam com um copo. A água ali é um canal de trabalho, com açudes e comportas, e corre rápido.",
+          "de": "Sie liegt im Mühlenviertel, wo die Regnitz in Kanäle geteilt zwischen den Häusern läuft. Das Haus ist Fachwerk und steht auf der Oberen Mühlbrücke, mit Wasser zu zwei Seiten. Im Sommer liegt der Biergarten direkt am Ufer, und Steinstufen führen hinunter zum Fluss, wo man mit einem Glas sitzt. Der Fluss ist hier kein Fluss im üblichen Sinn, sondern ein Arbeitskanal mit Wehren und Schleusen."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "What the glass holds",
+        "pt": "O que vem no copo",
+        "de": "Was im Glas steht"
+      },
+      "p": [
+        {
+          "en": "Order the Schwärzla first. It is a Schwarzbier at around five per cent: black with ruby edges when the light gets through, mild on the tongue, more roasted bread than coffee, and dry at the end. It is the beer the house was founded to make, in the centuries before pale lager took over Franconia and most breweries forgot how to brew dark.",
+          "pt": "Peça o Schwärzla primeiro. É uma Schwarzbier de cerca de 5%: preta com bordas rubras quando a luz atravessa, suave na boca, mais pão torrado do que café, e seca no final. É a cerveja que a casa foi fundada para fazer, nos séculos antes de a lager clara dominar a Francônia e quase todas as cervejarias esquecerem como se faz cerveja escura.",
+          "de": "Zuerst das Schwärzla. Ein Schwarzbier mit rund fünf Prozent: schwarz mit rubinrotem Rand, wo Licht durchfällt, mild am Gaumen, mehr geröstetes Brot als Kaffee und trocken im Abgang. Es ist das Bier, für das das Haus gegründet wurde — aus den Jahrhunderten, bevor das helle Lager Franken eroberte und die meisten Brauereien das Dunkelbrauen verlernten. Die Brauerei liegt im Mühlenviertel, wo einst die Mühlen der Stadt standen."
+        },
+        {
+          "en": "The rest of the range is short and old-fashioned. Braunbier is the brown beer the house is named for, maltier and softer than the Schwärzla. Bamberger Gold is a Pils with a firm bitterness, Braun's Weisse a wheat beer, and a Bock is on from October to May. At the Zwickel you can also order the unfiltered cellar beer, and there is a smoked beer that has won a gold medal.",
+          "pt": "O resto da linha é curto e antiquado. A Braunbier é a cerveja marrom que dá nome à casa, mais maltada e macia que o Schwärzla. A Bamberger Gold é uma pils com amargor firme, a Braun's Weisse é de trigo, e há uma Bock de outubro a maio. No Zwickel também se pede a cerveja de cave não filtrada, e há uma defumada que ganhou medalha de ouro.",
+          "de": "Der Rest der Palette ist kurz und altmodisch. Braunbier ist das braune Bier, nach dem das Haus heißt, malziger und weicher als das Schwärzla. Bamberger Gold ist ein Pils mit fester Bittere, Braun's Weisse ein Weizen, und von Oktober bis Mai gibt es Bock. Am Zwickel lässt sich außerdem das ungefilterte Kellerbier bestellen, und es gibt ein Rauchbier, das eine Goldmedaille gewonnen hat."
+        },
+        {
+          "en": "The kitchen does not try to compete with the beer. Roasts with Klöße, sausages, a Brotzeit of bread, butter, radishes and cheese, and in summer a shorter menu in the garden. Prices are what a brewery taproom charges, which in Bamberg is less than a restaurant on the Hauptstraße and more than a kiosk. Nobody comes here for the food, and nobody leaves disappointed by it.",
+          "pt": "A cozinha não tenta competir com a cerveja. Assados com Klöße, linguiças, uma Brotzeit de pão, manteiga, rabanetes e queijo, e no verão um menu mais curto no jardim. Os preços são os de um salão de cervejaria, o que em Bamberg significa menos que um restaurante da Hauptstraße e mais que um quiosque. Ninguém vem aqui pela comida, e ninguém sai decepcionado com ela.",
+          "de": "Die Küche versucht nicht, mit dem Bier zu konkurrieren. Braten mit Klößen, Bratwürste, eine Brotzeit aus Brot, Butter, Radieschen und Käse, im Sommer eine kürzere Karte im Garten. Die Preise sind die einer Brauereigaststube, in Bamberg also weniger als im Restaurant an der Hauptstraße und mehr als am Kiosk. Niemand kommt wegen des Essens, und niemand geht deswegen enttäuscht hinaus."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Finding the door",
+        "pt": "Achar a porta",
+        "de": "Die Tür finden"
+      },
+      "p": [
+        {
+          "en": "Obere Mühlbrücke 1–3, five minutes upstream from the Altes Rathaus along the left arm of the Regnitz. The entrance is easy to walk past, because it is a doorway in a row of mill buildings rather than a shopfront with a sign. Look for the low half-timbered house with the beer garden behind it and the steps down to the water.",
+          "pt": "Obere Mühlbrücke 1–3, cinco minutos rio acima desde o Altes Rathaus, pela margem esquerda do Regnitz. A entrada é fácil de passar sem ver, porque é uma porta numa fileira de casas de moinho, e não uma fachada de loja com placa. Procure a casa baixa de enxaimel, com o beer garden atrás e os degraus que descem para a água.",
+          "de": "Obere Mühlbrücke 1–3, fünf Minuten flussaufwärts vom Alten Rathaus am linken Regnitzarm. Der Eingang ist leicht zu verpassen, weil er eine Tür in einer Reihe Mühlenhäuser ist und kein Laden mit Schild. Man suche das niedrige Fachwerkhaus, den Biergarten dahinter und die Stufen hinunter zum Wasser. Der Weg dorthin führt an den Wehren vorbei, und man hört ihn, bevor man ihn sieht."
+        },
+        {
+          "en": "It opens Wednesday to Sunday, from two in the afternoon on weekdays and from eleven at weekends, and stays closed on Monday and Tuesday. The garden runs from May to September. Come at three on a Wednesday and you will have the room to yourself; come at seven on a Saturday and you will share a table, which is the better version anyway.",
+          "pt": "Abre de quarta a domingo, a partir das duas da tarde nos dias de semana e das onze nos fins de semana, e fica fechado na segunda e na terça. O jardim funciona de maio a setembro. Chegue às três de uma quarta e o salão é seu; chegue às sete de um sábado e vai dividir a mesa, o que é a versão melhor de qualquer jeito.",
+          "de": "Geöffnet ist Mittwoch bis Sonntag, werktags ab zwei Uhr nachmittags, am Wochenende ab elf; Montag und Dienstag bleibt zu. Der Garten läuft von Mai bis September. Um drei an einem Mittwoch hat man die Stube für sich, um sieben an einem Samstag teilt man den Tisch — was ohnehin die bessere Variante ist. Wer die Stube leer erleben will, kommt am frühen Nachmittag."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Klosterbräu Schwärzla: black, mild, dry, and the reason the house exists.",
+      "pt": "Klosterbräu Schwärzla: preta, suave, seca, e o motivo de a casa existir.",
+      "de": "Klosterbräu Schwärzla: schwarz, mild, trocken — der Grund, warum es das Haus gibt."
+    },
+    {
+      "en": "Braunbier, the older brown style, maltier and softer than the Schwarzbier.",
+      "pt": "Braunbier, o estilo marrom mais antigo, mais maltado e macio que a Schwarzbier.",
+      "de": "Braunbier, der ältere braune Stil, malziger und weicher als das Schwarzbier."
+    },
+    {
+      "en": "Bamberger Gold Pils if you want bitterness after all that malt.",
+      "pt": "Bamberger Gold Pils se você quiser amargor depois de tanto malte.",
+      "de": "Bamberger Gold Pils, wenn nach all dem Malz Bittere gefragt ist."
+    },
+    {
+      "en": "The Bock, October to May, which is a different beer entirely and worth the second visit.",
+      "pt": "A Bock, de outubro a maio, que é outra cerveja e vale a segunda visita.",
+      "de": "Der Bock von Oktober bis Mai, ein ganz anderes Bier und den zweiten Besuch wert."
+    }
+  ],
+  "eat": [
+    {
+      "en": "A Franconian roast with Klöße, which is what most of the room is eating.",
+      "pt": "Um assado francônio com Klöße, que é o que a maior parte do salão está comendo.",
+      "de": "Ein fränkischer Braten mit Klößen — das essen die meisten im Raum."
+    },
+    {
+      "en": "The Brotzeit: bread, butter, radishes, cheese, and enough salt for another beer.",
+      "pt": "A Brotzeit: pão, manteiga, rabanetes, queijo, e sal suficiente para outra cerveja.",
+      "de": "Die Brotzeit: Brot, Butter, Radieschen, Käse und genug Salz für ein weiteres Bier."
+    },
+    {
+      "en": "In summer, sausages and bread in the garden, with the river a metre away.",
+      "pt": "No verão, linguiças e pão no jardim, com o rio a um metro.",
+      "de": "Im Sommer Bratwürste und Brot im Garten, einen Meter vom Fluss entfernt."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Closed Monday and Tuesday. Wednesday to Friday it opens at two, at weekends at eleven.",
+      "pt": "Fechado na segunda e na terça. De quarta a sexta abre às duas, nos fins de semana às onze.",
+      "de": "Montag und Dienstag geschlossen. Mittwoch bis Freitag ab zwei, am Wochenende ab elf."
+    },
+    {
+      "en": "The beer garden is a summer thing, May to September, and the steps by the river are the best seats in the house.",
+      "pt": "O beer garden é coisa de verão, de maio a setembro, e os degraus junto ao rio são os melhores lugares da casa.",
+      "de": "Der Biergarten ist Sommersache, Mai bis September, und die Stufen am Fluss sind die besten Plätze im Haus."
+    },
+    {
+      "en": "It is five minutes from the Altes Rathaus: cross to the left arm of the Regnitz and follow the mills upstream.",
+      "pt": "Fica a cinco minutos do Altes Rathaus: atravesse para a margem esquerda do Regnitz e siga os moinhos rio acima.",
+      "de": "Fünf Minuten vom Alten Rathaus: über den linken Regnitzarm und die Mühlen flussaufwärts."
+    },
+    {
+      "en": "Ask for the Zwickel if you want to taste the unfiltered beer straight from the tank.",
+      "pt": "Peça no Zwickel se quiser provar a cerveja não filtrada direto do tanque.",
+      "de": "Am Zwickel fragen, wenn das ungefilterte Bier direkt aus dem Tank probiert werden soll."
+    },
+    {
+      "en": "Cash, as in most Bamberg taverns. Cards are taken sometimes, not always.",
+      "pt": "Dinheiro, como na maioria das tavernas de Bamberg. Cartão às vezes é aceito, nem sempre.",
+      "de": "Bargeld wie in den meisten Bamberger Gaststuben. Karten gehen manchmal, nicht immer."
+    }
+  ],
+  "links": [
+    {
+      "label": "Klosterbräu",
+      "url": "https://klosterbraeu.de/"
+    },
+    {
+      "label": "Klosterbräu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Klosterbr%C3%A4u_Bamberg"
+    },
+    {
+      "label": "Bamberg tourism",
+      "url": "https://www.bamberg.info/"
+    }
+  ]
+}
