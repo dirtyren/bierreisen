@@ -411,7 +411,7 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
         "itinerary_intro": (
             "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): "
             "14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with "
-            "11 driving legs (2,296.5 km / 27 h 01) and 4 car-free brewery crawl days."
+            "11 driving legs (2,296.5 km / 27 h 01) and 4 brewery crawl days, three of them car-free."
         ),
         "itinerary_filters_html": """    <button type="button" class="filter-btn active" onclick="filterDays('all', this)">All 15 Days</button>
     <button type="button" class="filter-btn" onclick="filterDays('belgium', this)">🇧🇪 Belgium (Days 1–3)</button>
@@ -620,7 +620,7 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
         "itinerary_intro": (
             "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): "
             "14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with "
-            "11 driving legs (2,298.3 km / 27 h 04) and 4 car-free brewery crawl days. "
+            "11 driving legs (2,298.3 km / 27 h 04) and 4 brewery crawl days, three of them car-free. "
             "Cologne (Köln) on Day 4 splits the old 6 h 51 Ghent→Bamberg marathon into two manageable hops, "
             "while Day 15 runs straight from Munich back to FRA (402.0 km / 4 h 04)."
         ),
@@ -865,7 +865,7 @@ VARIANT_CONFIGS: Dict[str, Dict[str, Any]] = {
         "itinerary_intro": (
             "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): "
             "14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with "
-            "11 driving legs (2,305.6 km / 26 h 53) and 4 car-free brewery crawl days. "
+            "11 driving legs (2,305.6 km / 26 h 53) and 4 brewery crawl days, three of them car-free. "
             "Day 4 (Ghent → Würzburg, 565.4 km / 5 h 53) is the single long middle push — with Cologne sitting directly on the motorway route (≈3 h in, 10 min off) as the built-in Kölsch lunch break — leaving an easy 1 h 03 hop into Bamberg on Day 5 and every other middle leg at ≤ 3 h 11."
         ),
         "itinerary_callout_html": """
@@ -1076,6 +1076,9 @@ def build(variant: str = "v1", out_html: Optional[pathlib.Path] = None) -> pathl
                 f' &nbsp;·&nbsp; <span class="num">{fmt_duration_human(int(lg["minutes"]))}</span>'
                 f'</div>'
             )
+        elif d.get("detour"):
+            drive_html = ('<div class="drive-pill inplace">🚗 <strong>Base day</strong> &nbsp;·&nbsp; '
+                          'Short drives out to two village breweries (30 min total)</div>')
         else:
             drive_html = '<div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>'
 
