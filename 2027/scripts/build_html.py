@@ -19,6 +19,39 @@ def esc(s: Any) -> str:
     return html.escape(str(s), quote=True)
 
 
+def gmaps_url(query: str) -> str:
+    import urllib.parse
+    return "https://www.google.com/maps/search/?api=1&query=" + urllib.parse.quote(str(query))
+
+
+def gmaps_link(query: str, label: str = "Google Maps", cls: str = "gmaps") -> str:
+    if not str(query).strip():
+        return ""
+    return (f'<a class="{cls}" href="{gmaps_url(query)}" target="_blank" '
+            f'rel="noopener noreferrer">📍 {label}</a>')
+
+
+# venues that sit outside the town they are listed under
+VENUE_PLACE: Dict[str, str] = {
+    "Kloster Andechs": "Andechs, Germany",
+    "Wildbräu Grafing": "Grafing bei München, Germany",
+    "Schweiger Bräu": "Markt Schwaben, Germany",
+    "Brouwerij La Trappe": "Berkel-Enschot, Netherlands",
+    "Kloster Weltenburg": "Kelheim, Germany",
+    "Ayinger Bräustüberl": "Aying, Germany",
+}
+
+
+def venue_query(name: str, city: str, country: str) -> str:
+    clean = name.split(" (")[0].strip()
+    if clean in VENUE_PLACE:
+        return f"{clean}, {VENUE_PLACE[clean]}"
+    if "," in clean:
+        base, place = [x.strip() for x in clean.split(",", 1)]
+        return f"{base}, {place}, {country}"
+    return f"{clean}, {city}, {country}"
+
+
 def fmt_km_round(km: float) -> str:
     return f"{int(math.floor(km + 0.5)):,}"
 
@@ -1057,6 +1090,7 @@ def build(variant: str = "v1", out_html: Optional[pathlib.Path] = None) -> pathl
         <div class="day-heading-row">
           <h3>{esc(d['title'])}</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('{esc(base_id)}')">📍 Stop #{visit_num} on Map</button>
+          {gmaps_link(f"{bstop['name']}, {bstop['country']}", cls='gmaps gmaps-day')}
         </div>
         {drive_html}
         <ul class="day-items">
@@ -1119,6 +1153,7 @@ def build(variant: str = "v1", out_html: Optional[pathlib.Path] = None) -> pathl
             <h4>{esc(vname)}</h4>
             <p class="desc">{esc(vnote)}</p>
             <div class="order-this">🍺 <strong>Order this:</strong> {esc(order_this)}</div>
+            <div class="card-links">{gmaps_link(venue_query(vname, city_name, s_obj["country"]))}</div>
           </div>""")
 
         city_sections_html.append(f"""      <section class="city-ranking-section" data-city-section="{c_slug}">
@@ -1893,6 +1928,15 @@ button:focus-visible, a:focus-visible, input:focus-visible {{
   margin-bottom: 0.9rem;
   flex-grow: 1;
 }}
+.card-links {{ margin-top: .55rem; }}
+.gmaps {{
+  display: inline-block; align-self: flex-start; padding: .24rem .68rem; border-radius: 999px;
+  border: 1px solid rgba(245, 215, 110, .32); color: var(--beer-light); background: rgba(12, 22, 42, .5);
+  font-size: .76rem; font-weight: 600; text-decoration: none; transition: background .18s, border-color .18s;
+}}
+.gmaps:hover {{ background: rgba(245, 215, 110, .14); border-color: rgba(245, 215, 110, .55); }}
+.gmaps-day {{ margin-left: .45rem; vertical-align: middle; }}
+.popup-gmaps {{ margin-top: 6px; font-size: 11px; padding: 2px 9px; }}
 .order-this {{
   background: rgba(12, 22, 42, 0.65);
   border: 1px solid rgba(245, 215, 110, 0.3);
@@ -2636,7 +2680,9 @@ function initMap() {{
       '<div class="popup-meta">' + nightsLine + '</div>' +
       addrLine +
       '<div class="popup-note">' + s.note + '</div>' +
-      nextLine;
+      nextLine +
+      '<a class="gmaps popup-gmaps" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=' +
+        s.lat + ',' + s.lon + '">📍 Google Maps</a>';
 
     const marker = L.marker([s.lat, s.lon], {{ icon: icon }}).bindPopup(popupHtml, {{ maxWidth: 320 }}).addTo(leafletMap);
     markerByStopId[s.id] = marker;
