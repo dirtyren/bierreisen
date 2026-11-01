@@ -44,13 +44,37 @@ p.lede{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}
 .day-items{margin-left:1.1rem;color:var(--muted);font-size:.9rem}
 .day-items li{margin:.2rem 0}
 #map-container{height:620px;border-radius:12px;border:1px solid var(--border)}
-.city-block{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem}
-.city-block h3{color:var(--gold);font-size:1.1rem;margin-bottom:.8rem}
-.venue{display:flex;gap:.9rem;padding:.6rem 0;border-top:1px solid rgba(42,48,80,.6)}
-.venue:first-of-type{border-top:none}
-.venue .rank{color:var(--gold);font-weight:800;opacity:.75;min-width:1.6rem}
-.venue h4{font-size:.98rem;margin-bottom:.15rem}
-.venue p{color:var(--muted);font-size:.88rem}
+.section-intro{margin-bottom:1.3rem}
+.city-ranking-section{margin-bottom:2.4rem}
+.city-section-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.9rem;
+  margin-bottom:1.1rem;padding-bottom:.7rem;border-bottom:1px solid var(--border)}
+.city-section-header h3{font-size:1.15rem;color:var(--text);margin:0}
+.city-subnote{color:var(--muted);font-size:.86rem;margin-top:.35rem;max-width:54ch}
+.city-meta-pill{font-size:.73rem;font-weight:600;color:var(--muted);background:rgba(21,24,51,.9);
+  border:1px solid var(--border);padding:.14rem .55rem;border-radius:999px;vertical-align:middle;margin-left:.4rem}
+.city-famous-pill{background:rgba(230,168,23,.13);border:1px solid rgba(230,168,23,.42);color:var(--gold);
+  padding:.36rem .8rem;border-radius:999px;font-size:.82rem}
+.brewery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.05rem}
+.brewery-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.15rem 1.2rem;
+  position:relative;display:flex;flex-direction:column;gap:.45rem;box-shadow:0 8px 20px rgba(5,8,20,.35);
+  transition:border-color .2s,transform .2s}
+.brewery-card:hover{border-color:rgba(230,168,23,.5);transform:translateY(-2px)}
+.brewery-card .rank{position:absolute;top:-11px;right:14px;background:var(--gold);color:#0b0c15;width:30px;
+  height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;
+  font-size:.82rem;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+.card-city-tag{color:#43d19e;font-size:.71rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.brewery-card h4{font-size:1rem;color:var(--text)}
+.brewery-card .desc{color:var(--muted);font-size:.86rem;line-height:1.5;flex:1}
+.order-this{background:rgba(8,10,20,.55);border:1px solid rgba(230,168,23,.28);border-radius:8px;
+  padding:.5rem .65rem;font-size:.81rem;color:#f0d98a;line-height:1.45}
+.region-filter{display:flex;gap:.45rem;margin-bottom:1.4rem;flex-wrap:wrap;align-items:center}
+.filter-btn{padding:.42rem .9rem;border:1px solid var(--border);background:var(--panel);color:var(--text);
+  border-radius:999px;font-family:inherit;font-size:.83rem;font-weight:600;cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s}
+.filter-btn:hover{border-color:rgba(230,168,23,.5);color:var(--gold)}
+.filter-btn.active{background:var(--gold);color:#0b0c15;border-color:var(--gold)}
+.search-input{padding:.45rem .9rem;border-radius:999px;border:1px solid var(--border);
+  background:var(--panel);color:var(--text);font-family:inherit;font-size:.86rem;min-width:290px}
 table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:1.4rem}
 th,td{padding:.55rem .7rem;border-bottom:1px solid var(--border);text-align:left}
 th{color:var(--gold);font-weight:700;background:rgba(21,24,51,.9);position:sticky;top:52px}
@@ -80,7 +104,7 @@ td.diag{color:#3a4368;text-align:center}
 <nav class="tabs">
   <button class="tab active" onclick="showTab('itinerary',this)">📋 Itinerary</button>
   <button class="tab" onclick="showTab('map',this)">🗺️ Map</button>
-  <button class="tab" onclick="showTab('rankings',this)">🍺 Rankings</button>
+  <button class="tab" onclick="showTab('rankings',this)">🏆 Rankings</button>
   <button class="tab" onclick="showTab('beers',this)">📖 Beer Guide</button>
   <button class="tab" onclick="showTab('drives',this)">🚗 Drive Times</button>
   <button class="tab" onclick="showTab('suggest',this)">💡 Suggestions</button>
@@ -287,194 +311,372 @@ td.diag{color:#3a4368;text-align:center}
 </section>
 
 <section id="rankings" class="tab-content">
-  <h2 class="section">What to drink where</h2>
-  <p class="lede">One section per stop, ranked by how much the place is worth a detour — from the Rauchbier
-    town to the two brewery inns in the Allgäu and the fourteen Munich addresses on the list.</p>
-  
-      <section class="city-block">
-        <h3>Bamberg</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Schlenkerla</h4><p>Rauchbier since 1405 — beechwood-smoked malt served from oak barrels in a vaulted cellar.</p></div>
+  <div class="section-intro">
+    <h2 class="section">🏆 Per-City Brewery &amp; Bar Rankings</h2>
+    <p class="lede">36 venues across 10 stops, ranked 1..n per city, with what to
+      order at each one — the beer worth the detour, not just the closest bar.</p>
+  </div>
+
+  <div class="region-filter" id="ranking-filters">
+    <button type="button" class="filter-btn active" onclick="filterRankings('all', this)">All stops (36)</button>
+    <button type="button" class="filter-btn" onclick="filterRankings('bamberg', this)">🇩🇪 Bamberg (6)</button><button type="button" class="filter-btn" onclick="filterRankings('nuremberg', this)">🇩🇪 Nuremberg (4)</button><button type="button" class="filter-btn" onclick="filterRankings('essing', this)">🇩🇪 Essing (3)</button><button type="button" class="filter-btn" onclick="filterRankings('traunstein', this)">🇩🇪 Traunstein (2)</button><button type="button" class="filter-btn" onclick="filterRankings('sch-nram-petting', this)">🇩🇪 Schönram (Petting) (1)</button><button type="button" class="filter-btn" onclick="filterRankings('berchtesgaden', this)">🇩🇪 Berchtesgaden (3)</button><button type="button" class="filter-btn" onclick="filterRankings('nesselwang', this)">🇩🇪 Nesselwang (1)</button><button type="button" class="filter-btn" onclick="filterRankings('missen-wilhams', this)">🇩🇪 Missen-Wilhams (1)</button><button type="button" class="filter-btn" onclick="filterRankings('munich', this)">🇩🇪 Munich (14)</button><button type="button" class="filter-btn" onclick="filterRankings('frankfurt-airport', this)">🇩🇪 Frankfurt Airport (1)</button>
+    <input type="search" id="venue-search" class="search-input" placeholder="🔍 Search venues, styles, notes..."
+           oninput="searchRankings()" aria-label="Search venues" />
+  </div>
+
+  <div id="rankings-container">
+      <section class="city-ranking-section" data-city-section="bamberg">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Bamberg <span class="city-meta-pill">2 nights · Stop #3</span></h3>
+            <p class="city-subnote">Hotel Andres, then two days of smoke in the UNESCO old town.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Spezial</h4><p>The Bambergers&#x27; own rauchbier: the smoke is a whisper next to Schlenkerla.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Mahr&#x27;s Bräu</h4><p>The &#x27;aU&#x27; Ungespundetes — unfiltered, naturally carbonated, the classic Franconian lager.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Fässla</h4><p>Zwergla dark lager, brewery tap opposite Spezial, open late.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">05</span>
-            <div><h4>Klosterbräu</h4><p>Bamberg&#x27;s oldest brewery (1533); the Schwärzla is the one to order.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">06</span>
-            <div><h4>Greifenklau</h4><p>Beer garden above the city with the best view of the roofs.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Rauchbier</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg schlenkerla rauchbier since 1405 — beechwood-smoked malt served from oak barrels in a vaulted cellar. aecht schlenkerla rauchbier märzen, poured in the vaulted cellar">
+              <span class="rank" title="Rank #1 in Bamberg">1</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #1 of 6</div>
+              <h4>Schlenkerla</h4>
+              <p class="desc">Rauchbier since 1405 — beechwood-smoked malt served from oak barrels in a vaulted cellar.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Aecht Schlenkerla Rauchbier Märzen, poured in the vaulted cellar</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg spezial the bambergers&#x27; own rauchbier: the smoke is a whisper next to schlenkerla. spezial rauchbier lager — the quieter, more local smoke">
+              <span class="rank" title="Rank #2 in Bamberg">2</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #2 of 6</div>
+              <h4>Spezial</h4>
+              <p class="desc">The Bambergers&#x27; own rauchbier: the smoke is a whisper next to Schlenkerla.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Spezial Rauchbier Lager — the quieter, more local smoke</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg mahr&#x27;s bräu the &#x27;au&#x27; ungespundetes — unfiltered, naturally carbonated, the classic franconian lager. the au at the schwemme window, glass in hand">
+              <span class="rank" title="Rank #3 in Bamberg">3</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #3 of 6</div>
+              <h4>Mahr&#x27;s Bräu</h4>
+              <p class="desc">The &#x27;aU&#x27; Ungespundetes — unfiltered, naturally carbonated, the classic Franconian lager.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The aU at the Schwemme window, glass in hand</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg fässla zwergla dark lager, brewery tap opposite spezial, open late. zwergla, the dark one, across from spezial">
+              <span class="rank" title="Rank #4 in Bamberg">4</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #4 of 6</div>
+              <h4>Fässla</h4>
+              <p class="desc">Zwergla dark lager, brewery tap opposite Spezial, open late.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Zwergla, the dark one, across from Spezial</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg klosterbräu bamberg&#x27;s oldest brewery (1533); the schwärzla is the one to order. schwärzla at bamberg&#x27;s oldest brewery">
+              <span class="rank" title="Rank #5 in Bamberg">5</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #5 of 6</div>
+              <h4>Klosterbräu</h4>
+              <p class="desc">Bamberg&#x27;s oldest brewery (1533); the Schwärzla is the one to order.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Schwärzla at Bamberg&#x27;s oldest brewery</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg greifenklau beer garden above the city with the best view of the roofs. helles in the garden, with the city below">
+              <span class="rank" title="Rank #6 in Bamberg">6</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #6 of 6</div>
+              <h4>Greifenklau</h4>
+              <p class="desc">Beer garden above the city with the best view of the roofs.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Helles in the garden, with the city below</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Nuremberg</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Altstadthof</h4><p>Hausbrauerei in the sandstone cellars under the castle — Rotbier and the rock-cut passages.</p></div>
+      <section class="city-ranking-section" data-city-section="nuremberg">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Nuremberg <span class="city-meta-pill">1 night · Stop #4</span></h3>
+            <p class="city-subnote">Leonard Hotel inside the walls; sandstone cellars under the castle.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Schanzenbräu</h4><p>Neighbourhood brewery on the hill; unfiltered Franconian styles, taproom with long tables.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Tucher Mautkeller</h4><p>Big vaulted cellar restaurant, Rotbier on tap, convenient on a cold night.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Barfüßer Hausbrauerei</h4><p>Brewpub by the river with copper kettles in the room and a young crowd.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Rotbier, from the rock cellars</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="nuremberg" data-search="nuremberg altstadthof hausbrauerei in the sandstone cellars under the castle — rotbier and the rock-cut passages. hausbrauerei rotbier, in the cellars cut into the sandstone">
+              <span class="rank" title="Rank #1 in Nuremberg">1</span>
+              <div class="card-city-tag">🇩🇪 Nuremberg · #1 of 4</div>
+              <h4>Altstadthof</h4>
+              <p class="desc">Hausbrauerei in the sandstone cellars under the castle — Rotbier and the rock-cut passages.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Hausbrauerei Rotbier, in the cellars cut into the sandstone</div>
+            </div>
+            <div class="brewery-card" data-city="nuremberg" data-search="nuremberg schanzenbräu neighbourhood brewery on the hill; unfiltered franconian styles, taproom with long tables. schanzenbräu helles, unfiltered, on the hill">
+              <span class="rank" title="Rank #2 in Nuremberg">2</span>
+              <div class="card-city-tag">🇩🇪 Nuremberg · #2 of 4</div>
+              <h4>Schanzenbräu</h4>
+              <p class="desc">Neighbourhood brewery on the hill; unfiltered Franconian styles, taproom with long tables.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Schanzenbräu Helles, unfiltered, on the hill</div>
+            </div>
+            <div class="brewery-card" data-city="nuremberg" data-search="nuremberg tucher mautkeller big vaulted cellar restaurant, rotbier on tap, convenient on a cold night. tucher rotbier in the vaulted hall">
+              <span class="rank" title="Rank #3 in Nuremberg">3</span>
+              <div class="card-city-tag">🇩🇪 Nuremberg · #3 of 4</div>
+              <h4>Tucher Mautkeller</h4>
+              <p class="desc">Big vaulted cellar restaurant, Rotbier on tap, convenient on a cold night.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Tucher Rotbier in the vaulted hall</div>
+            </div>
+            <div class="brewery-card" data-city="nuremberg" data-search="nuremberg barfüßer hausbrauerei brewpub by the river with copper kettles in the room and a young crowd. the house pils, next to the copper kettles">
+              <span class="rank" title="Rank #4 in Nuremberg">4</span>
+              <div class="card-city-tag">🇩🇪 Nuremberg · #4 of 4</div>
+              <h4>Barfüßer Hausbrauerei</h4>
+              <p class="desc">Brewpub by the river with copper kettles in the room and a young crowd.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The house Pils, next to the copper kettles</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Essing</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Gasthaus Felsenwastl</h4><p>The inn itself: Danube fish, local beer, and the river gorge at the door.</p></div>
+      <section class="city-ranking-section" data-city-section="essing">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Essing <span class="city-meta-pill">1 night · Stop #5</span></h3>
+            <p class="city-subnote">Gasthaus Felsenwastl on the Danube, the gorge at the door.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Kloster Weltenburg</h4><p>Benedictine abbey 10 km downstream — Asamkirche and the oldest monastery brewery in Bavaria.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Befreiungshalle Kelheim</h4><p>Not a brewery, but the walk up is worth the afternoon before dinner.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Danube fish and abbey beer</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="essing" data-search="essing gasthaus felsenwastl the inn itself: danube fish, local beer, and the river gorge at the door. the local landbier with danube fish, on the terrace">
+              <span class="rank" title="Rank #1 in Essing">1</span>
+              <div class="card-city-tag">🇩🇪 Essing · #1 of 3</div>
+              <h4>Gasthaus Felsenwastl</h4>
+              <p class="desc">The inn itself: Danube fish, local beer, and the river gorge at the door.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The local Landbier with Danube fish, on the terrace</div>
+            </div>
+            <div class="brewery-card" data-city="essing" data-search="essing kloster weltenburg benedictine abbey 10 km downstream — asamkirche and the oldest monastery brewery in bavaria. barock dunkel in the klosterschenke, with the danube outside">
+              <span class="rank" title="Rank #2 in Essing">2</span>
+              <div class="card-city-tag">🇩🇪 Essing · #2 of 3</div>
+              <h4>Kloster Weltenburg</h4>
+              <p class="desc">Benedictine abbey 10 km downstream — Asamkirche and the oldest monastery brewery in Bavaria.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Barock Dunkel in the Klosterschenke, with the Danube outside</div>
+            </div>
+            <div class="brewery-card" data-city="essing" data-search="essing befreiungshalle kelheim not a brewery, but the walk up is worth the afternoon before dinner. no beer here — climb it before dinner instead">
+              <span class="rank" title="Rank #3 in Essing">3</span>
+              <div class="card-city-tag">🇩🇪 Essing · #3 of 3</div>
+              <h4>Befreiungshalle Kelheim</h4>
+              <p class="desc">Not a brewery, but the walk up is worth the afternoon before dinner.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> No beer here — climb it before dinner instead</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Traunstein</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Hofbräuhaus Traunstein</h4><p>Village-scale Hofbräuhaus with its own maltings; the Hell and the Doppelbock are the local benchmarks.</p></div>
+      <section class="city-ranking-section" data-city-section="traunstein">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Traunstein <span class="city-meta-pill">1 night · Stop #6</span></h3>
+            <p class="city-subnote">Hotel Rosenheimer Hof — the key is in the safe by the back door.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Brauerei Wieninger</h4><p>Family brewery in Teisendorf, 15 km away — a half-day detour if the weather is bad.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Chiemgau Helles and Doppelbock</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="traunstein" data-search="traunstein hofbräuhaus traunstein village-scale hofbräuhaus with its own maltings; the hell and the doppelbock are the local benchmarks. the hell, then the doppelbock if it is in season">
+              <span class="rank" title="Rank #1 in Traunstein">1</span>
+              <div class="card-city-tag">🇩🇪 Traunstein · #1 of 2</div>
+              <h4>Hofbräuhaus Traunstein</h4>
+              <p class="desc">Village-scale Hofbräuhaus with its own maltings; the Hell and the Doppelbock are the local benchmarks.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The Hell, then the Doppelbock if it is in season</div>
+            </div>
+            <div class="brewery-card" data-city="traunstein" data-search="traunstein brauerei wieninger family brewery in teisendorf, 15 km away — a half-day detour if the weather is bad. wieninger hell in teisendorf, 18 km away">
+              <span class="rank" title="Rank #2 in Traunstein">2</span>
+              <div class="card-city-tag">🇩🇪 Traunstein · #2 of 2</div>
+              <h4>Brauerei Wieninger</h4>
+              <p class="desc">Family brewery in Teisendorf, 15 km away — a half-day detour if the weather is bad.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Wieninger Hell in Teisendorf, 18 km away</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Schönram (Petting)</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Private Landbrauerei Schönram</h4><p>One of Germany&#x27;s most respected private breweries: Schönramer Pils is bitter, floral and dry — the reason to drive to Petting.</p></div>
+      <section class="city-ranking-section" data-city-section="sch-nram-petting">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Schönram (Petting) <span class="city-meta-pill">visit · Stop #7</span></h3>
+            <p class="city-subnote">A 23 km detour off the Traunstein road that justifies the car.</p>
           </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Schönramer Pils — bitter, floral, bone dry</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="sch-nram-petting" data-search="schönram (petting) private landbrauerei schönram one of germany&#x27;s most respected private breweries: schönramer pils is bitter, floral and dry — the reason to drive to petting. schönramer pils, then the salome if the shop has it">
+              <span class="rank" title="Rank #1 in Schönram (Petting)">1</span>
+              <div class="card-city-tag">🇩🇪 Schönram (Petting) · #1 of 1</div>
+              <h4>Private Landbrauerei Schönram</h4>
+              <p class="desc">One of Germany&#x27;s most respected private breweries: Schönramer Pils is bitter, floral and dry — the reason to drive to Petting.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Schönramer Pils, then the Salome if the shop has it</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Berchtesgaden</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Hofbrauhaus Berchtesgaden</h4><p>The town&#x27;s own brewery and restaurant; Helles and Dunkel brewed in the valley.</p></div>
+      <section class="city-ranking-section" data-city-section="berchtesgaden">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Berchtesgaden <span class="city-meta-pill">2 nights · Stop #8</span></h3>
+            <p class="city-subnote">Alpensport-Hotel Seimler, Maria am Berg, under the Watzmann.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Grassl Distillery</h4><p>Enzian and fruit brandies, for the non-beer half of the evening.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Königssee</h4><p>Electric boat to St. Bartholomä — the scenery half of the two days.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Valley Helles and the Königssee</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="berchtesgaden" data-search="berchtesgaden hofbrauhaus berchtesgaden the town&#x27;s own brewery and restaurant; helles and dunkel brewed in the valley. helles, then the dunkel, in the town&#x27;s own brewery">
+              <span class="rank" title="Rank #1 in Berchtesgaden">1</span>
+              <div class="card-city-tag">🇩🇪 Berchtesgaden · #1 of 3</div>
+              <h4>Hofbrauhaus Berchtesgaden</h4>
+              <p class="desc">The town&#x27;s own brewery and restaurant; Helles and Dunkel brewed in the valley.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Helles, then the Dunkel, in the town&#x27;s own brewery</div>
+            </div>
+            <div class="brewery-card" data-city="berchtesgaden" data-search="berchtesgaden grassl distillery enzian and fruit brandies, for the non-beer half of the evening. enzian — not beer, but the local firewater">
+              <span class="rank" title="Rank #2 in Berchtesgaden">2</span>
+              <div class="card-city-tag">🇩🇪 Berchtesgaden · #2 of 3</div>
+              <h4>Grassl Distillery</h4>
+              <p class="desc">Enzian and fruit brandies, for the non-beer half of the evening.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Enzian — not beer, but the local firewater</div>
+            </div>
+            <div class="brewery-card" data-city="berchtesgaden" data-search="berchtesgaden königssee electric boat to st. bartholomä — the scenery half of the two days. nothing to drink: take the boat to st. bartholomä">
+              <span class="rank" title="Rank #3 in Berchtesgaden">3</span>
+              <div class="card-city-tag">🇩🇪 Berchtesgaden · #3 of 3</div>
+              <h4>Königssee</h4>
+              <p class="desc">Electric boat to St. Bartholomä — the scenery half of the two days.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Nothing to drink: take the boat to St. Bartholomä</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Nesselwang</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Brauerei-Gasthof Post</h4><p>Brewery and Gasthof in one building: sleep upstairs, drink the house beer downstairs.</p></div>
+      <section class="city-ranking-section" data-city-section="nesselwang">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Nesselwang <span class="city-meta-pill">1 night · Stop #9</span></h3>
+            <p class="city-subnote">Brauerei-Gasthof Post: sleep above the brewhouse.</p>
           </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Allgäu house beer</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="nesselwang" data-search="nesselwang brauerei-gasthof post brewery and gasthof in one building: sleep upstairs, drink the house beer downstairs. the house helles, from the tank, at the table above the kettle">
+              <span class="rank" title="Rank #1 in Nesselwang">1</span>
+              <div class="card-city-tag">🇩🇪 Nesselwang · #1 of 1</div>
+              <h4>Brauerei-Gasthof Post</h4>
+              <p class="desc">Brewery and Gasthof in one building: sleep upstairs, drink the house beer downstairs.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The house Helles, from the tank, at the table above the kettle</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Missen-Wilhams</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Brauereigasthof Schäffler</h4><p>Allgäu village brewery with a wood-panelled Stube; a handful of beers, all served young.</p></div>
+      <section class="city-ranking-section" data-city-section="missen-wilhams">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Missen-Wilhams <span class="city-meta-pill">1 night · Stop #10</span></h3>
+            <p class="city-subnote">Brauereigasthof Schäffler, a village brewery with a wood stove.</p>
           </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Young Allgäu Landbier</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="missen-wilhams" data-search="missen-wilhams brauereigasthof schäffler allgäu village brewery with a wood-panelled stube; a handful of beers, all served young. whatever is youngest — the beer does not travel far here">
+              <span class="rank" title="Rank #1 in Missen-Wilhams">1</span>
+              <div class="card-city-tag">🇩🇪 Missen-Wilhams · #1 of 1</div>
+              <h4>Brauereigasthof Schäffler</h4>
+              <p class="desc">Allgäu village brewery with a wood-panelled Stube; a handful of beers, all served young.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Whatever is youngest — the beer does not travel far here</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Munich</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Kloster Andechs</h4><p>Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</p></div>
+      <section class="city-ranking-section" data-city-section="munich">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Munich <span class="city-meta-pill">7 nights · Stop #11</span></h3>
+            <p class="city-subnote">Hotel Italia, Schillerstraße, and the whole city by U-Bahn.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Weihenstephan, Freising</h4><p>The world&#x27;s oldest continuously operating brewery site (38 km); the Bräustüberl pours the standards.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Augustiner Bräustuben</h4><p>The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel, meatloaf at the next table.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Augustiner Keller</h4><p>Beer garden under the chestnuts; one of the few places still pouring from wooden barrels.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">05</span>
-            <div><h4>Chinesischer Turm</h4><p>Englischer Garten beer garden at the pagoda — 7,000 seats, brass band, Maß in hand.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">06</span>
-            <div><h4>Viktualienmarkt</h4><p>Market beer garden in the centre, with the Maibaum overhead and a rotating brewery tap.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">07</span>
-            <div><h4>Schneider Bräuhaus</h4><p>Wheat-beer house on Tal: Aventinus, the original Tap 7, and a menu built for it.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">08</span>
-            <div><h4>Paulaner Brauhaus</h4><p>The Nockherberg brewpub — Salvator season if you are lucky with the calendar.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">09</span>
-            <div><h4>Giesinger Bräu</h4><p>Craft brewery in Giesing; Erhellung unfiltered Helles and a taproom full of locals.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">10</span>
-            <div><h4>Hopfenhäcker</h4><p>Creative brewery founded 2016 in Haidhausen, moved into the Forschungsbrauerei in Perlach in 2021.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">11</span>
-            <div><h4>Forschungsbrauerei Bräustüberl</h4><p>Perlach research brewery and taproom — the same address as Hopfenhäcker, so both in one stop.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">12</span>
-            <div><h4>Isartaler Brauhaus</h4><p>Neighbourhood brewpub in the south of the city, house beers brewed on site.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">13</span>
-            <div><h4>Schweiger Bräu</h4><p>Private brewery in Markt Schwaben, east of the city — find it on tap around town.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">14</span>
-            <div><h4>Wildbräu Grafing</h4><p>Grafing&#x27;s own brewery, almost a thousand years of history and eleven classic Bavarian beers.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Helles, Weißbier, and the beer gardens</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="munich" data-search="munich kloster andechs benedictine monastery brewery above the ammersee (45 km) — doppelbock dunkel and a terrace over the valley. doppelbock dunkel on the terrace above the ammersee">
+              <span class="rank" title="Rank #1 in Munich">1</span>
+              <div class="card-city-tag">🇩🇪 Munich · #1 of 14</div>
+              <h4>Kloster Andechs</h4>
+              <p class="desc">Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Doppelbock Dunkel on the terrace above the Ammersee</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich weihenstephan, freising the world&#x27;s oldest continuously operating brewery site (38 km); the bräustüberl pours the standards. weihenstephaner helles at the oldest brewery site in the world">
+              <span class="rank" title="Rank #2 in Munich">2</span>
+              <div class="card-city-tag">🇩🇪 Munich · #2 of 14</div>
+              <h4>Weihenstephan, Freising</h4>
+              <p class="desc">The world&#x27;s oldest continuously operating brewery site (38 km); the Bräustüberl pours the standards.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Weihenstephaner Helles at the oldest brewery site in the world</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich augustiner bräustuben the augustiner brewery tap on landsberger straße: edelstoff from the wooden barrel, meatloaf at the next table. edelstoff from the wooden barrel, with meatloaf">
+              <span class="rank" title="Rank #3 in Munich">3</span>
+              <div class="card-city-tag">🇩🇪 Munich · #3 of 14</div>
+              <h4>Augustiner Bräustuben</h4>
+              <p class="desc">The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel, meatloaf at the next table.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Edelstoff from the wooden barrel, with meatloaf</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich augustiner keller beer garden under the chestnuts; one of the few places still pouring from wooden barrels. another edelstoff, under the chestnuts">
+              <span class="rank" title="Rank #4 in Munich">4</span>
+              <div class="card-city-tag">🇩🇪 Munich · #4 of 14</div>
+              <h4>Augustiner Keller</h4>
+              <p class="desc">Beer garden under the chestnuts; one of the few places still pouring from wooden barrels.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Another Edelstoff, under the chestnuts</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich chinesischer turm englischer garten beer garden at the pagoda — 7,000 seats, brass band, maß in hand. a maß at the pagoda, with the brass band">
+              <span class="rank" title="Rank #5 in Munich">5</span>
+              <div class="card-city-tag">🇩🇪 Munich · #5 of 14</div>
+              <h4>Chinesischer Turm</h4>
+              <p class="desc">Englischer Garten beer garden at the pagoda — 7,000 seats, brass band, Maß in hand.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> A Maß at the pagoda, with the brass band</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich viktualienmarkt market beer garden in the centre, with the maibaum overhead and a rotating brewery tap. whatever brewery is on the market tap this month">
+              <span class="rank" title="Rank #6 in Munich">6</span>
+              <div class="card-city-tag">🇩🇪 Munich · #6 of 14</div>
+              <h4>Viktualienmarkt</h4>
+              <p class="desc">Market beer garden in the centre, with the Maibaum overhead and a rotating brewery tap.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Whatever brewery is on the market tap this month</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich schneider bräuhaus wheat-beer house on tal: aventinus, the original tap 7, and a menu built for it. aventinus, and the tap 7 to follow">
+              <span class="rank" title="Rank #7 in Munich">7</span>
+              <div class="card-city-tag">🇩🇪 Munich · #7 of 14</div>
+              <h4>Schneider Bräuhaus</h4>
+              <p class="desc">Wheat-beer house on Tal: Aventinus, the original Tap 7, and a menu built for it.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Aventinus, and the Tap 7 to follow</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich paulaner brauhaus the nockherberg brewpub — salvator season if you are lucky with the calendar. salvator if it is march; otherwise the helles">
+              <span class="rank" title="Rank #8 in Munich">8</span>
+              <div class="card-city-tag">🇩🇪 Munich · #8 of 14</div>
+              <h4>Paulaner Brauhaus</h4>
+              <p class="desc">The Nockherberg brewpub — Salvator season if you are lucky with the calendar.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Salvator if it is March; otherwise the Helles</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich giesinger bräu craft brewery in giesing; erhellung unfiltered helles and a taproom full of locals. erhellung, unfiltered">
+              <span class="rank" title="Rank #9 in Munich">9</span>
+              <div class="card-city-tag">🇩🇪 Munich · #9 of 14</div>
+              <h4>Giesinger Bräu</h4>
+              <p class="desc">Craft brewery in Giesing; Erhellung unfiltered Helles and a taproom full of locals.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Erhellung, unfiltered</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich hopfenhäcker creative brewery founded 2016 in haidhausen, moved into the forschungsbrauerei in perlach in 2021. something hoppy and new — the creative brewery&#x27;s own">
+              <span class="rank" title="Rank #10 in Munich">10</span>
+              <div class="card-city-tag">🇩🇪 Munich · #10 of 14</div>
+              <h4>Hopfenhäcker</h4>
+              <p class="desc">Creative brewery founded 2016 in Haidhausen, moved into the Forschungsbrauerei in Perlach in 2021.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Something hoppy and new — the creative brewery&#x27;s own</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich forschungsbrauerei bräustüberl perlach research brewery and taproom — the same address as hopfenhäcker, so both in one stop. the forschungsbräu helles, in the taproom next door">
+              <span class="rank" title="Rank #11 in Munich">11</span>
+              <div class="card-city-tag">🇩🇪 Munich · #11 of 14</div>
+              <h4>Forschungsbrauerei Bräustüberl</h4>
+              <p class="desc">Perlach research brewery and taproom — the same address as Hopfenhäcker, so both in one stop.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The Forschungsbräu Helles, in the taproom next door</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich isartaler brauhaus neighbourhood brewpub in the south of the city, house beers brewed on site. the house beer, brewed in the room">
+              <span class="rank" title="Rank #12 in Munich">12</span>
+              <div class="card-city-tag">🇩🇪 Munich · #12 of 14</div>
+              <h4>Isartaler Brauhaus</h4>
+              <p class="desc">Neighbourhood brewpub in the south of the city, house beers brewed on site.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The house beer, brewed in the room</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich schweiger bräu private brewery in markt schwaben, east of the city — find it on tap around town. schweiger helles on tap somewhere in town — ask which bar has it this week">
+              <span class="rank" title="Rank #13 in Munich">13</span>
+              <div class="card-city-tag">🇩🇪 Munich · #13 of 14</div>
+              <h4>Schweiger Bräu</h4>
+              <p class="desc">Private brewery in Markt Schwaben, east of the city — find it on tap around town.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Schweiger Helles on tap somewhere in town — ask which bar has it this week</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich wildbräu grafing grafing&#x27;s own brewery, almost a thousand years of history and eleven classic bavarian beers. wildbräu helles — eleven classic beers, almost a thousand years">
+              <span class="rank" title="Rank #14 in Munich">14</span>
+              <div class="card-city-tag">🇩🇪 Munich · #14 of 14</div>
+              <h4>Wildbräu Grafing</h4>
+              <p class="desc">Grafing&#x27;s own brewery, almost a thousand years of history and eleven classic Bavarian beers.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Wildbräu Helles — eleven classic beers, almost a thousand years</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Frankfurt Airport</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Frankfurt Airport</h4><p>No beer stop planned — land, collect the car, drive east. The return leg is 404 km before a long flight.</p></div>
+      <section class="city-ranking-section" data-city-section="frankfurt-airport">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Frankfurt Airport <span class="city-meta-pill">transit · day 1 and day 18</span></h3>
+            <p class="city-subnote">Land, collect the car, drive east. No beer stop planned.</p>
           </div>
-      </section>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Nothing — get on the road</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="frankfurt-airport" data-search="frankfurt airport frankfurt airport no beer stop planned — land, collect the car, drive east. the return leg is 404 km before a long flight. an espresso, then the a3 east">
+              <span class="rank" title="Rank #1 in Frankfurt Airport">1</span>
+              <div class="card-city-tag">🇩🇪 Frankfurt Airport · #1 of 1</div>
+              <h4>Frankfurt Airport</h4>
+              <p class="desc">No beer stop planned — land, collect the car, drive east. The return leg is 404 km before a long flight.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> An espresso, then the A3 east</div>
+            </div></div>
+      </section></div>
 </section>
 
 <section id="beers" class="tab-content">
@@ -562,6 +764,30 @@ function initMap() {
   map.invalidateSize();
   map.fitBounds(L.latLngBounds(pts).pad(0.06));
   window.tripMap = map;
+}
+
+var currentRankingCity = 'all';
+function filterRankings(citySlug, btnEl) {
+  currentRankingCity = citySlug;
+  document.querySelectorAll('#ranking-filters .filter-btn').forEach(function (b) { b.classList.remove('active'); });
+  if (btnEl) btnEl.classList.add('active');
+  applyRankingFilter();
+}
+function searchRankings() { applyRankingFilter(); }
+function applyRankingFilter() {
+  var input = document.getElementById('venue-search');
+  var q = (input && input.value ? input.value : '').trim().toLowerCase();
+  document.querySelectorAll('.city-ranking-section').forEach(function (sec) {
+    var cityMatch = (currentRankingCity === 'all' || sec.dataset.citySection === currentRankingCity);
+    var visible = 0;
+    sec.querySelectorAll('.brewery-card').forEach(function (card) {
+      var textMatch = !q || (card.dataset.search || '').indexOf(q) !== -1;
+      var show = cityMatch && textMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    sec.style.display = visible > 0 ? '' : 'none';
+  });
 }
 </script>
 </body>

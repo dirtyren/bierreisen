@@ -129807,177 +129807,215 @@
   "Munich (arrival)": [
    {
     "name": "Augustiner-Keller",
-    "note": "Munich's oldest brewery and the locals' choice; Edelstoff from wooden barrels under the chestnuts."
+    "note": "Munich's oldest brewery and the locals' choice; Edelstoff from wooden barrels under the chestnuts.",
+    "order": "Edelstoff by the Maß, and stay for the second"
    },
    {
     "name": "Schneider Bräuhaus",
-    "note": "The original wheat-beer house; Aventinus is the benchmark Weizenbock."
+    "note": "The original wheat-beer house; Aventinus is the benchmark Weizenbock.",
+    "order": "Aventinus, then the Eisbock if it is listed"
    },
    {
     "name": "Hofbräuhaus",
-    "note": "Brewing since 1589 — go once for the room."
+    "note": "Brewing since 1589 — go once for the room.",
+    "order": "Hofbräu Original in the main hall, with the brass band"
    },
    {
     "name": "Giesinger Bräu",
-    "note": "Garage-to-glory craft brewery in the south; Erhellung unfiltered Helles."
+    "note": "Garage-to-glory craft brewery in the south; Erhellung unfiltered Helles.",
+    "order": "Erhellung, the unfiltered Helles"
    }
   ],
   "Bamberg": [
    {
     "name": "Schlenkerla",
-    "note": "Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar."
+    "note": "Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar.",
+    "order": "Aecht Schlenkerla Rauchbier Märzen, beechwood smoke from the oak barrel"
    },
    {
     "name": "Spezial",
-    "note": "The locals' rauchbier — subtler smoke than Schlenkerla."
+    "note": "The locals' rauchbier — subtler smoke than Schlenkerla.",
+    "order": "Spezial Rauchbier Lager — the locals' answer to Schlenkerla"
    },
    {
     "name": "Mahr's Bräu",
-    "note": "The legendary 'aU' Ungespundetes, naturally carbonated and unfiltered."
+    "note": "The legendary 'aU' Ungespundetes, naturally carbonated and unfiltered.",
+    "order": "aU Ungespundetes, the reference Franconian lager"
    },
    {
     "name": "Fässla",
-    "note": "Zwergla dark lager, brewery tap opposite Spezial."
+    "note": "Zwergla dark lager, brewery tap opposite Spezial.",
+    "order": "Zwergla, dark and quaffable"
    },
    {
     "name": "Greifenklau",
-    "note": "Beer garden with the best view over the city."
+    "note": "Beer garden with the best view over the city.",
+    "order": "Lagerbier on the terrace — the walk up is the point"
    }
   ],
   "Düsseldorf": [
    {
     "name": "Uerige",
-    "note": "The reference Altbier: copper kettles, waiters who never stop pouring, and a house bitter enough to reset your palate."
+    "note": "The reference Altbier: copper kettles, waiters who never stop pouring, and a house bitter enough to reset your palate.",
+    "order": "Uerige Alt — bitter, copper-brewed, and the waiter never stops pouring"
    },
    {
     "name": "Brauerei Schumacher",
-    "note": "Oldest Altbier brewery in the city, blond and spritzy, in a tiled 19th-century hall."
+    "note": "Oldest Altbier brewery in the city, blond and spritzy, in a tiled 19th-century hall.",
+    "order": "Schumacher Alt, then the Jubiläums-Alt if it is on"
    },
    {
     "name": "Im Füchschen",
-    "note": "Altbier and Rhineland food in the Altstadt's busiest corner."
+    "note": "Altbier and Rhineland food in the Altstadt's busiest corner.",
+    "order": "Füchschen Alt with a plate of Rheinischer Sauerbraten"
    },
    {
     "name": "Zum Schlüssel",
-    "note": "Brewpub with a copper kettle in the cellar and a quieter room upstairs."
+    "note": "Brewpub with a copper kettle in the cellar and a quieter room upstairs.",
+    "order": "Schlüssel Alt, from the copper kettle in the cellar"
    }
   ],
   "La Trappe": [
    {
     "name": "Brouwerij La Trappe",
-    "note": "The only Dutch Trappist brewery, at Berkel-Enschot near Tilburg: Witte, Blond, Dubbel, Tripel and the barrel-aged Quadrupel."
+    "note": "The only Dutch Trappist brewery, at Berkel-Enschot near Tilburg: Witte, Blond, Dubbel, Tripel and the barrel-aged Quadrupel.",
+    "order": "Quadrupel, and the barrel-aged version if the shop still has it"
    }
   ],
   "Antwerp": [
    {
     "name": "Kulminator",
-    "note": "700+ bottles with vintages going back decades; the cellar list is the reason to come."
+    "note": "700+ bottles with vintages going back decades; the cellar list is the reason to come.",
+    "order": "A vintage gueuze or an old Duvel from the cellar list"
    },
    {
     "name": "Billie's Bier Kafétaria",
-    "note": "300+ beers in a cosy neighbourhood room, staff who know the list."
+    "note": "300+ beers in a cosy neighbourhood room, staff who know the list.",
+    "order": "Whatever the staff recommend from the 300 — tell them what you liked last"
    },
    {
     "name": "De Koninck City Brewery",
-    "note": "The Antwerp classic, Bolleke in its bowl-shaped glass."
+    "note": "The Antwerp classic, Bolleke in its bowl-shaped glass.",
+    "order": "Bolleke, then the brewery tour through the koelschip"
    }
   ],
   "Brussels": [
    {
     "name": "Cantillon",
-    "note": "The last traditional lambic brewery inside the city: coolship, barrels, Gueuze and Kriek with no sweetening."
+    "note": "The last traditional lambic brewery inside the city: coolship, barrels, Gueuze and Kriek with no sweetening.",
+    "order": "Gueuze 100% Lambic Bio, then the Kriek at the barrel room"
    },
    {
     "name": "Moeder Lambic",
-    "note": "40 taps of rare Belgian craft; the best introduction to the modern scene."
+    "note": "40 taps of rare Belgian craft; the best introduction to the modern scene.",
+    "order": "Something sour on tap — ask what is open from the wood"
    },
    {
     "name": "A la Mort Subite",
-    "note": "1928 Art Deco café; order the house gueuze at the bar."
+    "note": "1928 Art Deco café; order the house gueuze at the bar.",
+    "order": "House gueuze at the bar of the 1928 room"
    },
    {
     "name": "Poechenellekelder",
-    "note": "Puppet-themed pub opposite Manneken Pis, 100+ Belgian beers."
+    "note": "Puppet-themed pub opposite Manneken Pis, 100+ Belgian beers.",
+    "order": "A Trappist or a Flemish red, opposite Manneken Pis"
    }
   ],
   "Ghent": [
    {
     "name": "Gruut Stadsbrouwerij",
-    "note": "City brewery using a medieval herb-and-spice mix instead of hops."
+    "note": "City brewery using a medieval herb-and-spice mix instead of hops.",
+    "order": "Gruut Wit or Blond — the medieval herb mix is the house signature"
    },
    {
     "name": "De Dulle Griet",
-    "note": "500 beers on the Vrijdagmarkt, and the shoe-in-the-basket ritual."
+    "note": "500 beers on the Vrijdagmarkt, and the shoe-in-the-basket ritual.",
+    "order": "Anything from the 500-bottle list, with your shoe in the basket"
    },
    {
     "name": "Het Waterhuis aan de Bierkant",
-    "note": "Canal-side beer hall, around 170 beers."
+    "note": "Canal-side beer hall, around 170 beers.",
+    "order": "A Flemish red on the canal"
    }
   ],
   "Bruges": [
    {
     "name": "De Halve Maan",
-    "note": "Only active brewery in the historic centre; Brugse Zot and Straffe Hendrik, with the 3 km beer pipeline."
+    "note": "Only active brewery in the historic centre; Brugse Zot and Straffe Hendrik, with the 3 km beer pipeline.",
+    "order": "Brugse Zot blond, then Straffe Hendrik Quadrupel"
    },
    {
     "name": "De Garre",
-    "note": "Hidden alley café, house tripel at 11%, maximum three per person."
+    "note": "Hidden alley café, house tripel at 11%, maximum three per person.",
+    "order": "The house Tripel with the cube of cheese — and stop at three"
    },
    {
     "name": "'t Brugs Beertje",
-    "note": "300+ bottles, the classic brown bar of Bruges."
+    "note": "300+ bottles, the classic brown bar of Bruges.",
+    "order": "A vintage Flemish red from the 300+ list"
    },
    {
     "name": "Café Vlissinghe",
-    "note": "Oldest pub in Bruges (1515), bocce court in the garden."
+    "note": "Oldest pub in Bruges (1515), bocce court in the garden.",
+    "order": "A West Flanders blonde in the 1515 room, then bocce in the garden"
    }
   ],
   "Westvleteren": [
    {
     "name": "In de Vrede",
-    "note": "The café opposite Sint-Sixtus: the only reliable place to drink Westvleteren 12 on tap, with the abbey cheese."
+    "note": "The café opposite Sint-Sixtus: the only reliable place to drink Westvleteren 12 on tap, with the abbey cheese.",
+    "order": "Westvleteren 12 by the glass — the 8 if you are driving — and the abbey cheese"
    },
    {
     "name": "Sint-Sixtus Abbey",
-    "note": "The Trappist monastery itself — no tours, but the gate and the shop are part of the pilgrimage."
+    "note": "The Trappist monastery itself — no tours, but the gate and the shop are part of the pilgrimage.",
+    "order": "Whatever the gate shop allows — six bottles per person, booked ahead"
    }
   ],
   "Chimay (Poteaupré)": [
    {
     "name": "Auberge de Poteaupré",
-    "note": "The abbey's own inn and restaurant, a few hundred metres from Scourmont; Chimay Blue with abbey cheese."
+    "note": "The abbey's own inn and restaurant, a few hundred metres from Scourmont; Chimay Blue with abbey cheese.",
+    "order": "Chimay Bleue with the Scourmont cheese board"
    },
    {
     "name": "Chimay Scourmont Abbey",
-    "note": "The largest Trappist brewery; the Espace Chimay explains the brewing and the cheese."
+    "note": "The largest Trappist brewery; the Espace Chimay explains the brewing and the cheese.",
+    "order": "The Espace Chimay flight — Rouge, Blanche, Bleue side by side"
    }
   ],
   "Zwiefaltendorf": [
    {
     "name": "Blank's Brauerei",
-    "note": "Village brewery and Gasthof on the Danube — Swabian Landbier, roast pork and no pretence."
+    "note": "Village brewery and Gasthof on the Danube — Swabian Landbier, roast pork and no pretence.",
+    "order": "Blank's Landbier and a Schnitzel; the drive is tomorrow"
    }
   ],
   "Munich (return)": [
    {
     "name": "Augustiner-Keller",
-    "note": "Wooden-barrel Edelstoff under the chestnuts; the locals' answer to every tourist beer hall."
+    "note": "Wooden-barrel Edelstoff under the chestnuts; the locals' answer to every tourist beer hall.",
+    "order": "Edelstoff, again, because it is the best thing in the city"
    },
    {
     "name": "Schneider Bräuhaus",
-    "note": "Wheat-beer masters, Aventinus and the original Tap7."
+    "note": "Wheat-beer masters, Aventinus and the original Tap7.",
+    "order": "Aventinus Eisbock if it is on"
    },
    {
     "name": "Hofbräuhaus",
-    "note": "The room everyone has heard of; go early or late."
+    "note": "The room everyone has heard of; go early or late.",
+    "order": "Dunkel this time, in the upstairs room"
    },
    {
     "name": "Giesinger Bräu",
-    "note": "Munich craft with a neighbourhood taproom."
+    "note": "Munich craft with a neighbourhood taproom.",
+    "order": "The seasonal, whatever it is"
    },
    {
     "name": "Kloster Andechs (day trip)",
-    "note": "Benedictine monastery brewery above the Ammersee — Doppelbock Dunkel, 45 km from the city."
+    "note": "Benedictine monastery brewery above the Ammersee — Doppelbock Dunkel, 45 km from the city.",
+    "order": "Doppelbock Dunkel on the terrace above the Ammersee"
    }
   ]
  },
@@ -130024,5 +130062,79 @@
     "Hefeweizen"
    ]
   }
- ]
+ ],
+ "city_meta": {
+  "Munich (arrival)": {
+   "flag": "🇩🇪",
+   "stop": "1 night · Stop #2",
+   "subnote": "Hotel Royal, the first night, and the Altstadt on foot.",
+   "famous": "Helles and Weißbier"
+  },
+  "Bamberg": {
+   "flag": "🇩🇪",
+   "stop": "1 night · Stop #3",
+   "subnote": "Ibis Styles, the UNESCO old town, and five breweries within walking distance.",
+   "famous": "Rauchbier"
+  },
+  "Düsseldorf": {
+   "flag": "🇩🇪",
+   "stop": "2 nights · Stop #4",
+   "subnote": "Altstadt Hotel Rheinblick, in the middle of the Altstadt's Altbier mile.",
+   "famous": "Altbier, poured straight from the barrel"
+  },
+  "La Trappe": {
+   "flag": "🇳🇱",
+   "stop": "visit · Stop #5",
+   "subnote": "The only Dutch Trappist brewery, at Berkel-Enschot near Tilburg.",
+   "famous": "Trappist ale — Witte, Dubbel, Tripel, Quadrupel"
+  },
+  "Antwerp": {
+   "flag": "🇧🇪",
+   "stop": "1 night · Stop #6",
+   "subnote": "Hotel Banks, the cathedral quarter, and the deepest beer cellar in Belgium.",
+   "famous": "Vintage bottles and 700+ beer lists"
+  },
+  "Brussels": {
+   "flag": "🇧🇪",
+   "stop": "2 nights · Stop #7",
+   "subnote": "Ibis Brussels City Centre; Cantillon on one side, the Grand Place on the other.",
+   "famous": "Lambic and gueuze"
+  },
+  "Ghent": {
+   "flag": "🇧🇪",
+   "stop": "lunch stop · Stop #8",
+   "subnote": "An afternoon between Brussels and Bruges: herb beer and the Graslei.",
+   "famous": "Gruut — beer brewed with herbs instead of hops"
+  },
+  "Bruges": {
+   "flag": "🇧🇪",
+   "stop": "1 night · Stop #9",
+   "subnote": "Martin's Brugge, the Markt at night, and De Garre down an alley.",
+   "famous": "Brugse Zot and the 11% house tripel"
+  },
+  "Westvleteren": {
+   "flag": "🇧🇪",
+   "stop": "visit · Stop #10",
+   "subnote": "Sint-Sixtus Abbey and In de Vrede — the reason this road exists.",
+   "famous": "Westvleteren 12"
+  },
+  "Chimay (Poteaupré)": {
+   "flag": "🇧🇪",
+   "stop": "1 night · Stop #11",
+   "subnote": "Auberge de Poteaupré, the abbey's own inn at the edge of the forest.",
+   "famous": "Chimay Blue and the abbey cheese"
+  },
+  "Zwiefaltendorf": {
+   "flag": "🇩🇪",
+   "stop": "1 night · Stop #12",
+   "subnote": "Bauer am Bach on the Danube, dinner at a village brewery.",
+   "famous": "Swabian Landbier"
+  },
+  "Munich (return)": {
+   "flag": "🇩🇪",
+   "stop": "4 nights · Stop #13",
+   "subnote": "Hotel Royal again for the long finish, with Andechs as a day trip.",
+   "famous": "The full Munich range, one last time"
+  }
+ }
 }

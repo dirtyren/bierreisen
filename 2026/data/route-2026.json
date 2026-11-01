@@ -84106,115 +84106,148 @@
   "Merkendorf": [
    {
     "name": "Brauerei Wagner",
-    "note": "Family brewery in Merkendorf since 1797, Pointstraße 1 — Franconian lagers poured in the brewery tap a few steps from the kettle."
+    "note": "Family brewery in Merkendorf since 1797, Pointstraße 1 — Franconian lagers poured in the brewery tap a few steps from the kettle.",
+    "order": "Wagner Lagerbier and the dark, in the tap with the regulars"
    },
    {
     "name": "Drei Kronen, Memmelsdorf",
-    "note": "Brewery, Gasthof and hotel 11 km away; hand-brewed Franconian beer and a full menu."
+    "note": "Brewery, Gasthof and hotel 11 km away; hand-brewed Franconian beer and a full menu.",
+    "order": "Drei Kronen Lagerbier, 11 km away in the next village"
    },
    {
     "name": "Metzgerei-Brauerei, Merkendorf",
-    "note": "The village butcher who also brews — sausage, beer and a taproom in one building."
-   },
+    "note": "The village butcher who also brews — sausage, beer and a taproom in one building.",
+    "order": "The butcher's house beer, with the sausage that pays for it"
+   }
+  ],
+  "Bamberg (day trip)": [
    {
     "name": "Schlenkerla, Bamberg",
-    "note": "11 km to the Rauchbier cathedral: beechwood smoke, oak barrels, a vaulted cellar."
+    "note": "11 km to the Rauchbier cathedral: beechwood smoke, oak barrels, a vaulted cellar.",
+    "order": "Aecht Schlenkerla Rauchbier Märzen, from the oak barrel"
    },
    {
     "name": "Spezial, Bamberg",
-    "note": "The Bambergers' own rauchbier — softer smoke, shorter queue."
+    "note": "The Bambergers' own rauchbier — softer smoke, shorter queue.",
+    "order": "Spezial Rauchbier Lager — the local smoke"
    },
    {
     "name": "Mahr's Bräu, Bamberg",
-    "note": "The 'aU' Ungespundetes, the reference Franconian lager."
+    "note": "The 'aU' Ungespundetes, the reference Franconian lager.",
+    "order": "aU Ungespundetes, unfiltered"
+   },
+   {
+    "name": "Klosterbräu, Bamberg",
+    "note": "Bamberg's oldest brewery, founded 1533 — the Schwärzla dark lager is the one to order, in a building with a 16th-century ballroom upstairs.",
+    "order": "Schwärzla at Bamberg's oldest brewery, brewing since 1533"
    }
   ],
   "Plzeň": [
    {
     "name": "Pilsner Urquell (Prazdroj)",
-    "note": "The brewery that defined pilsner in 1842; the tour ends with an unfiltered pour in the cellars."
+    "note": "The brewery that defined pilsner in 1842; the tour ends with an unfiltered pour in the cellars.",
+    "order": "The cellar pour — unfiltered, unpasteurised, straight from the barrel"
    },
    {
     "name": "Na Spilce",
-    "note": "The brewery restaurant under the brewhouse — the freshest Prazdroj in town."
+    "note": "The brewery restaurant under the brewhouse — the freshest Prazdroj in town.",
+    "order": "Prazdroj under the brewhouse"
    },
    {
     "name": "Purkmistr, Černice",
-    "note": "Brewery, hotel and beer spa; book the bath if you want the full production."
+    "note": "Brewery, hotel and beer spa; book the bath if you want the full production.",
+    "order": "Purkmistr Helles, with the beer spa if you booked"
    },
    {
     "name": "Gambrinus",
-    "note": "The everyday Plzeň lager — lighter, cheaper, and just as local."
+    "note": "The everyday Plzeň lager — lighter, cheaper, and just as local.",
+    "order": "Gambrinus, the everyday lager of Plzeň"
    }
   ],
   "České Budějovice": [
    {
     "name": "Budweiser Budvar",
-    "note": "The other Budweiser: 70–80 minute tours through the brewhouse and the cellars, tasting at the end."
+    "note": "The other Budweiser: 70–80 minute tours through the brewhouse and the cellars, tasting at the end.",
+    "order": "Budvar Original from the tank, at the end of the 70-minute tour"
    },
    {
     "name": "Budvar Samson",
-    "note": "The city brewery on the main square — dark and light, in a 19th-century building."
+    "note": "The city brewery on the main square — dark and light, in a 19th-century building.",
+    "order": "Samson Tmavé on the square"
    },
    {
     "name": "Masné krámy",
-    "note": "The old meat market turned beer hall, Budvar by the metre."
+    "note": "The old meat market turned beer hall, Budvar by the metre.",
+    "order": "Budvar by the metre in the old meat market"
    }
   ],
   "Bad Reichenhall": [
    {
     "name": "Bürgerbräu Bad Reichenhall",
-    "note": "Private Alpine brewery since 1494, Waaggasse 1–3 — the town's own beer, with a Brauereigasthof."
+    "note": "Private Alpine brewery since 1494, Waaggasse 1–3 — the town's own beer, with a Brauereigasthof.",
+    "order": "Bürgerbräu Hell in the Brauereigasthof, brewing since 1494"
    },
    {
     "name": "Brennerbräu",
-    "note": "Gasthof between Bad Reichenhall and Berchtesgaden — the stop on the way back from Salzburg."
+    "note": "Gasthof between Bad Reichenhall and Berchtesgaden — the stop on the way back from Salzburg.",
+    "order": "The house beer on the road back from Salzburg"
    },
    {
     "name": "Hofbrauhaus Berchtesgaden",
-    "note": "18 km away: the valley's own brewery and restaurant, Helles and Dunkel."
+    "note": "18 km away: the valley's own brewery and restaurant, Helles and Dunkel.",
+    "order": "Helles in the valley brewery"
    },
    {
     "name": "Augustiner Bräu Mülln, Salzburg",
-    "note": "23 km across the border: the Mülln monastery brewery, beer from the wooden barrel, bring your own food."
+    "note": "23 km across the border: the Mülln monastery brewery, beer from the wooden barrel, bring your own food.",
+    "order": "Müllner Bräu by the litre, with cheese and radishes from your bag"
    },
    {
     "name": "Stiegl, Salzburg",
-    "note": "Austria's largest private brewery, with a brewery tour and a museum in the city."
+    "note": "Austria's largest private brewery, with a brewery tour and a museum in the city.",
+    "order": "Stiegl Goldbräu, in the brewery's own cellar"
    }
   ],
   "Munich": [
    {
     "name": "Kloster Andechs",
-    "note": "Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley."
+    "note": "Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.",
+    "order": "Doppelbock Dunkel above the Ammersee"
    },
    {
     "name": "Dachauer Brauerei",
-    "note": "20 km out: the town's craft brewery, a short walk from the station and the memorial site."
+    "note": "20 km out: the town's craft brewery, a short walk from the station and the memorial site.",
+    "order": "The Dachau house Helles, after the memorial"
    },
    {
     "name": "Hofbräuhaus",
-    "note": "The room everyone has heard of — go early, stay for the brass band."
+    "note": "The room everyone has heard of — go early, stay for the brass band.",
+    "order": "Hofbräu Original by the Maß"
    },
    {
     "name": "Viktualienmarkt",
-    "note": "Market beer garden in the centre, with a rotating brewery tap under the Maibaum."
+    "note": "Market beer garden in the centre, with a rotating brewery tap under the Maibaum.",
+    "order": "The market tap's current brewery"
    },
    {
     "name": "Augustiner Bräustuben",
-    "note": "The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel."
+    "note": "The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel.",
+    "order": "Edelstoff and the meatloaf, at the long table"
    },
    {
     "name": "Augustiner Keller",
-    "note": "Chestnut beer garden and winter room, still pouring from wooden barrels."
+    "note": "Chestnut beer garden and winter room, still pouring from wooden barrels.",
+    "order": "Edelstoff under the chestnuts"
    },
    {
     "name": "Schneider Bräuhaus",
-    "note": "Wheat-beer house on Tal: Aventinus and the original Tap 7."
+    "note": "Wheat-beer house on Tal: Aventinus and the original Tap 7.",
+    "order": "Aventinus, then Tap 7"
    },
    {
     "name": "Die Residenz",
-    "note": "The Wittelsbach palace — the day's walk ends here, with the beer halls of the Altstadt a few minutes away."
+    "note": "The Wittelsbach palace — the day's walk ends here, with the beer halls of the Altstadt a few minutes away.",
+    "order": "No beer here — walk to the Hofbräuhaus afterwards"
    }
   ]
  },
@@ -84255,5 +84288,43 @@
     "Doppelbock"
    ]
   }
- ]
+ ],
+ "city_meta": {
+  "Merkendorf": {
+   "flag": "🇩🇪",
+   "stop": "3 nights · Stop #2",
+   "subnote": "The village of Brauerei Wagner, eight kilometres from Bamberg.",
+   "famous": "Village Franconian beer, brewed since 1797"
+  },
+  "Bamberg (day trip)": {
+   "flag": "🇩🇪",
+   "stop": "day trip · 11 km",
+   "subnote": "Eleven kilometres from Merkendorf, and the densest brewery town in Franconia.",
+   "famous": "Rauchbier"
+  },
+  "Plzeň": {
+   "flag": "🇨🇿",
+   "stop": "1 night · Stop #3",
+   "subnote": "One night in the town that invented pilsner.",
+   "famous": "Pilsner Urquell"
+  },
+  "České Budějovice": {
+   "flag": "🇨🇿",
+   "stop": "2 nights · Stop #4",
+   "subnote": "Two nights at Budvar, so the tour is not the only thing you do.",
+   "famous": "Budweiser Budvar"
+  },
+  "Bad Reichenhall": {
+   "flag": "🇩🇪",
+   "stop": "3 nights · Stop #5",
+   "subnote": "Bürgerbräu since 1494, with Berchtesgaden 18 km and Salzburg 23 km away.",
+   "famous": "Alpine brewery beer and Salzburg's beer halls"
+  },
+  "Munich": {
+   "flag": "🇩🇪",
+   "stop": "4 nights · Stop #9",
+   "subnote": "Four nights, with Andechs and Dachau as day trips.",
+   "famous": "Helles, Weißbier and the beer halls"
+  }
+ }
 }
