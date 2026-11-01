@@ -9,6 +9,7 @@ from __future__ import annotations
 import html
 import json
 import pathlib
+import urllib.parse
 import re
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -31,6 +32,52 @@ euro_stops = [s for s in stops if s["id"] != "poa"]
 
 FLAG = {"Germany": "🇩🇪", "Belgium": "🇧🇪", "Netherlands": "🇳🇱", "Brazil": "🇧🇷"}
 COUNTRY_COLOR = {"Germany": "#e8b93b", "Belgium": "#43d19e", "Netherlands": "#f5a623", "Brazil": "#54a8f5"}
+
+
+COUNTRY_BY_FLAG = {"🇩🇪": "Germany", "🇧🇪": "Belgium", "🇳🇱": "Netherlands", "🇨🇿": "Czechia",
+                   "🇮🇹": "Italy", "🇦🇹": "Austria", "🇧🇷": "Brazil"}
+
+
+def gmaps_url(query):
+    return "https://www.google.com/maps/search/?api=1&query=" + urllib.parse.quote(str(query))
+
+
+def gmaps_link(query, label="Google Maps"):
+    if not str(query).strip():
+        return ""
+    return (f'<a class="gmaps" href="{gmaps_url(query)}" target="_blank" '
+            f'rel="noopener noreferrer">📍 {label}</a>')
+
+
+PLACE_COUNTRY = {"Salzburg": "Austria", "Bamberg": "Germany", "Memmelsdorf": "Germany",
+                 "Merkendorf": "Germany", "Černice": "Czechia", "Freising": "Germany"}
+
+# venues that sit outside the city they are listed under
+VENUE_PLACE = {
+    "Kloster Andechs": "Andechs, Germany",
+    "Kloster Andechs (day trip)": "Andechs, Germany",
+    "Wildbräu Grafing": "Grafing bei München, Germany",
+    "Schweiger Bräu": "Markt Schwaben, Germany",
+    "Dachauer Brauerei": "Dachau, Germany",
+    "Königssee": "Schönau am Königssee, Germany",
+    "Hofbrauhaus Berchtesgaden": "Berchtesgaden, Germany",
+    "Brouwerij La Trappe": "Berkel-Enschot, Netherlands",
+    "Kloster Weltenburg": "Kelheim, Germany",
+    "Ayinger Bräustüberl": "Aying, Germany",
+    "Klosterbräustüberl Andechs": "Andechs, Germany",
+}
+
+
+def venue_query(name, city, country):
+    clean = name.split(" (")[0].strip()
+    if clean in VENUE_PLACE:
+        return f"{clean}, {VENUE_PLACE[clean]}"
+    if "," in clean:
+        base, place = [p.strip() for p in clean.split(",", 1)]
+        return f"{base}, {place}, {PLACE_COUNTRY.get(place, country)}"
+    if city and city.lower() == clean.lower():
+        return f"{clean}, {country}"
+    return f"{clean}, {city}, {country}"
 
 
 def esc(s):
@@ -78,6 +125,9 @@ for day in days:
     nights_chip = (f'<span class="base-chip">{FLAG.get(base.get("country"), "🍺")} '
                    f'{esc(base.get("name", day["base"]))} · '
                    f'{nights} night{"s" if nights != 1 else ""}</span>') if nights else ""
+    base_stop = by_id.get(day["base"], {})
+    base_link = gmaps_link(
+        f'{base_stop.get("name", "").split(" (")[0]}, {base_stop.get("country", "")}'.strip(", "))
     day_cards.append(f"""
       <article class="day-node" data-day="{day['day']}">
         <div class="day-head">
@@ -87,6 +137,7 @@ for day in days:
         </div>
         <h3>{esc(day['title'])}</h3>
         {pill}
+        {base_link}
         <ul class="day-items">{items}</ul>
       </article>""")
 
@@ -139,6 +190,7 @@ for city, items in venues.items():
               <h4>{esc(v["name"])}</h4>
               <p class="desc">{esc(v.get("note", ""))}</p>
               <div class="order-this">🍺 <strong>Order this:</strong> {esc(v.get("order", ""))}</div>
+              {gmaps_link(venue_query(v["name"], city.split(" (")[0].strip(), COUNTRY_BY_FLAG.get(flag, "")))}
             </div>""")
     rank_filters.append(
         f'<button type="button" class="filter-btn" '
@@ -265,6 +317,10 @@ p.lede{{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}}
 .card-city-tag{{color:#43d19e;font-size:.71rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}}
 .brewery-card h4{{font-size:1rem;color:var(--text)}}
 .brewery-card .desc{{color:var(--muted);font-size:.86rem;line-height:1.5;flex:1}}
+.gmaps{{display:inline-block;align-self:flex-start;margin-top:.4rem;padding:.22rem .62rem;border-radius:999px;
+  border:1px solid rgba(230,168,23,.35);color:var(--gold);font-size:.75rem;font-weight:600;
+  text-decoration:none;transition:background .18s,border-color .18s}}
+.gmaps:hover{{background:rgba(230,168,23,.14);border-color:rgba(230,168,23,.6)}}
 .order-this{{background:rgba(8,10,20,.55);border:1px solid rgba(230,168,23,.28);border-radius:8px;
   padding:.5rem .65rem;font-size:.81rem;color:#f0d98a;line-height:1.45}}
 .region-filter{{display:flex;gap:.45rem;margin-bottom:1.4rem;flex-wrap:wrap;align-items:center}}
@@ -416,7 +472,8 @@ function initMap() {{
     var icon = L.divIcon({{className: 'pin', html: '<div style="width:22px;height:22px;border-radius:50%;background:' + s[4] +
       ';color:#0b0c15;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;border:2px solid #0b0c15">' + (i + 1) + '</div>', iconSize: [22, 22], iconAnchor: [11, 11]}});
     L.marker([s[0], s[1]], {{icon: icon}}).addTo(map)
-      .bindPopup('<strong style="color:#e6a817">' + s[2] + '</strong><br><span style="font-size:.85em">' + s[3] + '</span>');
+      .bindPopup('<strong style="color:#e6a817">' + s[2] + '</strong><br><span style="font-size:.85em">' + s[3] +
+        '</span><br><a class="gmaps" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:6px;padding:2px 9px;border-radius:999px;border:1px solid rgba(230,168,23,.4);color:#e6a817;font-size:11px;text-decoration:none" href="https://www.google.com/maps/search/?api=1&query=' + s[0] + ',' + s[1] + '">📍 Google Maps</a>');
     pts.push([s[0], s[1]]);
   }});
   L.polyline(pts, {{color: '#e6a817', weight: 2, opacity: .55, dashArray: '6,8'}}).addTo(map);

@@ -2,6 +2,8 @@
 
 Six AI-drafted beer pilgrimages — **73 days, 7 countries, 203 mapped stops** — collected in one place as self-contained HTML dossiers, plus regional maps that show where each one goes.
 
+Every venue in the rankings, every day in the itinerary and every pin on the map links straight to Google Maps, opening in a new tab.
+
 ## Maps
 
 Three regions, three posters. Splitting them out means each trail gets its own projection instead of being squeezed into one world view.
