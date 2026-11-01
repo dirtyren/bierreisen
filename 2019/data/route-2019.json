@@ -1,0 +1,421 @@
+{
+ "trip": {
+  "title": "Bier Reisen 2019",
+  "subtitle": "Munich and its surroundings, entirely by rail",
+  "year": 2019,
+  "days": 10,
+  "nights": 9,
+  "bases": 1,
+  "countries": [
+   "Brazil",
+   "Germany"
+  ],
+  "transport": "rail",
+  "total_km": 730,
+  "total_drive_minutes": 712,
+  "total_drive_km": 730,
+  "total_flight_km": 0,
+  "start": "Porto Alegre (POA)",
+  "end": "Porto Alegre (POA)",
+  "status": "completed",
+  "dates": "12–21 December 2019",
+  "route_line": "Munich Airport → Munich (nine nights) → Andechs → Aying → Bamberg → Munich → Munich Airport"
+ },
+ "stops": [
+  {
+   "id": "muc_airport",
+   "order": 0,
+   "name": "Munich Airport",
+   "city": "Flughafen München",
+   "country": "Germany",
+   "nights": 0,
+   "lat": 48.3538,
+   "lon": 11.7861,
+   "kind": "airport",
+   "note": "Land on 12 December — Airbräu is inside the airport, before the S-Bahn into town."
+  },
+  {
+   "id": "munich",
+   "order": 1,
+   "name": "Munich",
+   "city": "München",
+   "country": "Germany",
+   "nights": 9,
+   "lat": 48.1371,
+   "lon": 11.5754,
+   "kind": "city",
+   "note": "One hotel for nine nights, everything else by train: S-Bahn, U-Bahn, tram."
+  },
+  {
+   "id": "andechs",
+   "order": 2,
+   "name": "Andechs",
+   "city": "Andechs",
+   "country": "Germany",
+   "nights": 0,
+   "lat": 47.974,
+   "lon": 11.186,
+   "kind": "daytrip",
+   "note": "S8 to Herrsching, then the hill — the monastery brewery and its winter beer."
+  },
+  {
+   "id": "aying",
+   "order": 3,
+   "name": "Aying",
+   "city": "Aying",
+   "country": "Germany",
+   "nights": 0,
+   "lat": 47.97,
+   "lon": 11.78,
+   "kind": "daytrip",
+   "note": "S5 to Aying, a kilometre on foot, and the Ayinger Bräustüberl."
+  },
+  {
+   "id": "bamberg",
+   "order": 4,
+   "name": "Bamberg",
+   "city": "Bamberg",
+   "country": "Germany",
+   "nights": 0,
+   "lat": 49.8916,
+   "lon": 10.8868,
+   "kind": "daytrip",
+   "note": "ICE via Nuremberg and back in a day — 250 km each way for Rauchbier."
+  }
+ ],
+ "days": [
+  {
+   "day": 1,
+   "date": "12.12.2019",
+   "base": "munich",
+   "title": "Munich Airport → city",
+   "drive": "muc_airport->munich",
+   "items": [
+    "Land at Franz Josef Strauss and go straight to Airbräu, inside the airport",
+    "S-Bahn S1 or S8 into the city, 38 km / 41 min",
+    "Check in, then the historic centre: Marienplatz, Augustiner, Schneider Bräuhaus"
+   ]
+  },
+  {
+   "day": 2,
+   "date": "13.12.2019",
+   "base": "munich",
+   "title": "Andechs",
+   "drive": "munich->andechs",
+   "items": [
+    "S8 to Herrsching (40 km, ~57 min), then bus 951 up the hill",
+    "Kloster Andechs: the Bräustüberl and the winter beer",
+    "Back to Munich for the evening"
+   ]
+  },
+  {
+   "day": 3,
+   "date": "14.12.2019",
+   "base": "munich",
+   "title": "Aying",
+   "drive": "munich->aying",
+   "items": [
+    "S5 towards Kreuzstraße to Aying, 32 km / 45 min",
+    "A kilometre on foot to the Ayinger Bräustüberl",
+    "Ayinger Jahrhunderthalle next door if there is a beer event on"
+   ]
+  },
+  {
+   "day": 4,
+   "date": "15.12.2019",
+   "base": "munich",
+   "title": "Munich — the big three",
+   "drive": null,
+   "items": [
+    "Augustiner for lunch",
+    "Hofbräuhaus in the afternoon, for the room as much as the beer",
+    "Schiller Bräu in the evening"
+   ]
+  },
+  {
+   "day": 5,
+   "date": "16.12.2019",
+   "base": "munich",
+   "title": "Bamberg day trip",
+   "drive": "munich->bamberg",
+   "items": [
+    "ICE to Nuremberg, change, on to Bamberg — 250 km, about 3 h 20",
+    "Schlenkerla, Spezial, Fässla, Mahr's: as many as the timetable allows",
+    "Last train back to Munich"
+   ]
+  },
+  {
+   "day": 6,
+   "date": "17.12.2019",
+   "base": "munich",
+   "title": "Tap House Munich",
+   "drive": null,
+   "items": [
+    "A slow morning, then the craft beer bar Tap House",
+    "Something on the menu from outside Bavaria for a change",
+    "Early night — the week has been long"
+   ]
+  },
+  {
+   "day": 7,
+   "date": "18.12.2019",
+   "base": "munich",
+   "title": "Wine at Odeonsplatz",
+   "drive": null,
+   "items": [
+    "A beer-free day: the Pfälzer Weinstube at Odeonsplatz",
+    "Palatinate wines, a plate of something hearty",
+    "Walk home through the Christmas market"
+   ]
+  },
+  {
+   "day": 8,
+   "date": "19.12.2019",
+   "base": "munich",
+   "title": "Giesinger Bräustüberl",
+   "drive": null,
+   "items": [
+    "U-Bahn to Giesing for the Giesinger Bräustüberl",
+    "Craft beer in a neighbourhood that is not on the tourist map",
+    "Back into town for the evening"
+   ]
+  },
+  {
+   "day": 9,
+   "date": "20.12.2019",
+   "base": "munich",
+   "title": "Munich — free day",
+   "drive": null,
+   "items": [
+    "Whatever has been missed: the Viktualienmarkt, a museum, the Englischer Garten",
+    "Pack the bottles properly",
+    "Last dinner in the centre"
+   ]
+  },
+  {
+   "day": 10,
+   "date": "21.12.2019",
+   "base": "munich",
+   "title": "Munich → Airport → home",
+   "drive": "munich->muc_airport",
+   "items": [
+    "Hotel checkout, S-Bahn to the airport, 38 km / 41 min",
+    "Airbräu again — the trip ends where it started",
+    "Flight home"
+   ]
+  }
+ ],
+ "legs": [
+  {
+   "from": "muc_airport",
+   "to": "munich",
+   "mode": "train",
+   "km": 38,
+   "minutes": 41,
+   "service": "S1 / S8",
+   "note": "Airport line into the city, 20-minute headway."
+  },
+  {
+   "from": "munich",
+   "to": "andechs",
+   "mode": "train",
+   "km": 45,
+   "minutes": 70,
+   "service": "S8 + bus 951",
+   "note": "To Herrsching, then the bus up to Kloster Andechs."
+  },
+  {
+   "from": "andechs",
+   "to": "munich",
+   "mode": "train",
+   "km": 45,
+   "minutes": 70,
+   "service": "bus 951 + S8",
+   "note": "Same way back; the last S-Bahn runs late."
+  },
+  {
+   "from": "munich",
+   "to": "aying",
+   "mode": "train",
+   "km": 32,
+   "minutes": 45,
+   "service": "S5",
+   "note": "S5 towards Kreuzstraße, then a kilometre on foot."
+  },
+  {
+   "from": "aying",
+   "to": "munich",
+   "mode": "train",
+   "km": 32,
+   "minutes": 45,
+   "service": "S5",
+   "note": "Return leg."
+  },
+  {
+   "from": "munich",
+   "to": "bamberg",
+   "mode": "train",
+   "km": 250,
+   "minutes": 200,
+   "service": "ICE via Nürnberg",
+   "note": "Change at Nuremberg; the fast pair runs just over three hours."
+  },
+  {
+   "from": "bamberg",
+   "to": "munich",
+   "mode": "train",
+   "km": 250,
+   "minutes": 200,
+   "service": "ICE via Nürnberg",
+   "note": "Back the same evening."
+  },
+  {
+   "from": "munich",
+   "to": "muc_airport",
+   "mode": "train",
+   "km": 38,
+   "minutes": 41,
+   "service": "S1 / S8",
+   "note": "21 December — checkout, S-Bahn, Airbräu, flight."
+  }
+ ],
+ "matrix": {
+  "nodes": [],
+  "pairs": {}
+ },
+ "side_legs": [
+  {
+   "from": "munich",
+   "to": "Freising (Weihenstephan)",
+   "km": 40,
+   "minutes": 25
+  },
+  {
+   "from": "munich",
+   "to": "Dachau",
+   "km": 20,
+   "minutes": 25
+  },
+  {
+   "from": "munich",
+   "to": "Augsburg",
+   "km": 65,
+   "minutes": 45
+  }
+ ],
+ "venues": {
+  "Munich": [
+   {
+    "name": "Airbräu",
+    "note": "The brewery inside Munich Airport — a copper brewhouse in the terminal, with a beer garden under the roof. The first and last stop of the trip."
+   },
+   {
+    "name": "Augustiner",
+    "note": "Augustiner beer at Marienplatz, in the middle of the historic centre."
+   },
+   {
+    "name": "Schneider Bräuhaus",
+    "note": "Wheat-beer house on Tal: Aventinus and the original Tap 7."
+   },
+   {
+    "name": "Kloster Andechs",
+    "note": "Benedictine monastery above the Ammersee — the Bräustüberl pours Doppelbock and a winter beer through the cold months."
+   },
+   {
+    "name": "Ayinger Bräustüberl",
+    "note": "Aying, 32 km south-east by S-Bahn: the brewery's own taproom, Jahrhundertbier and the whole Ayinger range."
+   },
+   {
+    "name": "Hofbräuhaus",
+    "note": "The room everyone has heard of — go early, stay for the brass band."
+   },
+   {
+    "name": "Schiller Bräu",
+    "note": "Brewpub near the station: house beers brewed on site, a modern room and a young crowd."
+   },
+   {
+    "name": "Tap House Munich",
+    "note": "Craft beer bar with a deep tap list — the antidote to a week of Helles."
+   },
+   {
+    "name": "Pfälzer Weinstube",
+    "note": "Wine tavern at Odeonsplatz serving Palatinate wines — the one evening without beer."
+   },
+   {
+    "name": "Giesinger Bräustüberl",
+    "note": "The Giesing brewery's taproom: unfiltered Helles and a neighbourhood crowd."
+   }
+  ],
+  "Bamberg": [
+   {
+    "name": "Schlenkerla",
+    "note": "Rauchbier since 1405 — beechwood smoke, oak barrels, a vaulted cellar."
+   },
+   {
+    "name": "Spezial",
+    "note": "The Bambergers' rauchbier, softer smoke than Schlenkerla."
+   },
+   {
+    "name": "Fässla",
+    "note": "Zwergla dark lager, brewery tap opposite Spezial."
+   },
+   {
+    "name": "Mahr's Bräu",
+    "note": "The 'aU' Ungespundetes — the reference Franconian lager."
+   },
+   {
+    "name": "Klosterbräu",
+    "note": "Bamberg's oldest brewery; the Schwärzla is the one to order."
+   }
+  ],
+  "Andechs": [
+   {
+    "name": "Klosterbräustüberl Andechs",
+    "note": "The monastery's own restaurant and beer hall — Doppelbock Dunkel, and a winter beer on tap from November."
+   }
+  ],
+  "Aying": [
+   {
+    "name": "Ayinger Bräustüberl",
+    "note": "The brewery tap in the village: Jahrhundertbier, Altbairisch Dunkel, and the Ayinger range at source."
+   }
+  ]
+ },
+ "styles": [
+  {
+   "region": "Munich",
+   "styles": [
+    "Helles",
+    "Edelstoff",
+    "Weißbier",
+    "Doppelbock"
+   ]
+  },
+  {
+   "region": "Upper Bavaria",
+   "styles": [
+    "Klosterbier (Andechs, Aying)",
+    "Winterbier",
+    "Dunkel",
+    "Jahrhundertbier"
+   ]
+  },
+  {
+   "region": "Franconia",
+   "styles": [
+    "Rauchbier",
+    "Ungespundetes",
+    "Pils",
+    "Zwergla"
+   ]
+  },
+  {
+   "region": "One evening off",
+   "styles": [
+    "Pfälzer Riesling",
+    "Spätburgunder",
+    "and no beer at all"
+   ]
+  }
+ ]
+}

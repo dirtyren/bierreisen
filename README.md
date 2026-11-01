@@ -34,6 +34,30 @@ Every trip below ships as a single HTML file: an interactive Leaflet map, a day-
 
 ---
 
+## 2019 — Munich by rail
+
+![Bier Reisen 2019 route poster](2019/assets/2019-route-map.png)
+
+The first one, and the only one without a car: nine nights in a single Munich hotel, with Andechs, Aying and
+Bamberg as day returns by S-Bahn and ICE. **10 days, 9 nights, 730 km by train.**
+
+| Date | Where | The point of it |
+|---|---|---|
+| 12.12 | Munich Airport → city | Airbräu inside the terminal, then Augustiner at Marienplatz and Schneider Bräuhaus |
+| 13.12 | Andechs | S8 to Herrsching, bus up the hill, monastery beer and the winter bier |
+| 14.12 | Aying | S5 to Aying, a kilometre on foot to the Ayinger Bräustüberl |
+| 15.12 | Munich | Augustiner, Hofbräuhaus, Schiller Bräu |
+| 16.12 | Bamberg | ICE via Nuremberg — 250 km each way for Rauchbier |
+| 17.12 | Munich | Tap House |
+| 18.12 | Munich | Pfälzer Weinstube at Odeonsplatz — the one evening without beer |
+| 19.12 | Munich | Giesinger Bräustüberl |
+| 20.12 | Munich | free day |
+| 21.12 | Munich → airport | S-Bahn out, Airbräu again, flight home |
+
+- [`2019/2019-bier-reisen.html`](2019/2019-bier-reisen.html) — the dossier: itinerary, map, rankings, beer guide, rail times, suggestions
+- [`2019/data/route-2019.json`](2019/data/route-2019.json) — every leg and stop, train services and timings
+- [`2019/scripts/`](2019/scripts) — `build_html.py` and `make_route_map.py` regenerate the page and the poster
+
 ## 2020 — the trip that started it
 
 ![Bier Reisen 2020 route poster](2020/assets/2020-route-map.png)
@@ -125,6 +149,7 @@ and four nights in Munich. **13 nights, 5 bases, 1,406 km behind the wheel.**
 ## Contents
 
 - [Maps](#maps)
+- [2019 — Munich by rail](#2019--munich-by-rail)
 - [2020 — the trip that started it](#2020--the-trip-that-started-it)
 - [2021 — Bamberg to the Allgäu](#2021--bamberg-to-the-allgäu)
 - [2024 — Franconia, Bohemia and Advent in Munich](#2024--franconia-bohemia-and-advent-in-munich)
@@ -383,6 +408,11 @@ bierreisen/
 │   └── us_states.geojson                  # US state lines for the NA panel
 ├── assets/maps/                           # regional posters (README hero)
 │   ├── usa.png · europe.png · uk.png
+├── 2019/                                  # Munich by rail, the first trip
+│   ├── 2019-bier-reisen.html
+│   ├── assets/2019-route-map.png
+│   ├── data/route-2019.json
+│   └── scripts/
 ├── 2020/                                  # the first trip, as it happened
 │   ├── 2020-bier-reisen.html
 │   ├── assets/2020-route-map.png
