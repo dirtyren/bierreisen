@@ -545,19 +545,19 @@
 "de": "📋 15-tägiger Reiseverlauf Tag für Tag"
 },
 "itinerary.intro.v1": {
-"en": "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): 14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with 11 driving legs (2,296.5 km / 27 h 01) and 4 car-free brewery crawl days.",
-"pt": "Peregrinação cervejeira de carro alugado em circuito fechado com início e fim no Aeroporto de Frankfurt (FRA): 14 noites distribuídas em 10 bases na Bélgica, Alemanha e Tchéquia, somando 11 trechos de estrada (2,296.5 km / 27 h 01) e 4 dias inteiros de cervejarias a pé, sem tirar o carro da vaga.",
-"de": "Geschlossene Mietwagen-Bierpilgerreise ab und bis Flughafen Frankfurt (FRA): 14 Übernachtungen an 10 Standorten in Belgien, Deutschland und Tschechien, mit 11 Fahretappen (2,296.5 km / 27 h 01) und 4 autofreien Brauereitagen."
+"en": "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): 14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with 11 driving legs (2,296.5 km / 27 h 01) and 4 brewery crawl days, three of them car-free.",
+"pt": "Peregrinação cervejeira de carro alugado em circuito fechado com início e fim no Aeroporto de Frankfurt (FRA): 14 noites distribuídas em 10 bases na Bélgica, Alemanha e Tchéquia, somando 11 trechos de estrada (2,296.5 km / 27 h 01) e 4 dias de cervejaria, três deles sem carro.",
+"de": "Geschlossene Mietwagen-Bierpilgerreise ab und bis Flughafen Frankfurt (FRA): 14 Übernachtungen an 10 Standorten in Belgien, Deutschland und Tschechien, mit 11 Fahretappen (2,296.5 km / 27 h 01) und 4 Brauereitage, drei davon ohne Auto."
 },
 "itinerary.intro.v2": {
-"en": "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): 14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with 11 driving legs (2,298.3 km / 27 h 04) and 4 car-free brewery crawl days. Cologne (Köln) on Day 4 splits the old 6 h 51 Ghent→Bamberg marathon into two manageable hops, while Day 15 runs straight from Munich back to FRA (402.0 km / 4 h 04).",
+"en": "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): 14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with 11 driving legs (2,298.3 km / 27 h 04) and 4 brewery crawl days, three of them car-free. Cologne (Köln) on Day 4 splits the old 6 h 51 Ghent→Bamberg marathon into two manageable hops, while Day 15 runs straight from Munich back to FRA (402.0 km / 4 h 04).",
 "pt": "Peregrinação cervejeira de carro alugado em circuito fechado com início e fim no Aeroporto de Frankfurt (FRA): 14 noites em 10 bases na Bélgica, Alemanha e Tchéquia, com 11 trechos de estrada (2,298.3 km / 27 h 04) e 4 dias de cervejarias a pé. Colônia (Köln) no Dia 4 divide a antiga maratona de 6 h 51 entre Gante e Bamberg em duas etapas tranquilas, enquanto o Dia 15 volta direto de Munique para FRA (402.0 km / 4 h 04).",
-"de": "Geschlossene Mietwagen-Bierpilgerreise ab und bis Flughafen Frankfurt (FRA): 14 Übernachtungen an 10 Standorten in Belgien, Deutschland und Tschechien, mit 11 Fahretappen (2,298.3 km / 27 h 04) und 4 autofreien Brauereitagen. Köln an Tag 4 teilt den alten 6 h 51-Marathon von Gent nach Bamberg in zwei entspannte Etappen, während Tag 15 direkt von München zurück nach FRA führt (402.0 km / 4 h 04)."
+"de": "Geschlossene Mietwagen-Bierpilgerreise ab und bis Flughafen Frankfurt (FRA): 14 Übernachtungen an 10 Standorten in Belgien, Deutschland und Tschechien, mit 11 Fahretappen (2,298.3 km / 27 h 04) und 4 Brauereitage, drei davon ohne Auto. Köln an Tag 4 teilt den alten 6 h 51-Marathon von Gent nach Bamberg in zwei entspannte Etappen, während Tag 15 direkt von München zurück nach FRA führt (402.0 km / 4 h 04)."
 },
 "itinerary.intro.v3": {
-"en": "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): 14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with 11 driving legs (2,305.6 km / 26 h 53) and 4 car-free brewery crawl days. Day 4 (Ghent → Würzburg, 565.4 km / 5 h 53) is the single long middle push — with Cologne sitting directly on the motorway route (≈3 h in, 10 min off) as the built-in Kölsch lunch break — leaving an easy 1 h 03 hop into Bamberg on Day 5 and every other middle leg at ≤ 3 h 11.",
+"en": "Closed-loop rental-car pilgrimage starting and ending at Frankfurt Airport (FRA): 14 nights across 10 overnight bases in Belgium, Germany, and Czechia, with 11 driving legs (2,305.6 km / 26 h 53) and 4 brewery crawl days, three of them car-free. Day 4 (Ghent → Würzburg, 565.4 km / 5 h 53) is the single long middle push — with Cologne sitting directly on the motorway route (≈3 h in, 10 min off) as the built-in Kölsch lunch break — leaving an easy 1 h 03 hop into Bamberg on Day 5 and every other middle leg at ≤ 3 h 11.",
 "pt": "Peregrinação cervejeira de carro alugado em circuito fechado com início e fim no Aeroporto de Frankfurt (FRA): 14 noites em 10 bases na Bélgica, Alemanha e Tchéquia, com 11 trechos de estrada (2,305.6 km / 26 h 53) e 4 dias de cervejarias a pé. O Dia 4 (Gante → Würzburg, 565.4 km / 5 h 53) é o único trecho intermediário longo — com Colônia bem no caminho da autoestrada (≈3 h de viagem, 10 min fora da pista) para uma parada estratégica de almoço com Kölsch — deixando um salto leve de 1 h 03 até Bamberg no Dia 5 e todos os demais trechos intermediários em ≤ 3 h 11.",
-"de": "Geschlossene Mietwagen-Bierpilgerreise ab und bis Flughafen Frankfurt (FRA): 14 Übernachtungen an 10 Standorten in Belgien, Deutschland und Tschechien, mit 11 Fahretappen (2,305.6 km / 26 h 53) und 4 autofreien Brauereitagen. Tag 4 (Gent → Würzburg, 565.4 km / 5 h 53) ist die einzige lange Mitteletappe — mit Köln direkt an der Autobahnlinie (nach ≈3 h, nur 10 min von der Ausfahrt) als eingebauter Kölsch-Mittagspause — gefolgt von einem lockeren 1 h 03-Sprung nach Bamberg an Tag 5 und allen übrigen Mitteletappen bei ≤ 3 h 11."
+"de": "Geschlossene Mietwagen-Bierpilgerreise ab und bis Flughafen Frankfurt (FRA): 14 Übernachtungen an 10 Standorten in Belgien, Deutschland und Tschechien, mit 11 Fahretappen (2,305.6 km / 26 h 53) und 4 Brauereitage, drei davon ohne Auto. Tag 4 (Gent → Würzburg, 565.4 km / 5 h 53) ist die einzige lange Mitteletappe — mit Köln direkt an der Autobahnlinie (nach ≈3 h, nur 10 min von der Ausfahrt) als eingebauter Kölsch-Mittagspause — gefolgt von einem lockeren 1 h 03-Sprung nach Bamberg an Tag 5 und allen übrigen Mitteletappen bei ≤ 3 h 11."
 },
 "itinerary.why_wurzburg.aria": {
 "en": "Why Würzburg",
@@ -4628,5 +4628,20 @@
 "en": "Eight kilometres east: brewery, Gasthof and hotel in one building, hand-brewed Franconian beer and a full kitchen.",
 "pt": "Oito quilômetros a leste: cervejaria, Gasthof e hotel no mesmo prédio, cerveja francônia artesanal e cozinha completa.",
 "de": "Acht Kilometer östlich: Brauerei, Gasthof und Hotel in einem Gebäude, handwerklich gebrautes fränkisches Bier und eine volle Küche."
+},
+"itinerary.bamberg.detour.0": {
+"en": "Afternoon drive: Brauerei Wagner in Merkendorf (11.5 km / 19 min) — the village brewery the beer world talks about",
+"pt": "Saída à tarde: Brauerei Wagner em Merkendorf (11,5 km / 19 min) — a cervejaria de aldeia de que o mundo da cerveja fala",
+"de": "Nachmittagsausflug: Brauerei Wagner in Merkendorf (11,5 km / 19 min) — die Dorfbrauerei, über die die Bierszene spricht"
+},
+"itinerary.bamberg.detour.1": {
+"en": "Drei Kronen in Memmelsdorf (8.1 km / 13 min) on the way back into town",
+"pt": "Drei Kronen em Memmelsdorf (8,1 km / 13 min) no caminho de volta à cidade",
+"de": "Drei Kronen in Memmelsdorf (8,1 km / 13 min) auf dem Rückweg in die Stadt"
+},
+"itinerary.pill.base_day_detours": {
+"en": "🚗 <strong>Base day</strong> &nbsp;·&nbsp; Short drives out to two village breweries (30 min total)",
+"pt": "🚗 <strong>Dia na base</strong> &nbsp;·&nbsp; Pequenos deslocamentos até duas cervejarias de aldeia (30 min no total)",
+"de": "🚗 <strong>Tag am Standort</strong> &nbsp;·&nbsp; Kurze Fahrten zu zwei Dorfbrauereien (insgesamt 30 min)"
 }
 }

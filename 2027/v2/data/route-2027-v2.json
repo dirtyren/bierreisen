@@ -225,8 +225,11 @@
     "Spezial for the locals' rauchbier",
     "Mahr's Bräu for the aU Ungespundetes",
     "Fässla Zwergla, then Greifenklau's beer garden",
+    "Afternoon drive: Brauerei Wagner in Merkendorf (11.5 km / 19 min) — the village brewery the beer world talks about",
+    "Drei Kronen in Memmelsdorf (8.1 km / 13 min) on the way back into town",
     "Keesmann Herren Pils before the nightcap"
-   ]
+   ],
+   "detour": true
   },
   {
    "day": 7,
