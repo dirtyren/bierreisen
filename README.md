@@ -473,7 +473,12 @@ python3 scripts/make_map.py          # assets/trips.json → assets/beer-trips-m
 ```bash
 python3 scripts/make_thumbs.py     # posters → assets/thumbs/*.jpg
 python3 scripts/build_index.py     # each year's data + trips.json → index.html
+npx impeccable@latest detect index.html   # must report zero anti-patterns
 ```
+
+The catalog is held to the [impeccable](https://impeccable.style) craft floor: no eyebrow above the
+headline, no hero-metric row, no uniform card grid, themed selection/caret/scrollbars, ≥4.5:1 body
+contrast, one authored motion moment, and a detector run with no findings.
 
 The catalog reads its numbers from the year dossiers' own data files, so it can never quote a
 distance the dossier disagrees with. To publish it, enable **GitHub Pages** on this repository
