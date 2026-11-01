@@ -171,7 +171,7 @@ def related_html(entity: dict, lang: str, by_slug: dict) -> str:
             continue
         title = t(other["name"], lang)
         kind = t(UI[lang][TYPE_KEY[other["type"]]], lang)
-        out.append(f'<li><a href="../../../{lang}/{slug}/index.html">{e(title)}</a> '
+        out.append(f'<li><a href="../../{lang}/{slug}/index.html">{e(title)}</a> '
                    f'<span>— {e(kind)}</span></li>')
     return "".join(out)
 
@@ -180,7 +180,7 @@ def switch_html(lang: str, slug: str | None) -> str:
     out = []
     for other in LANGS:
         label = {"en": "EN", "pt": "PT", "de": "DE"}[other]
-        href = f"../../../{other}/{slug}/index.html" if slug else f"../{other}/index.html"
+        href = f"../../{other}/{slug}/index.html" if slug else f"../{other}/index.html"
         cur = ' aria-current="page"' if other == lang else ""
         out.append(f'<a href="{href}" hreflang="{LANG_ATTR[other]}" lang="{LANG_ATTR[other]}"{cur}>'
                    f'{label}</a>')
@@ -239,7 +239,7 @@ def render_post(entity: dict, lang: str, by_slug: dict) -> str:
             trip_slug = f"trip-{trip}"
             other = by_slug.get(trip_slug)
             label = f"{trip}" if not other else t(other["name"], lang)
-            links.append(f'<a href="../../../{lang}/{trip_slug}/index.html">{e(label)}</a>')
+            links.append(f'<a href="../../{lang}/{trip_slug}/index.html">{e(label)}</a>')
         nearby_html = f'{e(ui["nearby"])}: ' + " · ".join(links) if links else ""
 
     page = (TEMPLATE
