@@ -44,13 +44,37 @@ p.lede{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}
 .day-items{margin-left:1.1rem;color:var(--muted);font-size:.9rem}
 .day-items li{margin:.2rem 0}
 #map-container{height:620px;border-radius:12px;border:1px solid var(--border)}
-.city-block{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem}
-.city-block h3{color:var(--gold);font-size:1.1rem;margin-bottom:.8rem}
-.venue{display:flex;gap:.9rem;padding:.6rem 0;border-top:1px solid rgba(42,48,80,.6)}
-.venue:first-of-type{border-top:none}
-.venue .rank{color:var(--gold);font-weight:800;opacity:.75;min-width:1.6rem}
-.venue h4{font-size:.98rem;margin-bottom:.15rem}
-.venue p{color:var(--muted);font-size:.88rem}
+.section-intro{margin-bottom:1.3rem}
+.city-ranking-section{margin-bottom:2.4rem}
+.city-section-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.9rem;
+  margin-bottom:1.1rem;padding-bottom:.7rem;border-bottom:1px solid var(--border)}
+.city-section-header h3{font-size:1.15rem;color:var(--text);margin:0}
+.city-subnote{color:var(--muted);font-size:.86rem;margin-top:.35rem;max-width:54ch}
+.city-meta-pill{font-size:.73rem;font-weight:600;color:var(--muted);background:rgba(21,24,51,.9);
+  border:1px solid var(--border);padding:.14rem .55rem;border-radius:999px;vertical-align:middle;margin-left:.4rem}
+.city-famous-pill{background:rgba(230,168,23,.13);border:1px solid rgba(230,168,23,.42);color:var(--gold);
+  padding:.36rem .8rem;border-radius:999px;font-size:.82rem}
+.brewery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.05rem}
+.brewery-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.15rem 1.2rem;
+  position:relative;display:flex;flex-direction:column;gap:.45rem;box-shadow:0 8px 20px rgba(5,8,20,.35);
+  transition:border-color .2s,transform .2s}
+.brewery-card:hover{border-color:rgba(230,168,23,.5);transform:translateY(-2px)}
+.brewery-card .rank{position:absolute;top:-11px;right:14px;background:var(--gold);color:#0b0c15;width:30px;
+  height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;
+  font-size:.82rem;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+.card-city-tag{color:#43d19e;font-size:.71rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.brewery-card h4{font-size:1rem;color:var(--text)}
+.brewery-card .desc{color:var(--muted);font-size:.86rem;line-height:1.5;flex:1}
+.order-this{background:rgba(8,10,20,.55);border:1px solid rgba(230,168,23,.28);border-radius:8px;
+  padding:.5rem .65rem;font-size:.81rem;color:#f0d98a;line-height:1.45}
+.region-filter{display:flex;gap:.45rem;margin-bottom:1.4rem;flex-wrap:wrap;align-items:center}
+.filter-btn{padding:.42rem .9rem;border:1px solid var(--border);background:var(--panel);color:var(--text);
+  border-radius:999px;font-family:inherit;font-size:.83rem;font-weight:600;cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s}
+.filter-btn:hover{border-color:rgba(230,168,23,.5);color:var(--gold)}
+.filter-btn.active{background:var(--gold);color:#0b0c15;border-color:var(--gold)}
+.search-input{padding:.45rem .9rem;border-radius:999px;border:1px solid var(--border);
+  background:var(--panel);color:var(--text);font-family:inherit;font-size:.86rem;min-width:290px}
 table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:1.4rem}
 th,td{padding:.55rem .7rem;border-bottom:1px solid var(--border);text-align:left}
 th{color:var(--gold);font-weight:700;background:rgba(21,24,51,.9);position:sticky;top:52px}
@@ -80,7 +104,7 @@ td.diag{color:#3a4368;text-align:center}
 <nav class="tabs">
   <button class="tab active" onclick="showTab('itinerary',this)">📋 Itinerary</button>
   <button class="tab" onclick="showTab('map',this)">🗺️ Map</button>
-  <button class="tab" onclick="showTab('rankings',this)">🍺 Rankings</button>
+  <button class="tab" onclick="showTab('rankings',this)">🏆 Rankings</button>
   <button class="tab" onclick="showTab('beers',this)">📖 Beer Guide</button>
   <button class="tab" onclick="showTab('drives',this)">🚗 Drive Times</button>
   <button class="tab" onclick="showTab('suggest',this)">💡 Suggestions</button>
@@ -267,134 +291,269 @@ td.diag{color:#3a4368;text-align:center}
 </section>
 
 <section id="rankings" class="tab-content">
-  <h2 class="section">What to drink where</h2>
-  <p class="lede">One section per stop, ranked by how much the place is worth a detour — a Franconian
-    brewing village, the town that invented pilsner, the other Budweiser, and three Alpine days.</p>
-  
-      <section class="city-block">
-        <h3>Merkendorf</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Brauerei Wagner</h4><p>Family brewery in Merkendorf since 1797, Pointstraße 1 — Franconian lagers poured in the brewery tap a few steps from the kettle.</p></div>
+  <div class="section-intro">
+    <h2 class="section">🏆 Per-City Brewery &amp; Bar Rankings</h2>
+    <p class="lede">27 venues across 6 stops, ranked 1..n per city, with what to
+      order at each one — the beer worth the detour, not just the closest bar.</p>
+  </div>
+
+  <div class="region-filter" id="ranking-filters">
+    <button type="button" class="filter-btn active" onclick="filterRankings('all', this)">All stops (27)</button>
+    <button type="button" class="filter-btn" onclick="filterRankings('merkendorf', this)">🇩🇪 Merkendorf (3)</button><button type="button" class="filter-btn" onclick="filterRankings('bamberg-day-trip', this)">🇩🇪 Bamberg (day trip) (4)</button><button type="button" class="filter-btn" onclick="filterRankings('plze', this)">🇨🇿 Plzeň (4)</button><button type="button" class="filter-btn" onclick="filterRankings('esk-bud-jovice', this)">🇨🇿 České Budějovice (3)</button><button type="button" class="filter-btn" onclick="filterRankings('bad-reichenhall', this)">🇩🇪 Bad Reichenhall (5)</button><button type="button" class="filter-btn" onclick="filterRankings('munich', this)">🇩🇪 Munich (8)</button>
+    <input type="search" id="venue-search" class="search-input" placeholder="🔍 Search venues, styles, notes..."
+           oninput="searchRankings()" aria-label="Search venues" />
+  </div>
+
+  <div id="rankings-container">
+      <section class="city-ranking-section" data-city-section="merkendorf">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Merkendorf <span class="city-meta-pill">3 nights · Stop #2</span></h3>
+            <p class="city-subnote">The village of Brauerei Wagner, eight kilometres from Bamberg.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Drei Kronen, Memmelsdorf</h4><p>Brewery, Gasthof and hotel 11 km away; hand-brewed Franconian beer and a full menu.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Metzgerei-Brauerei, Merkendorf</h4><p>The village butcher who also brews — sausage, beer and a taproom in one building.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Schlenkerla, Bamberg</h4><p>11 km to the Rauchbier cathedral: beechwood smoke, oak barrels, a vaulted cellar.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">05</span>
-            <div><h4>Spezial, Bamberg</h4><p>The Bambergers&#x27; own rauchbier — softer smoke, shorter queue.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">06</span>
-            <div><h4>Mahr&#x27;s Bräu, Bamberg</h4><p>The &#x27;aU&#x27; Ungespundetes, the reference Franconian lager.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Village Franconian beer, brewed since 1797</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="merkendorf" data-search="merkendorf brauerei wagner family brewery in merkendorf since 1797, pointstraße 1 — franconian lagers poured in the brewery tap a few steps from the kettle. wagner lagerbier and the dark, in the tap with the regulars">
+              <span class="rank" title="Rank #1 in Merkendorf">1</span>
+              <div class="card-city-tag">🇩🇪 Merkendorf · #1 of 3</div>
+              <h4>Brauerei Wagner</h4>
+              <p class="desc">Family brewery in Merkendorf since 1797, Pointstraße 1 — Franconian lagers poured in the brewery tap a few steps from the kettle.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Wagner Lagerbier and the dark, in the tap with the regulars</div>
+            </div>
+            <div class="brewery-card" data-city="merkendorf" data-search="merkendorf drei kronen, memmelsdorf brewery, gasthof and hotel 11 km away; hand-brewed franconian beer and a full menu. drei kronen lagerbier, 11 km away in the next village">
+              <span class="rank" title="Rank #2 in Merkendorf">2</span>
+              <div class="card-city-tag">🇩🇪 Merkendorf · #2 of 3</div>
+              <h4>Drei Kronen, Memmelsdorf</h4>
+              <p class="desc">Brewery, Gasthof and hotel 11 km away; hand-brewed Franconian beer and a full menu.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Drei Kronen Lagerbier, 11 km away in the next village</div>
+            </div>
+            <div class="brewery-card" data-city="merkendorf" data-search="merkendorf metzgerei-brauerei, merkendorf the village butcher who also brews — sausage, beer and a taproom in one building. the butcher&#x27;s house beer, with the sausage that pays for it">
+              <span class="rank" title="Rank #3 in Merkendorf">3</span>
+              <div class="card-city-tag">🇩🇪 Merkendorf · #3 of 3</div>
+              <h4>Metzgerei-Brauerei, Merkendorf</h4>
+              <p class="desc">The village butcher who also brews — sausage, beer and a taproom in one building.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The butcher&#x27;s house beer, with the sausage that pays for it</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Plzeň</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Pilsner Urquell (Prazdroj)</h4><p>The brewery that defined pilsner in 1842; the tour ends with an unfiltered pour in the cellars.</p></div>
+      <section class="city-ranking-section" data-city-section="bamberg-day-trip">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Bamberg (day trip) <span class="city-meta-pill">day trip · 11 km</span></h3>
+            <p class="city-subnote">Eleven kilometres from Merkendorf, and the densest brewery town in Franconia.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Na Spilce</h4><p>The brewery restaurant under the brewhouse — the freshest Prazdroj in town.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Purkmistr, Černice</h4><p>Brewery, hotel and beer spa; book the bath if you want the full production.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Gambrinus</h4><p>The everyday Plzeň lager — lighter, cheaper, and just as local.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Rauchbier</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="bamberg-day-trip" data-search="bamberg (day trip) schlenkerla, bamberg 11 km to the rauchbier cathedral: beechwood smoke, oak barrels, a vaulted cellar. aecht schlenkerla rauchbier märzen, from the oak barrel">
+              <span class="rank" title="Rank #1 in Bamberg (day trip)">1</span>
+              <div class="card-city-tag">🇩🇪 Bamberg (day trip) · #1 of 4</div>
+              <h4>Schlenkerla, Bamberg</h4>
+              <p class="desc">11 km to the Rauchbier cathedral: beechwood smoke, oak barrels, a vaulted cellar.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Aecht Schlenkerla Rauchbier Märzen, from the oak barrel</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg-day-trip" data-search="bamberg (day trip) spezial, bamberg the bambergers&#x27; own rauchbier — softer smoke, shorter queue. spezial rauchbier lager — the local smoke">
+              <span class="rank" title="Rank #2 in Bamberg (day trip)">2</span>
+              <div class="card-city-tag">🇩🇪 Bamberg (day trip) · #2 of 4</div>
+              <h4>Spezial, Bamberg</h4>
+              <p class="desc">The Bambergers&#x27; own rauchbier — softer smoke, shorter queue.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Spezial Rauchbier Lager — the local smoke</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg-day-trip" data-search="bamberg (day trip) mahr&#x27;s bräu, bamberg the &#x27;au&#x27; ungespundetes, the reference franconian lager. au ungespundetes, unfiltered">
+              <span class="rank" title="Rank #3 in Bamberg (day trip)">3</span>
+              <div class="card-city-tag">🇩🇪 Bamberg (day trip) · #3 of 4</div>
+              <h4>Mahr&#x27;s Bräu, Bamberg</h4>
+              <p class="desc">The &#x27;aU&#x27; Ungespundetes, the reference Franconian lager.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> aU Ungespundetes, unfiltered</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg-day-trip" data-search="bamberg (day trip) klosterbräu, bamberg bamberg&#x27;s oldest brewery, founded 1533 — the schwärzla dark lager is the one to order, in a building with a 16th-century ballroom upstairs. schwärzla at bamberg&#x27;s oldest brewery, brewing since 1533">
+              <span class="rank" title="Rank #4 in Bamberg (day trip)">4</span>
+              <div class="card-city-tag">🇩🇪 Bamberg (day trip) · #4 of 4</div>
+              <h4>Klosterbräu, Bamberg</h4>
+              <p class="desc">Bamberg&#x27;s oldest brewery, founded 1533 — the Schwärzla dark lager is the one to order, in a building with a 16th-century ballroom upstairs.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Schwärzla at Bamberg&#x27;s oldest brewery, brewing since 1533</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>České Budějovice</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Budweiser Budvar</h4><p>The other Budweiser: 70–80 minute tours through the brewhouse and the cellars, tasting at the end.</p></div>
+      <section class="city-ranking-section" data-city-section="plze">
+        <div class="city-section-header">
+          <div>
+            <h3>🇨🇿 Plzeň <span class="city-meta-pill">1 night · Stop #3</span></h3>
+            <p class="city-subnote">One night in the town that invented pilsner.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Budvar Samson</h4><p>The city brewery on the main square — dark and light, in a 19th-century building.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Masné krámy</h4><p>The old meat market turned beer hall, Budvar by the metre.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Pilsner Urquell</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="plze" data-search="plzeň pilsner urquell (prazdroj) the brewery that defined pilsner in 1842; the tour ends with an unfiltered pour in the cellars. the cellar pour — unfiltered, unpasteurised, straight from the barrel">
+              <span class="rank" title="Rank #1 in Plzeň">1</span>
+              <div class="card-city-tag">🇨🇿 Plzeň · #1 of 4</div>
+              <h4>Pilsner Urquell (Prazdroj)</h4>
+              <p class="desc">The brewery that defined pilsner in 1842; the tour ends with an unfiltered pour in the cellars.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The cellar pour — unfiltered, unpasteurised, straight from the barrel</div>
+            </div>
+            <div class="brewery-card" data-city="plze" data-search="plzeň na spilce the brewery restaurant under the brewhouse — the freshest prazdroj in town. prazdroj under the brewhouse">
+              <span class="rank" title="Rank #2 in Plzeň">2</span>
+              <div class="card-city-tag">🇨🇿 Plzeň · #2 of 4</div>
+              <h4>Na Spilce</h4>
+              <p class="desc">The brewery restaurant under the brewhouse — the freshest Prazdroj in town.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Prazdroj under the brewhouse</div>
+            </div>
+            <div class="brewery-card" data-city="plze" data-search="plzeň purkmistr, černice brewery, hotel and beer spa; book the bath if you want the full production. purkmistr helles, with the beer spa if you booked">
+              <span class="rank" title="Rank #3 in Plzeň">3</span>
+              <div class="card-city-tag">🇨🇿 Plzeň · #3 of 4</div>
+              <h4>Purkmistr, Černice</h4>
+              <p class="desc">Brewery, hotel and beer spa; book the bath if you want the full production.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Purkmistr Helles, with the beer spa if you booked</div>
+            </div>
+            <div class="brewery-card" data-city="plze" data-search="plzeň gambrinus the everyday plzeň lager — lighter, cheaper, and just as local. gambrinus, the everyday lager of plzeň">
+              <span class="rank" title="Rank #4 in Plzeň">4</span>
+              <div class="card-city-tag">🇨🇿 Plzeň · #4 of 4</div>
+              <h4>Gambrinus</h4>
+              <p class="desc">The everyday Plzeň lager — lighter, cheaper, and just as local.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Gambrinus, the everyday lager of Plzeň</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Bad Reichenhall</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Bürgerbräu Bad Reichenhall</h4><p>Private Alpine brewery since 1494, Waaggasse 1–3 — the town&#x27;s own beer, with a Brauereigasthof.</p></div>
+      <section class="city-ranking-section" data-city-section="esk-bud-jovice">
+        <div class="city-section-header">
+          <div>
+            <h3>🇨🇿 České Budějovice <span class="city-meta-pill">2 nights · Stop #4</span></h3>
+            <p class="city-subnote">Two nights at Budvar, so the tour is not the only thing you do.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Brennerbräu</h4><p>Gasthof between Bad Reichenhall and Berchtesgaden — the stop on the way back from Salzburg.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Hofbrauhaus Berchtesgaden</h4><p>18 km away: the valley&#x27;s own brewery and restaurant, Helles and Dunkel.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Augustiner Bräu Mülln, Salzburg</h4><p>23 km across the border: the Mülln monastery brewery, beer from the wooden barrel, bring your own food.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">05</span>
-            <div><h4>Stiegl, Salzburg</h4><p>Austria&#x27;s largest private brewery, with a brewery tour and a museum in the city.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Budweiser Budvar</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="esk-bud-jovice" data-search="české budějovice budweiser budvar the other budweiser: 70–80 minute tours through the brewhouse and the cellars, tasting at the end. budvar original from the tank, at the end of the 70-minute tour">
+              <span class="rank" title="Rank #1 in České Budějovice">1</span>
+              <div class="card-city-tag">🇨🇿 České Budějovice · #1 of 3</div>
+              <h4>Budweiser Budvar</h4>
+              <p class="desc">The other Budweiser: 70–80 minute tours through the brewhouse and the cellars, tasting at the end.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Budvar Original from the tank, at the end of the 70-minute tour</div>
+            </div>
+            <div class="brewery-card" data-city="esk-bud-jovice" data-search="české budějovice budvar samson the city brewery on the main square — dark and light, in a 19th-century building. samson tmavé on the square">
+              <span class="rank" title="Rank #2 in České Budějovice">2</span>
+              <div class="card-city-tag">🇨🇿 České Budějovice · #2 of 3</div>
+              <h4>Budvar Samson</h4>
+              <p class="desc">The city brewery on the main square — dark and light, in a 19th-century building.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Samson Tmavé on the square</div>
+            </div>
+            <div class="brewery-card" data-city="esk-bud-jovice" data-search="české budějovice masné krámy the old meat market turned beer hall, budvar by the metre. budvar by the metre in the old meat market">
+              <span class="rank" title="Rank #3 in České Budějovice">3</span>
+              <div class="card-city-tag">🇨🇿 České Budějovice · #3 of 3</div>
+              <h4>Masné krámy</h4>
+              <p class="desc">The old meat market turned beer hall, Budvar by the metre.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Budvar by the metre in the old meat market</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Munich</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Kloster Andechs</h4><p>Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</p></div>
+      <section class="city-ranking-section" data-city-section="bad-reichenhall">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Bad Reichenhall <span class="city-meta-pill">3 nights · Stop #5</span></h3>
+            <p class="city-subnote">Bürgerbräu since 1494, with Berchtesgaden 18 km and Salzburg 23 km away.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Dachauer Brauerei</h4><p>20 km out: the town&#x27;s craft brewery, a short walk from the station and the memorial site.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Hofbräuhaus</h4><p>The room everyone has heard of — go early, stay for the brass band.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Viktualienmarkt</h4><p>Market beer garden in the centre, with a rotating brewery tap under the Maibaum.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">05</span>
-            <div><h4>Augustiner Bräustuben</h4><p>The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">06</span>
-            <div><h4>Augustiner Keller</h4><p>Chestnut beer garden and winter room, still pouring from wooden barrels.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">07</span>
-            <div><h4>Schneider Bräuhaus</h4><p>Wheat-beer house on Tal: Aventinus and the original Tap 7.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">08</span>
-            <div><h4>Die Residenz</h4><p>The Wittelsbach palace — the day&#x27;s walk ends here, with the beer halls of the Altstadt a few minutes away.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Alpine brewery beer and Salzburg&#x27;s beer halls</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="bad-reichenhall" data-search="bad reichenhall bürgerbräu bad reichenhall private alpine brewery since 1494, waaggasse 1–3 — the town&#x27;s own beer, with a brauereigasthof. bürgerbräu hell in the brauereigasthof, brewing since 1494">
+              <span class="rank" title="Rank #1 in Bad Reichenhall">1</span>
+              <div class="card-city-tag">🇩🇪 Bad Reichenhall · #1 of 5</div>
+              <h4>Bürgerbräu Bad Reichenhall</h4>
+              <p class="desc">Private Alpine brewery since 1494, Waaggasse 1–3 — the town&#x27;s own beer, with a Brauereigasthof.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Bürgerbräu Hell in the Brauereigasthof, brewing since 1494</div>
+            </div>
+            <div class="brewery-card" data-city="bad-reichenhall" data-search="bad reichenhall brennerbräu gasthof between bad reichenhall and berchtesgaden — the stop on the way back from salzburg. the house beer on the road back from salzburg">
+              <span class="rank" title="Rank #2 in Bad Reichenhall">2</span>
+              <div class="card-city-tag">🇩🇪 Bad Reichenhall · #2 of 5</div>
+              <h4>Brennerbräu</h4>
+              <p class="desc">Gasthof between Bad Reichenhall and Berchtesgaden — the stop on the way back from Salzburg.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The house beer on the road back from Salzburg</div>
+            </div>
+            <div class="brewery-card" data-city="bad-reichenhall" data-search="bad reichenhall hofbrauhaus berchtesgaden 18 km away: the valley&#x27;s own brewery and restaurant, helles and dunkel. helles in the valley brewery">
+              <span class="rank" title="Rank #3 in Bad Reichenhall">3</span>
+              <div class="card-city-tag">🇩🇪 Bad Reichenhall · #3 of 5</div>
+              <h4>Hofbrauhaus Berchtesgaden</h4>
+              <p class="desc">18 km away: the valley&#x27;s own brewery and restaurant, Helles and Dunkel.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Helles in the valley brewery</div>
+            </div>
+            <div class="brewery-card" data-city="bad-reichenhall" data-search="bad reichenhall augustiner bräu mülln, salzburg 23 km across the border: the mülln monastery brewery, beer from the wooden barrel, bring your own food. müllner bräu by the litre, with cheese and radishes from your bag">
+              <span class="rank" title="Rank #4 in Bad Reichenhall">4</span>
+              <div class="card-city-tag">🇩🇪 Bad Reichenhall · #4 of 5</div>
+              <h4>Augustiner Bräu Mülln, Salzburg</h4>
+              <p class="desc">23 km across the border: the Mülln monastery brewery, beer from the wooden barrel, bring your own food.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Müllner Bräu by the litre, with cheese and radishes from your bag</div>
+            </div>
+            <div class="brewery-card" data-city="bad-reichenhall" data-search="bad reichenhall stiegl, salzburg austria&#x27;s largest private brewery, with a brewery tour and a museum in the city. stiegl goldbräu, in the brewery&#x27;s own cellar">
+              <span class="rank" title="Rank #5 in Bad Reichenhall">5</span>
+              <div class="card-city-tag">🇩🇪 Bad Reichenhall · #5 of 5</div>
+              <h4>Stiegl, Salzburg</h4>
+              <p class="desc">Austria&#x27;s largest private brewery, with a brewery tour and a museum in the city.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Stiegl Goldbräu, in the brewery&#x27;s own cellar</div>
+            </div></div>
       </section>
+      <section class="city-ranking-section" data-city-section="munich">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Munich <span class="city-meta-pill">4 nights · Stop #9</span></h3>
+            <p class="city-subnote">Four nights, with Andechs and Dachau as day trips.</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Helles, Weißbier and the beer halls</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="munich" data-search="munich kloster andechs benedictine monastery brewery above the ammersee (45 km) — doppelbock dunkel and a terrace over the valley. doppelbock dunkel above the ammersee">
+              <span class="rank" title="Rank #1 in Munich">1</span>
+              <div class="card-city-tag">🇩🇪 Munich · #1 of 8</div>
+              <h4>Kloster Andechs</h4>
+              <p class="desc">Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Doppelbock Dunkel above the Ammersee</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich dachauer brauerei 20 km out: the town&#x27;s craft brewery, a short walk from the station and the memorial site. the dachau house helles, after the memorial">
+              <span class="rank" title="Rank #2 in Munich">2</span>
+              <div class="card-city-tag">🇩🇪 Munich · #2 of 8</div>
+              <h4>Dachauer Brauerei</h4>
+              <p class="desc">20 km out: the town&#x27;s craft brewery, a short walk from the station and the memorial site.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The Dachau house Helles, after the memorial</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich hofbräuhaus the room everyone has heard of — go early, stay for the brass band. hofbräu original by the maß">
+              <span class="rank" title="Rank #3 in Munich">3</span>
+              <div class="card-city-tag">🇩🇪 Munich · #3 of 8</div>
+              <h4>Hofbräuhaus</h4>
+              <p class="desc">The room everyone has heard of — go early, stay for the brass band.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Hofbräu Original by the Maß</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich viktualienmarkt market beer garden in the centre, with a rotating brewery tap under the maibaum. the market tap&#x27;s current brewery">
+              <span class="rank" title="Rank #4 in Munich">4</span>
+              <div class="card-city-tag">🇩🇪 Munich · #4 of 8</div>
+              <h4>Viktualienmarkt</h4>
+              <p class="desc">Market beer garden in the centre, with a rotating brewery tap under the Maibaum.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The market tap&#x27;s current brewery</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich augustiner bräustuben the augustiner brewery tap on landsberger straße: edelstoff from the wooden barrel. edelstoff and the meatloaf, at the long table">
+              <span class="rank" title="Rank #5 in Munich">5</span>
+              <div class="card-city-tag">🇩🇪 Munich · #5 of 8</div>
+              <h4>Augustiner Bräustuben</h4>
+              <p class="desc">The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Edelstoff and the meatloaf, at the long table</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich augustiner keller chestnut beer garden and winter room, still pouring from wooden barrels. edelstoff under the chestnuts">
+              <span class="rank" title="Rank #6 in Munich">6</span>
+              <div class="card-city-tag">🇩🇪 Munich · #6 of 8</div>
+              <h4>Augustiner Keller</h4>
+              <p class="desc">Chestnut beer garden and winter room, still pouring from wooden barrels.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Edelstoff under the chestnuts</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich schneider bräuhaus wheat-beer house on tal: aventinus and the original tap 7. aventinus, then tap 7">
+              <span class="rank" title="Rank #7 in Munich">7</span>
+              <div class="card-city-tag">🇩🇪 Munich · #7 of 8</div>
+              <h4>Schneider Bräuhaus</h4>
+              <p class="desc">Wheat-beer house on Tal: Aventinus and the original Tap 7.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Aventinus, then Tap 7</div>
+            </div>
+            <div class="brewery-card" data-city="munich" data-search="munich die residenz the wittelsbach palace — the day&#x27;s walk ends here, with the beer halls of the altstadt a few minutes away. no beer here — walk to the hofbräuhaus afterwards">
+              <span class="rank" title="Rank #8 in Munich">8</span>
+              <div class="card-city-tag">🇩🇪 Munich · #8 of 8</div>
+              <h4>Die Residenz</h4>
+              <p class="desc">The Wittelsbach palace — the day&#x27;s walk ends here, with the beer halls of the Altstadt a few minutes away.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> No beer here — walk to the Hofbräuhaus afterwards</div>
+            </div></div>
+      </section></div>
 </section>
 
 <section id="beers" class="tab-content">
@@ -403,7 +562,7 @@ td.diag{color:#3a4368;text-align:center}
     pilsner tradition from Plzeň to Budějovice, the Berchtesgadener Land and Salzburg, and Munich.</p>
   <table><thead><tr><th>Region</th><th>Styles to look for</th></tr></thead><tbody><tr><td>Franconia</td><td>Rauchbier · Ungespundetes / Kellerbier · Pils · Bock</td></tr><tr><td>Bohemia</td><td>Pilsner · Světlý ležák · Tmavé (dark lager) · Kvasnicové (yeast beer)</td></tr><tr><td>Berchtesgadener Land &amp; Salzburg</td><td>Helles · Dunkel · Weißbier · Märzen</td></tr><tr><td>Munich</td><td>Helles · Edelstoff · Weißbier / Weizenbock · Doppelbock</td></tr></tbody></table>
   <h2 class="section" style="margin-top:2rem">What to order, stop by stop</h2>
-  <table><thead><tr><th>Stop</th><th>Start here</th><th>Why</th></tr></thead><tbody><tr><td>Merkendorf</td><td>Brauerei Wagner</td><td>Family brewery in Merkendorf since 1797, Pointstraße 1 — Franconian lagers poured in the brewery tap a few steps from th</td></tr><tr><td>Plzeň</td><td>Pilsner Urquell (Prazdroj)</td><td>The brewery that defined pilsner in 1842; the tour ends with an unfiltered pour in the cellars.</td></tr><tr><td>České Budějovice</td><td>Budweiser Budvar</td><td>70–80 minute tours through the brewhouse and the cellars, tasting at the end.</td></tr><tr><td>Bad Reichenhall</td><td>Bürgerbräu Bad Reichenhall</td><td>Private Alpine brewery since 1494, Waaggasse 1–3 — the town&#x27;s own beer, with a Brauereigasthof.</td></tr><tr><td>Munich</td><td>Kloster Andechs</td><td>Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</td></tr></tbody></table>
+  <table><thead><tr><th>Stop</th><th>Start here</th><th>Why</th></tr></thead><tbody><tr><td>Merkendorf</td><td>Brauerei Wagner</td><td>Family brewery in Merkendorf since 1797, Pointstraße 1 — Franconian lagers poured in the brewery tap a few steps from th</td></tr><tr><td>Bamberg (day trip)</td><td>Schlenkerla, Bamberg</td><td>beechwood smoke, oak barrels, a vaulted cellar.</td></tr><tr><td>Plzeň</td><td>Pilsner Urquell (Prazdroj)</td><td>The brewery that defined pilsner in 1842; the tour ends with an unfiltered pour in the cellars.</td></tr><tr><td>České Budějovice</td><td>Budweiser Budvar</td><td>70–80 minute tours through the brewhouse and the cellars, tasting at the end.</td></tr><tr><td>Bad Reichenhall</td><td>Bürgerbräu Bad Reichenhall</td><td>Private Alpine brewery since 1494, Waaggasse 1–3 — the town&#x27;s own beer, with a Brauereigasthof.</td></tr><tr><td>Munich</td><td>Kloster Andechs</td><td>Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</td></tr></tbody></table>
 </section>
 
 <section id="drives" class="tab-content">
@@ -481,6 +640,30 @@ function initMap() {
   map.invalidateSize();
   map.fitBounds(L.latLngBounds(pts).pad(0.06));
   window.tripMap = map;
+}
+
+var currentRankingCity = 'all';
+function filterRankings(citySlug, btnEl) {
+  currentRankingCity = citySlug;
+  document.querySelectorAll('#ranking-filters .filter-btn').forEach(function (b) { b.classList.remove('active'); });
+  if (btnEl) btnEl.classList.add('active');
+  applyRankingFilter();
+}
+function searchRankings() { applyRankingFilter(); }
+function applyRankingFilter() {
+  var input = document.getElementById('venue-search');
+  var q = (input && input.value ? input.value : '').trim().toLowerCase();
+  document.querySelectorAll('.city-ranking-section').forEach(function (sec) {
+    var cityMatch = (currentRankingCity === 'all' || sec.dataset.citySection === currentRankingCity);
+    var visible = 0;
+    sec.querySelectorAll('.brewery-card').forEach(function (card) {
+      var textMatch = !q || (card.dataset.search || '').indexOf(q) !== -1;
+      var show = cityMatch && textMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    sec.style.display = visible > 0 ? '' : 'none';
+  });
 }
 </script>
 </body>

@@ -307,77 +307,84 @@
   "Munich": [
    {
     "name": "Airbräu",
-    "note": "The brewery inside Munich Airport — a copper brewhouse in the terminal, with a beer garden under the roof. The first and last stop of the trip."
+    "note": "The brewery inside Munich Airport — a copper brewhouse in the terminal, with a beer garden under the roof. The first and last stop of the trip.",
+    "order": "Airbräu Helles, brewed in the copper kettles inside the terminal — the trip opens and closes here"
    },
    {
     "name": "Augustiner",
-    "note": "Augustiner beer at Marienplatz, in the middle of the historic centre."
+    "note": "Augustiner beer at Marienplatz, in the middle of the historic centre.",
+    "order": "Edelstoff from the wooden barrel; the Helles if the barrel is off"
    },
    {
     "name": "Schneider Bräuhaus",
-    "note": "Wheat-beer house on Tal: Aventinus and the original Tap 7."
-   },
-   {
-    "name": "Kloster Andechs",
-    "note": "Benedictine monastery above the Ammersee — the Bräustüberl pours Doppelbock and a winter beer through the cold months."
-   },
-   {
-    "name": "Ayinger Bräustüberl",
-    "note": "Aying, 32 km south-east by S-Bahn: the brewery's own taproom, Jahrhundertbier and the whole Ayinger range."
+    "note": "Wheat-beer house on Tal: Aventinus and the original Tap 7.",
+    "order": "Aventinus Weizenbock, then Tap 7 for the second round"
    },
    {
     "name": "Hofbräuhaus",
-    "note": "The room everyone has heard of — go early, stay for the brass band."
+    "note": "The room everyone has heard of — go early, stay for the brass band.",
+    "order": "Hofbräu Original by the Maß; the room is the point"
    },
    {
     "name": "Schiller Bräu",
-    "note": "Brewpub near the station: house beers brewed on site, a modern room and a young crowd."
+    "note": "Brewpub near the station: house beers brewed on site, a modern room and a young crowd.",
+    "order": "Schiller Bräu Helles, and the dark if it is on — brewed in the room"
    },
    {
     "name": "Tap House Munich",
-    "note": "Craft beer bar with a deep tap list — the antidote to a week of Helles."
+    "note": "Craft beer bar with a deep tap list — the antidote to a week of Helles.",
+    "order": "Whatever is hoppiest on the board — a palate reset after a week of lagers"
    },
    {
     "name": "Pfälzer Weinstube",
-    "note": "Wine tavern at Odeonsplatz serving Palatinate wines — the one evening without beer."
+    "note": "Wine tavern at Odeonsplatz serving Palatinate wines — the one evening without beer.",
+    "order": "A Pfälzer Riesling. No beer tonight, and that is the plan"
    },
    {
     "name": "Giesinger Bräustüberl",
-    "note": "The Giesing brewery's taproom: unfiltered Helles and a neighbourhood crowd."
+    "note": "The Giesing brewery's taproom: unfiltered Helles and a neighbourhood crowd.",
+    "order": "Erhellung, the unfiltered Helles, straight from the tank"
    }
   ],
   "Bamberg": [
    {
     "name": "Schlenkerla",
-    "note": "Rauchbier since 1405 — beechwood smoke, oak barrels, a vaulted cellar."
+    "note": "Rauchbier since 1405 — beechwood smoke, oak barrels, a vaulted cellar.",
+    "order": "Aecht Schlenkerla Rauchbier Märzen, from the oak barrel"
    },
    {
     "name": "Spezial",
-    "note": "The Bambergers' rauchbier, softer smoke than Schlenkerla."
+    "note": "The Bambergers' rauchbier, softer smoke than Schlenkerla.",
+    "order": "Spezial Rauchbier Lager — the Bambergers' own, softer smoke"
    },
    {
     "name": "Fässla",
-    "note": "Zwergla dark lager, brewery tap opposite Spezial."
+    "note": "Zwergla dark lager, brewery tap opposite Spezial.",
+    "order": "Zwergla by the half-litre, then the Lagerbier"
    },
    {
     "name": "Mahr's Bräu",
-    "note": "The 'aU' Ungespundetes — the reference Franconian lager."
+    "note": "The 'aU' Ungespundetes — the reference Franconian lager.",
+    "order": "The aU at the Schwemme window, standing up"
    },
    {
     "name": "Klosterbräu",
-    "note": "Bamberg's oldest brewery; the Schwärzla is the one to order."
+    "note": "Bamberg's oldest brewery; the Schwärzla is the one to order.",
+    "order": "Schwärzla, in the oldest brewery in town"
    }
   ],
   "Andechs": [
    {
     "name": "Klosterbräustüberl Andechs",
-    "note": "The monastery's own restaurant and beer hall — Doppelbock Dunkel, and a winter beer on tap from November."
+    "note": "The monastery's own restaurant and beer hall — Doppelbock Dunkel, and a winter beer on tap from November.",
+    "order": "Doppelbock Dunkel — and the winter bier, which is why the visit is in December"
    }
   ],
   "Aying": [
    {
     "name": "Ayinger Bräustüberl",
-    "note": "The brewery tap in the village: Jahrhundertbier, Altbairisch Dunkel, and the Ayinger range at source."
+    "note": "The brewery tap in the village: Jahrhundertbier, Altbairisch Dunkel, and the Ayinger range at source.",
+    "order": "Jahrhundertbier, then the Celebrator Doppelbock if it is listed"
    }
   ]
  },
@@ -417,5 +424,31 @@
     "and no beer at all"
    ]
   }
- ]
+ ],
+ "city_meta": {
+  "Munich": {
+   "flag": "🇩🇪",
+   "stop": "9 nights · the only base",
+   "subnote": "One hotel for the whole trip; everything below is a U-Bahn ride or a walk.",
+   "famous": "Helles, Weißbier and the big beer halls"
+  },
+  "Bamberg": {
+   "flag": "🇩🇪",
+   "stop": "day trip · ICE from Munich",
+   "subnote": "250 km each way for Rauchbier: four breweries inside the old town walls.",
+   "famous": "Smoked beer — Rauchbier since 1405"
+  },
+  "Andechs": {
+   "flag": "🇩🇪",
+   "stop": "day trip · S8 + bus 951",
+   "subnote": "The monastery hill above the Ammersee, and the Bräustüberl at the top.",
+   "famous": "Doppelbock and winter bier from the monks"
+  },
+  "Aying": {
+   "flag": "🇩🇪",
+   "stop": "day trip · S5",
+   "subnote": "A village brewery 32 km south-east, a kilometre on foot from the platform.",
+   "famous": "Jahrhundertbier and the Ayinger range at source"
+  }
+ }
 }

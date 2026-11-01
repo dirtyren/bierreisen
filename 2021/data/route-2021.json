@@ -98963,165 +98963,201 @@
   "Bamberg": [
    {
     "name": "Schlenkerla",
-    "note": "Rauchbier since 1405 — beechwood-smoked malt served from oak barrels in a vaulted cellar."
+    "note": "Rauchbier since 1405 — beechwood-smoked malt served from oak barrels in a vaulted cellar.",
+    "order": "Aecht Schlenkerla Rauchbier Märzen, poured in the vaulted cellar"
    },
    {
     "name": "Spezial",
-    "note": "The Bambergers' own rauchbier: the smoke is a whisper next to Schlenkerla."
+    "note": "The Bambergers' own rauchbier: the smoke is a whisper next to Schlenkerla.",
+    "order": "Spezial Rauchbier Lager — the quieter, more local smoke"
    },
    {
     "name": "Mahr's Bräu",
-    "note": "The 'aU' Ungespundetes — unfiltered, naturally carbonated, the classic Franconian lager."
+    "note": "The 'aU' Ungespundetes — unfiltered, naturally carbonated, the classic Franconian lager.",
+    "order": "The aU at the Schwemme window, glass in hand"
    },
    {
     "name": "Fässla",
-    "note": "Zwergla dark lager, brewery tap opposite Spezial, open late."
+    "note": "Zwergla dark lager, brewery tap opposite Spezial, open late.",
+    "order": "Zwergla, the dark one, across from Spezial"
    },
    {
     "name": "Klosterbräu",
-    "note": "Bamberg's oldest brewery (1533); the Schwärzla is the one to order."
+    "note": "Bamberg's oldest brewery (1533); the Schwärzla is the one to order.",
+    "order": "Schwärzla at Bamberg's oldest brewery"
    },
    {
     "name": "Greifenklau",
-    "note": "Beer garden above the city with the best view of the roofs."
+    "note": "Beer garden above the city with the best view of the roofs.",
+    "order": "Helles in the garden, with the city below"
    }
   ],
   "Nuremberg": [
    {
     "name": "Altstadthof",
-    "note": "Hausbrauerei in the sandstone cellars under the castle — Rotbier and the rock-cut passages."
+    "note": "Hausbrauerei in the sandstone cellars under the castle — Rotbier and the rock-cut passages.",
+    "order": "Hausbrauerei Rotbier, in the cellars cut into the sandstone"
    },
    {
     "name": "Schanzenbräu",
-    "note": "Neighbourhood brewery on the hill; unfiltered Franconian styles, taproom with long tables."
+    "note": "Neighbourhood brewery on the hill; unfiltered Franconian styles, taproom with long tables.",
+    "order": "Schanzenbräu Helles, unfiltered, on the hill"
    },
    {
     "name": "Tucher Mautkeller",
-    "note": "Big vaulted cellar restaurant, Rotbier on tap, convenient on a cold night."
+    "note": "Big vaulted cellar restaurant, Rotbier on tap, convenient on a cold night.",
+    "order": "Tucher Rotbier in the vaulted hall"
    },
    {
     "name": "Barfüßer Hausbrauerei",
-    "note": "Brewpub by the river with copper kettles in the room and a young crowd."
+    "note": "Brewpub by the river with copper kettles in the room and a young crowd.",
+    "order": "The house Pils, next to the copper kettles"
    }
   ],
   "Essing": [
    {
     "name": "Gasthaus Felsenwastl",
-    "note": "The inn itself: Danube fish, local beer, and the river gorge at the door."
+    "note": "The inn itself: Danube fish, local beer, and the river gorge at the door.",
+    "order": "The local Landbier with Danube fish, on the terrace"
    },
    {
     "name": "Kloster Weltenburg",
-    "note": "Benedictine abbey 10 km downstream — Asamkirche and the oldest monastery brewery in Bavaria."
+    "note": "Benedictine abbey 10 km downstream — Asamkirche and the oldest monastery brewery in Bavaria.",
+    "order": "Barock Dunkel in the Klosterschenke, with the Danube outside"
    },
    {
     "name": "Befreiungshalle Kelheim",
-    "note": "Not a brewery, but the walk up is worth the afternoon before dinner."
+    "note": "Not a brewery, but the walk up is worth the afternoon before dinner.",
+    "order": "No beer here — climb it before dinner instead"
    }
   ],
   "Traunstein": [
    {
     "name": "Hofbräuhaus Traunstein",
-    "note": "Village-scale Hofbräuhaus with its own maltings; the Hell and the Doppelbock are the local benchmarks."
+    "note": "Village-scale Hofbräuhaus with its own maltings; the Hell and the Doppelbock are the local benchmarks.",
+    "order": "The Hell, then the Doppelbock if it is in season"
    },
    {
     "name": "Brauerei Wieninger",
-    "note": "Family brewery in Teisendorf, 15 km away — a half-day detour if the weather is bad."
+    "note": "Family brewery in Teisendorf, 15 km away — a half-day detour if the weather is bad.",
+    "order": "Wieninger Hell in Teisendorf, 18 km away"
    }
   ],
   "Schönram (Petting)": [
    {
     "name": "Private Landbrauerei Schönram",
-    "note": "One of Germany's most respected private breweries: Schönramer Pils is bitter, floral and dry — the reason to drive to Petting."
+    "note": "One of Germany's most respected private breweries: Schönramer Pils is bitter, floral and dry — the reason to drive to Petting.",
+    "order": "Schönramer Pils, then the Salome if the shop has it"
    }
   ],
   "Berchtesgaden": [
    {
     "name": "Hofbrauhaus Berchtesgaden",
-    "note": "The town's own brewery and restaurant; Helles and Dunkel brewed in the valley."
+    "note": "The town's own brewery and restaurant; Helles and Dunkel brewed in the valley.",
+    "order": "Helles, then the Dunkel, in the town's own brewery"
    },
    {
     "name": "Grassl Distillery",
-    "note": "Enzian and fruit brandies, for the non-beer half of the evening."
+    "note": "Enzian and fruit brandies, for the non-beer half of the evening.",
+    "order": "Enzian — not beer, but the local firewater"
    },
    {
     "name": "Königssee",
-    "note": "Electric boat to St. Bartholomä — the scenery half of the two days."
+    "note": "Electric boat to St. Bartholomä — the scenery half of the two days.",
+    "order": "Nothing to drink: take the boat to St. Bartholomä"
    }
   ],
   "Nesselwang": [
    {
     "name": "Brauerei-Gasthof Post",
-    "note": "Brewery and Gasthof in one building: sleep upstairs, drink the house beer downstairs."
+    "note": "Brewery and Gasthof in one building: sleep upstairs, drink the house beer downstairs.",
+    "order": "The house Helles, from the tank, at the table above the kettle"
    }
   ],
   "Missen-Wilhams": [
    {
     "name": "Brauereigasthof Schäffler",
-    "note": "Allgäu village brewery with a wood-panelled Stube; a handful of beers, all served young."
+    "note": "Allgäu village brewery with a wood-panelled Stube; a handful of beers, all served young.",
+    "order": "Whatever is youngest — the beer does not travel far here"
    }
   ],
   "Munich": [
    {
     "name": "Kloster Andechs",
-    "note": "Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley."
+    "note": "Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.",
+    "order": "Doppelbock Dunkel on the terrace above the Ammersee"
    },
    {
     "name": "Weihenstephan, Freising",
-    "note": "The world's oldest continuously operating brewery site (38 km); the Bräustüberl pours the standards."
+    "note": "The world's oldest continuously operating brewery site (38 km); the Bräustüberl pours the standards.",
+    "order": "Weihenstephaner Helles at the oldest brewery site in the world"
    },
    {
     "name": "Augustiner Bräustuben",
-    "note": "The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel, meatloaf at the next table."
+    "note": "The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel, meatloaf at the next table.",
+    "order": "Edelstoff from the wooden barrel, with meatloaf"
    },
    {
     "name": "Augustiner Keller",
-    "note": "Beer garden under the chestnuts; one of the few places still pouring from wooden barrels."
+    "note": "Beer garden under the chestnuts; one of the few places still pouring from wooden barrels.",
+    "order": "Another Edelstoff, under the chestnuts"
    },
    {
     "name": "Chinesischer Turm",
-    "note": "Englischer Garten beer garden at the pagoda — 7,000 seats, brass band, Maß in hand."
+    "note": "Englischer Garten beer garden at the pagoda — 7,000 seats, brass band, Maß in hand.",
+    "order": "A Maß at the pagoda, with the brass band"
    },
    {
     "name": "Viktualienmarkt",
-    "note": "Market beer garden in the centre, with the Maibaum overhead and a rotating brewery tap."
+    "note": "Market beer garden in the centre, with the Maibaum overhead and a rotating brewery tap.",
+    "order": "Whatever brewery is on the market tap this month"
    },
    {
     "name": "Schneider Bräuhaus",
-    "note": "Wheat-beer house on Tal: Aventinus, the original Tap 7, and a menu built for it."
+    "note": "Wheat-beer house on Tal: Aventinus, the original Tap 7, and a menu built for it.",
+    "order": "Aventinus, and the Tap 7 to follow"
    },
    {
     "name": "Paulaner Brauhaus",
-    "note": "The Nockherberg brewpub — Salvator season if you are lucky with the calendar."
+    "note": "The Nockherberg brewpub — Salvator season if you are lucky with the calendar.",
+    "order": "Salvator if it is March; otherwise the Helles"
    },
    {
     "name": "Giesinger Bräu",
-    "note": "Craft brewery in Giesing; Erhellung unfiltered Helles and a taproom full of locals."
+    "note": "Craft brewery in Giesing; Erhellung unfiltered Helles and a taproom full of locals.",
+    "order": "Erhellung, unfiltered"
    },
    {
     "name": "Hopfenhäcker",
-    "note": "Creative brewery founded 2016 in Haidhausen, moved into the Forschungsbrauerei in Perlach in 2021."
+    "note": "Creative brewery founded 2016 in Haidhausen, moved into the Forschungsbrauerei in Perlach in 2021.",
+    "order": "Something hoppy and new — the creative brewery's own"
    },
    {
     "name": "Forschungsbrauerei Bräustüberl",
-    "note": "Perlach research brewery and taproom — the same address as Hopfenhäcker, so both in one stop."
+    "note": "Perlach research brewery and taproom — the same address as Hopfenhäcker, so both in one stop.",
+    "order": "The Forschungsbräu Helles, in the taproom next door"
    },
    {
     "name": "Isartaler Brauhaus",
-    "note": "Neighbourhood brewpub in the south of the city, house beers brewed on site."
+    "note": "Neighbourhood brewpub in the south of the city, house beers brewed on site.",
+    "order": "The house beer, brewed in the room"
    },
    {
     "name": "Schweiger Bräu",
-    "note": "Private brewery in Markt Schwaben, east of the city — find it on tap around town."
+    "note": "Private brewery in Markt Schwaben, east of the city — find it on tap around town.",
+    "order": "Schweiger Helles on tap somewhere in town — ask which bar has it this week"
    },
    {
     "name": "Wildbräu Grafing",
-    "note": "Grafing's own brewery, almost a thousand years of history and eleven classic Bavarian beers."
+    "note": "Grafing's own brewery, almost a thousand years of history and eleven classic Bavarian beers.",
+    "order": "Wildbräu Helles — eleven classic beers, almost a thousand years"
    }
   ],
   "Frankfurt Airport": [
    {
     "name": "Frankfurt Airport",
-    "note": "No beer stop planned — land, collect the car, drive east. The return leg is 404 km before a long flight."
+    "note": "No beer stop planned — land, collect the car, drive east. The return leg is 404 km before a long flight.",
+    "order": "An espresso, then the A3 east"
    }
   ]
  },
@@ -99171,5 +99207,67 @@
     "Pils"
    ]
   }
- ]
+ ],
+ "city_meta": {
+  "Bamberg": {
+   "flag": "🇩🇪",
+   "stop": "2 nights · Stop #3",
+   "subnote": "Hotel Andres, then two days of smoke in the UNESCO old town.",
+   "famous": "Rauchbier"
+  },
+  "Nuremberg": {
+   "flag": "🇩🇪",
+   "stop": "1 night · Stop #4",
+   "subnote": "Leonard Hotel inside the walls; sandstone cellars under the castle.",
+   "famous": "Rotbier, from the rock cellars"
+  },
+  "Essing": {
+   "flag": "🇩🇪",
+   "stop": "1 night · Stop #5",
+   "subnote": "Gasthaus Felsenwastl on the Danube, the gorge at the door.",
+   "famous": "Danube fish and abbey beer"
+  },
+  "Traunstein": {
+   "flag": "🇩🇪",
+   "stop": "1 night · Stop #6",
+   "subnote": "Hotel Rosenheimer Hof — the key is in the safe by the back door.",
+   "famous": "Chiemgau Helles and Doppelbock"
+  },
+  "Schönram (Petting)": {
+   "flag": "🇩🇪",
+   "stop": "visit · Stop #7",
+   "subnote": "A 23 km detour off the Traunstein road that justifies the car.",
+   "famous": "Schönramer Pils — bitter, floral, bone dry"
+  },
+  "Berchtesgaden": {
+   "flag": "🇩🇪",
+   "stop": "2 nights · Stop #8",
+   "subnote": "Alpensport-Hotel Seimler, Maria am Berg, under the Watzmann.",
+   "famous": "Valley Helles and the Königssee"
+  },
+  "Nesselwang": {
+   "flag": "🇩🇪",
+   "stop": "1 night · Stop #9",
+   "subnote": "Brauerei-Gasthof Post: sleep above the brewhouse.",
+   "famous": "Allgäu house beer"
+  },
+  "Missen-Wilhams": {
+   "flag": "🇩🇪",
+   "stop": "1 night · Stop #10",
+   "subnote": "Brauereigasthof Schäffler, a village brewery with a wood stove.",
+   "famous": "Young Allgäu Landbier"
+  },
+  "Munich": {
+   "flag": "🇩🇪",
+   "stop": "7 nights · Stop #11",
+   "subnote": "Hotel Italia, Schillerstraße, and the whole city by U-Bahn.",
+   "famous": "Helles, Weißbier, and the beer gardens"
+  },
+  "Frankfurt Airport": {
+   "flag": "🇩🇪",
+   "stop": "transit · day 1 and day 18",
+   "subnote": "Land, collect the car, drive east. No beer stop planned.",
+   "famous": "Nothing — get on the road"
+  }
+ }
 }

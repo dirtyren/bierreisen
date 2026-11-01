@@ -44,13 +44,37 @@ p.lede{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}
 .day-items{margin-left:1.1rem;color:var(--muted);font-size:.9rem}
 .day-items li{margin:.2rem 0}
 #map-container{height:620px;border-radius:12px;border:1px solid var(--border)}
-.city-block{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem}
-.city-block h3{color:var(--gold);font-size:1.1rem;margin-bottom:.8rem}
-.venue{display:flex;gap:.9rem;padding:.6rem 0;border-top:1px solid rgba(42,48,80,.6)}
-.venue:first-of-type{border-top:none}
-.venue .rank{color:var(--gold);font-weight:800;opacity:.75;min-width:1.6rem}
-.venue h4{font-size:.98rem;margin-bottom:.15rem}
-.venue p{color:var(--muted);font-size:.88rem}
+.section-intro{margin-bottom:1.3rem}
+.city-ranking-section{margin-bottom:2.4rem}
+.city-section-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.9rem;
+  margin-bottom:1.1rem;padding-bottom:.7rem;border-bottom:1px solid var(--border)}
+.city-section-header h3{font-size:1.15rem;color:var(--text);margin:0}
+.city-subnote{color:var(--muted);font-size:.86rem;margin-top:.35rem;max-width:54ch}
+.city-meta-pill{font-size:.73rem;font-weight:600;color:var(--muted);background:rgba(21,24,51,.9);
+  border:1px solid var(--border);padding:.14rem .55rem;border-radius:999px;vertical-align:middle;margin-left:.4rem}
+.city-famous-pill{background:rgba(230,168,23,.13);border:1px solid rgba(230,168,23,.42);color:var(--gold);
+  padding:.36rem .8rem;border-radius:999px;font-size:.82rem}
+.brewery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.05rem}
+.brewery-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.15rem 1.2rem;
+  position:relative;display:flex;flex-direction:column;gap:.45rem;box-shadow:0 8px 20px rgba(5,8,20,.35);
+  transition:border-color .2s,transform .2s}
+.brewery-card:hover{border-color:rgba(230,168,23,.5);transform:translateY(-2px)}
+.brewery-card .rank{position:absolute;top:-11px;right:14px;background:var(--gold);color:#0b0c15;width:30px;
+  height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;
+  font-size:.82rem;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+.card-city-tag{color:#43d19e;font-size:.71rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.brewery-card h4{font-size:1rem;color:var(--text)}
+.brewery-card .desc{color:var(--muted);font-size:.86rem;line-height:1.5;flex:1}
+.order-this{background:rgba(8,10,20,.55);border:1px solid rgba(230,168,23,.28);border-radius:8px;
+  padding:.5rem .65rem;font-size:.81rem;color:#f0d98a;line-height:1.45}
+.region-filter{display:flex;gap:.45rem;margin-bottom:1.4rem;flex-wrap:wrap;align-items:center}
+.filter-btn{padding:.42rem .9rem;border:1px solid var(--border);background:var(--panel);color:var(--text);
+  border-radius:999px;font-family:inherit;font-size:.83rem;font-weight:600;cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s}
+.filter-btn:hover{border-color:rgba(230,168,23,.5);color:var(--gold)}
+.filter-btn.active{background:var(--gold);color:#0b0c15;border-color:var(--gold)}
+.search-input{padding:.45rem .9rem;border-radius:999px;border:1px solid var(--border);
+  background:var(--panel);color:var(--text);font-family:inherit;font-size:.86rem;min-width:290px}
 table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:1.4rem}
 th,td{padding:.55rem .7rem;border-bottom:1px solid var(--border);text-align:left}
 th{color:var(--gold);font-weight:700;background:rgba(21,24,51,.9);position:sticky;top:52px}
@@ -81,7 +105,7 @@ td.diag{color:#3a4368;text-align:center}
 <nav class="tabs">
   <button class="tab active" onclick="showTab('itinerary',this)">📋 Itinerary</button>
   <button class="tab" onclick="showTab('map',this)">🗺️ Map</button>
-  <button class="tab" onclick="showTab('rankings',this)">🍺 Rankings</button>
+  <button class="tab" onclick="showTab('rankings',this)">🏆 Rankings</button>
   <button class="tab" onclick="showTab('beers',this)">📖 Beer Guide</button>
   <button class="tab" onclick="showTab('drives',this)">🚗 Drive Times</button>
   <button class="tab" onclick="showTab('suggest',this)">💡 Suggestions</button>
@@ -277,210 +301,406 @@ td.diag{color:#3a4368;text-align:center}
 </section>
 
 <section id="rankings" class="tab-content">
-  <h2 class="section">What to drink where</h2>
-  <p class="lede">One section per stop, ranked by how much the place is worth a detour — the breweries and bars
-    that defined each night of this trip.</p>
-  
-      <section class="city-block">
-        <h3>Munich (arrival)</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Augustiner-Keller</h4><p>Munich&#x27;s oldest brewery and the locals&#x27; choice; Edelstoff from wooden barrels under the chestnuts.</p></div>
+  <div class="section-intro">
+    <h2 class="section">🏆 Per-City Brewery &amp; Bar Rankings</h2>
+    <p class="lede">38 venues across 12 stops, ranked 1..n per city, with what to
+      order at each one — the beer worth the detour, not just the closest bar.</p>
+  </div>
+
+  <div class="region-filter" id="ranking-filters">
+    <button type="button" class="filter-btn active" onclick="filterRankings('all', this)">All stops (38)</button>
+    <button type="button" class="filter-btn" onclick="filterRankings('munich-arrival', this)">🇩🇪 Munich (arrival) (4)</button><button type="button" class="filter-btn" onclick="filterRankings('bamberg', this)">🇩🇪 Bamberg (5)</button><button type="button" class="filter-btn" onclick="filterRankings('d-sseldorf', this)">🇩🇪 Düsseldorf (4)</button><button type="button" class="filter-btn" onclick="filterRankings('la-trappe', this)">🇳🇱 La Trappe (1)</button><button type="button" class="filter-btn" onclick="filterRankings('antwerp', this)">🇧🇪 Antwerp (3)</button><button type="button" class="filter-btn" onclick="filterRankings('brussels', this)">🇧🇪 Brussels (4)</button><button type="button" class="filter-btn" onclick="filterRankings('ghent', this)">🇧🇪 Ghent (3)</button><button type="button" class="filter-btn" onclick="filterRankings('bruges', this)">🇧🇪 Bruges (4)</button><button type="button" class="filter-btn" onclick="filterRankings('westvleteren', this)">🇧🇪 Westvleteren (2)</button><button type="button" class="filter-btn" onclick="filterRankings('chimay-poteaupr', this)">🇧🇪 Chimay (Poteaupré) (2)</button><button type="button" class="filter-btn" onclick="filterRankings('zwiefaltendorf', this)">🇩🇪 Zwiefaltendorf (1)</button><button type="button" class="filter-btn" onclick="filterRankings('munich-return', this)">🇩🇪 Munich (return) (5)</button>
+    <input type="search" id="venue-search" class="search-input" placeholder="🔍 Search venues, styles, notes..."
+           oninput="searchRankings()" aria-label="Search venues" />
+  </div>
+
+  <div id="rankings-container">
+      <section class="city-ranking-section" data-city-section="munich-arrival">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Munich (arrival) <span class="city-meta-pill">1 night · Stop #2</span></h3>
+            <p class="city-subnote">Hotel Royal, the first night, and the Altstadt on foot.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Schneider Bräuhaus</h4><p>The original wheat-beer house; Aventinus is the benchmark Weizenbock.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Hofbräuhaus</h4><p>Brewing since 1589 — go once for the room.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Giesinger Bräu</h4><p>Garage-to-glory craft brewery in the south; Erhellung unfiltered Helles.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Helles and Weißbier</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="munich-arrival" data-search="munich (arrival) augustiner-keller munich&#x27;s oldest brewery and the locals&#x27; choice; edelstoff from wooden barrels under the chestnuts. edelstoff by the maß, and stay for the second">
+              <span class="rank" title="Rank #1 in Munich (arrival)">1</span>
+              <div class="card-city-tag">🇩🇪 Munich (arrival) · #1 of 4</div>
+              <h4>Augustiner-Keller</h4>
+              <p class="desc">Munich&#x27;s oldest brewery and the locals&#x27; choice; Edelstoff from wooden barrels under the chestnuts.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Edelstoff by the Maß, and stay for the second</div>
+            </div>
+            <div class="brewery-card" data-city="munich-arrival" data-search="munich (arrival) schneider bräuhaus the original wheat-beer house; aventinus is the benchmark weizenbock. aventinus, then the eisbock if it is listed">
+              <span class="rank" title="Rank #2 in Munich (arrival)">2</span>
+              <div class="card-city-tag">🇩🇪 Munich (arrival) · #2 of 4</div>
+              <h4>Schneider Bräuhaus</h4>
+              <p class="desc">The original wheat-beer house; Aventinus is the benchmark Weizenbock.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Aventinus, then the Eisbock if it is listed</div>
+            </div>
+            <div class="brewery-card" data-city="munich-arrival" data-search="munich (arrival) hofbräuhaus brewing since 1589 — go once for the room. hofbräu original in the main hall, with the brass band">
+              <span class="rank" title="Rank #3 in Munich (arrival)">3</span>
+              <div class="card-city-tag">🇩🇪 Munich (arrival) · #3 of 4</div>
+              <h4>Hofbräuhaus</h4>
+              <p class="desc">Brewing since 1589 — go once for the room.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Hofbräu Original in the main hall, with the brass band</div>
+            </div>
+            <div class="brewery-card" data-city="munich-arrival" data-search="munich (arrival) giesinger bräu garage-to-glory craft brewery in the south; erhellung unfiltered helles. erhellung, the unfiltered helles">
+              <span class="rank" title="Rank #4 in Munich (arrival)">4</span>
+              <div class="card-city-tag">🇩🇪 Munich (arrival) · #4 of 4</div>
+              <h4>Giesinger Bräu</h4>
+              <p class="desc">Garage-to-glory craft brewery in the south; Erhellung unfiltered Helles.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Erhellung, the unfiltered Helles</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Bamberg</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Schlenkerla</h4><p>Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar.</p></div>
+      <section class="city-ranking-section" data-city-section="bamberg">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Bamberg <span class="city-meta-pill">1 night · Stop #3</span></h3>
+            <p class="city-subnote">Ibis Styles, the UNESCO old town, and five breweries within walking distance.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Spezial</h4><p>The locals&#x27; rauchbier — subtler smoke than Schlenkerla.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Mahr&#x27;s Bräu</h4><p>The legendary &#x27;aU&#x27; Ungespundetes, naturally carbonated and unfiltered.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Fässla</h4><p>Zwergla dark lager, brewery tap opposite Spezial.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">05</span>
-            <div><h4>Greifenklau</h4><p>Beer garden with the best view over the city.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Rauchbier</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg schlenkerla rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar. aecht schlenkerla rauchbier märzen, beechwood smoke from the oak barrel">
+              <span class="rank" title="Rank #1 in Bamberg">1</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #1 of 5</div>
+              <h4>Schlenkerla</h4>
+              <p class="desc">Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Aecht Schlenkerla Rauchbier Märzen, beechwood smoke from the oak barrel</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg spezial the locals&#x27; rauchbier — subtler smoke than schlenkerla. spezial rauchbier lager — the locals&#x27; answer to schlenkerla">
+              <span class="rank" title="Rank #2 in Bamberg">2</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #2 of 5</div>
+              <h4>Spezial</h4>
+              <p class="desc">The locals&#x27; rauchbier — subtler smoke than Schlenkerla.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Spezial Rauchbier Lager — the locals&#x27; answer to Schlenkerla</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg mahr&#x27;s bräu the legendary &#x27;au&#x27; ungespundetes, naturally carbonated and unfiltered. au ungespundetes, the reference franconian lager">
+              <span class="rank" title="Rank #3 in Bamberg">3</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #3 of 5</div>
+              <h4>Mahr&#x27;s Bräu</h4>
+              <p class="desc">The legendary &#x27;aU&#x27; Ungespundetes, naturally carbonated and unfiltered.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> aU Ungespundetes, the reference Franconian lager</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg fässla zwergla dark lager, brewery tap opposite spezial. zwergla, dark and quaffable">
+              <span class="rank" title="Rank #4 in Bamberg">4</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #4 of 5</div>
+              <h4>Fässla</h4>
+              <p class="desc">Zwergla dark lager, brewery tap opposite Spezial.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Zwergla, dark and quaffable</div>
+            </div>
+            <div class="brewery-card" data-city="bamberg" data-search="bamberg greifenklau beer garden with the best view over the city. lagerbier on the terrace — the walk up is the point">
+              <span class="rank" title="Rank #5 in Bamberg">5</span>
+              <div class="card-city-tag">🇩🇪 Bamberg · #5 of 5</div>
+              <h4>Greifenklau</h4>
+              <p class="desc">Beer garden with the best view over the city.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Lagerbier on the terrace — the walk up is the point</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Düsseldorf</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Uerige</h4><p>The reference Altbier: copper kettles, waiters who never stop pouring, and a house bitter enough to reset your palate.</p></div>
+      <section class="city-ranking-section" data-city-section="d-sseldorf">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Düsseldorf <span class="city-meta-pill">2 nights · Stop #4</span></h3>
+            <p class="city-subnote">Altstadt Hotel Rheinblick, in the middle of the Altstadt&#x27;s Altbier mile.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Brauerei Schumacher</h4><p>Oldest Altbier brewery in the city, blond and spritzy, in a tiled 19th-century hall.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Im Füchschen</h4><p>Altbier and Rhineland food in the Altstadt&#x27;s busiest corner.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Zum Schlüssel</h4><p>Brewpub with a copper kettle in the cellar and a quieter room upstairs.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Altbier, poured straight from the barrel</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="d-sseldorf" data-search="düsseldorf uerige the reference altbier: copper kettles, waiters who never stop pouring, and a house bitter enough to reset your palate. uerige alt — bitter, copper-brewed, and the waiter never stops pouring">
+              <span class="rank" title="Rank #1 in Düsseldorf">1</span>
+              <div class="card-city-tag">🇩🇪 Düsseldorf · #1 of 4</div>
+              <h4>Uerige</h4>
+              <p class="desc">The reference Altbier: copper kettles, waiters who never stop pouring, and a house bitter enough to reset your palate.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Uerige Alt — bitter, copper-brewed, and the waiter never stops pouring</div>
+            </div>
+            <div class="brewery-card" data-city="d-sseldorf" data-search="düsseldorf brauerei schumacher oldest altbier brewery in the city, blond and spritzy, in a tiled 19th-century hall. schumacher alt, then the jubiläums-alt if it is on">
+              <span class="rank" title="Rank #2 in Düsseldorf">2</span>
+              <div class="card-city-tag">🇩🇪 Düsseldorf · #2 of 4</div>
+              <h4>Brauerei Schumacher</h4>
+              <p class="desc">Oldest Altbier brewery in the city, blond and spritzy, in a tiled 19th-century hall.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Schumacher Alt, then the Jubiläums-Alt if it is on</div>
+            </div>
+            <div class="brewery-card" data-city="d-sseldorf" data-search="düsseldorf im füchschen altbier and rhineland food in the altstadt&#x27;s busiest corner. füchschen alt with a plate of rheinischer sauerbraten">
+              <span class="rank" title="Rank #3 in Düsseldorf">3</span>
+              <div class="card-city-tag">🇩🇪 Düsseldorf · #3 of 4</div>
+              <h4>Im Füchschen</h4>
+              <p class="desc">Altbier and Rhineland food in the Altstadt&#x27;s busiest corner.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Füchschen Alt with a plate of Rheinischer Sauerbraten</div>
+            </div>
+            <div class="brewery-card" data-city="d-sseldorf" data-search="düsseldorf zum schlüssel brewpub with a copper kettle in the cellar and a quieter room upstairs. schlüssel alt, from the copper kettle in the cellar">
+              <span class="rank" title="Rank #4 in Düsseldorf">4</span>
+              <div class="card-city-tag">🇩🇪 Düsseldorf · #4 of 4</div>
+              <h4>Zum Schlüssel</h4>
+              <p class="desc">Brewpub with a copper kettle in the cellar and a quieter room upstairs.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Schlüssel Alt, from the copper kettle in the cellar</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>La Trappe</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Brouwerij La Trappe</h4><p>The only Dutch Trappist brewery, at Berkel-Enschot near Tilburg: Witte, Blond, Dubbel, Tripel and the barrel-aged Quadrupel.</p></div>
+      <section class="city-ranking-section" data-city-section="la-trappe">
+        <div class="city-section-header">
+          <div>
+            <h3>🇳🇱 La Trappe <span class="city-meta-pill">visit · Stop #5</span></h3>
+            <p class="city-subnote">The only Dutch Trappist brewery, at Berkel-Enschot near Tilburg.</p>
           </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Trappist ale — Witte, Dubbel, Tripel, Quadrupel</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="la-trappe" data-search="la trappe brouwerij la trappe the only dutch trappist brewery, at berkel-enschot near tilburg: witte, blond, dubbel, tripel and the barrel-aged quadrupel. quadrupel, and the barrel-aged version if the shop still has it">
+              <span class="rank" title="Rank #1 in La Trappe">1</span>
+              <div class="card-city-tag">🇳🇱 La Trappe · #1 of 1</div>
+              <h4>Brouwerij La Trappe</h4>
+              <p class="desc">The only Dutch Trappist brewery, at Berkel-Enschot near Tilburg: Witte, Blond, Dubbel, Tripel and the barrel-aged Quadrupel.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Quadrupel, and the barrel-aged version if the shop still has it</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Antwerp</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Kulminator</h4><p>700+ bottles with vintages going back decades; the cellar list is the reason to come.</p></div>
+      <section class="city-ranking-section" data-city-section="antwerp">
+        <div class="city-section-header">
+          <div>
+            <h3>🇧🇪 Antwerp <span class="city-meta-pill">1 night · Stop #6</span></h3>
+            <p class="city-subnote">Hotel Banks, the cathedral quarter, and the deepest beer cellar in Belgium.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Billie&#x27;s Bier Kafétaria</h4><p>300+ beers in a cosy neighbourhood room, staff who know the list.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>De Koninck City Brewery</h4><p>The Antwerp classic, Bolleke in its bowl-shaped glass.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Vintage bottles and 700+ beer lists</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="antwerp" data-search="antwerp kulminator 700+ bottles with vintages going back decades; the cellar list is the reason to come. a vintage gueuze or an old duvel from the cellar list">
+              <span class="rank" title="Rank #1 in Antwerp">1</span>
+              <div class="card-city-tag">🇧🇪 Antwerp · #1 of 3</div>
+              <h4>Kulminator</h4>
+              <p class="desc">700+ bottles with vintages going back decades; the cellar list is the reason to come.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> A vintage gueuze or an old Duvel from the cellar list</div>
+            </div>
+            <div class="brewery-card" data-city="antwerp" data-search="antwerp billie&#x27;s bier kafétaria 300+ beers in a cosy neighbourhood room, staff who know the list. whatever the staff recommend from the 300 — tell them what you liked last">
+              <span class="rank" title="Rank #2 in Antwerp">2</span>
+              <div class="card-city-tag">🇧🇪 Antwerp · #2 of 3</div>
+              <h4>Billie&#x27;s Bier Kafétaria</h4>
+              <p class="desc">300+ beers in a cosy neighbourhood room, staff who know the list.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Whatever the staff recommend from the 300 — tell them what you liked last</div>
+            </div>
+            <div class="brewery-card" data-city="antwerp" data-search="antwerp de koninck city brewery the antwerp classic, bolleke in its bowl-shaped glass. bolleke, then the brewery tour through the koelschip">
+              <span class="rank" title="Rank #3 in Antwerp">3</span>
+              <div class="card-city-tag">🇧🇪 Antwerp · #3 of 3</div>
+              <h4>De Koninck City Brewery</h4>
+              <p class="desc">The Antwerp classic, Bolleke in its bowl-shaped glass.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Bolleke, then the brewery tour through the koelschip</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Brussels</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Cantillon</h4><p>The last traditional lambic brewery inside the city: coolship, barrels, Gueuze and Kriek with no sweetening.</p></div>
+      <section class="city-ranking-section" data-city-section="brussels">
+        <div class="city-section-header">
+          <div>
+            <h3>🇧🇪 Brussels <span class="city-meta-pill">2 nights · Stop #7</span></h3>
+            <p class="city-subnote">Ibis Brussels City Centre; Cantillon on one side, the Grand Place on the other.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Moeder Lambic</h4><p>40 taps of rare Belgian craft; the best introduction to the modern scene.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>A la Mort Subite</h4><p>1928 Art Deco café; order the house gueuze at the bar.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Poechenellekelder</h4><p>Puppet-themed pub opposite Manneken Pis, 100+ Belgian beers.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Lambic and gueuze</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="brussels" data-search="brussels cantillon the last traditional lambic brewery inside the city: coolship, barrels, gueuze and kriek with no sweetening. gueuze 100% lambic bio, then the kriek at the barrel room">
+              <span class="rank" title="Rank #1 in Brussels">1</span>
+              <div class="card-city-tag">🇧🇪 Brussels · #1 of 4</div>
+              <h4>Cantillon</h4>
+              <p class="desc">The last traditional lambic brewery inside the city: coolship, barrels, Gueuze and Kriek with no sweetening.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Gueuze 100% Lambic Bio, then the Kriek at the barrel room</div>
+            </div>
+            <div class="brewery-card" data-city="brussels" data-search="brussels moeder lambic 40 taps of rare belgian craft; the best introduction to the modern scene. something sour on tap — ask what is open from the wood">
+              <span class="rank" title="Rank #2 in Brussels">2</span>
+              <div class="card-city-tag">🇧🇪 Brussels · #2 of 4</div>
+              <h4>Moeder Lambic</h4>
+              <p class="desc">40 taps of rare Belgian craft; the best introduction to the modern scene.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Something sour on tap — ask what is open from the wood</div>
+            </div>
+            <div class="brewery-card" data-city="brussels" data-search="brussels a la mort subite 1928 art deco café; order the house gueuze at the bar. house gueuze at the bar of the 1928 room">
+              <span class="rank" title="Rank #3 in Brussels">3</span>
+              <div class="card-city-tag">🇧🇪 Brussels · #3 of 4</div>
+              <h4>A la Mort Subite</h4>
+              <p class="desc">1928 Art Deco café; order the house gueuze at the bar.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> House gueuze at the bar of the 1928 room</div>
+            </div>
+            <div class="brewery-card" data-city="brussels" data-search="brussels poechenellekelder puppet-themed pub opposite manneken pis, 100+ belgian beers. a trappist or a flemish red, opposite manneken pis">
+              <span class="rank" title="Rank #4 in Brussels">4</span>
+              <div class="card-city-tag">🇧🇪 Brussels · #4 of 4</div>
+              <h4>Poechenellekelder</h4>
+              <p class="desc">Puppet-themed pub opposite Manneken Pis, 100+ Belgian beers.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> A Trappist or a Flemish red, opposite Manneken Pis</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Ghent</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Gruut Stadsbrouwerij</h4><p>City brewery using a medieval herb-and-spice mix instead of hops.</p></div>
+      <section class="city-ranking-section" data-city-section="ghent">
+        <div class="city-section-header">
+          <div>
+            <h3>🇧🇪 Ghent <span class="city-meta-pill">lunch stop · Stop #8</span></h3>
+            <p class="city-subnote">An afternoon between Brussels and Bruges: herb beer and the Graslei.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>De Dulle Griet</h4><p>500 beers on the Vrijdagmarkt, and the shoe-in-the-basket ritual.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Het Waterhuis aan de Bierkant</h4><p>Canal-side beer hall, around 170 beers.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Gruut — beer brewed with herbs instead of hops</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="ghent" data-search="ghent gruut stadsbrouwerij city brewery using a medieval herb-and-spice mix instead of hops. gruut wit or blond — the medieval herb mix is the house signature">
+              <span class="rank" title="Rank #1 in Ghent">1</span>
+              <div class="card-city-tag">🇧🇪 Ghent · #1 of 3</div>
+              <h4>Gruut Stadsbrouwerij</h4>
+              <p class="desc">City brewery using a medieval herb-and-spice mix instead of hops.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Gruut Wit or Blond — the medieval herb mix is the house signature</div>
+            </div>
+            <div class="brewery-card" data-city="ghent" data-search="ghent de dulle griet 500 beers on the vrijdagmarkt, and the shoe-in-the-basket ritual. anything from the 500-bottle list, with your shoe in the basket">
+              <span class="rank" title="Rank #2 in Ghent">2</span>
+              <div class="card-city-tag">🇧🇪 Ghent · #2 of 3</div>
+              <h4>De Dulle Griet</h4>
+              <p class="desc">500 beers on the Vrijdagmarkt, and the shoe-in-the-basket ritual.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Anything from the 500-bottle list, with your shoe in the basket</div>
+            </div>
+            <div class="brewery-card" data-city="ghent" data-search="ghent het waterhuis aan de bierkant canal-side beer hall, around 170 beers. a flemish red on the canal">
+              <span class="rank" title="Rank #3 in Ghent">3</span>
+              <div class="card-city-tag">🇧🇪 Ghent · #3 of 3</div>
+              <h4>Het Waterhuis aan de Bierkant</h4>
+              <p class="desc">Canal-side beer hall, around 170 beers.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> A Flemish red on the canal</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Bruges</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>De Halve Maan</h4><p>Only active brewery in the historic centre; Brugse Zot and Straffe Hendrik, with the 3 km beer pipeline.</p></div>
+      <section class="city-ranking-section" data-city-section="bruges">
+        <div class="city-section-header">
+          <div>
+            <h3>🇧🇪 Bruges <span class="city-meta-pill">1 night · Stop #9</span></h3>
+            <p class="city-subnote">Martin&#x27;s Brugge, the Markt at night, and De Garre down an alley.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>De Garre</h4><p>Hidden alley café, house tripel at 11%, maximum three per person.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>&#x27;t Brugs Beertje</h4><p>300+ bottles, the classic brown bar of Bruges.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Café Vlissinghe</h4><p>Oldest pub in Bruges (1515), bocce court in the garden.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Brugse Zot and the 11% house tripel</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="bruges" data-search="bruges de halve maan only active brewery in the historic centre; brugse zot and straffe hendrik, with the 3 km beer pipeline. brugse zot blond, then straffe hendrik quadrupel">
+              <span class="rank" title="Rank #1 in Bruges">1</span>
+              <div class="card-city-tag">🇧🇪 Bruges · #1 of 4</div>
+              <h4>De Halve Maan</h4>
+              <p class="desc">Only active brewery in the historic centre; Brugse Zot and Straffe Hendrik, with the 3 km beer pipeline.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Brugse Zot blond, then Straffe Hendrik Quadrupel</div>
+            </div>
+            <div class="brewery-card" data-city="bruges" data-search="bruges de garre hidden alley café, house tripel at 11%, maximum three per person. the house tripel with the cube of cheese — and stop at three">
+              <span class="rank" title="Rank #2 in Bruges">2</span>
+              <div class="card-city-tag">🇧🇪 Bruges · #2 of 4</div>
+              <h4>De Garre</h4>
+              <p class="desc">Hidden alley café, house tripel at 11%, maximum three per person.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The house Tripel with the cube of cheese — and stop at three</div>
+            </div>
+            <div class="brewery-card" data-city="bruges" data-search="bruges &#x27;t brugs beertje 300+ bottles, the classic brown bar of bruges. a vintage flemish red from the 300+ list">
+              <span class="rank" title="Rank #3 in Bruges">3</span>
+              <div class="card-city-tag">🇧🇪 Bruges · #3 of 4</div>
+              <h4>&#x27;t Brugs Beertje</h4>
+              <p class="desc">300+ bottles, the classic brown bar of Bruges.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> A vintage Flemish red from the 300+ list</div>
+            </div>
+            <div class="brewery-card" data-city="bruges" data-search="bruges café vlissinghe oldest pub in bruges (1515), bocce court in the garden. a west flanders blonde in the 1515 room, then bocce in the garden">
+              <span class="rank" title="Rank #4 in Bruges">4</span>
+              <div class="card-city-tag">🇧🇪 Bruges · #4 of 4</div>
+              <h4>Café Vlissinghe</h4>
+              <p class="desc">Oldest pub in Bruges (1515), bocce court in the garden.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> A West Flanders blonde in the 1515 room, then bocce in the garden</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Westvleteren</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>In de Vrede</h4><p>The café opposite Sint-Sixtus: the only reliable place to drink Westvleteren 12 on tap, with the abbey cheese.</p></div>
+      <section class="city-ranking-section" data-city-section="westvleteren">
+        <div class="city-section-header">
+          <div>
+            <h3>🇧🇪 Westvleteren <span class="city-meta-pill">visit · Stop #10</span></h3>
+            <p class="city-subnote">Sint-Sixtus Abbey and In de Vrede — the reason this road exists.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Sint-Sixtus Abbey</h4><p>The Trappist monastery itself — no tours, but the gate and the shop are part of the pilgrimage.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Westvleteren 12</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="westvleteren" data-search="westvleteren in de vrede the café opposite sint-sixtus: the only reliable place to drink westvleteren 12 on tap, with the abbey cheese. westvleteren 12 by the glass — the 8 if you are driving — and the abbey cheese">
+              <span class="rank" title="Rank #1 in Westvleteren">1</span>
+              <div class="card-city-tag">🇧🇪 Westvleteren · #1 of 2</div>
+              <h4>In de Vrede</h4>
+              <p class="desc">The café opposite Sint-Sixtus: the only reliable place to drink Westvleteren 12 on tap, with the abbey cheese.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Westvleteren 12 by the glass — the 8 if you are driving — and the abbey cheese</div>
+            </div>
+            <div class="brewery-card" data-city="westvleteren" data-search="westvleteren sint-sixtus abbey the trappist monastery itself — no tours, but the gate and the shop are part of the pilgrimage. whatever the gate shop allows — six bottles per person, booked ahead">
+              <span class="rank" title="Rank #2 in Westvleteren">2</span>
+              <div class="card-city-tag">🇧🇪 Westvleteren · #2 of 2</div>
+              <h4>Sint-Sixtus Abbey</h4>
+              <p class="desc">The Trappist monastery itself — no tours, but the gate and the shop are part of the pilgrimage.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Whatever the gate shop allows — six bottles per person, booked ahead</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Chimay (Poteaupré)</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Auberge de Poteaupré</h4><p>The abbey&#x27;s own inn and restaurant, a few hundred metres from Scourmont; Chimay Blue with abbey cheese.</p></div>
+      <section class="city-ranking-section" data-city-section="chimay-poteaupr">
+        <div class="city-section-header">
+          <div>
+            <h3>🇧🇪 Chimay (Poteaupré) <span class="city-meta-pill">1 night · Stop #11</span></h3>
+            <p class="city-subnote">Auberge de Poteaupré, the abbey&#x27;s own inn at the edge of the forest.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Chimay Scourmont Abbey</h4><p>The largest Trappist brewery; the Espace Chimay explains the brewing and the cheese.</p></div>
-          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Chimay Blue and the abbey cheese</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="chimay-poteaupr" data-search="chimay (poteaupré) auberge de poteaupré the abbey&#x27;s own inn and restaurant, a few hundred metres from scourmont; chimay blue with abbey cheese. chimay bleue with the scourmont cheese board">
+              <span class="rank" title="Rank #1 in Chimay (Poteaupré)">1</span>
+              <div class="card-city-tag">🇧🇪 Chimay (Poteaupré) · #1 of 2</div>
+              <h4>Auberge de Poteaupré</h4>
+              <p class="desc">The abbey&#x27;s own inn and restaurant, a few hundred metres from Scourmont; Chimay Blue with abbey cheese.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Chimay Bleue with the Scourmont cheese board</div>
+            </div>
+            <div class="brewery-card" data-city="chimay-poteaupr" data-search="chimay (poteaupré) chimay scourmont abbey the largest trappist brewery; the espace chimay explains the brewing and the cheese. the espace chimay flight — rouge, blanche, bleue side by side">
+              <span class="rank" title="Rank #2 in Chimay (Poteaupré)">2</span>
+              <div class="card-city-tag">🇧🇪 Chimay (Poteaupré) · #2 of 2</div>
+              <h4>Chimay Scourmont Abbey</h4>
+              <p class="desc">The largest Trappist brewery; the Espace Chimay explains the brewing and the cheese.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The Espace Chimay flight — Rouge, Blanche, Bleue side by side</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Zwiefaltendorf</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Blank&#x27;s Brauerei</h4><p>Village brewery and Gasthof on the Danube — Swabian Landbier, roast pork and no pretence.</p></div>
+      <section class="city-ranking-section" data-city-section="zwiefaltendorf">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Zwiefaltendorf <span class="city-meta-pill">1 night · Stop #12</span></h3>
+            <p class="city-subnote">Bauer am Bach on the Danube, dinner at a village brewery.</p>
           </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>Swabian Landbier</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="zwiefaltendorf" data-search="zwiefaltendorf blank&#x27;s brauerei village brewery and gasthof on the danube — swabian landbier, roast pork and no pretence. blank&#x27;s landbier and a schnitzel; the drive is tomorrow">
+              <span class="rank" title="Rank #1 in Zwiefaltendorf">1</span>
+              <div class="card-city-tag">🇩🇪 Zwiefaltendorf · #1 of 1</div>
+              <h4>Blank&#x27;s Brauerei</h4>
+              <p class="desc">Village brewery and Gasthof on the Danube — Swabian Landbier, roast pork and no pretence.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Blank&#x27;s Landbier and a Schnitzel; the drive is tomorrow</div>
+            </div></div>
       </section>
-      <section class="city-block">
-        <h3>Munich (return)</h3>
-        
-          <div class="venue">
-            <span class="rank">01</span>
-            <div><h4>Augustiner-Keller</h4><p>Wooden-barrel Edelstoff under the chestnuts; the locals&#x27; answer to every tourist beer hall.</p></div>
+      <section class="city-ranking-section" data-city-section="munich-return">
+        <div class="city-section-header">
+          <div>
+            <h3>🇩🇪 Munich (return) <span class="city-meta-pill">4 nights · Stop #13</span></h3>
+            <p class="city-subnote">Hotel Royal again for the long finish, with Andechs as a day trip.</p>
           </div>
-          <div class="venue">
-            <span class="rank">02</span>
-            <div><h4>Schneider Bräuhaus</h4><p>Wheat-beer masters, Aventinus and the original Tap7.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">03</span>
-            <div><h4>Hofbräuhaus</h4><p>The room everyone has heard of; go early or late.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">04</span>
-            <div><h4>Giesinger Bräu</h4><p>Munich craft with a neighbourhood taproom.</p></div>
-          </div>
-          <div class="venue">
-            <span class="rank">05</span>
-            <div><h4>Kloster Andechs (day trip)</h4><p>Benedictine monastery brewery above the Ammersee — Doppelbock Dunkel, 45 km from the city.</p></div>
-          </div>
-      </section>
+          <div class="city-famous-pill">🍻 Famous for: <strong>The full Munich range, one last time</strong></div>
+        </div>
+        <div class="brewery-grid">
+            <div class="brewery-card" data-city="munich-return" data-search="munich (return) augustiner-keller wooden-barrel edelstoff under the chestnuts; the locals&#x27; answer to every tourist beer hall. edelstoff, again, because it is the best thing in the city">
+              <span class="rank" title="Rank #1 in Munich (return)">1</span>
+              <div class="card-city-tag">🇩🇪 Munich (return) · #1 of 5</div>
+              <h4>Augustiner-Keller</h4>
+              <p class="desc">Wooden-barrel Edelstoff under the chestnuts; the locals&#x27; answer to every tourist beer hall.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Edelstoff, again, because it is the best thing in the city</div>
+            </div>
+            <div class="brewery-card" data-city="munich-return" data-search="munich (return) schneider bräuhaus wheat-beer masters, aventinus and the original tap7. aventinus eisbock if it is on">
+              <span class="rank" title="Rank #2 in Munich (return)">2</span>
+              <div class="card-city-tag">🇩🇪 Munich (return) · #2 of 5</div>
+              <h4>Schneider Bräuhaus</h4>
+              <p class="desc">Wheat-beer masters, Aventinus and the original Tap7.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Aventinus Eisbock if it is on</div>
+            </div>
+            <div class="brewery-card" data-city="munich-return" data-search="munich (return) hofbräuhaus the room everyone has heard of; go early or late. dunkel this time, in the upstairs room">
+              <span class="rank" title="Rank #3 in Munich (return)">3</span>
+              <div class="card-city-tag">🇩🇪 Munich (return) · #3 of 5</div>
+              <h4>Hofbräuhaus</h4>
+              <p class="desc">The room everyone has heard of; go early or late.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Dunkel this time, in the upstairs room</div>
+            </div>
+            <div class="brewery-card" data-city="munich-return" data-search="munich (return) giesinger bräu munich craft with a neighbourhood taproom. the seasonal, whatever it is">
+              <span class="rank" title="Rank #4 in Munich (return)">4</span>
+              <div class="card-city-tag">🇩🇪 Munich (return) · #4 of 5</div>
+              <h4>Giesinger Bräu</h4>
+              <p class="desc">Munich craft with a neighbourhood taproom.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> The seasonal, whatever it is</div>
+            </div>
+            <div class="brewery-card" data-city="munich-return" data-search="munich (return) kloster andechs (day trip) benedictine monastery brewery above the ammersee — doppelbock dunkel, 45 km from the city. doppelbock dunkel on the terrace above the ammersee">
+              <span class="rank" title="Rank #5 in Munich (return)">5</span>
+              <div class="card-city-tag">🇩🇪 Munich (return) · #5 of 5</div>
+              <h4>Kloster Andechs (day trip)</h4>
+              <p class="desc">Benedictine monastery brewery above the Ammersee — Doppelbock Dunkel, 45 km from the city.</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> Doppelbock Dunkel on the terrace above the Ammersee</div>
+            </div></div>
+      </section></div>
 </section>
 
 <section id="beers" class="tab-content">
@@ -570,6 +790,30 @@ function initMap() {
   map.invalidateSize();
   map.fitBounds(L.latLngBounds(pts).pad(0.06));
   window.tripMap = map;
+}
+
+var currentRankingCity = 'all';
+function filterRankings(citySlug, btnEl) {
+  currentRankingCity = citySlug;
+  document.querySelectorAll('#ranking-filters .filter-btn').forEach(function (b) { b.classList.remove('active'); });
+  if (btnEl) btnEl.classList.add('active');
+  applyRankingFilter();
+}
+function searchRankings() { applyRankingFilter(); }
+function applyRankingFilter() {
+  var input = document.getElementById('venue-search');
+  var q = (input && input.value ? input.value : '').trim().toLowerCase();
+  document.querySelectorAll('.city-ranking-section').forEach(function (sec) {
+    var cityMatch = (currentRankingCity === 'all' || sec.dataset.citySection === currentRankingCity);
+    var visible = 0;
+    sec.querySelectorAll('.brewery-card').forEach(function (card) {
+      var textMatch = !q || (card.dataset.search || '').indexOf(q) !== -1;
+      var show = cityMatch && textMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    sec.style.display = visible > 0 ? '' : 'none';
+  });
 }
 </script>
 </body>

@@ -67923,129 +67923,158 @@
   "Memmelsdorf": [
    {
     "name": "Brauerei & Gasthof Drei Kronen",
-    "note": "Brewery, Gasthof and hotel in one building in Memmelsdorf — hand-brewed Franconian beer and a few rooms upstairs."
+    "note": "Brewery, Gasthof and hotel in one building in Memmelsdorf — hand-brewed Franconian beer and a few rooms upstairs.",
+    "order": "Drei Kronen Lagerbier, brewed downstairs from the room"
    },
    {
     "name": "Brauerei & Wirtshaus Göller",
-    "note": "Family brewery in Memmelsdorf-Drosendorf, a short drive out; unfiltered Franconian lagers in the Wirtshaus."
+    "note": "Family brewery in Memmelsdorf-Drosendorf, a short drive out; unfiltered Franconian lagers in the Wirtshaus.",
+    "order": "Göller Landbier in the Wirtshaus in Drosendorf"
    },
    {
     "name": "Schloss Seehof",
-    "note": "The prince-bishops' summer palace at the edge of the village — gardens, orangery, and a walk before dinner."
+    "note": "The prince-bishops' summer palace at the edge of the village — gardens, orangery, and a walk before dinner.",
+    "order": "No beer — the prince-bishops' garden, before dinner"
    },
    {
     "name": "Schlenkerla, Bamberg",
-    "note": "Six kilometres away: Rauchbier since 1405, poured from oak barrels in a vaulted cellar."
+    "note": "Six kilometres away: Rauchbier since 1405, poured from oak barrels in a vaulted cellar.",
+    "order": "Aecht Schlenkerla Rauchbier Märzen, six kilometres away"
    },
    {
     "name": "Spezial, Bamberg",
-    "note": "The Bambergers' rauchbier — softer smoke than Schlenkerla, and the locals' choice."
+    "note": "The Bambergers' rauchbier — softer smoke than Schlenkerla, and the locals' choice.",
+    "order": "Spezial Rauchbier Lager, the softer smoke"
    }
   ],
   "Plzeň": [
    {
     "name": "Pilsner Urquell (Prazdroj)",
-    "note": "The brewery that defined the style in 1842: the tour ends in the cellars with an unfiltered, unpasteurised pour."
+    "note": "The brewery that defined the style in 1842: the tour ends in the cellars with an unfiltered, unpasteurised pour.",
+    "order": "The unfiltered, unpasteurised pour in the cellar at the end of the tour"
    },
    {
     "name": "Na Spilce",
-    "note": "The brewery's own restaurant under the brewhouse — the freshest Prazdroj you will get outside the cellar."
+    "note": "The brewery's own restaurant under the brewhouse — the freshest Prazdroj you will get outside the cellar.",
+    "order": "Prazdroj from the tank, with goulash and bread dumplings"
    },
    {
     "name": "Purkmistr, Černice",
-    "note": "Brewery and beer spa on the edge of town: baths in wort, a house lager, and a hotel if you overdo it."
+    "note": "Brewery and beer spa on the edge of town: baths in wort, a house lager, and a hotel if you overdo it.",
+    "order": "Purkmistr Helles, then the beer bath upstairs"
    },
    {
     "name": "Pivovarský dům",
-    "note": "Brewpub in the centre with its own beers and a menu built around them."
+    "note": "Brewpub in the centre with its own beers and a menu built around them.",
+    "order": "The house wheat beer, brewed on site"
    },
    {
     "name": "Gambrinus",
-    "note": "The everyday Plzeň lager, lighter and cheaper than Prazdroj, and just as local."
+    "note": "The everyday Plzeň lager, lighter and cheaper than Prazdroj, and just as local.",
+    "order": "Gambrinus by the half-litre — cheap, fresh, everywhere"
    }
   ],
   "České Budějovice": [
    {
     "name": "Budweiser Budvar",
-    "note": "The other Budweiser: tours of 70–80 minutes through the brewhouse and the cellars, with a tasting at the end."
+    "note": "The other Budweiser: tours of 70–80 minutes through the brewhouse and the cellars, with a tasting at the end.",
+    "order": "Budvar Original, unfiltered from the tank at the end of the tour"
    },
    {
     "name": "Budvar Samson",
-    "note": "The city brewery on náměstí Přemysla Otakara II — dark and light, in a 19th-century building."
+    "note": "The city brewery on náměstí Přemysla Otakara II — dark and light, in a 19th-century building.",
+    "order": "Samson Tmavé, the dark lager from the city brewery"
    },
    {
     "name": "Masné krámy",
-    "note": "The old meat market turned beer hall, pouring Budvar by the metre."
+    "note": "The old meat market turned beer hall, pouring Budvar by the metre.",
+    "order": "Budvar by the metre, in the old meat market"
    }
   ],
   "Berchtesgaden": [
    {
     "name": "Hofbrauhaus Berchtesgaden",
-    "note": "The town's own brewery and restaurant; Helles and Dunkel brewed in the valley."
+    "note": "The town's own brewery and restaurant; Helles and Dunkel brewed in the valley.",
+    "order": "Helles, then the Dunkel, in the town brewery"
    },
    {
     "name": "Königssee",
-    "note": "Electric boat to St. Bartholomä — the scenery half of the two days."
+    "note": "Electric boat to St. Bartholomä — the scenery half of the two days.",
+    "order": "Nothing to drink on the boat; take the walk to the Malerwinkel instead"
    },
    {
     "name": "Grassl Distillery",
-    "note": "Enzian and fruit brandies for the non-beer half of the evening."
+    "note": "Enzian and fruit brandies for the non-beer half of the evening.",
+    "order": "Enzian, for the cold walk back"
    }
   ],
   "Munich": [
    {
     "name": "Marienplatz Christkindlmarkt",
-    "note": "The Advent market under the Glockenspiel; Glühwein in the cold, and the brewery stalls around the edges."
+    "note": "The Advent market under the Glockenspiel; Glühwein in the cold, and the brewery stalls around the edges.",
+    "order": "Glühwein in the cold, and a Helles at the brewery stall"
    },
    {
     "name": "Tollwood",
-    "note": "The winter festival on the Theresienwiese — food stalls, music and a long bar list."
+    "note": "The winter festival on the Theresienwiese — food stalls, music and a long bar list.",
+    "order": "Something from the long bar list at the winter festival"
    },
    {
     "name": "Augustiner Bräustuben",
-    "note": "The Augustiner brewery tap: Edelstoff from the wooden barrel, meatloaf at the next table."
+    "note": "The Augustiner brewery tap: Edelstoff from the wooden barrel, meatloaf at the next table.",
+    "order": "Edelstoff and the meatloaf, at the long table"
    },
    {
     "name": "Augustiner Keller",
-    "note": "Chestnut beer garden with a winter room; still pouring from wooden barrels."
+    "note": "Chestnut beer garden with a winter room; still pouring from wooden barrels.",
+    "order": "Edelstoff again — the barrel is the reason"
    },
    {
     "name": "Hofbräuhaus",
-    "note": "The room everyone has heard of — go early, stay for the brass band."
+    "note": "The room everyone has heard of — go early, stay for the brass band.",
+    "order": "Hofbräu Dunkel in the upstairs room"
    },
    {
     "name": "Schneider Bräuhaus",
-    "note": "Wheat-beer house on Tal: Aventinus and the original Tap 7."
+    "note": "Wheat-beer house on Tal: Aventinus and the original Tap 7.",
+    "order": "Aventinus Eisbock if it is on"
    },
    {
     "name": "Viktualienmarkt",
-    "note": "Market beer garden in the centre; in Advent the stalls turn to roasted almonds and Glühwein."
+    "note": "Market beer garden in the centre; in Advent the stalls turn to roasted almonds and Glühwein.",
+    "order": "The market tap's current brewery, with roasted almonds"
    },
    {
     "name": "Giesinger Bräu",
-    "note": "Craft brewery in Giesing with a taproom full of locals."
+    "note": "Craft brewery in Giesing with a taproom full of locals.",
+    "order": "The Advent seasonal, whatever it is"
    },
    {
     "name": "Kloster Andechs",
-    "note": "Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley."
+    "note": "Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.",
+    "order": "Doppelbock Dunkel, 45 km out"
    },
    {
     "name": "Weihenstephan, Freising",
-    "note": "The oldest brewery site in the world (41 km); the Bräustüberl pours the standards."
+    "note": "The oldest brewery site in the world (41 km); the Bräustüberl pours the standards.",
+    "order": "Weihenstephaner Helles at the source"
    },
    {
     "name": "Forschungsbrauerei Bräustüberl",
-    "note": "Perlach research brewery and taproom, with the craft crowd next door."
+    "note": "Perlach research brewery and taproom, with the craft crowd next door.",
+    "order": "Forschungsbräu Helles — the brewery that lends its beer to science"
    },
    {
     "name": "Paulaner Brauhaus",
-    "note": "The Nockherberg brewpub — Salvator season if the calendar lines up."
+    "note": "The Nockherberg brewpub — Salvator season if the calendar lines up.",
+    "order": "Salvator in March, the Helles the rest of the year"
    }
   ],
   "Rome": [
    {
     "name": "Fiumicino connection",
-    "note": "No beer stop: enough time for an espresso and the walk between gates."
+    "note": "No beer stop: enough time for an espresso and the walk between gates.",
+    "order": "An espresso at the gate, nothing more"
    }
   ]
  },
@@ -68086,5 +68115,43 @@
     "Glühwein (not beer, but unavoidable)"
    ]
   }
- ]
+ ],
+ "city_meta": {
+  "Memmelsdorf": {
+   "flag": "🇩🇪",
+   "stop": "3 nights · Stop #2",
+   "subnote": "Six kilometres from Bamberg, between Drei Kronen and Göller.",
+   "famous": "Village breweries with their own taprooms"
+  },
+  "Plzeň": {
+   "flag": "🇨🇿",
+   "stop": "2 nights · Stop #3",
+   "subnote": "The town that invented pilsner, with a beer spa on the edge of it.",
+   "famous": "Pilsner — the original"
+  },
+  "České Budějovice": {
+   "flag": "🇨🇿",
+   "stop": "1 night · Stop #4",
+   "subnote": "Budvar, Samson and the old meat market on the square.",
+   "famous": "Budweiser Budvar"
+  },
+  "Berchtesgaden": {
+   "flag": "🇩🇪",
+   "stop": "2 nights · Stop #5",
+   "subnote": "Two nights under the Watzmann, with the Königssee 6 km away.",
+   "famous": "Valley Helles and Alpine scenery"
+  },
+  "Munich": {
+   "flag": "🇩🇪",
+   "stop": "5 nights · Stop #6",
+   "subnote": "Five nights as Advent opens: markets, halls, and one long day trip.",
+   "famous": "Christmas markets and the big Munich breweries"
+  },
+  "Rome": {
+   "flag": "🇮🇹",
+   "stop": "transit · connection",
+   "subnote": "Fiumicino, between Munich and São Paulo. No beer stop.",
+   "famous": "Espresso"
+  }
+ }
 }

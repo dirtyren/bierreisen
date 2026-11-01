@@ -9,6 +9,7 @@ from __future__ import annotations
 import html
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent
 DIR_2024 = HERE.parent
@@ -98,19 +99,40 @@ marker_js = ",\n".join(
 route_js = ",\n".join(f'[{s["lat"]:.4f},{s["lon"]:.4f}]' for s in map_stops)
 
 # ------------------------------------------------------------------ rankings
-rank_html = []
+def slugify(text):
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+city_meta = d.get("city_meta", {})
+rank_html, rank_filters = [], []
+total_venues = sum(len(v) for v in venues.values())
 for city, items in venues.items():
-    rows = []
+    meta = city_meta.get(city, {})
+    flag = meta.get("flag", "🍺")
+    cards = []
     for i, v in enumerate(items, 1):
-        rows.append(f"""
-          <div class="venue">
-            <span class="rank">{i:02d}</span>
-            <div><h4>{esc(v['name'])}</h4><p>{esc(v['note'])}</p></div>
-          </div>""")
+        blob = " ".join([city, v["name"], v.get("note", ""), v.get("order", "")]).lower()
+        cards.append(f"""
+            <div class="brewery-card" data-city="{slugify(city)}" data-search="{esc(blob)}">
+              <span class="rank" title="Rank #{i} in {esc(city)}">{i}</span>
+              <div class="card-city-tag">{flag} {esc(city)} · #{i} of {len(items)}</div>
+              <h4>{esc(v["name"])}</h4>
+              <p class="desc">{esc(v.get("note", ""))}</p>
+              <div class="order-this">🍺 <strong>Order this:</strong> {esc(v.get("order", ""))}</div>
+            </div>""")
+    rank_filters.append(
+        f'<button type="button" class="filter-btn" '
+        f'onclick="filterRankings(\'{slugify(city)}\', this)">{flag} {esc(city)} ({len(items)})</button>')
     rank_html.append(f"""
-      <section class="city-block">
-        <h3>{esc(city)}</h3>
-        {''.join(rows)}
+      <section class="city-ranking-section" data-city-section="{slugify(city)}">
+        <div class="city-section-header">
+          <div>
+            <h3>{flag} {esc(city)} <span class="city-meta-pill">{esc(meta.get("stop", ""))}</span></h3>
+            <p class="city-subnote">{esc(meta.get("subnote", ""))}</p>
+          </div>
+          <div class="city-famous-pill">🍻 Famous for: <strong>{esc(meta.get("famous", ""))}</strong></div>
+        </div>
+        <div class="brewery-grid">{''.join(cards)}</div>
       </section>""")
 
 # ------------------------------------------------------------------ beers
@@ -204,13 +226,37 @@ p.lede{{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}}
 .day-items{{margin-left:1.1rem;color:var(--muted);font-size:.9rem}}
 .day-items li{{margin:.2rem 0}}
 #map-container{{height:620px;border-radius:12px;border:1px solid var(--border)}}
-.city-block{{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem}}
-.city-block h3{{color:var(--gold);font-size:1.1rem;margin-bottom:.8rem}}
-.venue{{display:flex;gap:.9rem;padding:.6rem 0;border-top:1px solid rgba(42,48,80,.6)}}
-.venue:first-of-type{{border-top:none}}
-.venue .rank{{color:var(--gold);font-weight:800;opacity:.75;min-width:1.6rem}}
-.venue h4{{font-size:.98rem;margin-bottom:.15rem}}
-.venue p{{color:var(--muted);font-size:.88rem}}
+.section-intro{{margin-bottom:1.3rem}}
+.city-ranking-section{{margin-bottom:2.4rem}}
+.city-section-header{{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.9rem;
+  margin-bottom:1.1rem;padding-bottom:.7rem;border-bottom:1px solid var(--border)}}
+.city-section-header h3{{font-size:1.15rem;color:var(--text);margin:0}}
+.city-subnote{{color:var(--muted);font-size:.86rem;margin-top:.35rem;max-width:54ch}}
+.city-meta-pill{{font-size:.73rem;font-weight:600;color:var(--muted);background:rgba(21,24,51,.9);
+  border:1px solid var(--border);padding:.14rem .55rem;border-radius:999px;vertical-align:middle;margin-left:.4rem}}
+.city-famous-pill{{background:rgba(230,168,23,.13);border:1px solid rgba(230,168,23,.42);color:var(--gold);
+  padding:.36rem .8rem;border-radius:999px;font-size:.82rem}}
+.brewery-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.05rem}}
+.brewery-card{{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.15rem 1.2rem;
+  position:relative;display:flex;flex-direction:column;gap:.45rem;box-shadow:0 8px 20px rgba(5,8,20,.35);
+  transition:border-color .2s,transform .2s}}
+.brewery-card:hover{{border-color:rgba(230,168,23,.5);transform:translateY(-2px)}}
+.brewery-card .rank{{position:absolute;top:-11px;right:14px;background:var(--gold);color:#0b0c15;width:30px;
+  height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;
+  font-size:.82rem;box-shadow:0 4px 10px rgba(0,0,0,.4)}}
+.card-city-tag{{color:#43d19e;font-size:.71rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}}
+.brewery-card h4{{font-size:1rem;color:var(--text)}}
+.brewery-card .desc{{color:var(--muted);font-size:.86rem;line-height:1.5;flex:1}}
+.order-this{{background:rgba(8,10,20,.55);border:1px solid rgba(230,168,23,.28);border-radius:8px;
+  padding:.5rem .65rem;font-size:.81rem;color:#f0d98a;line-height:1.45}}
+.region-filter{{display:flex;gap:.45rem;margin-bottom:1.4rem;flex-wrap:wrap;align-items:center}}
+.filter-btn{{padding:.42rem .9rem;border:1px solid var(--border);background:var(--panel);color:var(--text);
+  border-radius:999px;font-family:inherit;font-size:.83rem;font-weight:600;cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s}}
+.filter-btn:hover{{border-color:rgba(230,168,23,.5);color:var(--gold)}}
+.filter-btn.active{{background:var(--gold);color:#0b0c15;border-color:var(--gold)}}
+.search-input{{padding:.45rem .9rem;border-radius:999px;border:1px solid var(--border);
+  background:var(--panel);color:var(--text);font-family:inherit;font-size:.86rem;min-width:290px}}
 table{{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:1.4rem}}
 th,td{{padding:.55rem .7rem;border-bottom:1px solid var(--border);text-align:left}}
 th{{color:var(--gold);font-weight:700;background:rgba(21,24,51,.9);position:sticky;top:52px}}
@@ -240,7 +286,7 @@ td.diag{{color:#3a4368;text-align:center}}
 <nav class="tabs">
   <button class="tab active" onclick="showTab('itinerary',this)">📋 Itinerary</button>
   <button class="tab" onclick="showTab('map',this)">🗺️ Map</button>
-  <button class="tab" onclick="showTab('rankings',this)">🍺 Rankings</button>
+  <button class="tab" onclick="showTab('rankings',this)">🏆 Rankings</button>
   <button class="tab" onclick="showTab('beers',this)">📖 Beer Guide</button>
   <button class="tab" onclick="showTab('drives',this)">🚗 Drive Times</button>
   <button class="tab" onclick="showTab('suggest',this)">💡 Suggestions</button>
@@ -267,10 +313,20 @@ td.diag{{color:#3a4368;text-align:center}}
 </section>
 
 <section id="rankings" class="tab-content">
-  <h2 class="section">What to drink where</h2>
-  <p class="lede">One section per stop, ranked by how much the place is worth a detour — two village
-    breweries outside Bamberg, the town that invented pilsner, the other Budweiser, and an Advent in Munich.</p>
-  {''.join(rank_html)}
+  <div class="section-intro">
+    <h2 class="section">🏆 Per-City Brewery &amp; Bar Rankings</h2>
+    <p class="lede">{total_venues} venues across {len(venues)} stops, ranked 1..n per city, with what to
+      order at each one — the beer worth the detour, not just the closest bar.</p>
+  </div>
+
+  <div class="region-filter" id="ranking-filters">
+    <button type="button" class="filter-btn active" onclick="filterRankings('all', this)">All stops ({total_venues})</button>
+    {''.join(rank_filters)}
+    <input type="search" id="venue-search" class="search-input" placeholder="🔍 Search venues, styles, notes..."
+           oninput="searchRankings()" aria-label="Search venues" />
+  </div>
+
+  <div id="rankings-container">{''.join(rank_html)}</div>
 </section>
 
 <section id="beers" class="tab-content">
@@ -349,6 +405,30 @@ function initMap() {{
   map.invalidateSize();
   map.fitBounds(L.latLngBounds(pts).pad(0.06));
   window.tripMap = map;
+}}
+
+var currentRankingCity = 'all';
+function filterRankings(citySlug, btnEl) {{
+  currentRankingCity = citySlug;
+  document.querySelectorAll('#ranking-filters .filter-btn').forEach(function (b) {{ b.classList.remove('active'); }});
+  if (btnEl) btnEl.classList.add('active');
+  applyRankingFilter();
+}}
+function searchRankings() {{ applyRankingFilter(); }}
+function applyRankingFilter() {{
+  var input = document.getElementById('venue-search');
+  var q = (input && input.value ? input.value : '').trim().toLowerCase();
+  document.querySelectorAll('.city-ranking-section').forEach(function (sec) {{
+    var cityMatch = (currentRankingCity === 'all' || sec.dataset.citySection === currentRankingCity);
+    var visible = 0;
+    sec.querySelectorAll('.brewery-card').forEach(function (card) {{
+      var textMatch = !q || (card.dataset.search || '').indexOf(q) !== -1;
+      var show = cityMatch && textMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    }});
+    sec.style.display = visible > 0 ? '' : 'none';
+  }});
 }}
 </script>
 </body>
