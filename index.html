@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bier Reisen — a beer travel archive</title>
+<meta name="description" content="Five trips actually taken and one planned, from Munich by rail to the Belgian Trappists, Czech pilsner towns and Franconian village breweries. Every stop, every drive, every pint — as self-contained HTML dossiers.">
+<meta name="theme-color" content="#0b0c15">
+<meta property="og:title" content="Bier Reisen — a beer travel archive">
+<meta property="og:description" content="Five trips taken, one planned. Route maps, day-by-day dossiers and brewery rankings for beer travel across Europe and the US.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/thumbs/2027.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍺</text></svg>">
+<style>
+:root{
+  --bg:#0b0c15; --bg-soft:#0f1120; --panel:#151833; --panel-2:#1a1e3a;
+  --border:#2a3050; --border-soft:rgba(42,48,80,.6);
+  --gold:#e6a817; --gold-soft:rgba(230,168,23,.14);
+  --text:#eef1f6; --muted:#9aa5bc; --dim:#6f7a94;
+  --green:#43d19e;
+  --radius:16px; --shadow:0 20px 45px rgba(0,0,0,.45);
+  --max:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Avenir Next','Segoe UI',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{display:block;max-width:100%}
+.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:#0b0c15;padding:.7rem 1.1rem;z-index:100;border-radius:0 0 8px 0;font-weight:700}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* ---------------------------------------------------------------- hero */
+.hero{position:relative;min-height:min(78vh,720px);display:flex;align-items:flex-end;overflow:hidden;
+  border-bottom:1px solid var(--border)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;
+  filter:saturate(.7) brightness(.38) blur(7px);transform:scale(1.08)}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,12,21,.55) 0%,rgba(11,12,21,.72) 45%,rgba(11,12,21,.97) 100%)}
+.hero .inner{position:relative;z-index:1;width:100%;max-width:var(--max);margin:0 auto;
+  padding:5rem 1.5rem 3.2rem}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem}
+.kicker::before{content:"";width:26px;height:1px;background:var(--gold);display:inline-block}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.03;margin:0 0 1rem;letter-spacing:-.02em;
+  font-weight:800;text-wrap:balance}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p.lede{max-width:62ch;color:#c9d0e0;font-size:clamp(1rem,1.6vw,1.18rem);margin:0 0 1.8rem}
+.hero .cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.btn-primary{background:var(--gold);color:#0b0c15;font-weight:800;padding:.8rem 1.4rem;border-radius:999px;
+  text-decoration:none;font-size:.95rem;transition:transform .18s,box-shadow .18s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(230,168,23,.28)}
+.btn-ghost{border:1px solid var(--border);color:var(--text);padding:.8rem 1.4rem;border-radius:999px;
+  text-decoration:none;font-size:.95rem;font-weight:600;transition:border-color .18s,color .18s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:2.2rem;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.hero-stats li{display:flex;flex-direction:column;gap:.15rem}
+.hero-stats b{font-size:1.5rem;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1}
+.hero-stats span{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------------------------------------------------------------- toolbar */
+.toolbar-wrap{position:sticky;top:0;z-index:20;background:rgba(11,12,21,.86);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.toolbar{max-width:var(--max);margin:0 auto;padding:.85rem 1.5rem;display:flex;gap:.8rem;
+  align-items:center;flex-wrap:wrap}
+.search{position:relative;flex:1 1 260px;max-width:380px}
+.search input{width:100%;padding:.6rem .9rem .6rem 2.3rem;border-radius:999px;border:1px solid var(--border);
+  background:var(--panel);color:var(--text);font:inherit;font-size:.92rem}
+.search input::placeholder{color:var(--dim)}
+.search svg{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);opacity:.55}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap}
+.chip{border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:999px;
+  padding:.45rem .85rem;font:inherit;font-size:.83rem;font-weight:600;cursor:pointer;
+  transition:background .16s,color .16s,border-color .16s}
+.chip:hover{border-color:rgba(230,168,23,.55);color:var(--gold)}
+.chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#0b0c15}
+.count{margin-left:auto;color:var(--muted);font-size:.83rem;font-variant-numeric:tabular-nums}
+
+/* ---------------------------------------------------------------- sections */
+main{max-width:var(--max);margin:0 auto;padding:2.6rem 1.5rem 4rem}
+section[id]{scroll-margin-top:84px}
+.group{margin-bottom:3.4rem}
+.group-head{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1.3rem;
+  padding-bottom:.8rem;border-bottom:1px solid var(--border-soft)}
+.group-head h2{font-size:clamp(1.2rem,2vw,1.55rem);margin:0;letter-spacing:-.01em}
+.group-head p{margin:0;color:var(--muted);font-size:.9rem}
+
+.grid{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(230,168,23,.5);box-shadow:var(--shadow)}
+.card[hidden]{display:none}
+.thumb{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#080a14}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .thumb img{transform:scale(1.04)}
+.badge{position:absolute;top:.75rem;left:.75rem;background:rgba(11,12,21,.82);border:1px solid var(--border);
+  color:var(--text);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:.28rem .6rem;border-radius:999px;backdrop-filter:blur(6px)}
+.badge.planned{background:rgba(230,168,23,.92);color:#0b0c15;border-color:transparent}
+.badge.idea{background:rgba(67,209,158,.16);color:var(--green);border-color:rgba(67,209,158,.45)}
+.body{padding:1.15rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.body h3, .body h2{font-size:1.12rem;margin:0;line-height:1.25}
+.card:hover h3{color:var(--gold)}
+.body h3 a{text-decoration:none}
+.route{color:var(--gold);font-size:.83rem;margin:0;line-height:1.45;opacity:.92}
+.blurb{color:var(--muted);font-size:.89rem;margin:0}
+.stats{display:flex;gap:1rem;flex-wrap:wrap;list-style:none;margin:.5rem 0 0;padding:.6rem 0 0;
+  border-top:1px solid var(--border-soft);font-size:.8rem;color:var(--dim)}
+.stats strong{color:var(--text);font-variant-numeric:tabular-nums}
+.actions{display:flex;align-items:center;gap:.9rem;margin-top:.9rem}
+.btn{background:var(--gold-soft);border:1px solid rgba(230,168,23,.45);color:var(--gold);
+  padding:.5rem .95rem;border-radius:9px;text-decoration:none;font-size:.85rem;font-weight:700;
+  transition:background .16s}
+.btn:hover{background:rgba(230,168,23,.24)}
+.ghost{color:var(--muted);font-size:.82rem;text-decoration:none;border-bottom:1px dotted var(--border)}
+.ghost:hover{color:var(--gold);border-color:var(--gold)}
+.variants{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem;padding-top:.75rem;
+  border-top:1px solid var(--border-soft)}
+.variant{font-size:.78rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);
+  padding:.22rem .6rem;border-radius:999px}
+.variant:hover{color:var(--gold);border-color:var(--gold)}
+
+.empty{text-align:center;color:var(--muted);padding:3rem 1rem;border:1px dashed var(--border);border-radius:var(--radius)}
+.empty[hidden]{display:none}
+
+/* ---------------------------------------------------------------- footer */
+footer{border-top:1px solid var(--border);background:var(--bg-soft)}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:2.2rem 1.5rem;display:flex;gap:1.5rem;
+  justify-content:space-between;flex-wrap:wrap;color:var(--dim);font-size:.85rem}
+.footer-inner a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--border)}
+.footer-inner a:hover{color:var(--gold)}
+.footer-inner p{margin:0;max-width:60ch}
+
+@media (max-width:640px){
+  .hero{min-height:auto}
+  .hero .inner{padding:4rem 1.1rem 2.4rem}
+  .hero-stats{gap:1.4rem}
+  main{padding:2rem 1.1rem 3rem}
+  .toolbar{padding:.7rem 1.1rem}
+  .grid{grid-template-columns:1fr}
+  .count{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#trips">Skip to the trips</a>
+
+<header class="hero">
+  <img class="bg" src="assets/thumbs/hero-europe.jpg" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="inner">
+    <span class="kicker">Beer travel archive · 2019–2027</span>
+    <h1>Every trip, every<br><em>brewery, one archive.</em></h1>
+    <p class="lede">Five trips actually taken and one planned — from nine nights in Munich by rail to the
+      Belgian Trappists, the Czech pilsner towns and the village breweries of Franconia. Each one is a
+      self-contained dossier: day-by-day plan, route map, per-city rankings and every drive measured.</p>
+    <div class="cta">
+      <a class="btn-primary" href="#trips">Browse the trips</a>
+      <a class="btn-ghost" href="2027/2027-bier-reisen.html">Open the 2027 plan →</a>
+    </div>
+    <ul class="hero-stats">
+      <li><b>12</b><span>itineraries</span></li>
+      <li><b>77</b><span>days travelled</span></li>
+      <li><b>6,849</b><span>km travelled</span></li>
+      <li><b>6</b><span>countries</span></li>
+    </ul>
+  </div>
+</header>
+
+<div class="toolbar-wrap">
+  <div class="toolbar">
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="Search a year, a city, a brewery…" aria-label="Search trips" autocomplete="off">
+    </label>
+    <div class="chips" role="group" aria-label="Filter trips">
+      <button class="chip" data-filter="all" aria-pressed="true">All (12)</button>
+      <button class="chip" data-filter="travelled" aria-pressed="false">Travelled (5)</button>
+      <button class="chip" data-filter="planned" aria-pressed="false">Planned (1)</button>
+      <button class="chip" data-filter="idea" aria-pressed="false">Ideas (6)</button>
+      <button class="chip" data-filter="rail" aria-pressed="false">By rail (3)</button>
+    </div>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+</div>
+
+<main>
+  <section class="group" id="trips" aria-labelledby="trips-h">
+    <div class="group-head">
+      <h2 id="trips-h">The trips</h2>
+      <p>Six dossiers — five taken, one being planned. Click a card for the full page.</p>
+    </div>
+    <div class="grid">
+        <article class="card" data-kind="trip" data-tags="planned car germany czechia belgium" data-search="2027 the 2027 plan frankfurt → bruges → ghent → bamberg → sokolov → plzeň → kout → maxlrain → andechs → munich → nuremberg → fra two nights in bruges, two in bamberg, both czech brewing towns and a night at a franconian castle brewery — the trip this whole archive was built for. planned car germany czechia belgium">
+          <a class="thumb" href="2027/2027-bier-reisen.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/2027.jpg" alt="Route poster for The 2027 plan" loading="lazy" width="960" height="624">
+            <span class="badge planned">Planned · 2027</span>
+          </a>
+          <div class="body">
+            <h3><a href="2027/2027-bier-reisen.html">The 2027 plan</a></h3>
+            <p class="route">Frankfurt → Bruges → Ghent → Bamberg → Sokolov → Plzeň → Kout → Maxlrain → Andechs → Munich → Nuremberg → FRA</p>
+            <p class="blurb">Two nights in Bruges, two in Bamberg, both Czech brewing towns and a night at a Franconian castle brewery — the trip this whole archive was built for.</p>
+            <ul class="stats"><li><strong>15</strong> days</li><li><strong>14</strong> nights</li><li><strong>2,296</strong> km driving</li></ul>
+            <div class="actions"><a class="btn" href="2027/2027-bier-reisen.html">Open dossier →</a><a class="ghost" href="2027/assets/2027-route-map.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            <div class="variants"><a class="variant" href="2027/v2/2027-bier-reisen-v2.html">v2 · Cologne night</a><a class="variant" href="2027/v3/2027-bier-reisen-v3.html">v3 · Würzburg</a></div>
+          </div>
+        </article>
+        <article class="card" data-kind="trip" data-tags="travelled car germany czechia" data-search="2026 franconia, bohemia and the alps merkendorf → plzeň → české budějovice → bad reichenhall → munich three nights in a village brewery, two with budvar, three under the watzmann with salzburg across the border, and four in munich. travelled car germany czechia">
+          <a class="thumb" href="2026/2026-bier-reisen.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/2026.jpg" alt="Route poster for Franconia, Bohemia and the Alps" loading="lazy" width="960" height="624">
+            <span class="badge">Travelled · 2026</span>
+          </a>
+          <div class="body">
+            <h3><a href="2026/2026-bier-reisen.html">Franconia, Bohemia and the Alps</a></h3>
+            <p class="route">Merkendorf → Plzeň → České Budějovice → Bad Reichenhall → Munich</p>
+            <p class="blurb">Three nights in a village brewery, two with Budvar, three under the Watzmann with Salzburg across the border, and four in Munich.</p>
+            <ul class="stats"><li><strong>16</strong> days</li><li><strong>13</strong> nights</li><li><strong>1,406</strong> km driving</li></ul>
+            <div class="actions"><a class="btn" href="2026/2026-bier-reisen.html">Open dossier →</a><a class="ghost" href="2026/assets/2026-route-map.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="trip" data-tags="travelled car germany czechia" data-search="2024 franconia, bohemia and advent memmelsdorf → plzeň → české budějovice → berchtesgaden → munich late november: christmas markets opening, brewery tours half empty, and the other budweiser in its home town. travelled car germany czechia">
+          <a class="thumb" href="2024/2024-bier-reisen.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/2024.jpg" alt="Route poster for Franconia, Bohemia and Advent" loading="lazy" width="960" height="624">
+            <span class="badge">Travelled · 2024</span>
+          </a>
+          <div class="body">
+            <h3><a href="2024/2024-bier-reisen.html">Franconia, Bohemia and Advent</a></h3>
+            <p class="route">Memmelsdorf → Plzeň → České Budějovice → Berchtesgaden → Munich</p>
+            <p class="blurb">Late November: Christmas markets opening, brewery tours half empty, and the other Budweiser in its home town.</p>
+            <ul class="stats"><li><strong>16</strong> days</li><li><strong>13</strong> nights</li><li><strong>1,062</strong> km driving</li></ul>
+            <div class="actions"><a class="btn" href="2024/2024-bier-reisen.html">Open dossier →</a><a class="ghost" href="2024/assets/2024-route-map.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="trip" data-tags="travelled car germany" data-search="2021 bamberg to the allgäu bamberg → nuremberg → essing → traunstein → schönram → berchtesgaden → nesselwang → missen-wilhams → munich village breweries and two nights sleeping above the brewhouse, then a week in munich. travelled car germany">
+          <a class="thumb" href="2021/2021-bier-reisen.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/2021.jpg" alt="Route poster for Bamberg to the Allgäu" loading="lazy" width="960" height="624">
+            <span class="badge">Travelled · 2021</span>
+          </a>
+          <div class="body">
+            <h3><a href="2021/2021-bier-reisen.html">Bamberg to the Allgäu</a></h3>
+            <p class="route">Bamberg → Nuremberg → Essing → Traunstein → Schönram → Berchtesgaden → Nesselwang → Missen-Wilhams → Munich</p>
+            <p class="blurb">Village breweries and two nights sleeping above the brewhouse, then a week in Munich.</p>
+            <ul class="stats"><li><strong>18</strong> days</li><li><strong>16</strong> nights</li><li><strong>1,561</strong> km driving</li></ul>
+            <div class="actions"><a class="btn" href="2021/2021-bier-reisen.html">Open dossier →</a><a class="ghost" href="2021/assets/2021-route-map.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="trip" data-tags="travelled car germany belgium netherlands" data-search="2020 the first european loop munich → bamberg → düsseldorf → la trappe → antwerp → brussels → bruges → westvleteren → chimay → zwiefaltendorf → munich the trip that started it: altbier, trappists, lambic and a swabian village brewery on the danube. travelled car germany belgium netherlands">
+          <a class="thumb" href="2020/2020-bier-reisen.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/2020.jpg" alt="Route poster for The first European loop" loading="lazy" width="960" height="624">
+            <span class="badge">Travelled · 2020</span>
+          </a>
+          <div class="body">
+            <h3><a href="2020/2020-bier-reisen.html">The first European loop</a></h3>
+            <p class="route">Munich → Bamberg → Düsseldorf → La Trappe → Antwerp → Brussels → Bruges → Westvleteren → Chimay → Zwiefaltendorf → Munich</p>
+            <p class="blurb">The trip that started it: Altbier, Trappists, lambic and a Swabian village brewery on the Danube.</p>
+            <ul class="stats"><li><strong>17</strong> days</li><li><strong>14</strong> nights</li><li><strong>2,089</strong> km driving</li></ul>
+            <div class="actions"><a class="btn" href="2020/2020-bier-reisen.html">Open dossier →</a><a class="ghost" href="2020/assets/2020-route-map.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="trip" data-tags="travelled rail germany" data-search="2019 munich by rail munich · andechs · aying · bamberg the first one, and the only one without a car: nine nights in one hotel, with day returns to a monastery, a village brewery and a rauchbier town. travelled rail germany">
+          <a class="thumb" href="2019/2019-bier-reisen.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/2019.jpg" alt="Route poster for Munich by rail" loading="lazy" width="960" height="624">
+            <span class="badge">Travelled · 2019</span>
+          </a>
+          <div class="body">
+            <h3><a href="2019/2019-bier-reisen.html">Munich by rail</a></h3>
+            <p class="route">Munich · Andechs · Aying · Bamberg</p>
+            <p class="blurb">The first one, and the only one without a car: nine nights in one hotel, with day returns to a monastery, a village brewery and a Rauchbier town.</p>
+            <ul class="stats"><li><strong>10</strong> days</li><li><strong>9</strong> nights</li><li><strong>730</strong> km by rail</li></ul>
+            <div class="actions"><a class="btn" href="2019/2019-bier-reisen.html">Open dossier →</a><a class="ghost" href="2019/assets/2019-route-map.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+    </div>
+  </section>
+
+  <section class="group" id="ideas" aria-labelledby="ideas-h">
+    <div class="group-head">
+      <h2 id="ideas-h">Draft itineraries</h2>
+      <p>Six routes drawn up from research rather than memory — the ones still waiting for a free fortnight.</p>
+    </div>
+    <div class="grid">
+        <article class="card" data-kind="idea" data-tags="idea rail uk" data-search="uk beer pilgrimage london → oxford → burton → manchester → nottingham → wales → edinburgh thirty-two stops from the london pubs to the highlands, on trains and the odd bus. idea rail uk idea">
+          <a class="thumb" href="AI-suggested-trips/uk_beer_trip.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/uk.jpg" alt="Route poster for UK Beer Pilgrimage" loading="lazy" width="960" height="624">
+            <span class="badge idea">Idea</span>
+          </a>
+          <div class="body">
+            <h3><a href="AI-suggested-trips/uk_beer_trip.html">UK Beer Pilgrimage</a></h3>
+            <p class="route">London → Oxford → Burton → Manchester → Nottingham → Wales → Edinburgh</p>
+            <p class="blurb">Thirty-two stops from the London pubs to the Highlands, on trains and the odd bus.</p>
+            <ul class="stats"><li><strong>12</strong> days</li><li><strong>32</strong> stops</li></ul>
+            <div class="actions"><a class="btn" href="AI-suggested-trips/uk_beer_trip.html">Open dossier →</a><a class="ghost" href="assets/trips/uk-beer-pilgrimage.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="idea" data-tags="idea car belgium" data-search="belgian beer pilgrimage brussels → antwerp → ghent → bruges → the trappists forty-two stops of lambic, trappist and flemish red — the densest beer country on earth. idea car belgium idea">
+          <a class="thumb" href="AI-suggested-trips/belgian.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/belgian.jpg" alt="Route poster for Belgian Beer Pilgrimage" loading="lazy" width="960" height="624">
+            <span class="badge idea">Idea</span>
+          </a>
+          <div class="body">
+            <h3><a href="AI-suggested-trips/belgian.html">Belgian Beer Pilgrimage</a></h3>
+            <p class="route">Brussels → Antwerp → Ghent → Bruges → the Trappists</p>
+            <p class="blurb">Forty-two stops of lambic, Trappist and Flemish red — the densest beer country on earth.</p>
+            <ul class="stats"><li><strong>9</strong> days</li><li><strong>42</strong> stops</li></ul>
+            <div class="actions"><a class="btn" href="AI-suggested-trips/belgian.html">Open dossier →</a><a class="ghost" href="assets/trips/belgian-beer-pilgrimage.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="idea" data-tags="idea car germany czechia" data-search="bavaria &amp; bohemia munich → bamberg → plzeň → prague franconian village breweries, the zoigl country and the birth of pilsner in one loop. idea car germany czechia idea">
+          <a class="thumb" href="AI-suggested-trips/germany_czech_beer_trip.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/bavaria-bohemia.jpg" alt="Route poster for Bavaria &amp; Bohemia" loading="lazy" width="960" height="624">
+            <span class="badge idea">Idea</span>
+          </a>
+          <div class="body">
+            <h3><a href="AI-suggested-trips/germany_czech_beer_trip.html">Bavaria &amp; Bohemia</a></h3>
+            <p class="route">Munich → Bamberg → Plzeň → Prague</p>
+            <p class="blurb">Franconian village breweries, the Zoigl country and the birth of pilsner in one loop.</p>
+            <ul class="stats"><li><strong>14</strong> days</li><li><strong>40</strong> stops</li></ul>
+            <div class="actions"><a class="btn" href="AI-suggested-trips/germany_czech_beer_trip.html">Open dossier →</a><a class="ghost" href="assets/trips/bavaria-bohemia.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="idea" data-tags="idea car usa" data-search="colorado craft beer odyssey denver → golden → boulder → fort collins thirty-nine stops along the front range, from rino taprooms to the mountain breweries. idea car usa idea">
+          <a class="thumb" href="AI-suggested-trips/colorado_beer_trip.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/colorado.jpg" alt="Route poster for Colorado Craft Beer Odyssey" loading="lazy" width="960" height="624">
+            <span class="badge idea">Idea</span>
+          </a>
+          <div class="body">
+            <h3><a href="AI-suggested-trips/colorado_beer_trip.html">Colorado Craft Beer Odyssey</a></h3>
+            <p class="route">Denver → Golden → Boulder → Fort Collins</p>
+            <p class="blurb">Thirty-nine stops along the Front Range, from RiNo taprooms to the mountain breweries.</p>
+            <ul class="stats"><li><strong>12</strong> days</li><li><strong>39</strong> stops</li></ul>
+            <div class="actions"><a class="btn" href="AI-suggested-trips/colorado_beer_trip.html">Open dossier →</a><a class="ghost" href="assets/trips/colorado-craft-beer.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="idea" data-tags="idea car usa" data-search="florida brewery trail miami → orlando → tampa bay forty-three stops built around barrel-aged stouts, pastry sours and air conditioning. idea car usa idea">
+          <a class="thumb" href="AI-suggested-trips/florida_brewery_trip.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/florida.jpg" alt="Route poster for Florida Brewery Trail" loading="lazy" width="960" height="624">
+            <span class="badge idea">Idea</span>
+          </a>
+          <div class="body">
+            <h3><a href="AI-suggested-trips/florida_brewery_trip.html">Florida Brewery Trail</a></h3>
+            <p class="route">Miami → Orlando → Tampa Bay</p>
+            <p class="blurb">Forty-three stops built around barrel-aged stouts, pastry sours and air conditioning.</p>
+            <ul class="stats"><li><strong>12</strong> days</li><li><strong>43</strong> stops</li></ul>
+            <div class="actions"><a class="btn" href="AI-suggested-trips/florida_brewery_trip.html">Open dossier →</a><a class="ghost" href="assets/trips/florida-brewery-trail.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+        <article class="card" data-kind="idea" data-tags="idea rail italy" data-search="italy &amp; switzerland grand tour rome → florence → pisa → venice → milan → st. moritz a culture-first loop with a craft-beer thread — tipopils, re ale and the alps. idea rail italy idea">
+          <a class="thumb" href="AI-suggested-trips/Italy_Switzerland_14Day_Trip.html" aria-hidden="true" tabindex="-1">
+            <img src="assets/thumbs/italy-grand-tour.jpg" alt="Route poster for Italy &amp; Switzerland Grand Tour" loading="lazy" width="960" height="624">
+            <span class="badge idea">Idea</span>
+          </a>
+          <div class="body">
+            <h3><a href="AI-suggested-trips/Italy_Switzerland_14Day_Trip.html">Italy &amp; Switzerland Grand Tour</a></h3>
+            <p class="route">Rome → Florence → Pisa → Venice → Milan → St. Moritz</p>
+            <p class="blurb">A culture-first loop with a craft-beer thread — Tipopils, Re Ale and the Alps.</p>
+            <ul class="stats"><li><strong>14</strong> days</li><li><strong>7</strong> stops</li></ul>
+            <div class="actions"><a class="btn" href="AI-suggested-trips/Italy_Switzerland_14Day_Trip.html">Open dossier →</a><a class="ghost" href="assets/trips/italy-switzerland-grand-tour.png" target="_blank" rel="noopener">Poster ↗</a></div>
+            
+          </div>
+        </article>
+    </div>
+  </section>
+
+  <p class="empty" id="empty" hidden>Nothing matches that search. Try a year, a country or a brewery name —
+    or <button class="chip" type="button" id="reset">clear the filters</button>.</p>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p><strong style="color:var(--text)">Bier Reisen</strong> — a personal archive of beer travel.
+      Every dossier is a single HTML file; every distance was measured, not estimated
+      (OSRM for driving, great-circle for flights, timetables for the rail years).</p>
+    <p>Built from this repository: <a href="README.md">README</a> ·
+      <a href="2027/data/route-2027.json">route data</a> ·
+      <a href="assets/maps/europe.png">regional posters</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));
+  var input = document.getElementById('q');
+  var countEl = document.getElementById('count');
+  var emptyEl = document.getElementById('empty');
+  var resetEl = document.getElementById('reset');
+  var filter = 'all';
+
+  function normalise(s) {
+    return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function apply() {
+    var term = normalise(input.value.trim());
+    var shown = 0;
+    cards.forEach(function (card) {
+      var tags = (card.dataset.tags || '').split(' ');
+      var kindOk = filter === 'all' || tags.indexOf(filter) !== -1;
+      var textOk = !term || normalise(card.dataset.search).indexOf(term) !== -1;
+      var show = kindOk && textOk;
+      card.hidden = !show;
+      if (show) shown++;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.group'), function (group) {
+      var any = Array.prototype.some.call(group.querySelectorAll('.card'), function (c) { return !c.hidden; });
+      group.hidden = !any;
+    });
+    countEl.textContent = shown + ' of ' + cards.length;
+    emptyEl.hidden = shown !== 0;
+  }
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      filter = chip.dataset.filter;
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+  resetEl.addEventListener('click', function () {
+    input.value = '';
+    filter = 'all';
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.filter === 'all')); });
+    apply();
+    input.focus();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+    if (e.key === 'Escape' && document.activeElement === input) { input.value = ''; apply(); input.blur(); }
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
