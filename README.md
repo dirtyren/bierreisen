@@ -4,6 +4,8 @@ Six AI-drafted beer pilgrimages — **73 days, 7 countries, 203 mapped stops** �
 
 Every venue in the rankings, every day in the itinerary and every pin on the map links straight to Google Maps, opening in a new tab.
 
+**[Open the catalog → index.html](index.html)** — every trip on one searchable page, with posters, dates and the numbers behind each one.
+
 ## Maps
 
 Three regions, three posters. Splitting them out means each trail gets its own projection instead of being squeezed into one world view.
@@ -408,8 +410,10 @@ bierreisen/
 │   ├── trips.json                         # extracted stops + routes
 │   ├── ne_50m_countries.geojson           # Natural Earth 1:50m basemap
 │   └── us_states.geojson                  # US state lines for the NA panel
+├── index.html                             # searchable catalog of every trip
 ├── assets/maps/                           # regional posters (README hero)
 │   ├── usa.png · europe.png · uk.png
+├── assets/thumbs/                         # 960px thumbnails for the catalog
 ├── 2019/                                  # Munich by rail, the first trip
 │   ├── 2019-bier-reisen.html
 │   ├── assets/2019-route-map.png
@@ -442,7 +446,9 @@ bierreisen/
 └── scripts/
     ├── extract_trips.py                   # dossiers → trips.json
     ├── make_map.py                        # trips.json → overview poster
-    └── make_region_maps.py                # trips.json → USA / Europe / UK
+    ├── make_region_maps.py                # trips.json → USA / Europe / UK
+    ├── make_thumbs.py                     # posters → assets/thumbs/*.jpg
+    └── build_index.py                     # year data → index.html
 ```
 
 Each dossier is a single HTML file with four or five tabs: **Flowchart** (day-by-day), **Map** (Leaflet, dark tiles), **Rankings** (every place, scored), **Beer guide** (style, ABV, IBU, colour) and **Tips** (transport, lodging, budget, season).
@@ -461,6 +467,17 @@ python3 scripts/make_map.py          # assets/trips.json → assets/beer-trips-m
 ```
 
 `make_map.py` lays out a header, two Lambert-conformal panels (North America and Europe), a Denver zoom inset, and six trip cards. Colours, panel windows and card copy live at the top of the file in `COLORS`, `PANELS`, `LABELS` and `CARD_TEXT`.
+
+### Rebuilding the catalog
+
+```bash
+python3 scripts/make_thumbs.py     # posters → assets/thumbs/*.jpg
+python3 scripts/build_index.py     # each year's data + trips.json → index.html
+```
+
+The catalog reads its numbers from the year dossiers' own data files, so it can never quote a
+distance the dossier disagrees with. To publish it, enable **GitHub Pages** on this repository
+(Settings → Pages → Deploy from a branch → `main` / root): `index.html` is served as the landing page.
 
 ### Rebuilding a year dossier
 
