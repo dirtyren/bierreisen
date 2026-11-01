@@ -397,6 +397,8 @@ A culture-first grand tour with a craft-beer thread running through it: Rome's T
 
 ```
 bierreisen/
+├── Dockerfile                             # nginx:alpine, web root = repo root
+├── nginx.conf                             # gzip, cache headers, /healthz probe
 ├── AI-suggested-trips/
 │   ├── uk_beer_trip.html                  # 12 days, 32 stops
 │   ├── belgian.html                       # 9 days, 42 stops
@@ -476,8 +478,10 @@ python3 scripts/build_index.py     # each year's data + trips.json → index.htm
 ```
 
 The catalog reads its numbers from the year dossiers' own data files, so it can never quote a
-distance the dossier disagrees with. To publish it, enable **GitHub Pages** on this repository
-(Settings → Pages → Deploy from a branch → `main` / root): `index.html` is served as the landing page.
+distance the dossier disagrees with. The site is published from this repository by Coolify: the
+`Dockerfile` builds an nginx image whose web root is the repo root, and every push to `main`
+(including a merged pull request) redeploys it at **https://renreisen.duckdns.org**. No build step
+runs on GitHub — merging is publishing.
 
 ### Rebuilding a year dossier
 
