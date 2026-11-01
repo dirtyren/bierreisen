@@ -412,7 +412,7 @@ bierreisen/
 │   ├── trips.json                         # extracted stops + routes
 │   ├── ne_50m_countries.geojson           # Natural Earth 1:50m basemap
 │   └── us_states.geojson                  # US state lines for the NA panel
-├── index.html                             # catalog of every trip (generated)
+├── index.html · pt/index.html · de/index.html   # trilingual catalog (generated)
 ├── 404.html                               # branded not-found page
 ├── robots.txt · sitemap.xml               # crawl + index hints (sitemap generated)
 ├── DESIGN.md                              # the catalog's design system and its rules
@@ -454,7 +454,10 @@ bierreisen/
     ├── make_map.py                        # trips.json → overview poster
     ├── make_region_maps.py                # trips.json → USA / Europe / UK
     ├── make_thumbs.py                     # posters → assets/thumbs/*.jpg
-    └── build_index.py                     # year data → index.html
+    ├── make_social_card.py                # → assets/og-card.png
+    ├── index_strings.py                   # EN / PT-BR / DE copy for the catalog
+    ├── index_template.html                # catalog shell (tokens, not content)
+    └── build_index.py                     # year data → 3 catalog pages + sitemap
 ```
 
 Each dossier is a single HTML file with four or five tabs: **Flowchart** (day-by-day), **Map** (Leaflet, dark tiles), **Rankings** (every place, scored), **Beer guide** (style, ABV, IBU, colour) and **Tips** (transport, lodging, budget, season).
@@ -479,7 +482,7 @@ python3 scripts/make_map.py          # assets/trips.json → assets/beer-trips-m
 ```bash
 python3 scripts/make_thumbs.py        # posters → assets/thumbs/*.jpg
 python3 scripts/make_social_card.py   # → assets/og-card.png (1200×630)
-python3 scripts/build_index.py        # year data + trips.json → index.html + sitemap.xml
+python3 scripts/build_index.py        # year data + trips.json → EN/PT/DE pages + sitemap.xml
 npx impeccable@latest detect index.html   # must report zero anti-patterns
 ```
 
@@ -488,7 +491,9 @@ headline, no hero-metric row, no uniform card grid, themed selection/caret/scrol
 contrast, one authored motion moment, and a detector run with no findings.
 
 The catalog reads its numbers from the year dossiers' own data files, so it can never quote a
-distance the dossier disagrees with. The site is published from this repository by Coolify: the
+distance the dossier disagrees with. It ships in three languages — `/` (EN), `/pt/` (PT-BR) and
+`/de/` (DE) — all generated from `scripts/index_strings.py`, each page carrying `hreflang`
+alternates and a switcher that links to the real files, so the pages also work opened from disk. The site is published from this repository by Coolify: the
 `Dockerfile` builds an nginx image whose web root is the repo root, and every push to `main`
 (including a merged pull request) redeploys it at **https://renreisen.duckdns.org**. No build step
 runs on GitHub — merging is publishing.

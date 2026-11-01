@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="__LANG_ATTR__">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bier Reisen — five beer trips, every stop measured</title>
-<meta name="description" content="Five beer trips taken and one being planned: itineraries, route maps, brewery rankings and every distance measured. Munich by rail, Belgian Trappists, Czech pilsner towns and the village breweries of Franconia.">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
 <meta name="theme-color" content="#0b0c15">
-<meta property="og:title" content="Bier Reisen — five beer trips, every stop measured">
-<meta property="og:description" content="Five trips taken, one being planned. Day-by-day dossiers, route posters and brewery rankings for beer travel across Europe and the United States.">
+<meta property="og:title" content="__OG_TITLE__">
+<meta property="og:description" content="__OG_DESC__">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://renreisen.duckdns.org/">
+<meta property="og:url" content="__CANONICAL__">
+<meta property="og:locale" content="__OG_LOCALE__">
 <meta property="og:image" content="https://renreisen.duckdns.org/assets/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Bier Reisen — five beer trips taken, one being planned">
+<meta property="og:image:alt" content="Bier Reisen">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bier Reisen — five beer trips, every stop measured">
-<meta name="twitter:description" content="Itineraries, route maps, brewery rankings and every distance measured across five beer trips.">
+<meta name="twitter:title" content="__OG_TITLE__">
+<meta name="twitter:description" content="__OG_DESC__">
 <meta name="twitter:image" content="https://renreisen.duckdns.org/assets/og-card.png">
-<link rel="canonical" href="https://renreisen.duckdns.org/">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/og-card.png">
+<link rel="canonical" href="__CANONICAL__">
+__HREFLANG__
+<link rel="icon" href="__BASE__assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="__BASE__assets/og-card.png">
 <style>
 :root{
   --bg:#0b0c15; --bg-raise:#101224; --rule:#262c48; --rule-soft:rgba(38,44,72,.62);
@@ -64,7 +66,8 @@ img{display:block;max-width:100%;height:auto}
     linear-gradient(rgba(11,12,21,.42), rgba(11,12,21,.42)),
     radial-gradient(115% 95% at 14% 55%, rgba(11,12,21,.55) 0%, rgba(11,12,21,.94) 58%, var(--bg) 100%),
     linear-gradient(180deg, rgba(11,12,21,.6) 0%, rgba(11,12,21,.25) 34%, rgba(11,12,21,1) 100%)}
-.hero-inner{width:100%;max-width:1180px;margin:0 auto;padding:5.5rem 1.6rem 4rem}
+.hero-inner{width:100%;max-width:1180px;margin:0 auto;
+  padding:clamp(2.75rem,7vh,5.5rem) 1.6rem clamp(2rem,5.5vh,4rem)}
 .hero h1{
   font-family:var(--serif);font-weight:600;letter-spacing:-.021em;line-height:1.02;
   font-size:clamp(2.5rem,6.2vw,5rem);margin:0 0 1.1rem;max-width:19ch;text-wrap:balance;
@@ -83,7 +86,7 @@ img{display:block;max-width:100%;height:auto}
 .controls{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--rule-soft)}
 .controls-in{max-width:1180px;margin:0 auto;padding:.8rem 1.6rem;display:flex;gap:.75rem;
   align-items:center;flex-wrap:wrap}
-.search{flex:1 1 240px;max-width:340px;display:flex;align-items:center;gap:.55rem;
+.search{flex:1 1 220px;max-width:330px;display:flex;align-items:center;gap:.55rem;
   border-bottom:1px solid var(--rule);padding:.35rem 0}
 .search:focus-within{border-bottom-color:var(--gold)}
 .search svg{flex:none;opacity:.7}
@@ -98,6 +101,11 @@ img{display:block;max-width:100%;height:auto}
 .chip[aria-pressed="true"]::after{content:"";position:absolute;left:.62rem;right:.62rem;bottom:.18rem;
   height:2px;background:var(--gold)}
 .tally{margin-left:auto;color:var(--dim);font-size:.82rem;font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.langs{display:flex;gap:.1rem;align-items:center}
+.langs a{font-size:.78rem;font-weight:700;letter-spacing:.08em;color:var(--dim);text-decoration:none;
+  padding:.3rem .45rem;border-radius:2px}
+.langs a:hover{color:var(--text)}
+.langs a[aria-current="page"]{color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
 
 /* archive */
 main{max-width:1180px;margin:0 auto;padding:0 1.6rem 5rem}
@@ -173,6 +181,10 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
 .foot a{color:var(--muted);border-bottom:1px dotted var(--rule)}
 .foot a:hover{color:var(--gold)}
 
+@media (max-height:760px) and (min-width:681px){
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.5rem)}
+  .standfirst{font-size:1rem;margin-bottom:1.5rem}
+}
 @media (max-width:900px){
   .entry{grid-template-columns:240px minmax(0,1fr);gap:1.6rem}
   .shelf{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -186,21 +198,20 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
   .entry{grid-template-columns:1fr;gap:1.1rem;padding:2rem 0}
   .shelf{grid-template-columns:1fr;gap:1.4rem}
   .tally{display:none}
+  .langs{margin-left:auto}
   .section-head{padding-top:2.4rem}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#trips">Skip to the trips</a>
+<a class="skip" href="#trips">__SKIP__</a>
 
 <header class="hero">
-  <div class="hero-art"><img src="assets/thumbs/hero-europe.jpg" alt="" aria-hidden="true" fetchpriority="high"></div>
+  <div class="hero-art"><img src="__BASE__assets/thumbs/hero-europe.jpg" alt="" aria-hidden="true" fetchpriority="high"></div>
   <div class="hero-inner">
-    <h1>Five beer trips taken.<span class="next">One being planned.</span></h1>
-    <p class="standfirst">From nine nights in a single Munich hotel to the Belgian Trappists and the pilsner
-      towns of Bohemia. Every dossier carries the day-by-day plan, the route poster, the brewery rankings
-      and the distances behind them: <b>__TOTAL_KM__ km</b> across <b>__TOTAL_DAYS__ days</b> so far.</p>
-    <a class="hero-cta" href="#trips">Read the archive <span aria-hidden="true">→</span></a>
+    <h1>__H1_A__<span class="next">__H1_B__</span></h1>
+    <p class="standfirst">__STANDFIRST__</p>
+    <a class="hero-cta" href="#trips">__CTA__ <span aria-hidden="true">→</span></a>
   </div>
 </header>
 
@@ -208,24 +219,25 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
   <div class="controls-in">
     <label class="search">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="search" id="q" placeholder="Search a year, a city, a brewery" aria-label="Search trips" autocomplete="off">
+      <input type="search" id="q" placeholder="__SEARCH_PH__" aria-label="__ARIA_SEARCH__" autocomplete="off">
     </label>
-    <div class="filters" role="group" aria-label="Filter trips">
-      <button class="chip" type="button" data-filter="all" aria-pressed="true">All __N_ALL__</button>
-      <button class="chip" type="button" data-filter="travelled" aria-pressed="false">Travelled __N_TRAVELLED__</button>
-      <button class="chip" type="button" data-filter="planned" aria-pressed="false">Planned __N_PLANNED__</button>
-      <button class="chip" type="button" data-filter="idea" aria-pressed="false">Drafts __N_IDEAS__</button>
-      <button class="chip" type="button" data-filter="rail" aria-pressed="false">By rail __N_RAIL__</button>
+    <div class="filters" role="group" aria-label="__ARIA_FILTER__">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">__F_ALL__ __N_ALL__</button>
+      <button class="chip" type="button" data-filter="travelled" aria-pressed="false">__F_TRAVELLED__ __N_TRAVELLED__</button>
+      <button class="chip" type="button" data-filter="planned" aria-pressed="false">__F_PLANNED__ __N_PLANNED__</button>
+      <button class="chip" type="button" data-filter="idea" aria-pressed="false">__F_DRAFTS__ __N_DRAFTS__</button>
+      <button class="chip" type="button" data-filter="rail" aria-pressed="false">__F_RAIL__ __N_RAIL__</button>
     </div>
     <span class="tally" id="count" aria-live="polite"></span>
+    <nav class="langs" aria-label="__LANG_LABEL__">__LANGS__</nav>
   </div>
 </div>
 
 <main>
   <section id="trips" aria-labelledby="trips-h">
     <div class="section-head">
-      <h2 id="trips-h">The trips</h2>
-      <p>Six dossiers, newest first.</p>
+      <h2 id="trips-h">__H_TRIPS__</h2>
+      <p>__N_TRIPS__</p>
     </div>
     <ul class="entries">__ENTRIES__
     </ul>
@@ -233,29 +245,29 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
 
   <section id="ideas" aria-labelledby="ideas-h">
     <div class="section-head">
-      <h2 id="ideas-h">Drafted, not yet walked</h2>
-      <p>Six routes built from research rather than memory.</p>
+      <h2 id="ideas-h">__H_IDEAS__</h2>
+      <p>__N_IDEAS__</p>
     </div>
     <ul class="shelf">__SHELF__
     </ul>
   </section>
 
-  <p class="none" id="empty" hidden>Nothing matches that. Try a year, a country or a brewery,
-    or <button type="button" id="reset">show everything again</button>.</p>
+  <p class="none" id="empty" hidden>__EMPTY_A__
+    <button type="button" id="reset">__EMPTY_B__</button>.</p>
 </main>
 
 <footer>
   <div class="foot">
-    <p><strong style="color:var(--text)">Bier Reisen</strong>. A personal archive of beer travel.
-      Every dossier is a single HTML file; every distance was measured, not estimated: OSRM for the driving
-      years, great-circle for flights, timetables for the years without a car.</p>
-    <p><a href="README.md">How this is built</a> · <a href="2027/data/route-2027.json">Route data</a> ·
-      <a href="assets/maps/europe.png">Regional posters</a></p>
+    <p><strong style="color:var(--text)">Bier Reisen</strong>. __FOOT_A__</p>
+    <p><a href="__BASE__README.md">__FOOT_HOW__</a> ·
+      <a href="__BASE__2027/data/route-2027.json">__FOOT_DATA__</a> ·
+      <a href="__BASE__assets/maps/europe.png">__FOOT_POSTERS__</a></p>
   </div>
 </footer>
 
 <script>
 (function () {
+  var COUNT = __JS_COUNT__;
   var entries = Array.prototype.slice.call(document.querySelectorAll('.entry, .shelf-item'));
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));
   var input = document.getElementById('q');
@@ -284,7 +296,7 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
         function (el) { return !el.hidden; });
       section.hidden = !any;
     });
-    countEl.textContent = shown + ' of ' + entries.length;
+    countEl.textContent = COUNT.replace('{n}', shown).replace('{total}', entries.length);
     emptyEl.hidden = shown !== 0;
   }
 
