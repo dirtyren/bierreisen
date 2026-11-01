@@ -109,6 +109,26 @@ def slugify(text):
 
 
 city_meta = d.get("city_meta", {})
+
+
+def stop_number(city):
+    key = city.strip().lower()
+    for i, st in enumerate(stops, 1):
+        if st["name"].strip().lower() == key:
+            return i
+    base = city.split(" (")[0].strip().lower()
+    for i, st in enumerate(stops, 1):
+        if st["name"].split(" (")[0].strip().lower() == base:
+            return i
+    return None
+
+
+def stop_pill(city):
+    pill = city_meta.get(city, {}).get("stop", "")
+    n = stop_number(city)
+    if n and "Stop #" in pill:
+        return re.sub(r"Stop #\d+", f"Stop #{n}", pill)
+    return pill
 rank_html, rank_filters = [], []
 total_venues = sum(len(v) for v in venues.values())
 for city, items in venues.items():
@@ -132,7 +152,7 @@ for city, items in venues.items():
       <section class="city-ranking-section" data-city-section="{slugify(city)}">
         <div class="city-section-header">
           <div>
-            <h3>{flag} {esc(city)} <span class="city-meta-pill">{esc(meta.get("stop", ""))}</span></h3>
+            <h3>{flag} {esc(city)} <span class="city-meta-pill">{esc(stop_pill(city))}</span></h3>
             <p class="city-subnote">{esc(meta.get("subnote", ""))}</p>
           </div>
           <div class="city-famous-pill">🍻 Famous for: <strong>{esc(meta.get("famous", ""))}</strong></div>
