@@ -101,12 +101,34 @@ São Paulo. **13 nights, 5 bases, 1,062 km behind the wheel.**
 - [`2024/data/route-2024.json`](2024/data/route-2024.json) — every leg, every stop, OSRM distances
 - [`2024/scripts/`](2024/scripts) — `build_html.py` and `make_route_map.py` regenerate the page and the poster
 
+## 2026 — Franconia, Bohemia and the Alps
+
+![Bier Reisen 2026 route poster](2026/assets/2026-route-map.png)
+
+16 days, 25 February – 12 March 2026. Land in Frankfurt and drive to Merkendorf, the village of Brauerei
+Wagner eight kilometres from Bamberg, for three nights. Then Plzeň for the pilsner, two nights of Budvar in
+České Budějovice, three Alpine nights in Bad Reichenhall with Berchtesgaden and Salzburg a short drive away,
+and four nights in Munich. **13 nights, 5 bases, 1,406 km behind the wheel.**
+
+| Dates | Base | Nights |
+|---|---|---|
+| 26–28.02 | Merkendorf, near Bamberg | 3 |
+| 01.03 | Plzeň | 1 |
+| 02–03.03 | České Budějovice | 2 |
+| 04–06.03 | Bad Reichenhall | 3 |
+| 07–10.03 | Munich | 4 |
+
+- [`2026/2026-bier-reisen.html`](2026/2026-bier-reisen.html) — the dossier: itinerary, map, rankings, beer guide, drive times, suggestions
+- [`2026/data/route-2026.json`](2026/data/route-2026.json) — every leg, every stop, OSRM distances
+- [`2026/scripts/`](2026/scripts) — `build_html.py` and `make_route_map.py` regenerate the page and the poster
+
 ## Contents
 
 - [Maps](#maps)
 - [2020 — the trip that started it](#2020--the-trip-that-started-it)
 - [2021 — Bamberg to the Allgäu](#2021--bamberg-to-the-allgäu)
 - [2024 — Franconia, Bohemia and Advent in Munich](#2024--franconia-bohemia-and-advent-in-munich)
+- [2026 — Franconia, Bohemia and the Alps](#2026--franconia-bohemia-and-the-alps)
 - [The six trips at a glance](#the-six-trips-at-a-glance)
 - [1. UK Beer Pilgrimage — 12 days](#1-uk-beer-pilgrimage--12-days)
 - [2. Belgian Beer Pilgrimage — 9 days](#2-belgian-beer-pilgrimage--9-days)
@@ -375,6 +397,11 @@ bierreisen/
 │   ├── 2024-bier-reisen.html
 │   ├── assets/2024-route-map.png
 │   ├── data/route-2024.json
+│   └── scripts/
+├── 2026/                                  # the fourth trip, same layout
+│   ├── 2026-bier-reisen.html
+│   ├── assets/2026-route-map.png
+│   ├── data/route-2026.json
 │   └── scripts/
 ├── 2027/                                  # the next one, three variants
 │   ├── 2027-bier-reisen.html              # v1
