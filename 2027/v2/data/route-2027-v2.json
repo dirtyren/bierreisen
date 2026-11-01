@@ -647,6 +647,18 @@
  },
  "side_legs": [
   {
+   "from": "bamberg",
+   "to": "Memmelsdorf — Drei Kronen",
+   "km": 8.1,
+   "minutes": 13
+  },
+  {
+   "from": "bamberg",
+   "to": "Merkendorf — Brauerei Wagner",
+   "km": 11.5,
+   "minutes": 19
+  },
+  {
    "from": "bruges",
    "to": "Westvleteren (In de Vrede)",
    "km": 72,
@@ -802,6 +814,10 @@
     "note": "Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar."
    },
    {
+    "name": "Brauerei Wagner",
+    "note": "Family brewery eleven kilometres from Bamberg, brewing since 1797 — an unassuming village taproom, Franconian lagers of real precision, and a reputation among beer travellers that runs far beyond the village."
+   },
+   {
     "name": "Spezial",
     "note": "The locals' rauchbier — subtler smoke than Schlenkerla."
    },
@@ -820,6 +836,10 @@
    {
     "name": "Klosterbräu",
     "note": "Oldest brewery in Bamberg (1533), Schwärzla."
+   },
+   {
+    "name": "Drei Kronen",
+    "note": "Brewery, Gasthof and hotel eight kilometres from Bamberg — hand-brewed Franconian beer, a full kitchen, and rooms if the evening runs long."
    },
    {
     "name": "Keesmann",
