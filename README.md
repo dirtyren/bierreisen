@@ -57,10 +57,34 @@ Trappists and back. 14 nights, 10 bases, **2,089 km behind the wheel** and 21,42
 - [`2020/data/route-2020.json`](2020/data/route-2020.json) — every leg, every stop, OSRM distances
 - [`2020/scripts/`](2020/scripts) — `build_html.py` and `make_route_map.py` regenerate the page and the poster
 
+## 2021 — Bamberg to the Allgäu
+
+![Bier Reisen 2021 route poster](2021/assets/2021-route-map.png)
+
+18 days, 29 October – 15 November 2021. Land in Frankfurt and drive straight to Franconia, then south
+along the Danube gorge, across the Chiemgau to Berchtesgaden, west through the Allgäu, and seven nights
+in Munich before the long drive back to Frankfurt. **16 nights, 9 bases, 1,561 km behind the wheel.**
+
+| Dates | Base | Nights | Stay |
+|---|---|---|---|
+| 30–31.10 | Bamberg | 2 | Hotel Andres, Heiliggrabstr. 1 |
+| 01.11 | Nuremberg | 1 | Leonard Hotel, Zufuhrstraße 22 |
+| 02.11 | Essing | 1 | Gasthaus Felsenwastl, Unterer Markt 19 |
+| 03.11 | Traunstein | 1 | Hotel Rosenheimer Hof, Rosenheimer Str. 58 |
+| 04–05.11 | Berchtesgaden | 2 | Alpensport-Hotel Seimler, Maria am Berg 3–5 |
+| 06.11 | Nesselwang | 1 | Brauerei-Gasthof Hotel Post, Hauptstraße 25 |
+| 07.11 | Missen-Wilhams | 1 | Brauereigasthof Schäffler, Hauptstraße 15 |
+| 08–14.11 | Munich | 7 | Hotel Italia, Schillerstr. 19 |
+
+- [`2021/2021-bier-reisen.html`](2021/2021-bier-reisen.html) — the dossier: itinerary, map, rankings, beer guide, drive times, suggestions
+- [`2021/data/route-2021.json`](2021/data/route-2021.json) — every leg, every stop, OSRM distances
+- [`2021/scripts/`](2021/scripts) — `build_html.py` and `make_route_map.py` regenerate the page and the poster
+
 ## Contents
 
 - [Maps](#maps)
 - [2020 — the trip that started it](#2020--the-trip-that-started-it)
+- [2021 — Bamberg to the Allgäu](#2021--bamberg-to-the-allgäu)
 - [The six trips at a glance](#the-six-trips-at-a-glance)
 - [1. UK Beer Pilgrimage — 12 days](#1-uk-beer-pilgrimage--12-days)
 - [2. Belgian Beer Pilgrimage — 9 days](#2-belgian-beer-pilgrimage--9-days)
@@ -320,6 +344,11 @@ bierreisen/
 │   ├── assets/2020-route-map.png
 │   ├── data/route-2020.json
 │   └── scripts/                           # build_html.py, make_route_map.py
+├── 2021/                                  # the second trip, same layout
+│   ├── 2021-bier-reisen.html
+│   ├── assets/2021-route-map.png
+│   ├── data/route-2021.json
+│   └── scripts/
 ├── 2027/                                  # the next one, three variants
 │   ├── 2027-bier-reisen.html              # v1
 │   ├── v2/ · v3/

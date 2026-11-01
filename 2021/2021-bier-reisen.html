@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bier Reisen 2021 — 18-Day Bavarian Beer Trip</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{--bg:#0b0c15;--panel:#151833;--border:#2a3050;--gold:#e6a817;--text:#eef1f6;--muted:#9aa5bc}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Avenir Next','Segoe UI',system-ui,sans-serif;line-height:1.55}
+.header{padding:2.4rem 2rem 1.6rem;text-align:center;border-bottom:2px solid var(--gold);
+  background:linear-gradient(135deg,#0f0c29,#1b1e3d,#0b0c15)}
+.header h1{font-size:2.3rem;color:var(--gold);font-weight:800;letter-spacing:.02em}
+.header .dates{color:var(--muted);margin-top:.35rem;font-size:1rem}
+.route{color:var(--text);margin-top:.7rem;font-size:.92rem;opacity:.9}
+.stats{margin-top:.9rem;display:inline-block;padding:.45rem 1rem;border:1px solid var(--border);
+  border-radius:999px;font-size:.86rem;color:var(--gold);font-weight:700}
+.links{margin-top:1rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:.85rem}
+.links a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--border)}
+.links a:hover{color:var(--gold)}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem;background:#0d0f1c;
+  border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500}
+.tab{background:none;border:none;color:var(--muted);padding:.95rem 1.3rem;font:inherit;font-weight:600;
+  cursor:pointer;border-bottom:3px solid transparent}
+.tab:hover{color:var(--gold)}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(230,168,23,.06)}
+.tab-content{display:none;max-width:1180px;margin:0 auto;padding:2rem 1.4rem 4rem}
+.tab-content.active{display:block}
+h2.section{font-size:1.35rem;color:var(--gold);margin:0 0 .4rem}
+p.lede{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}
+.day-node{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:12px;padding:1.1rem 1.3rem;margin:0 auto .9rem;max-width:820px}
+.day-head{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:.4rem}
+.day-num{background:var(--gold);color:#0b0c15;font-weight:800;font-size:.75rem;padding:.18rem .6rem;
+  border-radius:999px;letter-spacing:.06em}
+.day-date{color:var(--muted);font-size:.78rem;letter-spacing:.08em}
+.base-chip{font-size:.75rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:.15rem .6rem}
+.day-node h3{font-size:1.05rem;margin:.15rem 0 .5rem;color:var(--text)}
+.drive-pill{font-size:.84rem;color:var(--gold);background:rgba(230,168,23,.07);border:1px solid rgba(230,168,23,.25);
+  border-radius:8px;padding:.4rem .7rem;display:inline-block;margin-bottom:.6rem}
+.drive-pill.in-place{color:var(--muted);background:rgba(154,165,188,.06);border-color:var(--border)}
+.day-items{margin-left:1.1rem;color:var(--muted);font-size:.9rem}
+.day-items li{margin:.2rem 0}
+#map-container{height:620px;border-radius:12px;border:1px solid var(--border)}
+.city-block{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem}
+.city-block h3{color:var(--gold);font-size:1.1rem;margin-bottom:.8rem}
+.venue{display:flex;gap:.9rem;padding:.6rem 0;border-top:1px solid rgba(42,48,80,.6)}
+.venue:first-of-type{border-top:none}
+.venue .rank{color:var(--gold);font-weight:800;opacity:.75;min-width:1.6rem}
+.venue h4{font-size:.98rem;margin-bottom:.15rem}
+.venue p{color:var(--muted);font-size:.88rem}
+table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:1.4rem}
+th,td{padding:.55rem .7rem;border-bottom:1px solid var(--border);text-align:left}
+th{color:var(--gold);font-weight:700;background:rgba(21,24,51,.9);position:sticky;top:52px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.diag{color:#3a4368;text-align:center}
+.matrix-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px}
+.totals{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0 2rem}
+.total{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:.8rem 1.1rem;min-width:150px}
+.total b{display:block;color:var(--gold);font-size:1.25rem}
+.total span{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.legend{display:flex;gap:1.2rem;flex-wrap:wrap;margin:.8rem 0 0;font-size:.82rem;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:.35rem}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>🍺 Bier Reisen 2021</h1>
+  <div class="dates">29 October – 15 November 2021 · Bamberg to the Allgäu</div>
+  <div class="route">Porto Alegre → Frankfurt → Bamberg → Nuremberg → Essing → Traunstein → Schönram → Berchtesgaden → Nesselwang → Missen-Wilhams → Munich → Frankfurt</div>
+  <div class="stats">18 days · 16 nights · 9 bases · 1,561 km driving · 21,331 km flying · 2 countries</div>
+  <div class="links">
+    <a href="assets/2021-route-map.png" target="_blank" rel="noopener">🗺️ Route poster (PNG)</a>
+    <a href="data/route-2021.json" target="_blank" rel="noopener">📄 Route data (JSON)</a>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" onclick="showTab('itinerary',this)">📋 Itinerary</button>
+  <button class="tab" onclick="showTab('map',this)">🗺️ Map</button>
+  <button class="tab" onclick="showTab('rankings',this)">🍺 Rankings</button>
+  <button class="tab" onclick="showTab('beers',this)">📖 Beer Guide</button>
+  <button class="tab" onclick="showTab('drives',this)">🚗 Drive Times</button>
+  <button class="tab" onclick="showTab('suggest',this)">💡 Suggestions</button>
+</nav>
+
+<section id="itinerary" class="tab-content active">
+  <h2 class="section">18 days, day by day</h2>
+  <p class="lede">Two flights, ten driving legs, sixteen nights and nine bases: Franconia first, then the
+    Danube gorge, the Chiemgau, Berchtesgaden, the Allgäu and seven nights in Munich.</p>
+  
+      <article class="day-node" data-day="1">
+        <div class="day-head">
+          <span class="day-num">DAY 1</span>
+          <span class="day-date">29.10.2021</span>
+          
+        </div>
+        <h3>Porto Alegre → Frankfurt</h3>
+        <div class="drive-pill">✈️ <strong>Flight day</strong> · overnight</div>
+        <ul class="day-items"><li>Overnight flight POA → FRA (10,665 km, ~13 h 30 in the air)</li><li>Dinner at the airport before boarding</li><li>The car is waiting in Frankfurt in the morning</li></ul>
+      </article>
+      <article class="day-node" data-day="2">
+        <div class="day-head">
+          <span class="day-num">DAY 2</span>
+          <span class="day-date">30.10.2021</span>
+          <span class="base-chip">🇩🇪 Bamberg · 2 nights</span>
+        </div>
+        <h3>Frankfurt → Bamberg</h3>
+        <div class="drive-pill">🚗 <strong>Frankfurt Airport → Bamberg</strong> · 213 km · 2 h 18</div>
+        <ul class="day-items"><li>213 km / 2 h 18 east on the A3 and A70</li><li>Hotel Andres, Heiliggrabstraße 1 — drop the bags inside the old town</li><li>First evening: Schlenkerla for Rauchbier, or Spezial if the smoke is too much</li></ul>
+      </article>
+      <article class="day-node" data-day="3">
+        <div class="day-head">
+          <span class="day-num">DAY 3</span>
+          <span class="day-date">31.10.2021</span>
+          <span class="base-chip">🇩🇪 Bamberg · 2 nights</span>
+        </div>
+        <h3>Bamberg</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Brewery crawl through the old town: Schlenkerla, Spezial, Fässla, Mahr&#x27;s, Klosterbräu</li><li>Greifenklau for the view over the city</li><li>Sunday in Franconia — check which taprooms open before committing to a plan</li></ul>
+      </article>
+      <article class="day-node" data-day="4">
+        <div class="day-head">
+          <span class="day-num">DAY 4</span>
+          <span class="day-date">01.11.2021</span>
+          <span class="base-chip">🇩🇪 Nuremberg · 1 night</span>
+        </div>
+        <h3>Bamberg → Nuremberg</h3>
+        <div class="drive-pill">🚗 <strong>Bamberg → Nuremberg</strong> · 60 km · 0 h 52</div>
+        <ul class="day-items"><li>60 km / 0 h 52 south on the A73</li><li>Leonard Hotel, Zufuhrstraße 22, Mitte</li><li>Altstadthof in the rock cellars, then Schanzenbräu on the hill</li></ul>
+      </article>
+      <article class="day-node" data-day="5">
+        <div class="day-head">
+          <span class="day-num">DAY 5</span>
+          <span class="day-date">02.11.2021</span>
+          <span class="base-chip">🇩🇪 Essing · 1 night</span>
+        </div>
+        <h3>Nuremberg → Essing</h3>
+        <div class="drive-pill">🚗 <strong>Nuremberg → Essing</strong> · 107 km · 1 h 28</div>
+        <ul class="day-items"><li>107 km / 1 h 28 south-east towards the Danube</li><li>Gasthaus Felsenwastl, Unterer Markt 19</li><li>Weltenburg Abbey across the gorge if there is light left</li></ul>
+      </article>
+      <article class="day-node" data-day="6">
+        <div class="day-head">
+          <span class="day-num">DAY 6</span>
+          <span class="day-date">03.11.2021</span>
+          <span class="base-chip">🇩🇪 Traunstein · 1 night</span>
+        </div>
+        <h3>Essing → Traunstein</h3>
+        <div class="drive-pill">🚗 <strong>Essing → Traunstein</strong> · 230 km · 2 h 37</div>
+        <ul class="day-items"><li>231 km / 2 h 37 south-east through the Chiemgau</li><li>Hotel Rosenheimer Hof — keys in the safe by the back door, code 5859#</li><li>Hofbräuhaus Traunstein in the evening</li></ul>
+      </article>
+      <article class="day-node" data-day="7">
+        <div class="day-head">
+          <span class="day-num">DAY 7</span>
+          <span class="day-date">04.11.2021</span>
+          <span class="base-chip">🇩🇪 Berchtesgaden · 2 nights</span>
+        </div>
+        <h3>Traunstein → Schönram → Berchtesgaden</h3>
+        <div class="drive-pill">🚗 <strong>Traunstein → Schönram (Petting)</strong> · 23 km · 0 h 21</div>
+        <ul class="day-items"><li>23 km / 0 h 21 to Petting for Schönramer Pils</li><li>42 km / 0 h 44 on to Berchtesgaden</li><li>Alpensport-Hotel Seimler, Maria am Berg — two nights under the Watzmann</li></ul>
+      </article>
+      <article class="day-node" data-day="8">
+        <div class="day-head">
+          <span class="day-num">DAY 8</span>
+          <span class="day-date">05.11.2021</span>
+          <span class="base-chip">🇩🇪 Berchtesgaden · 2 nights</span>
+        </div>
+        <h3>Berchtesgaden</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Hofbrauhaus Berchtesgaden in the town centre</li><li>Watzmann or the Königssee if the weather holds</li><li>Second night at the Seimler</li></ul>
+      </article>
+      <article class="day-node" data-day="9">
+        <div class="day-head">
+          <span class="day-num">DAY 9</span>
+          <span class="day-date">06.11.2021</span>
+          <span class="base-chip">🇩🇪 Nesselwang · 1 night</span>
+        </div>
+        <h3>Berchtesgaden → Nesselwang</h3>
+        <div class="drive-pill">🚗 <strong>Berchtesgaden → Nesselwang</strong> · 280 km · 3 h 20</div>
+        <ul class="day-items"><li>280 km / 3 h 20 west across Upper Bavaria and the Allgäu</li><li>Brauerei-Gasthof Hotel Post, Hauptstraße 25 — sleep above the brewhouse</li><li>Dinner in the Gasthof, beer from the tank</li></ul>
+      </article>
+      <article class="day-node" data-day="10">
+        <div class="day-head">
+          <span class="day-num">DAY 10</span>
+          <span class="day-date">07.11.2021</span>
+          <span class="base-chip">🇩🇪 Missen-Wilhams · 1 night</span>
+        </div>
+        <h3>Nesselwang → Missen-Wilhams</h3>
+        <div class="drive-pill">🚗 <strong>Nesselwang → Missen-Wilhams</strong> · 43 km · 0 h 33</div>
+        <ul class="day-items"><li>43 km / 0 h 33 through the Allgäu hills</li><li>Brauereigasthof Schäffler, Hauptstraße 15</li><li>A village brewery, a wood stove and nothing else to do</li></ul>
+      </article>
+      <article class="day-node" data-day="11">
+        <div class="day-head">
+          <span class="day-num">DAY 11</span>
+          <span class="day-date">08.11.2021</span>
+          <span class="base-chip">🇩🇪 Munich · 7 nights</span>
+        </div>
+        <h3>Missen-Wilhams → Munich</h3>
+        <div class="drive-pill">🚗 <strong>Missen-Wilhams → Munich</strong> · 158 km · 1 h 58</div>
+        <ul class="day-items"><li>158 km / 1 h 58 north-east on the A96</li><li>Hotel Italia, Schillerstraße 19, Ludwigsvorstadt — seven nights</li><li>Augustiner Bräustuben for the first Maß</li></ul>
+      </article>
+      <article class="day-node" data-day="12">
+        <div class="day-head">
+          <span class="day-num">DAY 12</span>
+          <span class="day-date">09.11.2021</span>
+          <span class="base-chip">🇩🇪 Munich · 7 nights</span>
+        </div>
+        <h3>Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Augustiner Bräustuben and Augustiner Keller in one day, for science</li><li>Viktualienmarkt and the Chinesischer Turm in the Englischer Garten</li><li>Schneider Bräuhaus at night</li></ul>
+      </article>
+      <article class="day-node" data-day="13">
+        <div class="day-head">
+          <span class="day-num">DAY 13</span>
+          <span class="day-date">10.11.2021</span>
+          <span class="base-chip">🇩🇪 Munich · 7 nights</span>
+        </div>
+        <h3>Munich — west and south</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Day trip to Kloster Andechs for the Doppelbock (45 km)</li><li>Giesinger Bräu on the way back</li><li>Isartaler Brauhaus in the evening</li></ul>
+      </article>
+      <article class="day-node" data-day="14">
+        <div class="day-head">
+          <span class="day-num">DAY 14</span>
+          <span class="day-date">11.11.2021</span>
+          <span class="base-chip">🇩🇪 Munich · 7 nights</span>
+        </div>
+        <h3>Munich — north</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Freising and Weihenstephan — the oldest brewery site in the world (38 km)</li><li>Wildbräu Grafing on the way back</li><li>Paulaner Brauhaus for dinner</li></ul>
+      </article>
+      <article class="day-node" data-day="15">
+        <div class="day-head">
+          <span class="day-num">DAY 15</span>
+          <span class="day-date">12.11.2021</span>
+          <span class="base-chip">🇩🇪 Munich · 7 nights</span>
+        </div>
+        <h3>Munich — craft</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Hopfenhäcker at the Forschungsbrauerei in Perlach — both in one visit</li><li>Forschungsbräu Bräustüberl next door</li><li>Schweiger Bräu from Markt Schwaben on a menu somewhere in town</li></ul>
+      </article>
+      <article class="day-node" data-day="16">
+        <div class="day-head">
+          <span class="day-num">DAY 16</span>
+          <span class="day-date">13.11.2021</span>
+          <span class="base-chip">🇩🇪 Munich · 7 nights</span>
+        </div>
+        <h3>Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>The market and the beer gardens: Viktualienmarkt, Chinesischer Turm, Augustiner Keller</li><li>Bookstalls at the Viktualienmarkt if the weather turns</li><li>Last long evening in the Altstadt</li></ul>
+      </article>
+      <article class="day-node" data-day="17">
+        <div class="day-head">
+          <span class="day-num">DAY 17</span>
+          <span class="day-date">14.11.2021</span>
+          <span class="base-chip">🇩🇪 Munich · 7 nights</span>
+        </div>
+        <h3>Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Anything missed: Hofbräuhaus, the Deutsches Museum, a second Andechs run</li><li>Pack the bottles properly — this is the shopping day</li><li>Dinner near the hotel in Ludwigsvorstadt</li></ul>
+      </article>
+      <article class="day-node" data-day="18">
+        <div class="day-head">
+          <span class="day-num">DAY 18</span>
+          <span class="day-date">15.11.2021</span>
+          
+        </div>
+        <h3>Munich → Frankfurt → home</h3>
+        <div class="drive-pill">🚗 <strong>Munich → Frankfurt Airport</strong> · 404 km · 3 h 59</div>
+        <ul class="day-items"><li>404 km / 3 h 59 north on the A9 and A3</li><li>Return the car, check in at Frankfurt</li><li>Overnight flight home</li></ul>
+      </article>
+</section>
+
+<section id="map" class="tab-content">
+  <h2 class="section">The route through Bavaria</h2>
+  <p class="lede">Numbered in visit order, from Frankfurt down through Franconia to the Alps and back up
+    to Munich. The Porto Alegre legs are flights and sit outside this frame.</p>
+  <div id="map-container"></div>
+  <div class="legend">
+    <span><span class="dot" style="background:#e8b93b"></span>Franconia</span>
+    <span><span class="dot" style="background:#43d19e"></span>Danube &amp; Chiemgau</span>
+    <span><span class="dot" style="background:#ff7fa3"></span>Allgäu</span>
+    <span><span class="dot" style="background:#54a8f5"></span>Munich</span>
+  </div>
+</section>
+
+<section id="rankings" class="tab-content">
+  <h2 class="section">What to drink where</h2>
+  <p class="lede">One section per stop, ranked by how much the place is worth a detour — from the Rauchbier
+    town to the two brewery inns in the Allgäu and the fourteen Munich addresses on the list.</p>
+  
+      <section class="city-block">
+        <h3>Bamberg</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Schlenkerla</h4><p>Rauchbier since 1405 — beechwood-smoked malt served from oak barrels in a vaulted cellar.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Spezial</h4><p>The Bambergers&#x27; own rauchbier: the smoke is a whisper next to Schlenkerla.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Mahr&#x27;s Bräu</h4><p>The &#x27;aU&#x27; Ungespundetes — unfiltered, naturally carbonated, the classic Franconian lager.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Fässla</h4><p>Zwergla dark lager, brewery tap opposite Spezial, open late.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">05</span>
+            <div><h4>Klosterbräu</h4><p>Bamberg&#x27;s oldest brewery (1533); the Schwärzla is the one to order.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">06</span>
+            <div><h4>Greifenklau</h4><p>Beer garden above the city with the best view of the roofs.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Nuremberg</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Altstadthof</h4><p>Hausbrauerei in the sandstone cellars under the castle — Rotbier and the rock-cut passages.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Schanzenbräu</h4><p>Neighbourhood brewery on the hill; unfiltered Franconian styles, taproom with long tables.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Tucher Mautkeller</h4><p>Big vaulted cellar restaurant, Rotbier on tap, convenient on a cold night.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Barfüßer Hausbrauerei</h4><p>Brewpub by the river with copper kettles in the room and a young crowd.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Essing</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Gasthaus Felsenwastl</h4><p>The inn itself: Danube fish, local beer, and the river gorge at the door.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Kloster Weltenburg</h4><p>Benedictine abbey 10 km downstream — Asamkirche and the oldest monastery brewery in Bavaria.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Befreiungshalle Kelheim</h4><p>Not a brewery, but the walk up is worth the afternoon before dinner.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Traunstein</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Hofbräuhaus Traunstein</h4><p>Village-scale Hofbräuhaus with its own maltings; the Hell and the Doppelbock are the local benchmarks.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Brauerei Wieninger</h4><p>Family brewery in Teisendorf, 15 km away — a half-day detour if the weather is bad.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Schönram (Petting)</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Private Landbrauerei Schönram</h4><p>One of Germany&#x27;s most respected private breweries: Schönramer Pils is bitter, floral and dry — the reason to drive to Petting.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Berchtesgaden</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Hofbrauhaus Berchtesgaden</h4><p>The town&#x27;s own brewery and restaurant; Helles and Dunkel brewed in the valley.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Grassl Distillery</h4><p>Enzian and fruit brandies, for the non-beer half of the evening.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Königssee</h4><p>Electric boat to St. Bartholomä — the scenery half of the two days.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Nesselwang</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Brauerei-Gasthof Post</h4><p>Brewery and Gasthof in one building: sleep upstairs, drink the house beer downstairs.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Missen-Wilhams</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Brauereigasthof Schäffler</h4><p>Allgäu village brewery with a wood-panelled Stube; a handful of beers, all served young.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Munich</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Kloster Andechs</h4><p>Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Weihenstephan, Freising</h4><p>The world&#x27;s oldest continuously operating brewery site (38 km); the Bräustüberl pours the standards.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Augustiner Bräustuben</h4><p>The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel, meatloaf at the next table.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Augustiner Keller</h4><p>Beer garden under the chestnuts; one of the few places still pouring from wooden barrels.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">05</span>
+            <div><h4>Chinesischer Turm</h4><p>Englischer Garten beer garden at the pagoda — 7,000 seats, brass band, Maß in hand.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">06</span>
+            <div><h4>Viktualienmarkt</h4><p>Market beer garden in the centre, with the Maibaum overhead and a rotating brewery tap.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">07</span>
+            <div><h4>Schneider Bräuhaus</h4><p>Wheat-beer house on Tal: Aventinus, the original Tap 7, and a menu built for it.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">08</span>
+            <div><h4>Paulaner Brauhaus</h4><p>The Nockherberg brewpub — Salvator season if you are lucky with the calendar.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">09</span>
+            <div><h4>Giesinger Bräu</h4><p>Craft brewery in Giesing; Erhellung unfiltered Helles and a taproom full of locals.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">10</span>
+            <div><h4>Hopfenhäcker</h4><p>Creative brewery founded 2016 in Haidhausen, moved into the Forschungsbrauerei in Perlach in 2021.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">11</span>
+            <div><h4>Forschungsbrauerei Bräustüberl</h4><p>Perlach research brewery and taproom — the same address as Hopfenhäcker, so both in one stop.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">12</span>
+            <div><h4>Isartaler Brauhaus</h4><p>Neighbourhood brewpub in the south of the city, house beers brewed on site.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">13</span>
+            <div><h4>Schweiger Bräu</h4><p>Private brewery in Markt Schwaben, east of the city — find it on tap around town.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">14</span>
+            <div><h4>Wildbräu Grafing</h4><p>Grafing&#x27;s own brewery, almost a thousand years of history and eleven classic Bavarian beers.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Frankfurt Airport</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Frankfurt Airport</h4><p>No beer stop planned — land, collect the car, drive east. The return leg is 404 km before a long flight.</p></div>
+          </div>
+      </section>
+</section>
+
+<section id="beers" class="tab-content">
+  <h2 class="section">Beer guide</h2>
+  <p class="lede">Five beer regions in eighteen days: Franconian smoke and Rotbier, the Danube's abbey
+    breweries, the Chiemgau and Berchtesgaden, the Allgäu's village lagers, and Munich's own dozen.</p>
+  <table><thead><tr><th>Region</th><th>Styles to look for</th></tr></thead><tbody><tr><td>Franconia</td><td>Rauchbier · Ungespundetes / Kellerbier · Rotbier · Pils · Bock</td></tr><tr><td>Upper Palatinate (Kelheim)</td><td>Klosterbier · Hefeweizen · Dunkel</td></tr><tr><td>Chiemgau &amp; Berchtesgaden</td><td>Helles · Dunkel · Doppelbock · Weißbier</td></tr><tr><td>Allgäu</td><td>Landbier · Export · Hefeweizen</td></tr><tr><td>Munich</td><td>Helles · Edelstoff · Weißbier / Weizenbock · Doppelbock · Pils</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">What to order, stop by stop</h2>
+  <table><thead><tr><th>Stop</th><th>Start here</th><th>Why</th></tr></thead><tbody><tr><td>Bamberg</td><td>Schlenkerla</td><td>Rauchbier since 1405 — beechwood-smoked malt served from oak barrels in a vaulted cellar.</td></tr><tr><td>Nuremberg</td><td>Altstadthof</td><td>Hausbrauerei in the sandstone cellars under the castle — Rotbier and the rock-cut passages.</td></tr><tr><td>Essing</td><td>Gasthaus Felsenwastl</td><td>Danube fish, local beer, and the river gorge at the door.</td></tr><tr><td>Traunstein</td><td>Hofbräuhaus Traunstein</td><td>Village-scale Hofbräuhaus with its own maltings; the Hell and the Doppelbock are the local benchmarks.</td></tr><tr><td>Schönram (Petting)</td><td>Private Landbrauerei Schönram</td><td>Schönramer Pils is bitter, floral and dry — the reason to drive to Petting.</td></tr><tr><td>Berchtesgaden</td><td>Hofbrauhaus Berchtesgaden</td><td>The town&#x27;s own brewery and restaurant; Helles and Dunkel brewed in the valley.</td></tr><tr><td>Nesselwang</td><td>Brauerei-Gasthof Post</td><td>sleep upstairs, drink the house beer downstairs.</td></tr><tr><td>Missen-Wilhams</td><td>Brauereigasthof Schäffler</td><td>Allgäu village brewery with a wood-panelled Stube; a handful of beers, all served young.</td></tr><tr><td>Munich</td><td>Kloster Andechs</td><td>Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</td></tr><tr><td>Frankfurt Airport</td><td>Frankfurt Airport</td><td>No beer stop planned — land, collect the car, drive east. The return leg is 404 km before a long flight.</td></tr></tbody></table>
+</section>
+
+<section id="drives" class="tab-content">
+  <h2 class="section">Drive times</h2>
+  <p class="lede">Every distance below is OSRM car routing. The two flights are great-circle distances;
+    the times are in the air, not door to door.</p>
+  <div class="totals">
+    <div class="total"><b>1,561 km</b><span>driving</span></div>
+    <div class="total"><b>18 h 10</b><span>behind the wheel</span></div>
+    <div class="total"><b>21,331 km</b><span>flying</span></div>
+    <div class="total"><b>12</b><span>legs</span></div>
+  </div>
+  <table><thead><tr><th>Mode</th><th>From</th><th>To</th><th class="num">km</th><th class="num">time</th></tr></thead>
+  <tbody><tr><td>✈️ flight</td><td>Porto Alegre</td><td>Frankfurt Airport</td><td class='num'>10,665</td><td class='num'>13 h 33</td></tr><tr><td>🚗 drive</td><td>Frankfurt Airport</td><td>Bamberg</td><td class='num'>213</td><td class='num'>2 h 18</td></tr><tr><td>🚗 drive</td><td>Bamberg</td><td>Nuremberg</td><td class='num'>60</td><td class='num'>0 h 52</td></tr><tr><td>🚗 drive</td><td>Nuremberg</td><td>Essing</td><td class='num'>107</td><td class='num'>1 h 28</td></tr><tr><td>🚗 drive</td><td>Essing</td><td>Traunstein</td><td class='num'>230</td><td class='num'>2 h 37</td></tr><tr><td>🚗 drive</td><td>Traunstein</td><td>Schönram (Petting)</td><td class='num'>23</td><td class='num'>0 h 21</td></tr><tr><td>🚗 drive</td><td>Schönram (Petting)</td><td>Berchtesgaden</td><td class='num'>43</td><td class='num'>0 h 44</td></tr><tr><td>🚗 drive</td><td>Berchtesgaden</td><td>Nesselwang</td><td class='num'>280</td><td class='num'>3 h 20</td></tr><tr><td>🚗 drive</td><td>Nesselwang</td><td>Missen-Wilhams</td><td class='num'>43</td><td class='num'>0 h 33</td></tr><tr><td>🚗 drive</td><td>Missen-Wilhams</td><td>Munich</td><td class='num'>158</td><td class='num'>1 h 58</td></tr><tr><td>🚗 drive</td><td>Munich</td><td>Frankfurt Airport</td><td class='num'>404</td><td class='num'>3 h 59</td></tr><tr><td>✈️ flight</td><td>Frankfurt Airport</td><td>Porto Alegre</td><td class='num'>10,665</td><td class='num'>13 h 33</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">Distance matrix</h2>
+  <p class="lede">Car kilometres between every pair of land stops, from <code>matrix.pairs</code>.</p>
+  <div class="matrix-wrap"><table><thead><tr><th>From \ To</th><th>Bamberg</th><th>Nuremberg</th><th>Essing</th><th>Traunstein</th><th>Schönram</th><th>Berchtesgaden</th><th>Nesselwang</th><th>Missen-Wilhams</th><th>Munich</th></tr></thead><tbody><tr><th>Bamberg</th><td class='diag'>—</td><td class='num'>60</td><td class='num'>156</td><td class='num'>342</td><td class='num'>365</td><td class='num'>387</td><td class='num'>352</td><td class='num'>364</td><td class='num'>231</td></tr><tr><th>Nuremberg</th><td class='num'>60</td><td class='diag'>—</td><td class='num'>107</td><td class='num'>281</td><td class='num'>304</td><td class='num'>326</td><td class='num'>291</td><td class='num'>303</td><td class='num'>170</td></tr><tr><th>Essing</th><td class='num'>156</td><td class='num'>107</td><td class='diag'>—</td><td class='num'>230</td><td class='num'>187</td><td class='num'>276</td><td class='num'>238</td><td class='num'>268</td><td class='num'>120</td></tr><tr><th>Traunstein</th><td class='num'>342</td><td class='num'>281</td><td class='num'>230</td><td class='diag'>—</td><td class='num'>23</td><td class='num'>56</td><td class='num'>234</td><td class='num'>264</td><td class='num'>110</td></tr><tr><th>Schönram</th><td class='num'>365</td><td class='num'>304</td><td class='num'>187</td><td class='num'>23</td><td class='diag'>—</td><td class='num'>43</td><td class='num'>252</td><td class='num'>282</td><td class='num'>128</td></tr><tr><th>Berchtesgaden</th><td class='num'>387</td><td class='num'>326</td><td class='num'>276</td><td class='num'>56</td><td class='num'>43</td><td class='diag'>—</td><td class='num'>280</td><td class='num'>310</td><td class='num'>155</td></tr><tr><th>Nesselwang</th><td class='num'>352</td><td class='num'>291</td><td class='num'>238</td><td class='num'>234</td><td class='num'>252</td><td class='num'>280</td><td class='diag'>—</td><td class='num'>43</td><td class='num'>126</td></tr><tr><th>Missen-Wilhams</th><td class='num'>364</td><td class='num'>303</td><td class='num'>268</td><td class='num'>264</td><td class='num'>282</td><td class='num'>310</td><td class='num'>43</td><td class='diag'>—</td><td class='num'>158</td></tr><tr><th>Munich</th><td class='num'>231</td><td class='num'>170</td><td class='num'>120</td><td class='num'>110</td><td class='num'>128</td><td class='num'>155</td><td class='num'>126</td><td class='num'>158</td><td class='diag'>—</td></tr></tbody></table></div>
+</section>
+
+<section id="suggest" class="tab-content">
+  <h2 class="section">If you had one more day</h2>
+  <p class="lede">Detours that were on the list and did not fit — measured from the nearest base.</p>
+  <table><thead><tr><th>From</th><th>Detour</th><th class="num">km</th><th class="num">time</th></tr></thead>
+  <tbody><tr><td>Essing</td><td>Kloster Weltenburg</td><td class='num'>10</td><td class='num'>0 h 15</td></tr><tr><td>Traunstein</td><td>Teisendorf (Wieninger)</td><td class='num'>18</td><td class='num'>0 h 22</td></tr><tr><td>Munich</td><td>Kloster Andechs</td><td class='num'>45</td><td class='num'>0 h 50</td></tr><tr><td>Munich</td><td>Freising (Weihenstephan)</td><td class='num'>38</td><td class='num'>0 h 40</td></tr><tr><td>Munich</td><td>Grafing (Wildbräu)</td><td class='num'>32</td><td class='num'>0 h 35</td></tr><tr><td>Munich</td><td>Markt Schwaben (Schweiger)</td><td class='num'>25</td><td class='num'>0 h 30</td></tr><tr><td>Munich</td><td>München-Perlach (Forschungsbrauerei)</td><td class='num'>12</td><td class='num'>0 h 20</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">What this trip taught us</h2>
+  <ul style="color:var(--muted);margin-left:1.2rem;font-size:.92rem;line-height:1.9">
+    <li>Late October is a good call: the beer gardens are still open, the roads are empty and the hotels are cheap — but check <em>Ruhetag</em>, small breweries close Mondays.</li>
+    <li>The two brewery inns (Nesselwang's Post and Missen's Schäffler) are the best value of the trip: sleep above the brewhouse, drink what was brewed downstairs.</li>
+    <li>Berchtesgaden → Nesselwang at 280 km / 3 h 20 is the one transfer worth splitting — Garmisch or Tegernsee in between.</li>
+    <li>Munich in one block beats Munich in two: seven nights at Hotel Italia made the day trips (Andechs, Freising, Grafing) possible without packing.</li>
+    <li>Book Schönram around lunch — a 23 km detour for a Pils that bitter is worth the schedule change.</li>
+  </ul>
+</section>
+
+<script>
+var mapReady = false;
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(function (s) { s.classList.remove('active'); });
+  document.querySelectorAll('.tab').forEach(function (b) { b.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (id === 'map') setTimeout(initMap, 60);
+}
+function initMap() {
+  if (mapReady) { window.tripMap.invalidateSize(); return; }
+  if (typeof L === 'undefined') return;
+  mapReady = true;
+  var map = L.map('map-container');
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri', maxZoom: 16
+  }).addTo(map);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16
+  }).addTo(map);
+  var stops = [
+[50.0244,8.5552,"Frankfurt Airport","Land on 30 October, pick up the car, straight to Franconia.","#e8b93b",0],
+[49.8916,10.8868,"Bamberg","Hotel Andres, Heiliggrabstraße 1 — two nights in the Rauchbier capital.","#e8b93b",2],
+[49.4539,11.0773,"Nuremberg","Leonard Hotel, Zufuhrstraße 22 — one night inside the old walls.","#e8b93b",1],
+[48.9449,11.8052,"Essing","Gasthaus Felsenwastl, Unterer Markt 19 — Danube gorge, Weltenburg next door.","#e8b93b",1],
+[47.8677,12.6394,"Traunstein","Hotel Rosenheimer Hof — Chiemgau gateway, key box at the back door.","#e8b93b",1],
+[47.8859,12.8497,"Schönram (Petting)","Private Landbrauerei Schönram — the stop that justifies the detour.","#e8b93b",0],
+[47.6330,13.0020,"Berchtesgaden","Alpensport-Hotel Seimler, Maria am Berg — two nights under the Watzmann.","#e8b93b",2],
+[47.6219,10.5003,"Nesselwang","Brauerei-Gasthof Hotel Post, Hauptstraße 25 — sleep above the brewhouse.","#e8b93b",1],
+[47.5973,10.1277,"Missen-Wilhams","Brauereigasthof Schäffler, Hauptstraße 15 — Allgäu village brewery.","#e8b93b",1],
+[48.1371,11.5754,"Munich","Hotel Italia, Schillerstraße 19 — seven nights, the long Munich finish.","#e8b93b",7]
+  ];
+  var pts = [];
+  stops.forEach(function (s, i) {
+    var icon = L.divIcon({className: 'pin', html: '<div style="width:22px;height:22px;border-radius:50%;background:' + s[4] +
+      ';color:#0b0c15;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;border:2px solid #0b0c15">' + (i + 1) + '</div>', iconSize: [22, 22], iconAnchor: [11, 11]});
+    L.marker([s[0], s[1]], {icon: icon}).addTo(map)
+      .bindPopup('<strong style="color:#e6a817">' + s[2] + '</strong><br><span style="font-size:.85em">' + s[3] + '</span>');
+    pts.push([s[0], s[1]]);
+  });
+  L.polyline(pts, {color: '#e6a817', weight: 2, opacity: .55, dashArray: '6,8'}).addTo(map);
+  map.invalidateSize();
+  map.fitBounds(L.latLngBounds(pts).pad(0.06));
+  window.tripMap = map;
+}
+</script>
+</body>
+</html>
