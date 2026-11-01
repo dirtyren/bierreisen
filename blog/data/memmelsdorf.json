@@ -1,0 +1,233 @@
+{
+  "slug": "memmelsdorf",
+  "type": "city",
+  "name": "Memmelsdorf",
+  "where": "Memmelsdorf, Germany",
+  "coords": [
+    49.933,
+    10.9531
+  ],
+  "span": 1.4,
+  "subtitle_en": "A brewery inn opposite the church, a palace at the end of the road",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Drei+Kronen+Hauptstrasse+19+Memmelsdorf",
+  "trips": [
+    "2024",
+    "2026"
+  ],
+  "related": [
+    "drei-kronen",
+    "bamberg",
+    "merkendorf",
+    "brauerei-wagner"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "inhabitants",
+        "pt": "habitantes",
+        "de": "Einwohner"
+      },
+      "v": {
+        "en": "8,726",
+        "pt": "8.726",
+        "de": "8.726"
+      }
+    },
+    {
+      "k": {
+        "en": "first mentioned",
+        "pt": "primeira menção",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "1143"
+      }
+    },
+    {
+      "k": {
+        "en": "inn licensed since",
+        "pt": "estalagem licenciada desde",
+        "de": "Schankerlaubnis seit"
+      },
+      "v": {
+        "en": "1457"
+      }
+    },
+    {
+      "k": {
+        "en": "to Bamberg",
+        "pt": "até Bamberg",
+        "de": "bis Bamberg"
+      },
+      "v": {
+        "en": "6 km",
+        "pt": "6 km",
+        "de": "6 km"
+      }
+    },
+    {
+      "k": {
+        "en": "palace built",
+        "pt": "palácio construído",
+        "de": "Schloss erbaut"
+      },
+      "v": {
+        "en": "1684–1695"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Memmelsdorf begins where Bamberg's eastern edge stops: a village of 8,700 people with a church, a prince-bishops' palace and a brewery inn that has held a licence since 1457. Most visitors pass through it on the way to somewhere else. The ones who stop find a beer garden with room in it.",
+    "pt": "Memmelsdorf começa onde termina a borda leste de Bamberg: um vilarejo de 8.700 habitantes com igreja, um palácio de príncipes-bispos e uma estalagem-cervejaria com licença desde 1457. A maioria dos visitantes passa por ali a caminho de outro lugar. Quem para encontra um beer garden com lugar livre e sem pressa.",
+    "de": "Memmelsdorf beginnt dort, wo Bambergs östlicher Rand aufhört: ein Ort mit 8.700 Einwohnern, einer Kirche, einem Schloss der Fürstbischöfe und einem Brauereigasthof, der seit 1457 die Schankerlaubnis hält. Die meisten fahren durch, weil Bamberg sechs Kilometer weiter westlich liegt. Wer stehen bleibt, findet einen Biergarten, in dem noch Platz ist, und ein Bier, das nur hier ausgeschenkt wird."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "A village with the inn opposite the church",
+        "pt": "Um vilarejo com a estalagem em frente à igreja",
+        "de": "Ein Dorf mit dem Gasthof gegenüber der Kirche"
+      },
+      "p": [
+        {
+          "en": "Memmelsdorf was first mentioned in 1143 and remained a village strung along one road until 1953, when the Lichteneiche settlement was built on the sandy ground south-west of the centre for refugees from the east. The municipality now takes in ten villages and hamlets, among them Merkendorf, three kilometres further east, and Drosendorf, which has a brewery of its own. The old road is still the Hauptstraße, and everything worth seeing is on it or just off it.",
+          "pt": "Memmelsdorf foi mencionado pela primeira vez em 1143 e continuou um vilarejo ao longo de uma única estrada até 1953, quando o assentamento Lichteneiche foi construído no terreno arenoso a sudoeste do centro para refugiados do leste. Hoje o município reúne dez vilarejos, entre eles Merkendorf, três quilômetros a leste, e Drosendorf, que tem cervejaria própria. A estrada antiga ainda é a Hauptstraße, e tudo o que vale ver fica nela ou a poucos passos.",
+          "de": "Memmelsdorf wurde 1143 erstmals erwähnt und blieb ein Dorf an einer einzigen Straße, bis 1953 südwestlich des Ortskerns die Siedlung Lichteneiche auf dem sandigen Schwemmland für Flüchtlinge aus dem Osten gebaut wurde. Heute gehören zehn Orte zur Gemeinde, darunter Merkendorf drei Kilometer weiter östlich und Drosendorf, das eine eigene Brauerei hat. Die alte Straße ist bis heute die Hauptstraße, und alles Sehenswerte liegt an ihr oder gleich daneben."
+        },
+        {
+          "en": "The Drei Kronen stands opposite the parish church of Mariä Himmelfahrt, which has held the parish since 1391 and was enlarged and refurnished between 1706 and 1772. The inn's licence goes back to 1457, when a tailor bought the property; the present building went up in 1748 as the Vogtei, the bailiff's house of the prince-bishopric. Behind it is the ice tower, brick Gothic, built around 1880 to store winter ice for the beer.",
+          "pt": "O Drei Kronen fica em frente à igreja matriz de Mariä Himmelfahrt, paróquia desde 1391 e ampliada e redecorada entre 1706 e 1772. A licença da estalagem remonta a 1457, quando um alfaiate comprou o imóvel; o prédio atual foi erguido em 1748 como Vogtei, a casa do administrador do principado episcopal. Atrás dele está a torre de gelo, em estilo gótico de tijolos, construída por volta de 1880 para guardar o gelo do inverno que resfriava a cerveja.",
+          "de": "Die Drei Kronen liegt gegenüber der Pfarrkirche Mariä Himmelfahrt, die seit 1391 Pfarrsitz ist und zwischen 1706 und 1772 erweitert und neu ausgestattet wurde. Die Schankerlaubnis reicht bis 1457 zurück, als ein Schneider das Anwesen kaufte; das heutige Gebäude entstand 1748 als Vogtei, als Haus des Vogts des Hochstifts. Dahinter steht der Eisturm in Backsteingotik, um 1880 gebaut, um Wintereis für das Bier zu lagern."
+        },
+        {
+          "en": "Inside, the rooms are named for what they hold: the Kachelofenzimmer with its tiled stove, the Gute Stube, the Terrassenzimmer. Upstairs are hotel rooms, most of them converted after 1945 from servants' chambers and in 1973 from the old malt floor. It is an inn that lets rooms, not a hotel that happens to brew. The beer comes up from the brewhouse below.",
+          "pt": "Dentro, os salões têm nome pelo que guardam: o Kachelofenzimmer com seu fogão de azulejos, a Gute Stube, o Terrassenzimmer. Em cima ficam os quartos, a maioria convertida depois de 1945 a partir dos aposentos dos criados e, em 1973, do antigo sótão de malte. É uma estalagem que aluga quartos, não um hotel que por acaso fabrica cerveja. A cerveja sobe do tanque logo abaixo.",
+          "de": "Drinnen heißen die Räume nach dem, was sie bergen: das Kachelofenzimmer mit seinem Ofen, die Gute Stube, das Terrassenzimmer. Oben liegen die Hotelzimmer, die meisten nach 1945 aus Gesindekammern und 1973 aus dem alten Malzboden geworden sind. Es ist ein Gasthof mit Zimmern, kein Hotel, das nebenbei braut. Das Bier kommt von unten aus dem Sudhaus, und manchmal riecht das ganze Treppenhaus danach."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Schloss Seehof at the end of the road",
+        "pt": "Schloss Seehof no fim da rua",
+        "de": "Schloss Seehof am Ende der Straße"
+      },
+      "p": [
+        {
+          "en": "Ten minutes past the last houses is Schloss Seehof, built between 1684 and 1695 by Antonio Petrini for Marquard Sebastian Schenk von Stauffenberg, prince-bishop of Bamberg, as a summer residence and hunting lodge. It is early Baroque, a square block with four corner pavilions and squat towers, and it was placed to be seen from the road rather than hidden behind trees.",
+          "pt": "Dez minutos depois das últimas casas está o Schloss Seehof, construído entre 1684 e 1695 por Antonio Petrini para Marquard Sebastian Schenk von Stauffenberg, príncipe-bispo de Bamberg, como residência de verão e pavilhão de caça. É barroco inicial, um bloco quadrado com quatro pavilhões de canto e torres baixas, posicionado para ser visto da estrada, e não escondido atrás de árvores.",
+          "de": "Zehn Minuten hinter den letzten Häusern liegt Schloss Seehof, zwischen 1684 und 1695 von Antonio Petrini für Marquard Sebastian Schenk von Stauffenberg erbaut, den Fürstbischof von Bamberg, als Sommerresidenz und Jagdschloss. Es ist früher Barock, ein quadratischer Block mit vier Eckpavillons und gedrungenen Türmen, so gesetzt, dass man es von der Straße sieht und nicht hinter Bäumen versteckt. Die Fassade ist streng gegliedert, unten mit Dreiecksgiebeln, oben mit Rundbögen."
+        },
+        {
+          "en": "The park was laid out under Lothar Franz von Schönborn in the early eighteenth century, with ponds, cascades and some four hundred figures by Ferdinand Tietz and others. The water came from the Stammberg; when the pipe was cut in 1803, the fountains were drained, and after secularisation most of the figures were sold or destroyed. The cascade was not restored until after 1995.",
+          "pt": "O parque foi traçado sob Lothar Franz von Schönborn no início do século XVIII, com lagos, cascatas e cerca de quatrocentas figuras de Ferdinand Tietz e outros escultores. A água vinha do Stammberg; quando o encanamento foi cortado em 1803, as fontes secaram, e depois da secularização a maioria das figuras foi vendida ou destruída. A cascata só foi restaurada depois de 1995.",
+          "de": "Der Park wurde unter Lothar Franz von Schönborn im frühen 18. Jahrhundert angelegt, mit Weihern, Kaskaden und rund vierhundert Figuren von Ferdinand Tietz und anderen. Das Wasser kam vom Stammberg; als die Leitung 1803 gekappt wurde, fielen die Brunnen trocken, und nach der Säkularisation wurden die meisten Figuren verkauft oder zerstört. Die Kaskade wurde erst nach 1995 wiederhergestellt. Einige der erhaltenen Figuren stehen heute wieder in der westlichen Orangerie."
+        },
+        {
+          "en": "Nine state rooms are open from April to October, Tuesday to Sunday, and the park is free and always open. Most of the building now houses the Bavarian state office for monument conservation, so the palace is quieter than its size suggests: you can stand in the Rokokosaal and hear the gardeners outside. The chapel on the ground floor is used for weddings.",
+          "pt": "Nove salões de gala abrem de abril a outubro, de terça a domingo, e o parque é gratuito e sempre aberto. A maior parte do prédio hoje abriga o órgão bávaro de preservação de monumentos, e por isso o palácio é mais silencioso do que o tamanho sugere: dá para ficar no Rokokosaal e ouvir os jardineiros lá fora. A capela no térreo é usada para casamentos.",
+          "de": "Neun Repräsentationsräume sind von April bis Oktober geöffnet, Dienstag bis Sonntag, der Park ist frei und immer zugänglich. Der größte Teil des Gebäudes beherbergt heute das Bayerische Landesamt für Denkmalpflege, weshalb das Schloss stiller ist, als seine Größe vermuten lässt: Im Rokokosaal hört man die Gärtner draußen arbeiten. Der Saal liegt im Obergeschoss, in der Mitte der barocken Raumfolge. Die Kapelle im Erdgeschoss wird für Hochzeiten genutzt."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Getting there, and the other brewery",
+        "pt": "Como chegar, e a outra cervejaria",
+        "de": "Hinkommen, und die zweite Brauerei"
+      },
+      "p": [
+        {
+          "en": "There is no station. Bus 907 runs from Bamberg's Bahnhof/Ludwigstraße to a stop called Memmelsdorf Markt in about fifteen minutes, and the same line continues to Drosendorf, where Göller has brewed since 1865 at Scheßlitzer Straße 7. If you are driving, the inn has parking and Bamberg is six kilometres west. The ride is short enough that a car is optional, which is not true of most villages around Bamberg.",
+          "pt": "Não há estação. O ônibus 907 sai da Bahnhof/Ludwigstraße, em Bamberg, até a parada chamada Memmelsdorf Markt em cerca de quinze minutos, e a mesma linha segue para Drosendorf, onde a Göller produz cerveja desde 1865, na Scheßlitzer Straße 7. De carro, a estalagem tem estacionamento e Bamberg fica a seis quilômetros a oeste. O trajeto é curto o bastante para dispensar o carro, o que não vale para a maioria dos vilarejos ao redor de Bamberg.",
+          "de": "Einen Bahnhof gibt es nicht. Der Bus 907 fährt von Bambergs Bahnhof/Ludwigstraße in etwa fünfzehn Minuten zur Haltestelle Memmelsdorf Markt, und dieselbe Linie weiter nach Drosendorf, wo Göller seit 1865 in der Scheßlitzer Straße 7 braut. Mit dem Auto: Der Gasthof hat Parkplätze, und Bamberg liegt sechs Kilometer westlich. Die Fahrt ist kurz genug, dass man kein Auto braucht — was für die meisten Dörfer rings um Bamberg nicht gilt."
+        },
+        {
+          "en": "Göller is smaller and plainer than the Drei Kronen: a village brewery with a Wirtshaus, a beer garden and a shop that sells carp and trout from its own ponds in season. It closes at the start of the week, as village breweries do. Between the two you can eat and drink in Memmelsdorf for two days without ordering the same beer twice.",
+          "pt": "A Göller é menor e mais simples que a Drei Kronen: uma cervejaria de vilarejo com Wirtshaus, beer garden e uma loja que vende carpa e truta dos próprios tanques na temporada. Fecha no começo da semana, como fazem as cervejarias de vilarejo. Entre as duas, dá para comer e beber em Memmelsdorf por dois dias sem repetir a mesma cerveja.",
+          "de": "Göller ist kleiner und schlichter als die Drei Kronen: eine Dorfbrauerei mit Wirtshaus, Biergarten und einem Laden, der in der Saison Karpfen und Forellen aus eigenen Teichen verkauft. Zu Wochenbeginn ist Ruhetag, wie es Dorfbrauereien tun. Zwischen beiden lässt sich in Memmelsdorf zwei Tage lang essen und trinken, ohne dasselbe Bier zweimal zu bestellen. Für Drosendorf braucht man ein Auto oder Geduld mit dem Bus."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Drei Kronen 1457 Lager, named for the year the licence was first recorded: soft, caramel-edged, and the beer the village drinks.",
+      "pt": "Drei Kronen 1457 Lager, batizada pelo ano do primeiro registro da licença: macia, com toque de caramelo, e a cerveja que o vilarejo bebe.",
+      "de": "Drei Kronen 1457 Lager, benannt nach dem Jahr der ersten urkundlichen Erwähnung: weich, mit Karamellkante, das Bier des Dorfes."
+    },
+    {
+      "en": "The Stöffla, the house's smoked beer, which took gold at the European Beer Star in 2003.",
+      "pt": "O Stöffla, a cerveja defumada da casa, que levou ouro no European Beer Star em 2003.",
+      "de": "Das Stöffla, das Rauchbier des Hauses, 2003 mit Gold beim European Beer Star."
+    },
+    {
+      "en": "Helle Lotte for the pale, hop-forward one, which the house calls a Franconian hell.",
+      "pt": "Helle Lotte para a clara e lupulada, que a casa chama de hell francônio.",
+      "de": "Helle Lotte für das Helle mit Hopfenkante, das man hier ein fränkisches Hell nennt."
+    },
+    {
+      "en": "Orgelweiße between April and October, a wheat beer whose first brew paid for the church organ.",
+      "pt": "Orgelweiße entre abril e outubro, uma cerveja de trigo cuja primeira brassagem pagou o órgão da igreja.",
+      "de": "Orgelweiße zwischen April und Oktober, ein Weizenbier, dessen erster Sud die Kirchenorgel bezahlt hat."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The Brauherrenspieß: pork skewer with a lager sauce and potato dumplings, the dish the house is known for.",
+      "pt": "O Brauherrenspieß: espeto de porco com molho de lager e bolinhos de batata, o prato pelo qual a casa é conhecida.",
+      "de": "Der Brauherrenspieß: Schweinespieß mit Lagerbiersoße und Kartoffelkrapfen, das Gericht, für das das Haus bekannt ist."
+    },
+    {
+      "en": "A roast from the kitchen's grandmother's cookbook, cooked with the house beer and meat from the Franconian Jura.",
+      "pt": "Um assado do caderno de receitas da avó, feito com a cerveja da casa e carne do Jura francônio.",
+      "de": "Ein Braten nach dem Kochbuch der Großmutter, mit dem eigenen Bier und Fleisch von der Fränkischen Alb."
+    },
+    {
+      "en": "Brotzeit at Göller in Drosendorf, which is cheaper, quieter and has a garden behind it.",
+      "pt": "Brotzeit na Göller, em Drosendorf, mais barata, mais tranquila e com um jardim atrás.",
+      "de": "Eine Brotzeit bei Göller in Drosendorf: günstiger, ruhiger und mit Garten dahinter."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Bus 907 from Bamberg Bahnhof/Ludwigstraße, stop Memmelsdorf Markt. Fifteen minutes, and the same bus goes on to Drosendorf and Göller.",
+      "pt": "Ônibus 907 desde a Bahnhof/Ludwigstraße, em Bamberg, parada Memmelsdorf Markt. Quinze minutos, e o mesmo ônibus segue para Drosendorf e a Göller.",
+      "de": "Bus 907 ab Bamberg Bahnhof/Ludwigstraße bis Memmelsdorf Markt. Fünfzehn Minuten, und derselbe Bus fährt weiter nach Drosendorf zu Göller."
+    },
+    {
+      "en": "Monday is the Ruhetag at the Drei Kronen, and the kitchen stops around nine in the evening. Sunday service ends earlier.",
+      "pt": "Segunda-feira é o Ruhetag do Drei Kronen, e a cozinha fecha por volta das nove da noite. No domingo o serviço termina mais cedo.",
+      "de": "Montag ist im Drei Kronen Ruhetag, die Küche schließt gegen neun Uhr abends. Sonntags ist früher Schluss."
+    },
+    {
+      "en": "Schloss Seehof is closed on Mondays and open from April to October; the park costs nothing and is always accessible.",
+      "pt": "O Schloss Seehof fecha às segundas e abre de abril a outubro; o parque não custa nada e está sempre acessível.",
+      "de": "Schloss Seehof ist montags geschlossen und von April bis Oktober geöffnet; der Park kostet nichts und ist immer zugänglich."
+    },
+    {
+      "en": "The Drei Kronen takes cards. The smaller inns in the villages around may not, so keep cash for those.",
+      "pt": "O Drei Kronen aceita cartão. As estalagens menores dos vilarejos ao redor talvez não, então leve dinheiro para elas.",
+      "de": "Die Drei Kronen nimmt Karten. Die kleineren Gasthäuser in den Nachbarorten vielleicht nicht — dafür Bargeld einstecken."
+    },
+    {
+      "en": "There are rooms at the Drei Kronen. Wagner in Merkendorf has none, but will find you a bed in the village.",
+      "pt": "Há quartos no Drei Kronen. A Wagner, em Merkendorf, não tem, mas arruma uma cama no vilarejo.",
+      "de": "Im Drei Kronen gibt es Zimmer. Wagner in Merkendorf hat keine, vermittelt aber eine Unterkunft im Ort."
+    }
+  ],
+  "links": [
+    {
+      "label": "Memmelsdorf",
+      "url": "https://www.memmelsdorf.de/"
+    },
+    {
+      "label": "Schloss Seehof",
+      "url": "https://en.wikipedia.org/wiki/Schloss_Seehof"
+    },
+    {
+      "label": "Drei Kronen",
+      "url": "https://drei-kronen.de/en"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "slug": "trip-2021",
+  "type": "trip",
+  "name": "Bamberg to the Allgäu, 2021",
+  "where": "Germany · October and November 2021",
+  "coords": [
+    48.1371,
+    11.5754
+  ],
+  "image": "2021/assets/2021-route-map.png",
+  "trips": [
+    "2021"
+  ],
+  "trip_stats": "",
+  "related": [
+    "bamberg",
+    "nuremberg",
+    "berchtesgaden",
+    "munich",
+    "trip-2024"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "days",
+        "pt": "dias",
+        "de": "Tage"
+      },
+      "v": {
+        "en": "18"
+      }
+    },
+    {
+      "k": {
+        "en": "nights",
+        "pt": "noites",
+        "de": "Nächte"
+      },
+      "v": {
+        "en": "16"
+      }
+    },
+    {
+      "k": {
+        "en": "km driving",
+        "pt": "km de carro",
+        "de": "km Fahrt"
+      },
+      "v": {
+        "en": "1,561 km"
+      }
+    },
+    {
+      "k": {
+        "en": "bases",
+        "pt": "bases",
+        "de": "Standorte"
+      },
+      "v": {
+        "en": "9"
+      }
+    },
+    {
+      "k": {
+        "en": "countries",
+        "pt": "países",
+        "de": "Länder"
+      },
+      "v": {
+        "en": "2"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Eighteen days from the end of October 2021, moving every night or two: Bamberg, Nuremberg, a cave hotel in Essing, the mountains above Berchtesgaden, two village breweries in the Allgäu, and a week in Munich at the end to stop moving.",
+    "pt": "Dezoito dias desde o fim de outubro de 2021, mudando de cama a cada noite ou duas: Bamberg, Nuremberg, um hotel na rocha em Essing, as montanhas acima de Berchtesgaden, duas cervejarias de aldeia no Allgäu e uma semana em Munique no fim para parar de andar.",
+    "de": "Achtzehn Tage ab Ende Oktober 2021, alle ein, zwei Nächte ein anderes Bett: Bamberg, Nürnberg, ein Höhlenhotel in Essing, die Berge über Berchtesgaden, zwei Dorfbrauereien im Allgäu und eine Woche München am Ende, um aufzuhören, mich zu bewegen."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Nine beds, one suitcase",
+        "pt": "Nove camas, uma mala",
+        "de": "Neun Betten, ein Koffer"
+      },
+      "p": [
+        {
+          "en": "This was the trip that tested whether a different bed every night is a feature or a cost. The answer, by the sixth move, was cost — but the compensation was that each village brewery was a place you slept in, not a place you visited.",
+          "pt": "Foi a viagem que testou se trocar de cama toda noite é um atrativo ou um custo. A resposta, na sexta mudança, era custo — mas a compensação era que cada cervejaria de aldeia era um lugar onde se dormia, não um lugar que se visitava.",
+          "de": "Diese Reise testete, ob ein anderes Bett jede Nacht ein Gewinn oder ein Preis ist. Die Antwort war ab dem sechsten Umzug: Preis — aber der Ausgleich war, dass jede Dorfbrauerei ein Ort zum Schlafen war und nicht zum Besichtigen."
+        },
+        {
+          "en": "Essing set the tone: a hotel built into the rock above the Danube gorge, with the brewery tap downstairs and nothing to do after dark but drink. Traunstein and Nesselwang followed the same logic, smaller and quieter.",
+          "pt": "Essing definiu o tom: um hotel construído na rocha acima do desfiladeiro do Danúbio, com o bar da cervejaria embaixo e nada a fazer depois do escuro além de beber. Traunstein e Nesselwang seguiram a mesma lógica, menores e mais silenciosos.",
+          "de": "Essing setzte den Ton: ein Hotel in den Fels über der Donauschlucht gebaut, die Brauereistube unten, nach Dunkelheit nichts zu tun als trinken. Traunstein und Nesselwang folgten derselben Logik, kleiner und stiller."
+        },
+        {
+          "en": "The Allgäu leg was the surprise. Missen-Wilhams and Nesselwang are not on any beer route; they are villages with a brewery and a guesthouse, and the beer is better than it has any right to be at that scale.",
+          "pt": "A etapa do Allgäu foi a surpresa. Missen-Wilhams e Nesselwang não estão em rota cervejeira nenhuma; são vilas com uma cervejaria e uma pousada, e a cerveja é melhor do que deveria ser naquela escala.",
+          "de": "Die Allgäu-Etappe war die Überraschung. Missen-Wilhams und Nesselwang stehen auf keiner Bierroute; es sind Dörfer mit einer Brauerei und einem Gasthof, und das Bier ist besser, als es in dieser Größe sein müsste."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The Munich week",
+        "pt": "A semana em Munique",
+        "de": "Die Woche in München"
+      },
+      "p": [
+        {
+          "en": "Seven nights in Munich at the end was the correction to 2020. Instead of a new town, a new list: Andechs, Freising and Weihenstephan, Wildbräu in Grafing, Schweiger in Markt Schwaben, the Forschungsbrauerei in Perlach, and the ordinary Munich rooms — Augustiner, Schneider, Paulaner, the Viktualienmarkt.",
+          "pt": "Sete noites em Munique no fim foi a correção de 2020. Em vez de uma cidade nova, uma lista nova: Andechs, Freising e Weihenstephan, Wildbräu em Grafing, Schweiger em Markt Schwaben, a Forschungsbrauerei em Perlach, e as salas comuns de Munique — Augustiner, Schneider, Paulaner, o Viktualienmarkt.",
+          "de": "Sieben Nächte München am Ende waren die Korrektur zu 2020. Statt einer neuen Stadt eine neue Liste: Andechs, Freising und Weihenstephan, Wildbräu in Grafing, Schweiger in Markt Schwaben, die Forschungsbrauerei in Perlach und die gewöhnlichen Münchner Stuben — Augustiner, Schneider, Paulaner, der Viktualienmarkt."
+        },
+        {
+          "en": "October turning into November is the best week for this: the beer gardens are still open on the good days, the chestnuts are roasting, and the city has not yet started Christmas.",
+          "pt": "Outubro virando novembro é a melhor semana para isso: os biergartens ainda abrem nos dias bons, as castanhas estão assando, e a cidade ainda não começou o Natal.",
+          "de": "Oktober in November ist die beste Woche dafür: Die Biergärten haben an guten Tagen noch offen, die Kastanien rösten, und die Stadt hat mit Weihnachten noch nicht begonnen."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Weihenstephan's Helles at the Bräustüberl in Freising, on the hill where the brewery has stood since 1040.",
+      "pt": "A Helles da Weihenstephan no Bräustüberl em Freising, na colina onde a cervejaria está desde 1040.",
+      "de": "Das Weihenstephaner Helles im Bräustüberl in Freising, auf dem Hügel, auf dem die Brauerei seit 1040 steht."
+    },
+    {
+      "en": "Wildbräu in Grafing, a brewery that has been family-run since 1589.",
+      "pt": "Wildbräu em Grafing, uma cervejaria familiar desde 1589.",
+      "de": "Wildbräu in Grafing, seit 1589 in Familienhand."
+    },
+    {
+      "en": "Schweiger's Hell at Markt Schwaben, fifteen minutes by S-Bahn from the city.",
+      "pt": "A Hell da Schweiger em Markt Schwaben, quinze minutos de S-Bahn da cidade.",
+      "de": "Das Schweiger Hell in Markt Schwaben, fünfzehn S-Bahn-Minuten von der Stadt."
+    },
+    {
+      "en": "Anything from the Forschungsbrauerei in Perlach — the brewery that invented the yeast-bräu style and still argues about it.",
+      "pt": "Qualquer coisa da Forschungsbrauerei em Perlach — a cervejaria que inventou o estilo yeast-bräu e ainda discute sobre isso.",
+      "de": "Alles aus der Forschungsbrauerei in Perlach — die Brauerei, die das Yeast-Bräu erfand und noch darüber streitet."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The brewery dinner at Brauereigasthof Schäffler in Missen-Wilhams, where the menu and the beer come from the same building.",
+      "pt": "O jantar na Brauereigasthof Schäffler em Missen-Wilhams, onde o menu e a cerveja saem do mesmo prédio.",
+      "de": "Das Brauereiabendessen im Brauereigasthof Schäffler in Missen-Wilhams, wo Karte und Bier aus demselben Haus kommen."
+    },
+    {
+      "en": "Sausages at the Viktualienmarkt stand, standing up, in the cold, which is the correct way.",
+      "pt": "Linguiças na barraca do Viktualienmarkt, em pé, no frio, que é o jeito certo.",
+      "de": "Würste am Stand am Viktualienmarkt, im Stehen, in der Kälte — die richtige Art."
+    },
+    {
+      "en": "Venison, in November, anywhere in the Allgäu that has it on the board.",
+      "pt": "Carne de caça, em novembro, em qualquer lugar do Allgäu que tenha no quadro.",
+      "de": "Wild, im November, überall im Allgäu, wo es auf der Tafel steht."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The German hotel breakfast is the meal that makes one-night moves survivable; book rooms with it included and skip lunch.",
+      "pt": "O café da manhã dos hotéis alemães é a refeição que torna viáveis as mudanças de uma noite; reserve quartos com ele incluso e pule o almoço.",
+      "de": "Das deutsche Hotelfrühstück ist die Mahlzeit, die Ein-Nacht-Umzüge überlebbar macht; Zimmer mit Frühstück buchen und das Mittagessen auslassen."
+    },
+    {
+      "en": "Village breweries close their kitchens early and their taps earlier; arrive before eight or eat elsewhere.",
+      "pt": "Cervejarias de aldeia fecham a cozinha cedo e o balcão mais cedo ainda; chegue antes das oito ou coma em outro lugar.",
+      "de": "Dorfbrauereien schließen die Küche früh und den Ausschank noch früher; vor acht ankommen oder woanders essen."
+    },
+    {
+      "en": "Essing's rock hotel is worth the detour, but the gorge path is unlit: bring a torch for the walk back.",
+      "pt": "O hotel na rocha de Essing vale o desvio, mas o caminho do desfiladeiro não tem luz: leve uma lanterna para a volta.",
+      "de": "Das Felshotel in Essing lohnt den Umweg, aber der Schluchtweg ist unbeleuchtet: für den Rückweg eine Lampe mitnehmen."
+    },
+    {
+      "en": "Berchtesgaden in early November can be closed for the season and open for the snow, sometimes on the same day.",
+      "pt": "Berchtesgaden no começo de novembro pode estar fechada para a temporada e aberta para a neve, às vezes no mesmo dia.",
+      "de": "Berchtesgaden Anfang November kann für die Saison geschlossen und für den Schnee offen sein, manchmal am selben Tag."
+    }
+  ],
+  "links": [
+    {
+      "label": "Weihenstephan",
+      "url": "https://www.weihenstephaner.de/"
+    },
+    {
+      "label": "Brauereigasthof Schäffler",
+      "url": "https://www.schaeffler-missen.de/"
+    }
+  ]
+}

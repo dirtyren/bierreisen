@@ -1,0 +1,199 @@
+{
+  "slug": "trip-2019",
+  "type": "trip",
+  "name": "Munich by rail, 2019",
+  "where": "Germany · December 2019",
+  "coords": [
+    48.1371,
+    11.5754
+  ],
+  "image": "2019/assets/2019-route-map.png",
+  "trips": [
+    "2019"
+  ],
+  "trip_stats": "",
+  "related": [
+    "munich",
+    "bamberg",
+    "andechs",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "days",
+        "pt": "dias",
+        "de": "Tage"
+      },
+      "v": {
+        "en": "10"
+      }
+    },
+    {
+      "k": {
+        "en": "nights",
+        "pt": "noites",
+        "de": "Nächte"
+      },
+      "v": {
+        "en": "9"
+      }
+    },
+    {
+      "k": {
+        "en": "km by rail",
+        "pt": "km de trem",
+        "de": "km mit der Bahn"
+      },
+      "v": {
+        "en": "0 km"
+      }
+    },
+    {
+      "k": {
+        "en": "bases",
+        "pt": "bases",
+        "de": "Standorte"
+      },
+      "v": {
+        "en": "1"
+      }
+    },
+    {
+      "k": {
+        "en": "countries",
+        "pt": "países",
+        "de": "Länder"
+      },
+      "v": {
+        "en": "2"
+      }
+    }
+  ],
+  "lede": {
+    "en": "The first of these trips, and the only one without a car: nine nights in a single Munich hotel in December 2019, with day returns to a monastery, a village brewery and Bamberg. The whole route fits in 730 kilometres of S-Bahn and ICE.",
+    "pt": "A primeira destas viagens, e a única sem carro: nove noites num único hotel em Munique, em dezembro de 2019, com idas e voltas de um dia a um mosteiro, uma cervejaria de aldeia e Bamberg. A rota inteira cabe em 730 quilômetros de S-Bahn e ICE.",
+    "de": "Die erste dieser Reisen und die einzige ohne Auto: neun Nächte in einem Münchner Hotel im Dezember 2019, mit Tagesausflügen zu einem Kloster, einer Dorfbrauerei und Bamberg. Die ganze Route passt in 730 Kilometer S-Bahn und ICE."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "One hotel, four directions",
+        "pt": "Um hotel, quatro direções",
+        "de": "Ein Hotel, vier Richtungen"
+      },
+      "p": [
+        {
+          "en": "The plan was to prove that beer travel does not need a car. Munich's S-Bahn network runs to the airport, to the lakes and, with a change, to the monastery at Andechs; the ICE reaches Bamberg in three hours twenty. Everything else was walking.",
+          "pt": "O plano era provar que viajar por cerveja não precisa de carro. A rede de S-Bahn de Munique vai ao aeroporto, aos lagos e, com uma baldeação, ao mosteiro de Andechs; o ICE chega a Bamberg em três horas e vinte. O resto foi a pé.",
+          "de": "Der Plan war der Beweis, dass Bierreisen kein Auto braucht. Münchens S-Bahn fährt zum Flughafen, an die Seen und mit einem Umstieg zum Kloster Andechs; der ICE erreicht Bamberg in drei Stunden zwanzig. Alles andere war zu Fuß."
+        },
+        {
+          "en": "The hotel sat on Schillerstraße, two streets from the Hauptbahnhof, which turned out to matter more than any brewery on the list. Every day started and ended at the same door, and the suitcase never moved.",
+          "pt": "O hotel ficava na Schillerstraße, duas ruas da estação central, o que se mostrou mais importante do que qualquer cervejaria da lista. Todo dia começava e terminava na mesma porta, e a mala nunca saiu do lugar.",
+          "de": "Das Hotel lag in der Schillerstraße, zwei Straßen vom Hauptbahnhof — wichtiger als jede Brauerei auf der Liste. Jeder Tag begann und endete an derselben Tür, und der Koffer blieb stehen."
+        },
+        {
+          "en": "Airbräu at the airport was the first and last stop, which is a better idea than it sounds: a copper brewhouse inside the terminal, a beer garden under the roof, and a beer before the flight home that tastes like the trip is still going.",
+          "pt": "O Airbräu no aeroporto foi a primeira e a última parada, o que é melhor do que parece: uma sala de brassagem de cobre dentro do terminal, um biergarten sob o teto, e uma cerveja antes do voo de volta que faz a viagem parecer que continua.",
+          "de": "Das Airbräu am Flughafen war erster und letzter Halt — besser, als es klingt: ein kupfernes Sudhaus im Terminal, ein Biergarten unter dem Dach und ein Bier vor dem Rückflug, das die Reise weiterlaufen lässt."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "What the rail version costs you",
+        "pt": "O que a versão ferroviária cobra",
+        "de": "Was die Bahnversion kostet"
+      },
+      "p": [
+        {
+          "en": "Two of the three day trips are short and easy: Andechs is S-Bahn to Herrsching plus a bus or a forty-minute walk uphill; Aying is S-Bahn to Aying with the brewery a few hundred metres from the platform. Bamberg is the long one, and it is worth leaving at seven in the morning.",
+          "pt": "Duas das três viagens de um dia são curtas e fáceis: Andechs é S-Bahn até Herrsching e ônibus ou quarenta minutos de subida a pé; Aying é S-Bahn até Aying, com a cervejaria a poucas centenas de metros da plataforma. Bamberg é a longa, e vale sair às sete da manhã.",
+          "de": "Zwei der drei Tagesausflüge sind kurz und einfach: Andechs ist S-Bahn bis Herrsching plus Bus oder vierzig Minuten bergauf zu Fuß; Aying ist S-Bahn bis Aying, die Brauerei wenige Hundert Meter vom Bahnsteig. Bamberg ist der lange, und dafür lohnt der Zug um sieben."
+        },
+        {
+          "en": "The trade is time. A car would have added Aying and Bamberg on the same day and cut the walking; without one, the day has a fixed shape and the beer is drunk at the pace the timetable allows. In December, with dark at half four, that turned out to be the right constraint.",
+          "pt": "A troca é tempo. Um carro teria somado Aying e Bamberg no mesmo dia e cortado a caminhada; sem ele, o dia tem forma fixa e a cerveja é bebida no ritmo que o horário permite. Em dezembro, com escuro às quatro e meia, essa se mostrou a restrição certa.",
+          "de": "Der Preis ist Zeit. Ein Auto hätte Aying und Bamberg am selben Tag verbunden und das Gehen erspart; ohne Auto hat der Tag eine feste Form, und das Bier wird im Takt des Fahrplans getrunken. Im Dezember, dunkel um halb fünf, war das die richtige Einschränkung."
+        },
+        {
+          "en": "Munich in Advent is a city of markets, and the beer gardens shut. The ones that stay open — Augustiner-Keller, Hofbräuhaus, Schneider — are full of people who are not tourists, which is the point of going in December at all.",
+          "pt": "Munique no Advento é uma cidade de mercados, e os biergartens fecham. Os que ficam abertos — Augustiner-Keller, Hofbräuhaus, Schneider — enchem de gente que não é turista, que é o motivo de ir em dezembro.",
+          "de": "München im Advent ist eine Stadt der Märkte, und die Biergärten schließen. Die, die offen bleiben — Augustiner-Keller, Hofbräuhaus, Schneider —, sind voll mit Leuten, die keine Touristen sind. Genau deshalb fährt man im Dezember."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Andechs Doppelbock Dunkel, at the monastery, after the walk up.",
+      "pt": "Andechs Doppelbock Dunkel, no mosteiro, depois da subida.",
+      "de": "Andechs Doppelbock Dunkel, im Kloster, nach dem Anstieg."
+    },
+    {
+      "en": "Ayinger Celebrator, in Aying, where it is a village beer rather than an import.",
+      "pt": "Ayinger Celebrator, em Aying, onde é cerveja de aldeia e não importada.",
+      "de": "Ayinger Celebrator in Aying, wo es ein Dorfbier ist und kein Import."
+    },
+    {
+      "en": "Schlenkerla Rauchbier in Bamberg, which is the reason the ICE day exists.",
+      "pt": "Schlenkerla Rauchbier em Bamberg, que é o motivo de o dia de ICE existir.",
+      "de": "Schlenkerla Rauchbier in Bamberg — der Grund für den ICE-Tag."
+    },
+    {
+      "en": "Augustiner Edelstoff at Marienplatz, first night, before anything else opens.",
+      "pt": "Augustiner Edelstoff no Marienplatz, na primeira noite, antes de tudo abrir.",
+      "de": "Augustiner Edelstoff am Marienplatz, am ersten Abend, bevor irgendetwas öffnet."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The roast pork and dumplings at Augustiner Bräustuben, next to the brewery on Landsberger Straße — the cheapest good meal of the trip.",
+      "pt": "O porco assado com bolinhos no Augustiner Bräustuben, ao lado da cervejaria na Landsberger Straße — a melhor refeição barata da viagem.",
+      "de": "Schweinebraten mit Knödeln in der Augustiner Bräustuben neben der Brauerei in der Landsberger Straße — die günstigste gute Mahlzeit der Reise."
+    },
+    {
+      "en": "Bread, butter and radishes at Andechs, with the beer, on the terrace if it is not raining.",
+      "pt": "Pão, manteiga e rabanetes em Andechs, com a cerveja, no terraço se não estiver chovendo.",
+      "de": "Brot, Butter und Radieschen in Andechs, zum Bier, auf der Terrasse, wenn es nicht regnet."
+    },
+    {
+      "en": "Bamberg's smoked ham with horseradish, before the train back.",
+      "pt": "O presunto defumado de Bamberg com raiz-forte, antes do trem de volta.",
+      "de": "Bamberger Räucherschinken mit Meerrettich, vor dem Zug zurück."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Buy the Bayern-Ticket for the Bamberg day if you are two or more; it covers the ICE only on regional trains, so check which service you are booking before you commit.",
+      "pt": "Compre o Bayern-Ticket para o dia de Bamberg se estiver com duas ou mais pessoas; ele cobre trens regionais, não o ICE, então confira o serviço antes de reservar.",
+      "de": "Für den Bamberg-Tag das Bayern-Ticket kaufen, wenn man zu zweit oder mehr ist; es gilt in Regionalzügen, nicht im ICE — vor dem Buchen prüfen, welcher Zug es ist."
+    },
+    {
+      "en": "The S8 to the airport takes about forty minutes; the S1 is slower and less frequent. Leave more time than you think for the Airbräu stop.",
+      "pt": "O S8 até o aeroporto leva cerca de quarenta minutos; o S1 é mais lento e menos frequente. Dê mais tempo do que imagina para a parada no Airbräu.",
+      "de": "Die S8 zum Flughafen braucht rund vierzig Minuten, die S1 ist langsamer und seltener. Für den Airbräu-Halt mehr Zeit einplanen als gedacht."
+    },
+    {
+      "en": "December closes the beer gardens but not the cellars. Augustiner-Keller keeps its hall open, and it is warmer and quieter than the Hofbräuhaus.",
+      "pt": "Dezembro fecha os biergartens, mas não as caves. O Augustiner-Keller mantém o salão aberto, e é mais quente e mais silencioso que o Hofbräuhaus.",
+      "de": "Der Dezember schließt die Biergärten, nicht die Keller. Der Augustiner-Keller hält seinen Saal offen — wärmer und ruhiger als das Hofbräuhaus."
+    },
+    {
+      "en": "Andechs is uphill from Herrsching; the bus runs but the path through the woods is the better half of the day.",
+      "pt": "Andechs fica subindo a partir de Herrsching; o ônibus passa, mas o caminho pela mata é a melhor metade do dia.",
+      "de": "Andechs liegt oberhalb von Herrsching; der Bus fährt, aber der Weg durch den Wald ist die bessere Hälfte des Tages."
+    }
+  ],
+  "links": [
+    {
+      "label": "DB timetable",
+      "url": "https://www.bahn.de/"
+    },
+    {
+      "label": "Airbräu",
+      "url": "https://www.munich-airport.com/airbrau-502134"
+    }
+  ]
+}

@@ -11,16 +11,16 @@ SITE = "https://renreisen.duckdns.org"
 
 UI = {
     "en": {
-        "title": "Bier Reisen — five beer trips, every stop measured",
+        "title": "Every trip, every brewery, one archive — Bier Reisen",
         "desc": ("Five beer trips taken and one being planned: itineraries, route maps, brewery rankings "
                  "and every distance measured. Munich by rail, Belgian Trappists, Czech pilsner towns and "
                  "the village breweries of Franconia."),
-        "og_title": "Bier Reisen — five beer trips, every stop measured",
+        "og_title": "Every trip, every brewery, one archive",
         "og_desc": ("Five trips taken, one being planned. Day-by-day dossiers, route posters and brewery "
                     "rankings for beer travel across Europe and the United States."),
         "skip": "Skip to the trips",
-        "h1_a": "Five beer trips taken.",
-        "h1_b": "One being planned.",
+        "h1_a": "Every trip, every brewery,",
+        "h1_b": "one archive.",
         "standfirst": ("From nine nights in a single Munich hotel to the Belgian Trappists and the pilsner "
                        "towns of Bohemia. Every dossier carries the day-by-day plan, the route poster, the "
                        "brewery rankings and the distances behind them: <b>{km} km</b> across "
@@ -57,18 +57,19 @@ UI = {
         "foot_how": "How this is built",
         "foot_data": "Route data",
         "foot_posters": "Regional posters",
+        "foot_blog": "Notes from the road",
     },
     "pt": {
-        "title": "Bier Reisen — cinco viagens cervejeiras, cada parada medida",
+        "title": "Toda viagem, toda cervejaria, um arquivo — Bier Reisen",
         "desc": ("Cinco viagens cervejeiras realizadas e uma em planejamento: roteiros, mapas de rota, "
                  "rankings de cervejarias e todas as distâncias medidas. Munique de trem, os trapistas "
                  "belgas, as cidades da Pilsen na Boêmia e as cervejarias de aldeia da Francônia."),
-        "og_title": "Bier Reisen — cinco viagens cervejeiras, cada parada medida",
+        "og_title": "Toda viagem, toda cervejaria, um arquivo",
         "og_desc": ("Cinco viagens feitas, uma em planejamento. Dossiês dia a dia, pôsteres de rota e "
                     "rankings de cervejarias pela Europa e pelos Estados Unidos."),
         "skip": "Ir para as viagens",
-        "h1_a": "Cinco viagens cervejeiras.",
-        "h1_b": "Uma está em planejamento.",
+        "h1_a": "Toda viagem, toda cervejaria,",
+        "h1_b": "um arquivo.",
         "standfirst": ("De nove noites num único hotel em Munique aos trapistas belgas e às cidades da "
                        "Pilsen na Boêmia. Cada dossiê traz o roteiro dia a dia, o pôster da rota, o ranking "
                        "das cervejarias e as distâncias por trás deles: <b>{km} km</b> em "
@@ -105,18 +106,19 @@ UI = {
         "foot_how": "Como isto é feito",
         "foot_data": "Dados da rota",
         "foot_posters": "Pôsteres regionais",
+        "foot_blog": "Notas de estrada",
     },
     "de": {
-        "title": "Bier Reisen — fünf Bierreisen, jede Station gemessen",
+        "title": "Jede Reise, jede Brauerei, ein Archiv — Bier Reisen",
         "desc": ("Fünf unternommene Bierreisen und eine in Planung: Reiseverläufe, Routenkarten, "
                  "Brauereiranglisen und jede Distanz gemessen. München mit der Bahn, belgische Trappisten, "
                  "die Pilsner Städte Böhmens und die Dorfbrauereien Frankens."),
-        "og_title": "Bier Reisen — fünf Bierreisen, jede Station gemessen",
+        "og_title": "Jede Reise, jede Brauerei, ein Archiv",
         "og_desc": ("Fünf Reisen gemacht, eine in Planung. Tagesdossiers, Routenposter und "
                     "Brauereiranglisten für Bierreisen durch Europa und die USA."),
         "skip": "Zu den Reisen springen",
-        "h1_a": "Fünf Bierreisen gemacht.",
-        "h1_b": "Eine ist in Planung.",
+        "h1_a": "Jede Reise, jede Brauerei,",
+        "h1_b": "ein Archiv.",
         "standfirst": ("Von neun Nächten in einem Münchner Hotel zu den belgischen Trappisten und den "
                        "Pilsner Städten Böhmens. Jedes Dossier enthält den Tagesplan, das Routenposter, die "
                        "Brauereirangliste und die Distanzen dahinter: bisher <b>{km} km</b> in "
@@ -153,6 +155,7 @@ UI = {
         "foot_how": "Wie das gebaut ist",
         "foot_data": "Routendaten",
         "foot_posters": "Regionale Poster",
+        "foot_blog": "Notizen von unterwegs",
     },
 }
 

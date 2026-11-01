@@ -1,0 +1,224 @@
+{
+  "slug": "de-halve-maan",
+  "type": "brewery",
+  "name": "De Halve Maan",
+  "where": "Bruges, Belgium",
+  "coords": [
+    51.20217,
+    3.22394
+  ],
+  "span": 0.012,
+  "subtitle_en": "Six generations, a brewery in the centre, and a pipe under the street",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Brouwerij+De+Halve+Maan+Walplein+26+Brugge",
+  "trips": [
+    "2020",
+    "2027"
+  ],
+  "related": [
+    "bruges",
+    "westvleteren",
+    "cantillon",
+    "trip-2027"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing here since",
+        "pt": "produzindo aqui desde",
+        "de": "gebraut hier seit"
+      },
+      "v": {
+        "en": "1856"
+      }
+    },
+    {
+      "k": {
+        "en": "beer pipeline",
+        "pt": "duto de cerveja",
+        "de": "Bierleitung"
+      },
+      "v": {
+        "en": "3,276 m"
+      }
+    },
+    {
+      "k": {
+        "en": "deepest point",
+        "pt": "ponto mais fundo",
+        "de": "tiefste Stelle"
+      },
+      "v": {
+        "en": "34 m"
+      }
+    },
+    {
+      "k": {
+        "en": "steps on the tour",
+        "pt": "degraus na visita",
+        "de": "Stufen der Führung"
+      },
+      "v": {
+        "en": "220"
+      }
+    }
+  ],
+  "lede": {
+    "en": "The pipeline is the story everyone tells, and it is a good one: 3,276 metres of pipe under the cobbles, carrying beer from the brewery on the Walplein to the bottling plant outside the centre. But the family had been brewing on that square for 160 years before the pipe, and the family is now on its sixth generation.",
+    "pt": "O duto é a história que todo mundo conta, e é boa: 3.276 metros de tubo sob o calçamento, levando cerveja da cervejaria no Walplein até a engarrafadora fora do centro. Mas a família já produzia naquela praça 160 anos antes do duto, e está agora na sexta geração.",
+    "de": "Die Pipeline ist die Geschichte, die alle erzählen, und sie ist gut: 3.276 Meter Rohr unter dem Kopfsteinpflaster, das Bier von der Brauerei am Walplein zum Abfüllwerk außerhalb des Zentrums bringt. Doch die Familie braute schon 160 Jahre vor der Leitung an diesem Platz, und inzwischen ist sie in der sechsten Generation."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Six generations on the Walplein",
+        "pt": "Seis gerações no Walplein",
+        "de": "Sechs Generationen am Walplein"
+      },
+      "p": [
+        {
+          "en": "Henri Maes began brewing at Walplein 26 in 1856. The site had been a brewery for centuries before him, which is why the cellars and the oldest walls feel older than the company. Six generations later the beer is still made in the middle of a city that receives more visitors per year than it has residents, and the brewery has not moved to an industrial estate.",
+          "pt": "Henri Maes começou a produzir no Walplein 26 em 1856. O lugar já era cervejaria séculos antes dele, e é por isso que as adegas e as paredes mais antigas parecem mais velhas que a empresa. Seis gerações depois, a cerveja ainda é feita no meio de uma cidade que recebe mais visitantes por ano do que moradores, e a cervejaria não se mudou para um distrito industrial.",
+          "de": "Henri Maes begann 1856 am Walplein 26 zu brauen. Der Ort war schon Jahrhunderte vor ihm eine Brauerei, weshalb die Keller und die ältesten Mauern älter wirken als die Firma. Sechs Generationen später wird das Bier noch mitten in einer Stadt gebraut, die jährlich mehr Besucher empfängt als sie Einwohner hat, und die Brauerei ist nicht auf ein Gewerbegebiet gezogen."
+        },
+        {
+          "en": "The beers that pay for it are newer than the building. Brugse Zot was launched in 2005, a blond brewed for a city that had lost its everyday beer; the name means Bruges fool, and the label carries a jester. Straffe Hendrik dates from 1981, when Véronique Maes and her father Henri IV brewed a strong tripel for the inauguration of the Saint Arnold statue. It was later brewed elsewhere and brought home to the Walplein.",
+          "pt": "As cervejas que pagam as contas são mais novas que o prédio. A Brugse Zot nasceu em 2005, uma clara feita para uma cidade que tinha perdido sua cerveja cotidiana; o nome quer dizer louco de Bruges, e o rótulo traz um bobo da corte. A Straffe Hendrik é de 1981, quando Véronique Maes e o pai, Henri IV, fizeram um tripel forte para a inauguração da estátua de São Arnolfo. Depois foi produzida em outro lugar e voltou para o Walplein.",
+          "de": "Die Biere, die das Haus tragen, sind jünger als das Gebäude. Brugse Zot kam 2005 auf den Markt, ein blondes Bier für eine Stadt, die ihr Alltagsbier verloren hatte; der Name bedeutet Brügger Narr, und das Etikett trägt einen Narren. Straffe Hendrik stammt von 1981, als Véronique Maes und ihr Vater Henri IV ein starkes Tripel zur Einweihung der Statue des heiligen Arnold brauten. Später wurde es anderswo gebraut und kam an den Walplein zurück."
+        },
+        {
+          "en": "Véronique was one of the first women brewing in Belgium, which the family mentions without much fuss. The range now runs from a wheat beer to a quadrupel, brewed on equipment replaced piece by piece rather than all at once. Nothing here is a reconstruction for visitors: the copper is working copper, and the smell in the brewhouse is not staged.",
+          "pt": "Véronique foi uma das primeiras mulheres a produzir cerveja na Bélgica, o que a família conta sem alarde. A linha vai hoje de uma cerveja de trigo a um quadrupel, feita em equipamento trocado peça por peça, não de uma vez. Nada ali é reconstrução para visitante: o cobre é cobre em uso, e o cheiro da sala de brassagem não é encenado.",
+          "de": "Véronique war eine der ersten Brauerinnen Belgiens, was die Familie ohne Aufhebens erwähnt. Die Reihe reicht heute vom Weizenbier bis zum Quadrupel, gebraut auf Anlagen, die Stück für Stück ersetzt wurden, nicht auf einmal. Nichts hier ist Kulisse: Das Kupfer arbeitet, und der Geruch im Sudhaus ist nicht gestellt. Die Anlage ist gewachsen, der Betrieb nicht. Wer will, sieht dem Brauer zu."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The pipe under the street",
+        "pt": "O tubo sob a rua",
+        "de": "Das Rohr unter der Straße"
+      },
+      "p": [
+        {
+          "en": "By the 2010s the brewery was sending tankers through the centre to a bottling plant in Sint-Andries, three kilometres away. The streets are cobbled, narrow and full of people, and the trucks were not popular. The solution was a pipeline: 3,276 metres of it, at a cost of around four million euros, partly financed by crowdfunding in which contributors were paid back in beer.",
+          "pt": "Nos anos 2010, a cervejaria mandava caminhões-tanque pelo centro até uma engarrafadora em Sint-Andries, a três quilômetros. As ruas são de pedra, estreitas e cheias de gente, e os caminhões não eram bem-vindos. A solução foi um duto: 3.276 metros, a um custo de cerca de quatro milhões de euros, financiado em parte por crowdfunding em que os colaboradores recebiam cerveja de volta.",
+          "de": "In den 2010er-Jahren schickte die Brauerei Tankwagen durch das Zentrum zu einem Abfüllwerk in Sint-Andries, drei Kilometer entfernt. Die Straßen sind gepflastert, eng und voller Menschen, und die Lastwagen waren nicht beliebt. Die Lösung war eine Leitung: 3.276 Meter, rund vier Millionen Euro teuer, teilweise über Crowdfunding finanziert, bei dem die Beitragenden mit Bier zurückbezahlt wurden. Die Rohre liegen unter öffentlichem Grund."
+        },
+        {
+          "en": "It opened in September 2016, runs up to 34 metres below the surface and carries beer rather than water. The beer travels to the bottling line, where it is filled, labelled and sent out; the pipe takes the tankers off the streets. There is a glass plate in the pavement where you can look down at it, which is the closest the visit gets to a spectacle.",
+          "pt": "Foi inaugurado em setembro de 2016, corre até 34 metros abaixo da superfície e leva cerveja, não água. A cerveja vai até a linha de envase, onde é enchida, rotulada e despachada; o tubo tira os caminhões das ruas. Há uma placa de vidro no calçamento onde dá para olhar para baixo, e é o mais perto de um espetáculo que a visita chega.",
+          "de": "Sie ging im September 2016 in Betrieb, verläuft bis zu 34 Meter unter der Oberfläche und befördert Bier, kein Wasser. Das Bier läuft zur Abfülllinie, wird dort gefüllt, etikettiert und versandt; die Leitung nimmt die Tankwagen von der Straße. Im Pflaster liegt eine Glasplatte, durch die man hinunterschauen kann — näher kommt der Besuch einem Spektakel nicht. Man muss wissen, dass sie da ist."
+        },
+        {
+          "en": "The pipeline is also the reason the brewery can still brew in the centre at all. Without it, expansion would have meant moving to an industrial estate, and Bruges would have lost a brewery that had been there since 1856. That is the argument the tour makes, and it holds up: the alternative was not a prettier brewery, it was no brewery here. The pipe settled it.",
+          "pt": "O duto é também a razão de a cervejaria ainda poder produzir no centro. Sem ele, a expansão significaria mudar para um distrito industrial, e Bruges teria perdido uma cervejaria que estava ali desde 1856. É o argumento que a visita apresenta, e ele se sustenta: a alternativa não era uma cervejaria mais bonita, era nenhuma cervejaria ali. A conta fecha. Mesmo.",
+          "de": "Die Leitung ist auch der Grund, warum die Brauerei überhaupt noch im Zentrum brauen kann. Ohne sie hätte Expansion den Umzug in ein Gewerbegebiet bedeutet, und Brügge hätte eine Brauerei verloren, die seit 1856 dort war. Das ist das Argument der Führung, und es trägt: Die Alternative war keine schönere Brauerei, sondern gar keine an diesem Ort. Die Rechnung geht auf. Und das ist keine Werbung."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The visit and the room",
+        "pt": "A visita e a sala",
+        "de": "Der Besuch und die Stube"
+      },
+      "p": [
+        {
+          "en": "The classic tour takes about forty-five minutes, covers 220 steps and ends with a glass in the brasserie. It goes through the brewing hall, the old cellars and the roof, where you get a 360-degree view over the city. The XL tour adds a guided tasting of three beers in the cellars and runs at weekends. Tours run in Dutch, French and English.",
+          "pt": "A visita clássica dura cerca de quarenta e cinco minutos, cobre 220 degraus e termina com um copo na brasserie. Passa pela sala de brassagem, pelas adegas antigas e pelo telhado, onde se tem uma vista de 360 graus sobre a cidade. A visita XL acrescenta uma degustação guiada de três cervejas nas adegas e acontece nos fins de semana.",
+          "de": "Die klassische Führung dauert etwa fünfundvierzig Minuten, umfasst 220 Stufen und endet mit einem Glas in der Brasserie. Sie führt durch das Sudhaus, die alten Keller und auf das Dach, von dem aus man einen 360-Grad-Blick über die Stadt hat. Die XL-Führung ergänzt eine geführte Verkostung von drei Bieren in den Kellern und läuft am Wochenende. Die Zeit vorher buchen."
+        },
+        {
+          "en": "The one beer you cannot get anywhere else is the unfiltered Brugse Zot, poured from the tank rather than the bottle. It is softer, breadier and worth the ticket on its own. The brasserie serves Flemish dishes, and the terrace on the Walplein is pleasant when the square is quiet, which is early morning or late evening. It tastes like the brewery smells.",
+          "pt": "A cerveja que não se encontra em outro lugar é a Brugse Zot não filtrada, servida do tanque e não da garrafa. É mais macia, mais maltada e vale o ingresso sozinha. A brasserie serve pratos flamengos, e o terraço no Walplein é agradável quando a praça está calma, no começo da manhã ou no fim da noite. Tem gosto do cheiro da casa.",
+          "de": "Das eine Bier, das es nirgends sonst gibt, ist das ungefilterte Brugse Zot, vom Tank statt aus der Flasche. Es ist weicher, brotiger und allein das Ticket wert. Die Brasserie serviert flämische Gerichte, und die Terrasse am Walplein ist angenehm, wenn der Platz ruhig ist — früh morgens oder spät abends. Es schmeckt nach dem Sudhaus. Und nach Brot. So einfach ist das."
+        },
+        {
+          "en": "Book ahead in summer; this is one of the most visited brewery tours in Belgium and coaches arrive through the day. The brewery is a ten-minute walk from the Markt and five from the Church of Our Lady. If you have one hour in Bruges and you care about beer, this is where to spend it, then walk to De Garre.",
+          "pt": "Reserve no verão; é uma das visitas a cervejaria mais concorridas da Bélgica e os ônibus chegam ao longo do dia. A cervejaria fica a dez minutos a pé da Markt e a cinco da igreja de Nossa Senhora. Se você tem uma hora em Bruges e se importa com cerveja, gaste-a aqui, e depois caminhe até o De Garre.",
+          "de": "Im Sommer vorher buchen; dies ist eine der meistbesuchten Brauereiführungen Belgiens, und über den Tag kommen Busse. Die Brauerei liegt zehn Gehminuten vom Markt und fünf von der Liebfrauenkirche. Wer eine Stunde in Brügge hat und sich für Bier interessiert, verbringt sie hier — und geht danach zum De Garre. Der Rest ist Fußweg. Und das Bier danach. Mehr braucht es nicht."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Unfiltered Brugse Zot Blond, from the tank — only poured at the brewery.",
+      "pt": "Brugse Zot Blond não filtrada, do tanque — servida só na cervejaria.",
+      "de": "Ungefiltertes Brugse Zot Blond vom Tank — nur in der Brauerei gezapft."
+    },
+    {
+      "en": "Straffe Hendrik Tripel: dry, strong and the house's best-balanced beer.",
+      "pt": "Straffe Hendrik Tripel: seca, forte e a cerveja mais equilibrada da casa.",
+      "de": "Straffe Hendrik Tripel: trocken, stark und das ausgewogenste Bier des Hauses."
+    },
+    {
+      "en": "Straffe Hendrik Quadrupel, if the afternoon has room for 11%.",
+      "pt": "Straffe Hendrik Quadrupel, se a tarde comporta 11%.",
+      "de": "Straffe Hendrik Quadrupel, wenn der Nachmittag Platz für 11 % hat."
+    },
+    {
+      "en": "Blanche de Bruges on the terrace, for something lighter between the two.",
+      "pt": "Blanche de Bruges no terraço, para algo mais leve entre as duas.",
+      "de": "Blanche de Bruges auf der Terrasse, für etwas Leichteres dazwischen."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The brasserie's stoverij — beef in beer with bread — is the obvious lunch after the tour.",
+      "pt": "O stoverij da brasserie — carne na cerveja com pão — é o almoço óbvio depois da visita.",
+      "de": "Das Stoverij der Brasserie — Rindfleisch in Bier mit Brot — ist das naheliegende Mittagessen nach der Führung."
+    },
+    {
+      "en": "De Garre, four minutes away, for the house tripel and a cube of cheese.",
+      "pt": "O De Garre, a quatro minutos, para o tripel da casa e um cubo de queijo.",
+      "de": "De Garre, vier Minuten entfernt, für das Haustripel und einen Käsewürfel."
+    },
+    {
+      "en": "Café Vlissinghe, ten minutes north, for pub food in a room licensed since 1515.",
+      "pt": "O Café Vlissinghe, dez minutos ao norte, para comida de pub numa sala com licença desde 1515.",
+      "de": "Café Vlissinghe, zehn Minuten nördlich, für Pub-Essen in einer seit 1515 lizenzierten Stube."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Book the tour online in summer; walk-ins are possible but not reliable.",
+      "pt": "Reserve a visita online no verão; sem reserva é possível, mas não confiável.",
+      "de": "Die Führung im Sommer online buchen; ohne Reservierung geht es, aber unzuverlässig."
+    },
+    {
+      "en": "220 steps, steep in places, no lift — the rooftop is the reward.",
+      "pt": "220 degraus, íngremes em trechos, sem elevador — o terraço é a recompensa.",
+      "de": "220 Stufen, stellenweise steil, kein Aufzug — das Dach ist die Belohnung."
+    },
+    {
+      "en": "Drink the unfiltered Brugse Zot here; it is not sold elsewhere.",
+      "pt": "Beba a Brugse Zot não filtrada aqui; ela não é vendida em outro lugar.",
+      "de": "Das ungefilterte Brugse Zot hier trinken; anderswo wird es nicht verkauft."
+    },
+    {
+      "en": "Look for the glass plate in the pavement on the way out.",
+      "pt": "Procure a placa de vidro no calçamento na saída.",
+      "de": "Beim Hinausgehen nach der Glasplatte im Pflaster suchen."
+    },
+    {
+      "en": "The brewery is a ten-minute walk from the Markt; do not drive into the centre.",
+      "pt": "A cervejaria fica a dez minutos a pé da Markt; não entre de carro no centro.",
+      "de": "Die Brauerei liegt zehn Gehminuten vom Markt; nicht mit dem Auto ins Zentrum fahren."
+    }
+  ],
+  "links": [
+    {
+      "label": "De Halve Maan",
+      "url": "https://www.halvemaan.be/en/"
+    },
+    {
+      "label": "Visit Bruges",
+      "url": "https://visitbruges.be/en"
+    },
+    {
+      "label": "De Halve Maan, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/De_Halve_Maan"
+    }
+  ]
+}

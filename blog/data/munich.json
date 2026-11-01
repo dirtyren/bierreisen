@@ -1,0 +1,246 @@
+{
+  "slug": "munich",
+  "type": "city",
+  "name": "Munich",
+  "where": "Bavaria, Germany",
+  "coords": [
+    48.1374,
+    11.5755
+  ],
+  "span": 0.45,
+  "subtitle_en": "Six breweries, a thousand tables, and a city you can cross on foot",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Marienplatz+Munich",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "augustiner",
+    "hofbrauhaus",
+    "schneider-brauhaus",
+    "trip-2021"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first documented",
+        "pt": "primeiro registro",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "1158"
+      }
+    },
+    {
+      "k": {
+        "en": "population",
+        "pt": "população",
+        "de": "Einwohner"
+      },
+      "v": {
+        "en": "1.6 million",
+        "pt": "1,6 milhão",
+        "de": "1,6 Millionen"
+      }
+    },
+    {
+      "k": {
+        "en": "big breweries",
+        "pt": "grandes cervejarias",
+        "de": "große Brauereien"
+      },
+      "v": {
+        "en": "six",
+        "pt": "seis",
+        "de": "sechs"
+      }
+    },
+    {
+      "k": {
+        "en": "a Maß",
+        "pt": "uma Maß",
+        "de": "eine Maß"
+      },
+      "v": {
+        "en": "one litre",
+        "pt": "um litro",
+        "de": "ein Liter"
+      }
+    },
+    {
+      "k": {
+        "en": "airport to centre",
+        "pt": "aeroporto ao centro",
+        "de": "Flughafen ins Zentrum"
+      },
+      "v": {
+        "en": "40 min by S-Bahn",
+        "pt": "40 min de S-Bahn",
+        "de": "40 Min. mit der S-Bahn"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Munich is a city of 1.6 million that still drinks as if it were a large village. The old town is small enough to cross on foot, the U-Bahn covers the rest, and the beer is almost always lager or wheat beer, served by the litre in rooms that have been doing this for centuries.",
+    "pt": "Munique é uma cidade de 1,6 milhão de habitantes que ainda bebe como se fosse uma vila grande. O centro antigo é pequeno o bastante para ser atravessado a pé, o U-Bahn cobre o resto, e a cerveja é quase sempre lager ou de trigo, servida por litro em salões que fazem isso há séculos.",
+    "de": "München ist eine Stadt mit 1,6 Millionen Einwohnern, die noch trinkt, als wäre sie ein großes Dorf. Die Altstadt ist klein genug, um sie zu Fuß zu durchqueren, die U-Bahn deckt den Rest ab, und das Bier ist fast immer Lager oder Weißbier, literweise ausgeschenkt in Räumen, die das seit Jahrhunderten tun."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The middle, on foot",
+        "pt": "O centro, a pé",
+        "de": "Die Mitte, zu Fuß"
+      },
+      "p": [
+        {
+          "en": "Marienplatz is the centre of gravity: the Neues Rathaus on one side, the Viktualienmarkt behind it, the U3 and U6 underneath, every S-Bahn line passing through. The market keeps a small beer garden under the maypole, with a tap that changes brewery every few months. From Marienplatz the beer geography is a ten-minute walk in any direction. Tal runs east to the Isartor, with the Schneider Bräuhaus at number 7; two minutes north lie the Platzl and the Hofbräuhaus; west along Neuhauser Straße stands the Augustiner Stammhaus.",
+          "pt": "O Marienplatz é o centro de gravidade: o Neues Rathaus de um lado, o Viktualienmarkt atrás, o U3 e o U6 embaixo, todas as linhas de S-Bahn passando por ali. O mercado tem um biergarten pequeno sob o mastro de maio, com uma torneira que troca de cervejaria a cada poucos meses. Dali, a geografia da cerveja está a dez minutos a pé em qualquer direção. A rua Tal segue para o leste até o Isartor, com a Schneider Bräuhaus no número 7; dois minutos ao norte ficam o Platzl e a Hofbräuhaus; a oeste, pela Neuhauser Straße, está a Augustiner Stammhaus.",
+          "de": "Der Marienplatz ist der Schwerpunkt: das Neue Rathaus auf der einen Seite, der Viktualienmarkt dahinter, darunter die U3 und U6, und jede S-Bahn-Linie fährt hindurch. Der Markt hat einen kleinen Biergarten unter dem Maibaum, wo der Zapfhahn alle paar Monate die Brauerei wechselt. Von dort ist die Biergeographie in jede Richtung zehn Gehminuten entfernt. Das Tal läuft nach Osten zum Isartor, mit dem Schneider Bräuhaus in der Nummer 7; zwei Minuten nördlich liegen das Platzl und das Hofbräuhaus; westlich die Neuhauser Straße hinunter steht das Augustiner Stammhaus."
+        },
+        {
+          "en": "The ring road is the honest boundary of the walkable city. Inside it you can cross from the Isar to the Hauptbahnhof in half an hour, past the market, the Tal and three brewery taps. Outside it the beer spreads into districts: the Maxvorstadt has the Augustiner-Keller and the Bräustuben beside the brewery, the Englischer Garten has the Chinesischer Turm with 7,000 seats under the chestnuts, and Giesing and Perlach have the small breweries.",
+          "pt": "O anel viário é a fronteira honesta da cidade caminhável. Dentro dele, dá para ir do Isar ao Hauptbahnhof em meia hora, passando pelo mercado, pela Tal e por três bares de cervejaria. Fora dele, a cerveja se espalha pelos bairros: a Maxvorstadt tem o Augustiner-Keller e a Bräustuben ao lado da fábrica, o Englischer Garten tem o Chinesischer Turm com 7 mil lugares sob as castanheiras, e Giesing e Perlach têm as cervejarias pequenas.",
+          "de": "Der Mittlere Ring ist die ehrliche Grenze der fußläufigen Stadt. Innerhalb davon kommt man in einer halben Stunde von der Isar zum Hauptbahnhof, am Markt, im Tal und an drei Brauereiausschänken vorbei. Außerhalb verteilt sich das Bier auf die Viertel: In der Maxvorstadt liegen der Augustiner-Keller und die Bräustuben neben der Brauerei, im Englischen Garten steht der Chinesische Turm mit 7.000 Plätzen unter den Kastanien, und in Giesing und Perlach sitzen die kleinen Brauereien."
+        },
+        {
+          "en": "The U-Bahn does the rest. U3 and U6 run north-south through Marienplatz, U1 and U2 through Sendlinger Tor and the Hauptbahnhof, U4 and U5 through Odeonsplatz and Lehel. The S-Bahn trunk line links Pasing, Hauptbahnhof, Karlsplatz, Marienplatz and Ostbahnhof, which covers most of what a visitor needs. One MVV ticket covers the U-Bahn, the S-Bahn, the tram and the bus, and the machines on the platforms take cards.",
+          "pt": "O U-Bahn faz o resto. O U3 e o U6 atravessam o Marienplatz de norte a sul, o U1 e o U2 passam pelo Sendlinger Tor e pelo Hauptbahnhof, o U4 e o U5 pelo Odeonsplatz e por Lehel. A linha tronco do S-Bahn liga Pasing, Hauptbahnhof, Karlsplatz, Marienplatz e Ostbahnhof, o que cobre quase tudo de que um visitante precisa. Um bilhete do MVV vale para U-Bahn, S-Bahn, bonde e ônibus, e as máquinas nas plataformas aceitam cartão.",
+          "de": "Den Rest erledigt die U-Bahn. U3 und U6 fahren nord-südlich durch den Marienplatz, U1 und U2 über Sendlinger Tor und Hauptbahnhof, U4 und U5 über Odeonsplatz und Lehel. Die Stammstrecke der S-Bahn verbindet Pasing, Hauptbahnhof, Karlsplatz, Marienplatz und Ostbahnhof, womit das meiste abgedeckt ist, was ein Besucher braucht. Eine MVV-Fahrkarte gilt für U-Bahn, S-Bahn, Tram und Bus, und die Automaten auf den Bahnsteigen nehmen Karten."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Six breweries, and the rest",
+        "pt": "Seis cervejarias, e o resto",
+        "de": "Sechs Brauereien und der Rest"
+      },
+      "p": [
+        {
+          "en": "Munich's beer map is still dominated by six names: Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner and Spaten. Only these six may pour at the Oktoberfest, a rule older than any of their current owners. Augustiner is the last one still owned in the city, the Hofbräuhaus belongs to the Free State of Bavaria, and the other four sit inside international groups.",
+          "pt": "O mapa cervejeiro de Munique ainda é dominado por seis nomes: Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner e Spaten. Só essas seis podem servir na Oktoberfest, uma regra mais antiga que qualquer um de seus donos atuais. A Augustiner é a última que ainda pertence a donos da cidade, a Hofbräuhaus é do Estado Livre da Baviera, e as outras quatro estão dentro de grupos internacionais.",
+          "de": "Münchens Bierkarte wird noch immer von sechs Namen beherrscht: Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner und Spaten. Nur diese sechs dürfen auf dem Oktoberfest ausschenken, eine Regel, die älter ist als jeder ihrer heutigen Besitzer. Augustiner ist die letzte, die noch in der Stadt gehört wird, das Hofbräuhaus gehört dem Freistaat Bayern, und die anderen vier sitzen in internationalen Konzernen."
+        },
+        {
+          "en": "The concentration is recent. Spaten and Löwenbräu belong to AB InBev, Paulaner and Hacker-Pschorr to the Paulaner group. What survived is a narrow range: Helles, Dunkel, Weißbier, Pils, and the strong beers of Lent and spring. Münchner Bier is a protected geographical indication, which sounds grander than it is. It means the beer was brewed here, with Munich water, and not in a plant outside the city.",
+          "pt": "A concentração é recente. Spaten e Löwenbräu pertencem à AB InBev, Paulaner e Hacker-Pschorr ao grupo Paulaner. O que sobrou é uma faixa estreita: Helles, Dunkel, trigo, Pils, e as cervejas fortes da Quaresma e da primavera. Münchner Bier é uma indicação geográfica protegida, o que soa mais grandioso do que é. Significa que a cerveja foi feita aqui, com água de Munique, e não numa fábrica fora da cidade.",
+          "de": "Die Konzentration ist jung. Spaten und Löwenbräu gehören zu AB InBev, Paulaner und Hacker-Pschorr zur Paulaner-Gruppe. Geblieben ist eine schmale Auswahl: Helles, Dunkel, Weißbier, Pils und die starken Biere der Fastenzeit und des Frühlings. Münchner Bier ist eine geschützte geographische Angabe, was vornehmer klingt, als es ist. Es heißt, dass das Bier hier gebraut wurde, mit Münchner Wasser, und nicht in einem Werk außerhalb der Stadt."
+        },
+        {
+          "en": "The small breweries came later, mostly after 2010. Giesinger started in a garage and now has a taproom full of neighbours. Forschungsbrauerei in Perlach brews and lets its name do the science. Hopfenhäcker, ORCA and Tilmans make hop-forward beer for people who have had enough Helles. Most are an S-Bahn ride from the centre and open in the afternoon; they are worth the detour, but they are not why the city drinks.",
+          "pt": "As cervejarias pequenas vieram depois, quase todas após 2010. A Giesinger começou numa garagem e hoje tem um taproom cheio de vizinhos. A Forschungsbrauerei, em Perlach, produz cerveja e deixa o nome fazer a ciência. Hopfenhäcker, ORCA e Tilmans fazem cerveja lupulada para quem já cansou da Helles. Quase todas ficam a uma viagem de S-Bahn do centro e abrem à tarde; valem o desvio, mas não são o motivo pelo qual a cidade bebe.",
+          "de": "Die kleinen Brauereien kamen später, meist nach 2010. Giesinger begann in einer Garage und hat heute ein Taproom voller Nachbarn. Die Forschungsbrauerei in Perlach braut, und der Name erledigt die Wissenschaft. Hopfenhäcker, ORCA und Tilmans machen hopfenbetontes Bier für Leute, die genug Helles hatten. Die meisten liegen eine S-Bahn-Fahrt vom Zentrum entfernt und öffnen am Nachmittag; sie sind den Umweg wert, aber sie sind nicht der Grund, warum die Stadt trinkt."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "How the gardens work",
+        "pt": "Como funcionam os biergartens",
+        "de": "Wie die Gärten funktionieren"
+      },
+      "p": [
+        {
+          "en": "Beer gardens began as brewery cellars with chestnut trees planted over them for shade. The trees kept the gravel cool, which kept the beer cool. When an 1812 decree stopped the cellars serving food, guests began bringing their own, and the habit stuck. The Bavarian beer garden ordinance of 1999 still protects it: in a self-service area you may eat your own cold food, but the drinks must come from the house.",
+          "pt": "Os biergartens nasceram como adegas de cervejaria com castanheiras plantadas por cima para dar sombra. As árvores mantinham o cascalho fresco, o que mantinha a cerveja fresca. Quando um decreto de 1812 proibiu as adegas de servir comida, os clientes começaram a levar a sua, e o hábito ficou. A regulamentação bávara dos biergartens de 1999 ainda protege isso: na área de autosserviço pode-se comer comida fria trazida de casa, mas a bebida tem de ser da casa.",
+          "de": "Biergärten entstanden als Brauereikeller, über denen man Kastanien als Schatten pflanzte. Die Bäume hielten den Kies kühl, und das hielt das Bier kühl. Als ein Dekret von 1812 den Kellern das Essen verbot, brachten die Gäste ihr eigenes mit, und die Gewohnheit blieb. Die bayerische Biergartenverordnung von 1999 schützt sie noch: Im Selbstbedienungsbereich darf man kaltes Essen mitbringen, die Getränke müssen aber vom Haus kommen."
+        },
+        {
+          "en": "The furniture tells you where you are. Bare wooden tables mean self-service and your own Brotzeit; laid tables with waiters mean a served area. Sit where there is space, ask 'ist hier frei?', and expect to share. A Maß is a litre, and the glasses go back to the tray by the counter when you leave. You pay at the end, and rounding up is the tip.",
+          "pt": "O mobiliário diz onde você está. Mesas de madeira sem toalha significam autosserviço e Brotzeit própria; mesas postas com garçom significam área com serviço. Sente-se onde houver espaço, pergunte 'ist hier frei?' e conte com dividir a mesa. Uma Maß é um litro, e os copos voltam para a bandeja ao lado do balcão quando se sai. Paga-se no fim, e arredondar para cima é a gorjeta.",
+          "de": "Das Mobiliar sagt, wo man ist. Kahle Holztische bedeuten Selbstbedienung und eigene Brotzeit; gedeckte Tische mit Bedienung bedeuten Servicebereich. Setzen Sie sich, wo Platz ist, fragen Sie 'ist hier frei?', und rechnen Sie mit geteilten Tischen. Eine Maß ist ein Liter, und die Gläser wandern beim Gehen auf das Tablett neben der Theke. Bezahlt wird am Ende, und aufrunden ist das Trinkgeld."
+        },
+        {
+          "en": "The scale is hard to picture. Augustiner-Keller has 5,000 seats, the Chinesischer Turm 7,000, the Hirschgarten 8,000. They fill after work and at weekends and empty when the weather turns. In winter the gardens shut and the Wirtshaus takes over: lower ceilings, the same beer, and a menu that runs from roast pork to dumplings. The difference between the two rooms is mostly the ceiling and the noise.",
+          "pt": "A escala é difícil de imaginar. O Augustiner-Keller tem 5 mil lugares, o Chinesischer Turm 7 mil, o Hirschgarten 8 mil. Enchem depois do trabalho e nos fins de semana, e esvaziam quando o tempo vira. No inverno os jardins fecham e o Wirtshaus assume: pé-direito mais baixo, a mesma cerveja e um menu que vai de porco assado a bolinhos. A diferença entre os dois ambientes é sobretudo o teto e o barulho.",
+          "de": "Die Größe ist schwer vorzustellen. Der Augustiner-Keller hat 5.000 Plätze, der Chinesische Turm 7.000, der Hirschgarten 8.000. Sie füllen sich nach der Arbeit und am Wochenende und leeren sich, wenn das Wetter kippt. Im Winter schließen die Gärten, und das Wirtshaus übernimmt: niedrigere Decken, dasselbe Bier und eine Karte von Schweinsbraten bis Knödel. Der Unterschied zwischen beiden Räumen ist vor allem die Decke und der Lärm."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "A Maß of Helles in a garden, from the wooden barrel if the house has one.",
+      "pt": "Uma Maß de Helles no biergarten, do barril de madeira se a casa tiver.",
+      "de": "Eine Maß Helles im Garten, aus dem Holzfass, wenn das Haus eines hat."
+    },
+    {
+      "en": "Weißbier with Weißwurst, before noon, with sweet mustard and a pretzel.",
+      "pt": "Weißbier com Weißwurst, antes do meio-dia, com mostarda doce e um pretzel.",
+      "de": "Weißbier mit Weißwurst, vor Mittag, mit süßem Senf und einer Brezn."
+    },
+    {
+      "en": "Edelstoff at the Augustiner-Keller, poured from the barrel.",
+      "pt": "Edelstoff no Augustiner-Keller, tirada do barril.",
+      "de": "Edelstoff im Augustiner-Keller, frisch aus dem Fass."
+    },
+    {
+      "en": "A Dunkel when the weather turns: dark, malty, and the older Munich habit.",
+      "pt": "Uma Dunkel quando o tempo vira: escura, maltada, o hábito mais antigo de Munique.",
+      "de": "Ein Dunkel, wenn das Wetter kippt: dunkel, malzig, die ältere Münchner Gewohnheit."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Weißwurst, heated in water and never boiled, eaten before noon with sweet mustard and a pretzel. The skin is not eaten.",
+      "pt": "Weißwurst, aquecida na água e nunca fervida, comida antes do meio-dia com mostarda doce e um pretzel. A pele não se come.",
+      "de": "Weißwurst, in Wasser erhitzt und nie gekocht, vor Mittag mit süßem Senf und einer Brezn. Die Haut isst man nicht."
+    },
+    {
+      "en": "Brotzeit: Obatzda, radishes, cold cuts and rye bread, bought at the Viktualienmarkt or carried into the garden.",
+      "pt": "Brotzeit: Obatzda, rabanete, frios e pão de centeio, comprados no Viktualienmarkt ou levados para o biergarten.",
+      "de": "Brotzeit: Obatzda, Radi, Aufschnitt und Roggenbrot, gekauft am Viktualienmarkt oder in den Garten mitgebracht."
+    },
+    {
+      "en": "Schweinsbraten with dumplings and crackling, the Sunday plate in every Wirtshaus.",
+      "pt": "Schweinsbraten com bolinhos e crosta de porco, o prato de domingo em todo Wirtshaus.",
+      "de": "Schweinsbraten mit Knödeln und Kruste, der Sonntagsteller in jedem Wirtshaus."
+    }
+  ],
+  "tips": [
+    {
+      "en": "From the airport, S1 or S8 to the centre, about 40 minutes. Both run through Marienplatz.",
+      "pt": "Do aeroporto, S1 ou S8 até o centro, cerca de 40 minutos. As duas passam pelo Marienplatz.",
+      "de": "Vom Flughafen die S1 oder S8 ins Zentrum, etwa 40 Minuten. Beide fahren über den Marienplatz."
+    },
+    {
+      "en": "Buy the MVV ticket before boarding. Inspectors work the lines and the fine is not small.",
+      "pt": "Compre o bilhete do MVV antes de embarcar. Há fiscais nas linhas e a multa não é pequena.",
+      "de": "Die MVV-Fahrkarte vor dem Einsteigen kaufen. Auf den Linien wird kontrolliert, und das Bußgeld ist nicht klein."
+    },
+    {
+      "en": "Cash still matters in the smaller Wirtshäuser and at market stalls. Cards work in the big halls.",
+      "pt": "Dinheiro em espécie ainda importa nos Wirtshäuser pequenos e nas bancas do mercado. Cartão funciona nos salões grandes.",
+      "de": "Bargeld zählt in den kleineren Wirtshäusern und an Marktständen. In den großen Sälen geht die Karte."
+    },
+    {
+      "en": "Beer halls take reservations for their upstairs rooms; beer gardens take none at all. Turn up and share.",
+      "pt": "Os beer halls aceitam reserva para os salões de cima; os biergartens não aceitam nenhuma. Chegue e divida a mesa.",
+      "de": "Bierhallen nehmen Reservierungen für die oberen Säle an; Biergärten gar keine. Hingehen und dazusetzen."
+    },
+    {
+      "en": "Sunday is quiet: shops shut, museums open, and the gardens full by noon.",
+      "pt": "Domingo é calmo: lojas fechadas, museus abertos e os jardins cheios ao meio-dia.",
+      "de": "Der Sonntag ist ruhig: Läden zu, Museen offen, und die Gärten sind mittags voll."
+    }
+  ],
+  "links": [
+    {
+      "label": "simply Munich",
+      "url": "https://www.munich.travel/"
+    },
+    {
+      "label": "muenchen.de",
+      "url": "https://www.muenchen.de/"
+    },
+    {
+      "label": "MVV",
+      "url": "https://www.mvv-muenchen.de/"
+    }
+  ]
+}

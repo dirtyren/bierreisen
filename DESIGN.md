@@ -62,6 +62,21 @@ ignores diacritics.
 distances, and offers v1 and v2 as labelled alternatives. Numbers come from
 `2027/v3/data/route-2027-v3.json`, never from the copy.
 
+## Blog posts
+
+Same ground, same type, narrower measure (68ch). A post opens with the name as an `h1`, a lede of two
+or three sentences, then a plain meta line — type, place, years visited. No eyebrow above the `h1`,
+no metric row: the plate image does the visual work.
+
+The plate is generated, not photographed: the name in Charter, a sentence-case descriptor, the
+coordinates, and the place marked on the route it belongs to. It is language-neutral, so one file
+serves EN, PT and DE.
+
+Body sections are `h2` + paragraphs. Three blocks follow, and only one of them is gold-ruled: what to
+order (gold), where to eat (neutral rule), notes for travellers (hairlines, no rules). The last block
+is the map: one outbound link, the coordinates, the nearest stop on the route, and links to the live
+rating sites — never a copied score.
+
 ## Rules that must not regress
 
 1. No kicker/eyebrow above any heading.

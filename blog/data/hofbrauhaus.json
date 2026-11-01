@@ -1,0 +1,240 @@
+{
+  "slug": "hofbrauhaus",
+  "type": "brewery",
+  "name": "Hofbräuhaus",
+  "where": "Munich, Germany",
+  "coords": [
+    48.13777,
+    11.58016
+  ],
+  "span": 0.35,
+  "subtitle_en": "A court brewery that became a public room",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Hofbr%C3%A4uhaus+am+Platzl+9+Munich",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "munich",
+    "augustiner",
+    "schneider-brauhaus",
+    "trip-2019"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundação",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1589"
+      }
+    },
+    {
+      "k": {
+        "en": "opened to the public",
+        "pt": "aberta ao público",
+        "de": "für alle geöffnet"
+      },
+      "v": {
+        "en": "1828"
+      }
+    },
+    {
+      "k": {
+        "en": "Schwemme seats",
+        "pt": "lugares na Schwemme",
+        "de": "Plätze in der Schwemme"
+      },
+      "v": {
+        "en": "1,300"
+      }
+    },
+    {
+      "k": {
+        "en": "Hofbräu Original",
+        "pt": "Hofbräu Original",
+        "de": "Hofbräu Original"
+      },
+      "v": {
+        "en": "5.1%"
+      }
+    },
+    {
+      "k": {
+        "en": "owner",
+        "pt": "proprietário",
+        "de": "Eigentümer"
+      },
+      "v": {
+        "en": "Free State of Bavaria",
+        "pt": "Estado Livre da Baviera",
+        "de": "Freistaat Bayern"
+      }
+    }
+  ],
+  "lede": {
+    "en": "The Hofbräuhaus was built in 1589 to keep a duke's court in beer and opened to the public in 1828. It belongs to the Free State of Bavaria, brews in Riem now, and still fills a ground-floor hall of 1,300 seats every day, with a brass band in the middle of it.",
+    "pt": "A Hofbräuhaus foi construída em 1589 para abastecer de cerveja a corte de um duque e aberta ao público em 1828. Pertence ao Estado Livre da Baviera, hoje produz em Riem, e ainda enche todos os dias um salão térreo de 1.300 lugares, com uma banda de metais no meio dele.",
+    "de": "Das Hofbräuhaus wurde 1589 gebaut, um den Hof eines Herzogs mit Bier zu versorgen, und 1828 für alle geöffnet. Es gehört dem Freistaat Bayern, braut heute in Riem und füllt täglich einen Saal im Erdgeschoss mit 1.300 Plätzen, mitten darin eine Blaskapelle, die fast immer spielt und deren Repertoire älter ist als die meisten Gäste."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "A brewery for a court",
+        "pt": "Uma cervejaria de corte",
+        "de": "Eine Brauerei für den Hof"
+      },
+      "p": [
+        {
+          "en": "Wilhelm V ordered the building on 27 September 1589, on the site of the old chicken house beside the Alter Hof, and hired a brewmaster from the Benedictine monastery at Geisenfeld to run it. The motive was accounting. The court had been buying beer from Einbeck in Saxony, which was expensive and arrived only in spring, and a duke with a household to keep preferred to brew his own brown beer, darker and sweeter than the northern import.",
+          "pt": "Guilherme V ordenou a construção em 27 de setembro de 1589, no lugar do antigo galinheiro ao lado do Alter Hof, e contratou um mestre-cervejeiro do mosteiro beneditino de Geisenfeld para tocá-la. O motivo era contábil. A corte comprava cerveja de Einbeck, na Saxônia, que era cara e chegava só na primavera, e um duque com uma casa para sustentar preferia fabricar a própria cerveja escura, mais escura e mais doce que a importada do norte.",
+          "de": "Wilhelm V. ordnete den Bau am 27. September 1589 an, auf dem Gelände des alten Hühnerhauses beim Alten Hof, und holte einen Braumeister aus dem Benediktinerkloster Geisenfeld, der ihn betrieb. Das Motiv war die Buchhaltung. Der Hof kaufte Bier aus Einbeck in Sachsen, teuer und nur im Frühjahr lieferbar, und ein Herzog mit Hausstand braute lieber sein eigenes Braunbier, dunkler und süßer als die Zufuhr aus dem Norden."
+        },
+        {
+          "en": "In 1602 the last Count of Degenberg died and the wheat-beer privilege fell back to Maximilian I. In 1607 he built a white-beer brewhouse at the Graggenau, the site of today's building; the brown beer followed in 1608. In 1610 he allowed sales to innkeepers, and Munich taverns were obliged to pour Hofbräu whether they wanted to or not. The obligation lasted, in one form or another, until the nineteenth century.",
+          "pt": "Em 1602 morreu o último conde de Degenberg e o privilégio da cerveja de trigo voltou para Maximiliano I. Em 1607 ele construiu uma casa de brassagem de cerveja clara no Graggenau, o local do prédio atual; a cerveja escura veio em 1608. Em 1610 ele permitiu a venda a estalajadeiros, e as tavernas de Munique foram obrigadas a servir Hofbräu, quisessem ou não. A obrigação durou, de uma forma ou de outra, até o século XIX.",
+          "de": "1602 starb der letzte Graf von Degenberg, und das Weißbierprivileg fiel an Maximilian I. zurück. 1607 ließ er am Graggenau, dem Standort des heutigen Hauses, ein Weißes Bräuhaus errichten; das Braunbier folgte 1608. 1610 erlaubte er den Verkauf an Wirte, und Münchens Tavernen mussten Hofbräu ausschenken, ob sie wollten oder nicht. Die Pflicht hielt sich, in welcher Form auch immer, bis ins 19. Jahrhundert."
+        },
+        {
+          "en": "The nineteenth century turned it into a public house. Ludwig I opened it to everyone in 1828, and in 1852 Maximilian II handed the whole thing to the Bavarian state, which still owns it. Brewing on the site stopped on 22 May 1896; the old building came down, the present one went up in 1896 and 1897, and the Schwemme reopened on 9 February 1897. The brewery moved first to Haidhausen, then to Riem in 1988.",
+          "pt": "O século XIX a transformou em casa pública. Luís I abriu-a para todos em 1828, e em 1852 Maximiliano II entregou tudo ao Estado bavarês, que ainda é o dono. A produção no local parou em 22 de maio de 1896; o prédio antigo foi demolido, o atual subiu em 1896 e 1897, e a Schwemme reabriu em 9 de fevereiro de 1897. A cervejaria mudou-se primeiro para Haidhausen, depois para Riem, em 1988.",
+          "de": "Das 19. Jahrhundert machte daraus ein Wirtshaus. Ludwig I. öffnete es 1828 für alle, und 1852 übergab Maximilian II. das Ganze dem bayerischen Staat, dem es noch gehört. Am 22. Mai 1896 wurde am Platzl zum letzten Mal gebraut; das alte Haus wurde abgerissen, das heutige entstand 1896 und 1897, und am 9. Februar 1897 öffnete die Schwemme wieder. Die Brauerei zog zuerst nach Haidhausen, 1988 dann nach Riem."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The Schwemme",
+        "pt": "A Schwemme",
+        "de": "Die Schwemme"
+      },
+      "p": [
+        {
+          "en": "The ground-floor hall holds 1,300 people under a vaulted ceiling, and the tables are scratched with initials, dates and small declarations, some of them there since 1897. The brass band plays on a stage in the middle of the room, almost every day. The repertoire is Bavarian, the volume is high, and the room sings along to the songs it knows. There is no quiet corner. The room is the performance.",
+          "pt": "O salão térreo abriga 1.300 pessoas sob um teto abobadado, e as mesas estão riscadas com iniciais, datas e pequenas declarações, algumas desde 1897. A banda de metais toca num palco no meio da sala, quase todos os dias. O repertório é bávaro, o volume é alto, e a sala canta junto as músicas que conhece. Não há canto silencioso. A sala é o espetáculo.",
+          "de": "Der Saal im Erdgeschoss fasst 1.300 Menschen unter einem Gewölbe, und die Tische sind mit Initialen, Daten und kleinen Erklärungen geritzt, einige seit 1897. Die Blaskapelle spielt fast täglich auf einer Bühne mitten im Raum. Das Repertoire ist bayerisch, die Lautstärke hoch, und der Saal singt mit, was er kennt. Es gibt keine stille Ecke. Der Raum ist die Vorstellung."
+        },
+        {
+          "en": "Downstairs takes no reservations. You walk in, look for a gap on a bench, ask whether it is free, and sit. The waiters carry six or eight Maß at a time and have no interest in a long conversation; nobody brings a menu unless you ask. Upstairs, the Bräustüberl and the Wappensaal can be booked, which is what Munich families do when they want the room without the crush.",
+          "pt": "Lá embaixo não se aceita reserva. Você entra, procura um espaço no banco, pergunta se está livre e senta. Os garçons carregam seis ou oito Maß de uma vez e não têm interesse em conversa longa; ninguém traz menu sem que se peça. Lá em cima, a Bräustüberl e a Wappensaal podem ser reservadas, e é o que as famílias de Munique fazem quando querem o salão sem a multidão.",
+          "de": "Unten nimmt man keine Reservierungen an. Man geht hinein, sucht eine Lücke auf der Bank, fragt, ob frei ist, und setzt sich. Die Kellner tragen sechs oder acht Maß auf einmal und haben kein Interesse an langen Gesprächen; eine Karte bringt niemand, ohne dass man fragt. Oben lassen sich Bräustüberl und Wappensaal buchen, was Münchner Familien tun, wenn sie den Saal ohne Gedränge wollen."
+        },
+        {
+          "en": "The menu is short and heavy: Schweinsbraten, Haxn, Leberknödel, Käsespätzle, Sauerkraut, soups and sauces made in house. The bread comes from the house bakers and the flour from the Hofbräuhaus-Kunstmühle next door, which has been milling for the same address for centuries. Desserts come from the house confectioners: Kaiserschmarrn, apple strudel, Bavarian cream. Portions are large, the prices are city-centre prices, and the kitchen closes before the room does.",
+          "pt": "O menu é curto e pesado: Schweinsbraten, Haxn, Leberknödel, Käsespätzle, chucrute, sopas e molhos feitos na casa. O pão vem dos padeiros da casa e a farinha da Hofbräuhaus-Kunstmühle ao lado, que moe para o mesmo endereço há séculos. As sobremesas saem dos confeiteiros da casa: Kaiserschmarrn, strudel de maçã, creme bávaro. As porções são grandes, os preços são de centro de cidade, e a cozinha fecha antes da sala.",
+          "de": "Die Karte ist kurz und schwer: Schweinsbraten, Haxn, Leberknödel, Käsespätzle, Sauerkraut, Suppen und Soßen aus dem Haus. Das Brot kommt von den Bäckern des Hauses, das Mehl aus der Hofbräuhaus-Kunstmühle nebenan, die seit Jahrhunderten für dieselbe Adresse mahlt. Die Nachspeisen kommen von den Konditoren des Hauses: Kaiserschmarrn, Apfelstrudel, Bayerisch Creme. Die Portionen sind groß, die Preise sind Innenstadtpreise, und die Küche schließt vor dem Saal."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "What to order",
+        "pt": "O que pedir",
+        "de": "Was man bestellt"
+      },
+      "p": [
+        {
+          "en": "Hofbräu Original at 5.1 per cent is the default, and the beer most people mean when they say Hofbräu: a Helles with a firm malt body, 24 IBU and a dry finish. Dunkel is the darker order, softer and better suited to roast meat. Münchner Weisse covers the wheat-beer drinkers, and it is the one beer here with a direct line to the court, which held the wheat-beer monopoly for two hundred years.",
+          "pt": "A Hofbräu Original, 5,1%, é o padrão, e a cerveja que a maioria quer dizer quando fala Hofbräu: uma Helles com corpo de malte firme, 24 IBU e final seco. A Dunkel é o pedido mais escuro, mais macia e mais adequada a carne assada. A Münchner Weisse atende quem gosta de trigo, e é a única cerveja aqui com linha direta para a corte, que manteve o monopólio da cerveja de trigo por duzentos anos.",
+          "de": "Hofbräu Original mit 5,1 Prozent ist der Standard und das Bier, das die meisten meinen, wenn sie Hofbräu sagen: ein Helles mit festem Malzkörper, 24 IBU und trockenem Abgang. Dunkel ist die dunklere Bestellung, weicher und besser zu Braten. Münchner Weisse deckt die Weißbiertrinker ab, und sie ist das einzige Bier hier mit direkter Linie zum Hof, der das Weißbiermonopol zweihundert Jahre hielt."
+        },
+        {
+          "en": "Maibock appears in spring and is the oldest light bock in Munich. Oktoberfestbier arrives in autumn. The brewery itself is in Riem now, at the Hofbräuallee site, so there is no mash tun to see here; the copper you might expect belongs to the old story. This is a drinking hall with a brewery's name on it, and it makes no apology for that.",
+          "pt": "O Maibock aparece na primavera e é o bock claro mais antigo de Munique. A Oktoberfestbier chega no outono. A cervejaria em si fica em Riem, na Hofbräuallee, então não há tina de mostura para ver aqui; o cobre que se poderia esperar pertence à história antiga. Este é um salão de bebida com o nome de uma cervejaria, e não pede desculpas por isso.",
+          "de": "Maibock erscheint im Frühling und ist das älteste helle Bockbier Münchens. Oktoberfestbier kommt im Herbst. Die Brauerei steht heute in Riem, an der Hofbräuallee, es gibt hier also keine Maischpfanne zu sehen; das erwartete Kupfer gehört zur alten Geschichte. Das hier ist ein Trinksaal mit dem Namen einer Brauerei, und er entschuldigt sich nicht dafür. Wer trotzdem Brauereiluft will, bucht die Führung in Riem."
+        },
+        {
+          "en": "Timing matters more than seating. Before eleven the hall is half empty, the band is audible and the waiters have time. After nine it is full, the aisles are blocked and the noise is the point. Saturday afternoon is the worst of both: full and slow. Both are the same room on the same day. Decide which one you came for and arrive accordingly.",
+          "pt": "O horário importa mais que o lugar. Antes das onze o salão está meio vazio, a banda é audível e os garçons têm tempo. Depois das nove está cheio, os corredores travam e o barulho é o motivo. O sábado à tarde é o pior dos dois: cheio e lento. Os dois são a mesma sala no mesmo dia. Decida qual dos dois você veio buscar e chegue na hora certa.",
+          "de": "Der Zeitpunkt zählt mehr als der Platz. Vor elf ist der Saal halb leer, die Kapelle ist zu hören und die Kellner haben Zeit. Nach neun ist er voll, die Gänge sind blockiert, und der Lärm ist das Programm. Der Samstagnachmittag kombiniert beides: voll und langsam. Es ist derselbe Saal, nur zu verschiedenen Stunden. Entscheiden Sie, wofür Sie gekommen sind, und kommen Sie entsprechend."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Hofbräu Original by the Maß: 5.1 per cent, malt first, dry at the end.",
+      "pt": "Hofbräu Original na Maß: 5,1%, malte na frente, seco no final.",
+      "de": "Hofbräu Original als Maß: 5,1 Prozent, Malz vorn, trocken im Abgang."
+    },
+    {
+      "en": "Dunkel, which handles the roast pork better than the Helles does.",
+      "pt": "Dunkel, que lida melhor com o porco assado do que a Helles.",
+      "de": "Dunkel, das besser zum Schweinsbraten passt als das Helle."
+    },
+    {
+      "en": "Münchner Weisse, if you want wheat beer in the room that once monopolised it.",
+      "pt": "Münchner Weisse, se quiser cerveja de trigo no salão que um dia a monopolizou.",
+      "de": "Münchner Weisse, wenn man Weißbier in dem Saal will, der es einst monopolisierte."
+    },
+    {
+      "en": "Maibock in spring, the oldest light bock in Munich.",
+      "pt": "Maibock na primavera, o bock claro mais antigo de Munique.",
+      "de": "Maibock im Frühling, das älteste helle Bockbier Münchens."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Schweinsbraten with a dumpling and crackling, the plate the kitchen does most often.",
+      "pt": "Schweinsbraten com um bolinho e crosta de porco, o prato que a cozinha mais faz.",
+      "de": "Schweinsbraten mit einem Knödel und Kruste, der Teller, den die Küche am häufigsten macht."
+    },
+    {
+      "en": "A Haxn, roasted until the skin cracks, with sauerkraut and mustard.",
+      "pt": "Uma Haxn, assada até a pele rachar, com chucrute e mostarda.",
+      "de": "Eine Haxn, gebraten bis die Haut kracht, mit Sauerkraut und Senf."
+    },
+    {
+      "en": "Käsespätzle with fried onions, for the one person at the table who does not want meat.",
+      "pt": "Käsespätzle com cebola frita, para a única pessoa da mesa que não quer carne.",
+      "de": "Käsespätzle mit Röstzwiebeln, für den einen am Tisch, der kein Fleisch will."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Downstairs is first come, first served. Upstairs takes bookings, and the Wappensaal is the quieter room.",
+      "pt": "Lá embaixo é por ordem de chegada. Lá em cima aceita reserva, e a Wappensaal é o salão mais silencioso.",
+      "de": "Unten gilt, wer zuerst kommt. Oben werden Reservierungen angenommen, und der Wappensaal ist der ruhigere Raum."
+    },
+    {
+      "en": "Go before eleven or after nine. The middle of the day is coach parties and no seats.",
+      "pt": "Vá antes das onze ou depois das nove. No meio do dia são excursões e nenhum lugar livre.",
+      "de": "Vor elf oder nach neun hingehen. Mittags sind Reisegruppen da und keine Plätze frei."
+    },
+    {
+      "en": "Five minutes from Marienplatz, and easy to combine with the Schneider Bräuhaus on Tal in one walk.",
+      "pt": "Cinco minutos da Marienplatz, e fácil de combinar com a Schneider Bräuhaus, na Tal, numa só caminhada.",
+      "de": "Fünf Minuten vom Marienplatz, und leicht mit dem Schneider Bräuhaus im Tal auf einem Spaziergang zu verbinden."
+    },
+    {
+      "en": "The band is amplified. If you want to talk, sit at the back or upstairs; if you do not, sit in the middle.",
+      "pt": "A banda tem amplificação. Se quiser conversar, sente no fundo ou lá em cima; se não, sente no meio.",
+      "de": "Die Kapelle ist verstärkt. Wer reden will, setzt sich nach hinten oder nach oben; wer nicht, in die Mitte."
+    },
+    {
+      "en": "Cash still helps at the bar for small orders. Cards work at the tables in most of the big halls.",
+      "pt": "Dinheiro em espécie ainda ajuda no balcão para pedidos pequenos. Cartão funciona nas mesas da maioria dos salões grandes.",
+      "de": "Bargeld hilft an der Theke bei kleinen Bestellungen. An den Tischen funktionieren in den meisten großen Sälen Karten."
+    }
+  ],
+  "links": [
+    {
+      "label": "Hofbräuhaus",
+      "url": "https://www.hofbraeuhaus.de/"
+    },
+    {
+      "label": "Hofbräu München",
+      "url": "https://www.hofbraeu-muenchen.de/"
+    },
+    {
+      "label": "muenchen.de",
+      "url": "https://www.muenchen.de/sehenswuerdigkeiten/bauwerke-und-denkmaeler/hofbraeuhaus"
+    }
+  ]
+}

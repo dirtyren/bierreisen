@@ -1,0 +1,223 @@
+{
+  "slug": "cantillon",
+  "type": "brewery",
+  "name": "Cantillon",
+  "where": "Brussels, Belgium",
+  "coords": [
+    50.84157,
+    4.33562
+  ],
+  "span": 0.012,
+  "subtitle_en": "Lambic, a coolship in the attic and the museum of gueuze",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Brasserie+Cantillon+Rue+Gheude+56+Bruxelles",
+  "trips": [
+    "2020"
+  ],
+  "related": [
+    "brussels",
+    "de-halve-maan",
+    "westvleteren",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundação",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1900"
+      }
+    },
+    {
+      "k": {
+        "en": "organic since",
+        "pt": "orgânica desde",
+        "de": "biologisch seit"
+      },
+      "v": {
+        "en": "1999"
+      }
+    },
+    {
+      "k": {
+        "en": "barrel ageing",
+        "pt": "maturação em barril",
+        "de": "Fassreifung"
+      },
+      "v": {
+        "en": "1–3 years"
+      }
+    },
+    {
+      "k": {
+        "en": "closed",
+        "pt": "fechado",
+        "de": "geschlossen"
+      },
+      "v": {
+        "en": "Wed & Sun"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Cantillon has been brewing lambic in the same building since 1900, and almost nothing in it has changed: copper kettles, a coolship in the attic, oak barrels, and a refusal to sweeten the beer. It is the last traditional lambic brewery inside Brussels, and it doubles as the museum of gueuze.",
+    "pt": "A Cantillon produz lambic no mesmo prédio desde 1900, e quase nada ali mudou: tachos de cobre, um coolship no sótão, barris de carvalho e a recusa em adoçar a cerveja. É a última cervejaria tradicional de lambic dentro de Bruxelas, e funciona também como museu da gueuze. A visita é curta, o cheiro fica o dia inteiro.",
+    "de": "Cantillon braut seit 1900 Lambik im selben Gebäude, und fast nichts darin hat sich verändert: Kupferkessel, ein Kühlschiff auf dem Dachboden, Eichenfässer und die Weigerung, das Bier zu süßen. Die letzte traditionelle Lambikbrauerei in Brüssel, und zugleich das Museum der Gueuze. Der Besuch ist kurz, der Geruch bleibt den Tag über."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Spontaneous fermentation",
+        "pt": "Fermentação espontânea",
+        "de": "Spontane Gärung"
+      },
+      "p": [
+        {
+          "en": "Lambic is not fermented with a chosen yeast. The wort is pumped to the coolship in the attic, left overnight under louvred windows, and inoculated by whatever is in the Brussels air. It then goes into oak barrels, some of them a century old, and ferments slowly for one to three years. Nothing is added; the beer waits, and the blender decides. The air does the work that a yeast lab does elsewhere.",
+          "pt": "O lambic não fermenta com levedura escolhida. O mosto é bombeado para o coolship no sótão, fica a noite sob janelas com venezianas e é inoculado pelo que estiver no ar de Bruxelas. Depois vai para barris de carvalho, alguns com um século, e fermenta devagar por um a três anos. Nada é adicionado; a cerveja espera, e quem faz o corte decide. O ar faz o trabalho que um laboratório de levedura faz em outros lugares.",
+          "de": "Lambik wird nicht mit gewählter Hefe vergoren. Die Würze wird in das Kühlschiff auf dem Dachboden gepumpt, bleibt über Nacht unter Lamellenfenstern liegen und wird von dem geimpft, was in der Brüsseler Luft ist. Dann geht sie in Eichenfässer, manche hundert Jahre alt, und gärt ein bis drei Jahre langsam. Nichts wird zugegeben; das Bier wartet, und der Verschnitt entscheidet. Die Luft erledigt, was anderswo ein Hefelabor tut."
+        },
+        {
+          "en": "Gueuze is a blend of young and old lambic, bottled and refermented, which is why it sparkles and tastes of cider, lemon peel and cellar. Kriek is lambic with sour cherries, Rosé de Gambrinus with raspberries, Fou' Foune with apricots. The fruit is real, the quantities are large, and nothing is back-sweetened to make it easier. The blend decides whether it works.",
+          "pt": "A gueuze é um corte de lambic jovem e velho, engarrafado e com segunda fermentação, e é por isso que tem gás e gosto de sidra, casca de limão e porão. A Kriek é lambic com cerejas ácidas, a Rosé de Gambrinus com framboesas, a Fou' Foune com damascos. A fruta é de verdade, em quantidade, e nada é adoçado para ficar mais fácil.",
+          "de": "Gueuze ist ein Verschnitt aus jungem und altem Lambik, abgefüllt und nachvergoren — daher die Kohlensäure und der Geschmack von Apfelwein, Zitronenschale und Keller. Kriek ist Lambik mit Sauerkirschen, Rosé de Gambrinus mit Himbeeren, Fou' Foune mit Aprikosen. Die Frucht ist echt, die Mengen sind groß, und nichts wird nachgesüßt, damit es leichter wird. Der Verschnitt entscheidet, die Frucht variiert nur."
+        },
+        {
+          "en": "Cantillon has been organic since 1999, which matters less for the taste than for the fields. The brewery's output is counted in hundreds of thousands of bottles a year, not millions, even after new maturation space. It is sold at the door and through a small network of bars and importers who know what they are doing. That is still a small brewery by any measure.",
+          "pt": "Cantillon é orgânica desde 1999, o que importa menos para o gosto do que para os campos. A produção é contada em centenas de milhares de garrafas por ano, não em milhões, mesmo depois do novo espaço de maturação. É vendida na porta e por uma rede pequena de bares e importadores que sabem o que estão fazendo. Ainda é uma cervejaria pequena em qualquer medida.",
+          "de": "Cantillon ist seit 1999 biologisch, was weniger für den Geschmack als für die Felder zählt. Die Brauerei füllt jährlich Hunderttausende Flaschen ab, keine Millionen, auch nach den neuen Reifeflächen. Es geht über die Tür und ein kleines Netz aus Bars und Importeuren, die wissen, was sie tun. Das ist immer noch eine kleine Brauerei. Mehr ist es nicht, und das genügt."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The museum that saved the brewery",
+        "pt": "O museu que salvou a cervejaria",
+        "de": "Das Museum, das die Brauerei rettete"
+      },
+      "p": [
+        {
+          "en": "By the 1970s lambic was considered old-fashioned and Cantillon was close to closing. Jean-Pierre Van Roy founded the Brussels Museum of the Gueuze in 1978 as a way to keep the doors open, with visits, tastings and a narrative. The museum did not rescue a ruin for tourists; it rescued a working brewery by letting people walk through it. It began as a survival plan, not a tribute.",
+          "pt": "Nos anos 1970, o lambic era considerado antiquado e a Cantillon estava perto de fechar. Jean-Pierre Van Roy fundou o Museu da Gueuze de Bruxelas em 1978 como forma de manter as portas abertas, com visitas, degustações e um discurso. O museu não salvou uma ruína para turistas; salvou uma cervejaria em atividade deixando as pessoas atravessá-la. Começou como plano de sobrevivência, não como homenagem.",
+          "de": "In den 1970er-Jahren galt Lambik als altmodisch, und Cantillon stand kurz vor der Schließung. Jean-Pierre Van Roy gründete 1978 das Brüsseler Gueuze-Museum, um die Türen offen zu halten — mit Besuchen, Verkostungen und einer Erzählung. Das Museum rettete keine Ruine für Touristen; es rettete eine arbeitende Brauerei, indem es Menschen hindurchgehen ließ. Eine bescheidene Herkunft für eine berühmte Brauerei. Mehr war es nicht."
+        },
+        {
+          "en": "The visit is self-guided from Monday to Friday except Wednesday, and guided on Saturdays. It takes about an hour and ends with three samples: lambic, gueuze and a fruit beer. You walk past the mash tun, the coolship, the barrels and the bottling line, in a building that is still producing while you look at it. The route is short, and the barrels are the best part.",
+          "pt": "A visita é livre de segunda a sexta, exceto quarta, e guiada aos sábados. Dura cerca de uma hora e termina com três amostras: lambic, gueuze e uma cerveja de fruta. Você passa pela tina de mostura, pelo coolship, pelos barris e pela linha de envase, num prédio que continua produzindo enquanto você olha. O percurso é curto, e os barris são a melhor parte.",
+          "de": "Der Besuch ist von Montag bis Freitag außer Mittwoch selbstständig, samstags geführt. Er dauert etwa eine Stunde und endet mit drei Proben: Lambik, Gueuze und einem Fruchtbier. Man geht an Maischbottich, Kühlschiff, Fässern und Abfülllinie vorbei, in einem Gebäude, das weiter produziert, während man hinsieht. Der Weg ist kurz, und die Fässer sind das Beste. Man geht langsam. Das lohnt sich."
+        },
+        {
+          "en": "The room is cold, damp and smells of wood and fermentation. There is no multimedia, no interactive display, no shop designed by a consultancy. The shop sells bottles at prices lower than in the city's beer bars, which is the best argument for going to Anderlecht rather than drinking lambic in the centre. Buying a bottle there is the simplest way to support the place.",
+          "pt": "A sala é fria, úmida e cheira a madeira e fermentação. Não há multimídia, nem tela interativa, nem loja desenhada por consultoria. A loja vende garrafas a preços mais baixos que os dos bares de cerveja da cidade, e esse é o melhor argumento para ir a Anderlecht em vez de beber lambic no centro. Comprar uma garrafa ali é a forma mais simples de apoiar o lugar.",
+          "de": "Der Raum ist kalt, feucht und riecht nach Holz und Gärung. Es gibt keine Multimedia, keine interaktive Ausstellung, keinen von einer Agentur gestalteten Laden. Der Laden verkauft Flaschen billiger als die Bierbars der Stadt — das beste Argument, nach Anderlecht zu fahren, statt Lambik im Zentrum zu trinken. Wer dort eine Flasche kauft, unterstützt den Ort am direktesten. Der Laden ist kein Souvenirgeschäft."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Visiting",
+        "pt": "A visita",
+        "de": "Der Besuch"
+      },
+      "p": [
+        {
+          "en": "Cantillon is at Rue Gheude 56, in Anderlecht, fifteen minutes on foot from Brussels-Midi. The neighbourhood is not pretty: a wholesale street, a railway viaduct, a few bakeries, and the smell of the canal on a warm day. That is part of the point. The brewery is where it always was, not where a visitor would put it. There is no sign worth photographing.",
+          "pt": "A Cantillon fica na Rue Gheude 56, em Anderlecht, a quinze minutos a pé da Bruxelas-Midi. O bairro não é bonito: uma rua de atacado, um viaduto ferroviário, algumas padarias e o cheiro do canal num dia quente. Isso faz parte do ponto. A cervejaria está onde sempre esteve, não onde um visitante a colocaria. Não há placa que valha uma foto.",
+          "de": "Cantillon liegt in der Rue Gheude 56 in Anderlecht, fünfzehn Gehminuten von Brüssel-Midi. Die Nachbarschaft ist nicht hübsch: eine Großhandelsstraße, ein Eisenbahnviadukt, ein paar Bäckereien und an warmen Tagen der Geruch des Kanals. Das gehört dazu. Die Brauerei steht, wo sie immer stand, nicht wo ein Besucher sie hinstellen würde. Der Weg lohnt sich. Und er ist kurz. Man geht ihn gern."
+        },
+        {
+          "en": "Opening hours are 10 to 16, Monday, Tuesday, Thursday and Friday, with the shop open until 17. Saturday is guided tours only, booked online, and the brewery is closed on Wednesday, Sunday and public holidays. Brewing runs from about October to April; if you want to see the coolship in use, come in winter. The ticket desk closes at 16.",
+          "pt": "O horário é das 10h às 16h, segunda, terça, quinta e sexta, com a loja aberta até as 17h. Sábado é só visita guiada, com reserva online, e a cervejaria fecha quarta, domingo e feriados. A produção vai de outubro a abril, aproximadamente; para ver o coolship em uso, venha no inverno. A bilheteria fecha às 16h. Sem exceção. Chegue antes.",
+          "de": "Geöffnet ist Montag, Dienstag, Donnerstag und Freitag von 10 bis 16 Uhr, der Laden bis 17 Uhr. Samstags gibt es nur geführte Touren mit Online-Buchung, und mittwochs, sonntags und an Feiertagen ist geschlossen. Gebraut wird etwa von Oktober bis April; wer das Kühlschiff in Betrieb sehen will, kommt im Winter. Der Kassenschalter schließt um 16 Uhr. Ohne Ausnahme. Früher kommen."
+        },
+        {
+          "en": "Do not expect a brewpub. There is no kitchen, no tables, no lunch. The tasting is standing up, at the end, and the pour is generous. Eat before or after in the Marolles or at Saint-Guidon, and give yourself time: the visit is short, but the barrels reward a slow walk. A glass of gueuze on an empty stomach is a mistake.",
+          "pt": "Não espere um brewpub. Não há cozinha, nem mesas, nem almoço. A degustação é em pé, no fim, e a dose é generosa. Coma antes ou depois no Marolles ou em Saint-Guidon, e dê tempo a si mesmo: a visita é curta, mas os barris recompensam uma caminhada lenta. Um copo de gueuze de estômago vazio é um erro. Coma antes.",
+          "de": "Kein Brewpub erwarten. Es gibt keine Küche, keine Tische, kein Mittagessen. Die Verkostung findet am Ende im Stehen statt, und es wird großzügig eingeschenkt. Vorher oder nachher in den Marolles oder in Saint-Guidon essen und sich Zeit lassen: Der Besuch ist kurz, die Fässer belohnen aber einen langsamen Gang. Ein Glas Gueuze auf nüchternen Magen ist ein Fehler. Vorher essen."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Gueuze 100% Lambic Bio — the reference, and cheaper here than anywhere in town.",
+      "pt": "Gueuze 100% Lambic Bio — a referência, e mais barata aqui que em qualquer lugar da cidade.",
+      "de": "Gueuze 100% Lambic Bio — der Maßstab, und hier billiger als überall in der Stadt."
+    },
+    {
+      "en": "Kriek, with real cherries and a sour edge, not a sweet beer with fruit flavouring.",
+      "pt": "Kriek, com cerejas de verdade e um lado ácido, não uma cerveja doce com aroma de fruta.",
+      "de": "Kriek, mit echten Kirschen und einer sauren Kante, kein süßes Bier mit Fruchtaroma."
+    },
+    {
+      "en": "Rosé de Gambrinus if you want the raspberry version, which is the easiest of the fruit beers.",
+      "pt": "Rosé de Gambrinus se quiser a versão de framboesa, que é a mais fácil das cervejas de fruta.",
+      "de": "Rosé de Gambrinus für die Himbeerversion, das zugänglichste der Fruchtbiere."
+    },
+    {
+      "en": "Lou Pepe Gueuze if the shop has it: older lambic, finer bubbles, a different beer.",
+      "pt": "Lou Pepe Gueuze se a loja tiver: lambic mais velho, bolha mais fina, outra cerveja.",
+      "de": "Lou Pepe Gueuze, falls im Laden: älterer Lambik, feinere Perlage, ein anderes Bier."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The Marolles, twenty minutes' walk, for stoemp and sausages in a plain café.",
+      "pt": "O Marolles, vinte minutos a pé, para stoemp e linguiças num café simples.",
+      "de": "Die Marolles, zwanzig Gehminuten, für Stoemp und Würste in einem einfachen Café."
+    },
+    {
+      "en": "Place Saint-Guidon in Anderlecht, for a market lunch and a look at the collegiate church.",
+      "pt": "A Place Saint-Guidon, em Anderlecht, para um almoço de mercado e uma olhada na igreja colegiada.",
+      "de": "Place Saint-Guidon in Anderlecht, für ein Mittagessen vom Markt und einen Blick auf die Stiftskirche."
+    },
+    {
+      "en": "A bakery near Midi for bread and cheese before the visit; there is no food at the brewery.",
+      "pt": "Uma padaria perto da Midi para pão e queijo antes da visita; na cervejaria não há comida.",
+      "de": "Eine Bäckerei nahe Midi für Brot und Käse vor dem Besuch; in der Brauerei gibt es kein Essen."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Closed Wednesday, Sunday and public holidays; Saturday visits must be booked online.",
+      "pt": "Fecha quarta, domingo e feriados; as visitas de sábado precisam ser reservadas online.",
+      "de": "Mittwoch, Sonntag und Feiertage geschlossen; Samstagsbesuche müssen online gebucht werden."
+    },
+    {
+      "en": "Come between October and April to see brewing; in summer the coolship is idle.",
+      "pt": "Venha entre outubro e abril para ver a produção; no verão o coolship fica parado.",
+      "de": "Zwischen Oktober und April kommen, um das Brauen zu sehen; im Sommer steht das Kühlschiff still."
+    },
+    {
+      "en": "Fifteen minutes on foot from Brussels-Midi, or a short tram ride.",
+      "pt": "Quinze minutos a pé da Bruxelas-Midi, ou um trecho curto de bonde.",
+      "de": "Fünfzehn Gehminuten von Brüssel-Midi oder eine kurze Tramfahrt."
+    },
+    {
+      "en": "No dogs, no kitchen, no cards under a minimum — bring small notes.",
+      "pt": "Sem cães, sem cozinha, cartão com mínimo — leve notas pequenas.",
+      "de": "Keine Hunde, keine Küche, Karten erst ab einem Mindestbetrag — kleine Scheine mitnehmen."
+    },
+    {
+      "en": "Buy bottles here rather than in the centre; the shop price is the honest one.",
+      "pt": "Compre garrafas aqui, não no centro; o preço da loja é o honesto.",
+      "de": "Flaschen hier statt im Zentrum kaufen; der Ladenpreis ist der ehrliche."
+    }
+  ],
+  "links": [
+    {
+      "label": "Cantillon",
+      "url": "https://www.cantillon.be/"
+    },
+    {
+      "label": "Visit Brussels",
+      "url": "https://www.visit.brussels/en"
+    },
+    {
+      "label": "Cantillon, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cantillon_(brewery)"
+    }
+  ]
+}

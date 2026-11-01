@@ -1,0 +1,195 @@
+{
+  "slug": "trip-2024",
+  "type": "trip",
+  "name": "Franconia, Bohemia and Advent, 2024",
+  "where": "Germany, Czechia, Italy · November 2024",
+  "coords": [
+    49.9324,
+    10.955
+  ],
+  "image": "2024/assets/2024-route-map.png",
+  "trips": [
+    "2024"
+  ],
+  "trip_stats": "",
+  "related": [
+    "memmelsdorf",
+    "drei-kronen",
+    "plzen",
+    "ceske-budejovice",
+    "trip-2026"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "days",
+        "pt": "dias",
+        "de": "Tage"
+      },
+      "v": {
+        "en": "16"
+      }
+    },
+    {
+      "k": {
+        "en": "nights",
+        "pt": "noites",
+        "de": "Nächte"
+      },
+      "v": {
+        "en": "13"
+      }
+    },
+    {
+      "k": {
+        "en": "km driving",
+        "pt": "km de carro",
+        "de": "km Fahrt"
+      },
+      "v": {
+        "en": "1,062 km"
+      }
+    },
+    {
+      "k": {
+        "en": "bases",
+        "pt": "bases",
+        "de": "Standorte"
+      },
+      "v": {
+        "en": "5"
+      }
+    },
+    {
+      "k": {
+        "en": "countries",
+        "pt": "países",
+        "de": "Länder"
+      },
+      "v": {
+        "en": "4"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Sixteen days from 20 November 2024: three nights above a Franconian brewery in Memmelsdorf, two in Plzeň, one with Budvar, two under the Watzmann, and five in Munich while the Christmas markets opened around the corner.",
+    "pt": "Dezesseis dias a partir de 20 de novembro de 2024: três noites sobre uma cervejaria francônia em Memmelsdorf, duas em Plzeň, uma com a Budvar, duas sob o Watzmann e cinco em Munique enquanto os mercados de Natal abriam na esquina.",
+    "de": "Sechzehn Tage ab dem 20. November 2024: drei Nächte über einer fränkischen Brauerei in Memmelsdorf, zwei in Plzeň, eine bei Budvar, zwei unter dem Watzmann und fünf in München, während ringsum die Weihnachtsmärkte öffneten."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Advent as the reason",
+        "pt": "O Advento como motivo",
+        "de": "Der Advent als Grund"
+      },
+      "p": [
+        {
+          "en": "The last week of November is the quiet before the markets take over and the week when they are still worth walking through. Bamberg's are spread across the whole old town; Munich's are four separate markets with four separate crowds.",
+          "pt": "A última semana de novembro é a calma antes de os mercados tomarem conta e a semana em que ainda vale caminhar por eles. Os de Bamberg estão espalhados pela cidade velha inteira; os de Munique são quatro mercados separados com quatro multidões separadas.",
+          "de": "Die letzte Novemberwoche ist die Ruhe, bevor die Märkte übernehmen, und die Woche, in der sie noch einen Spaziergang wert sind. Die Bamberger verteilen sich über die ganze Altstadt, die Münchner sind vier getrennte Märkte mit vier getrennten Menschenmengen."
+        },
+        {
+          "en": "Brewery tours in late November are half empty, which means the guide has time and the tasting is generous. Drei Kronen in Memmelsdorf and Budvar in České Budějovice both ran that way.",
+          "pt": "Visitas a cervejarias no fim de novembro ficam pela metade, o que significa que o guia tem tempo e a degustação é generosa. Drei Kronen em Memmelsdorf e Budvar em České Budějovice foram assim.",
+          "de": "Brauereiführungen Ende November sind halb leer, das heißt: Der Guide hat Zeit und die Verkostung ist großzügig. Drei Kronen in Memmelsdorf und Budvar in České Budějovice liefen so."
+        },
+        {
+          "en": "The route went out through Frankfurt and came back through Rome, which sounds extravagant and was mostly a cheaper fare. It did mean landing in São Paulo the next morning with a suitcase of Rauchbier.",
+          "pt": "A rota saiu por Frankfurt e voltou por Roma, o que parece extravagante e era principalmente uma tarifa mais barata. Significou aterrissar em São Paulo na manhã seguinte com uma mala de Rauchbier.",
+          "de": "Die Route ging über Frankfurt hinaus und über Rom zurück — extravagant, aber vor allem der günstigere Tarif. Immerhin landete man am nächsten Morgen mit einem Koffer voll Rauchbier in São Paulo."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The Czech pair",
+        "pt": "O par tcheco",
+        "de": "Das tschechische Paar"
+      },
+      "p": [
+        {
+          "en": "Plzeň and České Budějovice are four hours apart by car and a century apart in character. Plzeň invented the pale lager everyone else copied; Budvar has spent a hundred years arguing with Budweiser about a name and making a slower, rounder beer while it argued.",
+          "pt": "Plzeň e České Budějovice ficam a quatro horas de carro e a um século de distância em caráter. Plzeň inventou a lager clara que todo mundo copiou; a Budvar passou cem anos discutindo com a Budweiser sobre um nome e fazendo, enquanto discutia, uma cerveja mais lenta e mais redonda.",
+          "de": "Plzeň und České Budějovice liegen vier Stunden Fahrt und ein Jahrhundert im Charakter auseinander. Plzeň erfand das helle Lager, das alle kopierten; Budvar streitet seit hundert Jahren mit Budweiser über einen Namen — und braut dabei ein langsameres, runderes Bier."
+        },
+        {
+          "en": "One night in České Budějovice is not enough for the town, but it is enough for the brewery, the square and dinner. Two nights, as in 2026, is better.",
+          "pt": "Uma noite em České Budějovice não basta para a cidade, mas basta para a cervejaria, a praça e o jantar. Duas noites, como em 2026, é melhor.",
+          "de": "Eine Nacht in České Budějovice reicht nicht für die Stadt, aber für die Brauerei, den Platz und das Abendessen. Zwei Nächte, wie 2026, sind besser."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Budvar's draught lager at the brewery, unpasteurised, which never travels as well as it tastes there.",
+      "pt": "O chope da Budvar na cervejaria, não pasteurizado, que nunca viaja tão bem quanto o gosto ali.",
+      "de": "Das Budvar-Fassbier in der Brauerei, unpasteurisiert — es reist nie so gut, wie es dort schmeckt."
+    },
+    {
+      "en": "Pilsner Urquell from the wood in the cellars at Plzeň, with the tour.",
+      "pt": "Pilsner Urquell do madeira nas caves de Plzeň, com o tour.",
+      "de": "Pilsner Urquell aus dem Holz in den Kellern von Plzeň, mit der Führung."
+    },
+    {
+      "en": "Drei Kronen's dark lager in Memmelsdorf, in the tap room, before dinner.",
+      "pt": "A lager escura da Drei Kronen em Memmelsdorf, na sala do bar, antes do jantar.",
+      "de": "Das dunkle Lager der Drei Kronen in Memmelsdorf, in der Gaststube, vor dem Essen."
+    },
+    {
+      "en": "Glühwein is not beer, but at the Bamberg market in the cold it is the correct second drink.",
+      "pt": "Glühwein não é cerveja, mas no mercado de Bamberg no frio é a segunda bebida correta.",
+      "de": "Glühwein ist kein Bier, aber auf dem Bamberger Markt in der Kälte das richtige zweite Getränk."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Schäuferla in Bamberg, once, properly, with a Rauchbier.",
+      "pt": "Schäuferla em Bamberg, uma vez, direito, com uma Rauchbier.",
+      "de": "Schäuferla in Bamberg, einmal, richtig, mit einem Rauchbier."
+    },
+    {
+      "en": "Czech svíčková in Plzeň — beef, cream, cranberries — which is the meal the lager was designed around.",
+      "pt": "Svíčková tcheca em Plzeň — carne, creme, cranberry — que é a refeição em torno da qual a lager foi desenhada.",
+      "de": "Svíčková in Plzeň — Rind, Sahne, Preiselbeeren — die Mahlzeit, um die herum das Lager gebaut wurde."
+    },
+    {
+      "en": "Roast goose, if you are in Bavaria in Advent; it is on every second menu and it is the season.",
+      "pt": "Ganso assado, se estiver na Baviera no Advento; está em metade dos menus e é a estação.",
+      "de": "Gänsebraten, wer im Advent in Bayern ist; er steht auf jeder zweiten Karte und es ist die Saison."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Christmas markets take cash and small notes; the Glühwein deposit mug is worth returning only if you do not want the mug.",
+      "pt": "Mercados de Natal aceitam dinheiro e notas pequenas; a caneca de caução do Glühwein só vale devolver se você não quiser a caneca.",
+      "de": "Weihnachtsmärkte nehmen Bargeld und kleine Scheine; den Glühwein-Pfandbecher gibt man nur zurück, wenn man ihn nicht behalten will."
+    },
+    {
+      "en": "Czech brewery tours often run in Czech and English on the same slot; book the English one rather than standing through both.",
+      "pt": "Tours de cervejaria tchecos costumam rodar em tcheco e inglês no mesmo horário; reserve o de inglês em vez de passar pelos dois.",
+      "de": "Tschechische Brauereiführungen laufen oft tschechisch und englisch im selben Slot; die englische buchen statt beide durchzustehen."
+    },
+    {
+      "en": "The drive from Plzeň to Berchtesgaden is long and crosses no useful brewery; take the motorway and use the evening.",
+      "pt": "O trecho de Plzeň a Berchtesgaden é longo e não cruza cervejaria útil; pegue a autoestrada e use a noite.",
+      "de": "Die Fahrt von Plzeň nach Berchtesgaden ist lang und kreuzt keine sinnvolle Brauerei; Autobahn nehmen und den Abend nutzen."
+    },
+    {
+      "en": "Munich in the first week of December: book the hotel early, the city fills for the markets.",
+      "pt": "Munique na primeira semana de dezembro: reserve o hotel cedo, a cidade enche pelos mercados.",
+      "de": "München in der ersten Dezemberwoche: früh buchen, die Stadt füllt sich für die Märkte."
+    }
+  ],
+  "links": [
+    {
+      "label": "Budvar",
+      "url": "https://www.budejovickybudvar.cz/"
+    },
+    {
+      "label": "Pilsner Urquell",
+      "url": "https://www.pilsnerurquell.com/"
+    }
+  ]
+}

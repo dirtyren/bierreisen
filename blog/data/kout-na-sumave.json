@@ -1,0 +1,243 @@
+{
+  "slug": "kout-na-sumave",
+  "type": "city",
+  "name": "Kout na Šumavě",
+  "where": "Czechia",
+  "coords": [
+    49.4025,
+    13.0017
+  ],
+  "span": 0.55,
+  "subtitle_en": "A village brewery that has been declared dead twice",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Kout+na+%C5%A0umav%C4%9B+Czechia",
+  "trips": [
+    "2027"
+  ],
+  "related": [
+    "plzen",
+    "pilsner-urquell",
+    "ceske-budejovice",
+    "trip-2027"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewery first recorded",
+        "pt": "primeiro registro da cervejaria",
+        "de": "Brauerei erstmals erwähnt"
+      },
+      "v": {
+        "en": "1736",
+        "pt": "1736",
+        "de": "1736"
+      }
+    },
+    {
+      "k": {
+        "en": "population",
+        "pt": "população",
+        "de": "Einwohner"
+      },
+      "v": {
+        "en": "about 1,100",
+        "pt": "cerca de 1.100",
+        "de": "rund 1.100"
+      }
+    },
+    {
+      "k": {
+        "en": "elevation",
+        "pt": "altitude",
+        "de": "Höhe"
+      },
+      "v": {
+        "en": "425 m",
+        "pt": "425 m",
+        "de": "425 m"
+      }
+    },
+    {
+      "k": {
+        "en": "brewing revived",
+        "pt": "retomada da produção",
+        "de": "Braubetrieb wiederaufgenommen"
+      },
+      "v": {
+        "en": "2006",
+        "pt": "2006",
+        "de": "2006"
+      }
+    },
+    {
+      "k": {
+        "en": "closed again",
+        "pt": "fechada de novo",
+        "de": "erneut geschlossen"
+      },
+      "v": {
+        "en": "2019",
+        "pt": "2019",
+        "de": "2019"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Kout na Šumavě is a village of about 1,100 people in the Chodsko hills, seven kilometres from Domažlice, with a brewery that has been closed twice and is now trying a third time. The name misleads: the Šumava proper is further south, and Kout sits where the Bohemian Forest begins to rise out of the fields.",
+    "pt": "Kout na Šumavě é um vilarejo de cerca de 1.100 habitantes nas colinas do Chodsko, sete quilômetros de Domažlice, com uma cervejaria que já fechou duas vezes e agora tenta a terceira. O nome engana: a Šumava propriamente dita fica mais ao sul, e Kout está onde a Floresta da Boêmia começa a subir dos campos.",
+    "de": "Kout na Šumavě ist ein Dorf mit rund 1.100 Einwohnern in den Hügeln des Chodsko, sieben Kilometer von Domažlice entfernt, mit einer Brauerei, die zweimal geschlossen wurde und es jetzt ein drittes Mal versucht. Der Name täuscht: Die eigentliche Šumava liegt weiter südlich, und Kout liegt dort, wo der Böhmerwald aus den Feldern zu steigen beginnt."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The village, and the name",
+        "pt": "O vilarejo e o nome",
+        "de": "Das Dorf und der Name"
+      },
+      "p": [
+        {
+          "en": "The village was first written down in 1544, though it grew around an older fortress that still stands, below the church of St George. The brewery is younger than the fortress and older than almost everything else: first recorded in 1736, when the estate belonged to the Counts of Stadion, who gave the place its scale. Kout has 358 houses, a post office, a library and not much else, and the fields run out to the woods in every direction.",
+          "pt": "O vilarejo aparece pela primeira vez por escrito em 1544, embora tenha crescido em torno de uma fortaleza mais antiga que ainda está de pé, abaixo da igreja de São Jorge. A cervejaria é mais nova que a fortaleza e mais velha que quase todo o resto: o primeiro registro é de 1736, quando a propriedade pertencia aos condes de Stadion, que deram ao lugar a sua escala. Kout tem 358 casas, uma agência dos correios, uma biblioteca e pouco mais, e os campos terminam no bosque em todas as direções.",
+          "de": "Erstmals schriftlich erwähnt wird das Dorf 1544, obwohl es um eine ältere Feste herumwuchs, die noch steht, unterhalb der Georgskirche. Die Brauerei ist jünger als die Feste und älter als fast alles andere: erstmals erwähnt 1736, als die Herrschaft den Grafen von Stadion gehörte, die dem Ort seinen Maßstab gaben. Kout hat 358 Häuser, eine Post, eine Bibliothek und nicht viel mehr, und die Felder laufen in jeder Richtung in den Wald aus."
+        },
+        {
+          "en": "The name is a local joke of the kind Czech villages enjoy. Kout lies in Chodsko, on the edge of the Český les, not in the Šumava National Park; the Všerubský pass, a few kilometres west, is the natural divide between the two ranges. The village sits at 425 metres in a bowl of hills, with the spring the brewery has always used, the Stříbrný pramen, coming out of the ground nearby.",
+          "pt": "O nome é uma piada local do tipo que os vilarejos tchecos apreciam. Kout fica no Chodsko, na borda do Český les, e não no Parque Nacional da Šumava; o passo de Všeruby, alguns quilômetros a oeste, é a divisa natural entre as duas serras. O vilarejo está a 425 metros, numa bacia de colinas, e a fonte que a cervejaria sempre usou, a Stříbrný pramen, brota ali perto.",
+          "de": "Der Name ist ein Ortswitz, wie ihn tschechische Dörfer mögen. Kout liegt im Chodsko am Rand des Český les, nicht im Nationalpark Šumava; der Všerubský-Pass wenige Kilometer westlich ist die natürliche Grenze zwischen den beiden Gebirgen. Das Dorf liegt auf 425 Metern in einer Mulde, und die Quelle, die die Brauerei immer nutzte, der Stříbrný pramen, entspringt ganz in der Nähe."
+        },
+        {
+          "en": "Above the village, Count Stadion built a gloriette in the first half of the nineteenth century and shaped its roof like a cardinal's hat. It commemorates the Battle of Domažlice in 1431, when Cardinal Giuliano Cesarini fled the field and lost his hat, which the Hussites carried to Prague and hung in the Týn church. The pavilion is called Klobouk, the hat, and it stands in a field north of the village with a view of the pass.",
+          "pt": "Acima do vilarejo, o conde Stadion mandou construir um coreto na primeira metade do século XIX e deu ao telhado a forma de um chapéu de cardeal. Ele lembra a Batalha de Domažlice, em 1431, quando o cardeal Giuliano Cesarini fugiu do campo e perdeu o chapéu, que os hussitas levaram para Praga e penduraram na igreja de Týn. O pavilhão se chama Klobouk, o chapéu, e fica num campo ao norte do vilarejo, com vista para o passo.",
+          "de": "Über dem Dorf ließ Graf Stadion in der ersten Hälfte des 19. Jahrhunderts einen Gartenpavillon bauen und gab dem Dach die Form eines Kardinalshuts. Er erinnert an die Schlacht bei Domažlice 1431, als Kardinal Giuliano Cesarini vom Feld floh und seinen Hut verlor, den die Hussiten nach Prag brachten und in der Teynkirche aufhängten. Der Pavillon heißt Klobouk, der Hut, und steht auf einem Feld nördlich des Dorfes mit Blick auf den Pass."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "A brewery that keeps dying",
+        "pt": "Uma cervejaria que morre sempre",
+        "de": "Eine Brauerei, die immer wieder stirbt"
+      },
+      "p": [
+        {
+          "en": "The brewery burned down in 1838 and was rebuilt larger by Count Karl Friedrich Stadion-Thannhausen. In 1870 the cellars were dug under the church, which is where the beer was lagered; in 1933 the maltings, the oldest surviving part, was raised by a floor. After 1948 the brewery was nationalised, the last batch was brewed in the 1960s, and the buildings became a soft-drinks plant before closing in 1971. In 1993 the copper kettles were cut out and sold for scrap.",
+          "pt": "A cervejaria pegou fogo em 1838 e foi reconstruída maior pelo conde Karl Friedrich Stadion-Thannhausen. Em 1870 as caves foram escavadas sob a igreja, e era ali que a cerveja maturava; em 1933 a malteria, a parte mais antiga que sobrou, ganhou mais um andar. Depois de 1948 a cervejaria foi nacionalizada, o último lote saiu nos anos 1960, e os prédios viraram fábrica de refrigerantes antes de fechar em 1971. Em 1993 as caldeiras de cobre foram cortadas e vendidas como sucata.",
+          "de": "1838 brannte die Brauerei ab, und Graf Karl Friedrich Stadion-Thannhausen ließ sie größer wieder aufbauen. 1870 wurden die Keller unter der Kirche gegraben, dort reifte das Bier; 1933 wurde die Mälzerei, der älteste erhaltene Teil, um ein Geschoss erhöht. Nach 1948 wurde die Brauerei verstaatlicht, der letzte Sud entstand in den 1960er Jahren, dann wurden die Gebäude eine Limonadenfabrik, bis 1971 endgültig Schluss war. 1993 wurden die Kupferkessel herausgeschnitten und als Schrott verkauft."
+        },
+        {
+          "en": "Ján Skala bought the ruin in 2002 and, with the brewer Bohuslav Hlavsa, started again. The first batch was brewed on 27 March 2006. The beer was unpasteurised, not dosed with carbon dioxide, made from Czech malt and Žatecký hops, and it was the 12° that made the village famous: thick, bitter, and poured in a handful of Prague pubs that took the trouble. Skala died in 2017, the brewery closed in 2019, and a court declared it bankrupt in 2020; more than 123,000 beers were poured away.",
+          "pt": "Ján Skala comprou a ruína em 2002 e, com o mestre cervejeiro Bohuslav Hlavsa, começou de novo. O primeiro lote saiu em 27 de março de 2006. A cerveja era não pasteurizada, sem adição de gás carbônico, feita com malte tcheco e lúpulo Žatecký, e foi a 12° que tornou o vilarejo famoso: encorpada, amarga e servida em poucos bares de Praga que se davam ao trabalho. Skala morreu em 2017, a cervejaria fechou em 2019 e um tribunal decretou a falência em 2020; mais de 123 mil cervejas foram derramadas.",
+          "de": "Ján Skala kaufte die Ruine 2002 und begann mit dem Brauer Bohuslav Hlavsa von vorn. Der erste Sud entstand am 27. März 2006. Das Bier war unpasteurisiert, ohne Kohlensäurezusatz, aus tschechischem Malz und Žatecký-Hopfen, und die 12° machte das Dorf berühmt: dicht, bitter und in einer Handvoll Prager Kneipen gezapft, die sich die Mühe machten. Skala starb 2017, 2019 schloss die Brauerei, 2020 erklärte ein Gericht sie für insolvent; mehr als 123.000 Bier wurden weggeschüttet."
+        },
+        {
+          "en": "In 2025 a new owner, Aleš Pech, took over the yard and renamed it Stadioner, after the family that built it. Sales began on 28 October 2025, with beer brewed at partner breweries while the brewhouse is put back together, and plans for a restaurant and rooms. Whether the 12° comes back as it was is an open question. The village has heard promises before, and the last two decades have been hard on small breweries.",
+          "pt": "Em 2025, um novo dono, Aleš Pech, assumiu o pátio e o rebatizou de Stadioner, em homenagem à família que o construiu. As vendas começaram em 28 de outubro de 2025, com cerveja produzida em cervejarias parceiras enquanto a sala de brassagem é remontada, e há planos de restaurante e quartos. Se a 12° volta como era, é outra questão. O vilarejo já ouviu promessas antes, e as duas últimas décadas foram duras com as cervejarias pequenas.",
+          "de": "2025 übernahm ein neuer Eigentümer, Aleš Pech, den Hof und benannte ihn in Stadioner um, nach der Familie, die ihn gebaut hat. Der Verkauf begann am 28. Oktober 2025, das Bier wird zunächst in Partnerbrauereien gebraut, während das Sudhaus wiederhergestellt wird, und es gibt Pläne für Restaurant und Zimmer. Ob die 12° so zurückkommt, wie sie war, ist offen. Das Dorf hat solche Versprechen schon gehört, und die letzten zwei Jahrzehnte waren hart für kleine Brauereien."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The walk, and the practical",
+        "pt": "A caminhada e o prático",
+        "de": "Der Spaziergang und das Praktische"
+      },
+      "p": [
+        {
+          "en": "From the brewery yard, the church is two minutes uphill and the fortress is a few steps away. The Klobouk is a twenty-minute walk north through fields, on a track that turns to mud after rain. Rýzmberk, the ruin that gave the lords their name, is a longer walk or a short drive, with a lookout tower on the rock and the whole Všerubský pass laid out below.",
+          "pt": "Do pátio da cervejaria, a igreja fica a dois minutos de subida, e a fortaleza a poucos passos. O Klobouk é uma caminhada de vinte minutos ao norte, por campos, numa trilha que vira lama depois da chuva. Rýzmberk, a ruína que deu nome aos senhores da região, fica numa caminhada mais longa ou a uma curta viagem de carro, com uma torre de observação na rocha e todo o passo de Všeruby lá embaixo.",
+          "de": "Vom Brauereihof ist die Kirche zwei Minuten bergauf, und die Feste steht ein paar Schritte daneben. Der Klobouk ist ein zwanzigminütiger Spaziergang nach Norden über Felder, auf einem Weg, der nach Regen zu Schlamm wird. Rýzmberk, die Ruine, die den Herren den Namen gab, ist ein längerer Fußweg oder eine kurze Fahrt, mit einem Aussichtsturm auf dem Felsen und dem ganzen Všerubský-Pass darunter."
+        },
+        {
+          "en": "There is a pond, Novodvorský rybník, with a 300-year-old lime tree on the bank, and a 350-year-old oak and a maple with a girth of 530 centimetres along the lane south. The pond is where the village walks on a Sunday, and the trees are older than every brewery owner of the last century. These are the sights: trees, a hat-shaped pavilion, a ruin, a church. Nobody comes to Kout for the shopping, and the village is the better for it.",
+          "pt": "Há um lago, o Novodvorský rybník, com uma tília de 300 anos na margem, e um carvalho de 350 anos e um bordo com 530 centímetros de circunferência pela estrada ao sul. O lago é onde o vilarejo passeia no domingo, e as árvores são mais velhas que qualquer dono de cervejaria do último século. Essas são as atrações: árvores, um pavilhão em forma de chapéu, uma ruína, uma igreja. Ninguém vem a Kout para fazer compras, e o vilarejo agradece.",
+          "de": "Es gibt einen Teich, den Novodvorský rybník, mit einer 300 Jahre alten Linde am Ufer, und eine 350 Jahre alte Eiche und einen Ahorn mit 530 Zentimetern Umfang an der Straße nach Süden. Am Teich spaziert das Dorf am Sonntag, und die Bäume sind älter als jeder Brauereibesitzer des letzten Jahrhunderts. Das sind die Sehenswürdigkeiten: Bäume, ein hutförmiger Pavillon, eine Ruine, eine Kirche. Niemand kommt zum Einkaufen nach Kout, und das Dorf ist dankbar dafür."
+        },
+        {
+          "en": "You need a car. Kdyně is three kilometres east with a supermarket and a couple of pubs; Domažlice is seven kilometres north-west with the restaurants, the museum and the Chodsko dialect on the signs. The brewery has a shop for bottles, and the yard is at number 2, at the top of the village by the church. Check the opening before you drive out: a village brewery keeps village hours.",
+          "pt": "Você precisa de carro. Kdyně fica três quilômetros a leste, com supermercado e alguns bares; Domažlice está sete quilômetros a noroeste, com os restaurantes, o museu e o dialeto chod na sinalização. A cervejaria tem uma loja de garrafas, e o pátio fica no número 2, no alto do vilarejo, ao lado da igreja. Confirme o horário antes de pegar a estrada: cervejaria de vilarejo segue horário de vilarejo.",
+          "de": "Ohne Auto geht es nicht. Kdyně liegt drei Kilometer östlich mit Supermarkt und ein paar Kneipen; Domažlice sieben Kilometer nordwestlich mit den Restaurants, dem Museum und dem Chodsko-Dialekt auf den Schildern. Die Brauerei hat einen Laden für Flaschen, und der Hof liegt in der Nummer 2 oben im Dorf bei der Kirche. Vor der Fahrt die Öffnungszeiten prüfen: Eine Dorfbrauerei hält Dorfzeiten."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Koutská 12°: the beer that made the village known. Ask what is on before you set out, because the brewery is between lives.",
+      "pt": "Koutská 12°: a cerveja que tornou o vilarejo conhecido. Pergunte o que está saindo antes de pegar a estrada, porque a cervejaria está entre uma vida e outra.",
+      "de": "Koutská 12°: das Bier, das das Dorf bekannt machte. Vorher fragen, was gerade gezapft wird, denn die Brauerei liegt zwischen zwei Leben."
+    },
+    {
+      "en": "Koutská 10°, the everyday strength, if the tanks are running.",
+      "pt": "Koutská 10°, a força do dia a dia, se os tanques estiverem rodando.",
+      "de": "Koutská 10°, die Alltagsstärke, wenn die Tanks laufen."
+    },
+    {
+      "en": "The dark special, 14° or 18°, when it appears. The old brewery brewed both.",
+      "pt": "O especial escuro, 14° ou 18°, quando aparecer. A cervejaria antiga fazia os dois.",
+      "de": "Das dunkle Spezial, 14° oder 18°, wenn es auftaucht. Die alte Brauerei braute beide."
+    },
+    {
+      "en": "Whatever Stadioner is pouring while the brewhouse is rebuilt, brewed elsewhere and worth a glass for the comparison.",
+      "pt": "O que a Stadioner estiver servindo enquanto a sala de brassagem é remontada, produzido em outra cervejaria e digno de um copo para comparar.",
+      "de": "Was Stadioner zapft, während das Sudhaus wiederaufgebaut wird, anderswo gebraut und ein Glas wert, um zu vergleichen."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The brewery yard: a shop for bottles now, a kitchen in the plan. Do not count on lunch.",
+      "pt": "O pátio da cervejaria: hoje uma loja de garrafas, uma cozinha nos planos. Não conte com almoço.",
+      "de": "Der Brauereihof: derzeit ein Laden für Flaschen, eine Küche im Plan. Nicht auf Mittagessen verlassen."
+    },
+    {
+      "en": "Domažlice, seven kilometres north-west, for a sit-down meal: dumplings, roast pork and the Chodsko version of cabbage.",
+      "pt": "Domažlice, sete quilômetros a noroeste, para uma refeição sentada: bolinhos, porco assado e a versão chod do repolho.",
+      "de": "Domažlice, sieben Kilometer nordwestlich, für ein richtiges Essen: Knödel, Schweinebraten und Kohl auf Chodsko-Art."
+    },
+    {
+      "en": "Kdyně, three kilometres east: a supermarket, a couple of pubs, and the last practical stop before the hills.",
+      "pt": "Kdyně, três quilômetros a leste: supermercado, alguns bares e a última parada prática antes das colinas.",
+      "de": "Kdyně, drei Kilometer östlich: Supermarkt, ein paar Kneipen und der letzte praktische Halt vor den Hügeln."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Check the website or ring before driving out. Small breweries close for a week without warning, and this one has form.",
+      "pt": "Confira o site ou ligue antes de pegar a estrada. Cervejarias pequenas fecham uma semana sem avisar, e esta tem histórico.",
+      "de": "Vor der Fahrt die Website prüfen oder anrufen. Kleine Brauereien schließen eine Woche ohne Vorwarnung, und diese hier hat Erfahrung damit."
+    },
+    {
+      "en": "The yard is at Kout na Šumavě 2, by the church at the top of the village. Parking is on the street.",
+      "pt": "O pátio fica em Kout na Šumavě 2, ao lado da igreja no alto do vilarejo. Estacione na rua.",
+      "de": "Der Hof liegt in Kout na Šumavě 2, bei der Kirche oben im Dorf. Geparkt wird an der Straße."
+    },
+    {
+      "en": "Take cash. Village shops and small breweries are not reliable with cards.",
+      "pt": "Leve dinheiro. Lojas de vilarejo e cervejarias pequenas não são confiáveis com cartão.",
+      "de": "Bargeld mitnehmen. Dorfläden und kleine Brauereien sind bei Karten unzuverlässig."
+    },
+    {
+      "en": "Boots rather than trainers for the walk to Klobouk, at least after rain.",
+      "pt": "Botas em vez de tênis para a caminhada até o Klobouk, pelo menos depois da chuva.",
+      "de": "Stiefel statt Turnschuhe für den Weg zum Klobouk, wenigstens nach Regen."
+    },
+    {
+      "en": "Fill up before you leave the main road. There is no fuel in the village.",
+      "pt": "Abasteça antes de sair da estrada principal. Não há posto no vilarejo.",
+      "de": "Vor der Abfahrt von der Hauptstraße tanken. Im Dorf gibt es keine Tankstelle."
+    }
+  ],
+  "links": [
+    {
+      "label": "Kout na Šumavě",
+      "url": "https://www.koutnasumave.cz/"
+    },
+    {
+      "label": "Koutské pivo (Wikipedia, cs)",
+      "url": "https://cs.wikipedia.org/wiki/Koutsk%C3%A9_pivo"
+    },
+    {
+      "label": "Kout na Šumavě — Kudy z nudy",
+      "url": "https://www.kudyznudy.cz/kam-pojedete/plzensky-kraj/cesky-les-chodsko/kout-na-sumave"
+    }
+  ]
+}

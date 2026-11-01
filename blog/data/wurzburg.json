@@ -1,0 +1,231 @@
+{
+  "slug": "wurzburg",
+  "type": "city",
+  "name": "Würzburg",
+  "where": "Bavaria, Germany",
+  "coords": [
+    49.795,
+    9.931
+  ],
+  "span": 0.55,
+  "subtitle_en": "A wine town with a brewing history it rarely mentions",
+  "maps": "https://www.google.com/maps/search/?api=1&query=W%C3%BCrzburg+Marktplatz",
+  "trips": [
+    "2027"
+  ],
+  "related": [
+    "nuremberg",
+    "bamberg",
+    "memmelsdorf",
+    "trip-2027"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first recorded",
+        "pt": "primeiro registro",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "704",
+        "pt": "704",
+        "de": "704"
+      }
+    },
+    {
+      "k": {
+        "en": "Hofbräu founded",
+        "pt": "fundação da Hofbräu",
+        "de": "Hofbräu gegründet"
+      },
+      "v": {
+        "en": "1643",
+        "pt": "1643",
+        "de": "1643"
+      }
+    },
+    {
+      "k": {
+        "en": "breweries in 1852",
+        "pt": "cervejarias em 1852",
+        "de": "Brauereien 1852"
+      },
+      "v": {
+        "en": "12",
+        "pt": "12",
+        "de": "12"
+      }
+    },
+    {
+      "k": {
+        "en": "Residenz inscribed",
+        "pt": "Residenz patrimônio",
+        "de": "Residenz Welterbe"
+      },
+      "v": {
+        "en": "1981",
+        "pt": "1981",
+        "de": "1981"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Würzburg is a wine town, and the vineyards begin inside the city boundary. It also brewed, heavily, for centuries: the Hofbräu was founded in 1643, twelve breweries were counted in 1852, and beer riots broke out twice when the price went up. One large brewery is left, a brewpub under the old bridge, and a small craft scene.",
+    "pt": "Würzburg é uma cidade de vinho, e as vinhas começam dentro do perímetro urbano. Também produziu cerveja, e muito, por séculos: a Hofbräu foi fundada em 1643, doze cervejarias foram contadas em 1852, e houve duas vezes motins por causa do preço da cerveja. Resta uma grande cervejaria, um brewpub sob a ponte velha, e uma cena artesanal pequena.",
+    "de": "Würzburg ist eine Weinstadt, und die Weinberge beginnen innerhalb der Stadtgrenze. Gebraut wurde trotzdem, jahrhundertelang und viel: Die Hofbräu entstand 1643, 1852 zählte man zwölf Brauereien, und zweimal gab es Bierkrawalle, als der Preis stieg. Übrig sind eine große Brauerei, ein Brauhaus unter der alten Brücke und eine kleine Craft-Szene."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The town under the fortress",
+        "pt": "A cidade sob a fortaleza",
+        "de": "Die Stadt unter der Festung"
+      },
+      "p": [
+        {
+          "en": "The Main makes a wide bend here and the old town sits inside it, with the Marienberg fortress on the opposite bank. Everything worth seeing is within a twenty-minute walk: the Marktplatz with the Falkenhaus and the Marienkapelle, the cathedral, the Neumünster, and the Residenz, built for the prince-bishops from 1720 to 1744 to Balthasar Neumann's plans and inscribed by UNESCO in 1981. The Residenz stands east of the centre, a fifteen-minute walk through the pedestrian zone, and it takes a morning.",
+          "pt": "O Meno faz aqui uma curva larga, e a cidade velha fica dentro dela, com a fortaleza de Marienberg na margem oposta. Tudo o que vale ver está a vinte minutos a pé: a Marktplatz com a Falkenhaus e a Marienkapelle, a catedral, a Neumünster e a Residenz, construída para os príncipes-bispos entre 1720 e 1744 segundo os planos de Balthasar Neumann e declarada patrimônio da UNESCO em 1981. A Residenz fica a leste do centro, a quinze minutos a pé pela zona de pedestres, e pede uma manhã.",
+          "de": "Der Main macht hier einen weiten Bogen, und die Altstadt liegt darin, mit der Festung Marienberg am anderen Ufer. Alles Sehenswerte ist in zwanzig Gehminuten erreicht: der Marktplatz mit Falkenhaus und Marienkapelle, der Dom, das Neumünster und die Residenz, von 1720 bis 1744 nach Plänen Balthasar Neumanns für die Fürstbischöfe gebaut und 1981 von der UNESCO aufgenommen. Die Residenz steht östlich des Zentrums, fünfzehn Gehminuten durch die Fußgängerzone, und kostet einen Vormittag."
+        },
+        {
+          "en": "The Alte Mainbrücke is the hinge of the town. Construction began in 1476, it remained the only river crossing until 1886, and stone figures of saints and bishops line both parapets. In summer it turns into a bar: wine is sold by the glass and drunk standing up, with the fortress above and the river below. Nobody moves you along. The figures went up in the eighteenth century, in imitation of Prague's Charles Bridge, and they have been looking at the river ever since.",
+          "pt": "A Alte Mainbrücke é o eixo da cidade. A construção começou em 1476, ela foi a única travessia do rio até 1886, e figuras de pedra de santos e bispos ladeiam os dois parapeitos. No verão vira bar: vende-se vinho em copos, bebido de pé, com a fortaleza acima e o rio abaixo. Ninguém apressa a saída. As figuras foram colocadas no século XVIII, à imitação da ponte Carlos, em Praga, e desde então olham o rio.",
+          "de": "Die Alte Mainbrücke ist der Angelpunkt der Stadt. Baubeginn 1476, bis 1886 der einzige Flussübergang, und auf beiden Brüstungen stehen Steinfiguren von Heiligen und Bischöfen. Im Sommer wird sie zur Bar: Wein wird glasweise verkauft und im Stehen getrunken, die Festung oben, der Fluss unten. Niemand schickt einen weiter. Die Figuren kamen im 18. Jahrhundert auf die Brüstung, nach dem Vorbild der Prager Karlsbrücke, und blicken seither auf den Fluss."
+        },
+        {
+          "en": "Below the bridge the riverside path runs south into the Burkard quarter, where the Goldene Gans beer garden stands beneath the arches. Above it the path climbs to the Käppele, the pilgrimage church that looks small from the Marktplatz and turns out to be a long staircase and a chapel on the hill. The last stretch is steep, and the terrace at the top looks back over the whole bend of the river.",
+          "pt": "Abaixo da ponte, o caminho à beira do rio segue para o sul até o bairro de Burkard, onde fica o beer garden da Goldene Gans, sob os arcos. Acima, o caminho sobe até a Käppele, a igreja de peregrinação que parece pequena da Marktplatz e se revela uma escadaria longa e uma capela no morro. O último trecho é íngreme, e o terraço no alto olha para toda a curva do rio.",
+          "de": "Unterhalb der Brücke läuft der Uferweg nach Süden ins Burkarder Viertel, wo der Biergarten der Goldenen Gans unter den Bögen liegt. Darüber steigt der Weg zum Käppele an, der Wallfahrtskirche, die vom Marktplatz klein wirkt und sich als lange Treppe und Kapelle auf dem Hügel erweist. Das letzte Stück ist steil, und die Terrasse oben blickt über den ganzen Bogen des Flusses zurück."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Beer under the wine",
+        "pt": "Cerveja sob o vinho",
+        "de": "Bier unter dem Wein"
+      },
+      "p": [
+        {
+          "en": "The Würzburger Hofbräu was founded in 1643 by Prince-Bishop Johann Philipp von Schönborn and describes itself as the oldest company in the city; his crown still sits in the brewery's star logo. In the nineteenth century it exported to the United States, and in 1852 Würzburg still counted twelve breweries. When the beer price rose in 1866 and again in 1872, the town rioted. The brewery belongs to the Kulmbacher group, which bought it in 2005, and it still supplies most of the taps in the city.",
+          "pt": "A Würzburger Hofbräu foi fundada em 1643 pelo príncipe-bispo Johann Philipp von Schönborn e se apresenta como a empresa mais antiga da cidade; a coroa dele ainda está no logo em forma de estrela. No século XIX exportava para os Estados Unidos, e em 1852 Würzburg ainda tinha doze cervejarias. Quando o preço da cerveja subiu, em 1866 e de novo em 1872, a cidade se revoltou. A cervejaria pertence ao grupo Kulmbacher, que a comprou em 2005, e ainda abastece a maioria das torneiras da cidade.",
+          "de": "Die Würzburger Hofbräu wurde 1643 von Fürstbischof Johann Philipp von Schönborn gegründet und nennt sich das älteste Unternehmen der Stadt; seine Krone steht noch im Brauerstern. Im 19. Jahrhundert exportierte sie in die USA, und 1852 zählte Würzburg noch zwölf Brauereien. Als 1866 und erneut 1872 der Bierpreis stieg, randalierten die Bürger. Die Brauerei gehört seit 2005 zur Kulmbacher Gruppe und beliefert noch immer die meisten Zapfhähne der Stadt."
+        },
+        {
+          "en": "What remains is small and specific. The Hofbräu, now part of Kulmbacher, brews Würzburger Hofbräu, Sternla and Keiler, and pours them in its Keller in Zellerau beside the brewhouse. The Goldene Gans, a brewpub by the old bridge, serves its own beer only in the garden. The SMaSH Brewing Project and Maischerei Mayr & Müller work at the other end of the scale. Between them they cover the range, from a brewery owned by a group to two men with a kettle and a rented room.",
+          "pt": "O que restou é pequeno e específico. A Hofbräu, hoje parte da Kulmbacher, produz Würzburger Hofbräu, Sternla e Keiler, e as serve no seu Keller em Zellerau, ao lado da cervejaria. A Goldene Gans, brewpub junto à ponte velha, serve a própria cerveja só no jardim. O SMaSH Brewing Project e a Maischerei Mayr & Müller trabalham na outra escala. Juntas, cobrem a faixa inteira, de uma cervejaria de grupo a dois homens com uma panela e uma sala alugada.",
+          "de": "Geblieben ist wenig und sehr genau. Die Hofbräu, heute Teil von Kulmbacher, braut Würzburger Hofbräu, Sternla und Keiler und zapft sie im Keller in der Zellerau neben dem Sudhaus. Die Goldene Gans, ein Brauhaus an der alten Brücke, schenkt ihr eigenes Bier nur im Garten aus. SMaSH Brewing Project und Maischerei Mayr & Müller arbeiten am anderen Ende der Skala. Zusammen decken sie die Spanne ab, von der Konzernbrauerei bis zu zwei Männern mit einem Kessel und einem gemieteten Raum."
+        },
+        {
+          "en": "Twenty kilometres south-east, Ochsenfurt keeps two family breweries: Kauzen-Bräu, founded in 1809 in the Kastenhof, and Oechsner. Both are country breweries of the kind Franconia still has in numbers, and both are a short train ride from Würzburg. Neither is a museum; the beer goes out to the villages around them. The old town between them is small, and the walk along the Main is the best part of the trip.",
+          "pt": "Vinte quilômetros a sudeste, Ochsenfurt mantém duas cervejarias familiares: a Kauzen-Bräu, fundada em 1809 no Kastenhof, e a Oechsner. As duas são cervejarias do interior do tipo que a Francônia ainda tem em quantidade, e ambas ficam a um curto trajeto de trem desde Würzburg. Nenhuma é museu; a cerveja sai para as aldeias ao redor. A cidade velha de Ochsenfurt é pequena, e a caminhada à beira do Meno é a melhor parte do passeio.",
+          "de": "Zwanzig Kilometer südöstlich halten sich in Ochsenfurt zwei Familienbrauereien: Kauzen-Bräu, 1809 im Kastenhof gegründet, und Oechsner. Beide sind Landbrauereien, wie Franken sie noch in Mengen hat, und beide sind eine kurze Zugfahrt von Würzburg entfernt. Museen sind sie nicht; das Bier geht in die Dörfer ringsum. Die Altstadt zwischen beiden ist klein, und der Weg am Main entlang ist der beste Teil des Ausflugs."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The Keller in Zellerau",
+        "pt": "O Keller em Zellerau",
+        "de": "Der Keller in der Zellerau"
+      },
+      "p": [
+        {
+          "en": "The Hofbräukeller is not in the old town. It stands at Jägerstraße 17 in Zellerau, on the far side of the river, next to the brewery, with its own free car park — a detail that matters, because parking in the centre is a matter of luck. Inside there is room for more than five hundred; the garden adds another 250 seats. From the Marktplatz it is a walk across the old bridge and along the river, twenty minutes at an easy pace.",
+          "pt": "O Hofbräukeller não fica na cidade velha. Está na Jägerstraße 17, em Zellerau, do outro lado do rio, ao lado da cervejaria, com estacionamento próprio e gratuito — um detalhe que importa, porque estacionar no centro é questão de sorte. Dentro cabem mais de quinhentas pessoas; o jardim acrescenta 250 lugares. A partir da Marktplatz, é uma caminhada pela ponte velha e ao longo do rio, vinte minutos em passo tranquilo.",
+          "de": "Der Hofbräukeller liegt nicht in der Altstadt. Er steht in der Jägerstraße 17 in der Zellerau, jenseits des Flusses, neben der Brauerei, mit eigenem kostenlosen Parkplatz — ein Detail, das zählt, weil Parken im Zentrum Glückssache ist. Innen finden über fünfhundert Menschen Platz, der Garten bietet weitere 250 Sitzplätze. Vom Marktplatz geht man über die alte Brücke und am Fluss entlang, zwanzig Minuten in ruhigem Tempo."
+        },
+        {
+          "en": "Sunday is the best day to go. The Keller opens at eleven for Frühschoppen, and on the first Sunday of the month there is live music from ten with a Weißwurst breakfast. On other days it opens at twelve and the kitchen runs through the afternoon. The room is plain, the service is quick, and the beer arrives cold. The Keller is the brewery's own, a few steps from the brewhouse, so the beer has less distance to travel than in the centre.",
+          "pt": "O domingo é o melhor dia. O Keller abre às onze para o Frühschoppen, e no primeiro domingo do mês há música ao vivo a partir das dez, com café da manhã com Weißwurst. Nos outros dias abre ao meio-dia e a cozinha funciona durante a tarde. A sala é simples, o atendimento é rápido, e a cerveja chega gelada. O Keller é da própria cervejaria, a poucos passos da brassagem, então a cerveja percorre menos caminho do que no centro.",
+          "de": "Der Sonntag ist der beste Tag. Der Keller öffnet um elf zum Frühschoppen, am ersten Sonntag im Monat gibt es ab zehn Livemusik und ein Weißwurstfrühstück. Sonst öffnet er um zwölf, die Küche läuft den Nachmittag durch. Der Saal ist schlicht, der Service schnell, das Bier kalt. Der Keller gehört zur Brauerei, wenige Schritte vom Sudhaus, das Bier hat es also kürzer als in der Innenstadt."
+        },
+        {
+          "en": "Since 2026 the brewmaster leads tours on Tuesday, Thursday and Friday. You tap a keg yourself before walking through the brewhouse, the storage hall and the bottling line, then come back to the Keller for five more beers on a tasting board. It is not a drop-in arrangement; book before you go. It is the only way to see the brewhouse from the inside; the Keller itself is open to anyone.",
+          "pt": "Desde 2026, o mestre-cervejeiro conduz visitas às terças, quintas e sextas. Você mesmo tira o chope de um barril antes de percorrer o setor de brassagem, o armazém e a linha de envase, e depois volta ao Keller para mais cinco cervejas numa tábua de degustação. Não é coisa para chegar sem avisar; reserve antes. É o único jeito de ver a brassagem por dentro; o Keller em si é aberto a todos.",
+          "de": "Seit 2026 führt der Braumeister dienstags, donnerstags und freitags durch die Brauerei. Vorher sticht man selbst ein Fass an, dann geht es durch Sudhaus, Lagerhalle und Abfüllung, anschließend zurück in den Keller zu fünf weiteren Bieren auf einem Probierbrett. Zum Vorbeikommen ist das nichts; vorher buchen. Nur so kommt man einmal ins Sudhaus; der Keller selbst steht jedem offen, der etwas trinken will."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "A Helles from the Hofbräu, poured at the Keller — the plain measure of the place.",
+      "pt": "Um Helles da Hofbräu, servido no Keller — a medida simples da casa.",
+      "de": "Ein Helles der Hofbräu, im Keller gezapft — das schlichte Maß dieses Ortes."
+    },
+    {
+      "en": "The house beer at the Goldene Gans, which is poured only in the garden under the bridge.",
+      "pt": "A cerveja da casa na Goldene Gans, servida apenas no jardim sob a ponte.",
+      "de": "Das Hausbier der Goldenen Gans, das nur im Garten unter der Brücke gezapft wird."
+    },
+    {
+      "en": "Herbipolis, the SMaSH project's lager: pale, dry, brewed in the city.",
+      "pt": "Herbipolis, o lager do projeto SMaSH: claro, seco, feito na cidade.",
+      "de": "Herbipolis, das Lager von SMaSH: hell, trocken, in der Stadt gebraut."
+    },
+    {
+      "en": "A Kauzen-Bräu Helles in Ochsenfurt, if you have the afternoon.",
+      "pt": "Um Helles da Kauzen-Bräu em Ochsenfurt, se sobrar a tarde.",
+      "de": "Ein Helles von Kauzen-Bräu in Ochsenfurt, wenn der Nachmittag reicht."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Blaue Zipfel: sausages simmered in vinegar and onion broth, served with bread. The Franconian answer to a cold evening.",
+      "pt": "Blaue Zipfel: linguiças cozidas em caldo de vinagre e cebola, servidas com pão. A resposta francônia para uma noite fria.",
+      "de": "Blaue Zipfel: Bratwürste in Essig-Zwiebel-Sud, mit Brot serviert. Die fränkische Antwort auf einen kalten Abend."
+    },
+    {
+      "en": "At the Keller, the Franconian list — roast pork, bratwurst, dumplings — cooked for people who have been drinking.",
+      "pt": "No Keller, a lista francônia — porco assado, linguiças, bolinhos — cozida para quem está bebendo.",
+      "de": "Im Keller die fränkische Karte — Braten, Bratwurst, Knödel —, gekocht für Leute, die getrunken haben."
+    },
+    {
+      "en": "In the Goldene Gans garden, cheese, bread and a plate of something warm, with the bridge overhead.",
+      "pt": "No jardim da Goldene Gans, queijo, pão e um prato quente, com a ponte por cima.",
+      "de": "Im Garten der Goldenen Gans Käse, Brot und etwas Warmes, die Brücke über sich."
+    }
+  ],
+  "tips": [
+    {
+      "en": "From the station, walk straight down the Kaiserstraße: about fourteen minutes, one kilometre, no turns.",
+      "pt": "Da estação, siga reto pela Kaiserstraße: cerca de quatorze minutos, um quilômetro, sem curvas.",
+      "de": "Vom Bahnhof gerade die Kaiserstraße hinunter: etwa vierzehn Minuten, ein Kilometer, keine Abzweigung."
+    },
+    {
+      "en": "The Keller is a fifteen-minute walk from the Marktplatz over the old bridge. It has free parking, which the centre does not.",
+      "pt": "O Keller fica a quinze minutos a pé da Marktplatz, cruzando a ponte velha. Tem estacionamento gratuito, coisa que o centro não tem.",
+      "de": "Der Keller ist fünfzehn Gehminuten vom Marktplatz entfernt, über die alte Brücke. Er hat kostenlose Parkplätze, das Zentrum nicht."
+    },
+    {
+      "en": "Brewery tours run Tuesday, Thursday and Friday and begin with tapping a keg; reserve rather than turn up.",
+      "pt": "As visitas à cervejaria acontecem às terças, quintas e sextas e começam com a abertura de um barril; reserve em vez de aparecer.",
+      "de": "Brauereiführungen gibt es dienstags, donnerstags und freitags, sie beginnen mit dem Fassanstich; reservieren statt vorbeikommen."
+    },
+    {
+      "en": "The Christmas market fills the Oberer and Unterer Markt from late November, in front of the Falkenhaus.",
+      "pt": "A feira de Natal ocupa a Oberer e a Unterer Markt a partir do fim de novembro, diante da Falkenhaus.",
+      "de": "Der Weihnachtsmarkt füllt ab Ende November den Oberen und Unteren Markt, vor dem Falkenhaus."
+    },
+    {
+      "en": "Wine is the local drink. Order a Silvaner once, if only to understand what the beer is up against.",
+      "pt": "O vinho é a bebida local. Peça um Silvaner uma vez, nem que seja para entender contra o que a cerveja compete.",
+      "de": "Wein ist das lokale Getränk. Einmal einen Silvaner bestellen, schon um zu verstehen, gegen was das Bier hier antritt."
+    }
+  ],
+  "links": [
+    {
+      "label": "Würzburger Hofbräu",
+      "url": "https://www.wuerzburger-hofbraeu.de/"
+    },
+    {
+      "label": "Würzburger Hofbräukeller",
+      "url": "https://www.wuerzburger-hofbraeukeller.de/"
+    },
+    {
+      "label": "Stadt Würzburg — beer history",
+      "url": "https://wuerzburg.de/en/visitors/wuerzburg-for-beer-enthusiasts/kachelboxen-beer-enthusiasts/544058.History-of-beer-in-Wuerzburg.html"
+    }
+  ]
+}

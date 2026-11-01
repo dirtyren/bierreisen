@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bier Reisen — five beer trips, every stop measured</title>
+<title>Every trip, every brewery, one archive — Bier Reisen</title>
 <meta name="description" content="Five beer trips taken and one being planned: itineraries, route maps, brewery rankings and every distance measured. Munich by rail, Belgian Trappists, Czech pilsner towns and the village breweries of Franconia.">
 <meta name="theme-color" content="#0b0c15">
-<meta property="og:title" content="Bier Reisen — five beer trips, every stop measured">
+<meta property="og:title" content="Every trip, every brewery, one archive">
 <meta property="og:description" content="Five trips taken, one being planned. Day-by-day dossiers, route posters and brewery rankings for beer travel across Europe and the United States.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://renreisen.duckdns.org/">
@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Bier Reisen">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bier Reisen — five beer trips, every stop measured">
+<meta name="twitter:title" content="Every trip, every brewery, one archive">
 <meta name="twitter:description" content="Five trips taken, one being planned. Day-by-day dossiers, route posters and brewery rankings for beer travel across Europe and the United States.">
 <meta name="twitter:image" content="https://renreisen.duckdns.org/assets/og-card.png">
 <link rel="canonical" href="https://renreisen.duckdns.org/">
@@ -82,6 +82,9 @@ img{display:block;max-width:100%;height:auto}
   font-weight:700;text-decoration:none;padding:.85rem 1.5rem;border-radius:2px;font-size:.95rem;
   letter-spacing:.01em;transition:background .18s ease,transform .18s ease}
 .hero-cta:hover{background:#f2b62a;transform:translateY(-1px)}
+.hero-ghost{display:inline-flex;align-items:center;gap:.45rem;margin-left:1.3rem;color:var(--muted);
+  text-decoration:none;font-size:.93rem;border-bottom:1px dotted var(--rule);padding-bottom:.15rem}
+.hero-ghost:hover{color:var(--text);border-bottom-color:var(--gold)}
 .hero-cta span{transition:transform .18s ease}
 .hero-cta:hover span{transform:translateX(3px)}
 
@@ -212,9 +215,10 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
 <header class="hero">
   <div class="hero-art"><img src="assets/thumbs/hero-europe.jpg" alt="" aria-hidden="true" fetchpriority="high"></div>
   <div class="hero-inner">
-    <h1>Five beer trips taken.<span class="next">One being planned.</span></h1>
+    <h1>Every trip, every brewery,<span class="next">one archive.</span></h1>
     <p class="standfirst">From nine nights in a single Munich hotel to the Belgian Trappists and the pilsner towns of Bohemia. Every dossier carries the day-by-day plan, the route poster, the brewery rankings and the distances behind them: <b>6,849 km</b> across <b>77 days</b> so far.</p>
     <a class="hero-cta" href="#trips">Read the archive <span aria-hidden="true">→</span></a>
+    <a class="hero-ghost" href="blog/en/index.html">Notes from the road <span aria-hidden="true">→</span></a>
   </div>
 </header>
 
@@ -388,7 +392,8 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
 <footer>
   <div class="foot">
     <p><strong style="color:var(--text)">Bier Reisen</strong>. A personal archive of beer travel. Every dossier is a single HTML file; every distance was measured, not estimated: OSRM for the driving years, great-circle for flights, timetables for the years without a car.</p>
-    <p><a href="README.md">How this is built</a> ·
+    <p><a href="blog/en/index.html">Notes from the road</a> ·
+      <a href="README.md">How this is built</a> ·
       <a href="2027/data/route-2027.json">Route data</a> ·
       <a href="assets/maps/europe.png">Regional posters</a></p>
   </div>
@@ -396,6 +401,23 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
 
 <script>
 (function () {
+  var langLinks = document.querySelectorAll('.langs a');
+  for (var i = 0; i < langLinks.length; i++) {
+    langLinks[i].addEventListener('click', function () {
+      try { localStorage.setItem('bierreisen:lang', this.getAttribute('hreflang')); } catch (e) {}
+    });
+  }
+  try {
+    var q = new URLSearchParams(location.search).get('lang');
+    var stored = localStorage.getItem('bierreisen:lang');
+    if (q) { localStorage.setItem('bierreisen:lang', q); }
+    else if (!stored) {
+      var nav = (navigator.language || 'en').toLowerCase();
+      if (nav.indexOf('de') === 0) location.replace('de/index.html');
+      else if (nav.indexOf('pt') === 0) location.replace('pt/index.html');
+    }
+  } catch (e) {}
+
   var COUNT = "{n} of {total}";
   var entries = Array.prototype.slice.call(document.querySelectorAll('.entry, .shelf-item'));
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));

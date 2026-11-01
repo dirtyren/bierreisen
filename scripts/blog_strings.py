@@ -1,0 +1,148 @@
+# -*- coding: utf-8 -*-
+"""Interface copy for the blog: posts and the post index, in EN / PT-BR / DE."""
+
+LANGS = ["en", "pt", "de"]
+LANG_ATTR = {"en": "en", "pt": "pt-BR", "de": "de"}
+SITE = "https://renreisen.duckdns.org"
+
+UI = {
+    "en": {
+        "skip": "Skip to the article",
+        "crumb_label": "Breadcrumb",
+        "blog_label": "Blog",
+        "order_h": "What to order",
+        "eat_h": "Where to eat",
+        "tips_h": "Notes for travellers",
+        "where_h": "Where it is",
+        "maps_label": "Open in Google Maps",
+        "check_label": "Live ratings on",
+        "next_h": "Read next",
+        "foot_a": "A personal archive of beer travel. Every distance measured, every place linked.",
+        "foot_index": "All posts",
+        "foot_archive": "The archive",
+        "visited": "visited",
+        "planned": "planned",
+        "days": "days",
+        "nights": "nights",
+        "km": "km driving",
+        "type_brewery": "Brewery",
+        "type_city": "City",
+        "type_trip": "Trip",
+        "nearby": "Closest stop on the routes",
+        "caption_default": "Locator plate rendered for this archive.",
+        # index
+        "index_title": "Notes from the road — Bier Reisen",
+        "index_desc": ("Long-form notes on every trip, every city and the breweries that carry this "
+                       "archive: history, what to order, where to eat, and the details that help when "
+                       "you are actually standing at the bar."),
+        "index_h1": "Notes from the road",
+        "index_lede": ("Everything the dossiers could not hold: the history behind the beer, the "
+                       "streets worth walking, and the small practical things — where the shop is, "
+                       "when the tour runs, which door to use."),
+        "f_all": "All",
+        "f_trip": "Trips",
+        "f_city": "Cities",
+        "f_brewery": "Breweries",
+        "search_ph": "Search a place, a city, a beer",
+        "count": "{n} of {total}",
+        "empty_a": "Nothing matches that.",
+        "empty_b": "Show everything again",
+        "read": "Read",
+        "section_trip": "The trips",
+        "section_city": "The cities",
+        "section_brewery": "The breweries",
+    },
+    "pt": {
+        "skip": "Ir para o artigo",
+        "crumb_label": "Caminho",
+        "blog_label": "Blog",
+        "order_h": "O que pedir",
+        "eat_h": "Onde comer",
+        "tips_h": "Notas para quem viaja",
+        "where_h": "Onde fica",
+        "maps_label": "Abrir no Google Maps",
+        "check_label": "Avaliações ao vivo em",
+        "next_h": "Continue lendo",
+        "foot_a": "Um arquivo pessoal de viagens cervejeiras. Cada distância medida, cada lugar com link.",
+        "foot_index": "Todos os posts",
+        "foot_archive": "O arquivo",
+        "visited": "visitada em",
+        "planned": "planejada",
+        "days": "dias",
+        "nights": "noites",
+        "km": "km de carro",
+        "type_brewery": "Cervejaria",
+        "type_city": "Cidade",
+        "type_trip": "Viagem",
+        "nearby": "Parada mais próxima nas rotas",
+        "caption_default": "Placa de localização feita para este arquivo.",
+        "index_title": "Notas de estrada — Bier Reisen",
+        "index_desc": ("Textos longos sobre cada viagem, cada cidade e as cervejarias que sustentam este "
+                       "arquivo: história, o que pedir, onde comer e os detalhes que ajudam quando você "
+                       "está de fato no balcão."),
+        "index_h1": "Notas de estrada",
+        "index_lede": ("O que os dossiês não cabiam: a história por trás da cerveja, as ruas que valem a "
+                       "caminhada e as pequenas coisas práticas — onde fica a loja, quando sai o tour, "
+                       "qual porta usar."),
+        "f_all": "Tudo",
+        "f_trip": "Viagens",
+        "f_city": "Cidades",
+        "f_brewery": "Cervejarias",
+        "search_ph": "Busque um lugar, uma cidade, uma cerveja",
+        "count": "{n} de {total}",
+        "empty_a": "Nada corresponde a isso.",
+        "empty_b": "Mostrar tudo de novo",
+        "read": "Ler",
+        "section_trip": "As viagens",
+        "section_city": "As cidades",
+        "section_brewery": "As cervejarias",
+    },
+    "de": {
+        "skip": "Zum Artikel springen",
+        "crumb_label": "Pfad",
+        "blog_label": "Blog",
+        "order_h": "Was bestellen",
+        "eat_h": "Wo essen",
+        "tips_h": "Für Reisende",
+        "where_h": "Wo es liegt",
+        "maps_label": "In Google Maps öffnen",
+        "check_label": "Live-Bewertungen auf",
+        "next_h": "Weiterlesen",
+        "foot_a": "Ein persönliches Archiv von Bierreisen. Jede Distanz gemessen, jeder Ort verlinkt.",
+        "foot_index": "Alle Beiträge",
+        "foot_archive": "Das Archiv",
+        "visited": "besucht",
+        "planned": "geplant",
+        "days": "Tage",
+        "nights": "Nächte",
+        "km": "km Fahrt",
+        "type_brewery": "Brauerei",
+        "type_city": "Stadt",
+        "type_trip": "Reise",
+        "nearby": "Nächster Halt auf den Routen",
+        "caption_default": "Lageplan, für dieses Archiv gezeichnet.",
+        "index_title": "Notizen von unterwegs — Bier Reisen",
+        "index_desc": ("Lange Texte zu jeder Reise, jeder Stadt und den Brauereien, die dieses Archiv "
+                       "tragen: Geschichte, was man bestellt, wo man isst und die Details, die helfen, "
+                       "wenn man wirklich an der Theke steht."),
+        "index_h1": "Notizen von unterwegs",
+        "index_lede": ("Was in den Dossiers keinen Platz hatte: die Geschichte hinter dem Bier, die "
+                       "Straßen, die sich lohnen, und die kleinen praktischen Dinge — wo der Laden ist, "
+                       "wann die Führung läuft, welche Tür man nimmt."),
+        "f_all": "Alles",
+        "f_trip": "Reisen",
+        "f_city": "Städte",
+        "f_brewery": "Brauereien",
+        "search_ph": "Ort, Stadt oder Bier suchen",
+        "count": "{n} von {total}",
+        "empty_a": "Dazu passt nichts.",
+        "empty_b": "Wieder alles zeigen",
+        "read": "Lesen",
+        "section_trip": "Die Reisen",
+        "section_city": "Die Städte",
+        "section_brewery": "Die Brauereien",
+    },
+}
+
+TYPE_KEY = {"trip": "type_trip", "city": "type_city", "brewery": "type_brewery"}
+SECTION_KEY = {"trip": "section_trip", "city": "section_city", "brewery": "section_brewery"}

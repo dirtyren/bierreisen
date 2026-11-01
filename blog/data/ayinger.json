@@ -1,0 +1,235 @@
+{
+  "slug": "ayinger",
+  "type": "brewery",
+  "name": "Ayinger",
+  "where": "Aying, Germany",
+  "coords": [
+    47.971944,
+    11.773889
+  ],
+  "span": 0.35,
+  "subtitle_en": "A village brewery that exports and still pours at home",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Ayinger+Br%C3%A4ust%C3%BCberl+M%C3%BCnchener+Stra%C3%9Fe+2+Aying",
+  "trips": [
+    "2019"
+  ],
+  "related": [
+    "munich",
+    "andechs",
+    "augustiner",
+    "trip-2019"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundação",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1878"
+      }
+    },
+    {
+      "k": {
+        "en": "Jahrhundertbier",
+        "pt": "Jahrhundertbier",
+        "de": "Jahrhundertbier"
+      },
+      "v": {
+        "en": "5.5%"
+      }
+    },
+    {
+      "k": {
+        "en": "Celebrator",
+        "pt": "Celebrator",
+        "de": "Celebrator"
+      },
+      "v": {
+        "en": "6.7%"
+      }
+    },
+    {
+      "k": {
+        "en": "from Munich",
+        "pt": "de Munique",
+        "de": "von München"
+      },
+      "v": {
+        "en": "25 km, S5",
+        "pt": "25 km, S5",
+        "de": "25 km, S5"
+      }
+    },
+    {
+      "k": {
+        "en": "own well",
+        "pt": "poço próprio",
+        "de": "eigener Brunnen"
+      },
+      "v": {
+        "en": "176 m"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Aying is a village of a few thousand people twenty-five kilometres south-east of Munich with one brewery, founded in 1878 and run by the Inselkammer family since 1936. The beer travels as far as America; the Bräustüberl is where it tastes of the village rather than the export crate. Munich is forty minutes away by S-Bahn.",
+    "pt": "Aying é um vilarejo de alguns milhares de pessoas a vinte e cinco quilômetros a sudeste de Munique com uma cervejaria, fundada em 1878 e administrada pela família Inselkammer desde 1936. A cerveja viaja até a América; a Bräustüberl é onde ela tem gosto de vilarejo e não de caixa de exportação. Munique fica a quarenta minutos de S-Bahn.",
+    "de": "Aying ist ein Dorf mit ein paar tausend Einwohnern, fünfundzwanzig Kilometer südöstlich von München, mit einer Brauerei, gegründet 1878 und seit 1936 von der Familie Inselkammer geführt. Das Bier reist bis nach Amerika; im Bräustüberl schmeckt es nach Dorf und nicht nach Exportkiste. München ist mit der S-Bahn vierzig Minuten entfernt."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Built behind the inn",
+        "pt": "Construída atrás da estalagem",
+        "de": "Hinter dem Gasthof gebaut"
+      },
+      "p": [
+        {
+          "en": "Johann Liebhard took over the family farm and inn, Zum Pfleger, in 1876; the estate had been in the family since about 1810. The inn already had the right to serve beer and a butcher's shop, but no brewhouse. He began building one behind the house in 1877, with a malt house and fermentation cellars, and hauled the equipment from Sauerlach station by horse and cart because Aying had no railway of its own.",
+          "pt": "Johann Liebhard assumiu a fazenda e estalagem da família, a Zum Pfleger, em 1876; a propriedade estava nas mãos da família desde cerca de 1810. A estalagem já tinha o direito de servir cerveja e um açougue, mas não uma casa de brassagem. Ele começou a construir uma atrás da casa em 1877, com malteria e adegas de fermentação, e transportou o equipamento da estação de Sauerlach em carroça, porque Aying não tinha ferrovia própria.",
+          "de": "Johann Liebhard übernahm 1876 den Hof und Gasthof der Familie, Zum Pfleger; das Anwesen war seit etwa 1810 in Familienbesitz. Der Gasthof hatte bereits das Schankrecht und eine Metzgerei, aber kein Sudhaus. 1877 begann er hinter dem Haus mit dem Bau, samt Mälzerei und Gärkellern, und schaffte die Geräte mit Pferd und Wagen vom Bahnhof Sauerlach heran, weil Aying keine eigene Bahn hatte."
+        },
+        {
+          "en": "The first beer was served on 2 February 1878. Liebhard was a farmer, not a brewer, so he hired Johann Radler as brewmaster. Brewing was a winter trade then, from Michaelmas on 29 September to St George's Day on 23 April, because there was no refrigeration; the rest of the year the cellars held ice cut from the ponds. The diary entry for the first day records two customers falling over ten times on the way home.",
+          "pt": "A primeira cerveja foi servida em 2 de fevereiro de 1878. Liebhard era fazendeiro, não cervejeiro, então contratou Johann Radler como mestre-cervejeiro. A produção era um ofício de inverno, de São Miguel, em 29 de setembro, ao dia de São Jorge, em 23 de abril, porque não havia refrigeração; no resto do ano as adegas guardavam gelo cortado dos lagos. O diário do primeiro dia registra dois clientes caindo dez vezes no caminho de casa.",
+          "de": "Das erste Bier wurde am 2. Februar 1878 ausgeschenkt. Liebhard war Bauer, kein Brauer, also stellte er Johann Radler als Braumeister ein. Brauen war damals ein Winterberuf, von Michaeli am 29. September bis Georgi am 23. April, weil es keine Kühlung gab; im Rest des Jahres lag Eis aus den Weihern in den Kellern. Der Tagebucheintrag zum ersten Tag vermerkt zwei Gäste, die auf dem Heimweg zehnmal hinfielen."
+        },
+        {
+          "en": "He bought the rival Sixthof in 1897 and became the only brewer in the village. The railway reached Aying in 1904, which made the Munich trade possible. After the Zehentmair era, August Zehentmair died in 1936 and his daughter Maria Kreszenz and her husband Franz Inselkammer took over; the family bought the Platzl in Munich, opposite the Hofbräuhaus, in 1953. The present brewhouse opened in 1999.",
+          "pt": "Ele comprou o Sixthof rival em 1897 e se tornou o único cervejeiro da vila. A ferrovia chegou a Aying em 1904, o que tornou possível o comércio com Munique. Depois da era Zehentmair, August Zehentmair morreu em 1936 e a filha Maria Kreszenz e o marido Franz Inselkammer assumiram; a família comprou o Platzl em Munique, em frente à Hofbräuhaus, em 1953. A casa de brassagem atual abriu em 1999.",
+          "de": "1897 kaufte er den konkurrierenden Sixthof und war damit der einzige Bräu im Dorf. 1904 erreichte die Bahn Aying, was den Handel mit München möglich machte. August Zehentmair starb 1936, und seine Tochter Maria Kreszenz und ihr Mann Franz Inselkammer übernahmen; 1953 kaufte die Familie das Platzl in München, gegenüber dem Hofbräuhaus. Das heutige Sudhaus wurde 1999 eröffnet. Das Dorf hatte damit seinen einzigen Bräu."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The beer",
+        "pt": "A cerveja",
+        "de": "Das Bier"
+      },
+      "p": [
+        {
+          "en": "Jahrhundertbier, 5.5 per cent, was first brewed in 1978 for the brewery's centenary and never left: a pale export, malty and soft, with a bitterness that arrives late and does not stay. It is the beer to order first here, because it explains the house. Altbairisch Dunkel, 5.0 per cent, is the older Munich style, dark, clean and dry, and the one that tastes most of the village.",
+          "pt": "A Jahrhundertbier, 5,5%, foi produzida pela primeira vez em 1978 para o centenário da cervejaria e nunca saiu de linha: uma cerveja export clara, maltada e macia, com um amargor que chega tarde e não fica. É a primeira a pedir aqui, porque explica a casa. A Altbairisch Dunkel, 5,0%, é o estilo muniquês mais antigo, escura, limpa e seca, e a que mais tem gosto de vilarejo.",
+          "de": "Das Jahrhundertbier mit 5,5 Prozent wurde 1978 zum hundertjährigen Bestehen gebraut und blieb: ein helles Export, malzig und weich, mit einer Bitterkeit, die spät kommt und nicht bleibt. Es ist das erste Bier, das man hier bestellen sollte, weil es das Haus erklärt. Altbairisch Dunkel mit 5,0 Prozent ist der ältere Münchner Stil, dunkel, sauber und trocken, und das Bier, das am meisten nach Dorf schmeckt."
+        },
+        {
+          "en": "Celebrator, 6.7 per cent and 18.5 degrees Plato, is the doppelbock: dark, rich, with a long malt finish and enough strength to end a meal. Kirtabier, 5.8 per cent, appears around the parish fair in autumn. Jubiläumsbier, unfiltered at 5.0, is brewed to the anniversary recipe. Bräuweisse, Urweisse and Lager Hell cover the everyday orders, and all of it is brewed with water from the brewery's own well, 176 metres down.",
+          "pt": "A Celebrator, 6,7% e 18,5 graus Plato, é o doppelbock: escura, rica, com final longo de malte e força suficiente para encerrar uma refeição. A Kirtabier, 5,8%, aparece perto da festa da paróquia no outono. A Jubiläumsbier, não filtrada, 5,0%, é feita com a receita do aniversário. Bräuweisse, Urweisse e Lager Hell cobrem os pedidos do dia a dia, e tudo é produzido com água do poço próprio da cervejaria, a 176 metros.",
+          "de": "Celebrator mit 6,7 Prozent und 18,5 Grad Plato ist der Doppelbock: dunkel, reich, mit langem Malzabgang und genug Kraft, um ein Essen zu beenden. Kirtabier mit 5,8 Prozent erscheint im Herbst zur Kirchweih. Jubiläumsbier, ungefiltert mit 5,0, wird nach dem Jubiläumsrezept gebraut. Bräuweisse, Urweisse und Lager Hell decken den Alltag ab, und alles wird mit Wasser aus dem eigenen Brunnen der Brauerei gebraut, 176 Meter tief."
+        },
+        {
+          "en": "The brewery is small by German standards, around 90,000 hectolitres a year, and exports a good share of it. That sets the tone: the beer is brewed to be clean and consistent rather than extreme, and the range has not chased fashion. The 1999 brewhouse was built to make the same beer more reliably, not a different one, which is a more interesting decision than it sounds.",
+          "pt": "A cervejaria é pequena para os padrões alemães, cerca de 90 mil hectolitros por ano, e exporta boa parte disso. Isso define o tom: a cerveja é feita para ser limpa e consistente, não extrema, e a linha não correu atrás de moda. A casa de brassagem de 1999 foi construída para fazer a mesma cerveja com mais confiabilidade, não uma diferente, o que é uma decisão mais interessante do que parece.",
+          "de": "Die Brauerei ist für deutsche Verhältnisse klein, rund 90.000 Hektoliter im Jahr, und exportiert einen guten Teil davon. Das bestimmt den Ton: Das Bier wird sauber und gleichmäßig gebraut, nicht extrem, und das Sortiment ist keiner Mode gefolgt. Das Sudhaus von 1999 sollte dasselbe Bier zuverlässiger machen, kein anderes, was eine interessantere Entscheidung ist, als es klingt. Das Bier blieb, wie es war."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The village",
+        "pt": "O vilarejo",
+        "de": "Das Dorf"
+      },
+      "p": [
+        {
+          "en": "The Bräustüberl at Münchener Straße 2 is the old brewery inn: low rooms, a beer garden behind, and a menu of Bavarian cooking that does not try to be a city restaurant. Roast pork, dumplings, cold cuts, cheese, a strudel. The rooms are low and the light comes in from the street; in summer the garden is the only sensible place to sit. The Brauereigasthof around the corner has rooms, which is the sensible way to do this village without watching the last train.",
+          "pt": "A Bräustüberl, na Münchener Straße 2, é a antiga estalagem da cervejaria: salas baixas, um biergarten atrás e um menu de cozinha bávara que não tenta ser restaurante de cidade. Porco assado, bolinhos, frios, queijo, um strudel. As salas são baixas e a luz entra pela rua; no verão o jardim é o único lugar sensato para sentar. O Brauereigasthof logo adiante tem quartos, que é a maneira sensata de conhecer este vilarejo sem depender do último trem.",
+          "de": "Das Bräustüberl in der Münchener Straße 2 ist der alte Brauereigasthof: niedrige Stuben, ein Biergarten dahinter und eine Karte bayerischer Küche, die kein Stadtrestaurant sein will. Schweinsbraten, Knödel, Aufschnitt, Käse, ein Strudel. Die Stuben sind niedrig, das Licht kommt von der Straße; im Sommer ist der Garten der einzige vernünftige Platz. Der Brauereigasthof um die Ecke hat Zimmer, was der vernünftige Weg ist, dieses Dorf zu besuchen, ohne auf den letzten Zug zu achten."
+        },
+        {
+          "en": "The S5 from Marienplatz takes about forty minutes and runs every half hour; the station is a few minutes from the Bräustüberl, and the village is small enough to cross in ten. There is a church, a brewery and not much in between, and the walk from one to the other takes less time than reading the menu. The Sixthof, the rival brewery Liebhard bought in 1897, is now a local history museum.",
+          "pt": "A S5 da Marienplatz leva cerca de quarenta minutos e passa a cada meia hora; a estação fica a poucos minutos da Bräustüberl, e o vilarejo é pequeno o bastante para atravessar em dez. Há uma igreja, uma cervejaria e pouca coisa entre as duas, e a caminhada de uma à outra leva menos tempo do que ler o menu. O Sixthof, a cervejaria rival que Liebhard comprou em 1897, hoje é um museu de história local.",
+          "de": "Die S5 vom Marienplatz braucht etwa vierzig Minuten und fährt alle halbe Stunde; der Bahnhof liegt wenige Minuten vom Bräustüberl, und das Dorf ist in zehn Minuten durchquert. Es gibt eine Kirche, eine Brauerei und nicht viel dazwischen, und der Weg von einer zur anderen dauert kürzer als das Lesen der Karte. Der Sixthof, die konkurrierende Brauerei, die Liebhard 1897 kaufte, ist heute ein Heimatmuseum."
+        },
+        {
+          "en": "The Bräukirta on the second weekend of October fills the village with a beer tent, a market and a fair, and is the one day the place is busy. Otherwise, go on a weekday, walk the single street, sit in the garden, and take the afternoon train back. The brewery shop sells bottles and crates, which is cheaper than carrying them from Munich. Check the shop's hours before making the trip; the village is quiet enough that they matter.",
+          "pt": "A Bräukirta, no segundo fim de semana de outubro, enche o vilarejo com uma tenda de cerveja, um mercado e uma feira, e é o único dia em que o lugar fica movimentado. Fora disso, vá num dia de semana, caminhe pela rua única, sente no jardim e volte no trem da tarde. A loja da cervejaria vende garrafas e caixas, o que sai mais barato do que carregá-las de Munique. Confira o horário da loja antes de ir; o vilarejo é quieto o bastante para que isso importe.",
+          "de": "Die Bräukirta am zweiten Oktoberwochenende füllt das Dorf mit Bierzelt, Markt und Jahrmarkt und ist der eine Tag, an dem hier etwas los ist. Sonst an einem Wochentag fahren, die einzige Straße entlanggehen, in den Garten setzen und mit dem Nachmittagszug zurückfahren. Der Brauereiladen verkauft Flaschen und Kästen, billiger als sie aus München zu schleppen. Vorher die Öffnungszeiten des Ladens prüfen; das Dorf ist ruhig genug, dass sie zählen."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Jahrhundertbier: 5.5 per cent, pale, malty, and the beer that explains the house.",
+      "pt": "Jahrhundertbier: 5,5%, clara, maltada, e a cerveja que explica a casa.",
+      "de": "Jahrhundertbier: 5,5 Prozent, hell, malzig, das Bier, mit dem das Haus sich erklärt."
+    },
+    {
+      "en": "Altbairisch Dunkel, the older Munich style, dark and dry.",
+      "pt": "Altbairisch Dunkel, o estilo muniquês mais antigo, escura e seca.",
+      "de": "Altbairisch Dunkel, der ältere Münchner Stil, dunkel und trocken."
+    },
+    {
+      "en": "Celebrator, 6.7 per cent, if the meal is going to last another hour.",
+      "pt": "Celebrator, 6,7%, se a refeição ainda for durar uma hora.",
+      "de": "Celebrator, 6,7 Prozent, wenn das Essen noch eine Stunde dauern soll."
+    },
+    {
+      "en": "Kirtabier in October, 5.8 per cent, brewed for the fair.",
+      "pt": "Kirtabier em outubro, 5,8%, feita para a festa.",
+      "de": "Kirtabier im Oktober, 5,8 Prozent, für die Kirchweih gebraut."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Schweinsbraten with dumplings and a beer gravy, the plate the inn has always done.",
+      "pt": "Schweinsbraten com bolinhos e molho de cerveja, o prato que a estalagem sempre fez.",
+      "de": "Schweinsbraten mit Knödeln und Biersoße, der Teller, den der Gasthof immer schon gemacht hat."
+    },
+    {
+      "en": "A Brotzeit of cold cuts, mountain cheese and rye bread, with a radish and salt.",
+      "pt": "Uma Brotzeit de frios, queijo de montanha e pão de centeio, com rabanete e sal.",
+      "de": "Eine Brotzeit aus Aufschnitt, Bergkäse und Roggenbrot, mit Radi und Salz."
+    },
+    {
+      "en": "Apfelstrudel with cream, if the afternoon train is not imminent.",
+      "pt": "Strudel de maçã com creme, se o trem da tarde não estiver iminente.",
+      "de": "Apfelstrudel mit Sahne, wenn der Nachmittagszug nicht gleich fährt."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The S5 takes about forty minutes from Marienplatz and runs every half hour. Check the return time before you sit down.",
+      "pt": "O S5 leva cerca de quarenta minutos da Marienplatz e passa a cada meia hora. Confira o horário de volta antes de sentar.",
+      "de": "Die S5 braucht vom Marienplatz etwa vierzig Minuten und fährt alle halbe Stunde. Vor dem Hinsetzen die Rückfahrt prüfen."
+    },
+    {
+      "en": "Book a room at the Brauereigasthof if you want the evening, which is the better half of a village visit.",
+      "pt": "Reserve um quarto no Brauereigasthof se quiser a noite, que é a melhor metade de uma visita ao vilarejo.",
+      "de": "Ein Zimmer im Brauereigasthof buchen, wenn man den Abend will, die bessere Hälfte eines Dorfbesuchs."
+    },
+    {
+      "en": "The Bräukirta falls on the second weekend of October. Book ahead or avoid it entirely.",
+      "pt": "A Bräukirta cai no segundo fim de semana de outubro. Reserve antes ou evite de vez.",
+      "de": "Die Bräukirta liegt am zweiten Oktoberwochenende. Rechtzeitig buchen oder ganz meiden."
+    },
+    {
+      "en": "Brewery tours run by arrangement at the Münchener Straße site; ask ahead rather than turning up.",
+      "pt": "As visitas à cervejaria acontecem com agendamento no endereço da Münchener Straße; pergunte antes em vez de aparecer.",
+      "de": "Brauereiführungen gibt es nach Absprache am Standort Münchener Straße; vorher fragen statt einfach auftauchen."
+    },
+    {
+      "en": "The shop at the brewery sells bottles and crates. Buy there, not at the station in Munich.",
+      "pt": "A loja da cervejaria vende garrafas e caixas. Compre lá, não na estação em Munique.",
+      "de": "Der Laden an der Brauerei verkauft Flaschen und Kästen. Dort kaufen, nicht am Bahnhof in München."
+    }
+  ],
+  "links": [
+    {
+      "label": "Brauerei Aying",
+      "url": "https://www.ayinger.de/"
+    },
+    {
+      "label": "Brauereigasthof Aying",
+      "url": "https://brauereigasthof-aying.de/"
+    },
+    {
+      "label": "Brauerei Aying (Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Brauerei_Aying"
+    }
+  ]
+}

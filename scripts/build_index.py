@@ -21,6 +21,20 @@ PATHS = {"en": "", "pt": "pt/", "de": "de/"}
 LINKS = {"en": "index.html", "pt": "pt/index.html", "de": "de/index.html"}
 OG_LOCALE = {"en": "en_GB", "pt": "pt_BR", "de": "de_DE"}
 
+# First visit on the root page: follow the reader's browser language unless
+# they have already chosen one. The switcher and ?lang= store the choice.
+LANG_BOOT = """  try {
+    var q = new URLSearchParams(location.search).get('lang');
+    var stored = localStorage.getItem('bierreisen:lang');
+    if (q) { localStorage.setItem('bierreisen:lang', q); }
+    else if (!stored) {
+      var nav = (navigator.language || 'en').toLowerCase();
+      if (nav.indexOf('de') === 0) location.replace('de/index.html');
+      else if (nav.indexOf('pt') === 0) location.replace('pt/index.html');
+    }
+  } catch (e) {}"""
+
+
 
 def load(rel: str) -> dict:
     return json.loads((ROOT / rel).read_text())
@@ -228,6 +242,9 @@ for lang in LANGS:
             .replace("__FOOT_HOW__", esc(ui["foot_how"]))
             .replace("__FOOT_DATA__", esc(ui["foot_data"]))
             .replace("__FOOT_POSTERS__", esc(ui["foot_posters"]))
+            .replace("__FOOT_BLOG__", esc(ui["foot_blog"]))
+            .replace("__BLOG_URL__", f"{base}blog/{lang}/index.html")
+            .replace("__LANG_BOOT__", LANG_BOOT if lang == "en" else "")
             .replace("__LANG_LABEL__", esc(ui["lang_label"]))
             .replace("__LANGS__", lang_switch(lang, base))
             .replace("__ENTRIES__", entries)
@@ -261,6 +278,17 @@ for t in YEARS:
 for key, _meta, file, _tags in IDEAS_ORDER:
     sm.append(f"  <url><loc>{SITE}/AI-suggested-trips/{file}</loc><priority>0.6</priority>"
               f"<changefreq>yearly</changefreq></url>")
+
+# blog: three language indexes plus every post in every language
+blog_posts = sorted((ROOT / "blog" / "data").glob("*.json"))
+for lang in LANGS:
+    sm.append(f"  <url><loc>{SITE}/blog/{lang}/</loc><priority>0.8</priority>"
+              f"<changefreq>weekly</changefreq></url>")
+for f in blog_posts:
+    slug = f.stem
+    for lang in LANGS:
+        sm.append(f"  <url><loc>{SITE}/blog/{lang}/{slug}/</loc><priority>0.7</priority>"
+                  f"<changefreq>yearly</changefreq></url>")
 sm.append("</urlset>")
 (ROOT / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")
 

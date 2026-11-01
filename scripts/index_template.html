@@ -79,6 +79,9 @@ img{display:block;max-width:100%;height:auto}
   font-weight:700;text-decoration:none;padding:.85rem 1.5rem;border-radius:2px;font-size:.95rem;
   letter-spacing:.01em;transition:background .18s ease,transform .18s ease}
 .hero-cta:hover{background:#f2b62a;transform:translateY(-1px)}
+.hero-ghost{display:inline-flex;align-items:center;gap:.45rem;margin-left:1.3rem;color:var(--muted);
+  text-decoration:none;font-size:.93rem;border-bottom:1px dotted var(--rule);padding-bottom:.15rem}
+.hero-ghost:hover{color:var(--text);border-bottom-color:var(--gold)}
 .hero-cta span{transition:transform .18s ease}
 .hero-cta:hover span{transform:translateX(3px)}
 
@@ -212,6 +215,7 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
     <h1>__H1_A__<span class="next">__H1_B__</span></h1>
     <p class="standfirst">__STANDFIRST__</p>
     <a class="hero-cta" href="#trips">__CTA__ <span aria-hidden="true">→</span></a>
+    <a class="hero-ghost" href="__BLOG_URL__">__FOOT_BLOG__ <span aria-hidden="true">→</span></a>
   </div>
 </header>
 
@@ -259,7 +263,8 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
 <footer>
   <div class="foot">
     <p><strong style="color:var(--text)">Bier Reisen</strong>. __FOOT_A__</p>
-    <p><a href="__BASE__README.md">__FOOT_HOW__</a> ·
+    <p><a href="__BLOG_URL__">__FOOT_BLOG__</a> ·
+      <a href="__BASE__README.md">__FOOT_HOW__</a> ·
       <a href="__BASE__2027/data/route-2027.json">__FOOT_DATA__</a> ·
       <a href="__BASE__assets/maps/europe.png">__FOOT_POSTERS__</a></p>
   </div>
@@ -267,6 +272,14 @@ footer{border-top:1px solid var(--rule);background:var(--bg-raise)}
 
 <script>
 (function () {
+  var langLinks = document.querySelectorAll('.langs a');
+  for (var i = 0; i < langLinks.length; i++) {
+    langLinks[i].addEventListener('click', function () {
+      try { localStorage.setItem('bierreisen:lang', this.getAttribute('hreflang')); } catch (e) {}
+    });
+  }
+__LANG_BOOT__
+
   var COUNT = __JS_COUNT__;
   var entries = Array.prototype.slice.call(document.querySelectorAll('.entry, .shelf-item'));
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));

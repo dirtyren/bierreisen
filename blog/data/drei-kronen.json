@@ -1,0 +1,235 @@
+{
+  "slug": "drei-kronen",
+  "type": "brewery",
+  "name": "Drei Kronen",
+  "where": "Memmelsdorf, Germany",
+  "coords": [
+    49.933,
+    10.9531
+  ],
+  "span": 0.3,
+  "subtitle_en": "A brewery inn opposite the church, licensed since 1457",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Drei+Kronen+Hauptstrasse+19+Memmelsdorf",
+  "trips": [
+    "2024",
+    "2026"
+  ],
+  "related": [
+    "memmelsdorf",
+    "merkendorf",
+    "brauerei-wagner",
+    "trip-2024"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "licensed since",
+        "pt": "licença desde",
+        "de": "Schankerlaubnis seit"
+      },
+      "v": {
+        "en": "1457"
+      }
+    },
+    {
+      "k": {
+        "en": "building",
+        "pt": "prédio",
+        "de": "Gebäude"
+      },
+      "v": {
+        "en": "1748"
+      }
+    },
+    {
+      "k": {
+        "en": "former",
+        "pt": "antes",
+        "de": "zuvor"
+      },
+      "v": {
+        "en": "the Vogtei",
+        "pt": "a Vogtei",
+        "de": "die Vogtei"
+      }
+    },
+    {
+      "k": {
+        "en": "smoked beer",
+        "pt": "cerveja defumada",
+        "de": "Rauchbier"
+      },
+      "v": {
+        "en": "Stöffla",
+        "pt": "Stöffla",
+        "de": "Stöffla"
+      }
+    },
+    {
+      "k": {
+        "en": "to Bamberg",
+        "pt": "até Bamberg",
+        "de": "bis Bamberg"
+      },
+      "v": {
+        "en": "6 km",
+        "pt": "6 km",
+        "de": "6 km"
+      }
+    }
+  ],
+  "lede": {
+    "en": "The Drei Kronen stands opposite the church in Memmelsdorf, which is where a Franconian brewery inn is supposed to stand. The building dates from 1748 and began as the Vogtei, the bailiff's house for the prince-bishopric. The licence is older than the building: beer has been sold here since 1457, and the family at the stove is the fourth generation.",
+    "pt": "O Drei Kronen fica em frente à igreja de Memmelsdorf, que é onde uma estalagem-cervejaria francônia deve ficar. O prédio é de 1748 e começou como Vogtei, a casa do administrador do principado episcopal. A licença é mais antiga que o prédio: vende-se cerveja aqui desde 1457, e a família no fogão está na quarta geração.",
+    "de": "Die Drei Kronen liegt gegenüber der Kirche von Memmelsdorf, wo ein fränkischer Brauereigasthof hingehört. Das Gebäude stammt von 1748 und war zunächst die Vogtei, das Haus des fürstbischöflichen Vogts. Die Schankerlaubnis ist älter als das Haus: Seit 1457 wird hier Bier ausgeschenkt, und die Familie am Herd ist die vierte Generation."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Five centuries opposite the church",
+        "pt": "Cinco séculos em frente à igreja",
+        "de": "Fünf Jahrhunderte gegenüber der Kirche"
+      },
+      "p": [
+        {
+          "en": "The property is first recorded in 1457, when a tailor bought it, and it has carried a licence to sell beer for most of the time since. The present building went up in 1748 as the Vogtei of Memmelsdorf, the office of the prince-bishopric's bailiff, which is why it is larger and more formal than the farmhouses around it. From the street you see the church first, then the house, with its mansard roof and the ice tower behind.",
+          "pt": "O imóvel aparece pela primeira vez em 1457, quando um alfaiate o comprou, e desde então manteve licença para vender cerveja na maior parte do tempo. O prédio atual foi erguido em 1748 como Vogtei de Memmelsdorf, o escritório do administrador do principado episcopal, e é por isso que é maior e mais formal que as casas de fazenda ao redor.",
+          "de": "Das Anwesen ist 1457 erstmals belegt, als ein Schneider es kaufte, und seither wurde hier fast durchgehend Bier ausgeschenkt. Das heutige Gebäude entstand 1748 als Vogtei von Memmelsdorf, als Amtssitz des Vogts des Hochstifts — deshalb ist es größer und förmlicher als die Bauernhäuser ringsum. Von der Straße sieht man zuerst die Kirche und dann das Haus, mit seinem Mansarddach und dem Eisturm dahinter."
+        },
+        {
+          "en": "Behind the house stands the ice tower, built around 1880 in brick Gothic, with an open gallery near the top. Ice was cut from the ponds in winter and packed inside, then used through the summer to keep the beer cool before refrigeration reached the village. It is a listed building now, and so is the main house, both under the Bavarian monument law, and the brewery tour goes up the tower.",
+          "pt": "Atrás da casa está a torre de gelo, construída por volta de 1880 em gótico de tijolos, com uma galeria aberta perto do topo. O gelo era cortado nos lagos no inverno e guardado ali dentro, e usado ao longo do verão para manter a cerveja fria antes de a refrigeração chegar ao vilarejo. Hoje é patrimônio tombado, e a visita guiada sobe até ela.",
+          "de": "Hinter dem Haus steht der Eisturm, um 1880 in Backsteingotik gebaut, mit einer offenen Galerie nahe der Spitze. Im Winter wurde Eis aus den Weihern geschnitten und darin eingelagert, im Sommer kühlte es das Bier, lange bevor die Kältemaschine das Dorf erreichte. Der Turm steht unter Denkmalschutz, das Haupthaus ebenso, beide nach dem bayerischen Denkmalschutzgesetz, und bei der Führung geht es hinauf."
+        },
+        {
+          "en": "The name comes from the Three Kings, not from three crowns on a shield. The Straub family has run the house for four generations; since March 2016 the kettles belong to Isabella Mereien, née Straub, and Markus Mereien, who met at the master brewers' school in Munich in 2007. She grew up in the building. He did not. Three crowns hang over the door, and the brewhouse still keeps a coolship.",
+          "pt": "O nome vem dos Três Reis Magos, não de três coroas num escudo. A família Straub administra a casa há quatro gerações; desde março de 2016 os tanques pertencem a Isabella Mereien, nascida Straub, e Markus Mereien, que se conheceram na escola de mestres cervejeiros de Munique em 2007. Ela cresceu no prédio. Ele não. Três coroas penduradas sobre a porta, e a fábrica ainda mantém o coolship.",
+          "de": "Der Name kommt von den Heiligen Drei Königen, nicht von drei Kronen im Wappen. Seit vier Generationen führt die Familie Straub das Haus; seit März 2016 gehören die Kessel Isabella Mereien, geborene Straub, und Markus Mereien, die sich 2007 an der Braumeisterschule in München kennenlernten. Sie ist in diesem Haus aufgewachsen. Er nicht. Drei Kronen hängen über der Tür, und das Sudhaus arbeitet noch mit dem Kühlschiff."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The brewhouse",
+        "pt": "A fábrica",
+        "de": "Das Sudhaus"
+      },
+      "p": [
+        {
+          "en": "In 2004 the old brewhouse was taken out and replaced. The family chose a classical, manually worked kit from Kaspar Schulz in Bamberg and insisted on keeping the coolship, the shallow open vessel where the wort cools overnight and unwanted aromas leave with the steam. The first brew ran on 1 December 2004, a pale beer named Balthasar after one of the three kings.",
+          "pt": "Em 2004 a antiga fábrica foi desmontada e substituída. A família escolheu um equipamento clássico, operado à mão, da Kaspar Schulz de Bamberg, e fez questão de manter o coolship, a tina rasa e aberta onde o mosto esfria durante a noite e os aromas indesejados saem com o vapor. A primeira brassagem foi em 1º de dezembro de 2004, uma cerveja clara batizada Balthasar, um dos três reis.",
+          "de": "2004 wurde das alte Sudhaus ausgebaut und ersetzt. Die Familie entschied sich für eine klassische, von Hand geführte Anlage von Kaspar Schulz aus Bamberg und bestand auf dem Kühlschiff, der flachen offenen Wanne, in der die Würze über Nacht abkühlt und unerwünschte Aromen mit dem Dampf entweichen. Der erste Sud lief am 1. Dezember 2004: ein helles Bier namens Balthasar, nach einem der Heiligen Drei Könige."
+        },
+        {
+          "en": "The range is wide for a village brewery. There is the 1457 Lager, the pale Helle Lotte, the Stöffla, a wheat beer called Orgelweiße, a Böckla, a Kerwabier for the church fair, a Fastenbier in Lent, and experiments: a coolship IPA called Nessie and a pink beer brewed by women for women. Most of it is sold in the house and within a few kilometres of it.",
+          "pt": "A linha é ampla para uma cervejaria de vilarejo. Há a 1457 Lager, a clara Helle Lotte, o Stöffla, uma cerveja de trigo chamada Orgelweiße, uma Böckla, uma Kerwabier para a festa da igreja, uma Fastenbier na Quaresma, e experimentos: uma IPA de coolship chamada Nessie e uma cerveja rosa feita por mulheres para mulheres. A maior parte é vendida na casa e num raio de poucos quilômetros.",
+          "de": "Die Palette ist breit für eine Dorfbrauerei. Es gibt das 1457 Lager, das helle Helle Lotte, das Stöffla, ein Weizenbier namens Orgelweiße, ein Böckla, ein Kerwabier zur Kirchweih, ein Fastenbier in der Fastenzeit und Versuche: ein Coolship-IPA namens Nessie und ein rosa Bier, von Frauen für Frauen gebraut. Gebraut wird nach dem bayerischen Reinheitsgebot von 1516. Das meiste geht im Haus und im Umkreis weniger Kilometer weg."
+        },
+        {
+          "en": "The Stöffla is the beer with the medal: gold at the European Beer Star in 2003, in the smoked beer class, won with the old brewhouse. It is lightly smoky rather than blunt, with aroma hops from Spalt in the nose, and it is the reason people who know Franconia know this village. The Orgelweiße has a story too: the first brew in the early 1990s paid for the new organ in the church across the road.",
+          "pt": "O Stöffla é a cerveja com medalha: ouro no European Beer Star de 2003, na categoria cerveja defumada, conquistado com a fábrica antiga. É levemente defumada, não brusca, com lúpulo aromático de Spalt no nariz, e é o motivo pelo qual quem conhece a Francônia conhece este vilarejo. A Orgelweiße também tem história: a primeira brassagem, no começo dos anos 1990, pagou o novo órgão da igreja do outro lado da rua.",
+          "de": "Das Stöffla ist das Bier mit der Medaille: Gold beim European Beer Star 2003 in der Klasse Rauchbier, noch mit dem alten Sudhaus. Es ist leicht rauchig statt grob, mit Spalter Aromahopfen in der Nase, und der Grund, warum man dieses Dorf kennt, wenn man Franken kennt. Auch die Orgelweiße hat eine Geschichte: Der erste Sud Anfang der 1990er bezahlte die neue Orgel der Kirche gegenüber."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Eating and sleeping",
+        "pt": "Comer e dormir",
+        "de": "Essen und schlafen"
+      },
+      "p": [
+        {
+          "en": "There are four rooms to eat in: the Gute Stube, the Kachelofenzimmer with its tiled stove, the Terrassenzimmer, and the beer garden in summer. The kitchen calls itself Franconian-modern and means it: roasts from the grandmother's cookbook, meat from the Franconian Jura, vegetables from the region, and the house beer in the sauces. Vegetarian and vegan dishes are on the card, which is not usual here.",
+          "pt": "Há quatro salões para comer: a Gute Stube, o Kachelofenzimmer com seu fogão de azulejos, o Terrassenzimmer e o beer garden no verão. A cozinha se diz francônia-moderna e é: assados do caderno da avó, carne do Jura francônio, legumes da região e a cerveja da casa nos molhos. Pratos vegetarianos e veganos estão no menu, o que não é comum por aqui.",
+          "de": "Zum Essen gibt es vier Räume: die Gute Stube, das Kachelofenzimmer mit seinem Ofen, das Terrassenzimmer und im Sommer den Biergarten. Die Küche nennt sich fränkisch-modern und meint es ernst: Braten nach dem Kochbuch der Großmutter, Fleisch von der Fränkischen Alb, Gemüse aus der Region und das eigene Bier in den Soßen. Vegetarische und vegane Gerichte stehen auf der Karte, was hier nicht selbstverständlich ist."
+        },
+        {
+          "en": "Upstairs are hotel rooms, most of them former servants' chambers and, from 1973, the old malt floor. They are ordinary rooms in a building that creaks, and the people who run them will tell you which window looks over the church. Monday is the Ruhetag; the kitchen stops at nine from Tuesday to Thursday, half past nine on Friday and Saturday, half past seven on Sunday.",
+          "pt": "Em cima ficam os quartos, a maioria antigos aposentos de criados e, a partir de 1973, o antigo sótão de malte. São quartos comuns num prédio que range, e quem administra sabe dizer qual janela dá para a igreja. Segunda é o Ruhetag; a cozinha fecha às nove de terça a quinta, às nove e meia na sexta e no sábado, e às sete e meia no domingo.",
+          "de": "Oben liegen die Hotelzimmer, meist ehemalige Gesindekammern und ab 1973 der alte Malzboden. Es sind einfache Zimmer in einem Haus, das knarrt, und die Wirtsleute sagen einem, welches Fenster zur Kirche zeigt. Montag ist Ruhetag; die Küche schließt Dienstag bis Donnerstag um neun, Freitag und Samstag um halb zehn, sonntags um halb acht. Gebucht wird am besten direkt, nicht über eine Plattform."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "1457 Lager, the everyday beer, soft and caramel-edged, named for the year on the licence.",
+      "pt": "1457 Lager, a cerveja do dia a dia, macia e com toque de caramelo, batizada pelo ano da licença.",
+      "de": "1457 Lager, das Alltagsbier, weich mit Karamellkante, benannt nach dem Jahr der Schankerlaubnis."
+    },
+    {
+      "en": "Stöffla, the smoked beer that took gold at the European Beer Star in 2003.",
+      "pt": "Stöffla, a defumada que levou ouro no European Beer Star em 2003.",
+      "de": "Stöffla, das Rauchbier, das 2003 Gold beim European Beer Star holte."
+    },
+    {
+      "en": "Helle Lotte, pale and hop-forward, if the smoke is not the point of your evening.",
+      "pt": "Helle Lotte, clara e lupulada, se a fumaça não for o ponto da sua noite.",
+      "de": "Helle Lotte, hell und hopfenbetont, falls der Rauch nicht der Punkt des Abends ist."
+    },
+    {
+      "en": "Orgelweiße between April and October, a wheat beer with a church organ behind it.",
+      "pt": "Orgelweiße entre abril e outubro, uma cerveja de trigo com um órgão de igreja por trás.",
+      "de": "Orgelweiße zwischen April und Oktober, ein Weizenbier mit einer Kirchenorgel im Rücken."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The Brauherrenspieß: pork skewer with a lager sauce and potato dumplings, the dish the house is known for.",
+      "pt": "O Brauherrenspieß: espeto de porco com molho de lager e bolinhos de batata, o prato pelo qual a casa é conhecida.",
+      "de": "Der Brauherrenspieß: Schweinespieß mit Lagerbiersoße und Kartoffelkrapfen, das Gericht, für das das Haus bekannt ist."
+    },
+    {
+      "en": "A roast from the grandmother's cookbook, with Klöße and a sauce built on the house beer.",
+      "pt": "Um assado do caderno da avó, com Klöße e um molho feito com a cerveja da casa.",
+      "de": "Ein Braten nach dem Kochbuch der Großmutter, mit Klößen und einer Soße aus dem eigenen Bier."
+    },
+    {
+      "en": "The Sunday lunch, when the village fills the Gute Stube and the kitchen stays open until half past seven.",
+      "pt": "O almoço de domingo, quando o vilarejo enche a Gute Stube e a cozinha fica aberta até as sete e meia.",
+      "de": "Der Sonntagsmittagstisch, wenn das Dorf die Gute Stube füllt und die Küche bis halb acht offen bleibt."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Monday is the Ruhetag. From Tuesday to Thursday the kitchen closes at nine, on Friday and Saturday at half past nine.",
+      "pt": "Segunda é o Ruhetag. De terça a quinta a cozinha fecha às nove, na sexta e no sábado às nove e meia.",
+      "de": "Montag ist Ruhetag. Dienstag bis Donnerstag schließt die Küche um neun, Freitag und Samstag um halb zehn."
+    },
+    {
+      "en": "Bus 907 from Bamberg's Bahnhof/Ludwigstraße, stop Memmelsdorf Markt, about fifteen minutes.",
+      "pt": "Ônibus 907 desde a Bahnhof/Ludwigstraße, em Bamberg, parada Memmelsdorf Markt, cerca de quinze minutos.",
+      "de": "Bus 907 ab Bamberg Bahnhof/Ludwigstraße bis Memmelsdorf Markt, etwa fünfzehn Minuten."
+    },
+    {
+      "en": "Cards are accepted here, which is not true of every inn in the villages around.",
+      "pt": "Cartão é aceito aqui, o que não vale para toda estalagem dos vilarejos ao redor.",
+      "de": "Karten werden hier genommen, was für nicht jedes Gasthaus in den Nachbarorten gilt."
+    },
+    {
+      "en": "Brewery tours with the master brewer can be booked through Bamberg tourism, and they include the ice tower.",
+      "pt": "Visitas à fábrica com o mestre-cervejeiro podem ser reservadas pelo turismo de Bamberg, e incluem a torre de gelo.",
+      "de": "Brauereiführungen mit dem Braumeister lassen sich über die Bamberg Tourismus buchen, inklusive Eisturm."
+    },
+    {
+      "en": "If you stay the night, ask for a room at the front: the church bell is close, and so is the morning light.",
+      "pt": "Se dormir, peça um quarto na frente: o sino da igreja é perto, e a luz da manhã também.",
+      "de": "Wer übernachtet, fragt nach einem Zimmer zur Straße: Die Kirchenglocke ist nah, das Morgenlicht auch."
+    }
+  ],
+  "links": [
+    {
+      "label": "Drei Kronen",
+      "url": "https://drei-kronen.de/en"
+    },
+    {
+      "label": "Memmelsdorf",
+      "url": "https://www.memmelsdorf.de/"
+    },
+    {
+      "label": "Gasthof Drei Kronen (Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Gasthof_Drei_Kronen_(Memmelsdorf)"
+    }
+  ]
+}

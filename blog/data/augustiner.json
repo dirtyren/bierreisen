@@ -1,0 +1,240 @@
+{
+  "slug": "augustiner",
+  "type": "brewery",
+  "name": "Augustiner-Bräu",
+  "where": "Munich, Germany",
+  "coords": [
+    48.13887,
+    11.54341
+  ],
+  "span": 0.35,
+  "subtitle_en": "Munich's oldest brewery, still pouring from wood",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Augustiner-Br%C3%A4u+Landsberger+Strasse+31+Munich",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "munich",
+    "hofbrauhaus",
+    "schneider-brauhaus",
+    "trip-2024"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first named",
+        "pt": "primeira menção",
+        "de": "erste Erwähnung"
+      },
+      "v": {
+        "en": "1328"
+      }
+    },
+    {
+      "k": {
+        "en": "Helles",
+        "pt": "Helles",
+        "de": "Helles"
+      },
+      "v": {
+        "en": "5.2%"
+      }
+    },
+    {
+      "k": {
+        "en": "Edelstoff",
+        "pt": "Edelstoff",
+        "de": "Edelstoff"
+      },
+      "v": {
+        "en": "5.6%"
+      }
+    },
+    {
+      "k": {
+        "en": "owned by",
+        "pt": "pertence a",
+        "de": "Eigentümer"
+      },
+      "v": {
+        "en": "Edith-Haberland-Wagner foundation",
+        "pt": "fundação Edith-Haberland-Wagner",
+        "de": "Edith-Haberland-Wagner-Stiftung"
+      }
+    },
+    {
+      "k": {
+        "en": "floor maltings",
+        "pt": "malteação no chão",
+        "de": "Tennenmälzereien"
+      },
+      "v": {
+        "en": "16"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Augustiner is Munich's oldest brewery, founded by its own account in 1328, and the last of the big six still owned in the city. Since 1996 it has belonged to a charitable foundation set up by the last Wagner heir, which is one reason the beer still comes out of wooden barrels.",
+    "pt": "A Augustiner é a cervejaria mais antiga de Munique, fundada segundo seus próprios registros em 1328, e a última das seis grandes que ainda pertence a donos da cidade. Desde 1996 ela pertence a uma fundação beneficente criada pela última herdeira Wagner, e essa é uma das razões pelas quais a cerveja ainda sai de barris de madeira.",
+    "de": "Augustiner ist Münchens älteste Brauerei, nach eigener Zählung gegründet 1328, und die letzte der sechs großen, die noch in der Stadt gehört wird. Seit 1996 gehört sie einer gemeinnützigen Stiftung der letzten Wagner-Erbin, und das ist einer der Gründe, warum das Bier noch aus Holzfässern kommt und bis heute im eigenen Haus gebraut wird."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "From cloister to Landsberger Straße",
+        "pt": "Do convento à Landsberger Straße",
+        "de": "Vom Kloster an die Landsberger Straße"
+      },
+      "p": [
+        {
+          "en": "The Augustinian hermits settled outside the city walls in 1294 and moved inside around 1320. Their brewery is named in 1328, the year a note places the bakers' brotherhood in the monastery's brewhouse after the fire of 1327, and that is the date the company uses. The first unambiguous record of brewing on the site is 1411. Either way it is the oldest brewery in Munich still working.",
+          "pt": "Os eremitas agostinianos se instalaram fora das muralhas em 1294 e passaram para dentro por volta de 1320. A cervejaria deles aparece nomeada em 1328, ano em que um registro situa a irmandade dos padeiros na sala de brassagem do mosteiro depois do incêndio de 1327, e é essa a data que a empresa usa. O primeiro registro inequívoco de fabricação de cerveja no local é de 1411. De todo modo, é a cervejaria mais antiga de Munique ainda em atividade.",
+          "de": "Die Augustiner-Eremiten ließen sich 1294 vor den Stadtmauern nieder und zogen um 1320 hinein. Ihre Brauerei wird 1328 genannt, in dem Jahr, in dem eine Notiz die Bäckerknechtbruderschaft nach dem Brand von 1327 in der Braustube des Klosters verortet, und dieses Datum verwendet das Unternehmen. Der erste eindeutige Beleg fürs Brauen an dieser Stelle ist von 1411. So oder so ist es die älteste noch arbeitende Brauerei Münchens."
+        },
+        {
+          "en": "Secularisation dissolved the monastery in 1803. The brewing right passed to two men, Gröber and Lankes, who were given a brewhouse in Neuhauser Straße in 1817 after a long dispute over the monastery lease. In March 1829 the authorities handed the right to Anton and Therese Wagner, a brewing family from Attaching near Freising. Anton died in the 1840s; Therese took over, bought a lager cellar on Landsberger Straße in 1857, and ran the business until her son Josef inherited it in 1858.",
+          "pt": "A secularização dissolveu o mosteiro em 1803. O direito de fabricar cerveja passou para dois homens, Gröber e Lankes, que receberam uma casa de brassagem na Neuhauser Straße em 1817 depois de uma longa disputa sobre o arrendamento do mosteiro. Em março de 1829 as autoridades entregaram o direito a Anton e Therese Wagner, uma família de cervejeiros de Attaching, perto de Freising. Anton morreu nos anos 1840; Therese assumiu, comprou uma adega de guarda na Landsberger Straße em 1857 e tocou o negócio até o filho Josef herdar tudo em 1858.",
+          "de": "Die Säkularisation löste das Kloster 1803 auf. Das Braurecht ging an zwei Männer, Gröber und Lankes, die 1817 nach einem langen Streit um die Klosterpacht eine Braustatt in der Neuhauser Straße erhielten. Im März 1829 vergaben die Behörden das Recht an Anton und Therese Wagner, eine Brauerfamilie aus Attaching bei Freising. Anton starb in den 1840er-Jahren; Therese übernahm, kaufte 1857 einen Lagerkeller an der Landsberger Straße und führte das Geschäft, bis ihr Sohn Josef 1858 erbte."
+        },
+        {
+          "en": "Josef moved the whole brewery to Landsberger Straße in 1883 and brewed there for the first time in 1884; his initials, JW, have been on the label ever since. The plant was 60 per cent destroyed by bombing in 1945 and rebuilt. Edith Haberland-Wagner, the last of the family to carry the name, died in 1996 and left her majority share to a charitable foundation, on condition that the brewery stays on Landsberger Straße and keeps its own floor maltings.",
+          "pt": "Josef transferiu toda a cervejaria para a Landsberger Straße em 1883 e brassou ali pela primeira vez em 1884; suas iniciais, JW, estão no rótulo desde então. A fábrica foi 60% destruída por bombardeios em 1945 e reconstruída. Edith Haberland-Wagner, a última da família a carregar o sobrenome, morreu em 1996 e deixou sua participação majoritária para uma fundação beneficente, com a condição de que a cervejaria fique na Landsberger Straße e mantenha a malteação própria no chão.",
+          "de": "Josef verlegte 1883 die gesamte Brauerei an die Landsberger Straße und braute dort 1884 zum ersten Mal; seine Initialen JW stehen seither auf dem Etikett. 1945 wurden die Anlagen durch Bomben zu 60 Prozent zerstört und wieder aufgebaut. Edith Haberland-Wagner, die letzte der Familie mit dem Namen, starb 1996 und vermachte ihre Mehrheitsanteile einer gemeinnützigen Stiftung, unter der Bedingung, dass die Brauerei an der Landsberger Straße bleibt und ihre eigene Tennenmälzerei betreibt."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The beer",
+        "pt": "A cerveja",
+        "de": "Das Bier"
+      },
+      "p": [
+        {
+          "en": "Nine sorts, mostly lager. Lagerbier Hell at 5.2 per cent is the volume beer, green label, known in Munich simply as the Gustl. Edelstoff at 5.6 per cent arrived in 1925 as the stronger export version and is the one to look for on tap from wood: rounder, a little sweeter, and the reason people order a second before finishing the first.",
+          "pt": "Nove cervejas, quase todas lager. A Lagerbier Hell, 5,2%, é a cerveja de volume, rótulo verde, conhecida em Munique simplesmente como Gustl. A Edelstoff, 5,6%, chegou em 1925 como a versão export mais forte e é a que se deve procurar no barril de madeira: mais redonda, um pouco mais doce, e o motivo pelo qual se pede a segunda antes de terminar a primeira.",
+          "de": "Neun Sorten, meist Lager. Das Lagerbier Hell mit 5,2 Prozent ist das Mengenbier, grünes Etikett, in München schlicht der Gustl genannt. Edelstoff mit 5,6 Prozent kam 1925 als stärkere Exportversion und ist die, nach der man am Holzfass fragen sollte: runder, etwas süßer, und der Grund, warum man das zweite bestellt, bevor das erste leer ist. Zwei Biere, die in fast jeder Münchner Wirtschaft stehen."
+        },
+        {
+          "en": "The rest of the range: Dunkel and Pils at 5.6, Weißbier at 5.4 since 1986, a Heller Bock at 7.5 in May and June, Maximator at 7.5 through Lent, and the Oktoberfestbier at 6.4, usually the strongest beer on the Wiesn. Water comes from two wells under the city, 190 and 230 metres down. The malt comes from sixteen floor maltings in the cellars, each forty metres long and ten wide.",
+          "pt": "O resto da linha: Dunkel e Pils a 5,6%, trigo a 5,4% desde 1986, um Heller Bock a 7,5% em maio e junho, o Maximator a 7,5% durante a Quaresma, e a Oktoberfestbier a 6,4%, em geral a mais forte da Wiesn. A água vem de dois poços sob a cidade, a 190 e 230 metros de profundidade. O malte sai de dezesseis eiras de malteação nos porões, cada uma com quarenta metros de comprimento e dez de largura.",
+          "de": "Der Rest der Reihe: Dunkel und Pils mit 5,6, Weißbier mit 5,4 seit 1986, ein Heller Bock mit 7,5 im Mai und Juni, Maximator mit 7,5 in der Fastenzeit und das Oktoberfestbier mit 6,4, meist das stärkste Bier auf der Wiesn. Das Wasser kommt aus zwei Brunnen unter der Stadt, 190 und 230 Meter tief. Das Malz stammt aus sechzehn Tennenmälzereien in den Kellern, jede vierzig Meter lang und zehn breit."
+        },
+        {
+          "en": "The stubbornness is the point. Augustiner barely advertises, kept the euro bottle when the others changed, and still delivers beer in wooden barrels. At the Oktoberfest it is the only brewery that taps exclusively from wood, as it has since 1987. The beer tastes of malt rather than hops, finishes dry, and is the reason Munich people will argue about a brewery for an hour and then order the same thing.",
+          "pt": "A teimosia é o ponto. A Augustiner quase não faz propaganda, manteve a garrafa euro quando as outras mudaram e ainda entrega cerveja em barris de madeira. Na Oktoberfest é a única cervejaria que tira cerveja exclusivamente do barril de madeira, como faz desde 1987. A cerveja tem gosto de malte e não de lúpulo, termina seca, e é o motivo pelo qual o muniquense discute uma cervejaria por uma hora e depois pede a mesma coisa.",
+          "de": "Die Sturheit ist das Programm. Augustiner macht kaum Werbung, blieb bei der Euro-Flasche, als die anderen wechselten, und liefert noch immer Bier in Holzfässern. Auf dem Oktoberfest ist sie die einzige Brauerei, die ausschließlich aus Holz zapft, seit 1987. Das Bier schmeckt nach Malz statt nach Hopfen, endet trocken, und ist der Grund, warum Münchner eine Stunde über eine Brauerei streiten und dann dasselbe bestellen."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Where to drink it",
+        "pt": "Onde beber",
+        "de": "Wo man es trinkt"
+      },
+      "p": [
+        {
+          "en": "The Bräustuben at Landsberger Straße 19 is the brewery tap, a canteen-sized room beside the plant. Long tables, waitresses carrying eight Maß at a time, meatloaf with a fried egg, and a mix of brewery workers and families at lunch. It is the least theatrical of the Augustiner houses and the one closest to the source, which is not the same thing as the prettiest.",
+          "pt": "A Bräustuben, na Landsberger Straße 19, é o bar da fábrica, um salão do tamanho de um refeitório ao lado da cervejaria. Mesas compridas, garçonetes carregando oito Maß de uma vez, Leberkäse com ovo frito, e uma mistura de operários da fábrica e famílias no almoço. É a menos teatral das casas Augustiner e a mais próxima da fonte, o que não é a mesma coisa que a mais bonita. O salão é barulhento, o menu é curto, e isso é intencional.",
+          "de": "Die Bräustuben in der Landsberger Straße 19 ist der Brauereiausschank, ein kantinengroßer Saal neben dem Werk. Lange Tische, Kellnerinnen mit acht Maß auf einmal, Leberkäse mit Spiegelei und mittags ein Gemisch aus Brauereiarbeitern und Familien. Es ist das untheatralischste der Augustiner-Häuser und das nächstgelegene zur Quelle, was nicht dasselbe ist wie das schönste. Der Saal ist laut, die Karte kurz, und das ist Absicht."
+        },
+        {
+          "en": "The Augustiner-Keller at Arnulfstraße 52 is the other pole. It appears on the city map in 1812 as a beer store, was bought by Josef Wagner in 1862, took its present name in 1880, and was laid out as a garden with 5,000 seats in 1896. Chestnuts, gravel, long benches, and a cellar that still sends beer up in wooden barrels. In summer the garden is the whole point, and the waitresses work the rows as if on a shift.",
+          "pt": "O Augustiner-Keller, na Arnulfstraße 52, é o outro polo. Aparece no mapa da cidade em 1812 como depósito de cerveja, foi comprado por Josef Wagner em 1862, recebeu o nome atual em 1880 e foi transformado num jardim com 5 mil lugares em 1896. Castanheiras, cascalho, bancos compridos, e uma adega que ainda sobe cerveja em barris de madeira. No verão o jardim é o programa inteiro, e as garçonetes percorrem as fileiras como quem cumpre turno.",
+          "de": "Der Augustiner-Keller an der Arnulfstraße 52 ist der andere Pol. Er steht 1812 als Bierlager auf dem Stadtplan, wurde 1862 von Josef Wagner gekauft, bekam 1880 seinen heutigen Namen und wurde 1896 als Garten mit 5.000 Plätzen angelegt. Kastanien, Kies, lange Bänke und ein Keller, der das Bier noch in Holzfässern nach oben schickt. Im Sommer ist der Garten das Ganze, und die Kellnerinnen arbeiten die Reihen ab wie eine Schicht."
+        },
+        {
+          "en": "The Stammhaus at Neuhauser Straße 27 is the city-centre room, rebuilt as a beer palace by Emanuel von Seidl in 1896 and still the busiest address between Marienplatz and the Hauptbahnhof. Around 190 Munich pubs pour Augustiner, and the brewery runs more than sixty of them itself. That is how a brewery without advertising stays visible: it owns the rooms people already use.",
+          "pt": "A Stammhaus, na Neuhauser Straße 27, é o salão do centro, reconstruído como palácio da cerveja por Emanuel von Seidl em 1896 e ainda o endereço mais movimentado entre a Marienplatz e a Hauptbahnhof. Cerca de 190 bares de Munique servem Augustiner, e a cervejaria administra mais de sessenta deles. É assim que uma cervejaria sem propaganda continua visível: ela é dona dos lugares que as pessoas já usam.",
+          "de": "Das Stammhaus in der Neuhauser Straße 27 ist der Saal im Zentrum, 1896 von Emanuel von Seidl zum Bierpalast umgebaut und noch immer die belebteste Adresse zwischen Marienplatz und Hauptbahnhof. Rund 190 Münchner Gaststätten schenken Augustiner aus, mehr als sechzig davon führt die Brauerei selbst. So bleibt eine Brauerei ohne Werbung sichtbar: Sie besitzt die Räume, in denen die Leute ohnehin sitzen."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Edelstoff from the wooden barrel, if the house has one. Ask; not every Augustiner pub does.",
+      "pt": "Edelstoff do barril de madeira, se a casa tiver. Pergunte; não todo bar Augustiner tem.",
+      "de": "Edelstoff aus dem Holzfass, wenn das Haus eines hat. Danach fragen; nicht jede Augustiner-Wirtschaft hat eins."
+    },
+    {
+      "en": "Lagerbier Hell, the green label, the beer Munich actually drinks by volume.",
+      "pt": "Lagerbier Hell, o rótulo verde, a cerveja que Munique de fato bebe em volume.",
+      "de": "Lagerbier Hell, das grüne Etikett, das Bier, das München tatsächlich in Mengen trinkt."
+    },
+    {
+      "en": "Dunkel, if you want the malt turned up and the hops turned down.",
+      "pt": "Dunkel, se quiser mais malte e menos lúpulo.",
+      "de": "Dunkel, wenn das Malz lauter und der Hopfen leiser sein soll."
+    },
+    {
+      "en": "Maximator in Lent: 7.5 per cent, dark, and sold only until Easter.",
+      "pt": "Maximator na Quaresma: 7,5%, escura, e vendida só até a Páscoa.",
+      "de": "Maximator in der Fastenzeit: 7,5 Prozent, dunkel, und nur bis Ostern."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Leberkäse with a fried egg and potato salad at the Bräustuben, cut thick and served warm.",
+      "pt": "Leberkäse com ovo frito e salada de batata na Bräustuben, cortado grosso e servido quente.",
+      "de": "Leberkäse mit Spiegelei und Kartoffelsalat in den Bräustuben, dick geschnitten und warm serviert."
+    },
+    {
+      "en": "Schweinsbraten with dumplings and a dark beer gravy, the plate that suits Edelstoff best.",
+      "pt": "Schweinsbraten com bolinhos e molho escuro de cerveja, o prato que combina melhor com a Edelstoff.",
+      "de": "Schweinsbraten mit Knödeln und dunkler Biersoße, der Teller, der am besten zu Edelstoff passt."
+    },
+    {
+      "en": "A Brotzeit of Obatzda, radishes and rye bread, the standard order at the long tables.",
+      "pt": "Uma Brotzeit de Obatzda, rabanete e pão de centeio, o pedido padrão nas mesas compridas.",
+      "de": "Eine Brotzeit mit Obatzda, Radi und Roggenbrot, die übliche Bestellung an den langen Tischen."
+    }
+  ],
+  "tips": [
+    {
+      "en": "The wooden barrel is not everywhere. The Keller and the Bräustuben are the safe bets; elsewhere, ask before ordering a round.",
+      "pt": "O barril de madeira não está em todo lugar. O Keller e a Bräustuben são apostas seguras; nos outros, pergunte antes de pedir uma rodada.",
+      "de": "Das Holzfass gibt es nicht überall. Keller und Bräustuben sind sichere Wetten; anderswo vor der Bestellung fragen."
+    },
+    {
+      "en": "The Bräustuben is a lunch room. Go at noon, sit at a long table, and be gone before the afternoon shift.",
+      "pt": "A Bräustuben é sala de almoço. Vá ao meio-dia, sente numa mesa comprida e saia antes do turno da tarde.",
+      "de": "Die Bräustuben ist ein Mittagslokal. Um zwölf hingehen, an einen langen Tisch setzen und vor der Nachmittagsschicht gehen."
+    },
+    {
+      "en": "The Keller's garden takes no reservations; the Wirtshaus inside does. In summer, the garden is the point.",
+      "pt": "O jardim do Keller não aceita reserva; o Wirtshaus lá dentro aceita. No verão, o jardim é o motivo.",
+      "de": "Der Garten des Kellers nimmt keine Reservierungen an, das Wirtshaus drinnen schon. Im Sommer ist der Garten der Grund."
+    },
+    {
+      "en": "Munich is still a cash city in the smaller rooms. Carry some, even if the big halls take cards.",
+      "pt": "Munique ainda é uma cidade de dinheiro em espécie nos salões pequenos. Leve algum, mesmo que os grandes aceitem cartão.",
+      "de": "München ist in den kleineren Räumen noch eine Bargeldstadt. Etwas mitnehmen, auch wenn die großen Säle Karten nehmen."
+    },
+    {
+      "en": "At the Oktoberfest, Augustiner is the only tent pouring exclusively from wooden barrels. It is also the tent Munich people queue for.",
+      "pt": "Na Oktoberfest, a Augustiner é a única tenda que serve exclusivamente de barris de madeira. É também a tenda pela qual o muniquense enfrenta fila.",
+      "de": "Auf dem Oktoberfest ist Augustiner das einzige Zelt, das ausschließlich aus Holzfässern zapft. Es ist auch das Zelt, für das die Münchner anstehen."
+    }
+  ],
+  "links": [
+    {
+      "label": "Augustiner-Bräu",
+      "url": "https://www.augustiner-braeu.de/"
+    },
+    {
+      "label": "Augustiner-Keller",
+      "url": "https://www.augustinerkeller.de/"
+    },
+    {
+      "label": "Augustiner Bräustuben",
+      "url": "https://braeustuben.de/"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "slug": "brussels",
+  "type": "city",
+  "name": "Brussels",
+  "where": "Brussels-Capital Region, Belgium",
+  "coords": [
+    50.8467,
+    4.3525
+  ],
+  "span": 0.09,
+  "subtitle_en": "Lambic, Trappist lists and a square that survives the crowds",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Grand-Place+Bruxelles+Belgium",
+  "trips": [
+    "2020"
+  ],
+  "related": [
+    "bruges",
+    "ghent",
+    "cantillon",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "Grand-Place",
+        "pt": "Grand-Place",
+        "de": "Grand-Place"
+      },
+      "v": {
+        "en": "68 × 110 m"
+      }
+    },
+    {
+      "k": {
+        "en": "Manneken Pis",
+        "pt": "Manneken Pis",
+        "de": "Manneken Pis"
+      },
+      "v": {
+        "en": "1619"
+      }
+    },
+    {
+      "k": {
+        "en": "Cantillon founded",
+        "pt": "fundação da Cantillon",
+        "de": "Cantillon gegründet"
+      },
+      "v": {
+        "en": "1900"
+      }
+    },
+    {
+      "k": {
+        "en": "UNESCO listing",
+        "pt": "patrimônio da UNESCO",
+        "de": "UNESCO-Status"
+      },
+      "v": {
+        "en": "1998"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Brussels is a capital that belongs to nobody in particular: French and Dutch, European institutions and a colonial history, a medieval square and a ring road. The beer is split the same way — lambic from the cellars of Anderlecht, Trappist lists in the centre, and bars that run from a 1928 Art Deco room to a menu of two thousand bottles.",
+    "pt": "Bruxelas é uma capital que não pertence a ninguém em particular: francês e holandês, instituições europeias e um passado colonial, uma praça medieval e um anel viário. A cerveja se divide do mesmo jeito — lambic das adegas de Anderlecht, listas de trapistas no centro e bares que vão de uma sala art déco de 1928 a um menu de duas mil garrafas.",
+    "de": "Brüssel ist eine Hauptstadt, die niemandem allein gehört: Französisch und Niederländisch, europäische Institutionen und eine koloniale Vergangenheit, ein mittelalterlicher Platz und ein Ring. Das Bier ist genauso geteilt — Lambik aus den Kellern von Anderlecht, Trappistenkarten im Zentrum und Bars, die von einem Art-déco-Raum von 1928 bis zu einer Karte mit zweitausend Flaschen reichen."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The centre in one walk",
+        "pt": "O centro numa caminhada",
+        "de": "Das Zentrum in einem Gang"
+      },
+      "p": [
+        {
+          "en": "The Grand-Place is 68 by 110 metres of cobbles, enclosed by guildhalls rebuilt after the French bombardment of 1695 and by the town hall, which survived it. Look up at the gold on the facades, then walk out through the Galeries Royales, the glass-roofed arcade from 1847, to the Sablon and the Marolles. The whole route is about a kilometre and takes an afternoon if you let it.",
+          "pt": "A Grand-Place tem 68 por 110 metros de pedra, cercada por casas de guildas reconstruídas depois do bombardeio francês de 1695 e pela prefeitura, que sobreviveu a ele. Olhe o ouro das fachadas e saia pelas Galeries Royales, a galeria com teto de vidro de 1847, até o Sablon e o Marolles. O percurso inteiro tem cerca de um quilômetro e toma uma tarde se você deixar.",
+          "de": "Der Grand-Place misst 68 auf 110 Meter Kopfsteinpflaster, umschlossen von nach dem französischen Bombardement von 1695 wieder aufgebauten Gildehäusern und vom Rathaus, das es überstand. Den Goldschmuck der Fassaden ansehen, dann durch die Galeries Royales hinausgehen, die glasgedeckte Passage von 1847, zum Sablon und in die Marolles. Die ganze Strecke ist etwa einen Kilometer lang und dauert einen Nachmittag, wenn man sie zulässt."
+        },
+        {
+          "en": "Manneken Pis stands three streets south of the square, 55 centimetres of bronze on a fountain, the original now in the City Museum and a replica on site since 1965. It is smaller than everyone expects. The Sablon has antiques and chocolate; the Marolles has the flea market and a rougher edge; the Mont des Arts gives the postcard view back over the roofs.",
+          "pt": "O Manneken Pis fica três ruas ao sul da praça, 55 centímetros de bronze sobre uma fonte, o original hoje no Museu da Cidade e uma réplica no local desde 1965. É menor do que todo mundo espera. O Sablon tem antiguidades e chocolate; o Marolles tem o mercado de pulgas e um lado mais áspero; o Mont des Arts dá a vista de cartão-postal sobre os telhados.",
+          "de": "Das Manneken Pis steht drei Straßen südlich des Platzes, 55 Zentimeter Bronze auf einem Brunnen, das Original heute im Stadtmuseum und seit 1965 eine Kopie am Ort. Es ist kleiner, als alle erwarten. Der Sablon hat Antiquitäten und Schokolade; die Marolles haben den Flohmarkt und eine rauere Kante; der Mont des Arts gibt den Postkartenblick über die Dächer zurück. Ein Foto dauert zehn Sekunden."
+        },
+        {
+          "en": "Walk down to Sainte-Catherine, where the old fish market became a square of seafood restaurants, then along the canal to Molenbeek. The centre is compact, but the city is not: Brussels is nineteen municipalities, and the European quarter, Avenue Louise and Forest all feel like different towns. Take the metro for those, and keep the centre for walking. The canal end is quieter and has the better view.",
+          "pt": "Desça até Sainte-Catherine, onde o antigo mercado de peixe virou uma praça de restaurantes de frutos do mar, e siga o canal até Molenbeek. O centro é compacto, mas a cidade não: Bruxelas são dezenove municípios, e o bairro europeu, a Avenue Louise e Forest parecem cidades diferentes. Para esses, pegue o metrô; guarde o centro para caminhar. O trecho final do canal é mais calmo e tem a melhor vista.",
+          "de": "Hinunter nach Sainte-Catherine, wo aus dem alten Fischmarkt ein Platz mit Meeresfrüchterestaurants wurde, dann am Kanal entlang nach Molenbeek. Das Zentrum ist kompakt, die Stadt nicht: Brüssel besteht aus neunzehn Gemeinden, und das Europaviertel, die Avenue Louise und Forest wirken wie eigene Städte. Dorthin mit der Metro, das Zentrum bleibt zum Gehen. Das Kanalende ist ruhiger und hat die bessere Aussicht."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Lambic and the bars",
+        "pt": "Lambic e os bares",
+        "de": "Lambik und die Bars"
+      },
+      "p": [
+        {
+          "en": "Cantillon, in Anderlecht, is the last traditional lambic brewery inside Brussels: founded in 1900, brewing in the same building, with a coolship in the attic and barrels older than most of its customers. The visit is self-guided for most of the week and guided on Saturdays, and ends with three samples. It is a working brewery, not a museum with a bar attached, though it is also the museum of gueuze.",
+          "pt": "A Cantillon, em Anderlecht, é a última cervejaria tradicional de lambic dentro de Bruxelas: fundada em 1900, produzindo no mesmo prédio, com um coolship no sótão e barris mais velhos que a maioria dos clientes. A visita é livre na maior parte da semana e guiada aos sábados, e termina com três amostras. É uma cervejaria em atividade, não um museu com bar anexo, embora também seja o museu da gueuze.",
+          "de": "Cantillon in Anderlecht ist die letzte traditionelle Lambikbrauerei in Brüssel: 1900 gegründet, im selben Gebäude brauend, mit einem Kühlschiff auf dem Dachboden und Fässern, die älter sind als die meisten Gäste. Die Führung ist die meiste Zeit des Jahres selbstständig, samstags geführt, und endet mit drei Proben. Eine arbeitende Brauerei, kein Museum mit Bar — obwohl sie auch das Museum der Gueuze ist."
+        },
+        {
+          "en": "The bars are the other half. Moeder Lambic has two rooms, one near Place Fontainas and one in Saint-Gilles, with forty taps and staff who will steer you towards the sour end. A la Mort Subite keeps its 1928 Art Deco interior and pours its own gueuze, softer and sweeter than the lambic houses. Poechenellekelder, opposite Manneken Pis, has puppets on the walls and a long Trappist list.",
+          "pt": "Os bares são a outra metade. Moeder Lambic tem duas casas, uma perto da Place Fontainas e outra em Saint-Gilles, com quarenta torneiras e uma equipe que te leva para o lado ácido. A la Mort Subite mantém o interior art déco de 1928 e serve a própria gueuze, mais macia e doce que a das casas de lambic. O Poechenellekelder, em frente ao Manneken Pis, tem bonecos nas paredes e uma longa lista de trapistas.",
+          "de": "Die Bars sind die andere Hälfte. Moeder Lambic hat zwei Räume, einen nahe der Place Fontainas und einen in Saint-Gilles, mit vierzig Hähnen und Personal, das einen zur sauren Seite führt. A la Mort Subite bewahrt das Art-déco-Interieur von 1928 und zapft die eigene Gueuze, weicher und süßer als die der Lambikbrauereien. Poechenellekelder gegenüber dem Manneken Pis hat Puppen an den Wänden und eine lange Trappistenkarte."
+        },
+        {
+          "en": "Delirium Café claims the largest beer menu in the world, which is both true enough and beside the point: the room is loud and the list is a catalogue. The better evening is a small bar in Saint-Gilles or the Marolles, where the beer is chosen by someone who drinks it. Brussels rewards walking away from the Grand-Place, ten minutes in any direction.",
+          "pt": "O Delirium Café alega ter o maior menu de cervejas do mundo, o que é verdade o suficiente e irrelevante: a sala é barulhenta e a lista é um catálogo. A noite melhor é num bar pequeno de Saint-Gilles ou do Marolles, onde a cerveja é escolhida por alguém que a bebe. Bruxelas recompensa quem se afasta da Grand-Place, dez minutos em qualquer direção.",
+          "de": "Das Delirium Café behauptet, die größte Bierkarte der Welt zu haben, was stimmt und nichts sagt: Der Raum ist laut, die Karte ein Katalog. Der bessere Abend ist eine kleine Bar in Saint-Gilles oder den Marolles, wo jemand das Bier auswählt, der es selbst trinkt. Brüssel belohnt, wer sich vom Grand-Place entfernt, zehn Minuten in jede Richtung. Der Abend wird dort länger."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Practical",
+        "pt": "Prático",
+        "de": "Praktisch"
+      },
+      "p": [
+        {
+          "en": "Brussels-Midi is the Eurostar terminal and the main long-distance station; the centre is a few metro stops away. Gare Centrale sits a few minutes' walk from the Grand-Place, mostly underground. Metro tickets are sold at machines and are valid across trams and buses for a set time, and contactless bank cards work on the newer gates. A single ticket costs more at the driver than at the machine.",
+          "pt": "Bruxelas-Midi é o terminal do Eurostar e a principal estação de longa distância; o centro fica a algumas paradas de metrô. A Gare Centrale fica a poucos minutos a pé da Grand-Place, quase toda subterrânea. Os bilhetes de metrô são vendidos em máquinas e valem em bondes e ônibus por um tempo determinado, e cartões bancários por aproximação funcionam nas catracas mais novas. Uma passagem avulsa custa mais com o motorista do que na máquina.",
+          "de": "Brüssel-Midi ist der Eurostar-Terminal und der Hauptbahnhof für Fernzüge; das Zentrum liegt ein paar Metrostationen entfernt. Der Gare Centrale liegt wenige Gehminuten vom Grand-Place entfernt, größtenteils unterirdisch. Metrotickets gibt es am Automaten, sie gelten eine festgelegte Zeit auch in Tram und Bus, und kontaktlose Bankkarten funktionieren an den neueren Sperren. Ein Einzelfahrschein beim Fahrer kostet mehr als am Automaten. Wer oft fährt, nimmt eine Tageskarte."
+        },
+        {
+          "en": "The Grand-Place is crowded all year and worst at weekends and in December. Pickpockets work the square and the station; keep bags closed and phones out of back pockets. Restaurant touts on Rue des Bouchers will call you in — the food there is not terrible and not good. Walk two streets to Sainte-Catherine or the Marolles instead, where the menus are shorter and the prices calmer.",
+          "pt": "A Grand-Place fica cheia o ano todo e pior nos fins de semana e em dezembro. Batedores de carteira atuam na praça e na estação; mantenha as bolsas fechadas e o celular fora do bolso de trás. Os angariadores da Rue des Bouchers vão te chamar — a comida ali não é terrível nem boa. Caminhe duas ruas até Sainte-Catherine ou o Marolles, onde os menus são mais curtos e os preços mais baixos.",
+          "de": "Der Grand-Place ist das ganze Jahr voll, am schlimmsten am Wochenende und im Dezember. Taschendiebe arbeiten am Platz und im Bahnhof; Taschen geschlossen halten, das Telefon nicht in der Gesäßtasche. Die Anwerber in der Rue des Bouchers rufen einen hinein — das Essen dort ist weder schrecklich noch gut. Zwei Straßen weiter nach Sainte-Catherine oder in die Marolles gehen, wo die Karten kürzer und die Preise niedriger sind."
+        },
+        {
+          "en": "Cantillon closes on Wednesday and Sunday and on public holidays; Saturday tours need booking. August empties the city as residents leave, which makes the centre bearable and some restaurants closed. Sunday morning in the European quarter is deserted in a way that is worth seeing once. Cash is less necessary here than in Flanders, but small bars still prefer it.",
+          "pt": "A Cantillon fecha quarta, domingo e feriados; as visitas guiadas de sábado precisam de reserva. Agosto esvazia a cidade com as férias dos moradores, o que torna o centro suportável e alguns restaurantes fechados. A manhã de domingo no bairro europeu é deserta de um jeito que vale ver uma vez. Dinheiro é menos necessário aqui que na Flandres, mas os bares pequenos ainda preferem.",
+          "de": "Cantillon schließt mittwochs, sonntags und an Feiertagen; die Samstagsführungen müssen gebucht werden. Im August leert sich die Stadt, weil die Bewohner verreisen — das Zentrum wird erträglich, manche Restaurants bleiben zu. Der Sonntagmorgen im Europaviertel ist auf eine Weise verlassen, die man einmal gesehen haben sollte. Bargeld ist hier weniger nötig als in Flandern, kleine Bars mögen es trotzdem. Ein paar Scheine schaden nicht."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Cantillon Gueuze 100% Lambic Bio — the benchmark, drunk where it is made.",
+      "pt": "Cantillon Gueuze 100% Lambic Bio — a referência, bebida onde é feita.",
+      "de": "Cantillon Gueuze 100% Lambic Bio — der Maßstab, getrunken am Ort der Herstellung."
+    },
+    {
+      "en": "Cantillon Kriek or Rosé de Gambrinus, for fruit without syrup.",
+      "pt": "Cantillon Kriek ou Rosé de Gambrinus, para fruta sem xarope.",
+      "de": "Cantillon Kriek oder Rosé de Gambrinus, für Frucht ohne Sirup."
+    },
+    {
+      "en": "A lambic on tap at Moeder Lambic, chosen by the staff.",
+      "pt": "Um lambic de torneira no Moeder Lambic, escolhido pela equipe.",
+      "de": "Ein Lambik vom Fass im Moeder Lambic, vom Personal ausgewählt."
+    },
+    {
+      "en": "The house gueuze at A la Mort Subite, in the 1928 room, as a contrast.",
+      "pt": "A gueuze da casa no A la Mort Subite, na sala de 1928, como contraste.",
+      "de": "Die Haus-Gueuze im A la Mort Subite, im Raum von 1928, als Kontrast."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Moules-frites, in season, at a brasserie away from Rue des Bouchers.",
+      "pt": "Moules-frites, na temporada, numa brasserie longe da Rue des Bouchers.",
+      "de": "Moules-frites, in der Saison, in einer Brasserie abseits der Rue des Bouchers."
+    },
+    {
+      "en": "Carbonnade flamande — beef with beer, onions and brown sugar — with stoemp.",
+      "pt": "Carbonnade flamande — carne com cerveja, cebola e açúcar mascavo — com stoemp.",
+      "de": "Carbonnade flamande — Rindfleisch mit Bier, Zwiebeln und braunem Zucker — mit Stoemp."
+    },
+    {
+      "en": "A waffle from a street stall: the Brussels one is rectangular and light, the Liège one dense and pearl-sugared.",
+      "pt": "Um waffle de barraca: o de Bruxelas é retangular e leve, o de Liège é denso e coberto de açúcar perolado.",
+      "de": "Eine Waffel vom Stand: die Brüsseler ist rechteckig und leicht, die Lütticher dicht und mit Hagelzucker."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Cantillon: Monday, Tuesday, Thursday and Friday 10–16, Saturday guided only, closed Wednesday, Sunday and holidays.",
+      "pt": "Cantillon: segunda, terça, quinta e sexta das 10h às 16h, sábado só com guia, fechada quarta, domingo e feriados.",
+      "de": "Cantillon: Montag, Dienstag, Donnerstag und Freitag 10–16 Uhr, samstags nur geführt, geschlossen Mittwoch, Sonntag und Feiertage."
+    },
+    {
+      "en": "Stay near Midi or Centrale; the metro beats walking across the pentagon.",
+      "pt": "Fique perto da Midi ou da Centrale; o metrô vence a caminhada pelo pentágono.",
+      "de": "Nähe Midi oder Centrale wohnen; die Metro schlägt den Fußweg durchs Pentagramm."
+    },
+    {
+      "en": "Ignore the touts on Rue des Bouchers and walk two streets further.",
+      "pt": "Ignore os angariadores da Rue des Bouchers e caminhe duas ruas mais.",
+      "de": "Die Anwerber in der Rue des Bouchers ignorieren und zwei Straßen weitergehen."
+    },
+    {
+      "en": "December and weekends are the peak; the square is best before nine.",
+      "pt": "Dezembro e os fins de semana são o pico; a praça é melhor antes das nove.",
+      "de": "Dezember und Wochenenden sind die Spitze; der Platz ist vor neun am besten."
+    },
+    {
+      "en": "Cards are widely accepted, but keep some cash for small bars.",
+      "pt": "Cartão é amplamente aceito, mas leve algum dinheiro para bares pequenos.",
+      "de": "Karten werden weitgehend akzeptiert, für kleine Bars etwas Bargeld behalten."
+    }
+  ],
+  "links": [
+    {
+      "label": "Visit Brussels",
+      "url": "https://www.visit.brussels/en"
+    },
+    {
+      "label": "Cantillon",
+      "url": "https://www.cantillon.be/"
+    },
+    {
+      "label": "Brussels, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brussels"
+    }
+  ]
+}

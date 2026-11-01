@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="__LANG_ATTR__">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<meta name="theme-color" content="#0b0c15">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__DESC__">
+<meta property="og:type" content="website">
+<link rel="canonical" href="__CANONICAL__">
+__HREFLANG__
+<link rel="icon" href="__BASE__assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#0b0c15; --bg-raise:#101224; --rule:#262c48; --rule-soft:rgba(38,44,72,.62);
+  --gold:#e6a817; --text:#eef1f6; --muted:#a8b2c6; --dim:#8d97ad;
+  --serif:Charter,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Avenir Next","Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;caret-color:var(--gold);scrollbar-color:#3a4166 var(--bg)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:#0b0c15}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#2f365a;border:3px solid var(--bg);border-radius:99px}
+a{color:inherit;text-underline-offset:.18em}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-9999px;background:var(--gold);color:#0b0c15;padding:.7rem 1.1rem;
+  font-weight:700;text-decoration:none;z-index:100}
+.skip:focus{left:0}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important;animation-duration:.001ms!important}}
+
+.bar{position:sticky;top:0;z-index:20;background:rgba(11,12,21,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule-soft)}
+.bar-in{max-width:1080px;margin:0 auto;padding:.7rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.bar-in a.home{color:var(--muted);text-decoration:none;font-size:.85rem}
+.bar-in a.home:hover{color:var(--gold)}
+.langs{margin-left:auto;display:flex;gap:.1rem}
+.langs a{font-size:.78rem;font-weight:700;letter-spacing:.08em;color:var(--dim);text-decoration:none;
+  padding:.3rem .45rem}
+.langs a:hover{color:var(--text)}
+.langs a[aria-current="page"]{color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
+
+main{max-width:1080px;margin:0 auto;padding:3rem 1.5rem 4rem}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.05;
+  letter-spacing:-.02em;margin:0 0 .9rem}
+.lede{max-width:60ch;color:#cfd6e4;font-size:clamp(1rem,1.5vw,1.15rem);margin:0 0 2.2rem}
+
+.controls{display:flex;gap:.9rem;align-items:center;flex-wrap:wrap;padding:0 0 .9rem;
+  border-bottom:1px solid var(--rule)}
+.search{flex:1 1 240px;max-width:340px;display:flex;align-items:center;gap:.55rem;
+  border-bottom:1px solid var(--rule);padding:.3rem 0}
+.search:focus-within{border-bottom-color:var(--gold)}
+.search input{flex:1;background:none;border:0;color:var(--text);font:inherit;font-size:.95rem;padding:.25rem 0}
+.search input::placeholder{color:var(--dim);opacity:1}
+.search input:focus{outline:none}
+.filters{display:flex;gap:.15rem;flex-wrap:wrap}
+.chip{background:none;border:0;color:var(--muted);font:inherit;font-size:.86rem;font-weight:600;
+  padding:.42rem .62rem;cursor:pointer;position:relative}
+.chip:hover{color:var(--text)}
+.chip[aria-pressed="true"]{color:var(--gold)}
+.chip[aria-pressed="true"]::after{content:"";position:absolute;left:.62rem;right:.62rem;bottom:.18rem;
+  height:2px;background:var(--gold)}
+.tally{margin-left:auto;color:var(--dim);font-size:.82rem;font-variant-numeric:tabular-nums}
+
+.posts{list-style:none;margin:0;padding:0}
+.post{display:grid;grid-template-columns:210px minmax(0,1fr);gap:1.6rem;align-items:start;
+  padding:1.9rem 0;border-bottom:1px solid var(--rule-soft)}
+.post[hidden]{display:none}
+.post .thumb{display:block;overflow:hidden;border:1px solid var(--rule-soft);background:#070810}
+.post .thumb img{aspect-ratio:16/9;object-fit:cover;filter:saturate(.9) brightness(.92);
+  transition:transform .6s cubic-bezier(.16,1,.3,1),filter .3s ease}
+.post:hover .thumb img{transform:scale(1.04);filter:saturate(1) brightness(1)}
+.kind{margin:0 0 .3rem;color:var(--dim);font-size:.8rem;letter-spacing:.02em}
+.post h3{font-family:var(--serif);font-weight:600;font-size:1.35rem;line-height:1.2;margin:0 0 .35rem}
+.post h3 a{text-decoration:underline;text-decoration-color:transparent;transition:text-decoration-color .3s}
+.post h3 a:hover{text-decoration-color:var(--gold)}
+.teaser{margin:0;color:var(--muted);font-size:.92rem;max-width:62ch}
+
+.none{padding:2.4rem 0;color:var(--muted)}
+.none[hidden]{display:none}
+.none button{background:none;border:0;color:var(--gold);font:inherit;font-weight:700;cursor:pointer;
+  text-decoration:underline;padding:0}
+
+footer{border-top:1px solid var(--rule);background:var(--bg-raise);margin-top:2rem}
+.foot{max-width:1080px;margin:0 auto;padding:1.6rem 1.5rem;color:var(--dim);font-size:.84rem}
+.foot a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--rule)}
+.foot a:hover{color:var(--gold)}
+
+@media (max-width:680px){
+  body{font-size:16px}
+  main{padding:2rem 1.15rem 3rem}
+  .post{grid-template-columns:1fr;gap:1rem}
+  .post .thumb img{aspect-ratio:16/9}
+  .tally{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#posts">__SKIP__</a>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="home" href="__BASE__">← Bier Reisen</a>
+    <nav class="langs" aria-label="__LANG_LABEL__">__SWITCH__</nav>
+  </div>
+</div>
+
+<main>
+  <h1>__H1__</h1>
+  <p class="lede">__LEDE__</p>
+
+  <div class="controls">
+    <label class="search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="__SEARCH_PH__" aria-label="__SEARCH_PH__" autocomplete="off">
+    </label>
+    <div class="filters" role="group" aria-label="__F_ALL__">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">__F_ALL__ __N_ALL__</button>
+      <button class="chip" type="button" data-filter="trip" aria-pressed="false">__F_TRIP__ __N_TRIP__</button>
+      <button class="chip" type="button" data-filter="city" aria-pressed="false">__F_CITY__ __N_CITY__</button>
+      <button class="chip" type="button" data-filter="brewery" aria-pressed="false">__F_BREWERY__ __N_BREWERY__</button>
+    </div>
+    <span class="tally" id="count" aria-live="polite"></span>
+  </div>
+
+  <ul class="posts" id="posts">__POSTS__
+  </ul>
+
+  <p class="none" id="empty" hidden>__EMPTY_A__ <button type="button" id="reset">__EMPTY_B__</button></p>
+</main>
+
+<footer>
+  <div class="foot">
+    <p style="margin:0 0 .4rem">Bier Reisen — <a href="__BASE__">__FOOT_ARCHIVE__</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var COUNT = "__COUNT__";
+  var posts = Array.prototype.slice.call(document.querySelectorAll('.post'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));
+  var input = document.getElementById('q');
+  var countEl = document.getElementById('count');
+  var emptyEl = document.getElementById('empty');
+  var filter = 'all';
+
+  function fold(s) {
+    return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  function apply() {
+    var term = fold(input.value.trim()), shown = 0;
+    posts.forEach(function (el) {
+      var ok = (filter === 'all' || el.dataset.type === filter) &&
+               (!term || fold(el.dataset.search).indexOf(term) !== -1);
+      el.hidden = !ok;
+      if (ok) shown++;
+    });
+    countEl.textContent = COUNT.replace('{n}', shown).replace('{total}', posts.length);
+    emptyEl.hidden = shown !== 0;
+  }
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      filter = chip.dataset.filter;
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      apply();
+    });
+  });
+  input.addEventListener('input', apply);
+  document.getElementById('reset').addEventListener('click', function () {
+    input.value = ''; filter = 'all';
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.filter === 'all')); });
+    apply(); input.focus();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+    if (e.key === 'Escape' && document.activeElement === input) { input.value = ''; apply(); input.blur(); }
+  });
+  apply();
+})();
+</script>
+</body>
+</html>

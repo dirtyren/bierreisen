@@ -1,0 +1,243 @@
+{
+  "slug": "altstadthof",
+  "type": "brewery",
+  "name": "Altstadthof",
+  "where": "Nuremberg, Germany",
+  "coords": [
+    49.457,
+    11.0749
+  ],
+  "span": 0.14,
+  "subtitle_en": "Red beer brewed above the cellars that made it",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Hausbrauerei+Altstadthof+Bergstra%C3%9Fe+19+N%C3%BCrnberg",
+  "trips": [
+    "2021"
+  ],
+  "related": [
+    "nuremberg",
+    "trip-2021",
+    "bamberg",
+    "munich"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundação",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1984",
+        "pt": "1984",
+        "de": "1984"
+      }
+    },
+    {
+      "k": {
+        "en": "Rotbier",
+        "pt": "Rotbier",
+        "de": "Rotbier"
+      },
+      "v": {
+        "en": "5.2%",
+        "pt": "5,2%",
+        "de": "5,2 %"
+      }
+    },
+    {
+      "k": {
+        "en": "original wort",
+        "pt": "mosto original",
+        "de": "Stammwürze"
+      },
+      "v": {
+        "en": "13.5 °P",
+        "pt": "13,5 °P",
+        "de": "13,5 °P"
+      }
+    },
+    {
+      "k": {
+        "en": "cellars cut from",
+        "pt": "porões escavados em",
+        "de": "Keller gehauen ab"
+      },
+      "v": {
+        "en": "1380",
+        "pt": "1380",
+        "de": "1380"
+      }
+    },
+    {
+      "k": {
+        "en": "whisky since",
+        "pt": "whisky desde",
+        "de": "Whisky seit"
+      },
+      "v": {
+        "en": "2005",
+        "pt": "2005",
+        "de": "2005"
+      }
+    }
+  ],
+  "lede": {
+    "en": "The house on Bergstraße stands where Nuremberg's red beer was brewed in the Middle Ages, over cellars cut into the sandstone to keep it cold. The brewery reopened in 1984, brews organically, and makes the beer those cellars were dug for. The rock is still there, and so is the colour.",
+    "pt": "A casa na Bergstraße fica onde a cerveja vermelha de Nuremberg era produzida na Idade Média, sobre porões escavados no arenito para mantê-la fria. A cervejaria reabriu em 1984, produz em regime orgânico e faz a cerveja para a qual aqueles porões foram cavados. A rocha continua lá, e a cor também.",
+    "de": "Das Haus in der Bergstraße steht dort, wo Nürnbergs rotes Bier im Mittelalter gebraut wurde, über Kellern, die man zum Kühlen in den Sandstein gehauen hat. 1984 wurde die Brauerei wiedereröffnet, sie braut ökologisch und macht das Bier, für das diese Keller gegraben wurden. Der Fels ist noch da, die Farbe auch."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The cellar under the kettle",
+        "pt": "O porão sob a caldeira",
+        "de": "Der Keller unter dem Kessel"
+      },
+      "p": [
+        {
+          "en": "In 1303 the council of Nuremberg ruled that only barley malt could be used for brewing, a good two hundred years before the Bavarian Reinheitsgebot. In 1380 it went further: anyone who wanted to brew and sell beer had to have his own cellar. The sandstone under the town was cut into galleries, and the galleries went down four storeys in places. The council inspected the works, and a brewer whose pillars did not stand over one another was punished.",
+          "pt": "Em 1303, o conselho de Nuremberg determinou que só malte de cevada podia ser usado na fabricação, uns bons duzentos anos antes do Reinheitsgebot bávaro. Em 1380 foi além: quem quisesse produzir e vender cerveja precisava ter o próprio porão. O arenito sob a cidade foi cortado em galerias, e as galerias chegaram a quatro andares de profundidade. O conselho fiscalizava as obras, e o cervejeiro cujos pilares não ficassem uns sobre os outros era punido.",
+          "de": "1303 legte der Nürnberger Rat fest, dass nur Gerstenmalz zum Brauen dienen darf, gut zweihundert Jahre vor dem bayerischen Reinheitsgebot. 1380 ging er weiter: Wer brauen und Bier verkaufen wollte, musste einen eigenen Keller haben. Der Sandstein unter der Stadt wurde zu Gängen ausgeschlagen, stellenweise vier Geschosse tief. Der Rat kontrollierte die Arbeiten, und ein Brauer, dessen Pfeiler nicht übereinander standen, wurde bestraft."
+        },
+        {
+          "en": "That was not decoration. Rotbier was fermented cold, in an age when almost every other beer was top-fermented, and cold meant underground. The cellars hold a constant eight to twelve degrees, which is why the beer could be stored through the summer and why the trade could grow. Twenty-five thousand square metres of them lie under the old town. In winter ice was packed into cooling domes cut between the floors, and it lasted into the summer.",
+          "pt": "Isso não era enfeite. A Rotbier fermentava a frio, numa época em que quase toda cerveja era de alta fermentação, e frio significava subsolo. Os porões mantêm de oito a doze graus constantes, e por isso a cerveja podia ser guardada durante o verão e o negócio podia crescer. Vinte e cinco mil metros quadrados deles estão sob a cidade velha. No inverno, gelo era guardado em cúpulas de refrigeração escavadas entre os andares, e durava até o verão.",
+          "de": "Das war keine Zierde. Rotbier wurde kalt vergoren, in einer Zeit, in der fast alles andere obergärig war, und kalt hieß: unter der Erde. In den Kellern herrschen gleichmäßig acht bis zwölf Grad, deshalb hielt das Bier den Sommer über und deshalb konnte das Gewerbe wachsen. 25.000 Quadratmeter davon liegen unter der Altstadt. Im Winter wurde Eis in Kühldome zwischen den Geschossen gefüllt, das hielt bis in den Sommer."
+        },
+        {
+          "en": "The style went under in the nineteenth century, when paler beers were cheaper to make. The house on Bergstraße, the old Rotes Brauhaus, stood empty of brewing for decades. Since 1984 it has brewed again under the name Altstadthof, and the cellars next door, which had been used as air-raid shelters in the war, are open to visitors. The tour of them leaves from the brewery shop several times a day.",
+          "pt": "O estilo afundou no século XIX, quando cervejas mais claras ficaram mais baratas de produzir. A casa na Bergstraße, que tinha sido o Rotes Brauhaus, ficou décadas sem produzir. Desde 1984 ela volta a produzir com o nome Altstadthof, e os porões ao lado, usados como abrigo antiaéreo na guerra, estão abertos a visitantes. A visita a eles sai da loja da cervejaria várias vezes ao dia.",
+          "de": "Der Stil ging im 19. Jahrhundert unter, als hellere Biere billiger wurden. Das Haus in der Bergstraße, das alte Rote Brauhaus, stand jahrzehntelang ohne Sud. Seit 1984 wird wieder gebraut, unter dem Namen Altstadthof, und die Keller nebenan, im Krieg als Luftschutzbunker genutzt, sind zugänglich. Die Führung durch sie startet mehrmals täglich am Brauereiladen und dauert etwa eine Stunde, mit Probe am Ende."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Copper, wood, and a red malt",
+        "pt": "Cobre, madeira e um malte vermelho",
+        "de": "Kupfer, Holz und ein rotes Malz"
+      },
+      "p": [
+        {
+          "en": "The kit is deliberately old. Brewing happens in copper kettles, fermentation in wooden vats, and the malt comes from Neumarkter Lammsbräu, the hops from Eckert & Friedrich in Eckental — both organic. The brewery says it was the first in Germany to brew exclusively with organic raw materials when it reopened in 1984, and it has kept the claim since. Only organic cone hops go in, which is more work than extract and shows in the smell of the brewhouse.",
+          "pt": "O equipamento é deliberadamente antigo. A brassagem acontece em caldeiras de cobre, a fermentação em tanques de madeira, e o malte vem da Neumarkter Lammsbräu, o lúpulo da Eckert & Friedrich, em Eckental — os dois orgânicos. A cervejaria diz ter sido a primeira da Alemanha a produzir só com matéria-prima orgânica ao reabrir em 1984, e mantém a prática. Só entra lúpulo orgânico em cone, o que dá mais trabalho que o extrato e se sente no cheiro da brassagem.",
+          "de": "Die Anlage ist bewusst alt. Gebraut wird in Kupferkesseln, vergoren in Holzbottischen, das Malz kommt von Neumarkter Lammsbräu, der Hopfen von Eckert & Friedrich in Eckental — beides bio. Die Brauerei sagt, sie sei 1984 die erste in Deutschland gewesen, die ausschließlich mit ökologischen Rohstoffen braut, und dabei ist es geblieben. Verwendet werden nur Bio-Doldenhopfen, mehr Arbeit als Extrakt, und man riecht es im Sudhaus."
+        },
+        {
+          "en": "Rotbier is 5.2% with 13.5% original wort: copper-coloured, soft on the tongue, with a mild hop finish and a slight sweetness that comes from the red malt. Around it the brewery keeps a Kellerbier at 4.8%, a black beer at 5.1%, a red wheat beer brewed with half red malt, and a spiced winter beer at 5.6%. The red malt is dried harder than pale malt, which is where the colour and the toasted note come from.",
+          "pt": "A Rotbier tem 5,2% e 13,5% de mosto original: cor de cobre, macia na boca, com final de lúpulo suave e um leve doce que vem do malte vermelho. Ao redor dela, a casa mantém uma Kellerbier de 4,8%, uma cerveja preta de 5,1%, uma de trigo vermelha feita com metade de malte vermelho e uma cerveja de inverno com especiarias, de 5,6%. O malte vermelho é secado mais intensamente que o claro, e daí vêm a cor e a nota tostada.",
+          "de": "Das Rotbier hat 5,2 % bei 13,5 % Stammwürze: kupferfarben, weich am Gaumen, mit milder Hopfennote und einer leichten Süße aus dem roten Malz. Daneben gibt es Kellerbier mit 4,8 %, ein Schwarzbier mit 5,1 %, ein rotes Weizen mit halbem Rotmalzanteil und ein Gewürzbier für den Winter mit 5,6 %. Das rote Malz wird härter gedarrt als helles, daher kommen die Farbe und die Röstnote."
+        },
+        {
+          "en": "The same red malt goes into the whisky. The distillery started in 2005 and bottles AYRER's single malt, named after the Ayrer family who owned the estate until 1568. The brewery calls it the first organic single malt in Germany. It ages on site, in small casks, some of them finished in sherry or port wood. Private casks can be bought and left to mature on site, which is a slow way to furnish a cellar.",
+          "pt": "O mesmo malte vermelho entra no whisky. A destilaria começou em 2005 e engarrafa o single malt AYRER's, nome da família Ayrer, dona do terreno até 1568. A cervejaria o chama de primeiro single malt orgânico da Alemanha. Ele envelhece no local, em barris pequenos, alguns com acabamento em madeira de sherry ou de porto. É possível comprar barris privados e deixá-los amadurecer no local, um jeito lento de mobiliar uma adega.",
+          "de": "Dasselbe rote Malz geht in den Whisky. Die Destillerie läuft seit 2005 und füllt AYRER’s Single Malt ab, benannt nach der Familie Ayrer, der das Anwesen bis 1568 gehörte. Die Brauerei nennt ihn den ersten ökologischen Single Malt Deutschlands. Er reift vor Ort in kleinen Fässern, teils mit Sherry- oder Portwein-Finish. Private Fässer kann man kaufen und vor Ort reifen lassen, ein langsamer Weg, einen Keller einzurichten."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Three rooms and a tour",
+        "pt": "Três salas e uma visita",
+        "de": "Drei Räume und eine Führung"
+      },
+      "p": [
+        {
+          "en": "There are three places to sit: the Bräustüberl, small and plain, with the brewery's copper visible through the door; the Restaurant Bühne; and the Sommergarten, which opens when the weather allows. At Bergstraße 21 the Schmelztiegel opens at seven in the evening for beer, music and parties in a vaulted cellar. Between the three there is room for a quick glass at midday and a long dinner after the tour.",
+          "pt": "Há três lugares para sentar: o Bräustüberl, pequeno e simples, com o cobre da cervejaria visível pela porta; o Restaurant Bühne; e o Sommergarten, que abre quando o tempo permite. Na Bergstraße 21, o Schmelztiegel abre às sete da noite para cerveja, música e festas num porão abobadado. Entre os três, há espaço para um copo rápido ao meio-dia e um jantar longo depois da visita.",
+          "de": "Es gibt drei Orte zum Sitzen: das Bräustüberl, klein und schlicht, mit Blick auf das Kupfer der Brauerei; das Restaurant Bühne; und den Sommergarten, der bei gutem Wetter öffnet. In der Bergstraße 21 öffnet abends um sieben der Schmelztiegel für Bier, Musik und Feiern im Gewölbekeller. Zwischen den dreien ist Platz für ein schnelles Glas am Mittag und ein langes Essen nach der Führung."
+        },
+        {
+          "en": "The kitchen puts the beer into the food. Schäufele comes in a red beer sauce with a dumpling and sauerkraut; Blaue Zipfel are six bratwursts simmered in red beer vinegar with onions; the onion soup is laced with red beer; the schnitzel is breaded in crushed malt. For dessert there is a Beeramisu, which is exactly what it sounds like. The vegetables come from the Knoblauchsland, the market-garden belt north of the city.",
+          "pt": "A cozinha põe a cerveja na comida. O Schäufele vem com molho de cerveja vermelha, bolinho e chucrute; os Blaue Zipfel são seis linguiças cozidas em vinagre de cerveja vermelha com cebola; a sopa de cebola leva cerveja vermelha; o schnitzel é empanado com malte moído. De sobremesa há um Beeramisu, que é exatamente o que o nome diz. Os legumes vêm do Knoblauchsland, o cinturão de hortas ao norte da cidade.",
+          "de": "Die Küche tut das Bier ins Essen. Schäufele kommt in Rotbiersoße mit Knödel und Sauerkraut; Blaue Zipfel sind sechs Bratwürste in Rotbieressig mit Zwiebeln; die Zwiebelsuppe ist mit Rotbier abgeschmeckt; das Schnitzel ist in geriebenem Malz paniert. Zum Nachtisch gibt es ein Beeramisu, und das ist genau, wonach es klingt. Das Gemüse kommt aus dem Knoblauchsland, dem Gärtnergürtel nördlich der Stadt."
+        },
+        {
+          "en": "The tour is the reason to come late in the day. Rotes Bier in tiefen Kellern starts at the brewery shop at 17:30, runs about an hour through the rock passages, and ends with a small tasting and a look into the whisky store. On Friday and Saturday there is a second start at 17:45. The route runs at a constant eight to twelve degrees, so a jacket is sensible even in summer.",
+          "pt": "A visita é o motivo para vir no fim do dia. Rotes Bier in tiefen Kellern começa na loja da cervejaria às 17h30, dura cerca de uma hora pelas galerias de rocha e termina com uma pequena degustação e uma passada pelo depósito de whisky. Na sexta e no sábado há uma segunda saída às 17h45. O percurso fica entre oito e doze graus constantes, então um casaco é sensato mesmo no verão.",
+          "de": "Die Führung ist der Grund, spät am Tag zu kommen. „Rotes Bier in tiefen Kellern“ beginnt um 17.30 Uhr am Brauereiladen, dauert etwa eine Stunde durch die Felsgänge und endet mit einer kleinen Probe und einem Blick ins Whisky-Lager. Freitags und samstags gibt es einen zweiten Start um 17.45 Uhr. Auf der Strecke herrschen gleichmäßig acht bis zwölf Grad, eine Jacke ist also auch im Sommer sinnvoll."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Original Nürnberger Rotbier — 5.2%, copper, soft. The 0.4 l glass is the sensible unit.",
+      "pt": "Original Nürnberger Rotbier — 5,2%, cor de cobre, macia. O copo de 0,4 l é a unidade sensata.",
+      "de": "Original Nürnberger Rotbier — 5,2 %, kupfern, weich. Das 0,4-l-Glas ist die vernünftige Einheit."
+    },
+    {
+      "en": "Kellerbier, pale and unfiltered, if you want something drier between rounds.",
+      "pt": "Kellerbier, clara e não filtrada, se quiser algo mais seco entre uma rodada e outra.",
+      "de": "Kellerbier, hell und ungefiltert, wenn zwischendurch etwas Trockeneres her soll."
+    },
+    {
+      "en": "SchwarzBier, 5.1%, when the evening turns cold and the cellar air follows you out.",
+      "pt": "SchwarzBier, 5,1%, quando a noite esfria e o ar do porão segue você para fora.",
+      "de": "Schwarzbier, 5,1 %, wenn der Abend kalt wird und die Kellerluft mit nach draußen kommt."
+    },
+    {
+      "en": "WinterWärmer in Advent: 5.6%, brewed with spices, and it tastes like the market outside.",
+      "pt": "WinterWärmer no Advento: 5,6%, feita com especiarias, e tem gosto do mercado lá fora.",
+      "de": "WinterWärmer im Advent: 5,6 %, mit Gewürzen gebraut, schmeckt nach dem Markt draußen."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Schäufele in red beer sauce with a dumpling and sauerkraut; the crackling is the point.",
+      "pt": "Schäufele com molho de cerveja vermelha, bolinho e chucrute; o couro crocante é o ponto.",
+      "de": "Schäufele in Rotbiersoße mit Knödel und Sauerkraut; die Kruste ist der Punkt."
+    },
+    {
+      "en": "Blaue Zipfel: six sausages in red beer vinegar with onions and bread, sour in the right way.",
+      "pt": "Blaue Zipfel: seis linguiças em vinagre de cerveja vermelha com cebola e pão, ácidas do jeito certo.",
+      "de": "Blaue Zipfel: sechs Bratwürste in Rotbieressig mit Zwiebeln und Brot, sauer auf die richtige Art."
+    },
+    {
+      "en": "Onion soup with red beer, which is better than it sounds and arrives before the beer does.",
+      "pt": "Sopa de cebola com cerveja vermelha, melhor do que parece e chega antes da cerveja.",
+      "de": "Zwiebelsuppe mit Rotbier, besser als sie klingt, und sie kommt vor dem Bier."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Book the cellar tour. The meeting point is Bergstraße 19, in front of the brewery shop, and the group is capped.",
+      "pt": "Reserve a visita aos porões. O ponto de encontro é Bergstraße 19, diante da loja da cervejaria, e o grupo é limitado.",
+      "de": "Die Kellerführung vorher buchen. Treffpunkt ist die Bergstraße 19 vor dem Brauereiladen, die Gruppe ist begrenzt."
+    },
+    {
+      "en": "The passages are low and the tour is not barrier-free. Audio guides cover several languages, Portuguese included.",
+      "pt": "As passagens são baixas e a visita não tem acessibilidade. Os audioguias cobrem vários idiomas, inclusive português.",
+      "de": "Die Gänge sind niedrig, die Führung ist nicht barrierefrei. Audioguides gibt es in mehreren Sprachen, auch Portugiesisch."
+    },
+    {
+      "en": "The brewery shop opens in the morning and again in the afternoon; the ProBier boutique pours tastings Friday and Saturday from 16:00 to 19:00.",
+      "pt": "A loja da cervejaria abre de manhã e de novo à tarde; a boutique ProBier serve degustações sexta e sábado, das 16h às 19h.",
+      "de": "Der Brauereiladen öffnet vormittags und nachmittags; die ProBier-Boutique schenkt freitags und samstags von 16 bis 19 Uhr Proben aus."
+    },
+    {
+      "en": "Weekday kitchens close between 14:30 and 17:00, so plan lunch or dinner rather than the gap.",
+      "pt": "Nos dias de semana, a cozinha fecha entre 14h30 e 17h; planeje almoço ou jantar, não o intervalo.",
+      "de": "Unter der Woche schließt die Küche zwischen 14.30 und 17 Uhr, also Mittag- oder Abendessen planen, nicht die Lücke."
+    },
+    {
+      "en": "Bottles and whisky leave through the shop or the online store; the whisky is not sold elsewhere in town.",
+      "pt": "Garrafas e whisky saem pela loja ou pela loja online; o whisky não é vendido em outro lugar da cidade.",
+      "de": "Flaschen und Whisky gibt es im Laden oder im Onlineshop; den Whisky gibt es sonst nirgends in der Stadt."
+    }
+  ],
+  "links": [
+    {
+      "label": "Hausbrauerei Altstadthof",
+      "url": "https://hausbrauerei-altstadthof.de/"
+    },
+    {
+      "label": "Historische Felsengänge",
+      "url": "https://www.historische-felsengaenge.de/"
+    },
+    {
+      "label": "Nürnberg tourism — Rotbier",
+      "url": "https://tourismus.nuernberg.de/geniessen/spezialitaeten/bier/rotes-bier-in-tiefen-kellern/"
+    }
+  ]
+}

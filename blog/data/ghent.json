@@ -1,0 +1,223 @@
+{
+  "slug": "ghent",
+  "type": "city",
+  "name": "Ghent",
+  "where": "East Flanders, Belgium",
+  "coords": [
+    51.0548,
+    3.7208
+  ],
+  "span": 0.06,
+  "subtitle_en": "A working city with a medieval centre and beer of its own",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Graslei+Gent+Belgium",
+  "trips": [
+    "2020",
+    "2027"
+  ],
+  "related": [
+    "bruges",
+    "brussels",
+    "trip-2027"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "university students",
+        "pt": "estudantes universitários",
+        "de": "Studierende"
+      },
+      "v": {
+        "en": "50,000"
+      }
+    },
+    {
+      "k": {
+        "en": "Gravensteen",
+        "pt": "Gravensteen",
+        "de": "Gravensteen"
+      },
+      "v": {
+        "en": "1180"
+      }
+    },
+    {
+      "k": {
+        "en": "Ghent Altarpiece",
+        "pt": "Retábulo de Gante",
+        "de": "Genter Altar"
+      },
+      "v": {
+        "en": "1432"
+      }
+    },
+    {
+      "k": {
+        "en": "beers at De Dulle Griet",
+        "pt": "cervejas no De Dulle Griet",
+        "de": "Biere im De Dulle Griet"
+      },
+      "v": {
+        "en": "500"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Ghent is what Bruges might have been if it had kept working. It is a port, a university city and the capital of East Flanders, with fifty thousand students, a tram network and a medieval core larger than Bruges's and far less polished. The canals are the same. The crowds are not, and neither are the prices.",
+    "pt": "Gante é o que Bruges teria sido se tivesse continuado a trabalhar. É um porto, uma cidade universitária e a capital da Flandres Oriental, com cinquenta mil estudantes, rede de bondes e um centro medieval maior que o de Bruges e bem menos polido. Os canais são os mesmos. As multidões não, e os preços também não.",
+    "de": "Gent ist, was Brügge hätte sein können, wenn es weiter gearbeitet hätte. Eine Hafenstadt, eine Universitätsstadt und die Hauptstadt Ostflanderns, mit fünfzigtausend Studierenden, Straßenbahnen und einem mittelalterlichen Kern, der größer ist als der von Brügge und deutlich weniger poliert. Die Kanäle sind dieselben. Die Menschenmengen nicht, und die Preise auch nicht."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The core, on foot",
+        "pt": "O centro, a pé",
+        "de": "Der Kern, zu Fuß"
+      },
+      "p": [
+        {
+          "en": "The Graslei and Korenlei face each other across the Leie, two rows of medieval warehouses that once handled grain and now hold cafés with blankets on the chairs. Sit on the quay in the sun and the whole city passes by. Ten minutes north, the Gravensteen stands in the middle of the street: a castle from 1180, restored at the end of the nineteenth century, with a moat and a view from the keep.",
+          "pt": "A Graslei e a Korenlei se enfrentam às margens do Leie, duas fileiras de armazéns medievais que já movimentaram grãos e hoje abrigam cafés com mantas nas cadeiras. Sente-se no cais ao sol e a cidade inteira passa. Dez minutos ao norte, o Gravensteen fica no meio da rua: um castelo de 1180, restaurado no fim do século XIX, com fosso e vista do alto da torre.",
+          "de": "Graslei und Korenlei liegen sich an der Leie gegenüber, zwei Reihen mittelalterlicher Speicher, in denen einst Getreide lag und heute Cafés mit Decken auf den Stühlen sitzen. Am Kai in der Sonne sitzen, und die ganze Stadt zieht vorbei. Zehn Minuten nördlich steht der Gravensteen mitten auf der Straße: eine Burg von 1180, Ende des 19. Jahrhunderts restauriert, mit Graben und Blick vom Bergfried. Von oben sieht man die Dächer bis zum Hafen."
+        },
+        {
+          "en": "Saint Bavo's Cathedral holds the Ghent Altarpiece, finished by Jan van Eyck in 1432 and now shown in a darkened side chapel with its own ticket and time slot. The Belfry, a few streets away, has a dragon on top and a carillon. Between them lies the old centre: the Vrijdagmarkt, the Patershol, the Prinsenhof, streets that turn without warning into canals. The walk between them takes five minutes.",
+          "pt": "A catedral de São Bavo guarda o Retábulo de Gante, concluído por Jan van Eyck em 1432 e hoje exposto numa capela lateral escurecida, com ingresso e horário próprios. O campanário, a algumas ruas, tem um dragão no topo e um carrilhão. Entre os dois fica o centro antigo: a Vrijdagmarkt, o Patershol, o Prinsenhof, ruas que viram canal sem aviso.",
+          "de": "Der Sankt-Bavo-Dom hält den Genter Altar, 1432 von Jan van Eyck vollendet und heute in einer abgedunkelten Seitenkapelle mit eigenem Ticket und Zeitfenster. Der Belfried, ein paar Straßen weiter, trägt einen Drachen auf dem Dach und ein Glockenspiel. Dazwischen liegt die Altstadt: Vrijdagmarkt, Patershol, Prinsenhof, Straßen, die ohne Vorwarnung zu Kanälen werden. Der Weg dazwischen dauert fünf Minuten. Man geht keine fünf Minuten."
+        },
+        {
+          "en": "Ghent is big enough to get lost in for an afternoon and small enough to walk home. Trams run through the middle, but the centre rewards walking: the streets change character every two hundred metres, from student bars to cloth halls to the fish market on Sint-Veerleplein. Wear something comfortable and leave the map in your pocket. The trams are for the tired.",
+          "pt": "Gante é grande o bastante para se perder por uma tarde e pequena o bastante para voltar a pé. Os bondes cruzam o meio, mas o centro recompensa quem caminha: as ruas mudam de caráter a cada duzentos metros, de bares de estudantes a salões de tecelagem e ao mercado de peixe na Sint-Veerleplein. Use sapato confortável e deixe o mapa no bolso.",
+          "de": "Gent ist groß genug, um einen Nachmittag darin verloren zu gehen, und klein genug, um zu Fuß heimzukehren. Straßenbahnen fahren durch die Mitte, aber das Zentrum belohnt das Gehen: Alle zweihundert Meter ändert sich der Charakter, von Studentenkneipen über Tuchhallen bis zum Fischmarkt am Sint-Veerleplein. Bequeme Schuhe tragen und den Plan in der Tasche lassen. Die Straßenbahn ist für müde Beine."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Beer with its own rules",
+        "pt": "Cerveja com regras próprias",
+        "de": "Bier mit eigenen Regeln"
+      },
+      "p": [
+        {
+          "en": "Gruut brews without hops. The brewery uses a medieval mix of herbs and spices — the gruut of the name — and the result is a blond, amber or brown beer with a bitterness that comes from somewhere other than hops. The taproom is a short walk north of the centre, family-run, and unbothered by the fact that almost nobody else in Belgium still brews this way.",
+          "pt": "A Gruut produz sem lúpulo. A cervejaria usa uma mistura medieval de ervas e especiarias — o gruut do nome — e o resultado é uma cerveja clara, âmbar ou escura com amargor que vem de outro lugar que não o lúpulo. O bar fica a uma caminhada curta ao norte do centro, é de família e não se incomoda com o fato de quase ninguém na Bélgica ainda produzir assim.",
+          "de": "Gruut braut ohne Hopfen. Die Brauerei verwendet eine mittelalterliche Mischung aus Kräutern und Gewürzen — das Gruut des Namens —, und das Ergebnis ist ein helles, bernsteinfarbenes oder braunes Bier mit einer Bitterkeit, die nicht vom Hopfen kommt. Der Ausschank liegt einen kurzen Spaziergang nördlich des Zentrums, familiengeführt und unbeeindruckt davon, dass fast niemand in Belgien noch so braut. Die Stube ist klein und bleibt es."
+        },
+        {
+          "en": "Dok Brewing Company occupies a former metal workshop in Dok-Noord, with thirty taps and a crowd that looks like the design department of the university. Stroom, run by a Belgian-American pair, works the same edge. In the centre, De Dulle Griet pours five hundred beers on the Vrijdagmarkt and makes you surrender a shoe for its house Max; Het Waterhuis aan de Bierkant has a canal terrace and its own Gandavum.",
+          "pt": "A Dok Brewing Company ocupa uma antiga oficina metalúrgica em Dok-Noord, com trinta torneiras e uma clientela que parece o departamento de design da universidade. A Stroom, tocada por uma dupla belgo-americana, segue a mesma linha. No centro, o De Dulle Griet serve quinhentas cervejas na Vrijdagmarkt e faz você entregar um sapato pela Max da casa; o Het Waterhuis aan de Bierkant tem terraço no canal e o próprio Gandavum.",
+          "de": "Dok Brewing Company sitzt in einer ehemaligen Metallwerkstatt in Dok-Noord, mit dreißig Hähnen und einem Publikum, das wie die Designfakultät der Universität aussieht. Stroom, von einem belgisch-amerikanischen Paar geführt, bewegt sich in derselben Nische. Im Zentrum zapft De Dulle Griet fünfhundert Biere am Vrijdagmarkt und verlangt einen Schuh als Pfand für das Hausbier Max; Het Waterhuis aan de Bierkant hat eine Kanalterrasse und sein eigenes Gandavum."
+        },
+        {
+          "en": "The beer culture here is everyday rather than monumental. Students drink at four in the afternoon, cafés fill after lectures, and the best lists are in rooms that also serve lunch. De Hopduvel, in Dok-Noord, is the place for bottles to take home. Prices are lower than Bruges and the welcome is less tired. Bring an empty bag. There is no cover charge and no hurry.",
+          "pt": "A cultura cervejeira aqui é cotidiana, não monumental. Estudantes bebem às quatro da tarde, os cafés enchem depois das aulas, e as melhores listas estão em salas que também servem almoço. A De Hopduvel, em Dok-Noord, é o lugar para garrafas para levar. Os preços são mais baixos que em Bruges e o acolhimento é mais tranquilo. Leve uma sacola vazia.",
+          "de": "Die Bierkultur ist hier Alltag, nicht Denkmal. Studierende trinken um vier am Nachmittag, die Cafés füllen sich nach den Vorlesungen, und die besten Karten hängen in Stuben, die auch Mittagessen servieren. De Hopduvel in Dok-Noord ist der Ort für Flaschen zum Mitnehmen. Die Preise sind niedriger als in Brügge, der Empfang entspannter. Eine leere Tasche mitnehmen. Kein Eintritt, keine Eile."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Practical",
+        "pt": "Prático",
+        "de": "Praktisch"
+      },
+      "p": [
+        {
+          "en": "Gent-Sint-Pieters is the main station, two and a half kilometres south of the centre; tram 1 runs from the platform to the Korenmarkt in about fifteen minutes. Gent-Dampoort is closer for trains from Antwerp and the north. Tickets for the trams come from machines at the stops, and the same card works on buses. Trams run every few minutes during the day.",
+          "pt": "Gent-Sint-Pieters é a estação principal, a dois quilômetros e meio ao sul do centro; o bonde 1 vai da plataforma até a Korenmarkt em cerca de quinze minutos. Gent-Dampoort fica mais perto para trens de Antuérpia e do norte. Os bilhetes de bonde saem de máquinas nas paradas, e o mesmo cartão vale nos ônibus. Os bondes passam a cada poucos minutos durante o dia.",
+          "de": "Gent-Sint-Pieters ist der Hauptbahnhof, zweieinhalb Kilometer südlich des Zentrums; die Linie 1 fährt vom Bahnsteig in etwa fünfzehn Minuten zur Korenmarkt. Gent-Dampoort liegt näher für Züge aus Antwerpen und dem Norden. Fahrscheine gibt es an Automaten an den Haltestellen, und dieselbe Karte gilt im Bus. Die Bahnen fahren tagsüber alle paar Minuten ohne lange Wartezeit. Die Haltestelle liegt direkt am Bahnhof."
+        },
+        {
+          "en": "Book the Ghent Altarpiece in advance; the chapel is small and the slots are finite. The Gravensteen and the Belfry sell tickets at the door but are busier at weekends. In the ten days around the third weekend of July the Gentse Feesten takes over: free stages, packed squares, bars open until dawn. It is enormous fun and a terrible time to see the city quietly.",
+          "pt": "Reserve o Retábulo de Gante com antecedência; a capela é pequena e os horários são limitados. O Gravensteen e o campanário vendem ingressos na porta, mas ficam mais cheios nos fins de semana. Nos dez dias em torno do terceiro fim de semana de julho, o Gentse Feesten toma conta: palcos gratuitos, praças lotadas, bares abertos até o amanhecer. É uma diversão enorme e uma péssima hora para ver a cidade com calma.",
+          "de": "Den Genter Altar vorher buchen; die Kapelle ist klein, die Zeitfenster begrenzt. Gravensteen und Belfried verkaufen Tickets an der Tür, sind am Wochenende aber voller. In den zehn Tagen um das dritte Juliwochenende übernehmen die Gentse Feesten die Stadt: freie Bühnen, volle Plätze, Bars bis zum Morgengrauen. Ein großer Spaß und eine schlechte Zeit, die Stadt in Ruhe zu sehen."
+        },
+        {
+          "en": "Outside festival time Ghent is quiet on Sunday mornings and busy on Thursday evenings, when the student cafés fill. Thursday is also the city's vegetarian day, observed by schools and many restaurants. Carry cash for the smaller bars; cards work in most places but not all. The centre is small, and a taxi is rarely worth the wait. The Graslei is best before the terraces open.",
+          "pt": "Fora do festival, Gante é silenciosa nas manhãs de domingo e cheia nas noites de quinta, quando os cafés estudantis enchem. Quinta é também o dia vegetariano da cidade, seguido por escolas e muitos restaurantes. Leve dinheiro para os bares menores; cartão funciona na maioria, mas não em todos. O centro é pequeno, e um táxi raramente vale a espera.",
+          "de": "Außerhalb der Festspiele ist Gent am Sonntagmorgen still und am Donnerstagabend voll, wenn sich die Studentencafés füllen. Donnerstag ist auch der vegetarische Tag der Stadt, befolgt von Schulen und vielen Restaurants. Für die kleineren Bars Bargeld mitnehmen; Karten gehen meistens, aber nicht überall. Das Zentrum ist klein, und ein Taxi lohnt das Warten selten. Der Sonntagmorgen ist die beste Zeit für die Graslei."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Gruut Blond — the herb bitterness is the point, and it takes a glass to understand.",
+      "pt": "Gruut Blond — o amargor de ervas é o ponto, e é preciso um copo para entender.",
+      "de": "Gruut Blond — die Kräuterbitterkeit ist der Punkt, und man braucht ein Glas, um sie zu verstehen."
+    },
+    {
+      "en": "Dok Pils 13 at Dok-Noord, cold and hoppy, in the workshop.",
+      "pt": "Dok Pils 13 no Dok-Noord, gelada e lupulada, dentro da oficina.",
+      "de": "Dok Pils 13 in Dok-Noord, kalt und hopfig, in der Werkstatt."
+    },
+    {
+      "en": "The house Max at De Dulle Griet, shoe in the basket, if you want the ritual.",
+      "pt": "A Max da casa no De Dulle Griet, sapato na cesta, se você quiser o ritual.",
+      "de": "Das Hausbier Max im De Dulle Griet, Schuh im Korb, wenn man das Ritual will."
+    },
+    {
+      "en": "Gandavum on the canal terrace at Het Waterhuis aan de Bierkant.",
+      "pt": "Gandavum no terraço do canal no Het Waterhuis aan de Bierkant.",
+      "de": "Gandavum auf der Kanalterrasse im Het Waterhuis aan de Bierkant."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Waterzooi — chicken or fish in a creamy broth with vegetables — is Ghent's own dish, and better in winter.",
+      "pt": "Waterzooi — frango ou peixe num caldo cremoso com legumes — é o prato de Gante, e melhor no inverno.",
+      "de": "Waterzooi — Huhn oder Fisch in cremiger Brühe mit Gemüse — ist Gents eigenes Gericht, und im Winter besser."
+    },
+    {
+      "en": "Cuberdon, the raspberry cone sold from stalls; eat it within a day, because it does not keep.",
+      "pt": "Cuberdon, o cone de framboesa vendido em barracas; coma no mesmo dia, porque não dura.",
+      "de": "Cuberdon, der Himbeerkegel vom Stand; innerhalb eines Tages essen, denn er hält nicht."
+    },
+    {
+      "en": "A frituur near Sint-Veerleplein or in the Patershol, for fries with stoofvlees.",
+      "pt": "Um frituur perto da Sint-Veerleplein ou no Patershol, para batatas fritas com stoofvlees.",
+      "de": "Ein Frituur am Sint-Veerleplein oder im Patershol, für Pommes mit Stoofvlees."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Two stations: Sint-Pieters for Brussels and Bruges, Dampoort for Antwerp.",
+      "pt": "Duas estações: Sint-Pieters para Bruxelas e Bruges, Dampoort para Antuérpia.",
+      "de": "Zwei Bahnhöfe: Sint-Pieters für Brüssel und Brügge, Dampoort für Antwerpen."
+    },
+    {
+      "en": "Buy tram tickets from the machine or app and validate on board.",
+      "pt": "Compre o bilhete de bonde na máquina ou no aplicativo e valide a bordo.",
+      "de": "Tramfahrkarten am Automaten oder per App kaufen und im Fahrzeug entwerten."
+    },
+    {
+      "en": "Book the Ghent Altarpiece ahead; the chapel has limited slots.",
+      "pt": "Reserve o Retábulo de Gante antes; a capela tem horários limitados.",
+      "de": "Den Genter Altar vorher buchen; die Kapelle hat begrenzte Zeitfenster."
+    },
+    {
+      "en": "Avoid Gentse Feesten if you want quiet, and book beds months ahead if you do not.",
+      "pt": "Evite o Gentse Feesten se quiser sossego, e reserve cama com meses de antecedência se não quiser.",
+      "de": "Die Gentse Feesten meiden, wenn man Ruhe will — oder Monate vorher Betten buchen, wenn nicht."
+    },
+    {
+      "en": "Carry cash for the smaller cafés.",
+      "pt": "Leve dinheiro para os cafés menores.",
+      "de": "Für die kleineren Cafés Bargeld mitnehmen."
+    }
+  ],
+  "links": [
+    {
+      "label": "Visit Gent",
+      "url": "https://visit.gent.be/en"
+    },
+    {
+      "label": "Gruut",
+      "url": "https://www.gruut.be/en/"
+    },
+    {
+      "label": "Ghent, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ghent"
+    }
+  ]
+}

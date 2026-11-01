@@ -1,0 +1,238 @@
+{
+  "slug": "bamberg",
+  "type": "city",
+  "name": "Bamberg",
+  "where": "Bamberg, Germany",
+  "coords": [
+    49.8921,
+    10.8869
+  ],
+  "span": 1.1,
+  "subtitle_en": "Nine breweries inside a UNESCO old town",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bamberg+Altstadt+Altes+Rathaus",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "schlenkerla",
+    "spezial",
+    "mahrs-brau",
+    "klosterbrau"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "UNESCO listing",
+        "pt": "patrimônio da UNESCO",
+        "de": "UNESCO-Welterbe"
+      },
+      "v": {
+        "en": "1993"
+      }
+    },
+    {
+      "k": {
+        "en": "breweries in the city",
+        "pt": "cervejarias na cidade",
+        "de": "Brauereien in der Stadt"
+      },
+      "v": {
+        "en": "nine",
+        "pt": "nove",
+        "de": "neun"
+      }
+    },
+    {
+      "k": {
+        "en": "cathedral consecrated",
+        "pt": "catedral consagrada",
+        "de": "Dom geweiht"
+      },
+      "v": {
+        "en": "1012"
+      }
+    },
+    {
+      "k": {
+        "en": "listed monuments",
+        "pt": "monumentos tombados",
+        "de": "Bau- und Bodendenkmäler"
+      },
+      "v": {
+        "en": "about 1,400",
+        "pt": "cerca de 1.400",
+        "de": "rund 1.400"
+      }
+    },
+    {
+      "k": {
+        "en": "inhabitants",
+        "pt": "habitantes",
+        "de": "Einwohner"
+      },
+      "v": {
+        "en": "77,000",
+        "pt": "77 mil",
+        "de": "77.000"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Bamberg is a small city on the Regnitz with an old town listed by UNESCO since 1993, built across two arms of the river and up the hill behind them. It also has nine breweries, a number that shapes the place more than any single building, and a smoked beer that has been made in the same house since 1405.",
+    "pt": "Bamberg é uma cidade pequena no Regnitz, com um centro histórico patrimônio da UNESCO desde 1993, construído entre os dois braços do rio e pela encosta atrás deles. Tem também nove cervejarias, um número que molda a cidade mais do que qualquer prédio isolado, e uma cerveja defumada feita na mesma casa desde 1405.",
+    "de": "Bamberg ist eine kleine Stadt an der Regnitz, deren Altstadt seit 1993 zum UNESCO-Welterbe gehört und sich zwischen den beiden Flussarmen und auf den Hügeln dahinter ausbreitet. Sie hat außerdem neun Brauereien — eine Zahl, die den Ort stärker prägt als jedes einzelne Gebäude — und ein Rauchbier, das seit 1405 im selben Haus gebraut wird."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The shape of the town",
+        "pt": "O desenho da cidade",
+        "de": "Wie die Stadt gebaut ist"
+      },
+      "p": [
+        {
+          "en": "The old town is not one square but three quarters stacked together. The episcopal hill holds the cathedral, the Alte Hofhaltung and the Neue Residenz. Below it, the island town sits between the two arms of the Regnitz. East of that, the Gärtnerstadt was given over to market gardens, and vegetables are still grown inside the city limits. Walking from the station to the cathedral crosses all three in twenty minutes.",
+          "pt": "O centro histórico não é uma praça só, mas três bairros encaixados. A colina episcopal reúne a catedral, a Alte Hofhaltung e a Neue Residenz. Abaixo dela, a cidade-ilha fica entre os dois braços do Regnitz. A leste, a Gärtnerstadt era território de hortas comerciais, e ainda se plantam legumes dentro dos limites da cidade. A caminhada da estação até a catedral atravessa os três em vinte minutos.",
+          "de": "Die Altstadt ist kein einzelner Platz, sondern drei Viertel, die ineinandergeschoben sind. Auf dem bischöflichen Berg stehen der Dom, die Alte Hofhaltung und die Neue Residenz. Darunter liegt die Inselstadt zwischen den beiden Regnitzarmen. Östlich davon war die Gärtnerstadt den Gemüsegärtnereien vorbehalten, und noch heute wird innerhalb der Stadtgrenzen Gemüse angebaut. Der Weg vom Bahnhof zum Dom führt in zwanzig Minuten durch alle drei."
+        },
+        {
+          "en": "The Altes Rathaus is the hinge between hill and island. It was first mentioned in 1387 and rebuilt between 1461 and 1467, and it stands in the river on its own small island, joined to both banks by bridges. The usual story is that the bishop refused the citizens land for a town hall. The facade is painted with illusionistic architecture, repainted by Anton Greiner between 1959 and 1962 after the eighteenth-century work had worn away. Inside is the Ludwig porcelain collection.",
+          "pt": "O Altes Rathaus é a dobradiça entre a colina e a ilha. Foi mencionado pela primeira vez em 1387 e reconstruído entre 1461 e 1467, e fica dentro do rio, numa ilhota própria, ligado às duas margens por pontes. A história que se conta é que o bispo negou terreno aos cidadãos para a prefeitura. A fachada é pintada com arquitetura ilusória, repintada por Anton Greiner entre 1959 e 1962 depois que a pintura do século XVIII se apagou. Dentro funciona a coleção de porcelana Ludwig.",
+          "de": "Das Alte Rathaus ist das Scharnier zwischen Berg und Insel. Es wurde 1387 erstmals erwähnt und zwischen 1461 und 1467 neu gebaut; es steht im Fluss auf einer eigenen kleinen Insel, mit Brücken zu beiden Ufern. Erzählt wird, der Bischof habe den Bürgern das Land für ein Rathaus verweigert. Die Fassade ist mit Scheinarchitektur bemalt, 1959 bis 1962 von Anton Greiner neu aufgetragen, nachdem die Malerei des 18. Jahrhunderts verblasst war. Im Inneren liegt die Porzellansammlung Ludwig."
+        },
+        {
+          "en": "Klein-Venedig is the row of fishermen's houses on the east bank between the Markusbrücke and the Untere Brücke, most of them built from the seventeenth century onwards, with gardens running down to the water. The view is better from the other side, from the path called Am Leinritt, where the balconies and the timber frames line up above the river. Cross back over the Untere Brücke and you are on the island again.",
+          "pt": "Klein-Venedig é a fileira de casas de pescadores na margem leste, entre a Markusbrücke e a Untere Brücke, a maioria do século XVII em diante, com hortas que descem até a água. A vista é melhor do outro lado, pela rua chamada Am Leinritt, onde as varandas e as fachadas de enxaimel se alinham sobre o rio. Volte pela Untere Brücke e você está de novo na ilha.",
+          "de": "Klein-Venedig ist die Reihe von Fischerhäusern am Ostufer zwischen Markusbrücke und Unterer Brücke, die meisten ab dem 17. Jahrhundert gebaut, mit Gärten, die bis ans Wasser reichen. Besser sieht man sie vom anderen Ufer, vom Weg Am Leinritt, wo sich Balkone und Fachwerk über dem Fluss aufreihen. Über die Untere Brücke geht es zurück auf die Insel. Die Häuser sind schmal, die Gärten dahinter klein."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Nine breweries, one river",
+        "pt": "Nove cervejarias, um rio",
+        "de": "Neun Brauereien, ein Fluss"
+      },
+      "p": [
+        {
+          "en": "The count is nine: Ambräusianum, Fässla, Greifenklau, Kaiserdom, Keesmann, Klosterbräu, Mahrs, Schlenkerla and Spezial. That is the figure the local brewers' association uses, and it makes Bamberg one of the densest brewery towns in Germany for its size. Most stand inside the old town, within ten minutes of each other on foot, and most pour their beer in a room attached to the brewhouse.",
+          "pt": "A conta é nove: Ambräusianum, Fässla, Greifenklau, Kaiserdom, Keesmann, Klosterbräu, Mahrs, Schlenkerla e Spezial. É o número usado pela associação dos cervejeiros locais, e faz de Bamberg uma das cidades cervejeiras mais densas da Alemanha para o seu tamanho. A maioria fica no centro histórico, a dez minutos a pé uma da outra, e serve a própria cerveja numa sala colada ao tanque.",
+          "de": "Die Zahl ist neun: Ambräusianum, Fässla, Greifenklau, Kaiserdom, Keesmann, Klosterbräu, Mahrs, Schlenkerla und Spezial. So zählt es der örtliche Brauereiverband, und damit gehört Bamberg gemessen an seiner Größe zu den brauereidichtesten Städten Deutschlands. Die meisten liegen in der Altstadt, zehn Gehminuten voneinander entfernt, und zapfen ihr Bier in einem Raum direkt neben dem Sudhaus. Kaiserdom steht draußen in Gaustadt, alle anderen im Kern."
+        },
+        {
+          "en": "Rauchbier is why people come, and the reason is technical. Before indirect kilning arrived in the nineteenth century, malt was dried over open fire and every beer tasted faintly of smoke. Schlenkerla still dries its malt over beechwood and pours the result from an oak cask. Spezial, a hundred metres away, makes the version Bambergers drink: the same idea with the smoke turned down. Mahr's makes none at all and is known for the aU, an unfiltered, barely carbonated lager poured in the Schwemme.",
+          "pt": "A Rauchbier é o motivo da visita, e a razão é técnica. Antes da secagem indireta chegar no século XIX, o malte secava sobre fogo aberto e toda cerveja tinha um fundo de fumaça. A Schlenkerla ainda seca o malte sobre lenha de faia e serve o resultado de um barril de carvalho. A Spezial, cem metros adiante, faz a versão que os moradores bebem: a mesma ideia com menos fumaça. A Mahr's não faz nenhuma e é conhecida pela aU, uma lager não filtrada, quase sem gás, servida na Schwemme.",
+          "de": "Rauchbier ist der Grund für die Reise, und der Grund ist technisch. Bevor im 19. Jahrhundert die indirekte Darre aufkam, wurde Malz über offenem Feuer getrocknet, und jedes Bier schmeckte nach Rauch. Schlenkerla trocknet sein Malz noch über Buchenholz und zapft das Ergebnis aus einem Eichenfass. Spezial, hundert Meter weiter, braut die Version, die Bamberger trinken: dieselbe Idee mit weniger Rauch. Mahrs braut gar keins und ist für die aU bekannt, ein ungefiltertes, kaum karbonisiertes Lager, ausgeschenkt in der Schwemme."
+        },
+        {
+          "en": "The Franconian Brewery Museum on the Michaelsberg explains the density better than any tavern. It occupies the vaults of the former Benedictine brewery, where beer was brewed from 1122, and works through malt, hops, cooperage and the village breweries that once ran into the hundreds across Upper Franconia. It opens at the start of April, so check the date before climbing the hill.",
+          "pt": "O Museu Francônio da Cerveja, no Michaelsberg, explica essa densidade melhor que qualquer taverna. Ocupa as abóbadas da antiga cervejaria beneditina, onde se fabricava cerveja desde 1122, e percorre malte, lúpulo, tanoaria e as cervejarias de vilarejo que já foram centenas na Alta Francônia. Abre no começo de abril e fecha no inverno, então confira a data antes de subir a colina — a subida é curta, mas íngreme.",
+          "de": "Das Fränkische Brauereimuseum auf dem Michaelsberg erklärt diese Dichte besser als jede Gaststube. Es liegt in den Gewölben der ehemaligen Benediktinerbrauerei, in der seit 1122 Bier gebraut wurde, und führt durch Malz, Hopfen, Böttcherei und die Dorfbrauereien, die in Oberfranken einmal in die Hunderte gingen. Es öffnet Anfang April und schließt über den Winter — vor dem Aufstieg also besser nachsehen; der Weg hinauf ist kurz, aber steil."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "A day on foot",
+        "pt": "Um dia a pé",
+        "de": "Ein Tag zu Fuß"
+      },
+      "p": [
+        {
+          "en": "Bamberg Hbf sits less than two kilometres from the old town, which is a flat twenty-minute walk down Ludwigstraße, or a short bus ride to the ZOB. Cross the Obere Brücke and the Altes Rathaus is directly in front of you, with the cathedral above and to the left. Nothing in the centre needs a car, and most of it is pedestrian.",
+          "pt": "A Hauptbahnhof de Bamberg fica a menos de dois quilômetros do centro histórico: vinte minutos de caminhada plana pela Ludwigstraße, ou um trecho curto de ônibus até o ZOB. Atravesse a Obere Brücke e o Altes Rathaus está na sua frente, com a catedral acima e à esquerda. Nada no centro exige carro, e quase tudo é calçadão. A cidade é plana junto ao rio e só sobe na colina da catedral.",
+          "de": "Der Bamberger Hauptbahnhof liegt keine zwei Kilometer von der Altstadt entfernt — zwanzig flache Gehminuten die Ludwigstraße hinunter oder eine kurze Busfahrt zum ZOB. Über die Obere Brücke, und das Alte Rathaus steht direkt vor einem, der Dom darüber und links. Im Zentrum braucht man kein Auto, und das meiste ist Fußgängerzone. Flach ist es nur am Fluss; danach geht es bergauf."
+        },
+        {
+          "en": "The Grüner Markt holds market stalls from Monday to Saturday, around a fountain the Bambergers call Gabelmann. This is where to buy the Bamberger Hörnla, which is two different things: a small, floury potato grown in the market gardens, and a flat, buttery pastry somewhere between a croissant and shortcrust. Bakeries sell the pastry warm in the morning, and it is the correct breakfast before a day of smoke.",
+          "pt": "O Grüner Markt tem barracas de mercado de segunda a sábado, em volta de uma fonte que os moradores chamam de Gabelmann. É ali que se compra o Bamberger Hörnla, que são duas coisas diferentes: uma batata pequena e farinhenta, cultivada nas hortas da cidade, e um folhado achatado e amanteigado, entre o croissant e a massa podre. As padarias vendem o doce quente pela manhã, e ele é o café da manhã certo antes de um dia de fumaça.",
+          "de": "Auf dem Grünen Markt stehen von Montag bis Samstag Marktstände, um einen Brunnen herum, den die Bamberger Gabelmann nennen. Hier kauft man das Bamberger Hörnla, und das sind zwei verschiedene Dinge: eine kleine, mehlige Kartoffel aus den Gärtnereien und ein flaches, buttriges Gebäck zwischen Croissant und Mürbeteig. Die Bäckereien verkaufen das Gebäck morgens warm, und es ist das richtige Frühstück vor einem Tag voller Rauch."
+        },
+        {
+          "en": "Then the cathedral, the rose garden of the Neue Residenz, and down through Klein-Venedig to the river. In the evening, pick a tavern and stay in it. Most take no reservations: you look for a free seat and ask to share a table, which is normal and not an imposition. Two mugs of Rauchbier make the walk back to the station longer than it was in the morning.",
+          "pt": "Depois a catedral, o roseiral da Neue Residenz, e a descida por Klein-Venedig até o rio. À noite, escolha uma taverna e fique nela. Quase nenhuma aceita reserva: procure um lugar livre e peça para dividir a mesa, o que é normal e não incomoda ninguém. Dois canecos de Rauchbier deixam a volta até a estação mais longa do que foi de manhã.",
+          "de": "Dann der Dom, der Rosengarten der Neuen Residenz und hinunter durch Klein-Venedig an den Fluss. Abends eine Gaststube wählen und dableiben. Reservierungen sind meist nicht üblich: einen freien Platz suchen und fragen, ob man sich dazusetzen darf — das ist normal und keine Zumutung, auch wenn es am Anfang so wirkt. Zwei Krüge Rauchbier machen den Rückweg zum Bahnhof länger als am Morgen."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Aecht Schlenkerla Rauchbier Märzen, tapped from the oak cask at Dominikanerstraße 6. Give it three sips before deciding.",
+      "pt": "Aecht Schlenkerla Rauchbier Märzen, tirada do barril de carvalho na Dominikanerstraße 6. Dê três goles antes de decidir.",
+      "de": "Aecht Schlenkerla Rauchbier Märzen, am Eichenfass in der Dominikanerstraße 6 gezapft. Drei Schlucke geben, bevor man urteilt."
+    },
+    {
+      "en": "Mahr's aU Ungespundetes in the Schwemme: unfiltered, barely carbonated, the reference lager of the city.",
+      "pt": "A aU Ungespundetes da Mahr's, na Schwemme: não filtrada, quase sem gás, a lager de referência da cidade.",
+      "de": "Mahrs aU Ungespundetes in der Schwemme: ungefiltert, kaum Kohlensäure, das Referenzlager der Stadt."
+    },
+    {
+      "en": "Spezial Rauchbier Lager, the local answer to all the smoke: same idea, half the volume.",
+      "pt": "Spezial Rauchbier Lager, a resposta local para tanta fumaça: a mesma ideia, metade do volume.",
+      "de": "Spezial Rauchbier Lager, die lokale Antwort auf all den Rauch: dieselbe Idee, halbe Lautstärke."
+    },
+    {
+      "en": "Keesmann Herren Pils when the smoke needs a counterweight: dry, bitter, and a different century altogether.",
+      "pt": "Keesmann Herren Pils quando a fumaça pede contrapeso: seco, amargo, e de outro século.",
+      "de": "Keesmann Herren Pils, wenn der Rauch ein Gegengewicht braucht: trocken, herb und aus einem anderen Jahrhundert."
+    }
+  ],
+  "eat": [
+    {
+      "en": "The Schäuferla, roast pork shoulder with a dark beer gravy and Klöße, is the dish Franconia orders on Sundays and the best thing to eat before a long afternoon.",
+      "pt": "O Schäuferla, paleta de porco assada com molho escuro de cerveja e Klöße, é o prato que a Francônia pede aos domingos e a melhor coisa para comer antes de uma tarde longa.",
+      "de": "Das Schäuferla, gebratene Schweineschulter in dunkler Biersoße mit Klößen, ist das Sonntagsgericht Frankens und das Beste vor einem langen Nachmittag."
+    },
+    {
+      "en": "A Bamberger Hörnla from a bakery, still warm, with coffee at eleven.",
+      "pt": "Um Bamberger Hörnla de padaria, ainda quente, com café às onze.",
+      "de": "Ein Bamberger Hörnla vom Bäcker, noch warm, um elf mit Kaffee."
+    },
+    {
+      "en": "A Brotzeit in one of the taverns — bread, butter, radishes, smoked ham — which is what the beer was built for.",
+      "pt": "Uma Brotzeit em qualquer taverna — pão, manteiga, rabanetes, presunto defumado —, que é para o que a cerveja foi feita.",
+      "de": "Eine Brotzeit in einer der Gaststuben — Brot, Butter, Radieschen, geräucherter Schinken —, wofür das Bier gemacht ist."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Bamberg is an hour from Nuremberg by train and about two and a half from Munich; the station sits on the ICE line, so a day trip works.",
+      "pt": "Bamberg fica a uma hora de Nuremberg de trem e a cerca de duas e meia de Munique; a estação está na linha do ICE, então dá para ir e voltar no mesmo dia.",
+      "de": "Bamberg liegt eine Bahnstunde von Nürnberg und etwa zweieinhalb von München; der Bahnhof liegt an der ICE-Strecke, ein Tagesausflug ist also machbar."
+    },
+    {
+      "en": "Cash is the safer default in the taverns. Cards are taken more often than they were, but not everywhere and not at busy times.",
+      "pt": "Dinheiro em espécie é o mais seguro nas tavernas. Cartão é aceito com mais frequência do que antes, mas não em todo lugar e nem nos horários cheios.",
+      "de": "Bargeld ist in den Gaststuben die sichere Wahl. Karten gehen häufiger als früher, aber nicht überall und nicht, wenn viel los ist."
+    },
+    {
+      "en": "Klosterbräu opens Wednesday to Sunday. The brewery museum on the Michaelsberg opens in April and closes for the winter.",
+      "pt": "O Klosterbräu abre de quarta a domingo. O museu da cerveja no Michaelsberg abre em abril e fecha no inverno.",
+      "de": "Klosterbräu öffnet Mittwoch bis Sonntag. Das Brauereimuseum auf dem Michaelsberg öffnet im April und schließt über den Winter."
+    },
+    {
+      "en": "The old town is small: twenty minutes corner to corner. You will walk more than you expect, and most of it is cobbled.",
+      "pt": "O centro histórico é pequeno: vinte minutos de ponta a ponta. Você vai andar mais do que imagina, e quase tudo é de pedra.",
+      "de": "Die Altstadt ist klein: zwanzig Minuten von Ecke zu Ecke. Man läuft mehr, als man denkt, und fast alles ist Kopfsteinpflaster."
+    }
+  ],
+  "links": [
+    {
+      "label": "Bamberg tourism",
+      "url": "https://www.bamberg.info/"
+    },
+    {
+      "label": "Bamberg (Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Bamberg"
+    },
+    {
+      "label": "Fränkisches Brauereimuseum",
+      "url": "https://brauereimuseum.de/"
+    }
+  ]
+}

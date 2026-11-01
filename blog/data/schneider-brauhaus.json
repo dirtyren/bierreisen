@@ -1,0 +1,242 @@
+{
+  "slug": "schneider-brauhaus",
+  "type": "brewery",
+  "name": "Schneider Bräuhaus",
+  "where": "Munich, Germany",
+  "coords": [
+    48.136437,
+    11.578463
+  ],
+  "span": 0.35,
+  "subtitle_en": "Wheat beer from the house that broke the monopoly",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Schneider+Br%C3%A4uhaus+Tal+7+Munich",
+  "trips": [
+    "2019",
+    "2020",
+    "2021",
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "munich",
+    "hofbrauhaus",
+    "augustiner",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "founded",
+        "pt": "fundação",
+        "de": "gegründet"
+      },
+      "v": {
+        "en": "1872"
+      }
+    },
+    {
+      "k": {
+        "en": "Tap 7",
+        "pt": "Tap 7",
+        "de": "Tap 7"
+      },
+      "v": {
+        "en": "5.4%"
+      }
+    },
+    {
+      "k": {
+        "en": "Aventinus",
+        "pt": "Aventinus",
+        "de": "Aventinus"
+      },
+      "v": {
+        "en": "8.2%"
+      }
+    },
+    {
+      "k": {
+        "en": "brewed in",
+        "pt": "produzida em",
+        "de": "gebraut in"
+      },
+      "v": {
+        "en": "Kelheim since 1946",
+        "pt": "Kelheim desde 1946",
+        "de": "Kelheim seit 1946"
+      }
+    },
+    {
+      "k": {
+        "en": "house",
+        "pt": "casa",
+        "de": "Haus"
+      },
+      "v": {
+        "en": "Tal 7, since 1872",
+        "pt": "Tal 7, desde 1872",
+        "de": "Tal 7, seit 1872"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Georg Schneider I was the first commoner allowed to brew wheat beer in Bavaria. He took the right in 1872, bought the abandoned Maderbräu house on Tal, and started a company whose Tap 7 still follows the 1872 recipe. Six generations later the family still runs it, and the room still works as a beer hall rather than a museum.",
+    "pt": "Georg Schneider I foi o primeiro plebeu autorizado a produzir cerveja de trigo na Baviera. Recebeu o direito em 1872, comprou a casa abandonada da Maderbräu na rua Tal e fundou uma empresa cuja Tap 7 ainda segue a receita de 1872. Seis gerações depois, a família ainda comanda tudo, e o salão continua funcionando como cervejaria e não como museu.",
+    "de": "Georg Schneider I. war der erste Bürgerliche, der in Bayern Weißbier brauen durfte. Er erhielt das Recht 1872, kaufte das verlassene Maderbräu-Haus im Tal und gründete eine Firma, deren Tap 7 noch heute nach dem Rezept von 1872 gebraut wird. Sechs Generationen später führt die Familie sie immer noch, und der Saal funktioniert noch als Wirtshaus und nicht als Museum."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The end of a monopoly",
+        "pt": "O fim de um monopólio",
+        "de": "Das Ende eines Monopols"
+      },
+      "p": [
+        {
+          "en": "For two centuries wheat beer was a Wittelsbach privilege, granted to one family at a time and enforced across Bavaria. Karl Theodor lifted the general monopoly in 1792 but kept the right to grant it, and the Hofbräuhaus held that right in Munich. By 1872 the court brewery was considering dropping wheat beer altogether, because lager sold better and the tanks were needed for it.",
+          "pt": "Por dois séculos a cerveja de trigo foi um privilégio dos Wittelsbach, concedido a uma família por vez e imposto em toda a Baviera. Karl Theodor acabou com o monopólio geral em 1792, mas manteve o direito de concedê-lo, e a Hofbräuhaus detinha esse direito em Munique. Em 1872 a cervejaria da corte pensava em abandonar a cerveja de trigo, porque a lager vendia mais e os tanques eram necessários para ela.",
+          "de": "Zwei Jahrhunderte lang war Weißbier ein Wittelsbacher Privileg, jeweils einer Familie verliehen und in ganz Bayern durchgesetzt. Karl Theodor hob 1792 das allgemeine Monopol auf, behielt aber das Recht, es zu vergeben, und in München lag es beim Hofbräuhaus. 1872 erwog die Hofbrauerei, das Weißbier ganz aufzugeben, weil Lager besser lief und die Tanks dafür gebraucht wurden. Das war eine politische Entscheidung mit Folgen für den Markt."
+        },
+        {
+          "en": "Georg Schneider, the Hofbräuhaus tenant, negotiated the Weissbierregal with Ludwig II and became the first commoner to hold it. He bought the abandoned Maderbräu premises at Tal 7 in the same year and began brewing with his son Georg II. The company dates its founding to 1872, and the recipe for what is now Tap 7 has not changed since, which is either conservatism or confidence.",
+          "pt": "Georg Schneider, arrendatário da Hofbräuhaus, negociou o Weissbierregal com Luís II e se tornou o primeiro plebeu a detê-lo. Comprou as instalações abandonadas da Maderbräu, na Tal 7, no mesmo ano, e começou a produzir com o filho Georg II. A fundação da empresa é de 1872, e a receita do que hoje é a Tap 7 não mudou desde então, o que é conservadorismo ou confiança.",
+          "de": "Georg Schneider, Pächter des Hofbräuhauses, verhandelte das Weißbierregal mit Ludwig II. und war der erste Bürgerliche, der es hielt. Im selben Jahr kaufte er die verlassene Maderbräu-Stätte im Tal 7 und begann mit seinem Sohn Georg II. zu brauen. Die Firma datiert ihre Gründung auf 1872, und das Rezept der heutigen Tap 7 hat sich seither nicht geändert, was entweder Konservatismus ist oder Selbstvertrauen."
+        },
+        {
+          "en": "Mathilde Schneider ran the brewery from 1905 to 1924 and launched Aventinus in 1907, the first wheat doppelbock in Bavaria. The family bought the Kelheim brewery in 1928. After the Munich plant was destroyed by bombing in 1944, production moved to Kelheim in 1946, and the house on Tal became a restaurant. Georg VII has run the company since 2025.",
+          "pt": "Mathilde Schneider dirigiu a cervejaria de 1905 a 1924 e lançou a Aventinus em 1907, o primeiro doppelbock de trigo da Baviera. A família comprou a cervejaria de Kelheim em 1928. Depois que a fábrica de Munique foi destruída por bombardeios em 1944, a produção passou para Kelheim em 1946, e a casa na Tal virou restaurante. Georg VII comanda a empresa desde 2025.",
+          "de": "Mathilde Schneider führte die Brauerei von 1905 bis 1924 und brachte 1907 den Aventinus auf den Markt, den ersten Weizendoppelbock Bayerns. 1928 kaufte die Familie die Brauerei in Kelheim. Nachdem das Münchner Werk 1944 durch Bomben zerstört worden war, zog die Produktion 1946 nach Kelheim, und das Haus im Tal wurde Gaststätte. Seit 2025 führt Georg VII. die Firma. Damit war München keine Weißbierstadt mehr, sondern eine Lagerstadt mit einer Ausnahme."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The house on Tal",
+        "pt": "A casa na Tal",
+        "de": "Das Haus im Tal"
+      },
+      "p": [
+        {
+          "en": "The building is not medieval, whatever the name suggests. The old Maderbräu and Bachlbräu houses were demolished in 1901, and the construction firm Heilmann & Littmann put up the present five-storey block in 1902 and 1903. The first floor, originally flats, was folded into the restaurant during the renovation of 1987 to 1993, which is why the room now has two distinct levels.",
+          "pt": "O prédio não é medieval, apesar do que o nome sugere. As antigas casas Maderbräu e Bachlbräu foram demolidas em 1901, e a construtora Heilmann & Littmann ergueu o atual bloco de cinco andares em 1902 e 1903. O primeiro andar, antes residencial, foi incorporado ao restaurante na reforma de 1987 a 1993, e é por isso que o salão hoje tem dois níveis distintos.",
+          "de": "Das Gebäude ist nicht mittelalterlich, wie der Name vermuten lässt. Die alten Häuser Maderbräu und Bachlbräu wurden 1901 abgerissen, und die Baufirma Heilmann & Littmann errichtete 1902 und 1903 den heutigen fünfgeschossigen Block. Das erste Obergeschoss, ursprünglich Wohnungen, wurde bei der Renovierung von 1987 bis 1993 in die Gaststätte einbezogen, weshalb der Saal heute zwei Ebenen hat. Was bleibt, ist ein Haus mit zwei Ebenen und einer Geschichte, die älter ist als seine Fassade."
+        },
+        {
+          "en": "The ground-floor Schwemme is small, nine metres by nine, with a vaulted ceiling and windows onto the Tal. Upstairs is lighter and quieter, and better for a long dinner. The menu is Bavarian cooking built around wheat beer: Obatzda with a pretzel, sausages, roast pork with dumplings, and a few dishes that exist mainly to be dipped into the beer.",
+          "pt": "A Schwemme do térreo é pequena, nove metros por nove, com teto abobadado e janelas para o Tal. Lá em cima é mais claro e mais silencioso, melhor para um jantar longo. O menu é cozinha bávara pensada em torno da cerveja de trigo: Obatzda com pretzel, linguiças, porco assado com bolinhos, e alguns pratos que existem principalmente para serem molhados na cerveja.",
+          "de": "Die Schwemme im Erdgeschoss ist klein, neun mal neun Meter, mit Gewölbe und Fenstern zum Tal. Oben ist es heller und ruhiger, besser für ein langes Abendessen. Die Karte ist bayerische Küche rund ums Weißbier: Obatzda mit Brezn, Würste, Schweinsbraten mit Knödeln und ein paar Gerichte, die vor allem zum Eintunken ins Bier da sind. Dazu ein paar Salate und Suppen, mehr braucht es nicht."
+        },
+        {
+          "en": "It is a city restaurant with a brewery's history, not a museum. Office lunches at noon, tourists in the afternoon, families in the evening; the staff know the difference between Tap 7 and Aventinus and will steer you if you ask. There are three Schneider houses: this one, Berg am Laim, and the brewery tap in Kelheim, which is the only one with the tanks next door.",
+          "pt": "É um restaurante de cidade com a história de uma cervejaria, não um museu. Almoços de escritório ao meio-dia, turistas à tarde, famílias à noite; a equipe conhece a diferença entre a Tap 7 e a Aventinus e sabe orientar se você perguntar. São três casas Schneider: esta, a de Berg am Laim e o bar da fábrica em Kelheim, a única com os tanques ao lado.",
+          "de": "Es ist ein Stadtrestaurant mit der Geschichte einer Brauerei, kein Museum. Mittags Bürolunch, nachmittags Touristen, abends Familien; das Personal kennt den Unterschied zwischen Tap 7 und Aventinus und hilft bei der Wahl. Es gibt drei Schneider-Häuser: dieses, Berg am Laim und den Brauereiausschank in Kelheim, den einzigen mit den Tanks nebenan. Wer mehr über die Brauerei wissen will, fährt nach Kelheim."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The beer",
+        "pt": "A cerveja",
+        "de": "Das Bier"
+      },
+      "p": [
+        {
+          "en": "Tap 7 at 5.4 per cent is the original: open fermentation, a second fermentation in the bottle, no filtration, 12.8 degrees Plato. It arrives cloudy and needs the usual treatment, two-thirds into the glass, a swirl of the bottle, then the rest. Clove, banana, a dry finish, and a texture that is thinner than the colour suggests, which is why it goes down faster than it should.",
+          "pt": "A Tap 7, 5,4%, é a original: fermentação aberta, segunda fermentação na garrafa, sem filtragem, 12,8 graus Plato. Chega turva e pede o tratamento de sempre: dois terços no copo, uma rodada na garrafa, depois o resto. Cravo, banana, final seco, e uma textura mais leve do que a cor sugere, e é por isso que desce mais rápido do que deveria.",
+          "de": "Tap 7 mit 5,4 Prozent ist das Original: offene Gärung, zweite Gärung in der Flasche, ungefiltert, 12,8 Grad Plato. Sie kommt trüb ins Glas und will behandelt werden: zwei Drittel einschenken, die Flasche schwenken, dann der Rest. Nelke, Banane, trockener Abgang und eine Textur, die dünner ist als die Farbe vermuten lässt, weshalb sie schneller weggeht, als sie sollte. So trinkt man sie in München."
+        },
+        {
+          "en": "Aventinus at 8.2 per cent is the oldest wheat doppelbock in Bavaria, brewed since 1907 and named after Johannes Aventinus, the court historian who wrote the first proper history of the duchy. Dark, plummy, almost oily, and served in a tall glass because a Maß would be reckless. The Eisbock is the same beer partly frozen and concentrated to around 12 per cent, and it ends evenings.",
+          "pt": "A Aventinus, 8,2%, é o doppelbock de trigo mais antigo da Baviera, produzido desde 1907 e batizado em homenagem a Johannes Aventinus, o historiador da corte que escreveu a primeira história séria do ducado. Escura, ameixada, quase oleosa, e servida num copo alto porque uma Maß seria imprudência. A Eisbock é a mesma cerveja parcialmente congelada e concentrada até cerca de 12%, e encerra noites.",
+          "de": "Aventinus mit 8,2 Prozent ist der älteste Weizendoppelbock Bayerns, gebraut seit 1907 und benannt nach Johannes Aventinus, dem Hofhistoriker, der die erste richtige Geschichte des Herzogtums schrieb. Dunkel, pflaumig, fast ölig, und im hohen Glas serviert, weil eine Maß leichtsinnig wäre. Der Eisbock ist dasselbe Bier, teilweise gefroren und auf rund 12 Prozent konzentriert, und beendet Abende. Danach ist der Abend vorbei, was auch der Zweck ist."
+        },
+        {
+          "en": "The wider range is worth knowing: Tap 1 Helle Weisse, Tap 5 Hopfenweisse made with Brooklyn Brewery, Tap 4 Festweisse, and a Helles under the Landbrauerei label. All of it is brewed in Kelheim now, so a visit here is a meal and a history lesson rather than a brewery tour. The taps are the point, and there are more of them than most bars can pour.",
+          "pt": "O resto da linha vale conhecer: Tap 1 Helle Weisse, Tap 5 Hopfenweisse feita com a Brooklyn Brewery, Tap 4 Festweisse e uma Helles sob o rótulo Landbrauerei. Tudo é produzido em Kelheim hoje, então uma visita aqui é refeição e aula de história, não tour de cervejaria. As torneiras são o motivo, e há mais delas do que a maioria dos bares consegue servir.",
+          "de": "Der Rest der Reihe lohnt: Tap 1 Helle Weisse, Tap 5 Hopfenweisse zusammen mit der Brooklyn Brewery, Tap 4 Festweisse und ein Helles unter dem Label Landbrauerei. Gebraut wird inzwischen alles in Kelheim, ein Besuch hier ist also Essen und Geschichtsunterricht statt Brauereiführung. Die Zapfhähne sind der Punkt, und es sind mehr, als die meisten Bars ausschenken. Für eine Bar ist die Auswahl ungewöhnlich groß."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Tap 7 first, poured in two goes, with the yeast swirled in at the end.",
+      "pt": "Tap 7 primeiro, servida em duas etapas, com o fermento rodado no final.",
+      "de": "Zuerst Tap 7, in zwei Zügen eingeschenkt, die Hefe am Ende eingeschwenkt."
+    },
+    {
+      "en": "Aventinus next: 8.2 per cent, dark, and slower than it looks.",
+      "pt": "Aventinus depois: 8,2%, escura, e mais lenta do que parece.",
+      "de": "Dann Aventinus: 8,2 Prozent, dunkel und langsamer, als es aussieht."
+    },
+    {
+      "en": "The Eisbock if it is on, in a small glass, at the end of the evening.",
+      "pt": "A Eisbock se estiver disponível, em copo pequeno, no fim da noite.",
+      "de": "Den Eisbock, wenn es ihn gibt, im kleinen Glas, am Ende des Abends."
+    },
+    {
+      "en": "Hopfenweisse for anyone who claims not to like wheat beer.",
+      "pt": "Hopfenweisse para quem jura que não gosta de cerveja de trigo.",
+      "de": "Hopfenweisse für alle, die behaupten, kein Weißbier zu mögen."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Obatzda with a pretzel and a radish, the standard first order in any wheat-beer house.",
+      "pt": "Obatzda com pretzel e rabanete, o primeiro pedido padrão em qualquer casa de cerveja de trigo.",
+      "de": "Obatzda mit Brezn und Radi, die übliche erste Bestellung in jedem Weißbierhaus."
+    },
+    {
+      "en": "Weißwurst with sweet mustard, if you are there before noon, which is when it is meant to be eaten.",
+      "pt": "Weißwurst com mostarda doce, se estiver lá antes do meio-dia, que é quando se deve comer.",
+      "de": "Weißwurst mit süßem Senf, wenn man vor Mittag da ist, denn dann isst man sie."
+    },
+    {
+      "en": "Schweinsbraten with dumplings, the plate that stands up to Aventinus.",
+      "pt": "Schweinsbraten com bolinhos, o prato que aguenta a Aventinus.",
+      "de": "Schweinsbraten mit Knödeln, der Teller, der gegen Aventinus besteht."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Five minutes from Marienplatz, two from the Isartor S-Bahn. It is the easiest brewery house in the city to reach.",
+      "pt": "Cinco minutos da Marienplatz, dois do S-Bahn do Isartor. É a casa de cervejaria mais fácil de alcançar na cidade.",
+      "de": "Fünf Minuten vom Marienplatz, zwei vom S-Bahnhof Isartor. Es ist das am leichtesten erreichbare Brauereihaus der Stadt."
+    },
+    {
+      "en": "Book for dinner. The ground floor is small and fills early, especially on Fridays.",
+      "pt": "Reserve para o jantar. O térreo é pequeno e enche cedo, principalmente às sextas.",
+      "de": "Für das Abendessen reservieren. Das Erdgeschoss ist klein und füllt sich früh, besonders freitags."
+    },
+    {
+      "en": "Ask for the Aventinus in the tall glass, not the Maß. The staff will not argue.",
+      "pt": "Peça a Aventinus no copo alto, não na Maß. A equipe não vai discutir.",
+      "de": "Den Aventinus im hohen Glas bestellen, nicht als Maß. Das Personal widerspricht nicht."
+    },
+    {
+      "en": "No brewery tour here: the tanks are in Kelheim. The Kelheim house is worth the train if you want the production side.",
+      "pt": "Aqui não há tour de cervejaria: os tanques ficam em Kelheim. A casa de Kelheim vale o trem se você quiser ver a produção.",
+      "de": "Hier gibt es keine Brauereiführung: Die Tanks stehen in Kelheim. Das Kelheimer Haus ist die Bahnfahrt wert, wenn man die Produktion sehen will."
+    },
+    {
+      "en": "The beer is unfiltered. Pour it yourself, slowly, and do not rinse the yeast out of the bottle.",
+      "pt": "A cerveja é não filtrada. Sirva você mesmo, devagar, e não enxágue o fermento da garrafa.",
+      "de": "Das Bier ist ungefiltert. Selbst einschenken, langsam, und die Hefe nicht aus der Flasche spülen."
+    }
+  ],
+  "links": [
+    {
+      "label": "Schneider Weisse",
+      "url": "https://schneider-weisse.de/"
+    },
+    {
+      "label": "Weisses Bräuhaus im Tal",
+      "url": "https://de.wikipedia.org/wiki/Weisses_Br%C3%A4uhaus_im_Tal"
+    },
+    {
+      "label": "Aventinus",
+      "url": "https://de.wikipedia.org/wiki/Aventinus_(Bier)"
+    }
+  ]
+}

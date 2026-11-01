@@ -1,0 +1,223 @@
+{
+  "slug": "westvleteren",
+  "type": "brewery",
+  "name": "Westvleteren",
+  "where": "Vleteren, West Flanders, Belgium",
+  "coords": [
+    50.89672,
+    2.72015
+  ],
+  "span": 0.02,
+  "subtitle_en": "A Trappist abbey, three beers and a queue with rules",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Sint-Sixtusabdij+Westvleteren+Belgium",
+  "trips": [
+    "2020"
+  ],
+  "related": [
+    "bruges",
+    "la-trappe",
+    "cantillon",
+    "trip-2020"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "brewing since",
+        "pt": "produzindo desde",
+        "de": "gebraut seit"
+      },
+      "v": {
+        "en": "1838"
+      }
+    },
+    {
+      "k": {
+        "en": "Westvleteren 12",
+        "pt": "Westvleteren 12",
+        "de": "Westvleteren 12"
+      },
+      "v": {
+        "en": "10.2%"
+      }
+    },
+    {
+      "k": {
+        "en": "beers in the range",
+        "pt": "cervejas na linha",
+        "de": "Biere in der Reihe"
+      },
+      "v": {
+        "en": "3"
+      }
+    },
+    {
+      "k": {
+        "en": "webshop since",
+        "pt": "loja online desde",
+        "de": "Webshop seit"
+      },
+      "v": {
+        "en": "2019"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Westvleteren is not a brewery visit. It is a Trappist monastery in a flat corner of West Flanders, with a brewery behind a wall, no tours, and a shop that sells beer under rules. The café opposite, In de Vrede, is the only place in the world authorised to pour it.",
+    "pt": "Westvleteren não é uma visita a cervejaria. É um mosteiro trapista num canto plano da Flandres Ocidental, com uma cervejaria atrás de um muro, sem visitas guiadas e uma loja que vende cerveja sob regras. O café em frente, o In de Vrede, é o único lugar do mundo autorizado a servi-la.",
+    "de": "Westvleteren ist kein Brauereibesuch. Es ist ein Trappistenkloster in einer flachen Ecke Westflanderns, mit einer Brauerei hinter einer Mauer, ohne Führungen und mit einem Laden, der Bier nach Regeln verkauft. Das Café gegenüber, In de Vrede, ist der einzige Ort der Welt, der es ausschenken darf. Die Regeln gehören dazu."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "The abbey behind the wall",
+        "pt": "O mosteiro atrás do muro",
+        "de": "Die Abtei hinter der Mauer"
+      },
+      "p": [
+        {
+          "en": "The monks of Saint Sixtus came from France in 1831, bought a farm and a patch of heath near Vleteren, and began brewing in 1838 to support themselves. The abbey became a Trappist monastery in the full sense in 1871. The brewery is small on purpose: three beers, brewed to fund the community and the charities it supports, not to fill a market.",
+          "pt": "Os monges de São Sisto vieram da França em 1831, compraram uma fazenda e um pedaço de charneca perto de Vleteren e começaram a produzir cerveja em 1838 para se sustentar. O mosteiro se tornou trapista em sentido pleno em 1871. A cervejaria é pequena de propósito: três cervejas, feitas para financiar a comunidade e as obras que ela apoia, não para abastecer um mercado.",
+          "de": "Die Mönche von Sankt Sixtus kamen 1831 aus Frankreich, kauften einen Hof und ein Stück Heide bei Vleteren und begannen 1838 zu brauen, um sich zu ernähren. 1871 wurde die Abtei im vollen Sinne ein Trappistenkloster. Die Brauerei ist absichtlich klein: drei Biere, gebraut zur Finanzierung der Gemeinschaft und ihrer Werke, nicht zur Marktversorgung. Die Mönche wollen es genau so."
+        },
+        {
+          "en": "There are no tours, no visitor centre inside the walls, and no brewery shop in the ordinary sense. The church is open to visitors, and the abbey runs a guesthouse for retreats, but the working parts of the abbey are closed. People arrive expecting a destination and find a religious house, which is exactly what it is. The shop and café are the only exceptions.",
+          "pt": "Não há visitas guiadas, nem centro de visitantes dentro dos muros, nem loja de cervejaria no sentido comum. A igreja é aberta a visitantes, e o mosteiro mantém uma casa de hóspedes para retiros, mas as partes de trabalho são fechadas. As pessoas chegam esperando um destino turístico e encontram uma casa religiosa, que é exatamente o que é. A loja e o café são as únicas exceções.",
+          "de": "Es gibt keine Führungen, kein Besucherzentrum innerhalb der Mauern und keinen Brauereiladen im üblichen Sinn. Die Kirche ist offen, die Abtei führt ein Gästehaus für Exerzitien, aber die arbeitenden Teile sind geschlossen. Viele kommen in Erwartung eines Ausflugsziels und finden ein Kloster — was genau der Fall ist. Das ist der ganze Besuch. Mehr gibt es nicht zu sehen. Und das genügt."
+        },
+        {
+          "en": "The landscape is part of the visit: flat fields, ditches, a few farms, and the hop country around Poperinge beginning ten kilometres west. Ypres is half an hour by car, with its cemeteries and the Last Post ceremony at the Menin Gate every evening. Most people combine the two, and the combination is the point. The roads there are straight and empty.",
+          "pt": "A paisagem faz parte da visita: campos planos, valas, algumas fazendas e a região do lúpulo em torno de Poperinge começando dez quilômetros a oeste. Ypres fica a meia hora de carro, com seus cemitérios e a cerimônia do Last Post no Menin Gate todas as noites. Quase todos combinam as duas coisas, e a combinação é o ponto. Vale o desvio.",
+          "de": "Die Landschaft gehört zum Besuch: flache Felder, Gräben, ein paar Höfe und zehn Kilometer westlich das Hopfenland um Poperinge. Ypern liegt eine halbe Autostunde entfernt, mit seinen Friedhöfen und der Last-Post-Zeremonie am Menin Gate jeden Abend. Die meisten verbinden beides, und die Verbindung ist der Punkt. Die Fahrt dorthin ist still und flach. Man merkt, dass man die Stadt verlassen hat."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Three beers, one wall",
+        "pt": "Três cervejas, um muro",
+        "de": "Drei Biere, eine Mauer"
+      },
+      "p": [
+        {
+          "en": "The range is Blond at 5.8%, 8 at 8%, and 12 at 10.2%. The 12 was introduced in 1940 as the abbey's strongest beer and has become the one people queue for; it is a dark quadrupel, bottle-conditioned, with yeast that keeps working in the bottle. The 8 is the more drinkable of the two, and the Blond replaced the monks' table beer in 1999.",
+          "pt": "A linha é Blond, 5,8%, 8, 8%, e 12, 10,2%. A 12 nasceu em 1940 como a cerveja mais forte do mosteiro e virou aquela pela qual as pessoas enfrentam fila; é um quadrupel escuro, com segunda fermentação na garrafa e levedura que continua trabalhando. A 8 é a mais fácil de beber das duas, e a Blond substituiu a cerveja de mesa dos monges em 1999.",
+          "de": "Die Reihe ist Blond mit 5,8 %, 8 mit 8 % und 12 mit 10,2 %. Die 12 kam 1940 als stärkstes Bier der Abtei und ist das, wofür die Leute anstehen; ein dunkles Quadrupel, flaschenvergoren, mit Hefe, die in der Flasche weiterarbeitet. Die 8 ist von beiden die trinkbarere, und das Blond ersetzte 1999 das Tafelbier der Mönche. Mehr Sorten gibt es nicht."
+        },
+        {
+          "en": "All three are brewed with water from the abbey's own well, malt, hops, sugar and the house yeast, and nothing else. The beer is not filtered or pasteurised. The recipes have changed little; the brewery has resisted the obvious move of expanding, which is why supply is smaller than demand and why the rules exist. Nothing else goes into the tank.",
+          "pt": "As três são feitas com água do poço do próprio mosteiro, malte, lúpulo, açúcar e a levedura da casa, e nada mais. A cerveja não é filtrada nem pasteurizada. As receitas mudaram pouco; a cervejaria resistiu ao movimento óbvio de crescer, e é por isso que a oferta é menor que a procura e que as regras existem. Nada mais entra no tanque.",
+          "de": "Alle drei entstehen aus Wasser aus dem eigenen Brunnen, Malz, Hopfen, Zucker und der Haushefe, sonst nichts. Das Bier wird weder gefiltert noch pasteurisiert. Die Rezepte haben sich kaum geändert; die Brauerei hat dem naheliegenden Schritt der Erweiterung widerstanden — deshalb ist das Angebot kleiner als die Nachfrage, und deshalb gibt es die Regeln. Mehr steht nicht auf der Liste. Und nichts davon ist geheim."
+        },
+        {
+          "en": "The reputation came from beer rating sites, which put the 12 at the top of their lists for years. The monks have been ambivalent about it: they brew to live, not to be ranked. That is not a pose. The abbey has refused to increase production enough to meet demand, and it still sells the beer at prices that make the secondary market look absurd.",
+          "pt": "A reputação veio dos sites de avaliação, que colocaram a 12 no topo das listas por anos. Os monges sempre foram ambivalentes: produzem para viver, não para serem ranqueados. Não é pose. O mosteiro se recusa a aumentar a produção o suficiente para atender a demanda, e ainda vende a cerveja a preços que fazem o mercado paralelo parecer absurdo.",
+          "de": "Der Ruf kam von Bierbewertungsseiten, die die 12 jahrelang ganz oben führten. Die Mönche sehen das zwiespältig: Sie brauen, um zu leben, nicht um bewertet zu werden. Das ist keine Pose. Die Abtei weigert sich, die Produktion der Nachfrage anzupassen, und verkauft das Bier weiter zu Preisen, neben denen der Zweitmarkt absurd wirkt. Der Ruf ist lauter als das Bier. So bleibt es."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "Buying it, and drinking it",
+        "pt": "Comprar e beber",
+        "de": "Kaufen und trinken"
+      },
+      "p": [
+        {
+          "en": "Since 2019 the only way to buy crates is the abbey's webshop, open to registered private individuals. Orders are limited, the calendar sets purchase and collection windows, and the rules cap how much one vehicle can take. Home delivery exists inside Belgium. Until 2019 the system was a telephone line, which collapsed under demand. The waiting room is digital now.",
+          "pt": "Desde 2019, a única forma de comprar caixas é a loja online do mosteiro, aberta a pessoas físicas registradas. Os pedidos são limitados, o calendário define janelas de compra e retirada, e as regras limitam quanto um veículo pode levar. Há entrega em casa dentro da Bélgica. Até 2019, o sistema era uma linha telefônica, que entrava em colapso com a demanda.",
+          "de": "Seit 2019 gibt es Kisten nur über den Webshop der Abtei, für registrierte Privatpersonen. Die Bestellungen sind begrenzt, der Kalender setzt Kauf- und Abholfenster, und die Regeln begrenzen, wie viel ein Fahrzeug mitnehmen darf. Lieferung nach Hause gibt es innerhalb Belgiens. Bis 2019 lief es über eine Telefonleitung, die unter der Nachfrage zusammenbrach. Der Warteraum ist inzwischen digital. Das ändert wenig."
+        },
+        {
+          "en": "In de Vrede, across the road, is the abbey's café and visitor centre, and the only place authorised to serve the beer by the glass. You can also buy bottles and gift packs there, subject to availability. The menu is simple: abbey cheese, pâté with Trappist beer, rillettes, sandwiches, and the three beers. It is a café, not a tasting bar.",
+          "pt": "O In de Vrede, do outro lado da rua, é o café e centro de visitantes do mosteiro, e o único lugar autorizado a servir a cerveja no copo. Também dá para comprar garrafas e kits de presente ali, conforme a disponibilidade. O menu é simples: queijo do mosteiro, patê com cerveja trapista, rillettes, sanduíches e as três cervejas. É um café, não um bar de degustação.",
+          "de": "In de Vrede gegenüber ist das Café und Besucherzentrum der Abtei und der einzige Ort, der das Bier im Glas ausschenken darf. Dort gibt es auch Flaschen und Geschenkpackungen, solange der Vorrat reicht. Die Karte ist einfach: Abteikäse, Pastete mit Trappistenbier, Rillettes, belegte Brote und die drei Biere. Es ist ein Café, keine Verkostungsbar. Und das ist auch gut so."
+        },
+        {
+          "en": "Go for lunch on a weekday if you want the room quiet. The café fills with cyclists and beer pilgrims at weekends, and the service is brisk rather than warm. The shop sells out; the beer in the café does not. Drink the 12 slowly, order the cheese, and leave the monks alone. Order a second 12 if you are not driving.",
+          "pt": "Vá almoçar num dia de semana se quiser a sala calma. O café enche de ciclistas e peregrinos da cerveja nos fins de semana, e o serviço é rápido, não caloroso. A loja esgota; a cerveja do café não. Beba a 12 devagar, peça o queijo e deixe os monges em paz. Peça uma segunda 12 se não estiver dirigindo.",
+          "de": "Wer die Stube ruhig will, geht werktags zum Mittagessen. Am Wochenende füllt sie sich mit Radfahrern und Bierpilgern, der Service ist flott statt herzlich. Der Laden verkauft sich leer, das Bier im Café nicht. Die 12 langsam trinken, den Käse bestellen und die Mönche in Ruhe lassen. Wer nur das Bier will, ist hier trotzdem richtig. Und sonst nichts. So einfach ist das."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "Westvleteren 12, by the glass, with time to let it warm.",
+      "pt": "Westvleteren 12, no copo, com tempo para deixar esquentar.",
+      "de": "Westvleteren 12 im Glas, mit Zeit zum Warmwerden."
+    },
+    {
+      "en": "Westvleteren 8 if you are driving or want a second beer.",
+      "pt": "Westvleteren 8 se você estiver dirigindo ou quiser uma segunda cerveja.",
+      "de": "Westvleteren 8, wenn man fährt oder ein zweites Bier will."
+    },
+    {
+      "en": "The Blond, the one that replaced the monks' table beer.",
+      "pt": "A Blond, a que substituiu a cerveja de mesa dos monges.",
+      "de": "Das Blond, das das Tafelbier der Mönche ersetzte."
+    },
+    {
+      "en": "Abbey cheese, which is the correct food for all three.",
+      "pt": "Queijo do mosteiro, que é a comida certa para as três.",
+      "de": "Abteikäse, das richtige Essen zu allen drei."
+    }
+  ],
+  "eat": [
+    {
+      "en": "In de Vrede's cheese board with the abbey pâté — simple, local and made for the beer.",
+      "pt": "A tábua de queijos do In de Vrede com o patê do mosteiro — simples, local e feita para a cerveja.",
+      "de": "Die Käseplatte im In de Vrede mit der Abteipastete — einfach, lokal und für das Bier gemacht."
+    },
+    {
+      "en": "A sandwich on the terrace if you are between meals; the kitchen is not ambitious.",
+      "pt": "Um sanduíche no terraço se você estiver entre refeições; a cozinha não é ambiciosa.",
+      "de": "Ein belegtes Brot auf der Terrasse zwischen den Mahlzeiten; die Küche ist nicht ehrgeizig."
+    },
+    {
+      "en": "Poperinge, ten kilometres west, has more choice and the hop museum.",
+      "pt": "Poperinge, dez quilômetros a oeste, tem mais opções e o museu do lúpulo.",
+      "de": "Poperinge, zehn Kilometer westlich, hat mehr Auswahl und das Hopfenmuseum."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Register on the abbey webshop before you travel; crates are not sold at the gate.",
+      "pt": "Cadastre-se na loja online do mosteiro antes de viajar; caixas não são vendidas no portão.",
+      "de": "Vor der Reise im Webshop der Abtei registrieren; Kisten gibt es nicht am Tor."
+    },
+    {
+      "en": "You need a car; there is no station, and the village buses are infrequent.",
+      "pt": "Você precisa de carro; não há estação, e os ônibus da vila são raros.",
+      "de": "Ein Auto ist nötig; es gibt keinen Bahnhof, und die Dorf buses fahren selten."
+    },
+    {
+      "en": "Check the purchase and collection calendar; the windows are narrow.",
+      "pt": "Confira o calendário de compra e retirada; as janelas são estreitas.",
+      "de": "Den Kauf- und Abholkalender prüfen; die Fenster sind eng."
+    },
+    {
+      "en": "No tours of the brewery, and no photographs of the monks.",
+      "pt": "Não há visita à cervejaria, nem fotos dos monges.",
+      "de": "Keine Führungen durch die Brauerei und keine Fotos der Mönche."
+    },
+    {
+      "en": "Combine it with Ypres and the Menin Gate, twenty-five minutes away.",
+      "pt": "Combine com Ypres e o Menin Gate, a vinte e cinco minutos.",
+      "de": "Mit Ypern und dem Menin Gate verbinden, fünfundzwanzig Minuten entfernt."
+    }
+  ],
+  "links": [
+    {
+      "label": "Trappist Westvleteren",
+      "url": "https://www.trappistwestvleteren.be/en/beer-sales"
+    },
+    {
+      "label": "In de Vrede",
+      "url": "https://indevrede.be/idv_indevrede.php?lang=en"
+    },
+    {
+      "label": "Westvleteren Brewery, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Westvleteren_Brewery"
+    }
+  ]
+}

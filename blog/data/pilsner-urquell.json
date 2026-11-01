@@ -1,0 +1,245 @@
+{
+  "slug": "pilsner-urquell",
+  "type": "brewery",
+  "name": "Pilsner Urquell",
+  "where": "Plzeň, Czechia",
+  "coords": [
+    49.7467,
+    13.3872
+  ],
+  "span": 0.35,
+  "subtitle_en": "The first pale lager, and the argument about who owns it",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Pilsner+Urquell+Brewery+U+Prazdroje+64+Plze%C5%88",
+  "trips": [
+    "2024",
+    "2026",
+    "2027"
+  ],
+  "related": [
+    "plzen",
+    "purkmistr",
+    "budvar",
+    "trip-2024"
+  ],
+  "stats": [
+    {
+      "k": {
+        "en": "first brew",
+        "pt": "primeira brassagem",
+        "de": "erster Sud"
+      },
+      "v": {
+        "en": "5 October 1842",
+        "pt": "5 de outubro de 1842",
+        "de": "5. Oktober 1842"
+      }
+    },
+    {
+      "k": {
+        "en": "brewer",
+        "pt": "mestre cervejeiro",
+        "de": "Brauer"
+      },
+      "v": {
+        "en": "Josef Groll",
+        "pt": "Josef Groll",
+        "de": "Josef Groll"
+      }
+    },
+    {
+      "k": {
+        "en": "strength",
+        "pt": "teor alcoólico",
+        "de": "Stärke"
+      },
+      "v": {
+        "en": "4.4%",
+        "pt": "4,4%",
+        "de": "4,4 %"
+      }
+    },
+    {
+      "k": {
+        "en": "cellars",
+        "pt": "caves",
+        "de": "Keller"
+      },
+      "v": {
+        "en": "9 km, 12–22 m deep",
+        "pt": "9 km, 12–22 m de profundidade",
+        "de": "9 km, 12–22 m tief"
+      }
+    },
+    {
+      "k": {
+        "en": "tour",
+        "pt": "visita",
+        "de": "Tour"
+      },
+      "v": {
+        "en": "100 minutes",
+        "pt": "100 minutos",
+        "de": "100 Minuten"
+      }
+    }
+  ],
+  "lede": {
+    "en": "Every pale lager in the world is descended from this brewery or defined against it. On 5 October 1842 a Bavarian brewer named Josef Groll mashed a batch here that came out golden instead of brown and clear instead of cloudy, and the town has lived off that afternoon ever since.",
+    "pt": "Toda lager clara do mundo descende desta cervejaria ou se define contra ela. Em 5 de outubro de 1842, um mestre cervejeiro bávaro chamado Josef Groll brassou aqui um lote que saiu dourado em vez de marrom e límpido em vez de turvo, e a cidade vive daquela tarde desde então.",
+    "de": "Jedes helle Lager der Welt stammt von dieser Brauerei ab oder definiert sich gegen sie. Am 5. Oktober 1842 braute hier ein bayerischer Brauer namens Josef Groll einen Sud, der goldgelb statt braun und klar statt trüb geriet, und die Stadt lebt seither von diesem Nachmittag, wirtschaftlich und im Selbstverständnis."
+  },
+  "sections": [
+    {
+      "h": {
+        "en": "Why 1842 happened",
+        "pt": "Por que 1842 aconteceu",
+        "de": "Warum 1842 passierte"
+      },
+      "p": [
+        {
+          "en": "By the 1830s the burghers of Plzeň had a problem they could taste. Their beer was top-fermented and did not keep, while cheaper bottom-fermented beer came in from Bavaria and sold faster. In 1838 the town tipped the unsold barrels into the street and, in 1839, the burghers with brewing rights founded a company to build a brewery for cold fermentation. The site had what they needed: soft water, and cellars that could be packed with ice cut from the Bolevec ponds.",
+          "pt": "Nos anos 1830, os burgueses de Plzeň tinham um problema que se sentia no paladar. A cerveja deles era de fermentação alta e não durava, enquanto a de fermentação baixa mais barata chegava da Baviera e vendia mais rápido. Em 1838 a cidade despejou os barris encalhados na rua e, em 1839, os burgueses com direitos de fabricação fundaram uma empresa para construir uma cervejaria de fermentação fria. O lugar tinha o que era preciso: água mole e caves que podiam ser cheias de gelo cortado nos lagos de Bolevec.",
+          "de": "In den 1830er Jahren hatten die Bürger von Plzeň ein Problem, das man schmeckte. Ihr Bier war obergärig und hielt nicht, während billigeres untergäriges Bier aus Bayern kam und sich schneller verkaufte. 1838 schüttete die Stadt die liegen gebliebenen Fässer auf die Straße, und 1839 gründeten die Bürger mit Braurecht eine Gesellschaft, um eine Brauerei für kalte Gärung zu bauen. Der Ort hatte, was man brauchte: weiches Wasser und Keller, die sich mit Eis aus den Bolevec-Teichen füllen ließen."
+        },
+        {
+          "en": "They hired Josef Groll, the son of a brewer in Vilshofen an der Donau who had been working with bottom fermentation. His first batch was mashed on 5 October 1842 and the beer was sold at the St Martin's market on 11 November. It was pale because the malt was lightly kilned, clear because it was lagered cold for weeks, and stable because the yeast worked at the bottom of the tank. None of those things was new on its own. Together they made a style.",
+          "pt": "Contrataram Josef Groll, filho de um cervejeiro de Vilshofen an der Donau que vinha trabalhando com fermentação baixa. O primeiro lote foi brassado em 5 de outubro de 1842, e a cerveja foi vendida na feira de São Martinho, em 11 de novembro. Era clara porque o malte era secado de leve, límpida porque maturava no frio por semanas e estável porque o fermento trabalhava no fundo do tanque. Nenhuma dessas coisas era nova isolada. Juntas, fizeram um estilo.",
+          "de": "Sie holten Josef Groll, den Sohn eines Brauers aus Vilshofen an der Donau, der mit untergäriger Gärung gearbeitet hatte. Sein erster Sud wurde am 5. Oktober 1842 gemaischt, verkauft wurde das Bier am 11. November zum Martinsmarkt. Es war hell, weil das Malz leicht gedarrt war, klar, weil es wochenlang kalt lagerte, und haltbar, weil die Hefe am Boden arbeitete. Nichts davon war für sich neu. Zusammen ergab es einen Stil."
+        },
+        {
+          "en": "The copying started almost at once, and so did the naming. Pilsner Bier was registered in 1859; the words Pilsner Urquell and Plzeňský Prazdroj, both meaning original source, were registered in 1898. By then the beer was going to North America and the brewery was official supplier to the imperial court in Vienna. Nine out of ten beers brewed in the world today are pale lagers, and the family tree runs back to this yard.",
+          "pt": "A cópia começou quase na mesma hora, e a nomeação também. Pilsner Bier foi registrado em 1859; as palavras Pilsner Urquell e Plzeňský Prazdroj, ambas com sentido de fonte original, foram registradas em 1898. A essa altura a cerveja já ia para a América do Norte e a cervejaria era fornecedora oficial da corte imperial em Viena. Nove em cada dez cervejas produzidas no mundo hoje são lagers claras, e a árvore genealógica volta a este pátio.",
+          "de": "Das Nachbrauen begann fast sofort, und das Benennen auch. Pilsner Bier wurde 1859 eingetragen; die Wörter Pilsner Urquell und Plzeňský Prazdroj, beide für ursprüngliche Quelle, folgten 1898. Damals ging das Bier nach Nordamerika, und die Brauerei war Hoflieferant des kaiserlichen Hofes in Wien. Neun von zehn Bieren weltweit sind heute helle Lager, und der Stammbaum führt in diesen Hof zurück."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The room, the cellars, the tour",
+        "pt": "A sala, as caves, a visita",
+        "de": "Der Raum, die Keller, die Tour"
+      },
+      "p": [
+        {
+          "en": "The tour takes 100 minutes and starts in the brewery courtyard at U Prazdroje 64/7, under a gate and a water tower that were listed as cultural monuments in 2008. A bus runs to the bottling hall, where the line fills 120,000 bottles an hour. The old brewhouse is still there with its copper kettles from 1931, and then the cellars.",
+          "pt": "A visita dura 100 minutos e começa no pátio da cervejaria, em U Prazdroje 64/7, sob um portão e uma caixa-d'água tombados como monumentos culturais em 2008. Um ônibus leva até a linha de envase, onde a esteira enche 120 mil garrafas por hora. A antiga sala de brassagem continua lá, com as caldeiras de cobre de 1931, e depois vêm as caves.",
+          "de": "Die Tour dauert 100 Minuten und beginnt im Brauereihof in der U Prazdroje 64/7, unter einem Tor und einem Wasserturm, die 2008 als Kulturdenkmäler eingetragen wurden. Ein Bus fährt zur Abfüllung, wo die Linie 120.000 Flaschen pro Stunde füllt und die Anlage als eine der modernsten ihrer Art in Europa gilt. Das alte Sudhaus steht noch mit seinen Kupferkesseln von 1931, und dann kommen die Keller."
+        },
+        {
+          "en": "Nine kilometres of cellars were cut into the sandstone, twelve to twenty-two metres below the yard, and the tour walks a stretch of them past rows of oak barrels. At the end there is a pour of unfiltered, unpasteurised Pilsner Urquell straight from a lager barrel. It is the only place in the world where that beer exists. No bottle and no tank anywhere else holds the same liquid.",
+          "pt": "Nove quilômetros de caves foram escavados na rocha, entre doze e vinte e dois metros abaixo do pátio, e a visita percorre um trecho entre fileiras de barris de carvalho. No fim há um chope de Pilsner Urquell não filtrada e não pasteurizada, direto do barril de maturação. É o único lugar do mundo onde essa cerveja existe. Nenhuma garrafa e nenhum tanque em outro lugar têm o mesmo líquido.",
+          "de": "Neun Kilometer Keller wurden in den Sandstein gegraben, zwölf bis zweiundzwanzig Meter unter dem Hof, und die Tour geht ein Stück davon an Reihen von Eichenfässern vorbei. Es riecht nach Malz, Holz und nassem Stein. Am Ende gibt es ungefiltertes, unpasteurisiertes Pilsner Urquell direkt aus dem Lagerfass. Nur hier existiert dieses Bier. Keine Flasche und kein Tank anderswo enthält dieselbe Flüssigkeit."
+        },
+        {
+          "en": "Upstairs, Na Spilce fills the old fermentation cellars with 550 seats and pours Pilsner Urquell unfiltered from tanks, which is the closest most people get to the cellar pour without a tour ticket. The Brewery Museum, in a fifteenth-century brewing-rights house on Veleslavínova, explains the part the tour skips: how the town brewed before 1842, in dozens of houses, each with a licence and a kettle.",
+          "pt": "Lá em cima, a Na Spilce ocupa as antigas caves de fermentação com 550 lugares e serve Pilsner Urquell não filtrada de tanque, o mais perto que a maioria das pessoas chega do chope da cave sem ingresso de visita. O Museu da Cerveja, numa casa de direitos de fabricação do século XV na Veleslavínova, explica a parte que a visita pula: como a cidade fazia cerveja antes de 1842, em dezenas de casas, cada uma com licença e caldeira.",
+          "de": "Oben füllt Na Spilce die alten Gärkeller mit 550 Plätzen und zapft ungefiltertes Pilsner Urquell aus Tanks, näher kommt man dem Kellerbier ohne Tourticket nicht. Das Biermuseum in einem Braurechthaus aus dem 15. Jahrhundert an der Veleslavínova erklärt den Teil, den die Tour auslässt: wie die Stadt vor 1842 braute, in Dutzenden Häusern, jedes mit Lizenz und Kessel. Dort steht auch die Mälzerei, in der das Malz für die alten Sude gedarrt wurde."
+        }
+      ]
+    },
+    {
+      "h": {
+        "en": "The name, and who owns it now",
+        "pt": "O nome e quem é dono agora",
+        "de": "Der Name und wem er jetzt gehört"
+      },
+      "p": [
+        {
+          "en": "The brand has had several owners and one address. SABMiller held the brewery from 1999; when AB InBev bought SABMiller in 2016, competition regulators made it sell Pilsner Urquell, and Asahi of Japan took it in 2017. Between 2002 and 2011 some of the beer was brewed under licence in Tychy, Poland, and between 2004 and 2017 in Kaluga, Russia. Since 2017 it has been brewed only in Plzeň.",
+          "pt": "A marca já teve vários donos e um só endereço. A SABMiller controlou a cervejaria desde 1999; quando a AB InBev comprou a SABMiller em 2016, os reguladores da concorrência a obrigaram a vender a Pilsner Urquell, e a japonesa Asahi assumiu em 2017. Entre 2002 e 2011 parte da cerveja foi feita sob licença em Tychy, na Polônia, e entre 2004 e 2017 em Kaluga, na Rússia. Desde 2017, só é produzida em Plzeň.",
+          "de": "Die Marke hatte mehrere Eigentümer und eine Adresse. SABMiller hielt die Brauerei ab 1999; als AB InBev 2016 SABMiller kaufte, zwangen die Wettbewerbshüter zum Verkauf von Pilsner Urquell, und Asahi aus Japan übernahm 2017. Zwischen 2002 und 2011 wurde ein Teil des Biers in Lizenz in Tychy in Polen gebraut, zwischen 2004 und 2017 in Kaluga in Russland. Seit 2017 wird es nur in Plzeň gebraut."
+        },
+        {
+          "en": "The name is a different argument. Pilsner is a place name that became a style, which is what happens to successful beers, and the brewery has spent a century and a half trying to stop other people using it. It has not succeeded, and the style is now brewed everywhere. What it owns is the word Urquell, the gate, the cellars and the yeast, and the fact that the beer is brewed in the town that gave the style its name.",
+          "pt": "O nome é outra discussão. Pilsner é um topônimo que virou estilo, o que acontece com cervejas bem-sucedidas, e a cervejaria passou um século e meio tentando impedir que outros o usassem. Não conseguiu, e o estilo hoje é feito em toda parte. O que ela tem é a palavra Urquell, o portão, as caves e o fermento, e o fato de a cerveja ser feita na cidade que deu nome ao estilo.",
+          "de": "Der Name ist ein anderer Streit. Pilsner ist ein Ortsname, der zu einem Stil wurde, wie es erfolgreichen Bieren passiert, und die Brauerei versucht seit anderthalb Jahrhunderten, anderen den Gebrauch zu verbieten. Gelungen ist es nicht, und der Stil wird heute überall gebraut. Was ihr gehört, sind das Wort Urquell, das Tor, die Keller und die Hefe, und die Tatsache, dass das Bier in der Stadt gebraut wird, die dem Stil den Namen gab."
+        },
+        {
+          "en": "The practical version: the tour is the thing, book it, and go in the morning if you can, because the cellars are cold and the tasting is generous. Then walk back into town and drink the same beer in a pub with no visitors in it, to see what the difference is. The pubs are cheaper than the brewery forecourt, and the beer has travelled about a kilometre, which is all the distance it needs.",
+          "pt": "A versão prática: a visita é o programa, reserve e vá de manhã se puder, porque as caves são frias e a degustação é generosa. Depois volte a pé para o centro e beba a mesma cerveja num bar sem turistas, para sentir a diferença. Os bares são mais baratos que o pátio da cervejaria, e a cerveja percorreu cerca de um quilômetro, que é toda a distância de que precisa.",
+          "de": "Die praktische Fassung: Die Tour ist der Punkt, buchen, und wenn möglich morgens gehen, denn die Keller sind kalt und die Verkostung großzügig. Danach zu Fuß in die Stadt zurück und dasselbe Bier in einer Kneipe ohne Besucher trinken, um den Unterschied zu schmecken. Die Kneipen sind billiger als der Brauereivorhof, und das Bier hat etwa einen Kilometer hinter sich, mehr braucht es nicht."
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "en": "The cellar pour: unfiltered, unpasteurised, straight from the oak barrel, included in the tour and available nowhere else.",
+      "pt": "O chope da cave: não filtrado, não pasteurizado, direto do barril de carvalho, incluído na visita e disponível em nenhum outro lugar.",
+      "de": "Der Kellerausschank: ungefiltert, unpasteurisiert, direkt aus dem Eichenfass, in der Tour enthalten und sonst nirgends erhältlich."
+    },
+    {
+      "en": "Tank Pilsner Urquell at Na Spilce, unfiltered, under the old fermentation room.",
+      "pt": "Pilsner Urquell de tanque na Na Spilce, não filtrada, sob a antiga sala de fermentação.",
+      "de": "Pilsner Urquell aus dem Tank bei Na Spilce, ungefiltert, unter dem alten Gärraum."
+    },
+    {
+      "en": "The ordinary draught, 4.4%, in a pub that cleans its lines. The beer is only as good as the care.",
+      "pt": "O chope comum, 4,4%, num bar que limpa as chopeiras. A cerveja é tão boa quanto o cuidado.",
+      "de": "Das normale Fassbier, 4,4 %, in einer Kneipe, die ihre Leitungen reinigt. Das Bier ist nur so gut wie die Pflege."
+    },
+    {
+      "en": "Gambrinus, brewed in the same town since 1869 and owned by the same company, for the second half of the evening.",
+      "pt": "Gambrinus, feita na mesma cidade desde 1869 e da mesma empresa, para a segunda metade da noite.",
+      "de": "Gambrinus, seit 1869 in derselben Stadt gebraut und derselben Firma gehörend, für die zweite Hälfte des Abends."
+    }
+  ],
+  "eat": [
+    {
+      "en": "Na Spilce: goulash with bread dumplings, and a beer bread made with the house lager.",
+      "pt": "Na Spilce: guláš com bolinhos de pão e um pão de cerveja feito com a lager da casa.",
+      "de": "Na Spilce: Gulasch mit Semmelknödeln und ein Bierbrot aus dem Hausbier."
+    },
+    {
+      "en": "Na Parkánu, next to the Brewery Museum, for sausages and a proper sit-down lunch.",
+      "pt": "Na Parkánu, ao lado do Museu da Cerveja, para linguiças e um almoço sentado como deve ser.",
+      "de": "Na Parkánu neben dem Biermuseum für Würste und ein richtiges Mittagessen."
+    },
+    {
+      "en": "U Salzmannů on Pražská, a pub since 1637, for roast pork in a room older than the brewery.",
+      "pt": "U Salzmannů, na Pražská, bar desde 1637, para porco assado num salão mais velho que a cervejaria.",
+      "de": "U Salzmannů in der Pražská, seit 1637 ein Wirtshaus, für Schweinebraten in einem Raum, der älter ist als die Brauerei."
+    }
+  ],
+  "tips": [
+    {
+      "en": "Book the tour online. It runs 100 minutes in several languages, and the cellar section is cold enough for a jacket.",
+      "pt": "Reserve a visita online. São 100 minutos em vários idiomas, e o trecho das caves é frio o bastante para um casaco.",
+      "de": "Die Tour online buchen. Sie dauert 100 Minuten in mehreren Sprachen, und im Kellerteil ist es kalt genug für eine Jacke."
+    },
+    {
+      "en": "The tour includes a bus ride to the bottling hall, and the walk between buildings is outdoors. Dress for the weather.",
+      "pt": "A visita inclui um trajeto de ônibus até a linha de envase, e o percurso entre os prédios é ao ar livre. Vista-se para o tempo.",
+      "de": "Die Tour enthält eine Busfahrt zur Abfüllung, und der Weg zwischen den Gebäuden führt ins Freie. Nach dem Wetter anziehen."
+    },
+    {
+      "en": "The cellar beer is not bottled. That is the point of going down there.",
+      "pt": "A cerveja da cave não é engarrafada. É esse o motivo de descer até lá.",
+      "de": "Das Kellerbier wird nicht abgefüllt. Genau deshalb geht man hinunter."
+    },
+    {
+      "en": "The Brewery Museum tour includes the historical underground: 12°C, helmets, fixed times.",
+      "pt": "A visita ao Museu da Cerveja inclui o subsolo histórico: 12°C, capacetes, horários fixos.",
+      "de": "Die Tour im Biermuseum führt durch den historischen Untergrund: 12 °C, Helme, feste Zeiten."
+    },
+    {
+      "en": "The brewery is a fifteen-minute walk from náměstí Republiky, across the river and through the gate.",
+      "pt": "A cervejaria fica a quinze minutos a pé da praça náměstí Republiky, do outro lado do rio e depois do portão.",
+      "de": "Die Brauerei liegt fünfzehn Gehminuten vom náměstí Republiky, über den Fluss und durch das Tor."
+    }
+  ],
+  "links": [
+    {
+      "label": "Pilsner Urquell",
+      "url": "https://www.pilsnerurquell.com/"
+    },
+    {
+      "label": "Prazdroj Visit — brewery tour",
+      "url": "https://www.prazdrojvisit.cz/en/tours/pilsner-urquell-brewery-tour"
+    },
+    {
+      "label": "Pilsner Urquell (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pilsner_Urquell"
+    }
+  ]
+}
