@@ -1,8 +1,24 @@
 # 🍺 Bierreisen
 
-Six AI-drafted beer pilgrimages — **73 days, 7 countries, 203 mapped stops** — collected in one place as self-contained HTML dossiers, plus an overview map that ties them together.
+Six AI-drafted beer pilgrimages — **73 days, 7 countries, 203 mapped stops** — collected in one place as self-contained HTML dossiers, plus regional maps that show where each one goes.
 
-![Six beer pilgrimages on a map of North America and Europe](assets/beer-trips-map.png)
+## Maps
+
+Three regions, three posters. Splitting them out means each trail gets its own projection instead of being squeezed into one world view.
+
+**USA — Colorado & Florida.** Two separate panels, because a single US frame turns both clusters into a smudge: Colorado is a mountain loop from Denver to Fort Collins, Florida a one-way drive from Miami to Dunedin.
+
+![USA: Colorado and Florida beer trails](assets/maps/usa.png)
+
+**Europe — Belgium, Bavaria & Bohemia, Italy & Switzerland.** One continental panel, three routes in three colours — the Belgian trip finishes in Pilsen, the Franconian one covers the Zoigl country, the Italian one threads craft beer through Rome, Florence, Venice, Milan and St. Moritz.
+
+![Europe: Belgium, Bavaria & Bohemia, Italy & Switzerland](assets/maps/europe.png)
+
+**United Kingdom — England, Wales & Scotland.** All 32 stops from London to the Highlands, at a scale where each pub is a distinguishable dot.
+
+![United Kingdom: 32 stops from London to the Highlands](assets/maps/uk.png)
+
+*All six on one page: [overview poster](assets/beer-trips-map.png).*
 
 ## Trip maps
 
@@ -20,6 +36,7 @@ Every trip below ships as a single HTML file: an interactive Leaflet map, a day-
 
 ## Contents
 
+- [Maps](#maps)
 - [The six trips at a glance](#the-six-trips-at-a-glance)
 - [1. UK Beer Pilgrimage — 12 days](#1-uk-beer-pilgrimage--12-days)
 - [2. Belgian Beer Pilgrimage — 9 days](#2-belgian-beer-pilgrimage--9-days)
