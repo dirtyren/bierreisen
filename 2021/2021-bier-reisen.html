@@ -65,6 +65,10 @@ p.lede{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}
 .card-city-tag{color:#43d19e;font-size:.71rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .brewery-card h4{font-size:1rem;color:var(--text)}
 .brewery-card .desc{color:var(--muted);font-size:.86rem;line-height:1.5;flex:1}
+.gmaps{display:inline-block;align-self:flex-start;margin-top:.4rem;padding:.22rem .62rem;border-radius:999px;
+  border:1px solid rgba(230,168,23,.35);color:var(--gold);font-size:.75rem;font-weight:600;
+  text-decoration:none;transition:background .18s,border-color .18s}
+.gmaps:hover{background:rgba(230,168,23,.14);border-color:rgba(230,168,23,.6)}
 .order-this{background:rgba(8,10,20,.55);border:1px solid rgba(230,168,23,.28);border-radius:8px;
   padding:.5rem .65rem;font-size:.81rem;color:#f0d98a;line-height:1.45}
 .region-filter{display:flex;gap:.45rem;margin-bottom:1.4rem;flex-wrap:wrap;align-items:center}
@@ -123,6 +127,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Porto Alegre → Frankfurt</h3>
         <div class="drive-pill">✈️ <strong>Flight day</strong> · overnight</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Porto%20Alegre%2C%20Brazil" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>Overnight flight POA → FRA (10,665 km, ~13 h 30 in the air)</li><li>Dinner at the airport before boarding</li><li>The car is waiting in Frankfurt in the morning</li></ul>
       </article>
       <article class="day-node" data-day="2">
@@ -133,6 +138,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Frankfurt → Bamberg</h3>
         <div class="drive-pill">🚗 <strong>Frankfurt Airport → Bamberg</strong> · 213 km · 2 h 18</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>213 km / 2 h 18 east on the A3 and A70</li><li>Hotel Andres, Heiliggrabstraße 1 — drop the bags inside the old town</li><li>First evening: Schlenkerla for Rauchbier, or Spezial if the smoke is too much</li></ul>
       </article>
       <article class="day-node" data-day="3">
@@ -143,6 +149,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Bamberg</h3>
         <div class="drive-pill in-place">📍 In place · no driving</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>Brewery crawl through the old town: Schlenkerla, Spezial, Fässla, Mahr&#x27;s, Klosterbräu</li><li>Greifenklau for the view over the city</li><li>Sunday in Franconia — check which taprooms open before committing to a plan</li></ul>
       </article>
       <article class="day-node" data-day="4">
@@ -153,6 +160,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Bamberg → Nuremberg</h3>
         <div class="drive-pill">🚗 <strong>Bamberg → Nuremberg</strong> · 60 km · 0 h 52</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Nuremberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>60 km / 0 h 52 south on the A73</li><li>Leonard Hotel, Zufuhrstraße 22, Mitte</li><li>Altstadthof in the rock cellars, then Schanzenbräu on the hill</li></ul>
       </article>
       <article class="day-node" data-day="5">
@@ -163,6 +171,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Nuremberg → Essing</h3>
         <div class="drive-pill">🚗 <strong>Nuremberg → Essing</strong> · 107 km · 1 h 28</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Essing%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>107 km / 1 h 28 south-east towards the Danube</li><li>Gasthaus Felsenwastl, Unterer Markt 19</li><li>Weltenburg Abbey across the gorge if there is light left</li></ul>
       </article>
       <article class="day-node" data-day="6">
@@ -173,6 +182,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Essing → Traunstein</h3>
         <div class="drive-pill">🚗 <strong>Essing → Traunstein</strong> · 230 km · 2 h 37</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Traunstein%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>231 km / 2 h 37 south-east through the Chiemgau</li><li>Hotel Rosenheimer Hof — keys in the safe by the back door, code 5859#</li><li>Hofbräuhaus Traunstein in the evening</li></ul>
       </article>
       <article class="day-node" data-day="7">
@@ -183,6 +193,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Traunstein → Schönram → Berchtesgaden</h3>
         <div class="drive-pill">🚗 <strong>Traunstein → Schönram (Petting)</strong> · 23 km · 0 h 21</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Berchtesgaden%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>23 km / 0 h 21 to Petting for Schönramer Pils</li><li>42 km / 0 h 44 on to Berchtesgaden</li><li>Alpensport-Hotel Seimler, Maria am Berg — two nights under the Watzmann</li></ul>
       </article>
       <article class="day-node" data-day="8">
@@ -193,6 +204,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Berchtesgaden</h3>
         <div class="drive-pill in-place">📍 In place · no driving</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Berchtesgaden%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>Hofbrauhaus Berchtesgaden in the town centre</li><li>Watzmann or the Königssee if the weather holds</li><li>Second night at the Seimler</li></ul>
       </article>
       <article class="day-node" data-day="9">
@@ -203,6 +215,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Berchtesgaden → Nesselwang</h3>
         <div class="drive-pill">🚗 <strong>Berchtesgaden → Nesselwang</strong> · 280 km · 3 h 20</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Nesselwang%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>280 km / 3 h 20 west across Upper Bavaria and the Allgäu</li><li>Brauerei-Gasthof Hotel Post, Hauptstraße 25 — sleep above the brewhouse</li><li>Dinner in the Gasthof, beer from the tank</li></ul>
       </article>
       <article class="day-node" data-day="10">
@@ -213,6 +226,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Nesselwang → Missen-Wilhams</h3>
         <div class="drive-pill">🚗 <strong>Nesselwang → Missen-Wilhams</strong> · 43 km · 0 h 33</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Missen-Wilhams%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>43 km / 0 h 33 through the Allgäu hills</li><li>Brauereigasthof Schäffler, Hauptstraße 15</li><li>A village brewery, a wood stove and nothing else to do</li></ul>
       </article>
       <article class="day-node" data-day="11">
@@ -223,6 +237,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Missen-Wilhams → Munich</h3>
         <div class="drive-pill">🚗 <strong>Missen-Wilhams → Munich</strong> · 158 km · 1 h 58</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>158 km / 1 h 58 north-east on the A96</li><li>Hotel Italia, Schillerstraße 19, Ludwigsvorstadt — seven nights</li><li>Augustiner Bräustuben for the first Maß</li></ul>
       </article>
       <article class="day-node" data-day="12">
@@ -233,6 +248,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Munich</h3>
         <div class="drive-pill in-place">📍 In place · no driving</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>Augustiner Bräustuben and Augustiner Keller in one day, for science</li><li>Viktualienmarkt and the Chinesischer Turm in the Englischer Garten</li><li>Schneider Bräuhaus at night</li></ul>
       </article>
       <article class="day-node" data-day="13">
@@ -243,6 +259,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Munich — west and south</h3>
         <div class="drive-pill in-place">📍 In place · no driving</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>Day trip to Kloster Andechs for the Doppelbock (45 km)</li><li>Giesinger Bräu on the way back</li><li>Isartaler Brauhaus in the evening</li></ul>
       </article>
       <article class="day-node" data-day="14">
@@ -253,6 +270,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Munich — north</h3>
         <div class="drive-pill in-place">📍 In place · no driving</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>Freising and Weihenstephan — the oldest brewery site in the world (38 km)</li><li>Wildbräu Grafing on the way back</li><li>Paulaner Brauhaus for dinner</li></ul>
       </article>
       <article class="day-node" data-day="15">
@@ -263,6 +281,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Munich — craft</h3>
         <div class="drive-pill in-place">📍 In place · no driving</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>Hopfenhäcker at the Forschungsbrauerei in Perlach — both in one visit</li><li>Forschungsbräu Bräustüberl next door</li><li>Schweiger Bräu from Markt Schwaben on a menu somewhere in town</li></ul>
       </article>
       <article class="day-node" data-day="16">
@@ -273,6 +292,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Munich</h3>
         <div class="drive-pill in-place">📍 In place · no driving</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>The market and the beer gardens: Viktualienmarkt, Chinesischer Turm, Augustiner Keller</li><li>Bookstalls at the Viktualienmarkt if the weather turns</li><li>Last long evening in the Altstadt</li></ul>
       </article>
       <article class="day-node" data-day="17">
@@ -283,6 +303,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Munich</h3>
         <div class="drive-pill in-place">📍 In place · no driving</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>Anything missed: Hofbräuhaus, the Deutsches Museum, a second Andechs run</li><li>Pack the bottles properly — this is the shopping day</li><li>Dinner near the hotel in Ludwigsvorstadt</li></ul>
       </article>
       <article class="day-node" data-day="18">
@@ -293,6 +314,7 @@ td.diag{color:#3a4368;text-align:center}
         </div>
         <h3>Munich → Frankfurt → home</h3>
         <div class="drive-pill">🚗 <strong>Munich → Frankfurt Airport</strong> · 404 km · 3 h 59</div>
+        <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Frankfurt%20Airport%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         <ul class="day-items"><li>404 km / 3 h 59 north on the A9 and A3</li><li>Return the car, check in at Frankfurt</li><li>Overnight flight home</li></ul>
       </article>
 </section>
@@ -340,6 +362,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Schlenkerla</h4>
               <p class="desc">Rauchbier since 1405 — beechwood-smoked malt served from oak barrels in a vaulted cellar.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Aecht Schlenkerla Rauchbier Märzen, poured in the vaulted cellar</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Schlenkerla%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="bamberg" data-search="bamberg spezial the bambergers&#x27; own rauchbier: the smoke is a whisper next to schlenkerla. spezial rauchbier lager — the quieter, more local smoke">
               <span class="rank" title="Rank #2 in Bamberg">2</span>
@@ -347,6 +370,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Spezial</h4>
               <p class="desc">The Bambergers&#x27; own rauchbier: the smoke is a whisper next to Schlenkerla.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Spezial Rauchbier Lager — the quieter, more local smoke</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Spezial%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="bamberg" data-search="bamberg mahr&#x27;s bräu the &#x27;au&#x27; ungespundetes — unfiltered, naturally carbonated, the classic franconian lager. the au at the schwemme window, glass in hand">
               <span class="rank" title="Rank #3 in Bamberg">3</span>
@@ -354,6 +378,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Mahr&#x27;s Bräu</h4>
               <p class="desc">The &#x27;aU&#x27; Ungespundetes — unfiltered, naturally carbonated, the classic Franconian lager.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> The aU at the Schwemme window, glass in hand</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Mahr%27s%20Br%C3%A4u%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="bamberg" data-search="bamberg fässla zwergla dark lager, brewery tap opposite spezial, open late. zwergla, the dark one, across from spezial">
               <span class="rank" title="Rank #4 in Bamberg">4</span>
@@ -361,6 +386,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Fässla</h4>
               <p class="desc">Zwergla dark lager, brewery tap opposite Spezial, open late.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Zwergla, the dark one, across from Spezial</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=F%C3%A4ssla%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="bamberg" data-search="bamberg klosterbräu bamberg&#x27;s oldest brewery (1533); the schwärzla is the one to order. schwärzla at bamberg&#x27;s oldest brewery">
               <span class="rank" title="Rank #5 in Bamberg">5</span>
@@ -368,6 +394,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Klosterbräu</h4>
               <p class="desc">Bamberg&#x27;s oldest brewery (1533); the Schwärzla is the one to order.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Schwärzla at Bamberg&#x27;s oldest brewery</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Klosterbr%C3%A4u%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="bamberg" data-search="bamberg greifenklau beer garden above the city with the best view of the roofs. helles in the garden, with the city below">
               <span class="rank" title="Rank #6 in Bamberg">6</span>
@@ -375,6 +402,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Greifenklau</h4>
               <p class="desc">Beer garden above the city with the best view of the roofs.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Helles in the garden, with the city below</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Greifenklau%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="nuremberg">
@@ -392,6 +420,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Altstadthof</h4>
               <p class="desc">Hausbrauerei in the sandstone cellars under the castle — Rotbier and the rock-cut passages.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Hausbrauerei Rotbier, in the cellars cut into the sandstone</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Altstadthof%2C%20Nuremberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="nuremberg" data-search="nuremberg schanzenbräu neighbourhood brewery on the hill; unfiltered franconian styles, taproom with long tables. schanzenbräu helles, unfiltered, on the hill">
               <span class="rank" title="Rank #2 in Nuremberg">2</span>
@@ -399,6 +428,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Schanzenbräu</h4>
               <p class="desc">Neighbourhood brewery on the hill; unfiltered Franconian styles, taproom with long tables.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Schanzenbräu Helles, unfiltered, on the hill</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Schanzenbr%C3%A4u%2C%20Nuremberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="nuremberg" data-search="nuremberg tucher mautkeller big vaulted cellar restaurant, rotbier on tap, convenient on a cold night. tucher rotbier in the vaulted hall">
               <span class="rank" title="Rank #3 in Nuremberg">3</span>
@@ -406,6 +436,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Tucher Mautkeller</h4>
               <p class="desc">Big vaulted cellar restaurant, Rotbier on tap, convenient on a cold night.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Tucher Rotbier in the vaulted hall</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Tucher%20Mautkeller%2C%20Nuremberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="nuremberg" data-search="nuremberg barfüßer hausbrauerei brewpub by the river with copper kettles in the room and a young crowd. the house pils, next to the copper kettles">
               <span class="rank" title="Rank #4 in Nuremberg">4</span>
@@ -413,6 +444,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Barfüßer Hausbrauerei</h4>
               <p class="desc">Brewpub by the river with copper kettles in the room and a young crowd.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> The house Pils, next to the copper kettles</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Barf%C3%BC%C3%9Fer%20Hausbrauerei%2C%20Nuremberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="essing">
@@ -430,6 +462,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Gasthaus Felsenwastl</h4>
               <p class="desc">The inn itself: Danube fish, local beer, and the river gorge at the door.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> The local Landbier with Danube fish, on the terrace</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Gasthaus%20Felsenwastl%2C%20Essing%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="essing" data-search="essing kloster weltenburg benedictine abbey 10 km downstream — asamkirche and the oldest monastery brewery in bavaria. barock dunkel in the klosterschenke, with the danube outside">
               <span class="rank" title="Rank #2 in Essing">2</span>
@@ -437,6 +470,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Kloster Weltenburg</h4>
               <p class="desc">Benedictine abbey 10 km downstream — Asamkirche and the oldest monastery brewery in Bavaria.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Barock Dunkel in the Klosterschenke, with the Danube outside</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Kloster%20Weltenburg%2C%20Kelheim%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="essing" data-search="essing befreiungshalle kelheim not a brewery, but the walk up is worth the afternoon before dinner. no beer here — climb it before dinner instead">
               <span class="rank" title="Rank #3 in Essing">3</span>
@@ -444,6 +478,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Befreiungshalle Kelheim</h4>
               <p class="desc">Not a brewery, but the walk up is worth the afternoon before dinner.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> No beer here — climb it before dinner instead</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Befreiungshalle%20Kelheim%2C%20Essing%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="traunstein">
@@ -461,6 +496,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Hofbräuhaus Traunstein</h4>
               <p class="desc">Village-scale Hofbräuhaus with its own maltings; the Hell and the Doppelbock are the local benchmarks.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> The Hell, then the Doppelbock if it is in season</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Hofbr%C3%A4uhaus%20Traunstein%2C%20Traunstein%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="traunstein" data-search="traunstein brauerei wieninger family brewery in teisendorf, 15 km away — a half-day detour if the weather is bad. wieninger hell in teisendorf, 18 km away">
               <span class="rank" title="Rank #2 in Traunstein">2</span>
@@ -468,6 +504,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Brauerei Wieninger</h4>
               <p class="desc">Family brewery in Teisendorf, 15 km away — a half-day detour if the weather is bad.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Wieninger Hell in Teisendorf, 18 km away</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Brauerei%20Wieninger%2C%20Traunstein%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="sch-nram-petting">
@@ -485,6 +522,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Private Landbrauerei Schönram</h4>
               <p class="desc">One of Germany&#x27;s most respected private breweries: Schönramer Pils is bitter, floral and dry — the reason to drive to Petting.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Schönramer Pils, then the Salome if the shop has it</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Private%20Landbrauerei%20Sch%C3%B6nram%2C%20Sch%C3%B6nram%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="berchtesgaden">
@@ -502,6 +540,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Hofbrauhaus Berchtesgaden</h4>
               <p class="desc">The town&#x27;s own brewery and restaurant; Helles and Dunkel brewed in the valley.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Helles, then the Dunkel, in the town&#x27;s own brewery</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Hofbrauhaus%20Berchtesgaden%2C%20Berchtesgaden%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="berchtesgaden" data-search="berchtesgaden grassl distillery enzian and fruit brandies, for the non-beer half of the evening. enzian — not beer, but the local firewater">
               <span class="rank" title="Rank #2 in Berchtesgaden">2</span>
@@ -509,6 +548,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Grassl Distillery</h4>
               <p class="desc">Enzian and fruit brandies, for the non-beer half of the evening.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Enzian — not beer, but the local firewater</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Grassl%20Distillery%2C%20Berchtesgaden%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="berchtesgaden" data-search="berchtesgaden königssee electric boat to st. bartholomä — the scenery half of the two days. nothing to drink: take the boat to st. bartholomä">
               <span class="rank" title="Rank #3 in Berchtesgaden">3</span>
@@ -516,6 +556,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Königssee</h4>
               <p class="desc">Electric boat to St. Bartholomä — the scenery half of the two days.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Nothing to drink: take the boat to St. Bartholomä</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=K%C3%B6nigssee%2C%20Sch%C3%B6nau%20am%20K%C3%B6nigssee%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="nesselwang">
@@ -533,6 +574,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Brauerei-Gasthof Post</h4>
               <p class="desc">Brewery and Gasthof in one building: sleep upstairs, drink the house beer downstairs.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> The house Helles, from the tank, at the table above the kettle</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Brauerei-Gasthof%20Post%2C%20Nesselwang%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="missen-wilhams">
@@ -550,6 +592,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Brauereigasthof Schäffler</h4>
               <p class="desc">Allgäu village brewery with a wood-panelled Stube; a handful of beers, all served young.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Whatever is youngest — the beer does not travel far here</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Brauereigasthof%20Sch%C3%A4ffler%2C%20Missen-Wilhams%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="munich">
@@ -567,6 +610,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Kloster Andechs</h4>
               <p class="desc">Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Doppelbock Dunkel on the terrace above the Ammersee</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Kloster%20Andechs%2C%20Andechs%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich weihenstephan, freising the world&#x27;s oldest continuously operating brewery site (38 km); the bräustüberl pours the standards. weihenstephaner helles at the oldest brewery site in the world">
               <span class="rank" title="Rank #2 in Munich">2</span>
@@ -574,6 +618,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Weihenstephan, Freising</h4>
               <p class="desc">The world&#x27;s oldest continuously operating brewery site (38 km); the Bräustüberl pours the standards.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Weihenstephaner Helles at the oldest brewery site in the world</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Weihenstephan%2C%20Freising%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich augustiner bräustuben the augustiner brewery tap on landsberger straße: edelstoff from the wooden barrel, meatloaf at the next table. edelstoff from the wooden barrel, with meatloaf">
               <span class="rank" title="Rank #3 in Munich">3</span>
@@ -581,6 +626,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Augustiner Bräustuben</h4>
               <p class="desc">The Augustiner brewery tap on Landsberger Straße: Edelstoff from the wooden barrel, meatloaf at the next table.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Edelstoff from the wooden barrel, with meatloaf</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Augustiner%20Br%C3%A4ustuben%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich augustiner keller beer garden under the chestnuts; one of the few places still pouring from wooden barrels. another edelstoff, under the chestnuts">
               <span class="rank" title="Rank #4 in Munich">4</span>
@@ -588,6 +634,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Augustiner Keller</h4>
               <p class="desc">Beer garden under the chestnuts; one of the few places still pouring from wooden barrels.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Another Edelstoff, under the chestnuts</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Augustiner%20Keller%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich chinesischer turm englischer garten beer garden at the pagoda — 7,000 seats, brass band, maß in hand. a maß at the pagoda, with the brass band">
               <span class="rank" title="Rank #5 in Munich">5</span>
@@ -595,6 +642,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Chinesischer Turm</h4>
               <p class="desc">Englischer Garten beer garden at the pagoda — 7,000 seats, brass band, Maß in hand.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> A Maß at the pagoda, with the brass band</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Chinesischer%20Turm%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich viktualienmarkt market beer garden in the centre, with the maibaum overhead and a rotating brewery tap. whatever brewery is on the market tap this month">
               <span class="rank" title="Rank #6 in Munich">6</span>
@@ -602,6 +650,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Viktualienmarkt</h4>
               <p class="desc">Market beer garden in the centre, with the Maibaum overhead and a rotating brewery tap.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Whatever brewery is on the market tap this month</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Viktualienmarkt%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich schneider bräuhaus wheat-beer house on tal: aventinus, the original tap 7, and a menu built for it. aventinus, and the tap 7 to follow">
               <span class="rank" title="Rank #7 in Munich">7</span>
@@ -609,6 +658,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Schneider Bräuhaus</h4>
               <p class="desc">Wheat-beer house on Tal: Aventinus, the original Tap 7, and a menu built for it.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Aventinus, and the Tap 7 to follow</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Schneider%20Br%C3%A4uhaus%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich paulaner brauhaus the nockherberg brewpub — salvator season if you are lucky with the calendar. salvator if it is march; otherwise the helles">
               <span class="rank" title="Rank #8 in Munich">8</span>
@@ -616,6 +666,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Paulaner Brauhaus</h4>
               <p class="desc">The Nockherberg brewpub — Salvator season if you are lucky with the calendar.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Salvator if it is March; otherwise the Helles</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Paulaner%20Brauhaus%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich giesinger bräu craft brewery in giesing; erhellung unfiltered helles and a taproom full of locals. erhellung, unfiltered">
               <span class="rank" title="Rank #9 in Munich">9</span>
@@ -623,6 +674,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Giesinger Bräu</h4>
               <p class="desc">Craft brewery in Giesing; Erhellung unfiltered Helles and a taproom full of locals.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Erhellung, unfiltered</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Giesinger%20Br%C3%A4u%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich hopfenhäcker creative brewery founded 2016 in haidhausen, moved into the forschungsbrauerei in perlach in 2021. something hoppy and new — the creative brewery&#x27;s own">
               <span class="rank" title="Rank #10 in Munich">10</span>
@@ -630,6 +682,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Hopfenhäcker</h4>
               <p class="desc">Creative brewery founded 2016 in Haidhausen, moved into the Forschungsbrauerei in Perlach in 2021.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Something hoppy and new — the creative brewery&#x27;s own</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Hopfenh%C3%A4cker%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich forschungsbrauerei bräustüberl perlach research brewery and taproom — the same address as hopfenhäcker, so both in one stop. the forschungsbräu helles, in the taproom next door">
               <span class="rank" title="Rank #11 in Munich">11</span>
@@ -637,6 +690,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Forschungsbrauerei Bräustüberl</h4>
               <p class="desc">Perlach research brewery and taproom — the same address as Hopfenhäcker, so both in one stop.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> The Forschungsbräu Helles, in the taproom next door</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Forschungsbrauerei%20Br%C3%A4ust%C3%BCberl%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich isartaler brauhaus neighbourhood brewpub in the south of the city, house beers brewed on site. the house beer, brewed in the room">
               <span class="rank" title="Rank #12 in Munich">12</span>
@@ -644,6 +698,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Isartaler Brauhaus</h4>
               <p class="desc">Neighbourhood brewpub in the south of the city, house beers brewed on site.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> The house beer, brewed in the room</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Isartaler%20Brauhaus%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich schweiger bräu private brewery in markt schwaben, east of the city — find it on tap around town. schweiger helles on tap somewhere in town — ask which bar has it this week">
               <span class="rank" title="Rank #13 in Munich">13</span>
@@ -651,6 +706,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Schweiger Bräu</h4>
               <p class="desc">Private brewery in Markt Schwaben, east of the city — find it on tap around town.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Schweiger Helles on tap somewhere in town — ask which bar has it this week</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Schweiger%20Br%C3%A4u%2C%20Markt%20Schwaben%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div>
             <div class="brewery-card" data-city="munich" data-search="munich wildbräu grafing grafing&#x27;s own brewery, almost a thousand years of history and eleven classic bavarian beers. wildbräu helles — eleven classic beers, almost a thousand years">
               <span class="rank" title="Rank #14 in Munich">14</span>
@@ -658,6 +714,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Wildbräu Grafing</h4>
               <p class="desc">Grafing&#x27;s own brewery, almost a thousand years of history and eleven classic Bavarian beers.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> Wildbräu Helles — eleven classic beers, almost a thousand years</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Wildbr%C3%A4u%20Grafing%2C%20Grafing%20bei%20M%C3%BCnchen%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section>
       <section class="city-ranking-section" data-city-section="frankfurt-airport">
@@ -675,6 +732,7 @@ td.diag{color:#3a4368;text-align:center}
               <h4>Frankfurt Airport</h4>
               <p class="desc">No beer stop planned — land, collect the car, drive east. The return leg is 404 km before a long flight.</p>
               <div class="order-this">🍺 <strong>Order this:</strong> An espresso, then the A3 east</div>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Frankfurt%20Airport%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
             </div></div>
       </section></div>
 </section>
@@ -757,7 +815,8 @@ function initMap() {
     var icon = L.divIcon({className: 'pin', html: '<div style="width:22px;height:22px;border-radius:50%;background:' + s[4] +
       ';color:#0b0c15;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;border:2px solid #0b0c15">' + (i + 1) + '</div>', iconSize: [22, 22], iconAnchor: [11, 11]});
     L.marker([s[0], s[1]], {icon: icon}).addTo(map)
-      .bindPopup('<strong style="color:#e6a817">' + s[2] + '</strong><br><span style="font-size:.85em">' + s[3] + '</span>');
+      .bindPopup('<strong style="color:#e6a817">' + s[2] + '</strong><br><span style="font-size:.85em">' + s[3] +
+        '</span><br><a class="gmaps" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:6px;padding:2px 9px;border-radius:999px;border:1px solid rgba(230,168,23,.4);color:#e6a817;font-size:11px;text-decoration:none" href="https://www.google.com/maps/search/?api=1&query=' + s[0] + ',' + s[1] + '">📍 Google Maps</a>');
     pts.push([s[0], s[1]]);
   });
   L.polyline(pts, {color: '#e6a817', weight: 2, opacity: .55, dashArray: '6,8'}).addTo(map);
