@@ -33,6 +33,8 @@ def gmaps_link(query: str, label: str = "Google Maps", cls: str = "gmaps") -> st
 
 # venues that sit outside the town they are listed under
 VENUE_PLACE: Dict[str, str] = {
+    "Brauerei Wagner": "Merkendorf, Germany",
+    "Drei Kronen": "Memmelsdorf, Germany",
     "Kloster Andechs": "Andechs, Germany",
     "Wildbräu Grafing": "Grafing bei München, Germany",
     "Schweiger Bräu": "Markt Schwaben, Germany",
@@ -119,6 +121,8 @@ VENUE_ORDER_LINE: Dict[Tuple[str, str], str] = {
     ("Würzburg", "Maischerei Mayr & Müller"): "Small-batch Würzburg experimental or classic Franconian tap pour",
     ("Würzburg", "Kauzen-Bräu, Ochsenfurt"): "Traditional Franconian country lager or Pils at the Ochsenfurt old-town brewery tap (20 km south)",
     ("Würzburg", "Privatbrauerei Oechsner, Ochsenfurt"): "Family-brewed unfiltered Franconian Kellerbier or lager in Ochsenfurt",
+    ("Bamberg", "Brauerei Wagner"): "Wagner Lagerbier, then the Dunkel, in the taproom beside the brewhouse",
+    ("Bamberg", "Drei Kronen"): "Drei Kronen Lagerbier, then the seasonal if it is on",
     ("Bamberg", "Schlenkerla"): "Rauchbier — beechwood-smoked malt poured straight from oak barrels",
     ("Bamberg", "Spezial"): "Rauchbier — the locals' subtler beechwood smoke",
     ("Bamberg", "Mahr's Bräu"): "'aU' Ungespundetes unfiltered cellar lager (city signature: Rauchbier)",
@@ -357,6 +361,8 @@ SIDE_TRIP_NOTES: Dict[Tuple[str, str], str] = {
     ("cologne", "Bonn (Beethoven house, Rhine)"): "Easy half-day run up the Rhine to Beethoven-Haus, riverfront promenades, and traditional Rhineland Brauhäuser.",
     ("wurzburg", "Ochsenfurt (Kauzen-Bräu, Oechsner)"): "Twin Lower Franconian country breweries 20 minutes south on the Main — Kauzen-Bräu and family-run Privatbrauerei Oechsner — ideal as an evening hop or a quick detour en route to Bamberg.",
     ("wurzburg", "Kloster Kreuzberg (Rhön)"): "Franciscan monastery brewery high in the Bavarian Rhön mountains (brewing since 1731), famed for dark monastic Klosterbier tapped straight from the barrel.",
+    ("bamberg", "Merkendorf — Brauerei Wagner"): "Eleven kilometres north: a family brewery running since 1797, with a village taproom and lagers that beer travellers cross the region for.",
+    ("bamberg", "Memmelsdorf — Drei Kronen"): "Eight kilometres east: brewery, Gasthof and hotel in one building, hand-brewed Franconian beer and a full kitchen.",
     ("bamberg", "Aufseß (four-brewery loop)"): "Walkable Franconian Switzerland trail linking four village family breweries (Reichold, Rothenbach, Stadter, Kathi-Bräu).",
     ("bamberg", "Forchheim"): "Forested Kellerwald hillside lined with traditional rock-cut Franconian beer cellars under chestnut trees.",
     ("bamberg", "Nuremberg (Rotbier day trip)"): "Keep Nuremberg's copper-red Rotbier on the itinerary as an easy 54-min day trip from Bamberg (Altstadthof, Schanzenbräu, Tucher Mautkeller).",
