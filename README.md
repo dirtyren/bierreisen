@@ -412,10 +412,14 @@ bierreisen/
 │   ├── trips.json                         # extracted stops + routes
 │   ├── ne_50m_countries.geojson           # Natural Earth 1:50m basemap
 │   └── us_states.geojson                  # US state lines for the NA panel
-├── index.html                             # searchable catalog of every trip
+├── index.html                             # catalog of every trip (generated)
+├── 404.html                               # branded not-found page
+├── robots.txt · sitemap.xml               # crawl + index hints (sitemap generated)
+├── DESIGN.md                              # the catalog's design system and its rules
 ├── assets/maps/                           # regional posters (README hero)
 │   ├── usa.png · europe.png · uk.png
 ├── assets/thumbs/                         # 960px thumbnails for the catalog
+├── assets/og-card.png · favicon.svg       # social card and the drawn site mark
 ├── 2019/                                  # Munich by rail, the first trip
 │   ├── 2019-bier-reisen.html
 │   ├── assets/2019-route-map.png
@@ -473,8 +477,9 @@ python3 scripts/make_map.py          # assets/trips.json → assets/beer-trips-m
 ### Rebuilding the catalog
 
 ```bash
-python3 scripts/make_thumbs.py     # posters → assets/thumbs/*.jpg
-python3 scripts/build_index.py     # each year's data + trips.json → index.html
+python3 scripts/make_thumbs.py        # posters → assets/thumbs/*.jpg
+python3 scripts/make_social_card.py   # → assets/og-card.png (1200×630)
+python3 scripts/build_index.py        # year data + trips.json → index.html + sitemap.xml
 npx impeccable@latest detect index.html   # must report zero anti-patterns
 ```
 

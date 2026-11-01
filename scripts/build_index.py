@@ -223,5 +223,19 @@ html_out = (TEMPLATE
             .replace("__TOTAL_KM__", km(total_km)))
 
 OUT.write_text(html_out, encoding="utf-8")
+
+# ------------------------------------------------------------------ sitemap
+SITE = "https://renreisen.duckdns.org"
+urls = [("/", "1.0", "weekly")] + \
+       [(f"/{c['href']}", "0.9", "monthly") for c in year_trips] + \
+       [(f"/{c['href']}", "0.6", "yearly") for c in ideas] + \
+       [("/README.md", "0.3", "monthly")]
+sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+for path, prio, freq in urls:
+    sm.append(f"  <url><loc>{SITE}{path}</loc><priority>{prio}</priority>"
+              f"<changefreq>{freq}</changefreq></url>")
+sm.append("</urlset>")
+(ROOT / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")
 print(f"wrote index.html ({len(html_out)//1024} KB) · {n_all} entries · "
       f"{total_days} travelled days · {km(total_km)} km · {len(countries)} countries")

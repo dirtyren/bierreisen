@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found — Bier Reisen</title>
+<meta name="description" content="That page is not in the archive.">
+<meta name="theme-color" content="#0b0c15">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#0b0c15; --rule:#262c48; --gold:#e6a817; --text:#eef1f6; --muted:#a8b2c6; --dim:#8d97ad;
+  --serif:Charter,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Avenir Next","Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100dvh;background:var(--bg);color:var(--text);font-family:var(--sans);
+  font-size:17px;line-height:1.65;display:grid;place-items:center;padding:2rem;
+  -webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:#0b0c15}
+a{color:inherit;text-underline-offset:.18em}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:34rem;border-left:3px solid var(--gold);padding-left:1.8rem}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.06;
+  letter-spacing:-.018em;margin:0 0 .9rem}
+p.lede{color:var(--muted);margin:0 0 1.8rem}
+.links{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.92rem}
+.links a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(230,168,23,.45);
+  padding-bottom:.1rem}
+.links a:hover{border-bottom-color:var(--gold)}
+.links a.quiet{color:var(--muted);font-weight:600;border-bottom-color:var(--rule)}
+.links a.quiet:hover{color:var(--text);border-bottom-color:var(--gold)}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>That page isn’t in the archive.</h1>
+    <p class="lede"><strong>Error 404.</strong> The link may be old, or the trip may have been renamed.
+      Everything that exists is listed on the catalog page.</p>
+    <p class="links">
+      <a href="/">The catalog</a>
+      <a class="quiet" href="/2027/2027-bier-reisen.html">The 2027 plan</a>
+      <a class="quiet" href="/README.md">How this is built</a>
+    </p>
+  </main>
+</body>
+</html>
