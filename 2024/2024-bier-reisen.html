@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bier Reisen 2024 — 16-Day Franconia &amp; Bohemia Trip</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{--bg:#0b0c15;--panel:#151833;--border:#2a3050;--gold:#e6a817;--text:#eef1f6;--muted:#9aa5bc}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Avenir Next','Segoe UI',system-ui,sans-serif;line-height:1.55}
+.header{padding:2.4rem 2rem 1.6rem;text-align:center;border-bottom:2px solid var(--gold);
+  background:linear-gradient(135deg,#0f0c29,#1b1e3d,#0b0c15)}
+.header h1{font-size:2.3rem;color:var(--gold);font-weight:800;letter-spacing:.02em}
+.header .dates{color:var(--muted);margin-top:.35rem;font-size:1rem}
+.route{color:var(--text);margin-top:.7rem;font-size:.92rem;opacity:.9}
+.stats{margin-top:.9rem;display:inline-block;padding:.45rem 1rem;border:1px solid var(--border);
+  border-radius:999px;font-size:.86rem;color:var(--gold);font-weight:700}
+.links{margin-top:1rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:.85rem}
+.links a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--border)}
+.links a:hover{color:var(--gold)}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem;background:#0d0f1c;
+  border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500}
+.tab{background:none;border:none;color:var(--muted);padding:.95rem 1.3rem;font:inherit;font-weight:600;
+  cursor:pointer;border-bottom:3px solid transparent}
+.tab:hover{color:var(--gold)}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(230,168,23,.06)}
+.tab-content{display:none;max-width:1180px;margin:0 auto;padding:2rem 1.4rem 4rem}
+.tab-content.active{display:block}
+h2.section{font-size:1.35rem;color:var(--gold);margin:0 0 .4rem}
+p.lede{color:var(--muted);margin-bottom:1.6rem;font-size:.95rem}
+.day-node{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:12px;padding:1.1rem 1.3rem;margin:0 auto .9rem;max-width:820px}
+.day-head{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:.4rem}
+.day-num{background:var(--gold);color:#0b0c15;font-weight:800;font-size:.75rem;padding:.18rem .6rem;
+  border-radius:999px;letter-spacing:.06em}
+.day-date{color:var(--muted);font-size:.78rem;letter-spacing:.08em}
+.base-chip{font-size:.75rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:.15rem .6rem}
+.day-node h3{font-size:1.05rem;margin:.15rem 0 .5rem;color:var(--text)}
+.drive-pill{font-size:.84rem;color:var(--gold);background:rgba(230,168,23,.07);border:1px solid rgba(230,168,23,.25);
+  border-radius:8px;padding:.4rem .7rem;display:inline-block;margin-bottom:.6rem}
+.drive-pill.in-place{color:var(--muted);background:rgba(154,165,188,.06);border-color:var(--border)}
+.day-items{margin-left:1.1rem;color:var(--muted);font-size:.9rem}
+.day-items li{margin:.2rem 0}
+#map-container{height:620px;border-radius:12px;border:1px solid var(--border)}
+.city-block{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem}
+.city-block h3{color:var(--gold);font-size:1.1rem;margin-bottom:.8rem}
+.venue{display:flex;gap:.9rem;padding:.6rem 0;border-top:1px solid rgba(42,48,80,.6)}
+.venue:first-of-type{border-top:none}
+.venue .rank{color:var(--gold);font-weight:800;opacity:.75;min-width:1.6rem}
+.venue h4{font-size:.98rem;margin-bottom:.15rem}
+.venue p{color:var(--muted);font-size:.88rem}
+table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:1.4rem}
+th,td{padding:.55rem .7rem;border-bottom:1px solid var(--border);text-align:left}
+th{color:var(--gold);font-weight:700;background:rgba(21,24,51,.9);position:sticky;top:52px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.diag{color:#3a4368;text-align:center}
+.matrix-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px}
+.totals{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0 2rem}
+.total{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:.8rem 1.1rem;min-width:150px}
+.total b{display:block;color:var(--gold);font-size:1.25rem}
+.total span{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.legend{display:flex;gap:1.2rem;flex-wrap:wrap;margin:.8rem 0 0;font-size:.82rem;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:.35rem}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>🍺 Bier Reisen 2024</h1>
+  <div class="dates">20 November – 5 December 2024 · Franconia, Bohemia, Advent in Munich</div>
+  <div class="route">Porto Alegre → Frankfurt → Memmelsdorf → Plzeň → České Budějovice → Berchtesgaden → Munich → Rome → São Paulo → Porto Alegre</div>
+  <div class="stats">16 days · 13 nights · 5 bases · 1,062 km driving · 21,696 km flying · 4 countries</div>
+  <div class="links">
+    <a href="assets/2024-route-map.png" target="_blank" rel="noopener">🗺️ Route poster (PNG)</a>
+    <a href="data/route-2024.json" target="_blank" rel="noopener">📄 Route data (JSON)</a>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" onclick="showTab('itinerary',this)">📋 Itinerary</button>
+  <button class="tab" onclick="showTab('map',this)">🗺️ Map</button>
+  <button class="tab" onclick="showTab('rankings',this)">🍺 Rankings</button>
+  <button class="tab" onclick="showTab('beers',this)">📖 Beer Guide</button>
+  <button class="tab" onclick="showTab('drives',this)">🚗 Drive Times</button>
+  <button class="tab" onclick="showTab('suggest',this)">💡 Suggestions</button>
+</nav>
+
+<section id="itinerary" class="tab-content active">
+  <h2 class="section">16 days, day by day</h2>
+  <p class="lede">Three flights, six driving legs, thirteen nights and five bases: three nights outside
+    Bamberg, two in Plzeň, one in České Budějovice, two under the Watzmann and five in Munich for Advent.</p>
+  
+      <article class="day-node" data-day="1">
+        <div class="day-head">
+          <span class="day-num">DAY 1</span>
+          <span class="day-date">20.11.2024</span>
+          
+        </div>
+        <h3>Porto Alegre → Frankfurt</h3>
+        <div class="drive-pill">✈️ <strong>Flight day</strong> · overnight</div>
+        <ul class="day-items"><li>Overnight flight POA → FRA (10,665 km, ~13 h 30 in the air)</li><li>Dinner at the airport before boarding</li><li>The car waits in Frankfurt in the morning</li></ul>
+      </article>
+      <article class="day-node" data-day="2">
+        <div class="day-head">
+          <span class="day-num">DAY 2</span>
+          <span class="day-date">21.11.2024</span>
+          <span class="base-chip">🇩🇪 Memmelsdorf · 3 nights</span>
+        </div>
+        <h3>Frankfurt → Memmelsdorf</h3>
+        <div class="drive-pill">🚗 <strong>Frankfurt Airport → Memmelsdorf</strong> · 221 km · 2 h 15</div>
+        <ul class="day-items"><li>221 km / 2 h 15 east on the A3 and A70</li><li>Check in at Drei Kronen in Memmelsdorf, six kilometres from Bamberg</li><li>First evening in Bamberg: Schlenkerla for Rauchbier</li></ul>
+      </article>
+      <article class="day-node" data-day="3">
+        <div class="day-head">
+          <span class="day-num">DAY 3</span>
+          <span class="day-date">22.11.2024</span>
+          <span class="base-chip">🇩🇪 Memmelsdorf · 3 nights</span>
+        </div>
+        <h3>Memmelsdorf</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Drei Kronen and Göller in Memmelsdorf — two village breweries, one afternoon</li><li>Schloss Seehof and its gardens on the edge of the village</li><li>Bamberg after dark: Spezial, Fässla, Mahr&#x27;s</li></ul>
+      </article>
+      <article class="day-node" data-day="4">
+        <div class="day-head">
+          <span class="day-num">DAY 4</span>
+          <span class="day-date">23.11.2024</span>
+          <span class="base-chip">🇩🇪 Memmelsdorf · 3 nights</span>
+        </div>
+        <h3>Memmelsdorf</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Franconian Switzerland: Aufseß or Muggendorf if the weather allows</li><li>Klosterbräu and Greifenklau back in Bamberg</li><li>Last night in Memmelsdorf</li></ul>
+      </article>
+      <article class="day-node" data-day="5">
+        <div class="day-head">
+          <span class="day-num">DAY 5</span>
+          <span class="day-date">24.11.2024</span>
+          <span class="base-chip">🍺 Plzeň · 2 nights</span>
+        </div>
+        <h3>Memmelsdorf → Plzeň</h3>
+        <div class="drive-pill">🚗 <strong>Memmelsdorf → Plzeň</strong> · 255 km · 2 h 32</div>
+        <ul class="day-items"><li>255 km / 2 h 32 east through the Upper Palatinate</li><li>Two nights in Plzeň, the town that gave the world pilsner</li><li>Na Spilce under the Prazdroj brewhouse, or Pivovarský dům</li></ul>
+      </article>
+      <article class="day-node" data-day="6">
+        <div class="day-head">
+          <span class="day-num">DAY 6</span>
+          <span class="day-date">25.11.2024</span>
+          <span class="base-chip">🍺 Plzeň · 2 nights</span>
+        </div>
+        <h3>Plzeň</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Pilsner Urquell brewery tour: the cellars, the cooperage, the unfiltered pour</li><li>Gambrinus and Purkmistr in Černice, with the beer spa if you book ahead</li><li>Evening on náměstí Republiky</li></ul>
+      </article>
+      <article class="day-node" data-day="7">
+        <div class="day-head">
+          <span class="day-num">DAY 7</span>
+          <span class="day-date">26.11.2024</span>
+          <span class="base-chip">🍺 České Budějovice · 1 night</span>
+        </div>
+        <h3>Plzeň → České Budějovice</h3>
+        <div class="drive-pill">🚗 <strong>Plzeň → České Budějovice</strong> · 136 km · 2 h 11</div>
+        <ul class="day-items"><li>136 km / 2 h 11 south through the Bohemian countryside</li><li>Budweiser Budvar: the tour runs 70–80 minutes, booked in advance</li><li>Masné krámy for dinner and Samson on the square</li></ul>
+      </article>
+      <article class="day-node" data-day="8">
+        <div class="day-head">
+          <span class="day-num">DAY 8</span>
+          <span class="day-date">27.11.2024</span>
+          <span class="base-chip">🇩🇪 Berchtesgaden · 2 nights</span>
+        </div>
+        <h3>České Budějovice → Berchtesgaden</h3>
+        <div class="drive-pill">🚗 <strong>České Budějovice → Berchtesgaden</strong> · 256 km · 3 h 05</div>
+        <ul class="day-items"><li>256 km / 3 h 05 west across the border into Bavaria</li><li>Two nights under the Watzmann</li><li>Hofbrauhaus Berchtesgaden in the evening</li></ul>
+      </article>
+      <article class="day-node" data-day="9">
+        <div class="day-head">
+          <span class="day-num">DAY 9</span>
+          <span class="day-date">28.11.2024</span>
+          <span class="base-chip">🇩🇪 Berchtesgaden · 2 nights</span>
+        </div>
+        <h3>Berchtesgaden</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Königssee by electric boat to St. Bartholomäif the weather holds</li><li>The town and the Hofbrauhaus in the afternoon</li><li>Last Alpine night</li></ul>
+      </article>
+      <article class="day-node" data-day="10">
+        <div class="day-head">
+          <span class="day-num">DAY 10</span>
+          <span class="day-date">29.11.2024</span>
+          <span class="base-chip">🇩🇪 Munich · 5 nights</span>
+        </div>
+        <h3>Berchtesgaden → Munich</h3>
+        <div class="drive-pill">🚗 <strong>Berchtesgaden → Munich</strong> · 155 km · 1 h 50</div>
+        <ul class="day-items"><li>155 km / 1 h 50 north-west on the A8</li><li>Five nights in Munich, arriving as the Christmas markets open</li><li>Augustiner Bräustuben for the first Maß</li></ul>
+      </article>
+      <article class="day-node" data-day="11">
+        <div class="day-head">
+          <span class="day-num">DAY 11</span>
+          <span class="day-date">30.11.2024</span>
+          <span class="base-chip">🇩🇪 Munich · 5 nights</span>
+        </div>
+        <h3>Munich — Advent begins</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Marienplatz Christkindlmarkt and the Tollwood winter festival</li><li>Viktualienmarkt for lunch, Hofbräuhaus for the afternoon</li><li>Schneider Bräuhaus at night</li></ul>
+      </article>
+      <article class="day-node" data-day="12">
+        <div class="day-head">
+          <span class="day-num">DAY 12</span>
+          <span class="day-date">01.12.2024</span>
+          <span class="base-chip">🇩🇪 Munich · 5 nights</span>
+        </div>
+        <h3>Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Augustiner Keller, then Giesinger Bräu across the river</li><li>Deutsches Museum or the Pinakothek if it rains</li><li>Dinner in Ludwigsvorstadt</li></ul>
+      </article>
+      <article class="day-node" data-day="13">
+        <div class="day-head">
+          <span class="day-num">DAY 13</span>
+          <span class="day-date">02.12.2024</span>
+          <span class="base-chip">🇩🇪 Munich · 5 nights</span>
+        </div>
+        <h3>Munich — day trip</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Kloster Andechs for Doppelbock above the Ammersee (45 km)</li><li>Or Freising and Weihenstephan (41 km) if the roads are clear</li><li>Back for the market in the evening</li></ul>
+      </article>
+      <article class="day-node" data-day="14">
+        <div class="day-head">
+          <span class="day-num">DAY 14</span>
+          <span class="day-date">03.12.2024</span>
+          <span class="base-chip">🇩🇪 Munich · 5 nights</span>
+        </div>
+        <h3>Munich</h3>
+        <div class="drive-pill in-place">📍 In place · no driving</div>
+        <ul class="day-items"><li>Forschungsbrauerei and the craft addresses in Perlach</li><li>Paulaner Brauhaus and the Nockherberg</li><li>Pack properly — tomorrow is a travel day</li></ul>
+      </article>
+      <article class="day-node" data-day="15">
+        <div class="day-head">
+          <span class="day-num">DAY 15</span>
+          <span class="day-date">04.12.2024</span>
+          
+        </div>
+        <h3>Munich → Rome → São Paulo</h3>
+        <div class="drive-pill">🚗 <strong>Munich → Munich Airport</strong> · 39 km · 0 h 35</div>
+        <ul class="day-items"><li>39 km / 0 h 35 to Franz Josef Strauss</li><li>Fly MUC → FCO (730 km), connect in Rome</li><li>FCO → GRU overnight (9,433 km)</li></ul>
+      </article>
+      <article class="day-node" data-day="16">
+        <div class="day-head">
+          <span class="day-num">DAY 16</span>
+          <span class="day-date">05.12.2024</span>
+          
+        </div>
+        <h3>São Paulo → Porto Alegre</h3>
+        <div class="drive-pill">✈️ <strong>São Paulo → Porto Alegre</strong> · 869 km · 2 h 05 in the air</div>
+        <ul class="day-items"><li>Land in São Paulo in the morning</li><li>GRU → POA (869 km) — the last hop</li><li>16 days, 13 nights, two brewing countries and one Advent in Munich</li></ul>
+      </article>
+</section>
+
+<section id="map" class="tab-content">
+  <h2 class="section">The route through Franconia &amp; Bohemia</h2>
+  <p class="lede">Numbered in visit order, from Frankfurt through Franconia and Bohemia to the Alps and
+    back up to Munich. Rome, São Paulo and Porto Alegre are flight connections and sit outside this frame.</p>
+  <div id="map-container"></div>
+  <div class="legend">
+    <span><span class="dot" style="background:#e8b93b"></span>Franconia</span>
+    <span><span class="dot" style="background:#43d19e"></span>Bohemia</span>
+    <span><span class="dot" style="background:#ff7fa3"></span>Berchtesgaden</span>
+    <span><span class="dot" style="background:#54a8f5"></span>Munich</span>
+  </div>
+</section>
+
+<section id="rankings" class="tab-content">
+  <h2 class="section">What to drink where</h2>
+  <p class="lede">One section per stop, ranked by how much the place is worth a detour — two village
+    breweries outside Bamberg, the town that invented pilsner, the other Budweiser, and an Advent in Munich.</p>
+  
+      <section class="city-block">
+        <h3>Memmelsdorf</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Brauerei &amp; Gasthof Drei Kronen</h4><p>Brewery, Gasthof and hotel in one building in Memmelsdorf — hand-brewed Franconian beer and a few rooms upstairs.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Brauerei &amp; Wirtshaus Göller</h4><p>Family brewery in Memmelsdorf-Drosendorf, a short drive out; unfiltered Franconian lagers in the Wirtshaus.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Schloss Seehof</h4><p>The prince-bishops&#x27; summer palace at the edge of the village — gardens, orangery, and a walk before dinner.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Schlenkerla, Bamberg</h4><p>Six kilometres away: Rauchbier since 1405, poured from oak barrels in a vaulted cellar.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">05</span>
+            <div><h4>Spezial, Bamberg</h4><p>The Bambergers&#x27; rauchbier — softer smoke than Schlenkerla, and the locals&#x27; choice.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Plzeň</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Pilsner Urquell (Prazdroj)</h4><p>The brewery that defined the style in 1842: the tour ends in the cellars with an unfiltered, unpasteurised pour.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Na Spilce</h4><p>The brewery&#x27;s own restaurant under the brewhouse — the freshest Prazdroj you will get outside the cellar.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Purkmistr, Černice</h4><p>Brewery and beer spa on the edge of town: baths in wort, a house lager, and a hotel if you overdo it.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Pivovarský dům</h4><p>Brewpub in the centre with its own beers and a menu built around them.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">05</span>
+            <div><h4>Gambrinus</h4><p>The everyday Plzeň lager, lighter and cheaper than Prazdroj, and just as local.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>České Budějovice</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Budweiser Budvar</h4><p>The other Budweiser: tours of 70–80 minutes through the brewhouse and the cellars, with a tasting at the end.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Budvar Samson</h4><p>The city brewery on náměstí Přemysla Otakara II — dark and light, in a 19th-century building.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Masné krámy</h4><p>The old meat market turned beer hall, pouring Budvar by the metre.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Berchtesgaden</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Hofbrauhaus Berchtesgaden</h4><p>The town&#x27;s own brewery and restaurant; Helles and Dunkel brewed in the valley.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Königssee</h4><p>Electric boat to St. Bartholomä — the scenery half of the two days.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Grassl Distillery</h4><p>Enzian and fruit brandies for the non-beer half of the evening.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Munich</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Marienplatz Christkindlmarkt</h4><p>The Advent market under the Glockenspiel; Glühwein in the cold, and the brewery stalls around the edges.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">02</span>
+            <div><h4>Tollwood</h4><p>The winter festival on the Theresienwiese — food stalls, music and a long bar list.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">03</span>
+            <div><h4>Augustiner Bräustuben</h4><p>The Augustiner brewery tap: Edelstoff from the wooden barrel, meatloaf at the next table.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">04</span>
+            <div><h4>Augustiner Keller</h4><p>Chestnut beer garden with a winter room; still pouring from wooden barrels.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">05</span>
+            <div><h4>Hofbräuhaus</h4><p>The room everyone has heard of — go early, stay for the brass band.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">06</span>
+            <div><h4>Schneider Bräuhaus</h4><p>Wheat-beer house on Tal: Aventinus and the original Tap 7.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">07</span>
+            <div><h4>Viktualienmarkt</h4><p>Market beer garden in the centre; in Advent the stalls turn to roasted almonds and Glühwein.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">08</span>
+            <div><h4>Giesinger Bräu</h4><p>Craft brewery in Giesing with a taproom full of locals.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">09</span>
+            <div><h4>Kloster Andechs</h4><p>Benedictine monastery brewery above the Ammersee (45 km) — Doppelbock Dunkel and a terrace over the valley.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">10</span>
+            <div><h4>Weihenstephan, Freising</h4><p>The oldest brewery site in the world (41 km); the Bräustüberl pours the standards.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">11</span>
+            <div><h4>Forschungsbrauerei Bräustüberl</h4><p>Perlach research brewery and taproom, with the craft crowd next door.</p></div>
+          </div>
+          <div class="venue">
+            <span class="rank">12</span>
+            <div><h4>Paulaner Brauhaus</h4><p>The Nockherberg brewpub — Salvator season if the calendar lines up.</p></div>
+          </div>
+      </section>
+      <section class="city-block">
+        <h3>Rome</h3>
+        
+          <div class="venue">
+            <span class="rank">01</span>
+            <div><h4>Fiumicino connection</h4><p>No beer stop: enough time for an espresso and the walk between gates.</p></div>
+          </div>
+      </section>
+</section>
+
+<section id="beers" class="tab-content">
+  <h2 class="section">Beer guide</h2>
+  <p class="lede">Four beer regions in sixteen days: Franconian smoke and village lagers, the Bohemian
+    pilsner tradition from Plzeň to Budějovice, the Bavarian Alps, and Munich in Advent.</p>
+  <table><thead><tr><th>Region</th><th>Styles to look for</th></tr></thead><tbody><tr><td>Franconia</td><td>Rauchbier · Ungespundetes / Kellerbier · Pils · Bock</td></tr><tr><td>Bohemia</td><td>Pilsner · Světlý ležák · Tmavé (dark lager) · Kvasnicové (yeast beer)</td></tr><tr><td>Bavaria</td><td>Helles · Dunkel · Weißbier · Doppelbock</td></tr><tr><td>Munich in Advent</td><td>Helles · Edelstoff · Weizenbock · Glühwein (not beer, but unavoidable)</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">What to order, stop by stop</h2>
+  <table><thead><tr><th>Stop</th><th>Start here</th><th>Why</th></tr></thead><tbody><tr><td>Memmelsdorf</td><td>Brauerei &amp; Gasthof Drei Kronen</td><td>Brewery, Gasthof and hotel in one building in Memmelsdorf — hand-brewed Franconian beer and a few rooms upstairs.</td></tr><tr><td>Plzeň</td><td>Pilsner Urquell (Prazdroj)</td><td>the tour ends in the cellars with an unfiltered, unpasteurised pour.</td></tr><tr><td>České Budějovice</td><td>Budweiser Budvar</td><td>tours of 70–80 minutes through the brewhouse and the cellars, with a tasting at the end.</td></tr><tr><td>Berchtesgaden</td><td>Hofbrauhaus Berchtesgaden</td><td>The town&#x27;s own brewery and restaurant; Helles and Dunkel brewed in the valley.</td></tr><tr><td>Munich</td><td>Marienplatz Christkindlmarkt</td><td>The Advent market under the Glockenspiel; Glühwein in the cold, and the brewery stalls around the edges.</td></tr><tr><td>Rome</td><td>Fiumicino connection</td><td>enough time for an espresso and the walk between gates.</td></tr></tbody></table>
+</section>
+
+<section id="drives" class="tab-content">
+  <h2 class="section">Drive times</h2>
+  <p class="lede">Every distance below is OSRM car routing. The two flights are great-circle distances;
+    the times are in the air, not door to door.</p>
+  <div class="totals">
+    <div class="total"><b>1,062 km</b><span>driving</span></div>
+    <div class="total"><b>12 h 28</b><span>behind the wheel</span></div>
+    <div class="total"><b>21,696 km</b><span>flying</span></div>
+    <div class="total"><b>10</b><span>legs</span></div>
+  </div>
+  <table><thead><tr><th>Mode</th><th>From</th><th>To</th><th class="num">km</th><th class="num">time</th></tr></thead>
+  <tbody><tr><td>✈️ flight</td><td>Porto Alegre</td><td>Frankfurt Airport</td><td class='num'>10,665</td><td class='num'>13 h 33</td></tr><tr><td>🚗 drive</td><td>Frankfurt Airport</td><td>Memmelsdorf</td><td class='num'>221</td><td class='num'>2 h 15</td></tr><tr><td>🚗 drive</td><td>Memmelsdorf</td><td>Plzeň</td><td class='num'>255</td><td class='num'>2 h 32</td></tr><tr><td>🚗 drive</td><td>Plzeň</td><td>České Budějovice</td><td class='num'>136</td><td class='num'>2 h 11</td></tr><tr><td>🚗 drive</td><td>České Budějovice</td><td>Berchtesgaden</td><td class='num'>256</td><td class='num'>3 h 05</td></tr><tr><td>🚗 drive</td><td>Berchtesgaden</td><td>Munich</td><td class='num'>155</td><td class='num'>1 h 50</td></tr><tr><td>🚗 drive</td><td>Munich</td><td>Munich Airport</td><td class='num'>39</td><td class='num'>0 h 35</td></tr><tr><td>✈️ flight</td><td>Munich Airport</td><td>Rome</td><td class='num'>730</td><td class='num'>1 h 55</td></tr><tr><td>✈️ flight</td><td>Rome</td><td>São Paulo</td><td class='num'>9,433</td><td class='num'>12 h 47</td></tr><tr><td>✈️ flight</td><td>São Paulo</td><td>Porto Alegre</td><td class='num'>869</td><td class='num'>2 h 05</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">Distance matrix</h2>
+  <p class="lede">Car kilometres between every pair of land stops, from <code>matrix.pairs</code>.</p>
+  <div class="matrix-wrap"><table><thead><tr><th>From \ To</th><th>Memmelsdorf</th><th>Plzeň</th><th>České Budějovice</th><th>Berchtesgaden</th><th>Munich</th></tr></thead><tbody><tr><th>Memmelsdorf</th><td class='diag'>—</td><td class='num'>255</td><td class='num'>387</td><td class='num'>388</td><td class='num'>232</td></tr><tr><th>Plzeň</th><td class='num'>255</td><td class='diag'>—</td><td class='num'>136</td><td class='num'>444</td><td class='num'>288</td></tr><tr><th>České Budějovice</th><td class='num'>387</td><td class='num'>136</td><td class='diag'>—</td><td class='num'>256</td><td class='num'>336</td></tr><tr><th>Berchtesgaden</th><td class='num'>388</td><td class='num'>444</td><td class='num'>256</td><td class='diag'>—</td><td class='num'>155</td></tr><tr><th>Munich</th><td class='num'>232</td><td class='num'>288</td><td class='num'>336</td><td class='num'>155</td><td class='diag'>—</td></tr></tbody></table></div>
+</section>
+
+<section id="suggest" class="tab-content">
+  <h2 class="section">If you had one more day</h2>
+  <p class="lede">Detours that were on the list and did not fit — measured from the nearest base.</p>
+  <table><thead><tr><th>From</th><th>Detour</th><th class="num">km</th><th class="num">time</th></tr></thead>
+  <tbody><tr><td>Memmelsdorf</td><td>Bamberg (Schlenkerla)</td><td class='num'>6.3</td><td class='num'>0 h 12</td></tr><tr><td>Plzeň</td><td>Kout na Šumavě</td><td class='num'>74.7</td><td class='num'>1 h 23</td></tr><tr><td>České Budějovice</td><td>Hluboká nad Vltavou</td><td class='num'>11.6</td><td class='num'>0 h 15</td></tr><tr><td>Berchtesgaden</td><td>Königssee</td><td class='num'>6.2</td><td class='num'>0 h 09</td></tr><tr><td>Munich</td><td>Kloster Andechs</td><td class='num'>44.8</td><td class='num'>0 h 46</td></tr><tr><td>Munich</td><td>Freising (Weihenstephan)</td><td class='num'>40.9</td><td class='num'>0 h 40</td></tr></tbody></table>
+  <h2 class="section" style="margin-top:2rem">What this trip taught us</h2>
+  <ul style="color:var(--muted);margin-left:1.2rem;font-size:.92rem;line-height:1.9">
+    <li>Late November is the best-value week of the year: Christmas markets open, beer gardens close, prices drop — and the brewery tours are half empty.</li>
+    <li>Memmelsdorf is the quiet way to do Bamberg: two village breweries on the doorstep and the Rauchbier town six kilometres away.</li>
+    <li>Book Budvar and Pilsner Urquell in advance — in late November the English tours run once or twice a day.</li>
+    <li>České Budějovice → Berchtesgaden at 256 km / 3 h 05 is the long day; it crosses into Bavaria through the forest and there is nowhere to rush.</li>
+    <li>Five nights in Munich is the right length for Advent: one market day, one day trip, one museum day and two slow evenings.</li>
+  </ul>
+</section>
+
+<script>
+var mapReady = false;
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(function (s) { s.classList.remove('active'); });
+  document.querySelectorAll('.tab').forEach(function (b) { b.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (id === 'map') setTimeout(initMap, 60);
+}
+function initMap() {
+  if (mapReady) { window.tripMap.invalidateSize(); return; }
+  if (typeof L === 'undefined') return;
+  mapReady = true;
+  var map = L.map('map-container');
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri', maxZoom: 16
+  }).addTo(map);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16
+  }).addTo(map);
+  var stops = [
+[50.0244,8.5552,"Frankfurt Airport","Land on 21 November, collect the car, drive to Franconia.","#e8b93b",0],
+[49.9196,10.9310,"Memmelsdorf","Three nights six kilometres from Bamberg, between Drei Kronen and Göller.","#e8b93b",3],
+[49.7384,13.3736,"Plzeň","Two nights in the town that invented pilsner — Prazdroj, Gambrinus, Purkmistr.","#e6a817",2],
+[48.9745,14.4747,"České Budějovice","One night for Budweiser Budvar and the Samson brewery on the square.","#e6a817",1],
+[47.6330,13.0020,"Berchtesgaden","Two nights under the Watzmann, between the Königssee and the Hofbrauhaus.","#e8b93b",2],
+[48.1371,11.5754,"Munich","Five nights at the start of Advent: Christmas markets and beer halls.","#e8b93b",5],
+[48.3538,11.7861,"Munich Airport","4 December — fly to Rome, then on to São Paulo.","#e8b93b",0]
+  ];
+  var pts = [];
+  stops.forEach(function (s, i) {
+    var icon = L.divIcon({className: 'pin', html: '<div style="width:22px;height:22px;border-radius:50%;background:' + s[4] +
+      ';color:#0b0c15;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;border:2px solid #0b0c15">' + (i + 1) + '</div>', iconSize: [22, 22], iconAnchor: [11, 11]});
+    L.marker([s[0], s[1]], {icon: icon}).addTo(map)
+      .bindPopup('<strong style="color:#e6a817">' + s[2] + '</strong><br><span style="font-size:.85em">' + s[3] + '</span>');
+    pts.push([s[0], s[1]]);
+  });
+  L.polyline(pts, {color: '#e6a817', weight: 2, opacity: .55, dashArray: '6,8'}).addTo(map);
+  map.invalidateSize();
+  map.fitBounds(L.latLngBounds(pts).pad(0.06));
+  window.tripMap = map;
+}
+</script>
+</body>
+</html>
