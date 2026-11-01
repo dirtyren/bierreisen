@@ -26,7 +26,12 @@ OG_LOCALE = {"en": "en_GB", "pt": "pt_BR", "de": "de_DE"}
 LANG_BOOT = """  try {
     var q = new URLSearchParams(location.search).get('lang');
     var stored = localStorage.getItem('bierreisen:lang');
-    if (q) { localStorage.setItem('bierreisen:lang', q); }
+    if (q) {
+      localStorage.setItem('bierreisen:lang', q);
+      var want = q.toLowerCase();
+      if (want.indexOf('de') === 0) location.replace('de/index.html');
+      else if (want.indexOf('pt') === 0) location.replace('pt/index.html');
+    }
     else if (!stored) {
       var nav = (navigator.language || 'en').toLowerCase();
       if (nav.indexOf('de') === 0) location.replace('de/index.html');
