@@ -525,7 +525,9 @@ contrast, one authored motion moment, and a detector run with no findings.
 The catalog reads its numbers from the year dossiers' own data files, so it can never quote a
 distance the dossier disagrees with. It ships in three languages — `/` (EN), `/pt/` (PT-BR) and
 `/de/` (DE) — all generated from `scripts/index_strings.py`, each page carrying `hreflang`
-alternates and a switcher that links to the real files, so the pages also work opened from disk. The site is published from this repository by Coolify: the
+alternates and a switcher that links to the real files, so the pages also work opened from disk.
+A first visit follows the browser language; the switcher stores the choice in `localStorage`, and
+`?lang=pt` or `?lang=de` forces a language for a link you want to share. The site is published from this repository by Coolify: the
 `Dockerfile` builds an nginx image whose web root is the repo root, and every push to `main`
 (including a merged pull request) redeploys it at **https://renreisen.duckdns.org**. No build step
 runs on GitHub — merging is publishing.
