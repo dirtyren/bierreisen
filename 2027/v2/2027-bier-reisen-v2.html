@@ -596,6 +596,15 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   margin-bottom: 0.9rem;
   flex-grow: 1;
 }
+.card-links { margin-top: .55rem; }
+.gmaps {
+  display: inline-block; align-self: flex-start; padding: .24rem .68rem; border-radius: 999px;
+  border: 1px solid rgba(245, 215, 110, .32); color: var(--beer-light); background: rgba(12, 22, 42, .5);
+  font-size: .76rem; font-weight: 600; text-decoration: none; transition: background .18s, border-color .18s;
+}
+.gmaps:hover { background: rgba(245, 215, 110, .14); border-color: rgba(245, 215, 110, .55); }
+.gmaps-day { margin-left: .45rem; vertical-align: middle; }
+.popup-gmaps { margin-top: 6px; font-size: 11px; padding: 2px 9px; }
 .order-this {
   background: rgba(12, 22, 42, 0.65);
   border: 1px solid rgba(245, 215, 110, 0.3);
@@ -1001,15 +1010,6 @@ button:focus-visible, a:focus-visible, input:focus-visible {
     <a href="data/route-2027-v2.json" target="_blank" rel="noopener">📄 Authoritative Route Data v2 (JSON)</a>
     <a href="../2027-bier-reisen.html">↩️ Compare with v1 (Nuremberg Route)</a>
   </div>
-
-
-
-
-
-
-
-
-
 <div class="lang-switch" role="group" aria-label="Language / Idioma / Sprache">
 <span>Language</span>
 <button type="button" data-lang="en">EN</button>
@@ -1057,6 +1057,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Arrive FRA, drive to Bruges</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('bruges')">📍 Stop #2 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Bruges%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>FRA → Bruges</strong> &nbsp;·&nbsp; <span class="num">493 km</span> <span class="muted-inline">(492.6 km)</span> &nbsp;·&nbsp; <span class="num">5 h 15</span></div>
         <ul class="day-items">
@@ -1078,6 +1079,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Bruges</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('bruges')">📍 Stop #2 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Bruges%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>
         <ul class="day-items">
@@ -1099,6 +1101,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Drive to Ghent, brewery quarter</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('ghent')">📍 Stop #3 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Ghent%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Bruges → Ghent</strong> &nbsp;·&nbsp; <span class="num">49 km</span> <span class="muted-inline">(49.2 km)</span> &nbsp;·&nbsp; <span class="num">44 min</span></div>
         <ul class="day-items">
@@ -1120,6 +1123,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Drive to Cologne</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('cologne')">📍 Stop #4 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Cologne%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Ghent → Cologne</strong> &nbsp;·&nbsp; <span class="num">265 km</span> <span class="muted-inline">(265.2 km)</span> &nbsp;·&nbsp; <span class="num">3 h 06</span></div>
         <ul class="day-items">
@@ -1141,6 +1145,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Cologne to Bamberg</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('bamberg')">📍 Stop #5 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Cologne → Bamberg</strong> &nbsp;·&nbsp; <span class="num">387 km</span> <span class="muted-inline">(387.2 km)</span> &nbsp;·&nbsp; <span class="num">4 h 01</span></div>
         <ul class="day-items">
@@ -1161,6 +1166,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Bamberg brewery crawl</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('bamberg')">📍 Stop #5 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>
         <ul class="day-items">
@@ -1182,6 +1188,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Into Bohemia: Permon</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('sokolov')">📍 Stop #6 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Pivovar%20Permon%2C%20Sokolov%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Bamberg → Pivovar Permon, Sokolov</strong> &nbsp;·&nbsp; <span class="num">160 km</span> <span class="muted-inline">(160.2 km)</span> &nbsp;·&nbsp; <span class="num">1 h 59</span></div>
         <ul class="day-items">
@@ -1202,6 +1209,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Sokolov to Plzeň</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('plzen')">📍 Stop #7 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Plze%C5%88%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Pivovar Permon, Sokolov → Plzeň</strong> &nbsp;·&nbsp; <span class="num">87 km</span> <span class="muted-inline">(86.8 km)</span> &nbsp;·&nbsp; <span class="num">1 h 28</span></div>
         <ul class="day-items">
@@ -1222,6 +1230,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Plzeň: birthplace of pilsner</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('plzen')">📍 Stop #7 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Plze%C5%88%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>
         <ul class="day-items">
@@ -1242,6 +1251,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Plzeň to the Bohemian forest</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('kout')">📍 Stop #8 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Kout%20na%20%C5%A0umav%C4%9B%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Plzeň → Kout na Šumavě</strong> &nbsp;·&nbsp; <span class="num">62 km</span> <span class="muted-inline">(61.6 km)</span> &nbsp;·&nbsp; <span class="num">1 h 06</span></div>
         <ul class="day-items">
@@ -1262,6 +1272,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Kout to Upper Bavaria</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('maxlrain')">📍 Stop #9 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Maxlrain%20Bierstube%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Kout na Šumavě → Maxlrain Bierstube</strong> &nbsp;·&nbsp; <span class="num">260 km</span> <span class="muted-inline">(259.8 km)</span> &nbsp;·&nbsp; <span class="num">3 h 11</span></div>
         <ul class="day-items">
@@ -1282,6 +1293,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Maxlrain to the Holy Mountain</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('andechs')">📍 Stop #10 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Andechs%20/%20Herrsching%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Maxlrain Bierstube → Andechs / Herrsching</strong> &nbsp;·&nbsp; <span class="num">89 km</span> <span class="muted-inline">(89.2 km)</span> &nbsp;·&nbsp; <span class="num">1 h 25</span></div>
         <ul class="day-items">
@@ -1302,6 +1314,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Andechs to Munich</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('munich')">📍 Stop #11 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Andechs / Herrsching → Munich</strong> &nbsp;·&nbsp; <span class="num">45 km</span> <span class="muted-inline">(44.5 km)</span> &nbsp;·&nbsp; <span class="num">45 min</span></div>
         <ul class="day-items">
@@ -1322,6 +1335,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Munich</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('munich')">📍 Stop #11 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill inplace">🚶 <strong>In place</strong> &nbsp;·&nbsp; Car-free brewery day</div>
         <ul class="day-items">
@@ -1343,6 +1357,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
         <div class="day-heading-row">
           <h3>Munich to Frankfurt, fly home</h3>
           <button type="button" class="jump-map-btn" onclick="focusStopOnMap('fra')">📍 Stop #1 on Map</button>
+          <a class="gmaps gmaps-day" href="https://www.google.com/maps/search/?api=1&query=Frankfurt%20am%20Main%20Airport%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
         </div>
         <div class="drive-pill">🚗 <strong>Munich → FRA</strong> &nbsp;·&nbsp; <span class="num">402 km</span> <span class="muted-inline">(402 km)</span> &nbsp;·&nbsp; <span class="num">4 h 04</span></div>
         <ul class="day-items">
@@ -1425,6 +1440,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>De Halve Maan</h4>
             <p class="desc">Only active brewery in the historic centre; Brugse Zot, Straffe Hendrik, 3 km beer pipeline, XL rooftop tour.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Brugse Zot blond or Straffe Hendrik quadrupel (city signature: Flemish red)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=De%20Halve%20Maan%2C%20Bruges%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bruges" data-search="bruges brugge de garre hidden alley café, house tripel at 11%, maximum three per person. house tripel 11% — max three per person (city signature: flemish red) flemish red">
             <span class="rank" title="Rank #2 in Bruges">2</span>
@@ -1432,6 +1448,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>De Garre</h4>
             <p class="desc">Hidden alley café, house tripel at 11%, maximum three per person.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> House Tripel 11% — max three per person (city signature: Flemish red)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=De%20Garre%2C%20Bruges%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bruges" data-search="bruges brugge &#x27;t brugs beertje 300+ bottles, the classic brown bar of bruges. vintage belgian bottle or aged flemish red from the 300+ bottle list flemish red">
             <span class="rank" title="Rank #3 in Bruges">3</span>
@@ -1439,6 +1456,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>&#x27;t Brugs Beertje</h4>
             <p class="desc">300+ bottles, the classic brown bar of Bruges.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Vintage Belgian bottle or aged Flemish red from the 300+ bottle list</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=%27t%20Brugs%20Beertje%2C%20Bruges%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bruges" data-search="bruges brugge café vlissinghe oldest pub in bruges (1515), bocce court in the garden. classic belgian abbey pour or flemish red in the 1515 garden flemish red">
             <span class="rank" title="Rank #4 in Bruges">4</span>
@@ -1446,6 +1464,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Café Vlissinghe</h4>
             <p class="desc">Oldest pub in Bruges (1515), bocce court in the garden.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Classic Belgian abbey pour or Flemish red in the 1515 garden</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Vlissinghe%2C%20Bruges%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bruges" data-search="bruges brugge le trappiste vaulted cellar bar with a full trappist list. trappist draught/bottle flight alongside a bruges flemish red flemish red">
             <span class="rank" title="Rank #5 in Bruges">5</span>
@@ -1453,6 +1472,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Le Trappiste</h4>
             <p class="desc">Vaulted cellar bar with a full Trappist list.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Trappist draught/bottle flight alongside a Bruges Flemish red</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Le%20Trappiste%2C%20Bruges%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bruges" data-search="bruges brugge bourgogne des flandres brewery-café on the canal, flemish red house beer. flemish red house beer overlooking the canal flemish red">
             <span class="rank" title="Rank #6 in Bruges">6</span>
@@ -1460,6 +1480,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Bourgogne des Flandres</h4>
             <p class="desc">Brewery-café on the canal, Flemish red house beer.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Flemish red house beer overlooking the canal</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Bourgogne%20des%20Flandres%2C%20Bruges%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1478,6 +1499,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Gruut Stadsbrouwerij</h4>
             <p class="desc">City brewery using a medieval herb-and-spice mix instead of hops: Blond, Amber, Brown, White, Inferno.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Gruut (Blond, Amber, Brown, White, or Inferno — hop-free herb beer)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Gruut%20Stadsbrouwerij%2C%20Ghent%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="ghent" data-search="ghent gent dok brewing company dok-noord 4b, 30 taps in a converted metal workshop; pils 13 is the flagship. pils 13 flagship from the 30-tap board (city signature: gruut) gruut">
             <span class="rank" title="Rank #2 in Ghent">2</span>
@@ -1485,6 +1507,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Dok Brewing Company</h4>
             <p class="desc">Dok-Noord 4B, 30 taps in a converted metal workshop; Pils 13 is the flagship.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Pils 13 flagship from the 30-tap board (city signature: gruut)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Dok%20Brewing%20Company%2C%20Ghent%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="ghent" data-search="ghent gent stroom brouwers belgian-american duo bridging belgian tradition and us craft; forelstraat taproom. belgian-us craft taproom pour (city signature: gruut) gruut">
             <span class="rank" title="Rank #3 in Ghent">3</span>
@@ -1492,6 +1515,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Stroom Brouwers</h4>
             <p class="desc">Belgian-American duo bridging Belgian tradition and US craft; Forelstraat taproom.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Belgian-US craft taproom pour (city signature: gruut)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Stroom%20Brouwers%2C%20Ghent%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="ghent" data-search="ghent gent de dulle griet vrijdagmarkt 50, 500 beers, the shoe-in-the-basket ritual for the house max. house max in the yard-glass shoe-basket ritual, or a ghent gruut gruut">
             <span class="rank" title="Rank #4 in Ghent">4</span>
@@ -1499,6 +1523,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>De Dulle Griet</h4>
             <p class="desc">Vrijdagmarkt 50, 500 beers, the shoe-in-the-basket ritual for the house Max.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> House Max in the yard-glass shoe-basket ritual, or a Ghent gruut</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=De%20Dulle%20Griet%2C%20Ghent%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="ghent" data-search="ghent gent het waterhuis aan de bierkant groentenmarkt 9, around 170 beers, canal terrace; house beers gandavum and klokke roeland. gandavum or klokke roeland on the canal terrace (city signature: gruut) gruut">
             <span class="rank" title="Rank #5 in Ghent">5</span>
@@ -1506,6 +1531,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Het Waterhuis aan de Bierkant</h4>
             <p class="desc">Groentenmarkt 9, around 170 beers, canal terrace; house beers Gandavum and Klokke Roeland.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Gandavum or Klokke Roeland on the canal terrace (city signature: gruut)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Het%20Waterhuis%20aan%20de%20Bierkant%2C%20Ghent%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="ghent" data-search="ghent gent de hopduvel beer shop in dok-noord, the best take-home selection in the city. take-home belgian bottles &amp; local ghent gruut selection gruut">
             <span class="rank" title="Rank #6 in Ghent">6</span>
@@ -1513,6 +1539,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>De Hopduvel</h4>
             <p class="desc">Beer shop in Dok-Noord, the best take-home selection in the city.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Take-home Belgian bottles &amp; local Ghent gruut selection</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=De%20Hopduvel%2C%20Ghent%2C%20Belgium" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1531,6 +1558,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Früh am Dom</h4>
             <p class="desc">The classic Kölsch hall beside the cathedral; brewed on site since 1904 and poured by Köbes in 0.2 l Stangen.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Früh Kölsch poured by Köbes in 0.2 L Stangen right beside the cathedral</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Fr%C3%BCh%20am%20Dom%2C%20Cologne%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="cologne" data-search="cologne köln brauerei zur malzmühle heumarkt 6, mühlen kölsch since 1858 — one of the few houses still brewing its own kölsch in the old town. house-brewed mühlen kölsch (since 1858) at heumarkt 6 kölsch">
             <span class="rank" title="Rank #2 in Cologne">2</span>
@@ -1538,6 +1566,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Brauerei zur Malzmühle</h4>
             <p class="desc">Heumarkt 6, Mühlen Kölsch since 1858 — one of the few houses still brewing its own Kölsch in the old town.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> House-brewed Mühlen Kölsch (since 1858) at Heumarkt 6</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Brauerei%20zur%20Malzm%C3%BChle%2C%20Cologne%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="cologne" data-search="cologne köln brauhaus päffgen friesenstraße 64-66: the brewery tap, kölsch straight from the wooden barrel, no music, no excuses. päffgen kölsch gravity-tapped straight from the wooden barrel kölsch">
             <span class="rank" title="Rank #3 in Cologne">3</span>
@@ -1545,6 +1574,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Brauhaus Päffgen</h4>
             <p class="desc">Friesenstraße 64-66: the brewery tap, Kölsch straight from the wooden barrel, no music, no excuses.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Päffgen Kölsch gravity-tapped straight from the wooden barrel</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Brauhaus%20P%C3%A4ffgen%2C%20Cologne%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="cologne" data-search="cologne köln brauhaus sion unter taschenmacher 5-7, a kölsch house with roots in the 14th century, right behind the alter markt. crisp sion kölsch behind the alter markt kölsch">
             <span class="rank" title="Rank #4 in Cologne">4</span>
@@ -1552,6 +1582,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Brauhaus Sion</h4>
             <p class="desc">Unter Taschenmacher 5-7, a Kölsch house with roots in the 14th century, right behind the Alter Markt.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Crisp Sion Kölsch behind the Alter Markt</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Brauhaus%20Sion%2C%20Cologne%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="cologne" data-search="cologne köln peters brauhaus mühlengasse 1, historic panelled rooms near the river, peters kölsch on tap. fresh peters kölsch on tap in the historic panelled rooms kölsch">
             <span class="rank" title="Rank #5 in Cologne">5</span>
@@ -1559,6 +1590,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Peters Brauhaus</h4>
             <p class="desc">Mühlengasse 1, historic panelled rooms near the river, Peters Kölsch on tap.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Fresh Peters Kölsch on tap in the historic panelled rooms</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Peters%20Brauhaus%2C%20Cologne%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="cologne" data-search="cologne köln lommerzheim siegesstraße 18 in deutz: cult pub, kölsch, schweinshaxe and a queue of locals by 18:00. fresh kölsch and schweinshaxe at the cult deutz pub kölsch">
             <span class="rank" title="Rank #6 in Cologne">6</span>
@@ -1566,6 +1598,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Lommerzheim</h4>
             <p class="desc">Siegesstraße 18 in Deutz: cult pub, Kölsch, Schweinshaxe and a queue of locals by 18:00.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Fresh Kölsch and Schweinshaxe at the cult Deutz pub</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Lommerzheim%2C%20Cologne%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="cologne" data-search="cologne köln braustelle venloer straße 386 in ehrenfeld — cologne&#x27;s craft counterpoint, own beers brewed behind the bar. house ehrenfeld craft beers brewed behind the bar (city signature: kölsch) kölsch">
             <span class="rank" title="Rank #7 in Cologne">7</span>
@@ -1573,6 +1606,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Braustelle</h4>
             <p class="desc">Venloer Straße 386 in Ehrenfeld — Cologne&#x27;s craft counterpoint, own beers brewed behind the bar.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> House Ehrenfeld craft beers brewed behind the bar (city signature: Kölsch)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Braustelle%2C%20Cologne%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1591,6 +1625,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Schlenkerla</h4>
             <p class="desc">Rauchbier since 1405, beechwood-smoked malt from oak barrels in a medieval vaulted cellar.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Rauchbier — beechwood-smoked malt poured straight from oak barrels</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Schlenkerla%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg spezial the locals&#x27; rauchbier — subtler smoke than schlenkerla. rauchbier — the locals&#x27; subtler beechwood smoke rauchbier">
             <span class="rank" title="Rank #2 in Bamberg">2</span>
@@ -1598,6 +1633,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Spezial</h4>
             <p class="desc">The locals&#x27; rauchbier — subtler smoke than Schlenkerla.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Rauchbier — the locals&#x27; subtler beechwood smoke</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Spezial%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg mahr&#x27;s bräu the legendary &#x27;au&#x27; ungespundetes, naturally carbonated and unfiltered. &#x27;au&#x27; ungespundetes unfiltered cellar lager (city signature: rauchbier) rauchbier">
             <span class="rank" title="Rank #3 in Bamberg">3</span>
@@ -1605,6 +1641,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Mahr&#x27;s Bräu</h4>
             <p class="desc">The legendary &#x27;aU&#x27; Ungespundetes, naturally carbonated and unfiltered.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> &#x27;aU&#x27; Ungespundetes unfiltered cellar lager (city signature: Rauchbier)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Mahr%27s%20Br%C3%A4u%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg fässla dwarf logo, zwergla dark lager, brewery tap opposite spezial. zwergla dark lager at the brewery tap (city signature: rauchbier) rauchbier">
             <span class="rank" title="Rank #4 in Bamberg">4</span>
@@ -1612,6 +1649,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Fässla</h4>
             <p class="desc">Dwarf logo, Zwergla dark lager, brewery tap opposite Spezial.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Zwergla dark lager at the brewery tap (city signature: Rauchbier)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=F%C3%A4ssla%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg greifenklau beer garden with the best view over the city. fresh bamberg cellar lager in the hilltop garden (city signature: rauchbier) rauchbier">
             <span class="rank" title="Rank #5 in Bamberg">5</span>
@@ -1619,6 +1657,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Greifenklau</h4>
             <p class="desc">Beer garden with the best view over the city.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Fresh Bamberg cellar lager in the hilltop garden (city signature: Rauchbier)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Greifenklau%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg klosterbräu oldest brewery in bamberg (1533), schwärzla. schwärzla dark lager at bamberg&#x27;s 1533 brewery (city signature: rauchbier) rauchbier">
             <span class="rank" title="Rank #6 in Bamberg">6</span>
@@ -1626,6 +1665,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Klosterbräu</h4>
             <p class="desc">Oldest brewery in Bamberg (1533), Schwärzla.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Schwärzla dark lager at Bamberg&#x27;s 1533 brewery (city signature: Rauchbier)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Klosterbr%C3%A4u%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="bamberg" data-search="bamberg bamberg keesmann cult herren pils, the counterpoint to all the smoke. herren pils — crisp counterpoint to bamberg&#x27;s rauchbier rauchbier">
             <span class="rank" title="Rank #7 in Bamberg">7</span>
@@ -1633,6 +1673,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Keesmann</h4>
             <p class="desc">Cult Herren Pils, the counterpoint to all the smoke.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Herren Pils — crisp counterpoint to Bamberg&#x27;s Rauchbier</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Keesmann%2C%20Bamberg%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1651,6 +1692,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Pivovar Permon</h4>
             <p class="desc">Komenského 77: mining-country craft brewery, Permon IPA 15°, dark specials, brewery restaurant on site.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Permon IPA 15° and house dark specials on tap</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Pivovar%20Permon%2C%20Sokolov%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1669,6 +1711,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Pilsner Urquell</h4>
             <p class="desc">Where pilsner was born in 1842; cellars tour with unfiltered, unpasteurised tank beer.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Unfiltered, unpasteurised tank Pilsner straight from the cellars</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Pilsner%20Urquell%2C%20Plze%C5%88%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň u salzmannů pražská 8, a pub since 1637 and the best-poured tank urquell in town. tank pilsner (pilsner urquell) poured at 1637 pub pražská 8 tank pilsner">
             <span class="rank" title="Rank #2 in Plzeň">2</span>
@@ -1676,6 +1719,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>U Salzmannů</h4>
             <p class="desc">Pražská 8, a pub since 1637 and the best-poured tank Urquell in town.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Tank Pilsner (Pilsner Urquell) poured at 1637 pub Pražská 8</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=U%20Salzmann%C5%AF%2C%20Plze%C5%88%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň na parkánu attached to the brewery, freshest tank pilsner you will get. brewery-fresh unpasteurised tank pilsner next door to urquell tank pilsner">
             <span class="rank" title="Rank #3 in Plzeň">3</span>
@@ -1683,6 +1727,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Na Parkánu</h4>
             <p class="desc">Attached to the brewery, freshest tank Pilsner you will get.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Brewery-fresh unpasteurised tank Pilsner next door to Urquell</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Na%20Park%C3%A1nu%2C%20Plze%C5%88%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň purkmistr brewery hotel with its own beer spa and a solid dark lager. house dark lager at the brewery spa hotel (city signature: tank pilsner) tank pilsner">
             <span class="rank" title="Rank #4 in Plzeň">4</span>
@@ -1690,6 +1735,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Purkmistr</h4>
             <p class="desc">Brewery hotel with its own beer spa and a solid dark lager.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> House dark lager at the brewery spa hotel (city signature: tank Pilsner)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Purkmistr%2C%20Plze%C5%88%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="plzen" data-search="plzeň plzeň pivovar raven czech craft pioneer: ipas, stouts and sours outside the pilsner tradition. czech craft ipa, stout, or sour (city signature: tank pilsner) tank pilsner">
             <span class="rank" title="Rank #5 in Plzeň">5</span>
@@ -1697,6 +1743,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Pivovar Raven</h4>
             <p class="desc">Czech craft pioneer: IPAs, stouts and sours outside the pilsner tradition.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Czech craft IPA, stout, or sour (city signature: tank Pilsner)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Pivovar%20Raven%2C%20Plze%C5%88%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1715,6 +1762,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Pivovar Kout na Šumavě</h4>
             <p class="desc">Revived in 2006 from a defunct 19th-century brewery; the 12° pale lager is a cult beer among Czech beer nerds.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Kout 12° pale lager — the revived Bohemian Forest cult beer</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Pivovar%20Kout%20na%20%C5%A0umav%C4%9B%2C%20Kout%20na%20%C5%A0umav%C4%9B%2C%20Czechia" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1733,6 +1781,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Schlossbrauerei Maxlrain</h4>
             <p class="desc">Family-owned castle brewery in Tuntenhausen; Helles, Dunkel and Weißbier served in the Bierstube next door.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Maxlrainer Helles (plus Dunkel &amp; Weißbier) in the Bierstube</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Schlossbrauerei%20Maxlrain%2C%20Maxlrain%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1751,6 +1800,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Kloster Andechs</h4>
             <p class="desc">Benedictine monastery brewery since 1455; Doppelbock Dunkel at 7.1% with a view over the Ammersee.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Doppelbock Dunkel (7.1%) above the Ammersee</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Kloster%20Andechs%2C%20Andechs%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="andechs" data-search="andechs andechs andechser hof, herrsching inn and restaurant by the lake, pours the full andechs range; the practical base for the night. andechs doppelbock dunkel and full monastery range by the lake doppelbock">
             <span class="rank" title="Rank #2 in Andechs">2</span>
@@ -1758,6 +1808,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Andechser Hof, Herrsching</h4>
             <p class="desc">Inn and restaurant by the lake, pours the full Andechs range; the practical base for the night.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Andechs Doppelbock Dunkel and full monastery range by the lake</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Andechser%20Hof%2C%20Herrsching%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -1776,6 +1827,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Augustiner-Keller</h4>
             <p class="desc">Munich&#x27;s oldest brewery and the locals&#x27; choice; Edelstoff from wooden barrels under the chestnuts.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Holzfass Edelstoff &amp; Munich Helles under the chestnut trees</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Augustiner-Keller%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="munich" data-search="munich münchen schneider bräuhaus the original wheat-beer house; aventinus is the benchmark weizenbock. aventinus weizenbock (city signature: munich helles) helles">
             <span class="rank" title="Rank #2 in Munich">2</span>
@@ -1783,6 +1835,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Schneider Bräuhaus</h4>
             <p class="desc">The original wheat-beer house; Aventinus is the benchmark Weizenbock.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Aventinus Weizenbock (city signature: Munich Helles)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Schneider%20Br%C3%A4uhaus%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="munich" data-search="munich münchen hofbräuhaus brewing since 1589 — go once for the room, not for the quiet. munich helles in the historic 1589 beer hall helles">
             <span class="rank" title="Rank #3 in Munich">3</span>
@@ -1790,6 +1843,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Hofbräuhaus</h4>
             <p class="desc">Brewing since 1589 — go once for the room, not for the quiet.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Munich Helles in the historic 1589 beer hall</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Hofbr%C3%A4uhaus%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="munich" data-search="munich münchen giesinger bräu garage-to-glory munich craft brewery; erhellung unfiltered helles. erhellung unfiltered helles helles">
             <span class="rank" title="Rank #4 in Munich">4</span>
@@ -1797,6 +1851,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Giesinger Bräu</h4>
             <p class="desc">Garage-to-glory Munich craft brewery; Erhellung unfiltered Helles.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Erhellung unfiltered Helles</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Giesinger%20Br%C3%A4u%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="munich" data-search="munich münchen orca brau tiny nano-brewery making juicy neipas that rival new england. juicy nano-batch neipa (city signature: munich helles) helles">
             <span class="rank" title="Rank #5 in Munich">5</span>
@@ -1804,6 +1859,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>ORCA Brau</h4>
             <p class="desc">Tiny nano-brewery making juicy NEIPAs that rival New England.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Juicy nano-batch NEIPA (city signature: Munich Helles)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=ORCA%20Brau%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="munich" data-search="munich münchen tilmans biere small, refined munich brewery for a quieter final round. refined small-batch munich helles or pils helles">
             <span class="rank" title="Rank #6 in Munich">6</span>
@@ -1811,6 +1867,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Tilmans Biere</h4>
             <p class="desc">Small, refined Munich brewery for a quieter final round.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Refined small-batch Munich Helles or Pils</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Tilmans%20Biere%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
           <div class="brewery-card" data-city="munich" data-search="munich münchen paulaner nockherberg historic brewery site above the isar, home of the starkbierfest. munich helles (and starkbier tradition above the isar) helles">
             <span class="rank" title="Rank #7 in Munich">7</span>
@@ -1818,6 +1875,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
             <h4>Paulaner Nockherberg</h4>
             <p class="desc">Historic brewery site above the Isar, home of the Starkbierfest.</p>
             <div class="order-this">🍺 <strong>Order this:</strong> Munich Helles (and Starkbier tradition above the Isar)</div>
+            <div class="card-links"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Paulaner%20Nockherberg%2C%20Munich%2C%20Germany" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></div>
           </div>
         </div>
       </section>
@@ -2782,7 +2840,9 @@ function initMap() {
       '<div class="popup-meta">' + nightsLine + '</div>' +
       addrLine +
       '<div class="popup-note">' + s.note + '</div>' +
-      nextLine;
+      nextLine +
+      '<a class="gmaps popup-gmaps" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=' +
+        s.lat + ',' + s.lon + '">📍 Google Maps</a>';
 
     const marker = L.marker([s.lat, s.lon], { icon: icon }).bindPopup(popupHtml, { maxWidth: 320 }).addTo(leafletMap);
     markerByStopId[s.id] = marker;
@@ -2827,15 +2887,6 @@ function focusStopOnMap(stopId) {
   }, 120);
 }
 </script>
-
-
-
-
-
-
-
-
-
 <!-- i18n:start -->
 <style id="i18n-style">
 .lang-switch{display:flex;gap:.35rem;align-items:center;justify-content:center;margin:1rem auto 0;font-size:.85rem}

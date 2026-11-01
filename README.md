@@ -462,6 +462,19 @@ python3 scripts/make_map.py          # assets/trips.json → assets/beer-trips-m
 
 `make_map.py` lays out a header, two Lambert-conformal panels (North America and Europe), a Denver zoom inset, and six trip cards. Colours, panel windows and card copy live at the top of the file in `COLORS`, `PANELS`, `LABELS` and `CARD_TEXT`.
 
+### Rebuilding a year dossier
+
+Each `<year>/` folder is self-contained. The 2027 planner has one extra step, because its
+language switcher is layered on afterwards:
+
+```bash
+python3 2027/scripts/build_html.py                # v1 (add --variant v2|v3 for the others)
+python3 2027/scripts/add_i18n.py v1 v2 v3         # REQUIRED: rebuilds above wipe the switcher
+```
+
+`build_html.py` writes plain English HTML — running it without `add_i18n.py` leaves the page with
+no EN/PT/DE chips. The 2019–2026 dossiers have no i18n layer, so `build_html.py` alone is enough.
+
 ---
 
 ## Notes on accuracy
