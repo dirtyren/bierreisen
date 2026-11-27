@@ -1,4 +1,4 @@
-FROM nginx:1.30.7-alpine
+FROM nginx:1.30.8-alpine
 
 # Plain static site: the repo root IS the web root.
 COPY nginx.conf /etc/nginx/conf.d/default.conf
